@@ -14,10 +14,15 @@ Step 1:  Please make sure you have Sphinx, VirtualEnv installed locally.  Refer 
 
 Step 2:  Git Clone the sources. Use the following commands to build html version of docs.
 
+```
 cd docs 
 make BUILDDIR=[directory location where html docs will be built] html
+```
 
-If you make any changes to the docs, please ensure you verify spelling. Use the following command to check spellings.
 
+>  If you make any changes to the docs, please ensure you verify spelling.
+>  Use the following command to check spellings.
 
+```
 make BUILDDIR=[directory location where html docs will be built] spelling
+```
