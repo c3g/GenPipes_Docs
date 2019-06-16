@@ -13,3 +13,7 @@ For example, here is some sample `tutorial <http://www.computationalgenomics.ca/
    :name: tutorial-learn
 
    ../tutorials/genpipes_in_the_cloud
+   ../tutorials/tutorial
+   ../tutorials/cvmfs_modules
+   ../tutorials/cvmfs_genomes
+

@@ -43,8 +43,10 @@ The installation is still running and you where welcome by the following message
     *** Slurm is currently being installed/configured in the background. ***
     A terminal broadcast will announce when installation and configuration is
     complete.
-    Wait for the terminal broadcast this can take up to 10 minutes. One you have received it or one you log to this node without seeing the warning, you can go to the next step.
-    You can run the GenPipes tutorial :ref:`docs_tutorials` from that location.
+
+Wait for the terminal broadcast this can take up to 10 minutes. Once you have received it or one you log to this node
+without seeing the warning, you can go to the next step. You can run the GenPipes :doc:`tutorial <tutorial>` from
+that location.
 
 Let’s use ChIPSeq as an example:
 
