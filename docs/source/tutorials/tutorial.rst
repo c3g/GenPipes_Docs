@@ -374,7 +374,6 @@ We see a single analysis CTCF_Input run as Narrow peaks (coded by “N”; you c
 
 We will run this analysis on guillimin as follows:
 
-.. code-block::
 
     chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.guillimin.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
     bash chipseqScript.txt
@@ -384,11 +383,6 @@ The commands will be sent to the job queue and you will be notified once each st
 Available pipelines:
 --------------------
 
-.. note::
-
-    To do: Insert Table
-
-
 For more information:
 ---------------------
 Our pipelines are built around third party tools that the community uses in particular fields. To understand the output of each pipeline, please read the documentation pertaining to the tools that produced the output.
@@ -396,7 +390,7 @@ Our pipelines are built around third party tools that the community uses in part
 For more information or help with particular pipelines, you can send us an email to:
 `info@computationalgenomics.ca <info@computationalgenomics.ca>`_
 
-Or drop by during our `Open Door <http://www.computationalgenomics.ca/open-door/>`_ slots.
+Or drop by during our `Open Door <http://www.computationalgenomics.ca/open-door/>`__ slots.
 We are located at:
 
 
