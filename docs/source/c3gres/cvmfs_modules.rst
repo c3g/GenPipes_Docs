@@ -1,10 +1,7 @@
 .. _cvmfs_modules:
 
-GenPipes User Manual
-====================
-
-Bioinformatics resources
-------------------------
+GenPipes Bioinformatics Modules
+===============================
 
 C3G, in partnership with Compute Canada, offers and maintains a large set of bioinformatics resources for the community. Below is a list of software currently deployed on several HPC centres, including Guillimin, Cedar, Graham and Mammouth. Several reference genomes are also available.
 

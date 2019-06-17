@@ -76,7 +76,7 @@ The main documentation for the site is organized into the following sections:
    :name: sec-resources
 
    resources/compute_resources
-   get-started/tutorials
+   resources/list_tutorials
    resources/publications
 
 .. Indices and tables

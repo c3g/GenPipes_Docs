@@ -7,13 +7,4 @@ This document contains information related to GenPipes tutorials.  It will also 
 
 For example, here is some sample `tutorial <http://www.computationalgenomics.ca/tutorials/>`_ content.
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Tutorials
-   :name: tutorial-learn
-
-   ../tutorials/genpipes_in_the_cloud
-   ../tutorials/tutorial
-   ../tutorials/cvmfs_modules
-   ../tutorials/cvmfs_genomes
-
+We are in the process of putting together all GenPipes Tutorials here :ref:`doc_list_tutorials`.

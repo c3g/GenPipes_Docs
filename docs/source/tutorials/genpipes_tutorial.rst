@@ -1,17 +1,18 @@
 .. _tutorial:
 
-GenPipes User Manual
-====================
+GenPipes Tutorial 
+==================
+
 GenPipes bioinformatics pipelines developed at the Canadian Centre for Computational Genomics (C3G), as part of the
 GenAP project, are available for public use. They include a wide array of pipelines, including RNA-Seq, ChIP-Seq, WGS,
 exome sequencing, Bisulfite sequencing, Hi-C, capture Hi-C, Metagenomics and long read PacBio assembly. This document
 explains how to use the pipelines using Hi-C analysis pipeline and the ChIP-Seq pipeline, as examples.
 
-Getting Started:
-================
+Setting up the environment
+--------------------------
 
 Abacus, Compute Canada users
-----------------------------
+''''''''''''''''''''''''''''
 
 software and scripts used by GenPipes are already installed on several Compute Canada servers including Guillimin, Mammouth,
 Cedar and Graham, and will soon be installed on Beluga. To access the tools, you will need to add the tool path to your
