@@ -105,12 +105,12 @@ Versions Available: 1.63.0
 
 Bowtie
 ``````
-An ultrafast, memory-efficient short read aligner.
+An ultra fast, memory-efficient short read aligner.
 Versions Available: 1.0.0, 1.1.2, 1.2.0
 
 Bowtie2
 ```````
-Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences.
+Bowtie 2 is an ultra fast and memory-efficient tool for aligning sequencing reads to long reference sequences.
 Versions Available: 2.2.3, 2.2.4, 2.2.9
 
 BbreakDancer
@@ -120,7 +120,7 @@ Versions Available: 1.1_2011_02_21
 
 butter
 ``````
-A wrapper for bowtie to produce small RNA-seq alignments where multimapped small RNAs tend to be placed near regions of confidently high density.
+A wrapper for Bowtie to produce small RNA-seq alignments where multi-mapped small RNAs tend to be placed near regions of confidently high density.
 Versions Available: 0.3.3
 
 bvatools
@@ -155,7 +155,7 @@ Versions Available: 2.2.1
 
 duk
 ```
-Duk is a fast, accurate,and memory efficent DNA sequence matching tool. It finds whether a query sequence partially or totally matches given reference sequences or not, but it does not give how a query matches a reference sequence. The common application is to group sequencing reads into small manageable chunks for downstream analysis in assessing quality of a sequencing run, which includes contaminant removal (with contaminant sequences known), organelle genome separation, and assembly refinement.
+Duk is a fast, accurate,and memory efficient DNA sequence matching tool. It finds whether a query sequence partially or totally matches given reference sequences or not, but it does not give how a query matches a reference sequence. The common application is to group sequencing reads into small manageable chunks for downstream analysis in assessing quality of a sequencing run, which includes contaminant removal (with contaminant sequences known), organelle genome separation, and assembly refinement.
 Versions Available: 1.1
 
 ea-utils
@@ -195,7 +195,7 @@ Versions Available: 0.0.14
 
 FLASH
 `````
-FLASH (Fast Length Adjustment of SHort reads) is a very fast and accurate software tool to merge paired-end reads from next-generation sequencing experiments. FLASH is designed to merge pairs of reads when the original DNA fragments are shorter than twice the length of reads. The resulting longer reads can significantly improve genome assemblies.
+FLASH (Fast Length Adjustment of Short reads) is a very fast and accurate software tool to merge paired-end reads from next-generation sequencing experiments. FLASH is designed to merge pairs of reads when the original DNA fragments are shorter than twice the length of reads. The resulting longer reads can significantly improve genome assemblies.
 Versions Available: 1.2.8, 1.2.11
 
 gcc
@@ -250,7 +250,7 @@ Versions Available: 2.3.23
 
 igvtools
 ````````
-The igvtools utility provides a set of tools for pre-processing data files. File names must contain an accepted file extension, e.g. test-xyz.bam.
+The igvtools utility provides a set of tools for preprocessing data files. File names must contain an accepted file extension, e.g. test-xyz.bam.
 Versions Available: 2.3.14, 2.3.67
 
 Java
@@ -270,7 +270,7 @@ Versions Available: 302.1.0
 
 KmerGenie
 `````````
-KmerGenie estimates the best k-mer length for genome de novo assembly.
+KmerGenie estimates the best k-mer length for genome de Novo assembly.
 Versions Available: 1.5692
 
 KronaTools
@@ -300,7 +300,7 @@ Versions Available: 2.1.0.20140616, 2.1.0.20151222, 2.1.1.20160309
 
 miRDeep2
 ````````
-miRDeep2 is a completely overhauled tool which discovers microRNA genes by analyzing sequenced RNAs. The tool reports known and hundreds of novel microRNAs with high accuracy in seven species representing the major animal clades. The low consumption of time and memory combined with user-friendly interactive graphic output makes miRDeep2 accessible for straightforward application in current reasearch.
+miRDeep2 is a completely overhauled tool which discovers microRNA genes by analyzing sequenced RNAs. The tool reports known and hundreds of novel microRNAs with high accuracy in seven species representing the major animal clades. The low consumption of time and memory combined with user-friendly interactive graphic output makes miRDeep2 accessible for straightforward application in current research.
 Versions Available: 0.0.8
 
 mpich
@@ -320,7 +320,7 @@ Versions Available: 1.0.1, 1.0.2, 1.0.3, 1.0.4
 
 mugqic_tools
 ````````````
-Perl, python, R, awk and sh scripts use in several bioinfomatics pipelines of the MUGQIC PIPELINE.
+Perl, python, R, awk and sh scripts use in several bioinformatics pipelines of the MUGQIC PIPELINE.
 Versions Available: 2.0.2, 2.0.3, 2.1.0, 2.1.1, 2.1.3, 2.1.4, 2.1.5, 2.1.6, 2.1.7
 
 MUMmer
@@ -340,7 +340,7 @@ Versions Available: 1.1.6
 
 NextClip
 ````````
-Tool for analysing reads from LMP libraries, generating a comprehensive quality report and extracting good quality trimmed and deduplicated reads
+Tool for analyzing reads from LMP libraries, generating a comprehensive quality report and extracting good quality trimmed and deduplicated reads
 Versions Available: b833dd9
 
 OpenBLAS
@@ -380,12 +380,12 @@ Versions Available: 2.3
 
 PRINSEQ-lite
 ````````````
-Used to filter, reformat, or trim your genomic and metagenomic sequence data
+Used to filter, reformat, or trim your Genomic and Metagenomic sequence data
 Versions Available: 0.20.3, 0.20.4
 
 Prodigal
 ````````
-Prodigal (Prokaryotic Dynamic Programming Genefinding Algorithm) is a microbial (bacterial and archaeal) gene finding program developed at Oak Ridge National Laboratory and the University of Tennessee.
+Prodigal (Prokaryotic Dynamic Programming Gene finding Algorithm) is a microbial (bacterial and archaeal) gene finding program developed at Oak Ridge National Laboratory and the University of Tennessee.
 Versions Available: 2.6.3
 
 Python
@@ -480,7 +480,7 @@ Versions Available: 2.4.0f1, 2.5.0c, 2.5.1b, 2.5.2a, 2.5.2b
 
 Supernova
 `````````
-Supernova is a software package for de novo assembly from Chromium Linked-Reads that are made from a single whole-genome library from an individual DNA source.
+Supernova is a software package for de Novo assembly from Chromium Linked-Reads that are made from a single whole-genome library from an individual DNA source.
 Versions Available: 1.1.4
 
 Tabix
@@ -495,7 +495,7 @@ Versions Available: 2.0c
 
 tools
 `````
-Perl, Python, R, awk and sh scripts use in several bioinfomatics pipelines of the MUGQIC PIPELINES repo.
+Perl, Python, R, awk and sh scripts use in several bioinformatics pipelines of the MUGQIC PIPELINES repo.
 Versions Available: 1.10.4
 
 TopHat
@@ -505,12 +505,12 @@ Versions Available: 2.0.13, 2.0.14
 
 TransDecoder
 ````````````
-TransDecoder identifies candidate coding regions within transcript sequences, such as those generated by de novo RNA-Seq transcript assembly using Trinity, or constructed based on RNA-Seq alignments to the genome using Tophat and Cufflinks
+TransDecoder identifies candidate coding regions within transcript sequences, such as those generated by de Novo RNA-Seq transcript assembly using Trinity, or constructed based on RNA-Seq alignments to the genome using Tophat and Cufflinks
 Versions Available: 2.0.1
 
 Trimmomatic
 ```````````
-Trimmomatic performs a variety of useful trimming tasks for illumina paired-end and single ended data.The selection of trimming steps and their associated parameters are supplied on the command line.
+Trimmomatic performs a variety of useful trimming tasks for Illumina paired-end and single ended data.The selection of trimming steps and their associated parameters are supplied on the command line.
 Versions Available: 0.32, 0.35, 0.36
 
 Trinity
@@ -520,7 +520,7 @@ Versions Available: 20140413p1, 2.0.4, 2.1.1, 2.2.0
 
 Tinotate
 ````````
-A comprehensive annotation suite for functional annotation of transcriptomes, particularly de novo assembled transcriptomes, from model or non-model organisms. Trinotate makes use of a number of different well referenced methods for functional annotation including homology search to known sequence data (BLAST+/SwissProt), protein domain identification (HMMER/PFAM), protein signal peptide and transmembrane domain prediction (signalP/tmHMM), and leveraging various annotation databases (eggNOG/GO/Kegg databases).
+A comprehensive annotation suite for functional annotation of transcriptomes, particularly de Novo assembled transcriptomes, from model or non-model organisms. Trinotate makes use of a number of different well referenced methods for functional annotation including homology search to known sequence data (BLAST+/SwissProt), protein domain identification (HMMER/PFAM), protein signal peptide and transmembrane domain prediction (signalP/tmHMM), and leveraging various annotation databases (eggNOG/GO/Kegg databases).
 Versions Available: 20131110, 2.0.1, 2.0.2
 
 UCSC tools
@@ -555,7 +555,7 @@ Versions Available: 2.3.0
 
 VSEARCH
 ```````
-VSEARCH supports de novo and reference based chimera detection, clustering, full-length and prefix dereplication, reverse complementation, masking, all-vs-all pairwise global alignment, exact and global alignment searching, shuffling, subsampling and sorting. It also supports FASTQ file analysis, filtering and conversion.
+VSEARCH supports de Novo and reference based chimera detection, clustering, full-length and prefix dereplication, reverse complementation, masking, all-vs-all pairwise global alignment, exact and global alignment searching, shuffling, subsampling and sorting. It also supports FASTQ file analysis, filtering and conversion.
 Versions Available: 1.11.1
 
 vt
@@ -570,5 +570,5 @@ Versions Available: 2.8.2, 3.3
 
 Celera Assembler
 ````````````````
-A de novo whole-genome shotgun (WGS) DNA sequence assembler. It reconstructs long sequences of genomic DNA from fragmentary data produced by whole-genome shotgun sequencing
+A de Novo whole-genome shotgun (WGS) DNA sequence assembler. It reconstructs long sequences of genomic DNA from fragmentary data produced by whole-genome shotgun sequencing
 Versions Available: 8.1, 8.2, 0.0, 0.2

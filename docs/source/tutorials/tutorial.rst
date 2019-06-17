@@ -4,7 +4,7 @@ GenPipes User Manual
 ====================
 GenPipes bioinformatics pipelines developed at the Canadian Centre for Computational Genomics (C3G), as part of the
 GenAP project, are available for public use. They include a wide array of pipelines, including RNA-Seq, ChIP-Seq, WGS,
-exome sequencing, Bisulfite sequencing, Hi-C, capture Hi-C, metagenomcis and long read PacBio assembly. This document
+exome sequencing, Bisulfite sequencing, Hi-C, capture Hi-C, Metagenomics and long read PacBio assembly. This document
 explains how to use the pipelines using Hi-C analysis pipeline and the ChIP-Seq pipeline, as examples.
 
 Getting Started:
@@ -68,7 +68,7 @@ For a full list of available modules, you can visit our :doc:`module page <cvmfs
 
 To load a tool, for example samtools, you can use:
 
-.. code-block::
+.. code-block:: bash
 
     # module add mugqic/<tool>/<version>
     module add mugqic/samtools/1.4.1
@@ -78,13 +78,13 @@ To load a tool, for example samtools, you can use:
 You also have access to pre-installed genomes available in: **$MUGQIC_INSTALL_HOME/genomes/species/**
 To check all the available species, type:
 
-.. code-block::
+.. code-block:: bash
 
     ls $MUGQIC_INSTALL_HOME/genomes/species
 
 All genome-related files, including indices for different aligners and annotation files can be found in:
 
-.. code-block::
+.. code-block:: bash
 
     $MUGQIC_INSTALL_HOME/genomes/species/<species_scientific_name>.<assembly>/
     ## so for Homo Sapiens hg19 assembly, that would be:
@@ -96,9 +96,9 @@ Usage:
 ------
 Now that your variables are set, you can launch any pipeline using:
 **<pipeline_name>.py**
-To check the help information for our hicseq (Hi-C analysis) and our chipseq piplines, try:
+To check the help information for our hicseq (Hi-C analysis) and our chipseq pipelines, try:
 
-.. code-block::
+.. code-block:: bash
 
     hicseq.py -h
     chipseq.py -h
@@ -118,7 +118,7 @@ GenPipes pipelines are multi-step pipelines that run several tools, each with it
     An ini file is a file that contains parameters needed to run a pipeline.
     Our genome alignment pipeline contains over 20 steps, each involving over 5
     parameters per step. Imagine having to type all 100 parameters to run a pipeline!
-    For simplicity, all the parameters are stored in an “ini” file (extention .ini)
+    For simplicity, all the parameters are stored in an “ini” file (extension .ini)
     that accompanies the pipeline.
     Try opening an ini file in a text editor and look at its content!
 
@@ -127,27 +127,27 @@ Each pipeline has several configuration/ini files in:
 **$MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name>.*.ini**
 For hicseq, that would be:
 
-.. code-block::
+.. code-block:: bash
 
     ls $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.*.ini
 
 
 For chipseq, that would be:
 
-.. code-block::
+.. code-block:: bash
 
     ls $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.*.ini
 
 You will find a **<pipeline_name>.base.ini** as well as an ini file for particular servers like Guillimin (<pipeline_name>.guillimin.ini). The base.ini file has all the parameters needed by the pipeline but is optimized for usage on our own server, Abacus. To use the pipeline on Guillimin, you will need to use both base.ini and guillimin.ini, as such:
 
-.. code-block::
+.. code-block:: bash
 
     hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimin.ini …
 
 To change different parameters in the ini files, you can create your own ini file and overwrite the required parameters. For example, to change the number of threads for trimmomatic and hicup, I can create my own ini file: hicseq.test.ini
 and in it I can include the parameters to be changed:
 
-.. code-block::
+.. code-block:: bash
 
     [trimmomatic]
 
@@ -159,7 +159,7 @@ and in it I can include the parameters to be changed:
 
 then add my ini file after the other ini files:
 
-.. code-block::
+.. code-block:: bash
 
     hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimin.ini hicseq.test.ini...
 
@@ -169,7 +169,7 @@ The genome default for our pipelines is human. To use other species, you can eit
 
 To run the hicseq pipeline on mouse mm9, for example, you can do the following:
 
-.. code-block::
+.. code-block:: bash
 
     hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimin.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/Mus_musculus.mm9.ini ...
 
@@ -197,7 +197,7 @@ The readset file is a **tab-separated** file that contains the following informa
 
 Example:
 
-.. code-block::
+.. code-block:: bash
 
     Sample Readset Library RunType Run Lane Adapter1 Adapter2 QualityOffset BED FASTQ1 FASTQ2 BAM
     sampleA readset1 lib0001 PAIRED_END run100 1 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 33 path/to/file.bed path/to/readset1.paired1.fastq.gz path/to/readset1.paired2.fastq.gz path/to/readset1.bam
@@ -247,7 +247,7 @@ Certain pipelines where samples are compared against other samples, like chipseq
 Running GenPipes on Cedar or Graham:
 ------------------------------------
 
-Guillimin, unlike Cedar, Graham and now Mammouth (mp2b), use the PBS scheduler. To use GenPipes on Guillimin, don’t forget to add the **“-j pbs”** option (default is -j slurm).
+Guillimin, unlike Cedar, Graham and now Mammouth (mp2b), use the PBS scheduler. To use GenPipes on Guillimin, don’t forget to add the **“-j pbs”** option (default is -j Slurm).
 
 See example below for more details.
 
@@ -257,14 +257,14 @@ Example run:
 hicseq Test Dataset:
 ````````````````````
 
-Let’s now run the pipeline using a test dataset. We will use the first 2 million reads from HIC010 from Rao et al. 2014 (SRR1658581.sra). This is an in-situ Hi-C experiment of GM12878 using MboI restriction enzyme.
+Let’s now run the pipeline using a test dataset. We will use the first 2 million reads from HIC010 from Rao et al. 2014 (SRR1658581.sra). This is an in situ Hi-C experiment of GM12878 using MboI restriction enzyme.
 
 We will start by downloading the dataset from `HERE <http://www.computationalgenomics.ca/tutorial/hicseq.zip>`__.
 In the downloaded zip file, you will find the two fastq read files in folder “rawData” and will find the readset file (readsets.HiC010.tsv) that describes that dataset.
 
 We will run this analysis on guillimin as follows:
 
-.. code-block::
+.. code-block:: bash
 
     hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimin.ini -r readsets.HiC010.tsv -s 1-15 -e MboI > hicseqScript_SRR1658581.txt
 
@@ -277,14 +277,14 @@ The pipelines do not run the commands directly; they output them as text command
 
 This command works for servers using a SLURM scheduler like Cedar, Mammouth or Graham. For the PBS scheduler, used by Guillimin, you need to add the “-j pbs” option, as follows:
 
-.. code-block::
+.. code-block:: bash
 
     hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimn.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -j pbs > hicseqScript_SRR1658581.txt
 
 
 To run it, use:
 
-.. code-block::
+.. code-block:: bash
 
     bash hicseqScript_SRR1658581.txt
 
@@ -292,20 +292,20 @@ To run it, use:
 You will not see anything happen, but the commands will be sent to the server job queue. **So do not run this more than once per job.**
 To confirm that the commands have been submitted, wait a minute or two depending on the server and type:
 
-.. code-block::
+.. code-block:: bash
 
     showq -u <userID>
 
 In case you ran it several times and launched too many commands you do not want, you can use the following line of code to cancel ALL commands:
 
-.. code-block::
+.. code-block:: bash
 
     showq -u <userID> | tr "|" " "| awk '{print $1}' | xargs -n1 canceljob
 
 Congratulations! you just ran the hicseq pipeline.
 After the processing is complete, you can access quality control plots in the homer_tag_directory/HomerQcPlots. You can find the compartment data in the compartments folder, TADs in the TADs folder and significant interactions in the peaks folder.
 
-For more information about ouput formats please consult the webpage of the third party tool used.
+For more information about output formats please consult the webpage of the third party tool used.
 
 .. note::
 
@@ -329,7 +329,7 @@ The Design File is a **tab-separated** plain text file with one line per sample 
 
 Example:
 
-.. code-block::
+.. code-block:: bash
 
     Sample Contrast_AB Contrast_AC
     sampleA 1 1
@@ -350,30 +350,50 @@ chipseq Test Dataset:
 We will use a subset of the ENCODE data. Specifically, the reads that map to chr22 of the following samples `ENCFF361CSC <https://www.encodeproject.org/experiments/ENCSR828XQV/>`__ and `ENCFF837BCE <https://www.encodeproject.org/experiments/ENCSR236YGF/>`_. They represent a ChIP-Seq analysis dataset with the CTCF transcription factor and its control input.
 
 We will start by downloading the dataset from `HERE <http://www.computationalgenomics.ca/tutorial/chipseq.zip>`_
-In the downloaded zip file, you will find the two fastq read files in folder rawData and will find the readset file (readsets.chipseqTest.chr22.tsv) that describes that dataset. You will also find the design file (designfile_chipseq.chr22.txt) that contains the contrast of interest.
 
-Looking at the content of the Readset file (readsets.chipseqTest.tsv), we see:
+In the downloaded zip file, you will find the two fastq read files in folder rawData and will find the readset file (readsets.chipseqTest.chr22.tsv) that describes that dataset. You will also find the design file 
 
-.. code-block::
+::
+   
+	designfile_chipseq.chr22.txt
 
-    Sample Readset Library RunType Run Lane Adapter1 Adapter2 QualityOffset BED FASTQ1 FASTQ2 BAM
-    ENCFF361CSC_ctrl ENCFF361CSC_chr22 SINGLE_END 2965 1 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 33 rawData/ENCFF361CSC.chr22.fastq
-    ENCFF837BCE_ctcf ENCFF837BCE_chr22 SINGLE_END 2962 1 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 33 rawData/ENCFF837BCE.chr22.fastq
+that contains the contrast of interest.
+
+Looking at the content of the Readset file 
+
+::
+
+	readsets.chipseqTest.tsv
+
+we see:
+
+::
+
+	Sample Readset Library RunType Run Lane Adapter1 Adapter2 QualityOffset BED FASTQ1 FASTQ2 BAM
+	ENCFF361CSC_ctrl ENCFF361CSC_chr22 SINGLE_END 2965 1 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 33 rawData/ENCFF361CSC.chr22.fastq
+	ENCFF837BCE_ctcf ENCFF837BCE_chr22 SINGLE_END 2962 1 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 33 rawData/ENCFF837BCE.chr22.fastq
 
 This analysis contains 2 samples with a single readset each. They are both SINGLE_END runs and have a single fastq file in the “rawData” folder.
 
-Looking at the content of the Design file (designfile_chipseq.txt), we see:
+Looking at the content of the Design file
 
-.. code-block::
+::
 
-    Sample CTCF_Input,N
-    ENCFF361CSC_ctrl 1
-    ENCFF837BCE_ctcf 2
+	designfile_chipseq.txt)
+
+we see:
+
+::
+
+	Sample CTCF_Input,N
+	ENCFF361CSC_ctrl 1
+	ENCFF837BCE_ctcf 2
 
 We see a single analysis CTCF_Input run as Narrow peaks (coded by “N”; you can use “B” for broad peak analysis). This analysis compares CTCF peaks in ENCFF837BCE_ctcf to its input control peaks identified from ENCFF361CSC_ctrl.
 
 We will run this analysis on guillimin as follows:
 
+.. code-block:: bash
 
     chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.guillimin.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
     bash chipseqScript.txt

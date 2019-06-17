@@ -7,14 +7,14 @@ C3G, in partnership with Compute Canada, maintains several genomes that are avai
 
 To access these genomes, you need to add the following lines to your .bashrc file.
 
-.. code-block::
+.. code-block:: bash
 
     ## GenPipes/MUGQIC genomes and modules
     export MUGQIC_INSTALL_HOME=/cvmfs/soft.mugqic/CentOS6
 
 To explore the available genomes, you can type:
 
-.. code-block::
+.. code-block:: bash
 
     ls $MUGQIC_INSTALL_HOME/genomes/species/
 

@@ -27,7 +27,7 @@ Once this command is done running, a configuration script is started to install 
 
 Run one of the GenPipes test sets on GCP:
 -----------------------------------------
-In the Google shell run the following command to log into the login node of the slurm cluster:
+In the Google shell run the following command to log into the login node of the Slurm cluster:
 
 .. code-block:: bash
 
@@ -93,7 +93,7 @@ Let’s use ChIPSeq as an example:
     bash chipseqScript.sh
 
 **6- Look at your pipeline progression: .**
-Use squeue command. Your GenPipes analysis is `being run on slurm <https://slurm.schedmd.com/>`_
+Use squeue command. Your GenPipes analysis is `being run on Slurm <https://slurm.schedmd.com/>`_
 
 **7- Shut down your Genpipes Cloud installation (and stop being billed): .**
 After the jobs have run, you can exit the login node:
