@@ -6,3 +6,14 @@ GenPipes Tutorials
 This document contains information related to GenPipes tutorials.  It will also link information that is needed to access GenPipes deployment, how to run the tutorials and how to see, visualize the results.
 
 For example, here is some sample `tutorial <http://www.computationalgenomics.ca/tutorials/>`_ content.
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Tutorials
+   :name: tutorial-learn
+
+   ../tutorials/genpipes_in_the_cloud
+   ../tutorials/tutorial
+   ../tutorials/cvmfs_modules
+   ../tutorials/cvmfs_genomes
+
