@@ -7,7 +7,7 @@ GenPipes is an open source, flexible, scalable Python-based framework that facil
 the development and deployment of multi-step computational workflows. These workflows
 are optimized for High-Performance Computing (HPC) clusters and the cloud.
 
-GenPipes offers 12 validated and scalable pipelines for the following genomics applications:
+GenPipes offers validated and scalable pipelines for the following genomics applications:
 
 * ChIP-Seq
 * De-Novo RNA Sequencing
