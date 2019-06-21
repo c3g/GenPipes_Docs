@@ -10,7 +10,7 @@ prerequisites
 bioinformatics
 bioinformatic
 onboarding
-Novo
+novo
 Metagenomic
 Metagenomics
 Slurm
@@ -121,6 +121,7 @@ bgz
 tbi
 csi
 Transmembrane
+Transcriptonomics
 repo
 exons
 Tophat
@@ -130,6 +131,8 @@ tmHMM
 eggNOG
 Kegg
 exome
+sequencing
+Sequencing
 resequencing
 PGM
 Germline
@@ -206,4 +209,4 @@ subsampling
 qualimap
 qiime
 SINGLE_END
-
+Bisulphate

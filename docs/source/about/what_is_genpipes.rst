@@ -17,7 +17,7 @@ GenPipes offers 12 validated and scalable pipelines for the following genomics a
 * Illumina raw data processing
 * Metagenomics
 * PacBio De novo Assembly
-* RNA Sequencinq / Unmapped RNA Quality Control
+* RNA Sequencing / Unmapped RNA Quality Control
 * Transcriptonomics Assembly
 * Tumour Analysis
 * Whole Exome Sequencing (WES)
