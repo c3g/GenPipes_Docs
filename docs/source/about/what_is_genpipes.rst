@@ -9,15 +9,20 @@ are optimized for High-Performance Computing (HPC) clusters and the cloud.
 
 GenPipes offers 12 validated and scalable pipelines for the following genomics applications:
 
-* DNA-Seq
-* DNAseq_high_coverage
-* RNA-Seq
-* De-Novo RNASeq
 * ChIP-Seq
+* De-Novo RNA Sequencing
+* Deep Whole Genome Sequencing
+* Exome Sequencing
+* Hi-C / Capture Hi-Ca
+* Illumina raw data processing
+* Metagenomics
+* PacBio De novo Assembly
+* RNA Sequencinq / Unmapped RNA Quality Control
+* Transcriptonomics Assembly
 * Tumour Analysis
-* Hi-C
-* Metagenomic
-* PacBio assembly
+* Whole Exome Sequencing (WES)
+* Whole Genome Bisulphate Sequencing (WGBS)/ Reduced Representation Bisulphate Sequencing (RRBS)
+* Whole Genome Sequencing (WGS)
 
 GenPipes Features
 -----------------

@@ -45,7 +45,7 @@ The installation is still running and you where welcome by the following message
     complete.
 
 Wait for the terminal broadcast this can take up to 10 minutes. Once you have received it or one you log to this node
-without seeing the warning, you can go to the next step. You can run the GenPipes :doc:`tutorial <tutorial>` from
+without seeing the warning, you can go to the next step. You can run the GenPipes :ref:`tutorial <doc_genpipes_tutorial>` from
 that location.
 
 Let’s use ChIPSeq as an example:

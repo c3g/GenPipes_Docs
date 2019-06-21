@@ -1,4 +1,4 @@
-.. _cvmfs_modules:
+.. _doc_cvmfs_modules:
 
 GenPipes Bioinformatics Modules
 ===============================

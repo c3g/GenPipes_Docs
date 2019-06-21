@@ -1,4 +1,4 @@
-.. _tutorial:
+.. _doc_genpipes_tutorial:
 
 GenPipes Tutorial 
 ==================
@@ -65,7 +65,7 @@ By adding those lines to your bash profile, you are now ready to use our pipelin
 
     module avail mugqic/
 
-For a full list of available modules, you can visit our :doc:`module page <cvmfs_modules>`.
+For a full list of available modules, you can visit our :ref:`module page <doc_cvmfs_modules>`.
 
 To load a tool, for example samtools, you can use:
 
@@ -91,7 +91,7 @@ All genome-related files, including indices for different aligners and annotatio
     ## so for Homo Sapiens hg19 assembly, that would be:
     ls $MUGQIC_INSTALL_HOME/genomes/species/Homo_sapiens.hg19/
 
-For a list of available genomes, you can visit our :doc:`genome page <cvmfs_genomes>`.
+For a list of available genomes, you can visit our :ref:`genome page <doc_cvmfs_genomes>`.
 
 Usage:
 ------
@@ -256,7 +256,7 @@ Example run:
 ------------
 
 hicseq Test Dataset:
-````````````````````
+''''''''''''''''''''
 
 Let’s now run the pipeline using a test dataset. We will use the first 2 million reads from HIC010 from Rao et al. 2014 (SRR1658581.sra). This is an in situ Hi-C experiment of GM12878 using MboI restriction enzyme.
 

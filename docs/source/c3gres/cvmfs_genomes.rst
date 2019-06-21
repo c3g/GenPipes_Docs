@@ -1,4 +1,4 @@
-.. _cvmfs_genomes:
+.. _doc_cvmfs_genomes:
 
 GenPipes Genome resources
 =========================
