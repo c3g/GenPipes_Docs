@@ -9,6 +9,7 @@ About
 
    what_is_genpipes
    target_audience
+   evolution
    license
    faq 
    docs_changelog
