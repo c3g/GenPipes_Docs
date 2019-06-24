@@ -3,11 +3,15 @@
 What is GenPipes?
 =================
 
+.. image:: /img/genpipes_hld.png
+
+GenPipes is a workflow management system (WMS) that facilitates building robust genomic workflows. It is a unique solution that combines both a framework for development and end-to-end analysis pipelines, covering a large scope of genomic applications and research domains. It offers researchers a simple method to analyze different types of data, customizable to their needs and resources. In addition, it provides flexibility to create customized workflows besides the ones that are already implemented and validated by GenPipes.
+
 GenPipes is an open source, flexible, scalable Python-based framework that facilitates
 the development and deployment of multi-step computational workflows. These workflows
 are optimized for High-Performance Computing (HPC) clusters and the cloud.
 
-GenPipes offers validated and scalable pipelines for the following genomics applications:
+Following genomics application pipelines are already implemented and validated through GenPipes:
 
 * ChIP-Seq
 * De-Novo RNA Sequencing
@@ -23,6 +27,8 @@ GenPipes offers validated and scalable pipelines for the following genomics appl
 * Whole Exome Sequencing (WES)
 * Whole Genome Bisulphate Sequencing (WGBS)/ Reduced Representation Bisulphate Sequencing (RRBS)
 * Whole Genome Sequencing (WGS)
+
+GenPipes software is available under a GPLv3 open source license and is continuously updated to follow recent advances in genomics and bioinformatics. The framework can be accessed through multiple deployment mechanisms. It has already been configured on several servers at C3G HPC computing facility. Its also supports Cloud deployment through GCP. Besides this,  a Docker image is also available to facilitate additional installations on local / individual machines for small dataset analysis.
 
 GenPipes Features
 -----------------

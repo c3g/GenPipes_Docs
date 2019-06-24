@@ -65,7 +65,7 @@ if on_rtd:
 else:
     html_theme = 'sphinx_rtd_theme'
 
-html_logo = 'img/genpipes-doc-img.png'
+html_logo = 'img/genpipes_doc_img.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
