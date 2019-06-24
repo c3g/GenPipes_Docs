@@ -3,8 +3,31 @@
 GenPipes Support
 ================
 
-GenPipes is released as open source software and comes with no commercial support (? Or does it, please check with Rola /GSoD mentors and update accordingly here).
+GenPipes is released as open source software. For details about its license policy, see :ref:`GenPipes License <doc_license>`. The GenPipes developers offer continuous support through `GenPipes Google Forum`_. You can drop an email to the `GenPipes Help Desk`_ for any support issues. 
 
-We currently provide community support through our `GitHub project page <https://bitbucket.org/mugqic/genpipes/src/master/>`_. If you encounter an issue or have a question, feel free to reach out via GitHub issues for Mangle
+GenPipes is sponsored by `Canadian Centre for Computational Genomics`_ (C3G). Besides the Google Forum and Help Desk, you can attend `C3G Open Door`_ Sessions. This facility is available only to local (McGill University, Montréal) bioinformaticians, students and researchers. You need to fill a form and RSVP in order to attend a session. For details visit `C3G Open Door`_ link.
 
-For more general user questions, send us an email.
+.. _reporting_bugs:
+
+Reporting GenPipes Bug
+----------------------
+
+If you are facing any issues in using or deploying GenPipes, you can report bugs through `GenPipes Support Email`_.
+
+.. note::
+
+   * Messages should not be sent directly to our team members. The generic e-mail addresses above are viewable by all of us and facilitate the follow-up of your request.
+
+   * Choose a meaningful subject for your message.
+
+   * Include the pipeline version number in your message (and the commit number if applicable).
+
+   * Provide the following information relevant to the problem encountered: the python command, the bash submission script, the output (job_outputs//.o) file,
+
+   * An error message or code snippet illustrating your request is normally very useful.
+
+.. _GenPipes Google Forum: https://groups.google.com/forum/#!forum/GenPipes
+.. _GenPipes Help Desk: pipelines@computationalgenomics.ca 
+.. _Canadian Centre for Computational Genomics: http://www.computationalgenomics.ca
+.. _C3G Open Door: http://www.computationalgenomics.ca/open-door/
+.. _GenPipes Support Email: pipelines@computationalgenomics.ca
