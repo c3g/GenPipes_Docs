@@ -29,7 +29,7 @@ The main documentation for the site is organized into the following sections:
    :name: sec-general
 
    about/index
-
+   faq/gp_faq
 
 .. toctree::
    :maxdepth: 1
@@ -40,7 +40,7 @@ The main documentation for the site is organized into the following sections:
    get-started/genpipes_doc_archmap
    get-started/how_to_deploy_genpipes
    get-started/user_guide
-   get-started/tutorials
+   tutorials/list_tutorials
 
 
 .. toctree::
@@ -75,7 +75,6 @@ The main documentation for the site is organized into the following sections:
    :name: sec-resources
 
    resources/compute_resources
-   resources/list_tutorials
    resources/publications
 
 .. Indices and tables
