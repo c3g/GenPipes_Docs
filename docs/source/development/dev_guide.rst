@@ -1,7 +1,7 @@
 .. _docs_dev_guide:
 
-GenPipes Developer Guide
-========================
+Developer Guide
+================
 
 This guide will provide information to various resources meant for GenPipes developers. This may include the following and more beyond the standard readme file in GitHub repository.
 

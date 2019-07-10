@@ -37,7 +37,6 @@ The main documentation for the site is organized into the following sections:
    :name: sec-learn
 
    get-started/index
-   get-started/genpipes_doc_archmap
    get-started/how_to_deploy_genpipes
    get-started/user_guide
    tutorials/list_tutorials
@@ -48,8 +47,8 @@ The main documentation for the site is organized into the following sections:
    :caption: Development
    :name: sec-devel
 
-   development/dev_guide
    development/release_notes
+   development/dev_guide
    development/troubleshooting_guide
 
 
@@ -59,7 +58,6 @@ The main documentation for the site is organized into the following sections:
    :name: sec-support
 
    support/how_to_get_support
-   support/sponsors
 
 .. toctree::
    :maxdepth: 1
@@ -76,6 +74,14 @@ The main documentation for the site is organized into the following sections:
 
    resources/compute_resources
    resources/publications
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Documentation
+   :name: sec-documentation
+
+   documentation/genpipes_doc_archmap
+   documentation/docs_changelog
 
 .. Indices and tables
 .. ------------------

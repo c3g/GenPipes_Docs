@@ -9,10 +9,6 @@ About
 
    what_is_genpipes
    target_audience
-   evolution
+   sponsors
+   history
    license
-   docs_changelog
-
-.. history
-.. authors
-.. license

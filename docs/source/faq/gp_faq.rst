@@ -1,7 +1,7 @@
 .. _docs_faq:
 
-GenPipes FAQ
-============
+Frequently asked questions
+==========================
 
 This document will contain frequently asked queries categorized as follows:
 
