@@ -68,7 +68,6 @@ The main documentation for the site is organized into the following sections:
 
    community/contributing
    community/channels
-   community/open_door
 
 .. toctree::
    :maxdepth: 1
