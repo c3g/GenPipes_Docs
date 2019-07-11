@@ -1,7 +1,7 @@
 .. _doc_evolution:
 
-GenPipes Evolution
-===================
+History
+========
 
 GenPipes project evolved from the McGill University and Génome Québec Innovation Centre (MUGQIC) genomic analysis project called MUGQIC Pipelines. The centre focuses on genomics applied to populations and its impact on chronic diseases, aging, cancer and genomic responses to environment.
 
