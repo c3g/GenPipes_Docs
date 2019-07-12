@@ -49,16 +49,3 @@ GenPipes Features
 
 * Customizable Workflows
   - GenPipes limits wastage of expensive HPC resources and time as it allows customizable steps in different pipelines enabling users to plug and play with customized pipeline steps. 
-
-About the documentation
------------------------
-
-This documentation is continuously written, corrected, edited, and revamped by
-members of the GenPipes community. It is edited via text files in the
-`reStructuredText <http://www.sphinx-doc.org/en/stable/rest.html>`_ markup
-language and then compiled into a static website/offline document using the
-open source `Sphinx <http://www.sphinx-doc.org>`_ and `ReadTheDocs
-<https://readthedocs.org/>`_ tools.
-
-.. note:: You can contribute to Godot's documentation by
-          GENPIPES_DOCS_TBD - We need to describe the GenPipes documentation contribution policy here.

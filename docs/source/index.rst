@@ -80,6 +80,7 @@ The main documentation for the site is organized into the following sections:
    :caption: Documentation
    :name: sec-documentation
 
+   documentation/about
    documentation/genpipes_doc_archmap
    documentation/docs_changelog
 

@@ -3,12 +3,12 @@
 Documentation Changelog
 =======================
 
-GenPipes documentation is continually being improved. The release of version  x.y.z 
+GenPipes documentation is continually being improved. 
+The current release corresponds to GenPipes version x.y.z
 
+This is the first draft of GenPipes RTD documentation.
 
-GENPIPES_DOC_TBD
-
-Documentation Changes
----------------------
-
-- :ref:`GenPipes New Documentation Architecture Map<docs_genpipes_archmap>`
+What's new?
+-----------
+* New improved documentation framework at RTD to address both new and existing GenPipes users.
+* Newer infographics oriented as opposed to text only information. Use of rich media in the future to make it more interesting and helpful for new users to find GenPipes information and learn about GenPipes and its usage.
