@@ -12,7 +12,7 @@ You can learn more about GenPipes, target audience, sponsors, how the project ha
    :maxdepth: 1
    :name: toc-about
 
-   what_is_genpipes
+   why_genpipes
    target_audience
    sponsors
    history

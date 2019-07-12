@@ -1,8 +1,8 @@
 .. _docs_getting_started_index:
 
 
-Welcome to GenPipes
-====================
+Introducing GenPipes
+=====================
 
 Welcome to the GenPipes getting started guide!
 
@@ -12,7 +12,7 @@ This guide shows you how to get started with running genomic analysis pipelines 
    :maxdepth: 1
    :name: toc-about
 
-   gp_intro  
+   what_is_genpipes  
    access_gp
    using_gp
    gp_job_results
