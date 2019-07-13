@@ -11,6 +11,7 @@ This document will contain various ways by which GenPipes can be accessed and in
    :maxdepth: 1
    :name: toc-about
 
+   dep_options
    access_gp_pre_installed
    dep_gp_container
    dep_gp_cloud_gcp
