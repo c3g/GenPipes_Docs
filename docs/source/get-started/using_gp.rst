@@ -20,6 +20,8 @@ GenPipes framework can be used to perform various genomic analysis corresponding
 Running GenPipes
 -----------------
 
+Before running GenPipes, you may want to visit the :ref:`checklist of pre-requisites for GenPipes<docs_pre_req_chklist>`.
+
 Here is how you can launch GenPipes. Following is the generic command to run GenPipes:
 
 .. code-block:: bash
