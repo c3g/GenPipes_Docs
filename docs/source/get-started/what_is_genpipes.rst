@@ -65,5 +65,15 @@ Scheduler
 
 Each Job object is submitted to the GenPipes workflow management system using a specific “Scheduler” object. The Scheduler object creates execution commands that are compatible with the user's computing system. Four different Scheduler objects have already been implemented (PBS, SLURM, Batch, and Daemon).
 
-How does GenPipes work?
------------------------
+How GenPipes works?
+--------------------
+
+GenPipes is a Python based object-oriented framework that is available to users as a command line tool. Figure below shows the general workflow of GenPipes. 
+
+.. image:: /img/gp_working.png
+
+When the GenPipes command is launched, required modules and files will be searched for and validated. If all required modules and files are found, the analysis commands will be produced. GenPipes will create a directed acyclic graph that defines job dependency based on input and output of each step.
+
+Once launched, the jobs are sent to the scheduler and queued. As jobs complete successfully, their dependent jobs are released by the scheduler to run. If a job fails, all its dependent jobs are terminated and an email notification is sent to the user. When GenPipes is re-run, it will detect which steps have successfully completed, as described in section “Smart relaunch features,” and skip them but will create the command script for the jobs that were not completed successfully. To force the entire command generation, despite successful completion, the “-f” option should be added.  
+
+For details on GenPipes usage and various bioinformatics pipelines see :ref:`GenPipes User Guide<docs_user_guide>`.
