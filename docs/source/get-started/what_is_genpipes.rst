@@ -65,6 +65,11 @@ Scheduler
 
 Each Job object is submitted to the GenPipes workflow management system using a specific “Scheduler” object. The Scheduler object creates execution commands that are compatible with the user's computing system. Four different Scheduler objects have already been implemented (PBS, SLURM, Batch, and Daemon).
 
+* PBS scheduler creates a batch script that is compatible with a `PBS (TORQUE) system`_.
+* SLURM scheduler creates a batch script that is compatible with a `SLURM system`_.
+* Batch scheduler creates a batch script that contains all the instructions to run all the jobs one after the other.
+* Daemon scheduler creates a log of the pipeline command in a `JSON`_ file.
+
 How GenPipes works?
 --------------------
 
@@ -77,3 +82,7 @@ When the GenPipes command is launched, required modules and files will be search
 Once launched, the jobs are sent to the scheduler and queued. As jobs complete successfully, their dependent jobs are released by the scheduler to run. If a job fails, all its dependent jobs are terminated and an email notification is sent to the user. When GenPipes is re-run, it will detect which steps have successfully completed, as described in section “Smart relaunch features,” and skip them but will create the command script for the jobs that were not completed successfully. To force the entire command generation, despite successful completion, the “-f” option should be added.  
 
 For details on GenPipes usage and various bioinformatics pipelines see :ref:`GenPipes User Guide<docs_user_guide>`.
+
+.. _PBS (TORQUE) system: https://github.com/adaptivecomputing/torque 
+.. _SLURM system: https://slurm.schedmd.com/documentation.html
+.. _JSON: https://www.json.org 
