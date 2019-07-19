@@ -74,6 +74,7 @@ The main documentation for the site is organized into the following sections:
 
    resources/compute_resources
    resources/publications
+   resources/workshops
 
 .. toctree::
    :maxdepth: 1
