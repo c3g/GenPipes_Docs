@@ -40,7 +40,7 @@ The installation is still running and you where welcome by the following message
 
 .. note::
 
-    *** Slurm is currently being installed/configured in the background. ***
+    ** Slurm is currently being installed/configured in the background. **
     A terminal broadcast will announce when installation and configuration is
     complete.
 
