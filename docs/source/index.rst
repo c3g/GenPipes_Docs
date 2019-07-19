@@ -37,8 +37,8 @@ The main documentation for the site is organized into the following sections:
    :name: sec-learn
 
    get-started/index
-   get-started/deploy/how_to_deploy_genpipes
-   get-started/user_guide
+   deploy/how_to_deploy_genpipes
+   user_guide/user_guide
    tutorials/list_tutorials
 
 

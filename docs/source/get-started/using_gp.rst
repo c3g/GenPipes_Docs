@@ -3,27 +3,30 @@
 .. spelling::
 
    userID
+   txt
    
 Using GenPipes for genomic analysis
 ====================================
 
-.. note::
+This document describes the GenPipes execution environment and how to use various genomic analysis pipelines. Topics covered include information regarding what is available in a typical GenPipes deployment and how to access it. Besides that it covers details on required software and environment configurations, various kinds of inputs required to run genomic analysis such as command options, configuration details, readset file and design file. There are example runs highlighting how to issue the pipeline commands with requisite inputs and pipeline specific configurations.
 
-	* What is available in a typical deployment and how to access it
-	* Required Software & Environment configurations
-	* Inputs
-	  - Generic stuff for running any supported pipeline
-	  - Deployment Specific Configurations
-	  - Design File
-	* Pipeline specific Configurations
-	* Example – Running HicSeq pipeline (or any other common one)
+.. contents:: :local:
 
-GenPipes framework can be used to perform various genomic analysis corresponding to the available pipelines.  GenPipes is a command line tool. The underlying object-oriented framework is developed in Python. It simplifies the development of new features and its adaptation to new systems; new workflows can be created by implementing a Pipeline object that inherits features and steps from other existing Pipeline objects. Similarly, deploying GenPipes on a new system may only require the development of the corresponding Scheduler object along with specific :ref:`configuration files<docs_config_ini_file>`. GenPipes’ command execution details have been implemented using a shared library system, which allows the modification of tasks by simply adjusting input parameters. This simplifies code maintenance and makes changes in software versions consistent across all pipelines.
+
+GenPipes Executable
+--------------------
+GenPipes framework can be used to perform various genomic analysis corresponding to the available pipelines.  GenPipes is a command line tool. The underlying object-oriented framework is developed in Python. It simplifies the development of new features and its adaptation to new systems; new workflows can be created by implementing a Pipeline object that inherits features and steps from other existing Pipeline objects. 
+
+Similarly, deploying GenPipes on a new system may only require the development of the corresponding Scheduler object along with specific :ref:`configuration files<docs_config_ini_file>`. GenPipes’ command execution details have been implemented using a shared library system, which allows the modification of tasks by simply adjusting input parameters. This simplifies code maintenance and makes changes in software versions consistent across all pipelines.
 
 Running GenPipes
 -----------------
 
+**Pre-Requisites**
+
 Before running GenPipes, you may want to visit the :ref:`checklist of pre-requisites for GenPipes<docs_pre_req_chklist>`.
+
+**Usage**
 
 Here is how you can launch GenPipes. Following is the generic command to run GenPipes:
 
@@ -130,4 +133,55 @@ For more information about output formats please consult the webpage of the thir
 
   hicseq -h
 
-To see examples of running other pipelines and also for figuring out how to run pipelines locally or in the cloud on your own GenPipes deployment, refer to :ref:`GenPipes Tutorials<doc_list_tutorials>`.
+Example Run with Design File
+----------------------------
+
+Certain pipelines that involve comparing and contrasting samples, need a :ref:`Design File<docs_design_file>`. The design file can contain more than one way to contrast and compare samples.  To see how this works with GenPipes pipelines, lets run a ChIP-Sequencing experiment.
+
+**ChIP-Sequencing Test Dataset**
+
+We will use a subset of the ENCODE data. Specifically, the reads that map to chr22 of the following samples `ENCFF361CSC <https://www.encodeproject.org/experiments/ENCSR828XQV/>`_ and `ENCFF837BCE <https://www.encodeproject.org/experiments/ENCSR236YGF/>`_. They represent a ChIP-Seq analysis dataset with the CTCF transcription factor and its control input.
+
+First, you need to download the test dataset from `here <http://www.computationalgenomics.ca/tutorial/chipseq.zip>`_.
+
+In the downloaded zip file, you will find the two fastq read files in folder rawData and will find the readset file (readsets.chipseqTest.chr22.tsv) that describes that dataset. You will also find the design file (designfile_chipseq.chr22.txt) that contains the contrast of interest.
+
+Following is the content of the Readset file (readsets.chipseqTest.tsv):
+
+::
+
+  Sample Readset Library RunType Run Lane Adapter1 Adapter2 QualityOffset BED FASTQ1 FASTQ2 BAM
+  ENCFF361CSC_ctrl ENCFF361CSC_chr22 SINGLE_END 2965 1 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 33 rawData/ENCFF361CSC.chr22.fastq
+  ENCFF837BCE_ctcf ENCFF837BCE_chr22 SINGLE_END 2962 1 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 33 rawData/ENCFF837BCE.chr22.fastq
+
+This analysis contains 2 samples with a single readset each. They are both SINGLE_END runs and have a single fastq file in the “rawData” folder.
+
+Following is the content of the Design file (designfile_chipseq.txt):
+
+::
+
+  Sample CTCF_Input,N
+  ENCFF361CSC_ctrl 1
+  ENCFF837BCE_ctcf 2
+
+We see a single analysis CTCF_Input run as Narrow peaks (coded by “N”; you can use “B” for broad peak analysis). This analysis compares CTCF peaks in ENCFF837BCE_ctcf to its input control peaks identified from ENCFF361CSC_ctrl.
+
+Let us now run this ChIP-Sequencing analysis on *guillimin* server at Compute Canada using the following command:
+
+::
+
+  chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.guillimin.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
+  bash chipseqScript.txt
+
+The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get **MUGQICexitStatus:0** or **Exit_status=0.** If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the **job_output** folder.
+
+Further Information
+-------------------
+
+GenPipes pipelines are built around third party tools that the community uses in particular fields. To understand the output of each pipeline, please read the documentation pertaining to the tools that produced the output. 
+
+You can see all :ref:`available GenPipes pipelines<docs_available_pipelines>` for a complete listing of all supported pipelines. To see examples of running other pipelines and also for figuring out how to run pipelines locally or in the cloud on your own GenPipes deployment, refer to :ref:`GenPipes Tutorials<doc_list_tutorials>`.
+
+For further information or help with particular pipelines, you can send us an email to:
+
+info@computationalgenomics.ca
