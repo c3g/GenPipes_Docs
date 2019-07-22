@@ -9,8 +9,11 @@ This document contains GenPipes training resources from recent workshops. Canadi
 
    .. tab:: 2019
 
-      1. `RNA Sequencing Analysis Workshop Slides <http://www.computationalgenomics.ca/tutorial/c3g_analysis_workshop/C3GAW_RNASeq_Aug2018.zip>`_, `RNA Testdata <http://www.computationalgenomics.ca/tutorial/c3g_analysis_workshop/C3GAW_RNA_TestData_Aug2018.zip>`_.
+      1. `RNA Sequencing Analysis Workshop Slides <http://www.computationalgenomics.ca/tutorial/c3g_analysis_workshop/C3GAW_RNASeq_Aug2018.zip>`_
+      2. `RNA Testdata <http://www.computationalgenomics.ca/tutorial/c3g_analysis_workshop/C3GAW_RNA_TestData_Aug2018.zip>`_.
 
    .. tab:: 2018
 
-      1. `Computational Epigenetics Workshop - Slides <http://www.computationalgenomics.ca/tutorial/epigenetics_workshop/epi_workshop.pptx>`_, `ChipSeq Download <http://www.computationalgenomics.ca/tutorial/epigenetics_workshop/chipSeq.zip>`_, `WGBS Download <http://www.computationalgenomics.ca/tutorial/epigenetics_workshop/wgbs.zip>`_.
+      1. `Computational Epigenetics Workshop - Slides <http://www.computationalgenomics.ca/tutorial/epigenetics_workshop/epi_workshop.pptx>`_
+      2. `ChipSeq Download <http://www.computationalgenomics.ca/tutorial/epigenetics_workshop/chipSeq.zip>`_
+      3. `WGBS Download <http://www.computationalgenomics.ca/tutorial/epigenetics_workshop/wgbs.zip>`_.

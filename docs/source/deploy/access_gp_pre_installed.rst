@@ -72,6 +72,8 @@ Step 3: Setting up your user environment for GenPipes access
 
 All of the software and scripts used by GenPipes are already installed on several Compute Canada servers including Guillimin, Mammouth, Cedar and Graham, and will soon be installed on Beluga. To access the tools, you will need to add the tool path to your bash_profile. The bash profile is a hidden file in your home directory that sets up your environment every time you log in. You can also use your bashrc file.
 
+Genomes and modules used by the pipelines are already installed on a CVMFS partition mounted on all those clusters in /cvmfs/soft.mugqic/CentOS6
+
 .. note::
 
         For more information on the differences between the .bash_profile and the .bashrc profile, consult `this page <http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html>`_.
@@ -81,12 +83,18 @@ All of the software and scripts used by GenPipes are already installed on severa
    ## open bash_profile
    nano $HOME/.bash_profile
 
+.. note::
+
+   GenPipes have been tested with Python 2.7
+
 Next, you need to load the `software modules <https://docs.python.org/3/tutorial/modules.html>`_ in your shell environment that are required to run GenPipes. For a full list of modules available on Compute Canada servers see the `module page <http://www.computationalgenomics.ca/cvmfs-modules/>`_
 
 To load the GenPipes modules, paste the following lines of code and save the file, then exit (Ctrl-X):
 
 :: 
 
+   umask 0002
+   
    ## GenPipes/MUGQIC genomes and modules
    export MUGQIC_INSTALL_HOME=/cvmfs/soft.mugqic/CentOS6
    module use $MUGQIC_INSTALL_HOME/modulefiles
@@ -101,7 +109,54 @@ You will need to replace the text in "<>" with your account and GenPipes softwar
 
 **RAP_ID** is the Resource Allocation Project ID from Compute Canada. It is usually in the format: rrg-lab-xy OR def-lab
 
-**How to check the version of GenPipes deployed on Compute Canada servers**
+**Environment settings for MUGQIC analysts**
+
+For MUGQIC analysts, add the following lines to your $HOME/.bash_profile:
+
+::
+
+  umask 0002
+  
+  ## MUGQIC genomes and modules for MUGQIC analysts
+  
+  HOST=`hostname`;
+  
+  DNSDOMAIN=`dnsdomainname`;
+  
+  export MUGQIC_INSTALL_HOME=/cvmfs/soft.mugqic/CentOS6
+  
+  if [[ $HOST == abacus* || $DNSDOMAIN == ferrier.genome.mcgill.ca ]]; then
+  
+    export MUGQIC_INSTALL_HOME_DEV=/lb/project/mugqic/analyste_dev
+  
+  elif [[ $HOST == ip* || $DNSDOMAIN == m  ]]; then
+  
+    export MUGQIC_INSTALL_HOME_DEV=/project/6007512/C3G/analyste_dev
+  
+  elif [[ $HOST == cedar* || $DNSDOMAIN == cedar.computecanada.ca ]]; then
+  
+    export MUGQIC_INSTALL_HOME_DEV=/project/6007512/C3G/analyste_dev
+  
+  
+  elif [[ $HOST == beluga* || $DNSDOMAIN == beluga.computecanada.ca ]]; then
+  
+    export MUGQIC_INSTALL_HOME_DEV=/project/6007512/C3G/analyste_dev
+  
+  fi
+
+  module use $MUGQIC_INSTALL_HOME/modulefiles $MUGQIC_INSTALL_HOME_DEV/modulefiles
+  module load mugqic/python/2.7.14
+  module load mugqic/genpipes/<latest_version>
+
+  export RAP_ID=<my-rap-id>
+
+Also, set JOB_MAIL in your $HOME/.bash_profile to receive PBS job logs:
+
+::
+
+  export JOB_MAIL=<my.name@my.email.ca>
+
+**How to check the version of GenPipes deployed**
 
 To find out the latest GenPipes version available, once you have connected to your CC account, use the following command:
 

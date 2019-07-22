@@ -13,5 +13,6 @@ This document will contain various ways by which GenPipes can be accessed and in
 
    dep_options
    access_gp_pre_installed
+   dep_gp_local
    dep_gp_container
    dep_gp_cloud_gcp
