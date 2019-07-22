@@ -3,7 +3,7 @@
 How to deploy GenPipes?
 =======================
 
-This document lists various ways by which GenPipes can be accessed and installed by users. Check out various :ref:`available deployment options<docs_dep_options>`, if you wish to install and setup GenPipes on your infrastructure.  If you wish to use pre-installed GenPipes deployed on Compute Canada infrastucture, refer to :ref:`Accessing GenPipes on Compute Canada servers<docs_access_gp_pre_installed>`. 
+This document lists various ways by which GenPipes can be accessed and installed by users. Check out various :ref:`available deployment options<docs_dep_options>`, if you wish to install and setup GenPipes on your infrastructure.  If you wish to use pre-installed GenPipes deployed on Compute Canada infrastructure, refer to :ref:`Accessing GenPipes on Compute Canada servers<docs_access_gp_pre_installed>`. 
 
 .. toctree::
    :maxdepth: 1
