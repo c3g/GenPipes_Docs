@@ -17,7 +17,7 @@ Checklist of Pre-requisites for Running GenPipes
 
 * Check that GenPipes is deployed
 
-  - For Compute Cananda datacentre users:
+  - For Compute Canada data centre users:
 
 ::
  

@@ -3,9 +3,7 @@
 How to deploy GenPipes?
 =======================
 
-GENPIPES_DOCS_TBD
-
-This document will contain various ways by which GenPipes can be accessed and installed by users.  This will typical list various means of deployment (C3G, cloud, docker, local copy for development purposes) and the steps involved.  Some of the steps are common for all and others may vary.  For each, we need to provide the specifics and then link the common steps via a single document (same content) for different means of deployment.
+This document lists various ways by which GenPipes can be accessed and installed by users.  This will typical list various means of deployment (C3G, cloud, docker, local copy for development purposes) and the steps involved.  Some of the steps are common for all and others may vary.  For each, we need to provide the specifics and then link the common steps via a single document (same content) for different means of deployment.
 
 .. toctree::
    :maxdepth: 1

@@ -8,6 +8,8 @@
          01
          puTTY
          Ctrl
+         cvmfs
+         CentOS
 
 Accessing GenPipes on Compute Canada Servers
 ============================================

@@ -10,7 +10,9 @@
 Deploying GenPipes locally in your server 
 ==========================================
 
-This document covers details on how to deploy GenPipes locally on a bare metal or virtual server. If you For more details on other available options to deploy and access GenPipes you may refer to :ref:`GenPipes Deployment Options Page<docs_dep_options>`.
+This document covers details on how to deploy GenPipes locally on a bare metal or virtual server. If you wish to install GenPipes locally in a container, please refer to :ref:`GenPipes in a container<docs_dep_gp_container>` section of deployment guide.
+
+For more details on other available options to deploy and access GenPipes you may refer to :ref:`GenPipes Deployment Options Page<docs_dep_options>`.
 
 Step 1: Download latest GenPipes sources
 ----------------------------------------
@@ -266,6 +268,11 @@ Running pipelines requires other inputs such as :ref:`Configuration File<docs_co
 .. note::
 
     In case of any issues, you can try GenPipes :ref:`Support<docs_how_to_get_support>` or check out other :ref:`communication channels<docs_channels>` to view latest discussions around using GenPipes by the community.
+
+.. note::
+
+   You may also want to check the latest GenPipes deployment and setup instructions listed in `GenPipes README.md file <https://bitbucket.org/mugqic/genpipes/src/master/README.md>`_.
+
 .. _Ensemble Genomes: http://ensemblgenomes.org
 .. _UCSC: http://genome.ucsc.edu/
 
