@@ -15,4 +15,4 @@ This guide shows you how to get started with running genomic analysis pipelines 
    what_is_genpipes  
    using_gp
    gp_job_results
-   troubleshooting_gp
+   troubleshooting_rt_issues

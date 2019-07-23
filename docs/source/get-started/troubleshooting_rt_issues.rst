@@ -1,4 +1,4 @@
-.. _docs_troubleshooting_gp:
+.. _docs_troubleshooting_rt_issues:
 
 .. spelling::
 
@@ -6,23 +6,11 @@
     slurm
     moab
 
-Troubleshooting GenPipes
-=========================
-This document lists some commonly faced issues related to GenPipes deployment and usage.
+Troubleshooting Runtime issues 
+===============================
+This document lists some commonly faced issues related to GenPipes deployment and usage.  These could be related to GenPipes deployment, software dependencies, environment setup or usage options.
 
-.. note::
-	* Deployment issues
-
-          - Container (local deployment)
-	  - Cloud deployment
-	  - Accessing C3G pre-installed GenPipes
-
-	* Usage issues
-
-	  - Input parameters
-	  - Design file
-	  - Pre-requisites not taken care of – SW/ Input / File format
-	  - Scheduler related usage issues
+The objective here is to list some commonly encountered issues and their fixes so that new users can benefit and focus more on using GenPipes.  These are mostly run-time issues that a new user may face. If you are looking at troubleshooting GenPipes as part of feature development or contributing to GenPipes code, please refer to the :ref:'Development` section of this documentation and refer to :ref:`Developer Guide<docs_dev_guide>` and :ref:`Troubleshooting Guide<docs_troubleshooting_guide>`.
 
 **Contents**
 
@@ -64,4 +52,20 @@ To be updated once there is more data available regarding error text
 Error: Other commonly faced errors for new users
 ------------------------------------------------
 
-TBD
+Other issues need to be listed here along with their workaround and fix (if any). The following note is a placeholder to identify GenPipes troubleshooting issues related to the topics listed below:
+
+.. note:: 
+
+	* Deployment issues
+
+          - Container (local deployment)
+	  - Cloud deployment
+	  - Accessing C3G pre-installed GenPipes
+
+	* Usage issues
+
+	  - Input parameters
+	  - Design file
+	  - Pre-requisites not taken care of – SW/ Input / File format
+	  - Scheduler related usage issues
+
