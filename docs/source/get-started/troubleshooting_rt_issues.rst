@@ -5,8 +5,9 @@
     qsub
     slurm
     moab
+    Runtime
 
-Troubleshooting Runtime issues 
+Troubleshooting Runtime Issues 
 ===============================
 This document lists some commonly faced issues related to GenPipes deployment and usage.  These could be related to GenPipes deployment, software dependencies, environment setup or usage options.
 
