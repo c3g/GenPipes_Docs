@@ -40,6 +40,8 @@ The capture Hi-C pipeline, selected using the "-t capture" parameter, starts by 
 
 An example of the Hi-C report for an analysis on public data (GM12878 Rao. et al.) is available for illustration purpose only: `Hi-C report`_.
 
+----
+
 Version
 -------
 ::
@@ -47,6 +49,8 @@ Version
   3.1.4
 
 For the latest implementation and usage details refer to Hi-C Sequencing implementation `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/hicseq/README.md>`_ file.
+
+----
 
 Usage
 -----
@@ -117,7 +121,8 @@ You can download `Hi-C test dataset <http://www.computationalgenomics.ca/tutoria
      hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimn.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -j pbs > hicseqScript_SRR1658581.txt
 
      bash hicseqScript_SRR1658581.txt
- 
+
+---- 
 
 Pipeline Schema
 ---------------
@@ -137,185 +142,52 @@ The following figure shows the pipeline schema for capture Hi-C protocol. See la
 
    Figure: Schema of Hi-C capture protocol
 
+----
+
 Steps
 -----
 
 The table below shows various steps that constitute the Hi-C and Hi-C capture genomic analysis pipelines.
 
-+--------------------------------+-------------------------------------+
-|  *Hi-C sequencing Steps*       |   *Hi-C Capture sequencing Steps*   |
-+================================+=====================================+
-| |samtools_bam_sort|            | |samtools_bam_sort|                 |
-+--------------------------------+-------------------------------------+
-| |picard_sam_to_fastq|          | |picard_sam_to_fastq|               |
-+--------------------------------+-------------------------------------+
-| |trimmomatic|                  | |trimmomatic|                       |
-+--------------------------------+-------------------------------------+
-| |merge_trimmomatic_stats|      | |merge_trimmomatic_stats|           |
-+--------------------------------+-------------------------------------+
-| |fastq_readName_Edit|          | |fastq_readName_Edit|               |
-+--------------------------------+-------------------------------------+
-| |hicup_align|                  | |hicup_align|                       |
-+--------------------------------+-------------------------------------+
-| |samtools_merge_bams|          | |samtools_merge_bams|               |
-+--------------------------------+-------------------------------------+
-| |homer_tag_directory|          | |create_rmap_file|                  |
-+--------------------------------+-------------------------------------+
-| |interaction_matrices_Chr|     | |create_baitmap_file|               |
-+--------------------------------+-------------------------------------+
-| |interaction_matrices_genome|  | |create_design_files|               |
-+--------------------------------+-------------------------------------+
-| |identify_compartments|        | |create_input_files|                |
-+--------------------------------+-------------------------------------+
-| |identify_TADs_TopDom|         | |runChicago|                        |
-+--------------------------------+-------------------------------------+
-| |identify_TADs_RobusTAD|       | |runChicago_featureOverlap|         |
-+--------------------------------+-------------------------------------+
-| |identify_peaks|               | |bait_intersect|                    |
-+--------------------------------+-------------------------------------+
-| |create_hic_file|              | |capture_intersect|                 |
-+--------------------------------+-------------------------------------+
-| |multiqc_report|               | |create_hic_file|                   |
-|                                +-------------------------------------+
-|                                | |multiqc_report|                    |
-+--------------------------------+-------------------------------------+
++----+--------------------------------+-------------------------------------+
+|    |  *Hi-C sequencing Steps*       |   *Hi-C Capture sequencing Steps*   |
++====+================================+=====================================+
+| 1. | |samtools_bam_sort|            | |samtools_bam_sort|                 |
++----+--------------------------------+-------------------------------------+
+| 2. | |picard_sam_to_fastq|          | |picard_sam_to_fastq|               |
++----+--------------------------------+-------------------------------------+
+| 3. | |trimmomatic|                  | |trimmomatic|                       |
++----+--------------------------------+-------------------------------------+
+| 4. | |merge_trimmomatic_stats|      | |merge_trimmomatic_stats|           |
++----+--------------------------------+-------------------------------------+
+| 5. | |fastq_readName_Edit|          | |fastq_readName_Edit|               |
++----+--------------------------------+-------------------------------------+
+| 6. | |hicup_align|                  | |hicup_align|                       |
++----+--------------------------------+-------------------------------------+
+| 7. | |samtools_merge_bams|          | |samtools_merge_bams|               |
++----+--------------------------------+-------------------------------------+
+| 8. | |homer_tag_directory|          | |create_rmap_file|                  |
++----+--------------------------------+-------------------------------------+
+| 9. | |interaction_matrices_Chr|     | |create_baitmap_file|               |
++----+--------------------------------+-------------------------------------+
+| 10.| |interaction_matrices_genome|  | |create_design_files|               |
++----+--------------------------------+-------------------------------------+
+| 11.| |identify_compartments|        | |create_input_files|                |
++----+--------------------------------+-------------------------------------+
+| 12.| |identify_TADs_TopDom|         | |runChicago|                        |
++----+--------------------------------+-------------------------------------+
+| 13.| |identify_TADs_RobusTAD|       | |runChicago_featureOverlap|         |
++----+--------------------------------+-------------------------------------+
+| 14.| |identify_peaks|               | |bait_intersect|                    |
++----+--------------------------------+-------------------------------------+
+| 15.| |create_hic_file|              | |capture_intersect|                 |
++----+--------------------------------+-------------------------------------+
+| 16.| |multiqc_report|               | |create_hic_file|                   |
++----+--------------------------------+-------------------------------------+
+| 17.|                                | |multiqc_report|                    |
++----+--------------------------------+-------------------------------------+
 
-.. _Samtools Bam Sort:
-
-**Samtools Bam Sort**
-
-Sorts bam by readname prior to picard_sam_to_fastq step in order to minimize memory consumption.  If bam file is small and the memory requirements are reasonable, this step can be skipped.
-
-.. _Picard Sam to Fastq:
-
-**Picard Sam to Fastq**
-
-If FASTQ files are not already specified in the Readset file, then this step converts SAM/BAM files from the input Readset into FASTQ format. Otherwise, it does nothing.
-
-.. _Trimmomatic:
-
-**Trimmomatic**
-
-Raw reads quality trimming and removing of Illumina adapters is performed using `Trimmomatic Process <http://www.usadellab.org/cms/index.php?page=trimmomatic>`_.  If an adapter FASTA file is specified in the config file (section 'trimmomatic', param 'adapter_fasta'), it is used first. Else, 'Adapter1' and 'Adapter2' columns from the readset file are used to create an adapter FASTA file, given then to Trimmomatic. For PAIRED_END readsets, readset adapters are reversed-complemented and swapped, to match Trimmomatic Palindrome strategy. For SINGLE_END readsets, only Adapter1 is used and left unchanged.  This step takes as input files: 
-
-* FASTQ files from the readset file if available
-
-* Else, FASTQ output files from previous picard_sam_to_fastq conversion of BAM files
-
-.. _Merge Trimmomatic Stats:
-
-**Merge Trimmomatic Stats** 
-
-The trim statistics per Readset file are merged at this step.
-
-.. _Fastq ReadName Edit:
-
-**Fastq ReadName Edit**
-
-Removes the added /1 and /2 by picard's sam_to_fastq transformation to avoid issues with downstream software like HOMER
-
-.. _Hicup Align:
-
-**Hicup Align** 
-
-Paired-end Hi-C reads are truncated, mapped and filtered using HiCUP. The resulting bam file is filtered for Hi-C artifacts and duplicated reads. It is ready for use as input for downstream analysis.  For more detailed information about the HICUP process visit `HiCUP Project Page <https://www.bioinformatics.babraham.ac.uk/projects/hicup/overview/>`_.
-
-.. _Samtools Merge Bams:
-
-**Samtools Merge Bams**
-
-BAM readset files are merged into one file per sample. Merge is done using `samtools <http://samtools.sourceforge.net/>`_.
-This step takes as input files the aligned bams/sams from the hicup_align step.
-
-.. _Homer Tag Directory:
-
-**Homer Tag Directory** 
-
-The bam file produced by HiCUP is used to create a tag directory using HOMER for further analysis that includes interaction matrix generation, compartments and identifying significant interactions. For more details, visit `Homer Page <http://homer.ucsd.edu/homer/interactions/index.html>`_.
-
-.. _Interaction Matrices Chr:
-
-**Interaction Matrices Chr** 
-
-IntraChromosomal interaction matrices called `Homer Matrices <http://homer.ucsd.edu/homer/interactions/HiCmatrices.html>`_ are produced by Homer at resolutions defined in the ini config file and plotted by HiCPlotter. For details visit `HiCPlotter Page <https://github.com/kcakdemir/HiCPlotter>`_.
-
-.. _Interaction Matrices Genome:
-
-**Interaction Matrices Genome** 
-
-Genomewide interaction matrices are produced by Homer at resolutions defined in the ini config file. See `Homer Matrices <http://homer.ucsd.edu/homer/interactions/HiCmatrices.html>`_ for details.
-
-.. _Identify Compartments:
-
-**Identify Compartments**
-
-Genomic compartments are identified using Homer at resolutions defined in the ini config file. For details, see `Homer Compartments <http://homer.ucsd.edu/homer/interactions/HiCpca.html>`_.
-
-.. _Identify TADs TopDom:
-
-**Identify TADs TopDom** 
-
-Topological associating Domains (TADs) are identified using TopDom at resolutions defined in the ini config file. For details, see `TopDom <https://www.ncbi.nlm.nih.gov/pubmed/26704975>`_.
-
-.. _Identify TADs RobusTAD:
-
-**Identify TADs RobusTAD**
-TBD
-
-.. _Identify Peaks:
-
-**Identify Peaks** 
-TBD
-
-.. _Create Rmap File:
-
-**Create Rmap File** 
-TBD
-
-.. _Create Baitmap File:
-
-**Create Baitmap File** 
-TBD
-
-.. _Create Design Files:
-
-**Create Design Files**
-TBD
-
-.. _Create Input Files:
-
-**Create Input Files** 
-TBD
-
-.. _Run Chicago:
-
-**Run Chicago** 
-TBD
-
-.. _RunChicago FeatureOverlap:
-
-**RunChicago FeatureOverlap** 
-TBD
-
-.. _Bait Intersect:
-
-**Bait Intersect**
-TBD
-
-.. _Capture Intersect:
-
-**Capture Intersect** 
-TBD
-
-.. _Create Hic File:
-
-**Create Hic File** 
-TBD
-
-.. _Multiqc Report:
-
-**Multiqc Report** 
-TBD
+----
 
 More information
 -----------------
@@ -324,6 +196,10 @@ For the latest implementation and usage details refer to Hi-C Sequencing impleme
 * Comprehensive Mapping of Long-Range Interactions Reveals Folding Principles of the Human Genome - `Paper introducing Hi-C <https://pdfs.semanticscholar.org/ca99/4823723e34e8b2c7c44848ad85ae2c7cf0be.pdf>`_.
 
 * A high-resolution map of the three-dimensional chromatin interactome in human cells - `Defining target gene using Hi-C <A high-resolution map of the three-dimensional chromatin interactome in human cells>`_. 
+
+----
+
+.. include:: steps_hicseq.inc
 
 .. _HiCUP: https://www.ncbi.nlm.nih.gov/pubmed/26835000
 .. _TopDom: https://www.ncbi.nlm.nih.gov/pubmed/26704975
