@@ -16,6 +16,19 @@
    featureOverlap
    readname
    interactome
+   config
+   Rmap
+   NPerBin
+   nbaitsperbin
+   npb
+   nbpb
+   poe
+   chinput
+   WashU
+   intra
+   sams
+   proxOE
+   param
 
 HiC Sequencing Pipeline
 =======================
@@ -111,8 +124,11 @@ Usage
   
     -v,
     --version                                show the version information and exit
-  
-**Example Run**
+ 
+----
+ 
+Example Run
+-----------
 
 You can download `Hi-C test dataset <http://www.computationalgenomics.ca/tutorial/hicseq.zip>`_ and run the following commands:
 
@@ -196,8 +212,6 @@ For the latest implementation and usage details refer to Hi-C Sequencing impleme
 * Comprehensive Mapping of Long-Range Interactions Reveals Folding Principles of the Human Genome - `Paper introducing Hi-C <https://pdfs.semanticscholar.org/ca99/4823723e34e8b2c7c44848ad85ae2c7cf0be.pdf>`_.
 
 * A high-resolution map of the three-dimensional chromatin interactome in human cells - `Defining target gene using Hi-C <A high-resolution map of the three-dimensional chromatin interactome in human cells>`_. 
-
-----
 
 .. include:: steps_hicseq.inc
 

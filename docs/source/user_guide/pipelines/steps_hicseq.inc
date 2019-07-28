@@ -62,7 +62,7 @@ In this step, IntraChromosomal interaction matrices are produced by Homer at res
 
 **Interaction Matrices Genome** 
 
-Genomewide interaction matrices are produced by Homer at resolutions defined in the ini config file. See `Homer Matrices <http://homer.ucsd.edu/homer/interactions/HiCmatrices.html>`_ for details.
+Genome-wide interaction matrices are produced by Homer at resolutions defined in the ini config file. See `Homer Matrices <http://homer.ucsd.edu/homer/interactions/HiCmatrices.html>`_ for details.
 
 .. _Identify Compartments:
 
@@ -80,13 +80,13 @@ Topological associating Domains (TADs) are identified using TopDom at resolution
 
 **Identify TADs RobusTAD**
 
-In this step, topological associating Domain (TAD) scores are calculated using RobusTAD for every bin in the genome.  RobusTAD is resolution-independant and will use the first resolution in "resolution_TADs" under [identify_TADs] in the ini file.  For details, see `latest README.md for RobusTAD <https://github.com/rdali/RobusTAD>`_.
+In this step, topological associating Domain (TAD) scores are calculated using RobusTAD for every bin in the genome.  RobusTAD is resolution-independent and will use the first resolution in "resolution_TADs" under [identify_TADs] in the ini file.  For details, see `latest README.md for RobusTAD <https://github.com/rdali/RobusTAD>`_.
 
 .. _Identify Peaks:
 
 **Identify Peaks** 
 
-This step users `Homer Peaks <http://homer.ucsd.edu/homer/interactions/HiCinteractions.html>`_ to identify significant intraChromosomal interactions or **peaks**.
+This step users `Homer Peaks <http://homer.ucsd.edu/homer/interactions/HiCinteractions.html>`_ to identify significant intra-Chromosomal interactions or **peaks**.
 
 .. _Create Rmap File:
 
@@ -104,7 +104,7 @@ Here, the baitmap file for Chicago capture analysis is created using the created
 
 **Create Design Files**
 
-In this step, the design files (nperbin file (.npb), nbaitsperbin file (.nbpb), proxOE file (.poe)) for Chicago capture analysis are created using the rmap file and the baitmap file.
+In this step, the design files (`NPerBin file`_ (.npb), nbaitsperbin file (.nbpb), `Proximal Other End`_ (proxOE) file (.poe)) for Chicago capture analysis are created using the rmap file and the baitmap file.
 
 .. _Create Input Files:
 
@@ -128,19 +128,19 @@ This step runs the feature enrichment of Chicago significant interactions. See `
 
 **Bait Intersect**
 
-With a bed file as input, for example a bed of GWAS snps or features of interest, this method returns the lines in the bed file that intersect with the baits that have significant interactions. Input bed must have 4 columns (<chr> <start> <end> <annotation>) and must be tab separated.
+With a bed file as input, for example a bed of `GWAS`_ SNPs or features of interest, this method returns the lines in the bed file that intersect with the baits that have significant interactions. Input bed must have 4 columns (<chr> <start> <end> <annotation>) and must be tab separated.
 
 .. _Capture Intersect:
 
 **Capture Intersect** 
 
-With bed file as input, for example a bed of GWAS snps or features of interest, this method returns the lines in the bed file that intersect with the captured ends ("Other Ends") that have significant interactions.  Input bed must have 4 columns (<chr> <start> <end> <annotation>) and must be tab separated.
+With bed file as input, for example a bed of GWAS SNPs or features of interest, this method returns the lines in the bed file that intersect with the captured ends ("Other Ends") that have significant interactions.  Input bed must have 4 columns (<chr> <start> <end> <annotation>) and must be tab separated.
 
 .. _Create Hic File:
 
 **Create Hic File** 
 
-A .hic file is created per sample in order to visualize in JuiceBox, WashU epigenome browser or as input for other tools.
+A .hic file is created per sample in order to visualize in JuiceBox, WashU `epigenome`_ browser or as input for other tools.
 For more detailed information see `JuiceBox documentation <http://www.aidenlab.org/software.html>`_.
 
 .. _Multiqc Report:
@@ -151,3 +151,8 @@ A quality control report for all samples is generated.
 For more detailed information see `MultiQC documentation <http://multiqc.info/>`_.
 
 .. _Chicago documentation: https://bioconductor.org/packages/release/bioc/vignettes/Chicago/inst/doc/Chicago.html
+.. _NPerBin file: http://regulatorygenomicsgroup.org/resources/Chicago_vignette.html
+.. _Proximal Other End: https://buildmedia.readthedocs.org/media/pdf/chi-c/stable/chi-c.pdf
+.. _GWAS: https://en.wikipedia.org/wiki/Genome-wide_association_study`:w
+.. _epigenome: https://www.genome.gov/about-genomics/fact-sheets/Epigenomics-Fact-Sheet
+.. _WashU: https://epigenomegateway.wustl.edu 
