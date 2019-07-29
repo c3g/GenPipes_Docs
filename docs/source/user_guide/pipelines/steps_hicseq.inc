@@ -1,5 +1,8 @@
 .. _docs_steps_hicseq:
 
+Step Details
+------------
+
 Following are the various steps that are part of Hi-C genomic analysis pipelines:
 
 .. _Samtools Bam Sort:

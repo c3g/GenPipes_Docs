@@ -160,8 +160,8 @@ The following figure shows the pipeline schema for capture Hi-C protocol. See la
 
 ----
 
-Steps
------
+Pipeline Steps
+--------------
 
 The table below shows various steps that constitute the Hi-C and Hi-C capture genomic analysis pipelines.
 
@@ -205,6 +205,10 @@ The table below shows various steps that constitute the Hi-C and Hi-C capture ge
 
 ----
 
+.. include:: steps_hicseq.inc
+
+----
+
 More information
 -----------------
 For the latest implementation and usage details refer to Hi-C Sequencing implementation `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/hicseq/README.md>`_ file.
@@ -213,7 +217,9 @@ For the latest implementation and usage details refer to Hi-C Sequencing impleme
 
 * A high-resolution map of the three-dimensional chromatin interactome in human cells - `Defining target gene using Hi-C <A high-resolution map of the three-dimensional chromatin interactome in human cells>`_. 
 
-.. include:: steps_hicseq.inc
+----
+
+.. The following are html links used in this text
 
 .. _HiCUP: https://www.ncbi.nlm.nih.gov/pubmed/26835000
 .. _TopDom: https://www.ncbi.nlm.nih.gov/pubmed/26704975
@@ -222,6 +228,8 @@ For the latest implementation and usage details refer to Hi-C Sequencing impleme
 .. _MultiQC: https://multiqc.info
 .. _CHICAGO: http://regulatorygenomicsgroup.org/chicago
 .. _Hi-C report: https://bitbucket.org/mugqic/genpipes/src/341cab2f01883af0184b850062bd8537dcd32e41/pipelines/hicseq/url 
+
+.. The following are replacement texts used in this file
 
 .. |samtools_bam_sort| replace:: `Samtools Bam Sort`_
 .. |picard_sam_to_fastq| replace:: `Picard Sam to Fastq`_

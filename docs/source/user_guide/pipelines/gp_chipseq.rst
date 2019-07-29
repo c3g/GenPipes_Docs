@@ -3,12 +3,12 @@
 .. spelling::
 
    transposase
-
+   Immunoprecipitation
 
 ChIP Sequencing Pipeline
 ========================
 
-The ChIP-Seq workflow is based on the `ENCODE Project`_ workflow. It aligns reads using the `Burrows-Wheeler Aligner`_. It creates tag directories using `Homer routines`_. Peaks are called using `Model based Analysis for Chip Sequencing (MACS2)`_ and annotated using Homer. Binding motifs are also identified using Homer. Metrics are calculated based on `IHEC requirements`_. The ChIP-Seq pipeline can also be used for assay for transposase-accessible chromatin using sequencing (ATAC-Seq) samples. At GenPipes, we are developing a pipeline that is specific to `ATAC-Seq`_.
+Chromatin Immunoprecipitation (ChIP) sequencing technique is used for mapping DNA-protein interactions. It is a powerful method for identifying genome-wide DNA binding sites for transcription factors and other proteins. The ChIP-Seq workflow is based on the `ENCODE Project`_ workflow. It aligns reads using the `Burrows-Wheeler Aligner`_. It creates tag directories using `Homer routines`_. Peaks are called using `Model based Analysis for Chip Sequencing (MACS2)`_ and annotated using Homer. Binding motifs are also identified using Homer. Metrics are calculated based on `IHEC requirements`_. The ChIP-Seq pipeline can also be used for assay for transposase-accessible chromatin using sequencing (ATAC-Seq) samples. At GenPipes, we are developing a pipeline that is specific to `ATAC-Seq`_.
 
 .. contents:: :local:
 
@@ -114,8 +114,8 @@ Figure below shows the schema of ChIP-Seq protocol. You can refer to the latest 
 
 ----
 
-Steps
------
+Pipeline Steps
+---------------
 
 The table below shows various steps that constitute the ChIP sequencing pipeline:
 
@@ -163,6 +163,10 @@ The table below shows various steps that constitute the ChIP sequencing pipeline
 
 ----
 
+.. include:: steps_chipseq.inc
+
+----
+
 More Information
 ----------------
 
@@ -170,9 +174,17 @@ For the latest implementation and usage details, see `ChIP-Seq Pipeline README`_
 
 * `ChIP-Seq and Beyond <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3591838/>`_. 
 
-* `ChIP-Seq Technology and Workflow <v>`_.
+* `ChIP-Seq Technology and Workflow <http://biocluster.ucr.edu/~rkaundal/workshops/R_feb2016/ChIPseq/ChIPseq.html>`_.
 
-.. include:: steps_chipseq.inc
+* `Schematic representation of major methods to detect functional elements in DNA <https://journals.plos.org/plosbiology/article/figure?id=10.1371/journal.pbio.1001046.g001>`_.
+
+.. figure:: /img/pipelines/ChIP-Seq-hl-diag.png
+   :align: center
+   :alt: ChIP-Seq-HL 
+
+   Figure:  Schematic representation of major methods used to detect functional elements in DNA (Source PLOS)
+
+.. The following are replacement texts used in this file
 
 .. |picard_sam_to_fastq| replace:: `Picard Sam to Fastq`_
 .. |trimmomatic| replace:: `Trimmomatic`_
@@ -193,6 +205,8 @@ For the latest implementation and usage details, see `ChIP-Seq Pipeline README`_
 .. |run_spp| replace:: `Run SPP`_
 .. |ihec_metrics| replace:: `IHEC Metrics`_
 .. |multiqc_report| replace:: `MultiQC Report`_
+
+.. The following are html link targets used in this text
 
 .. _ENCODE Project: https://www.genome.gov/Funded-Programs-Projects/ENCODE-Project-ENCyclopedia-Of-DNA-Elements
 .. _Burrows-Wheeler Aligner: http://bio-bwa.sourceforge.net
