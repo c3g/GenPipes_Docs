@@ -19,3 +19,4 @@ This guide contains usage manual and reference information for all available Gen
 
    pipelines/gp_hicseq
    pipelines/gp_chipseq
+   pipelines/gp_ampliconseq
