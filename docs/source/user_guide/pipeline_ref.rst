@@ -20,3 +20,12 @@ This guide contains usage manual and reference information for all available Gen
    pipelines/gp_hicseq
    pipelines/gp_chipseq
    pipelines/gp_ampliconseq
+   pipelines/gp_dnaseq
+   pipelines/gp_dnaseq_highcov
+   pipelines/gp_rnaseq
+   pipelines/gp_rnaseq_denovo
+   pipelines/gp_rnaseq_light
+   pipelines/gp_wgs_methylseq
+   pipelines/gp_pacbio
+   pipelines/gp_illumina
+   pipelines/gp_tumourpair

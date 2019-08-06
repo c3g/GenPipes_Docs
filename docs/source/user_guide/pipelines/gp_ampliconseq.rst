@@ -42,7 +42,7 @@ Amplicon sequencing is a highly targeted gene sequencing approach used to analyz
 
 #. Discovery of rare somatic mutations in complex samples such as tumors mixed with germline DNA.
 
-See `More Information`_ section below for details. 
+See More Information section below for details. 
 
 ----
 
@@ -148,7 +148,7 @@ TBD
 Pipeline Steps
 --------------
 
-The table below shows various steps that constitute the Hi-C and Hi-C capture genomic analysis pipelines.
+The table below shows various steps that constitute the Amplicon Sequencing QIIME and DADA2 type genomic analysis pipelines.
 
 +----+--------------------------------+---------------------------------+
 |    |  *QIIME sequencing Steps*      |   *DADA2 sequencing Steps*      |
@@ -228,11 +228,11 @@ The table below shows various steps that constitute the Hi-C and Hi-C capture ge
 
 ----
 
-.. _More Information:
+.. _More Information Ampliconseq:
 
 More information
 -----------------
-For the latest implementation and usage details refer to Amplicon Sequencing implementation `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/hicseq/README.md>`_ file.
+For the latest implementation and usage details refer to Amplicon Sequencing implementation `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/ampliconseq/README.md>`_ file.
 
 * `Amplicon sequencing techniques <https://sapac.illumina.com/techniques/sequencing/dna-sequencing/targeted-resequencing/amplicon-sequencing.html>`_
 
