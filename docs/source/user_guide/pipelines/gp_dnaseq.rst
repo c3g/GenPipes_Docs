@@ -214,7 +214,7 @@ For the latest implementation and usage details refer to DNA Sequencing implemen
 
 .. |picard_sam_to_fastq| replace:: `Picard SAM to FastQ`_
 .. |sym_link_fastq| replace:: `Sym Link FastQ`_
-.. |trimmomatic| replace:: `Trimmomatic`_
+.. |trimmomatic| replace:: `Step Trimmomatic`_
 .. |merge_trimmomatic_stats| replace:: `Merge Trimmomatic Stats`_
 .. |skewer_trim| replace:: `Skewer Trimming`_
 .. |bwa_mem_picard_sort_sam| replace:: `BWA Picard Sort SAM`_
