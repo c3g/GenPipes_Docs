@@ -67,6 +67,9 @@ You are all set to use GenPipes deployed on Compute Canada data centre.
 
          Canadian Centre for Computational Genomics (C3G), in partnership with Compute Canada, offers and maintains a large set of bioinformatics resources for the community. For a complete list of software currently deployed on several HPC centres, including Guillimin, Cedar, Graham and Mammouth, refer to `Bioinformatics Resources <http://www.computationalgenomics.ca/cvmfs-modules/>`_. Several reference genomes are also available. You can refer to the `available genomes <http://www.computationalgenomics.ca/cvmfs-genomes/>`_ and the environment setup to access these genomes.
 
+
+.. _setting_up_gp_environment_modules:
+
 Step 3: Setting up your user environment for GenPipes access
 ------------------------------------------------------------
 

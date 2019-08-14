@@ -5,36 +5,46 @@
 Checklist of Pre-requisites for Running GenPipes
 ------------------------------------------------
 
-* :ref:`Get a Compute Canada account<docs_access_gp_pre_installed>` if not deploying GenPipes locally or in the cloud
+**CHK1**:  Ensure you have the GenPipes runtime environment setup appropriately.  It may vary depending upon your GenPipes deployment type. For details on various deployment type options, see :ref:`docs_dep_options`.  The instructions below list key checklist items for various deployment types.
 
-* Hardware requirement (for local installation and setup)
+  **For using GenPipes pre-deployed on Compute Canada servers**
 
-* Software requirement
+    * :ref:`Get a Compute Canada account<docs_access_gp_pre_installed>` if not deploying GenPipes locally or in the cloud. You can use GenPipes deployed by C3G on CC datacenter servers.  Once you have the account, make sure you have your software environment setup for requisite GenPipes modules. For details see :ref:`setting_up_gp_environment_modules` section in the :ref:`docs_access_gp_pre_installed` documentation.
 
-  - Python 2.7
-  - Modules that are required
-  - Genomes that need to be referenced
+  **For using GenPipes deployed locally on your server (bare metal or virtual) or in a container**
 
-* Check that GenPipes is deployed
+    * Hardware requirement 
+  
+      TBD
 
-  - For Compute Canada data centre users:
+    * Software requirement
+
+      - Python 2.7
+      - Modules that are required
+      - Genomes that need to be referenced
+
+**CHK2**: Ensure that you can test run one of the GenPipes Pipeline.  Simply issue the help option instead of running any jobs.  This will confirm whether GenPipes can actually run and environment setup in terms of python modules is taken care of.
+
+  * Check that GenPipes is deployed
+
+    - For Compute Canada data centre users:
 
 ::
  
   <pipeline_name>.py --help
 
-  - For local installation 
+    - For local installation 
 
 ::
   
   $MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name>.py --help
 
-* Ensure CVMFS is mounted (??? Is this valid for non container too?)
+  * Ensure CVMFS is mounted (??? Is this valid for non container too?)
 
-* Verify if input file(s) can be accessed
+**CHK3**: Verify if input file(s) can be accessed
  
   - ini or configuration files
   - Readset file
   - Design file
 
-* Other items in GenPipes checklist that must be addressed before pipeline can be run for genomic analysis 
+**CHK4**: TBD Other items in GenPipes checklist that must be addressed before pipeline can be run for genomic analysis 
