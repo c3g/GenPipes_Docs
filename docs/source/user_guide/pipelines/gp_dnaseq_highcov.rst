@@ -50,7 +50,7 @@ Usage
                                [-j {pbs,batch,daemon,slurm}] [-f] [--json]
                                [--report] [--clean]
                                [-l {debug,info,warning,error,critical}]
-                               [-t {mugqic,mpileup,light}] [-r READSETS] [-v]
+                               [-r READSETS] [-v]
 
 **Optional Arguments**
 
@@ -82,8 +82,6 @@ Usage
                         date status are ignored (default: false)
   -l {debug,info,warning,error,critical}, --log {debug,info,warning,error,critical}
                         log level (default: info)
-  -t {mugqic,mpileup,light}, --type {mugqic,mpileup,light}
-                        DNAseq analysis type
   -r READSETS, --readsets READSETS
                         readset file
   -v, --version         show the version information and exit
@@ -93,12 +91,16 @@ Usage
 Example Run
 -----------
 
-TBD - Link below needs to be updated - not listed in current README.md file
+Following instructions are meant to be run on C3G deployed GenPipes on Beluga server.  It uses human genome data available at Beluga server. Use the following command on Beluga server to run DNA Sequencing (high coverage) pipeline:
 
+:: 
 
-::
+    dnaseq_high_coverage.py -c 
+    $MUGQIC_PIPELINES_HOME/pipelines/dnaseq_high_coverage/dnaseq_high_coverage.base.ini
+    $MUGQIC_PIPELINES_HOME/pipelines/dnaseq_high_coverage/dnaseq_high_coverage.beluga.ini
+    -j slurm -s 1-15 > dna_high_cov_commands.sh
 
-   TBD
+    bash dna_high_cov_commands.sh
 
 ---- 
 

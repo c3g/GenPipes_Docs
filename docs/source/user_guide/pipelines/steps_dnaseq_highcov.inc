@@ -1,5 +1,9 @@
 .. _docs_steps_dnaseq_highcov:
 
+.. spelling::
+
+     unsynchronized
+    
 Step Details
 -------------
 
@@ -67,7 +71,7 @@ BAM files of regions of realigned reads are merged per sample using `Picard Tool
 
 **Picard Fixmate**
 
-TBD
+After realignment, some read pairs might become unsynchronized. This step verifies that the information is correct between the two pairs and if it is not, it fixes any inaccuracies to avoid problems during the following steps.
 
 .. _Metrics:
 
