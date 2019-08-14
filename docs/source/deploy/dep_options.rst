@@ -6,12 +6,12 @@ Deployment Options
 
 There are multiple ways to access GenPipes and get started with genomic analysis using the pipelines therein.  Figure below represents the three options available to bioinformatics researchers to access GenPipes.
 
-1. Local deployment 
+1. Remotely access GenPipes deployed at Compute Canada infrastructure
+2. GenPipes deployment in the cloud - Google Cloud Platform (GCP)
+3. Local deployment 
+
    * Bare metal or virtual server
    * GenPipes in a container
-
-2. GenPipes deployment in the cloud - Google Cloud Platform (GCP)
-3. Remotely access GenPipes deployed at Compute Canada infrastructure
 
 Accessing GenPipes
 -------------------
