@@ -1,4 +1,8 @@
 .. _docs_what_is_genpipes:
+
+.. spelling::
+
+    pipelining
   
 Introducing GenPipes
 =====================
@@ -82,6 +86,14 @@ When the GenPipes command is launched, required modules and files will be search
 Once launched, the jobs are sent to the scheduler and queued. As jobs complete successfully, their dependent jobs are released by the scheduler to run. If a job fails, all its dependent jobs are terminated and an email notification is sent to the user. When GenPipes is re-run, it will detect which steps have successfully completed, as described in section “Smart relaunch features,” and skip them but will create the command script for the jobs that were not completed successfully. To force the entire command generation, despite successful completion, the “-f” option should be added.  
 
 For details on GenPipes usage and various bioinformatics pipelines see :ref:`GenPipes User Guide<docs_user_guide>`.
+
+Bioinformatics and the role of GenPipes
+---------------------------------------
+There has been significant technological evolution in Next Generation Sequencing techniques from improvement in the processes themselves, better infrastructure and software availability as well as in terms of lowering of costs associated with NGS processing.  For a good primer on the topic, refer to :download:`Introduction to Next Generation Sequencing </ref/C3GAW_RNASeq_3_NGS_Intro.pdf>`.
+
+GenPipes plays a key role in data pipelining and processing of next generation sequencing data and cutting edge genomic analysis, as highlighted in the figure below:
+
+.. image:: /img/genpipes-role-bioif.png
 
 .. _PBS (TORQUE) system: https://github.com/adaptivecomputing/torque 
 .. _SLURM system: https://slurm.schedmd.com/documentation.html
