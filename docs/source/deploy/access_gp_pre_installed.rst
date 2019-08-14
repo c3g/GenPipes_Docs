@@ -16,6 +16,8 @@ Accessing GenPipes on Compute Canada Servers
 
 This document will provide information on how to get started with using GenPipes pre-installed on Compute Canada servers.
 
+.. _get_ccdb_account:
+
 Step 1: Get a Compute Canada Data Base (CCDB) account
 ------------------------------------------------------
 

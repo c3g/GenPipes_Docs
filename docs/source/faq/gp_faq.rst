@@ -3,17 +3,20 @@
 Frequently asked questions
 ==========================
 
-This document will contain frequently asked queries categorized as follows:
+Queries related to GenPipes and its usage are categorized broadly as follows:
 
-General
--------
+- General
+- New Users
+- GenPipes Developers
+- C3G Resources
 
-New Users
----------
+The topics covered in each category are listed below:
 
-GenPipes Developers
--------------------
+.. toctree::
+   :maxdepth: 2
+   :name: toc-faq-detail
 
-C3G Resource Usage
-------------------
-
+   faq_general
+   faq_new_users
+   faq_gp_dev
+   faq_c3g_res
