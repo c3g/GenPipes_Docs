@@ -14,9 +14,11 @@ This document covers details on how to deploy GenPipes locally on a bare metal o
 
 For more details on other available options to deploy and access GenPipes you may refer to :ref:`GenPipes Deployment Options Page<docs_dep_options>`.
 
+.. _docs_download_gp_src:
+
 Step 1: Download latest GenPipes sources
 ----------------------------------------
-First of all, visit GenPipes `Download Page` <https://bitbucket.org/mugqic/genpipes/downloads/> and get a copy of the latest stable release software.  To fetch the most recent version of GenPipes, you may use the following command:
+First of all, visit GenPipes `Download Page <https://bitbucket.org/mugqic/genpipes/downloads/>`_ and get a copy of the latest stable release software.  To fetch the most recent version of GenPipes, you may use the following command:
 
 ::
 

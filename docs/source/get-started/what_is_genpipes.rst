@@ -9,6 +9,8 @@ Introducing GenPipes
 
 GenPipes is a workflow management system (WMS) that facilitates building robust genomic workflows. It is a unique solution that combines both a framework for development and end-to-end analysis pipelines, covering a large scope of genomic applications and research domains. It offers researchers a simple method to analyze different types of data, customizable to their needs and resources. In addition, it provides flexibility to create customized workflows besides the ones that are already implemented and validated by GenPipes.
 
+.. _what_is_gp:
+
 What is GenPipes?
 -----------------
 
