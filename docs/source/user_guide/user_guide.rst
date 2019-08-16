@@ -12,7 +12,5 @@ This guide is intended as an introductory overview of GenPipes and provides usef
    :name: toc-user-guide
 
    quickstart_gp
-   get_gp
-   run_gp
    pipeline_ref
    get_involved

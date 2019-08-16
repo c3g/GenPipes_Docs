@@ -1,7 +1,7 @@
 .. _docs_run_gp:
 
 Run GenPipes
-============
+------------
 
 Test that it works, generic usage command, version check, --help or -h option
 

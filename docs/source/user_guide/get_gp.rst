@@ -1,10 +1,11 @@
 .. _docs_get_gp:
 
 Get GenPipes
-============
+------------
 
-Install it locally (bare metal, VM or in a container)
-Install it on cloud (GCP)
-Or
-Access it from Compute Canada server pre-installed GenPipes
+If you choose to deploy GenPipes yourself and not access the pre-installed setup managed by C3G using Compute Cananda servers, you can obtain a copy from the following sources:
 
+* Pre-built, packaged GenPipes via the GenPipes Download Page
+* Build your own version of GenPipes by downloading GenPipes Source Code
+
+TBD

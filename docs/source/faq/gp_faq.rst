@@ -10,7 +10,9 @@ Queries related to GenPipes and its usage are categorized broadly as follows:
 - GenPipes Developers
 - C3G Resources
 
-The topics covered in each category are listed below:
+----
+
+Contents
 
 .. toctree::
    :maxdepth: 2
