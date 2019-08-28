@@ -1,5 +1,9 @@
 .. _docs_faq_general:
 
+.. spelling::
+
+   Cygwin
+
 General
 -------
 

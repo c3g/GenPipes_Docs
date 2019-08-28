@@ -1,0 +1,158 @@
+.. _docs_steps_rnaseq_denovo:
+  
+.. spelling::
+
+      picard 
+      blastx
+      gqSeqUtils
+
+Step Details
+-------------
+
+.. _Picard SAM to FastQ:
+
+**Picard SAM to FastQ**
+
+Convert SAM/BAM files from the input readset file into FASTQ format if FASTQ files are not already specified in the readset file. Do nothing otherwise.
+
+.. _Trimmomatic Step:
+
+**Trimmomatic**
+
+Raw reads quality trimming and removing of Illumina adapters is performed using `Trimmomatic Tool <http://www.usadellab.org/cms/index.php?page=trimmomatic>`_. If an adapter FASTA file is specified in the config file (section 'trimmomatic', param 'adapter_fasta'), it is used first. Else, 'Adapter1' and 'Adapter2' columns from the readset file are used to create an adapter FASTA file, given then to Trimmomatic. For PAIRED_END readsets, readset adapters are reversed-complemented and swapped, to match Trimmomatic Palindrome strategy. For SINGLE_END readsets, only Adapter1 is used and left unchanged.
+
+This step takes as input files:
+
+* FASTQ files from the readset file if available
+* Else, FASTQ output files from previous picard_sam_to_fastq conversion of BAM files
+
+.. _Merge Trimmomatic Stats:
+
+**Merge Trimmomatic Stats**
+
+The trim statistics per readset are merged at this step.
+
+.. _InSilico Read Normalization of Readsets:
+
+**InSilico Read Normalization of Readsets**
+
+Normalize each readset, using the Trinity normalization utility.
+
+.. _InSilico Read Normalization (All):
+
+**InSilico Read Normalization (All)**
+
+Merge all normalized readsets together and normalize the result, using the Trinity normalization utility.
+
+.. _Trinity Step:
+
+**Trinity**
+
+Create a de novo assembly from normalized readsets using `Trinity tool <https://github.com/trinityrnaseq/trinityrnaseq/wiki>`_.
+
+.. _Exonerate FASTA Split:
+
+**Exonerate FASTA Split**
+
+Split the Trinity assembly FASTA into chunks for further parallel BLAST annotations.
+
+.. _BLASTX Trinity UniProt:
+
+**BLASTX Trinity UniProt**
+
+Annotate Trinity FASTA chunks with Swiss-Prot and UniRef databases using `BLAST Tool <https://blast.ncbi.nlm.nih.gov/Blast.cgi>`_.
+
+.. _BLASTX Trinity UniProt Merge:
+
+**BLASTX Trinity UniProt Merge**
+
+Merge blastx Swiss-Prot and UniRef chunks results.
+
+.. _TransDecoder Step:
+
+**TransDecoder Step**
+
+Identifies candidate coding regions within transcript sequences using `Transdecoder <https://github.com/TransDecoder/TransDecoder/wiki>`_.
+
+.. _HMMER Biosequence Analysis Step:
+
+**HMMER Biosequence Analysis Step**
+
+Identifies protein domains using `HMMER Biosequence Analysis <http://hmmer.janelia.org/>`_
+
+.. _RNAmmer Method:
+
+**RNAmmer Method**
+
+Identify potential rRNA transcripts using `RNAmmer Transcriptome <http://www.cbs.dtu.dk/cgi-bin/sw_request?rnammer>`_.
+
+.. _BLAST Transdecoder UniProt:
+
+**BLAST Transdecoder UniProt**
+
+Search Transdecoder-predicted coding regions for sequence homologies on UniProt using `BLASTP <https://blast.ncbi.nlm.nih.gov/Blast.cgi>`_.
+
+.. _SignalP Method:
+
+**SignalP Method**
+
+Predict the presence of signal peptides and the location of their cleavage sites in proteins using `SignalP <http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?signalp>`_.
+
+.. _TMHMM Method:
+
+**TMHMM Method**
+
+This step involves prediction of transmembrane helices regions in proteins using `THMMM <http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?tmhmm>`_.
+
+.. _Trinotate Step:
+
+**Trinotate**
+
+This step performs transcriptome functional annotation and analysis using `Trinotate Annotation suite <https://github.com/Trinotate/Trinotate.github.io/wiki>`_. ll functional annotation data is integrated into a SQLite database and a whole annotation report is created.
+
+.. _Align and estimate Abundance Prep Reference:
+
+**Align and estimate Abundance Prep Reference**
+
+Index Trinity FASTA file for further abundance estimation using `Trinity align_and_estimate_abundance.pl utility`_.
+
+.. _Align and estimate Abundance:
+
+**Align and estimate Abundance**
+
+Estimate transcript abundance using RNA-Seq by Expectation-Maximization `(RSEM) <http://deweylab.github.io/RSEM/>`_ via `Trinity align_and_estimate_abundance.pl utility`_.
+
+.. _Exploratory Analysis with gqSeqUtils R package:
+
+**Exploratory Analysis with gqSeqUtils R package**
+
+This step performs exploratory analysis using the gqSeqUtils R package.
+
+.. _Differential Expression:
+
+**Differential Expression**
+
+This step performs differential gene expression analysis using `DESeq package <http://bioconductor.org/packages/release/bioc/html/DESeq.html>`_ and `edgeR package <http://www.bioconductor.org/packages/release/bioc/html/edgeR.html>`_. Merge the results of the analysis in a single csv file. Also,this pipeline step performs Gene Ontology analysis for RNA-Seq denovo Assembly using the Bioconductor's R package `goseq`_. It generates GO annotations for differential genes and isoforms expression analysis, based on associated GOTERMS generated by `Trinotate Step`_ earlier.
+
+.. _Filter Annotated Components:
+
+**Filter Annotated Components**
+
+This step filters high quality contigs based on values in trinotate annotations. It also recreates a high quality contigs fasta file and run Assembly statistics using the gqSeqUtils R package.
+
+.. _Exploratory Analysis with subset of filtered transcripts:
+
+**Exploratory Analysis with subset of filtered transcripts**
+
+In this step, exploratory analysis is performed by the gqSeqUtils R package using a subset of filtered transcripts.
+
+.. _GOSEQ using filtered transcripts:
+
+**GOSEQ using filtered transcripts**
+
+In this step, differential expression and `goseq`_ analysis is performed based on filtered transcripts and genes.
+
+.. HTML links commonly used in this file
+
+.. _Trinity align_and_estimate_abundance.pl utility: https://github.com/trinityrnaseq/trinityrnaseq
+.. _goseq: http://www.bioconductor.org/packages/release/bioc/html/goseq.html

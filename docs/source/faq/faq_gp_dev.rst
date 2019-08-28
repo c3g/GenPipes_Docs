@@ -1,5 +1,10 @@
 .. _docs_faq_gp_dev:
 
+.. spelling::
+
+    Pytest
+    Niagra
+
 GenPipes Developers
 -------------------
 

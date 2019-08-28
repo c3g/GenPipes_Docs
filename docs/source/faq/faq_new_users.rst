@@ -1,5 +1,11 @@
 .. _docs_faq_new_users:
 
+.. spelling::
+
+   computecanada
+   Niagra
+   GMail
+
 New Users
 ---------
 
@@ -27,7 +33,7 @@ What email ID should I use if I am an external collaborator?
 
 **Response**
 
-Gmail or your work ID should be fine as long as you provide the name of your institution (or college in case of students). 
+GMail or your work ID should be fine as long as you provide the name of your institution (or college in case of students). 
 
 My account is activated. How do I learn more about Compute Canada Servers and resources available?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

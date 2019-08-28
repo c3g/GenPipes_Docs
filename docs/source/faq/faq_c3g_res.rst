@@ -46,7 +46,7 @@ For a list of available genomes, visit `Bioinformatics resources - genomes <http
 What is meant by test dataset? Where can I find available test datasets?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-GenPipes pipelines can be run using your sequencing instuments generated, measured, sampled read datasets in respective formats as required by individual pipelines or test datasets.  Refer to `GenPipes Test Datasets <http://www.computationalgenomics.ca/test-dataset/>`_ for various available test datasets that can be used to run various GenPipes pipelines, in case you don't have your own dataset to be processed.
+GenPipes pipelines can be run using your sequencing instruments generated, measured, sampled read datasets in respective formats as required by individual pipelines or test datasets.  Refer to `GenPipes Test Datasets <http://www.computationalgenomics.ca/test-dataset/>`_ for various available test datasets that can be used to run various GenPipes pipelines, in case you don't have your own dataset to be processed.
 
 ----
 

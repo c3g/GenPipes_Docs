@@ -19,8 +19,8 @@ import os
 # -- Project information -----------------------------------------------------
 
 project = 'gpdocs'
-copyright = '2019, shaloo shalini'
-author = 'shaloo shalini'
+author = u'Shaloo Shalini (GenPipes GSoD 2019)' 
+copyright = author 
 
 # The full version, including alpha/beta/rc tags
 release = '0.9'
@@ -74,8 +74,13 @@ html_static_path = ['_static']
 
 html_static_path = ['_static']
 
-#html_context = {
+html_last_updated_fmt = '\n %c'
+#html_last_updated_fmt = '%b %d, %Y at %H:%M'
+
+html_context = {
 #    'css_files': [
 #        '_static/theme_overrides.css',  # override wide tables in RTD theme
 #        ],
-#     }
+#     'commit': os.getenv('TRAVIS_COMMIT', '')[:7],
+#     'commit': '3.1.4'
+     }
