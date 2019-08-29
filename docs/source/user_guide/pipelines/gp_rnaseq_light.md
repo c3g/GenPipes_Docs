@@ -25,7 +25,7 @@ RNA Sequencing Light is a lightweight pipeline that performs quick QC and remove
 Version
 -------
 
-TBD
+3.1.4
 
 Usage
 -----

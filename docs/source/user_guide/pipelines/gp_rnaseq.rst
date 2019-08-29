@@ -27,9 +27,8 @@ See :ref:`More Information` section below for details.
 
 Version
 -------
-::
 
-  3.1.4
+|genpipes_version| 
 
 For the latest implementation and usage details refer to RNA Sequencing implementation `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq/README.md>`_ file.
 

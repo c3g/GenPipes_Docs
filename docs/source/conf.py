@@ -23,8 +23,13 @@ author = u'Shaloo Shalini (GenPipes GSoD 2019)'
 copyright = author 
 
 # The full version, including alpha/beta/rc tags
-release = '0.9'
 
+versionfile=open('../VERSION', 'r')
+vstr1=versionfile.read()
+versionfile.close()
+
+version = u'Version '+vstr1
+release = u' '+vstr1+u'( 0.9 draft )' 
 
 # -- General configuration ---------------------------------------------------
 
@@ -62,6 +67,13 @@ source_suffix = {
                  '.md': 'markdown',
 }
 #source_suffix = '.rst'
+
+product_version = vstr1 
+
+rst_epilog = """
+.. |genpipes_version| replace:: %(product_version)s
+""" % { "product_version": product_version ,
+}
 
 master_doc = 'index'
 
