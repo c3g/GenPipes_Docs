@@ -34,6 +34,7 @@ release = '0.9'
 extensions = [ 'sphinxcontrib.spelling',
                'recommonmark',
                'sphinx_markdown_tables',
+               'sphinx_git',
                'sphinx_tabs.tabs'
 ]
 
