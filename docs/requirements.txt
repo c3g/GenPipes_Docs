@@ -7,3 +7,4 @@ imagesize==0.7.1
 Pillow==4.3.0
 recommonmark==0.6.0
 sphinx-markdown-tables==0.0.9
+sphinx-git==11.0.0
