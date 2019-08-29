@@ -11,11 +11,17 @@ PAPER         =
 
 .PHONY: help html Makefile
 
+
 # Put it first so that "make" without argument is like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
+download:
+	#wget -N https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq_light/README.md
+	#cp ../../mugqic/readme.md ./source/user_guide/pipelines/gp_readme.md
+	
 html:
+	#make download
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 	@echo
 	@echo "GenPipes documentation build finished. The HTML pages are in $(BUILDDIR)/html."
