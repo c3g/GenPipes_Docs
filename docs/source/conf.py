@@ -32,6 +32,8 @@ release = '0.9'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [ 'sphinxcontrib.spelling',
+               'recommonmark',
+               'sphinx_markdown_tables',
                'sphinx_tabs.tabs'
 ]
 
@@ -53,7 +55,11 @@ exclude_patterns = []
 # You can specify multiple suffix as a list of string:
 #
 
-source_suffix = ['.rst', '.md']
+#source_suffix = ['.rst', '.md']
+source_suffix = {
+                 '.rst': 'restructuredtext',
+                 '.md': 'markdown',
+}
 #source_suffix = '.rst'
 
 master_doc = 'index'
