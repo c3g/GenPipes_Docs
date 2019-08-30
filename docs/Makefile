@@ -19,7 +19,6 @@ help:
 download:
 
 #@( shell cp ../../mugqic/readme.md ./source/user_guide/pipelines/gp_readme.md)
-
 	@$(shell curl -s https://bitbucket.org/mugqic/genpipes/downloads/?tab=tags | grep -m 1 "/mugqic/genpipes/get/" | grep -E -o ".{0,6}zip." | head -n 1 | cut -c1-5 > VERSION)
 
 html:
