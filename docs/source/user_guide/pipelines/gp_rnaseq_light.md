@@ -140,7 +140,8 @@ Exploratory analysis using the gqSeqUtils R package adapted for RnaSeqLight.
 
 Performs differential gene expression analysis using [Sleuth](http://pachterlab.github.io/sleuth/).  Analysis are performed both at a transcript and gene level, using two different tests: LRT and WT. 
 
-# More Information
+More Information
+----------------
 
 * Kallisto, a new [ultra-fast RNA Sequencing technique][ultra-fast-Kallisto-id]
 * Limitations of alignment-free tools in [RNA sequencing quantification][limitation-Kallisto-id]

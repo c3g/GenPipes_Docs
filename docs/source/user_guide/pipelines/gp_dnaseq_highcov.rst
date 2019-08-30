@@ -32,9 +32,8 @@ The DnaSeq high Coverage Pipeline is based on the :ref:`DNA Sequencing Pipeline<
 
 Version
 -------
-::
 
-  3.1.4
+|genpipes_version|
 
 For latest pipeline implementation details visit `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq_high_coverage/README.md>`_.
 

@@ -28,9 +28,7 @@ For more details, see `ChIP-Seq Guidelines`_.
 Version
 -------
 
-::
-
-  3.1.4
+|genpipes_version|
 
 For the latest implementation and usage details refer to Hi-C Sequencing implementation `ChIP-Seq Pipeline README`_ file.
 

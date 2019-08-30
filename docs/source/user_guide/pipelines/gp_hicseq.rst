@@ -57,9 +57,8 @@ An example of the Hi-C report for an analysis on public data (GM12878 Rao. et al
 
 Version
 -------
-::
 
-  3.1.4
+|genpipes_version|
 
 For the latest implementation and usage details refer to Hi-C Sequencing implementation `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/hicseq/README.md>`_ file.
 

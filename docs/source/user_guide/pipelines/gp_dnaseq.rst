@@ -31,9 +31,8 @@ See :ref:`More Information on DNA Sequencing` section below for details.
 
 Version
 -------
-::
 
-  3.1.4
+|genpipes_version|
 
 For the latest implementation and usage details refer to DNA Sequencing implementation `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/README.md>`_ file.
 

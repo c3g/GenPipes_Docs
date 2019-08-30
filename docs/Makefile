@@ -17,11 +17,13 @@ help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 download:
-	#wget -N https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq_light/README.md
-	#cp ../../mugqic/readme.md ./source/user_guide/pipelines/gp_readme.md
-	
+
+#@( shell cp ../../mugqic/readme.md ./source/user_guide/pipelines/gp_readme.md)
+
+	@$(shell curl -s https://bitbucket.org/mugqic/genpipes/downloads/?tab=tags | grep -m 1 "/mugqic/genpipes/get/" | grep -E -o ".{0,6}zip." | head -n 1 | cut -c1-5 > VERSION)
+
 html:
-	#make download
+	@echo "Making html docs"
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 	@echo
 	@echo "GenPipes documentation build finished. The HTML pages are in $(BUILDDIR)/html."

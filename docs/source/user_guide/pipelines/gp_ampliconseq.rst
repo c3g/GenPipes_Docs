@@ -48,9 +48,8 @@ See More Information section below for details.
 
 Version
 -------
-::
 
-  3.1.4
+|genpipes_version|
 
 For the latest implementation and usage details refer to Amplicon Sequencing implementation `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/ampliconseq/README.md>`_ file.
 
@@ -122,13 +121,14 @@ You can download `amplicon sequencing test dataset <http://www.computationalgeno
 
 Pipeline Schema
 ---------------
-Figure below shows the schema of the amplicon sequencing protocol - QIIME type. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/GenPipes_ampliconseq.png>`_ to download a high resolution image of the same.
+Figure below shows the schema of the amplicon sequencing protocol - QIIME type. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_ampliconseq.png>`_ to download a high resolution image of the same.
 
 .. figure:: /img/pipelines/ampseq.png
    :align: center
-   :alt: amplicon schema
+   :alt: QIIME ampseq 
 
    Figure: Schema of QIIME Amplicon Sequencing protocol
+
 
 The following figure shows the pipeline schema for `DADA2 Pipeline`_ type of amplicon sequencing protocol. 
 
