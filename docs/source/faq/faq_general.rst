@@ -12,6 +12,11 @@ What is GenPipes?
 
 GenPipes is an open source python framework for large scale genomics analysis. Refer to :ref:`What is GenPipes section<what_is_gp>` in GenPipes documentation for details.
 
+Where can I find GenPipes Citation reference and text?
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Refer to :ref:`GenPipes Citation<docs_citation>` for citing and example text for GenPipes Citation.
+
 Where can I access latest GenPipes source code?
 +++++++++++++++++++++++++++++++++++++++++++++++
 
