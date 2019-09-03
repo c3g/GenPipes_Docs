@@ -1,0 +1,11 @@
+  GenPipes: an open-source framework for distributed and scalable genomic analyses
+
+  Mathieu Bourgey, Rola Dali, Robert Eveleigh, Kuang Chung Chen, Louis Letourneau,
+  Joel Fillon, Marc Michaud, Maxime Caron, Johanna Sandoval, Francois Lefebvre,
+  Gary Leveque, Eloi Mercier, David Bujold, Pascale Marquis, Patrick Tran Van,
+  David Morais, Julien Tremblay, Xiaojian Shao, Edouard Henrion, Emmanuel Gonzalez,
+  Pierre-Olivier Quirion, Bryan Caron, Guillaume Bourque
+
+  bioRxiv 459552; doi: https://doi.org/10.1101/459552
+
+  Now published in GigaScience doi: 10.1093/gigascience/giz037

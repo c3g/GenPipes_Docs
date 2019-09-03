@@ -41,17 +41,6 @@ The main documentation for the site is organized into the following sections:
    user_guide/user_guide
    tutorials/list_tutorials
 
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Development
-   :name: sec-devel
-
-   development/release_notes
-   development/dev_guide
-   development/troubleshooting_guide
-
-
 .. toctree::
    :maxdepth: 1
    :caption: Support
@@ -72,9 +61,19 @@ The main documentation for the site is organized into the following sections:
    :caption: Resources
    :name: sec-resources
 
-   resources/compute_resources
+   resources/citation
    resources/publications
+   resources/compute_resources
    resources/workshops
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Development
+   :name: sec-devel
+
+   development/release_notes
+   development/dev_guide
+   development/troubleshooting_guide
 
 .. toctree::
    :maxdepth: 1
