@@ -23,8 +23,7 @@ Step Details
 
 **Picard SAM to FastQ**
 
-In this step, if FASTQ files are not already specified in the readset file, then it 
-convert SAM/BAM files from the input readset file into FASTQ format. 
+In this step, if FASTQ files are not already specified in the readset file, then it converts SAM/BAM files from the input readset file into FASTQ format. Otherwise, nothing is done. 
 
 .. _Trimmomatic:
 
