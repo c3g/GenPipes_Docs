@@ -5,7 +5,7 @@ GenPipes Test Datasets
 
 You can execute various GenPipes Pipelines using the following types of data:
 
-* The real data which is generated from your genomic analysis intruments and then measured, sampled and read into various specified bioinformatics data formats.  
+* The real data which is generated from your genomic analysis instruments and then measured, sampled and read into various specified bioinformatics data formats.  
 
 * Test datasets that are available in the absence of real genomic analysis data.
 

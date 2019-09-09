@@ -14,8 +14,17 @@ This document contains information on available current publications and other m
 
    .. tab:: Videos
 
-      Todo... *Watch out for updates...*
+      1. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` generates metagenomics output. This `Metagenomics Figures video`_ shows how to build custom OTU figures and tables from C3G's metagenomics output.
+
+      2. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` pipeline Trimmomatic16S Step generates 16S analysis data that can be examined and plotted as demonstrated in `16S analysis video`_.
 
    .. tab:: Presentations
 
-      Todo... *Watch out for updates...*
+      1. :download:`ChIP Sequencing Slides </ref/MUGQIC_Bioinfo_ChIP-Seq.pdf>`. 
+
+      2. :download:`DNA Sequencing Slides </ref/MUGQIC_Bioinfo_DNA-Seq.pdf>`.
+
+      3. :download:`RNA Sequencing Slides </ref/MUGQIC_Bioinfo_RNA-Seq.pdf>`.
+
+.. _Metagenomics Figures video: https://www.youtube.com/watch?v=twdAteVJALk
+.. _16S analysis video: https://www.youtube.com/watch?v=BsrKUpzxY2s
