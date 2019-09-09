@@ -93,7 +93,15 @@ Usage
 Example Run
 -----------
 
-TBD 
+Use the following commands to execute the methylation pipeline:
+
+::
+
+  methylseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/methylseq/methylseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/methylseq/methylseq.guillimin.ini -r readset.methylseq.txt -s 1-14 > methylseq.sh
+
+  bash methylseq.sh
+
+You can download the test dataset for this pipeline :ref:`in Reference section<docs_testdatasets>`.
 
 Pipeline Schema
 ---------------

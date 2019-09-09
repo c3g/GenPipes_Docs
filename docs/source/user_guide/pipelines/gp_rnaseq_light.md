@@ -83,7 +83,11 @@ Example Run
 
 rnaseq_light.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq_light/rnaseq_light.base.ini $MUGQIC_PIPELINES_HOME/pipelines/rrnaseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.guillimin.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-25 > rnaseqCommands.sh
 
+bash rnaseqCommands.sh
+
 ```
+
+You can download the test dataset for this pipeline in the [TestData Reference section](https://genpipes.readthedocs.io/resources/testdataset.html)
 
 Pipeline Schema
 ----------------

@@ -86,7 +86,23 @@ Usage
 Example Run
 -----------
 
-TBD
+Use the following commands to execute MUGQIC DNA sequencing pipeline:
+
+::
+
+  dnaseq.py -t mugqic -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.guillimin.ini -r readset.dnaseq.txt -s 1-29 > dnaseqCommands_mugqic.sh
+
+  bash dnaseqCommands_mugqic.sh
+
+Use the following commands to execute the Mpileup DNA sequencing pipeline:
+
+::
+ 
+  dnaseq.py -t mpileup -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.guillimin.ini -r readset.dnaseq.txt -s 1-33 > dnaseqCommands_mpileup.sh
+
+  bash dnaseqCommands_mpileup.sh
+
+You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 
 ---- 
 

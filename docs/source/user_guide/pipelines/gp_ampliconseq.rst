@@ -109,13 +109,13 @@ Usage
 Example Run
 -----------
 
-TBD - Link below needs to be updated - not listed in current README.md file
-
-You can download `amplicon sequencing test dataset <http://www.computationalgenomics.ca>`_ and run the following commands:
+You can download `amplicon sequencing test dataset <https://datahub-7826hyc9.udes.genap.ca/ampliconseq.tar.gz>`_ and run the following commands:
 
 ::
 
-  TBD
+ ampliconseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/ampliconseq/ampliconseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/ampliconseq/ampliconseq.guillimin.ini -r readset.ampliconseq.txt -s 1-32 > ampliconseqCommands.sh
+ 
+ bash ampliconseqCommands.sh 
 
 ---- 
 

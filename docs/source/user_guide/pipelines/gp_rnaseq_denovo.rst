@@ -115,9 +115,15 @@ Usage
 Example Run
 -----------
 
-You can use the following command to run De Novo RNA Sequencing pipeline.  For this you need to download the test dataset.....To be updated based on inputs from Hector and GenPipes team.
+Use the following commands to execute the De Novo sequencing pipeline:
 
-TBD
+::
+
+  rnaseq_denovo_assembly.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq_denovo_assembly/rnaseq_denovo_assembly.base.ini $MUGQIC_PIPELINES_HOME/pipelines/rnaseq_denovo_assembly/rnaseq_denovo_assembly.guillimin.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-23 > rnaseqDeNovoCommands.sh
+
+  bash rnaseqDeNovoCommands.sh
+
+You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.  
 
 ----
 
