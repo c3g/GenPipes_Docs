@@ -79,7 +79,11 @@ rnaseq_light.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
 Example Run
 -----------
 
-TBD
+```
+
+rnaseq_light.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq_light/rnaseq_light.base.ini $MUGQIC_PIPELINES_HOME/pipelines/rrnaseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.guillimin.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-25 > rnaseqCommands.sh
+
+```
 
 Pipeline Schema
 ----------------
