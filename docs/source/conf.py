@@ -96,7 +96,6 @@ html_logo = 'img/genpipes_doc_img.png'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
 
 html_static_path = ['_static']
 
@@ -110,3 +109,7 @@ html_context = {
 #     'commit': os.getenv('TRAVIS_COMMIT', '')[:7],
 #     'commit': '3.1.4'
      }
+
+html_theme_options = {
+	'display_version': True,
+}

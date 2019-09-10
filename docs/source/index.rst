@@ -1,12 +1,14 @@
-GenPipes Docs – *master* branch
-===============================
+GenPipes Documentation 
+=======================
 
-.. note:: This is a sample doc-set as part of a new initiative to restructure existing documents 
-	  for easy onboarding of new users. It is a draft proposal. 
-	  Please visit `GenPipes Documentation <http://www.computationalgenomics.ca/genpipes/>`_
-	  for official version of this documentation
+.. note:: This set of GenPipes documentation is a draft under review.  
 
-Welcome to the sample documentation of GenPipes!
+	  Your feedback is welcome. 
+	  
+          You can visit current set of `GenPipes Documentation <http://www.computationalgenomics.ca/genpipes/>`_ for official version of the same. 
+
+Welcome to the GenPipes Documentation!
+----------------------------------------
 
 GenPipes is a flexible Python-based framework that facilitates the development and deployment of multi-step workflows optimized for High-Performance Computing clusters and the cloud.  It offers open sourced 12 validated and scalable pipelines for various genomics applications.
 
