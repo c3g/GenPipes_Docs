@@ -27,7 +27,7 @@
 Step Details
 -------------
 
-Following are the various steps that are part of GenPipes DNA Sequencing genomic analysis pipeline:
+Following are the various steps that are part of GenPipes PacBio Sequencing genomic analysis pipeline:
 
 .. _SMRT Analysis Filtering:
 

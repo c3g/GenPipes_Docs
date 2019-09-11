@@ -32,7 +32,7 @@ Version
 
 |genpipes_version|
 
-For the latest implementation and usage details refer to DNA Sequencing implementation `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/pacbio_assembly//README.md>`_ file.
+For the latest implementation and usage details refer to PacBio Sequencing implementation `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/pacbio_assembly//README.md>`_ file.
 
 ----
 
@@ -150,8 +150,8 @@ The table below shows various steps that are part of PacBio Assembly Pipeline:
 
 ----
 
-More Information regarding PacBio Assembly
-------------------------------------------
+More Information
+----------------
 
 You can refer to the following publications for details on PacBio Whole Genome Assembly Sequencing method:
 

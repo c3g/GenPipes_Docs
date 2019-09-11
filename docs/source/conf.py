@@ -12,6 +12,7 @@
 #
 
 import os
+import sphinx_rtd_theme
 #import sys
 #sys.path.insert(0, os.path.abspath('.'))
 
@@ -40,6 +41,7 @@ extensions = [ 'sphinxcontrib.spelling',
                'recommonmark',
                'sphinx_markdown_tables',
                'sphinx_git',
+               'sphinx_rtd_theme',
                'sphinx_tabs.tabs'
 ]
 

@@ -1,11 +1,11 @@
 GenPipes Documentation 
 =======================
 
-.. note:: This set of GenPipes documentation is a draft under review.  
+.. warning:: 
+         
+          This is the draft version of GenPipes documentation hosted on `Read The Docs <https://readthedocs.org/projects/genpipes/>`_. It is currently under review.  If you wish to access GenPipes information, please visit `GenPipes Documentation <http://www.computationalgenomics.ca/genpipes/>`_ for official version of the same.  
 
-	  Your feedback is welcome. 
-	  
-          You can visit current set of `GenPipes Documentation <http://www.computationalgenomics.ca/genpipes/>`_ for official version of the same. 
+	  Meanwhile, feel free to browse this documentation. Your feedback is welcome! 
 
 Welcome to the GenPipes Documentation!
 ----------------------------------------
@@ -23,7 +23,9 @@ in the top left corner.
           services as well as an extensive suite of software solutions for the genomics community. 
           For details, refer to `C3G official website <http://www.computationalgenomics.ca>`_.
 
-The main documentation for the site is organized into the following sections:
+Following is the **Table of Contents** of GenPipes documentation.  While you are accessing content across any of the following topics, you can navigate to other sections using the left hand side (LHS) navigation pane as well.
+
+The main documentation for GenPipes is organized to address the needs of a new GenPipes user as well as seasoned users and GenPipes contributors. The information is divided into contextual topics presented in the form of various chapters in the following guides:
 
 .. toctree::
    :maxdepth: 1
