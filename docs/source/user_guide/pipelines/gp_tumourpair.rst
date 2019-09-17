@@ -62,7 +62,7 @@ Usage
 
 ::
 
-  tumor_pair.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
+  python tumor_pair.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
                      [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
                      [--json] [--report] [--clean]
                      [-l {debug,info,warning,error,critical}] [-p PAIRS]
@@ -115,9 +115,11 @@ Use the following commands to execute MUGQIC DNA sequencing pipeline:
 
 ::
 
-  tumor_pair.py -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/tumor_pair/tumor_pair.base.ini $MUGQIC_PIPELINES_HOME/pipelines/tumor_pair/tumor_pair.guillimin.ini -r readset.tumorPair.txt -p pairs.csv -s 1-44 > tumor_pairCommands.sh
+  python tumor_pair.py -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/tumor_pair/tumor_pair.base.ini $MUGQIC_PIPELINES_HOME/pipelines/tumor_pair/tumor_pair.guillimin.ini -r readset.tumorPair.txt -p pairs.csv -s 1-44 > tumor_pairCommands.sh
 
   bash tumor_pairCommands.sh 
+
+where, p pairs : format - patient_name,normal_sample_name,tumor_sample_name
 
 You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 
@@ -262,7 +264,7 @@ For the latest implementation and usage details refer to the latest `pipeline im
 .. |sambamba_merge_realigned| replace:: `SamBamba Merge Realigned`_
 .. |sambamba_mark_duplicates| replace:: `SamBamba Mark Duplicates`_ 
 .. |recalibration| replace:: `Recalibration`_
-.. |conpair_concordance_contamination| replace:: `Compair Concorance Contamination`_
+.. |conpair_concordance_contamination| replace:: `Conpair Concorance Contamination`_
 .. |rawmpileup_panel| replace:: `Raw Mpileup Panel`_
 .. |paired_varscan2_panel| replace:: `Paired VarScan 2`_
 .. |merge_varscan2_panel| replace:: `Merge VarScan 2 Panel`_
