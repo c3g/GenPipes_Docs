@@ -1,16 +1,23 @@
-.. _docs_gp_tumourpair:
+.. _docs_gp_tumorpair:
 
 .. spelling::
 
-      samplespell
- 
-Tumour Pair Sequencing Pipeline
+      ploidy
+      sv
+      fastpass
+      vcf
+      VCF
+      CNV
+      Koboldt
+      Preprocess
+      
+Tumor Pair Sequencing Pipeline
 ================================
 
 Human genome comprises of a set of chromosome pairs. One chromosome in each pair, called homolog, is derived from each parent. It is typically referred to as diploid whereas the set of chromosomes from a single parent is called haploid genome. For a given gene on a given chromosome, there is a comparable, if not identical, gene on the other chromosome in the pair, known as an allele. Cancer cells result from large structural alterations in their chromosomes that change the number of copies of affected genes on those chromosomes. In cancer cells, instead of having a homologous pair of alleles for a given gene, there may be deletions or duplications of those genes. 
 
 
-Such alterations leads to unequal contribution of one allele over the other, altering the copy number of a given allele. These variations in copy number indicated by the ratio of cancer cell copy number to normal cell copy number can provide information regarding teh structure and history of cancer. However, when DNA is extracted, there is a mix of cancer and normal cells and this information regarding absolute copy number per cancer cell is lost in dna extraction process.  Hence it must be inferred.
+Such alterations leads to unequal contribution of one allele over the other, altering the copy number of a given allele. These variations in copy number indicated by the ratio of cancer cell copy number to normal cell copy number can provide information regarding the structure and history of cancer. However, when DNA is extracted, there is a mix of cancer and normal cells and this information regarding absolute copy number per cancer cell is lost in DNA extraction process.  Hence it must be inferred.
 
 Inferring absolute copy number is difficult for `three reasons`_:
 
@@ -29,13 +36,13 @@ GenPipes Tumor Analysis pipeline is designed to detect somatic variants from a t
 Introduction
 ------------
 
-GenPipes Tumor Pair workflow consumes BAM files. Though it inherits the BAM processing protocol from DNA-seq implementation to retain the benchmarking optimizations but differs in alignment refinement and mutation identification. It achieves this by maximizing the information utilizing both tumour and normal samples together. 
+GenPipes Tumor Pair workflow consumes BAM files. Though it inherits the BAM processing protocol from DNA-seq implementation to retain the benchmarking optimizations but differs in alignment refinement and mutation identification. It achieves this by maximizing the information utilizing both tumor and normal samples together. 
 
-The pipeline is based on an ensemble approach, which was optimized using both the `DREAM3 challenge`_ and the CEPH mixture datasets to select the best combination of callers for both SNV and structural vari- ation detection. For SNVs, multiple callers such as GATK mu- tect2, `VarScan 2`_, `BCFTools`_, `VarDict`_ were combined to achieve a sensitivity of 97.5%, precision of 98.8%, and F1 score of 98.1% for variants found in ≥2 callers.
+The pipeline is based on an ensemble approach, which was optimized using both the `DREAM3 challenge`_ and the CEPH mixture datasets to select the best combination of callers for both SNV and structural variation detection. For SNVs, multiple callers such as 'GATK MuTect2`_, `VarScan 2`_, `BCFTools`_, `VarDict`_ were combined to achieve a sensitivity of 97.5%, precision of 98.8%, and F1 score of 98.1% for variants found in ≥2 callers.
 
-Similarly, SVs were identified using multiple callers such as `DELLY`_, `LUMPY`_, `WHAM`_, `CNVKit`_, and `SvABA`_ combined using `MetaSV`_ to achieve a sensitivity of 84.6%, precision of 92.4%, and F1 score of 88.3% for duplication variants found in the DREAM3 dataset (for more details, refer to Supplementary Material). The pipeline also integrates specific cancer tools to estimate tumour purity and tumour ploidy of sample pair normal−tumour.  
+Similarly, SVs were identified using multiple callers such as `DELLY`_, `LUMPY`_, `WHAM`_, `CNVKit`_, and `SvABA`_ combined using `MetaSV`_ to achieve a sensitivity of 84.6%, precision of 92.4%, and F1 score of 88.3% for duplication variants found in the DREAM3 dataset (for more details, refer to Supplementary Material). The pipeline also integrates specific cancer tools to estimate tumor purity and tumor ploidy of sample pair normal−tumor.  
 
-Addi- tional annotations are incorporated to the SNV calls using `dbNSFP`_ and/or Gemini [21], and QC metrics are collected at various stages and visualized using MulitQC [22]. 
+Additional annotations are incorporated to the SNV calls using `dbNSFP`_ and/or Gemini [21], and QC metrics are collected at various stages and visualized using MulitQC [22]. 
 
 GenPipes Tumor Pair pipeline has three protocol options: sv, ensemble, or fastpass.  For details refer to `Pipeline Schema`_ section below. 
 
@@ -59,7 +66,7 @@ Usage
                      [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
                      [--json] [--report] [--clean]
                      [-l {debug,info,warning,error,critical}] [-p PAIRS]
-                     [-t {mugqic,mpileup,light}] [-r READSETS] [-v] 
+                     [-t {sv,ensemble,fastpass}] [-r READSETS] [-v] 
 
 **Optional Arguments**
 
@@ -93,8 +100,8 @@ Usage
                         log level (default: info)
   -p PAIRS, --pairs PAIRS
                         pairs file
-  -t {mugqic,mpileup,light}, --type {mugqic,mpileup,light}
-                        DNAseq analysis type
+  -t {sv,ensemble,fastpass}, --type {sv,ensemble,fastpass}
+                        tumor pair analysis type
   -r READSETS, --readsets READSETS
                         readset file
   -v, --version         show the version information and exit
@@ -239,7 +246,7 @@ More information
 
 For the latest implementation and usage details refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/tumor_pair/>`_.
 
-* Mutec2 Tool for calling somatic SNVs and indels via local assembly of haplotypes - `See here <https://software.broadinstitute.org/gatk/documentation/tooldocs/current/org_broadinstitute_hellbender_tools_walkers_mutect_Mutect2.php>`_.
+* MuTect2 Tool for calling somatic SNVs and indels via local assembly of haplotypes - `See here <https://software.broadinstitute.org/gatk/documentation/tooldocs/current/org_broadinstitute_hellbender_tools_walkers_mutect_Mutect2.php>`_.
 
 * A `three-caller pipeline <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5428716/>`_ for variant analysis of cancer whole-exome sequencing data. 
 
@@ -256,7 +263,7 @@ For the latest implementation and usage details refer to the latest `pipeline im
 .. |sambamba_mark_duplicates| replace:: `SamBamba Mark Duplicates`_ 
 .. |recalibration| replace:: `Recalibration`_
 .. |conpair_concordance_contamination| replace:: `Compair Concorance Contamination`_
-.. |rawmpileup_panel| replace:: `Raw MPileup Panel`_
+.. |rawmpileup_panel| replace:: `Raw Mpileup Panel`_
 .. |paired_varscan2_panel| replace:: `Paired VarScan 2`_
 .. |merge_varscan2_panel| replace:: `Merge VarScan 2 Panel`_
 .. |preprocess_vcf_panel| replace:: `PreProcess VCF Panel`_
@@ -267,11 +274,11 @@ For the latest implementation and usage details refer to the latest `pipeline im
 .. |gatk_callable_loci| replace:: `GATK callable Loci`_
 .. |extract_common_snp_freq| replace:: `Extract Common SNP Frequency`_
 .. |baf_plot| replace:: `BAF Plot`_
-.. |rawmpileup| replace:: `Raw MPileup`_
+.. |rawmpileup| replace:: `Raw Mpileup`_
 .. |paired_varscan2| replace:: `Paired Var Scan 2`_
 .. |merge_varscan2| replace:: `Merge Var Scan 2`_
 .. |paired_mutect2| replace:: `Paired Mutect2`_
-.. |merge_mutect2| replace:: `Merge Mutec2`_
+.. |merge_mutect2| replace:: `Merge Mutect2`_
 .. |samtools_paired| replace:: `SAM Tools Paired`_
 .. |merge_filter_paired_samtools| replace:: `Merge Filter Paired SAM Tools`_
 .. |vardict_paired| replace:: `VarDict Paired`_
@@ -306,4 +313,4 @@ For the latest implementation and usage details refer to the latest `pipeline im
 .. _SvABA: https://www.ncbi.nlm.nih.gov/pubmed/29535149
 .. _MetaSV: https://www.ncbi.nlm.nih.gov/pubmed/25861968
 .. _dbNSFP: https://www.ncbi.nlm.nih.gov/pubmed/26555599
-
+.. _GATK MuTect2: https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_cancer_m2_MuTect2.php
