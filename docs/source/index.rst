@@ -33,6 +33,7 @@ The main documentation for GenPipes is organized to address the needs of a new G
    :name: sec-general
 
    about/index
+   get-started/gp_usecases
    faq/gp_faq
 
 .. toctree::
