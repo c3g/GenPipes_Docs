@@ -11,6 +11,7 @@ This guide is intended as an introductory overview of GenPipes and provides usef
    :maxdepth: 1
    :name: toc-user-guide
 
+   /development/relnotes/latest
    quickstart_gp
    pipeline_ref
    get_involved
