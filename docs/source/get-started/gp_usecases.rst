@@ -24,6 +24,8 @@ These can be utilized for performing a wide range of standardized and tailored a
 
 C3G has extensive experience analyzing data from various sequencing applications with state of the art computation methods. It offers various `services <http://www.computationalgenomics.ca/services/>`_ to next-generation sequencing researchers who wish to use these pipelines for advanced genomic analysis. For customized and case-by-case analysis service, `submit your request today <http://www.computationalgenomics.ca/services/#submitRequestInquiry>`_.
 
+----
+
 Following is a summary of real-life application use case for each of the GenPipes Pipelines:
 
 RNA Sequencing
