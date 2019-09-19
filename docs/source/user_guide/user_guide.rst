@@ -3,15 +3,25 @@
 GenPipes User Guide
 ===================
 
-This document will contain GenPipes end user guide and links to information related to GenPipes usage.
+GenPipes is an open source framework developed at `Canadian Centre for Computational Genomics (C3G) <http://www.computationalgenomics.ca/>`_ to facilitate writing and execution of multi-step processing pipelines on HPC clusters. GenPipes is written in Python and is primarily geared towards Next Generation Sequencing analysis. It comes with 12 validated pipelines that include RNA-Seq, ChIP-Seq, DNA-Seq, Methyl-Seq and Hi-C processing.
 
-This guide is intended as an introductory overview of GenPipes and provides useful links to information regarding how to access GenPipes on Compute Canada servers or deploy it and use it for genomic analysis. It also provides link to specific details of each of the available genomic analysis pipelines in GenPipes package.
+The new users can get started by referring to the :ref:`Quick Start Guide<docs_quickstart_gp>`. Seasoned users can refer to specifics of any of the pipelines by browsing the :ref:`Pipeline Reference section<docs_pipeline_ref>`. 
+
+Users can refer to :ref:`latest release notes<docs_relnote_latest>` for GenPipes Version |genpipes_version| for more information regarding what is new, which pipelines were updated and what issues are fixed in this release.
+
+If you wish to not only use GenPipes Open Source offering but also contribute to the same or contribute to GenPipes documentation, refer to the section :ref:`Getting involved<docs_get_involved>` below.
+
+*Happy genomic analysis with GenPipes!*
+
+----
+
+This GenPipes User Guide is organized as follows:
 
 .. toctree::
    :maxdepth: 1
    :name: toc-user-guide
 
-   /development/relnotes/latest
    quickstart_gp
    pipeline_ref
+   /development/relnotes/latest
    get_involved
