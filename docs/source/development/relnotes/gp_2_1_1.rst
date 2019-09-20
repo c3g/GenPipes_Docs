@@ -1,0 +1,31 @@
+:orphan:
+
+.. _docs_gp_relnote_2_1_1:
+
+.. spelling::
+
+    smrtanalysis
+    htseq
+
+GenPipes 2.1.1 Release Notes
+============================
+
+A new micro release of GenPipes 2.1.1 is now available.
+
+What's new? 
+------------
+
+* Complete report redesign! It's now easier to modify report sections, and we can build partial reports (only using a few steps). Examples of these reports will be deployed on our web site soon.
+* Other than THAT, mostly bug fixes and tweaks:
+    - One of these bugs was the rRNA computation using STAR. It was off because of STAR BAM handling by RNA-SeQC
+* Some modules were added or were updated
+* Gorilla_gorilla.gorGor3 was installed in genomes
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+
+* This version tarball is in: https://bitbucket.org/mugqic/mugqic_pipelines/downloads/mugqic_pipelines-2.1.1.tar.gz 
+
+Compute Canada Servers abacus, guillimin and mammouth clusters are updated with this new release.
+
+The source code is in bitbucket: https://bitbucket.org/mugqic/mugqic_pipelines 

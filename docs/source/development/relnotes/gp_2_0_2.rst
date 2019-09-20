@@ -1,0 +1,35 @@
+:orphan:
+
+.. _docs_gp_relnote_2_0_2:
+
+.. spelling::
+
+    demultiplexes
+    docstrings
+    httlib
+
+GenPipes 2.0.2 Release Notes
+============================
+
+A new minor version of GenPipes 2.0.2 is now available.
+
+What's new? 
+------------
+
+* A new pipeline: IlluminaRunProcessing mostly used internally, which converts and demultiplexes the base call files to FASTQ files + run some QCs 
+* A pipeline cleaning option to remove intermediate files 
+* Fixes for section headers and cluster settings in guillimin and mammouth config files 
+* Fixes in some pipeline HTML report dependencies 
+* nanuq2mugqic_pipelines.py now uses a pure Python httlib library instead of a wget system call 
+* Update of Picard module version to 1.123 
+* Update of docstrings and README.md for DNA-Seq and RNA-Seq pipelines 
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+
+This version tarball is in : 
+https://bitbucket.org/mugqic/mugqic_pipelines/downloads/mugqic_pipelines-2.0.2.tar.gz 
+
+Compute Canada Servers abacus, guillimin and mammouth clusters are updated with this new release.
+
+The source code is in bitbucket: https://bitbucket.org/mugqic/mugqic_pipelines 

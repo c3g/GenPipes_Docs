@@ -1,0 +1,29 @@
+:orphan:
+  
+.. _docs_gp_relnote_2_2_1:
+
+.. spelling::
+
+    smrtanalysis
+    htseq
+
+GenPipes 2.2.1 Release Notes
+============================
+
+A new release of GenPipes 2.2.1 is now available.
+
+What's new?
+------------
+
+* Add AmpliconSeq pipeline designed to assess the diversity of microorganisms within and among samples using 16S analysis (18S and ITS analysis are also provided).
+* Update of modules and added some new reference genomes
+* Bug fixes and tweaks
+
+Quick! Where can I find it? I can't wait!
+------------------------------------------
+
+* This version tarball is in: https://bitbucket.org/mugqic/mugqic_pipelines/downloads/mugqic_pipelines-2.2.1.tar.gz 
+
+Compute Canada Servers abacus, guillimin and mammouth clusters are updated with this new release.
+
+The source code is in bitbucket: https://bitbucket.org/mugqic/mugqic_pipelines

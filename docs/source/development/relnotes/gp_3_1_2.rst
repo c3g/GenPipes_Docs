@@ -1,0 +1,36 @@
+:orphan:
+  
+.. _docs_gp_relnote_3_1_2:
+
+.. spelling::
+
+    ampliconseq
+    heatmap
+    tx
+    bcbio
+    Arima
+    genpipes
+
+GenPipes 3.1.2 Release Notes
+============================a
+
+New release GenPipes 3.1.2 is now available.
+
+What's new?
+-----------
+
+* many bugs and errors corrections
+   - corrected file path within ini files
+   - corrected typo in ampliconseq.py causing pipeline crash at plot heatmap
+   - corrected reference to kallisto index & tx2gene files in the RNA-Seq light pipeline
+   - fixed bug in tumor_pair pipeline bcbio_variation_recall step : corrected typo in the executable call
+* hicseq pipeline does now accommodate Arima digestion kit compatibility
+
+Quick! Where can I find it? I can't wait!
+-----------------------------------------
+
+* This version tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-3.1.2.tar.gz
+
+* The module mugqic/genpipes/3.1.2 is installed on Abacus, Guillimin, Mammouth-Mp2, Mammouth-Mp2b, Graham and Cedar clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes

@@ -1,0 +1,43 @@
+:orphan:
+
+.. _docs_gp_relnote_2_0_0:
+
+.. spelling::
+
+    timestamp
+
+GenPipes 2.0.0 Release Notes
+============================
+
+May the *genomic analysis and bioinformatics* **force** be with you!
+
+This is the first Python release of GenPipes!
+
+What's new? 
+------------
+
+* Complete redesign of the pipelines in Python for DNA-Seq, RNA-Seq, RNA-Seq De Novo Assembly, PacBio Assembly. ChIP-Seq pipeline will be available in the next release. 
+* Pipelines now share a common list of options 
+* Option and step description is available with --help 
+* Config .ini files can be provided as a list with default one set for abacus and Homo sapiens genome; custom ones can be added for other clusters and/or genomes; cf: https://bitbucket.org/mugqic/mugqic_pipelines#markdown-header-configuration-files 
+* 2 job schedulers are available to submit jobs: PBS for job submission on a cluster, batch for simple command line script 
+* Smart job up-to-date status is computed given a step range: if a job is not up to date, all dependent subsequent jobs are created as well 
+* Option to force job creation even if they are up to date 
+* New input readset file format. Cf: https://bitbucket.org/mugqic/mugqic_pipelines#markdown-header-readset-file 
+* Log-leveled messages to track job creation, input/output files, up-to-date status 
+* Bash script output with version, timestamp and number of created jobs 
+* Option to specify output directory 
+* and many more... 
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+
+This version tarball is in: 
+
+https://bitbucket.org/mugqic/mugqic_pipelines/downloads/mugqic_pipelines-2.0.0.tar.gz 
+
+The module mugqic/mugqic_pipelines/2.0.0 is installed on abacus, guillimin and mammouth clusters. 
+
+The source code is in Bitbucket: 
+
+https://bitbucket.org/mugqic/mugqic_pipelines 

@@ -1,0 +1,31 @@
+:orphan:
+  
+.. _docs_gp_relnote_3_1_1:
+
+.. spelling::
+
+    genpipes
+    Danio
+    rerio
+
+GenPipes 3.1.1 Release Notes
+============================a
+
+A minor release of GenPipes Version 3.1.1 is now available.
+
+What's new?
+-----------
+
+* Glycine_max.v2 (Soybean) genome installed
+* Danio_rerio GRCz11 (zebrafish) genome installed
+* jsonator.py is now versioned : version is showed in the JSON analysis file
+* For Compute Canada users pre-installed GenPipes can be used on various servers such as cedar, mammouth, mp2b. The ini files for these servers are now added.
+
+Quick! Where can I find it? I can't wait!
+-----------------------------------------
+
+* This version tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-3.1.1.tar.gz
+
+* The module mugqic/genpipes/3.1.1 is installed on Abacus, Guillimin, Mammouth-Mp2, Mammouth-Mp2b, Graham and Cedar clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes

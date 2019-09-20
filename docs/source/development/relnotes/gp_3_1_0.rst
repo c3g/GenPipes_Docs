@@ -1,0 +1,29 @@
+:orphan:
+  
+.. _docs_gp_relnote_3_1_0:
+
+.. spelling::
+
+    deduplication
+    genpipes
+
+GenPipes 3.1.0 Release Notes
+============================a
+
+What's new?
+-----------
+
+* added mugqicValidator.py to utils to validate basic structure of readset and design file
+* updated DNAseq - split the pipeline into 2 different pipeline GATK best_practice or old mpileup
+* updated HiCseq - added .hic file generation to capture hic, RobusTAD TAD scoring
+* added multiqc to ChIPseq
+* generation of the analysis JSON file is now optional (added the "--json" flag as a command-line parameter)
+
+Quick! Where can I find it? I can't wait!
+-----------------------------------------
+
+* This version tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-3.1.0.tar.gz
+
+* The module mugqic/genpipes/3.1.3 is installed on Abacus, Guillimin, Mammouth-Mp2, Mammouth-Mp2b, Graham and Cedar clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes

@@ -7,7 +7,7 @@ GenPipes is an open source framework developed at `Canadian Centre for Computati
 
 The new users can get started by referring to the :ref:`Quick Start Guide<docs_quickstart_gp>`. Seasoned users can refer to specifics of any of the pipelines by browsing the :ref:`Pipeline Reference section<docs_pipeline_ref>`. 
 
-Users can refer to :ref:`latest release notes<docs_relnote_latest>` for GenPipes Version |genpipes_version| for more information regarding what is new, which pipelines were updated and what issues are fixed in this release.
+Users can refer to :ref:`latest release notes<docs_latest_relnote>` for GenPipes Version |genpipes_version| for more information regarding what is new, which pipelines were updated and what issues are fixed in this release.
 
 If you wish to not only use GenPipes Open Source offering but also contribute to the same or contribute to GenPipes documentation, refer to the section :ref:`Getting involved<docs_get_involved>` below.
 
@@ -23,5 +23,5 @@ This GenPipes User Guide is organized as follows:
 
    quickstart_gp
    pipeline_ref
-   /development/relnotes/latest
+   latest_relnote
    get_involved

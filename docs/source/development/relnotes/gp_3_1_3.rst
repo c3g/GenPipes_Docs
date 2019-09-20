@@ -1,20 +1,32 @@
 :orphan:
 
-.. _docs_relnote_3_1_3:
+.. _docs_gp_relnote_3_1_3:
 
 .. spelling::
 
-    Amplicon
+    deduplication
+    genpipes
 
 GenPipes 3.1.3 Release Notes
-=============================
+============================a
 
-What's New in GenPipes 
-----------------------
+What's new? 
+-----------
 
-* DADA2 support added in Amplicon Sequencing Pipeline
-* GATK4 support fixes
-* MUGQIC Tools version 2.2.0 upgrade
-* Following pipelines were updated:
-  - Methyl Sequencing Pipeline
-  - DNA Sequencing Pipeline
+* AmpliconSeq pipeline :
+   - new dada2 protocol, which also becomes the default protocol
+   - former protocol is set to QIIME protocol
+* DNA-Seq pipeline :
+   - GATK4 updates
+   - newer and faster tools
+* MethylSeq pipeline :
+   - UMI deduplication integrated
+
+Quick! Where can I find it? I can't wait! 
+-----------------------------------------
+
+* This version tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-3.1.3.tar.gz
+
+* The module mugqic/genpipes/3.1.3 is installed on Abacus, Guillimin, Mammouth-Mp2, Mammouth-Mp2b, Graham and Cedar clusters.
+  
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes

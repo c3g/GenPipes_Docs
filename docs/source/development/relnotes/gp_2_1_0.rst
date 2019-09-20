@@ -1,0 +1,33 @@
+:orphan:
+
+.. _docs_gp_relnote_2_1_0:
+
+.. spelling::
+
+    smrtanalysis
+    htseq
+
+GenPipes 2.1.0 Release Notes
+============================
+
+A new minor version of GenPipes 2.1.0 is now available.
+
+What's new? 
+------------
+
+* ChIP-Seq pipeline is now up and running. It uses MACS2 (2.1.0), HOMER 4.7 and the available genomes are: UCSC hg19, mm9, mm10, rn5. Please note that as compared to the previous version of ChIP-Seq pipeline, the values '1' for control and '2' for treatment are reversed compared to the old Perl version! 
+* PacBio Assembly pipeline upgraded smrtanalysis 2.3.0 to patch 2 
+* PacBio Assembly and RNA-Seq pipelines have now a config file for mammouth 
+* Module install scripts simplified 
+* Fixed bug in RNA-Seq htseq-count 
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+
+* This version tarball is in: https://bitbucket.org/mugqic/mugqic_pipelines/downloads/mugqic_pipelines-2.1.0.tar.gz 
+
+Compute Canada Servers abacus, guillimin and mammouth clusters are updated with this new release.
+
+The source code is in bitbucket: https://bitbucket.org/mugqic/mugqic_pipelines 
+
+.. include:: gp_changelog.inc

@@ -3,6 +3,26 @@
 Release Notes
 =============
 
-* Latest GenPipes build |genpipes_version| :ref:`release notes<docs_relnote_latest>` released on Mar 26, 2019 
-* :ref:`GenPipes 3.1.3<docs_relnote_3_1_3>` released on Dec 18, 2018 
-* For older GenPipes Release note information, refer to GenPipes `Release Notes Archives <https://bitbucket.org/mugqic/genpipes/src/master/README-release.txt>`_.
+The first release of GenPipes into open source was made in :ref:`2013<doc_evolution>`. Since then, the number of GenPipes runs utilizing C3G HPC resources have grown significantly. With the release of version 2.0.0 in 2014, a community of users has run GenPipes to conduct approximately 3,000 analyses processing approximately 100,000 samples.
+
+The current release of GenPipes is |genpipes_version|.
+
+Following links point to the recent GenPipes release notes.
+
+* :ref:`GenPipes 3.1.4<docs_gp_relnote_3_1_4>` released on Mar 26, 2019
+* :ref:`GenPipes 3.1.3<docs_gp_relnote_3_1_3>` released on Dec 18, 2018 
+* :ref:`GenPipes 3.1.2<docs_gp_relnote_3_1_2>` released on Nov 22, 2018 
+* :ref:`GenPipes 3.1.0<docs_gp_relnote_3_1_0>` released on Apr 9, 2018 
+* :ref:`GenPipes 3.0.0<docs_gp_relnote_3_0_0>` released on Nov 30, 2017
+* :ref:`GenPipes 2.3.0<docs_gp_relnote_2_3_0>` released on Feb 28, 2017 
+* :ref:`GenPipes 2.2.1<docs_gp_relnote_2_2_1>` released on Dec 19, 2016 
+* :ref:`GenPipes 2.2.0<docs_gp_relnote_2_2_0>` released on Feb 9, 2016 
+* :ref:`GenPipes 2.1.1<docs_gp_relnote_2_1_1>` released on Apr 14, 2015 
+* :ref:`GenPipes 2.1.0<docs_gp_relnote_2_1_0>` released on Feb 5, 2015 
+* :ref:`GenPipes 2.0.2<docs_gp_relnote_2_0_1>` released on Jan 13, 2015 
+* :ref:`GenPipes 2.0.1<docs_gp_relnote_2_0_1>` released on Dec 17, 2014 
+* :ref:`GenPipes 2.0.0<docs_gp_relnote_2_0_0>` released on Dec 12, 2014 
+ 
+For older GenPipes Release note information, refer to GenPipes `Release Notes Archives <https://bitbucket.org/mugqic/genpipes/src/master/README-release.txt>`_.
+
+.. include:: gp_changelog.inc

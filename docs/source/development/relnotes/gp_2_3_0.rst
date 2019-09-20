@@ -1,0 +1,39 @@
+:orphan:
+
+.. _docs_gp_relnote_2_3_0:
+
+.. spelling::
+
+    smrtanalysis
+    htseq
+
+GenPipes 2.3.0 Release Notes
+============================
+
+A new release of GenPipes version 2.3.0 is now available.
+
+What's new? 
+------------
+
+* New Tumor Pair pipeline : a sensitive ensemble approach for detection of somatic and germline variants
+* Added an optional step to our PacBio Assembly pipeline to circularize the assembly contigs using the circlator python package
+* Bug fixes
+    - One of these bugs, in our RNA-Seq pipeline, was causing the reverse strand bed graph to always be empty
+* Some modules were added or were updated
+* New genomes were installed :
+    - Bos_taurus.UMD3.1
+    - Macaca_mulatta.MMUL_1
+    - Pan_troglodytes.CHIMP2.1.4
+    - Pan_troglodytes.panTro4
+    - Papio_anubis.PapAnu2.0
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+
+* This version tarball is in: https://bitbucket.org/mugqic/mugqic_pipelines/downloads/mugqic_pipelines-2.3.0.tar.gz
+
+Compute Canada Servers abacus, guillimin and mammouth clusters are updated with this new release.
+
+The source code is in bitbucket: https://bitbucket.org/mugqic/mugqic_pipelines 
+
+.. include:: gp_changelog.inc

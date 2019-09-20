@@ -1,0 +1,28 @@
+:orphan:
+
+.. _docs_gp_relnote_2_0_1:
+
+.. spelling::
+
+    indel
+
+GenPipes 2.0.1 Release Notes
+============================
+
+This is a minor release.
+
+What's new? 
+------------
+
+* A critical issue in DNA-Seq pipeline during indel realignment; cf e-mail: https://groups.google.com/forum/#!topic/mugqic_pipelines/eCeM3smfJ_o has been fixed in this release.
+
+* For Compute Canada deployed GenPipes, a new minor feature has been added: A warning is raised if the number of jobs created is over the cluster job submission limit (30000 jobs for abacus, 3000 jobs for guillimin, 2048 jobs for mammouth). 
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+
+This version tarball is in: https://bitbucket.org/mugqic/mugqic_pipelines/downloads/mugqic_pipelines-2.0.1.tar.gz 
+
+The module mugqic/mugqic_pipelines/2.0.1  is installed on abacus, guillimin and mammouth clusters. 
+
+The source code is in bitbucket: https://bitbucket.org/mugqic/mugqic_pipelines 
