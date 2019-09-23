@@ -28,6 +28,18 @@ Checklist of Pre-requisites for Running GenPipes
       - :ref:`Modules that are required<accessing_sw_mod_genomes_local_dp>`
       - :ref:`Genomes that need to be referenced<ref_installing_genomes>`
 
+----
+
+.. _software dependencies:
+
+.. figure:: /img/sw-modules-dep.png
+   :align: center
+   :alt:  Software Modules required for running GenPipes
+
+   Figure: Software Modules required for running GenPipes 
+
+----
+
 **CHK2**: Ensure that you can test run one of the GenPipes Pipeline.  Simply issue the help option instead of running any jobs.  This will confirm whether GenPipes can actually run and environment setup in terms of python modules is taken care of.
 
   * Check that GenPipes is deployed

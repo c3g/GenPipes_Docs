@@ -43,6 +43,7 @@ extensions = [ 'sphinxcontrib.spelling',
                'sphinx_git',
                'sphinx_rtd_theme',
                'sphinx.ext.autosectionlabel',
+               'sphinx.ext.imgmath',
                'sphinx_tabs.tabs'
 ]
 

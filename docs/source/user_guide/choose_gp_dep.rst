@@ -3,8 +3,18 @@
 Choose GenPipes Deployment Option
 ----------------------------------
 
-Install it locally (bare metal, VM or in a container)
-Install it on cloud (GCP)
-Or
-Access it from Compute Canada server pre-installed GenPipes
+Before you can quickly get started with GenPipes, you need some clarity regarding your GenPipes deployment preference.  
 
+This choice governs where you will execute or run GenPipe pipelines for conducting genomic analysis. As you may be aware, genomic analysis is time consuming and resource intensive processing that requires significant amount of raw compute power, memory and reference dataset storage space.
+
+GenPipes is available as pre-deployed software that can be run using compute and storage resources available for C3G users through the partnership with `Compute Canada`_ datacenter.  If you already have a `Compute Canada account`_, this may be your fastest option to use GenPipes.
+
+Otherwise, there are other options available as well but they may need additional time and expertise to download and deploy one of the `GenPipes Release Builds`_ that come in the form of a compressed file with some basic modules, test datasets and reference genomes that can be used for basic genomic analysis.  This kind of deployment works for simple analysis unless you have access to high end compute power or local HPC resources.
+
+Local deployment can be either on bare metal server, on a VM or inside a container.  
+
+For details on available GenPipes deployment options and how to deploy, please visit :ref:`How to deploy GenPipes?<docs_how_to_deploy_genpipes>` Guide.
+
+.. _Compute Canada: https://www.computecanada.ca
+.. _Compute Canada account: https://ccdb.computecanada.ca/account_application
+.. _GenPipes Release Builds: https://bitbucket.org/mugqic/genpipes/downloads/
