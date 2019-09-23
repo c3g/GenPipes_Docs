@@ -7,7 +7,7 @@ GenPipes Writing Style Guide
 
 How do we make it really easy and simple for GenPipes users to adopt GenPipes?
 
-The very basic ingredient is GenPipesitself. It needs to be flexible, scalable, intuitive, easy to deploy and quick to gather information insights. Besides that, one of the key enablers towards facilitating GenPipes onboarding is its user documentation that satisfies the following criteria:
+The very basic ingredient is GenPipes itself. It needs to be flexible, scalable, intuitive, easy to deploy and quick to gather information insights. Besides that, one of the key enablers towards facilitating GenPipes onboarding is its user documentation that satisfies the following criteria:
 
 * Concise,
 * Current & Continuously updated,
