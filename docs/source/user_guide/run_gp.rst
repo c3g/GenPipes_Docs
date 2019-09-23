@@ -3,20 +3,16 @@
 Run GenPipes
 ------------
 
-Test that it works, generic usage command, version check, --help or -h option
+Once you have :ref:`chosen<docs_choose_gp_dep>` your GenPipes use option and have access to the GenPipes executable through Compute Canada server access or on your local server, you need to setup and configure your GenPipes environment as per your deployment choice.  After you have configured it, you are ready to execute GenPipes.
 
-- Provide links to Get Started Guide for Example test runs
-- Provide links to Tutorial section of the documentation
+First of all, test that it works, without actually running a pipeline, by using the  --help or -h option. For details, please refer to the Getting Started Guide :ref:`Run GenPipes section<docs_using_gp>`.
 
+Each of the available GenPipes Pipeline has its own unique execution command.  You can find details for each in the :ref:`Pipeline Reference Guide<docs_pipeline_ref>`. It also has sections demonstrating *example runs* for each pipeline.
 
-* Linux / Mac / Windows users
-* What a user needs bare minimum to get started - software, hardware, connectivity, accounts etc.
+New users may benefit from the :ref:`GenPipes Tutorial<doc_list_tutorials>` section of this documentation that provides step by step instructions on how to execute a few sample GenPipes pipelines.  There is also a tutorial available for :ref:`running GenPipes in the cloud using Google Compute Platform<genpipes_in_the_cloud>`.
 
-Requirements
+In case you run into any runtime issues or errors, do refer to :ref:`Troubleshooting GenPipes Runtime Issues<docs_troubleshooting_rt_issues>` or browse the GenPipes :ref:`Support<docs_how_to_get_support>` sections.
 
-- Skills: Python (version?), HPC (?), HPC Resource management - Job schedulers (Slurm, Torque, Batch, daemon), CVMFS, Transferring large data files (genome, datasets to CC), rules for data and storage in CC etc.
-- For local deployment - Unix admin skills, bash proficiency, containers (Docker, Singularity)
-- For cloud deployment - GCP account (Free tier usage permitted for GenPipes), GCP basic access know how, cloud storage access and data transfer know-how
-- Software dependencies: Modules, Genomes, Datasets, Bioinformatics 3 rd party tools (seek guidance from GenPipes Gods or link to C3g page which lists this)
+Happy analysis with GenPipes! We would love to hear your feedback on GenPipes or the documentation. 
 
-3 Step Process:
+:ref:`Contributions<docs_contributing>` to GenPipes or its documentation are most welcome!

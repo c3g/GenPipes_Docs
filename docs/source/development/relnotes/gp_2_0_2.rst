@@ -7,6 +7,7 @@
     demultiplexes
     docstrings
     httlib
+    wget
 
 GenPipes 2.0.2 Release Notes
 ============================
