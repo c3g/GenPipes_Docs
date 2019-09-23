@@ -8,7 +8,9 @@
 Using GenPipes for genomic analysis
 ====================================
 
-This document describes the GenPipes execution environment and how to use various genomic analysis pipelines. Topics covered include information regarding what is available in a typical GenPipes deployment and how to access it. Besides that it covers details on required software and environment configurations, various kinds of inputs required to run genomic analysis such as command options, configuration details, readset file and design file. There are example runs highlighting how to issue the pipeline commands with requisite inputs and pipeline specific configurations.
+This document describes the GenPipes execution environment and how to use various genomic analysis pipelines.  It assumes you already have access to GenPipes through one of the available :ref:`GenPipes Deployment Options<docs_dep_options>`.
+
+Topics covered in this document includes information regarding what is available in a typical GenPipes deployment and how to access it. Besides that it covers details on required software and environment configurations, various kinds of inputs required to run genomic analysis such as command options, configuration details, readset file and design file. There are example runs highlighting how to issue the pipeline commands with requisite inputs and pipeline specific configurations.
 
 .. contents:: :local:
 
