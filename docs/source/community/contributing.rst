@@ -3,24 +3,30 @@
 Contributing to GenPipes
 ========================
 
-This section will contain information regarding how potential contributors can get started and help with improving GenPipes framework and documentation.
+The GenPipes project team welcomes contributions from the community!
 
-For developers
----------------
+We are thrilled to receive your inputs and try to process them as fast as we can.
 
-* GenPipes overall framework architecture
-* Coding Guidelines
-* Compilation and Testing Guide
+There are multiple ways in which you, as a user of GenPipes can contribute.
+
+#. GenPipes User feedback and inputs related to usage, documentation or issues, if any.
+#. GenPipes Developer inputs in the form of code fixes and new feature requests, forks and code evolutions
+#. Technical Writer contributions in the form of improvisations, new content etc.
+ 
+GenPipes Usage related Contributions
+------------------------------------
+
+For all GenPipes usage related feedback and contributions, please visit :ref:`Get involved with GenPipes<docs_get_involved>`.
+
+GenPipes Developer Contributions
+--------------------------------
+
+Please refer to the :ref:`GenPipes Developers Guide<docs_dev_guide>` for guidelines on how to submit code, make feature requests and change requests into GenPipes sources.
 
 
-For documentation contributors
--------------------------------
+Technical Writer Contributions
+------------------------------
 
-* Writing style guidelines
-* RTD restructured text and Sphinx links
+If you are a technical writer and would like to submit your contributions for GenPipes documentation, please refer to the guidelines regarding :ref:`contributing to GenPipes documentation<ref_docs_contrib_guidelines>`.
 
-.. note:: Following is sample content for this page.
-
-The GenPipes project team welcomes contributions from the community. We are always thrilled to receive pull requests, and do our best to process them as fast as we can.If you wish to contribute code and you have not signed our contributor license agreement (CLA), our bot will update the issue when you open a Pull Request. For any questions about the CLA process, please refer to our FAQ.
-
-Before you start to code, we recommend discussing your plans through a GitHub issue or discuss it first with the official project maintainers via team chat, especially for more ambitious contributions. This gives other contributors a chance to point you in the right direction, give you feedback on your design, and help you find out if someone else is working on the same thing.
+Thank you for your inputs!
