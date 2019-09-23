@@ -29,5 +29,3 @@ Quick! Where can I find it? I can't wait!
 Compute Canada Servers abacus, guillimin and mammouth clusters are updated with this new release.
 
 The source code is in bitbucket: https://bitbucket.org/mugqic/mugqic_pipelines 
-
-.. include:: gp_changelog.inc

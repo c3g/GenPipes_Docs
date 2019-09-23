@@ -312,8 +312,8 @@ For more information about output formats please consult the webpage of the thir
 
     The hicseq pipeline also analyzes capture hic data if the “-t capture” flag is used. For more information on the available steps in that pipeline use: **hicseq -h**
 
-Design File:
-------------
+Creating a Design File:
+-----------------------
 
 Certain pipelines that involve comparing and contrasting samples, need a Design File.
 

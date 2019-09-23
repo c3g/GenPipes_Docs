@@ -15,13 +15,18 @@ Checklist of Pre-requisites for Running GenPipes
 
     * Hardware requirement 
   
-      TBD
+      To run GenPipes locally in your server - it must have at least the following resources:
 
-    * Software requirement
+      - CPU
+      - Cores
+      - Memory
+      - Disk speed / SSD capacity
+
+    * Software requirements
 
       - Python 2.7
-      - Modules that are required
-      - Genomes that need to be referenced
+      - :ref:`Modules that are required<accessing_sw_mod_genomes_local_dp>`
+      - :ref:`Genomes that need to be referenced<ref_installing_genomes>`
 
 **CHK2**: Ensure that you can test run one of the GenPipes Pipeline.  Simply issue the help option instead of running any jobs.  This will confirm whether GenPipes can actually run and environment setup in terms of python modules is taken care of.
 
@@ -29,15 +34,12 @@ Checklist of Pre-requisites for Running GenPipes
 
     - For Compute Canada data centre users:
 
-::
- 
-  <pipeline_name>.py --help
+         *<pipeline_name>.py --help*
+
 
     - For local installation 
 
-::
-  
-  $MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name>.py --help
+         *$MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name>.py --help*
 
   * Ensure CVMFS is mounted (??? Is this valid for non container too?)
 

@@ -33,6 +33,8 @@ Add the following line in your your *$HOME/.bash_profile*: to set MUGQIC_PIPELIN
 
   export MUGQIC_PIPELINES_HOME=/path/to/your/local/genpipes
 
+.. _accessing_sw_mod_genomes_local_dp:
+
 Step 3: Accessing software modules and genomes needed for GenPipe
 -----------------------------------------------------------------
 
@@ -80,6 +82,8 @@ Next, you need to check if the module is successfully installed and available fo
   module avail 2>&1 | grep mugqic/<my_software>/<version>
 
 This completes the software module setup for GenPipes execution. Next you need to make sure all required reference genomes are available in your local deployment. Refer to the next section if you wish to install additional genomes.
+
+.. _ref_installing_genomes:
 
 **Installing genomes**
 

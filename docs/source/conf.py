@@ -42,8 +42,13 @@ extensions = [ 'sphinxcontrib.spelling',
                'sphinx_markdown_tables',
                'sphinx_git',
                'sphinx_rtd_theme',
+               'sphinx.ext.autosectionlabel',
                'sphinx_tabs.tabs'
 ]
+
+# Configure autosectionlabel extension
+autosectionlabel_prefix_document = True
+autosectionlabel_maxdepth = 3
 
 # Spelling language.
 spelling_lang = 'en_UK'
