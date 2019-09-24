@@ -40,6 +40,19 @@ Here is how you can launch GenPipes. Following is the generic command to run Gen
 
 where <pipeline-name> refers to one of the :ref:`available  GenPipes Pipelines<docs_available_pipelines>` and step-range-number-1-n refers to the specific steps in the pipeline that need to be executed. 
 
+.. _gp_terminology:
+
+**Terminology**
+
+In the context of GenPipes, you need to be familiar with the following terms.  These constitute inputs and configuration required before you can launch the pipelines.
+
+* :ref:`Readset File<docs_readset_file>`
+* :ref:`Configuration files<docs_config_ini_file>`
+* :ref:`Design files<docs_design_file>`
+* :ref:`Test Datasets<docs_testdatasets>` 
+
+**Launching GenPipes**
+
 To launch GenPipes, the following is needed:
 
 1. Name of the pipeline corresponding to one of the :ref:`available  GenPipes Pipelines<docs_available_pipelines>`.

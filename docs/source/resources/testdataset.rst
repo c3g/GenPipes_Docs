@@ -9,6 +9,12 @@ You can execute various GenPipes Pipelines using the following types of data:
 
 * Test datasets that are available in the absence of real genomic analysis data.
 
+**Test Dataset** in the context of GenPipes refers to the dataset that needs to be analyzed by one of the GenPipes Pipelines. It can either be real data or sample data that is used to run the pipeline. Test dataset refers to some dataset that user can use to have hands-on on the pipeline. It is typically a smaller datasets (for e.g., one chromosome only and few samples for instance) so that the test runs of the pipelines using sample data get completed quickly say for demonstration purposes.
+
+Test dataset is different from readset file which is input to the pipeline.  For other kinds of inputs required for GenPipes pipelines, see :ref:`here<gp_terminology>`.
+
+In contrast to the test dataset, a :ref:`Readset File<docs_readset_file>` in the context of GenPipes actually describes the dataset (test dataset or real dataset) so that the pipeline can understand the type of data and process it.  Readset file is provided as input to almost all the GenPipes pipelines. Readset file contains information about the data to analyze; the path of the raw files, the type of sequencing, the name of the samples, etc.
+
 .. note::  
 
     Please remember to use the correct dataset for the respective GenPipes pipelines.  The table below lists the test dataset download link for each of the GenPipes pipeline. Do not use the test dataset specified for a different pipeline.
