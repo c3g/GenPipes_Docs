@@ -48,3 +48,8 @@ Here are some guidelines to contribute to GenPipes documentation:
 * Follow the GenPipes :ref:`Writing style guidelines<doc_gp_writing_guidelines>` while adding or updating content into GenPipes documentation.
 * Before you delete any content, make sure it is not relevant in some user context.
 * Make sure, any content you add is targeted and tailored to the needs of GenPipes audience - new users or seasoned GenPipes users. 
+
+References for Sphinx based documentation
+-----------------------------------------
+
+* Using Sphinx and ReadTheDocs for building documentation of Python projects - a very informative 'reference <https://brendanhasz.github.io/2019/01/05/sphinx.html>`_.
