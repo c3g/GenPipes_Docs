@@ -100,7 +100,7 @@ Recalibrate base quality scores of sequencing-by-synthesis reads in an aligned B
 
 **Conpair Concorance Contamination**
 
-TBD
+`Conpair <https://github.com/nygenome/Conpair>`_ is a concordance and contamination estimator for tumor–normal pairs. This step is a quality control process to ensure the normal sample and cancer sample come from the same patient. It estimates this by determining the amount of normal sample in the tumor and the amount of tumor in normal sample.
 
 .. _Raw Mpileup Panel:
 
