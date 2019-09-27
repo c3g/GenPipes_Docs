@@ -3,15 +3,22 @@
 Compute Resources for GenPipes
 ==============================
 
-This document will contain information on available compute resources for GenPipes at C3G.  It will link to appropriate pages on C3G website and provide insights on resource usage.
+This document lists compute resources that are available from C3G for GenPipes users. 
+
+.. toctree::
+   :maxdepth:  1
+   :caption: CCDB Compute Resources
+   :name: compute-resources
+
+   ../c3gres/ccdb_account
 
 .. toctree::
    :maxdepth: 1
-   :caption: C3G Resources
-   :name: Bioinformatic-resources
+   :caption: C3G Bioinformatics Resources
+   :name: bioinformatic-resources
 
 
    ../c3gres/cvmfs_modules
    ../c3gres/cvmfs_genomes
-
+   testdataset
 

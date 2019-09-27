@@ -1,6 +1,8 @@
 GenPipes Documentation 
 =======================
 
+.. codeauthor:: Shaloo Shalini <shaloo_shalini@yahoo.com>
+
 .. warning:: 
          
           This is the draft version of GenPipes documentation hosted on `Read The Docs <https://readthedocs.org/projects/genpipes/>`_. It is currently under review.  If you wish to access GenPipes information, please visit `GenPipes Documentation <http://www.computationalgenomics.ca/genpipes/>`_ for official version of the same.  

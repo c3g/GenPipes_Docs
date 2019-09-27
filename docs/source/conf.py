@@ -19,9 +19,12 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'gpdocs'
-author = u'Shaloo Shalini (GenPipes GSoD 2019)' 
-copyright = author 
+project = 'GenPipes'
+author = u'Shaloo Shalini (GSoD 2019) GenPipes' 
+show_authors = False
+
+#copyright = u'GenPipes (GSoD 2019)'
+copyright =  author
 
 # The full version, including alpha/beta/rc tags
 

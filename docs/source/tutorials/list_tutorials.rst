@@ -1,15 +1,13 @@
 .. _doc_list_tutorials:
 
-This document contains information related to GenPipes tutorials.  It will also link information that is needed to access GenPipes deployment, how to run the tutorials and how to see, visualize the results.
-
-For example, here is some sample `tutorial <http://www.computationalgenomics.ca/tutorials/>`_ content.
-
-We are in the process of putting together all GenPipes Tutorials in this section. As a start, we have simply collected all available tutorials in one place.
-
 GenPipes Tutorials
 ===================
 
-GenPipes can be deployed on C3G server resources, locally on developer's desktop or on the cloud. If you are running GenPipes using C3G resources, refer to the GenPipes Tutorial below.  In case you wish to deploy and try out GenPipes in the cloud, refer to the GenPipes (Cloud) tutorial
+GenPipes is a flexible Python-based framework that facilitates the development and deployment of multi-step genomic workflows, optimized for High-Performance Computing (HPC) clusters and the cloud.  It offers open sourced 12 validated and scalable pipelines for various genomics applications.
+
+There are multiple ways to deploy and run GenPipes. For details, see :ref:`GenPipes Deployment Guide<docs_dep_options>`.
+
+The GenPipes tutorials listed below demonstrate how GenPipes can be deployed and run for first time users.  Please note that the tutorials correspond to the GenPipes deployment :ref:`type<docs_dep_options>`.  If you are deploying GenPipes on the cloud, then refer to the *GenPipes in the Cloud* tutorial below.  If you are accessing GenPipes which is pre-deployed on Compute Canada servers, use the first tutorial listed below:
 
 .. toctree::
    :maxdepth: 1
