@@ -5,27 +5,14 @@ GenPipes Documentation
          
           This is the draft version of GenPipes documentation hosted on `Read The Docs <https://readthedocs.org/projects/genpipes/>`_. It is currently under review.  If you wish to access GenPipes information, please visit `GenPipes Documentation <http://www.computationalgenomics.ca/genpipes/>`_ for official version of the same.  
 
-	  Meanwhile, feel free to browse this documentation. Your feedback is welcome! 
-
 Welcome to the GenPipes Documentation!
 ----------------------------------------
 
-GenPipes is a flexible Python-based framework that facilitates the development and deployment of multi-step workflows optimized for High-Performance Computing clusters and the cloud.  It offers open sourced 12 validated and scalable pipelines for various genomics applications.
+GenPipes is a flexible Python-based framework that facilitates the development and deployment of multi-step genomic workflows, optimized for High-Performance Computing (HPC) clusters and the cloud.  It offers open sourced 12 validated and scalable pipelines for various genomics applications.
 
-The table of contents below and in the sidebar should let you easily access the
-documentation for your topic of interest. You can also use the search function
-in the top left corner.
+GenPipes documentation is organized to address the needs of new users as well as seasoned users and contributors. :ref:`Documenatation Map<docs_genpipes_archmap>` provides details on how this documentation is organized.
 
-.. note:: GenPipes is sponsored by Canadian Center for Computational Genomics (C3G).
-          C3G provides bioinformatics analysis and HPC services for the life science
-	  research community. It has created a distributed innovation node with broad
-          expertise in bioinformatics, providing customized and case-by-case analysis
-          services as well as an extensive suite of software solutions for the genomics community. 
-          For details, refer to `C3G official website <http://www.computationalgenomics.ca>`_.
-
-Following is the **Table of Contents** of GenPipes documentation.  While you are accessing content across any of the following topics, you can navigate to other sections using the left hand side (LHS) navigation pane as well.
-
-The main documentation for GenPipes is organized to address the needs of a new GenPipes user as well as seasoned users and GenPipes contributors. The information is divided into contextual topics presented in the form of various chapters in the following guides:
+Following is the **Table of Contents** of GenPipes documentation.  
 
 .. toctree::
    :maxdepth: 1
@@ -89,6 +76,13 @@ The main documentation for GenPipes is organized to address the needs of a new G
    documentation/about
    documentation/genpipes_doc_archmap
    documentation/docs_changelog
+
+.. note:: GenPipes is sponsored by Canadian Center for Computational Genomics (C3G).
+          C3G provides bioinformatics analysis and HPC services for the life science
+	  research community. It has created a distributed innovation node with broad
+          expertise in bioinformatics, providing customized and case-by-case analysis
+          services as well as an extensive suite of software solutions for the genomics community. 
+          For details, refer to `C3G official website <http://www.computationalgenomics.ca>`_.
 
 .. Indices and tables
 .. ------------------
