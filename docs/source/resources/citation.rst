@@ -38,3 +38,11 @@ Download GenPipes Citation
 * :download:`Plain Text </ref/gp_citation.txt>`. 
 * :download:`Bibtex </ref/gp_citation.bib>`.
 * :download:`PDF </ref/gp_citation.pdf>`.
+
+Download Method Descriptions
+-----------------------------
+
+Following are the methods descriptions for the DNA-seq and RNA-seq pipelines. GenPipes users can use these descriptions of methods in their manuscripts. 
+
+* :download:`Refer to the method description </ref/met_des_dna_seq.pdf>` for :ref:`DNA Sequencing Pipeline<docs_gp_dnaseq>` 
+* :download:`Refer to the method description </ref/met_des_rna_seq.pdf>` for :ref:`RNA Sequencing Pipeline<docs_gp_rnaseq>` 
