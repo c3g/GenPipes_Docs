@@ -123,4 +123,5 @@ html_context = {
 
 html_theme_options = {
 	'display_version': True,
+#        'style_nav_header_background': '#1d75c8',
 }

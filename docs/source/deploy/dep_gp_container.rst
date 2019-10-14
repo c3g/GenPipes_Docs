@@ -36,8 +36,8 @@ Add the following line to your .bashrc file:
 
 Next, use instructions below to start your GenPipes container.
 
-Step 3: Running GenPipes in a container
----------------------------------------
+Step 3: Setup GenPipes in the container
+----------------------------------------
 
 For Docker, use the following command:
 
@@ -53,8 +53,9 @@ For Singularity, use the following command:
 
 Please note, <TAG> refers to one of the tagged GenPipes sources as listed `here <https://bitbucket.org/mugqic/genpipes_in_a_container/src/master/>`_. Click on 'master' branch and in the dropdown, choose 'Tags' to select the version that you wish to use for GenPipes.
 
-Step 4: Load GenPipes module in the container
----------------------------------------------
+Step 4: Load GenPipes dependency modules in the container
+-----------------------------------------------------------
+
 As shown in previous step, you can initiate the container process on your machine locally. Next, you need to load GenPipes module using the following command:
 
 ::
@@ -71,13 +72,30 @@ For each pipeline, you can get help about its usage through the help command:
 
   $MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name>.py --help
 
+Step 5: Running GenPipes Pipelines in a container
+--------------------------------------------------
+
 Running pipelines requires other inputs such as :ref:`Configuration File<docs_config_ini_file>`, :ref:`Readset File<docs_readset_file>` and :ref:`Design File<docs_design_file>`. For details on how to run individual pipelines you can see :ref:`Running GenPipes<docs_using_gp>` or :ref:`GenPipes User Guide<docs_user_guide>`.
+
+You need to make a note of the fact that GenPipes Pipelines use scheduler's calls (qsub, sbatch) for submitting genomic analysis compute jobs. If you plan to use GenPipes locally using your infrastructure, inside a container, you need to run the GenPipes pipeline python scripts using the "batch mode" option.  For local containerized versions of GenPipes, this is the preferred way of running the pipelines, if you don't have access to a scheduler locally such as SLURM or PBS.  
+
+This is how you can run GenPipes pipelines such as :ref:`DNA Sequencing Pipeline<docs_gp_dnaseq>`, refer to the command below:
+
+::
+
+  dnaseq.py -c dnaseq.base.ini dnaseq.batch.ini -j batch -r your-readsets.tsv -d your-design.tsv -s 1-34 -t mugqic > run-in-container-dnaseq-script.sh
+   
+  bash run-in-container-dnaseq-script.sh
+
+Please note, there is a disadvantage to running GenPipes Pipelines without a scheduler.  In the batch mode, which is configured us
+ing the "-j batch" option, all the jobs would run as a batch, one after another, on a single node.  If your server is powerful eno
+ugh, this might be your prefereable option.  Otherwise, if you would like to take advantage of GenPipes' job scheduling capabiliti
+es, you need to install a job scheduler locally in your infrastructure so that GenPipes can work effectively.  We recommend SLURM
+scheduler for GenPipes.
 
 .. note::
 
     In case of any issues, you can try GenPipes :ref:`Support<docs_how_to_get_support>` or check out other :ref:`communication channels<docs_channels>` to view latest discussions around using GenPipes by the community.
 
-.. note::
-
-   You may also want to check the latest GenPipes deployment and setup instructions listed in `GenPipes README.md file <https://bitbucket.org/mugqic/genpipes_in_a_container/src/master/README.md>`_.
+    You may also want to check the latest GenPipes deployment and setup instructions listed in `GenPipes README.md file <https://bitbucket.org/mugqic/genpipes_in_a_container/src/master/README.md>`_.
   

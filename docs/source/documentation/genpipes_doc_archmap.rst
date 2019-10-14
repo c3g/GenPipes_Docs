@@ -3,7 +3,9 @@
 GenPipes Documentation Map
 ==========================
 
-This document describes how GenPipes documentation is laid out and organized from a documentation user, be it a new GenPipes user or a seasoned one, as well as documentation contributor (technical writer, content developer, author) point of view.
+GenPipes has several documents to help users. This document describes how GenPipes documentation is laid out and organized to assist the user, be it a new GenPipes user or a seasoned one, as well as documentation contributor (technical writer, content developer, author) point of view. 
+
+If you are a GenPipes user, refer to the User's map below that will help you know where to look for things.  For documentation contributors there is a separate map which provides a highlevel overview of how the content sources are organized and find your way to editing or updating them for the end user.
 
 GenPipes Documentation User's Map
 ---------------------------------
