@@ -5,6 +5,8 @@
    computecanada
    Niagra
    GMail
+   qsub
+   sbatch
 
 New Users
 ---------
@@ -71,7 +73,7 @@ This is how you can run GenPipes pipelines such as :ref:`DNA Sequencing Pipeline
   
   bash run-in-container-dnaseq-script.sh
 
-Please note, there is a disadvantage to running GenPipes Pipelines without a scheduler.  In the batch mode, which is configured using the "-j batch" option, all the jobs would run as a batch, one after another, on a single node.  If your server is powerful enough, this might be your prefereable option.  Otherwise, if you would like to take advantage of GenPipes' job scheduling capabilities, you need to install a job scheduler locally in your infrastructure so that GenPipes can work effectively.  We recommend SLURM scheduler for GenPipes.
+Please note, there is a disadvantage to running GenPipes Pipelines without a scheduler.  In the batch mode, which is configured using the "-j batch" option, all the jobs would run as a batch, one after another, on a single node.  If your server is powerful enough, this might be your preferable option.  Otherwise, if you would like to take advantage of GenPipes' job scheduling capabilities, you need to install a job scheduler locally in your infrastructure so that GenPipes can work effectively.  We recommend SLURM scheduler for GenPipes.
 
 .. _new CCDB account: https://ccdb.computecanada.ca/account_application
 .. _GenPipes deployed in a Docker Container: https://genpipes.readthedocs.io/en/latest/deploy/dep_gp_container.html

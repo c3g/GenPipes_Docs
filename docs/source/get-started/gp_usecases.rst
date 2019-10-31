@@ -38,8 +38,8 @@ De Novo RNA Sequencing
 
 The :ref:`De Novo RNA Sequencing Pipeline<docs_gp_rnaseq_denovo>` assembles reads to transcripts in the absence of a reference genome, annotates transcripts and tests for differential expression. This is well suited to organisms that are not yet characterized..
 
-miRNA Sequencing or RNA Sequencing (Light)
-------------------------------------------
+miRNA Sequencing
+-----------------
 
 This pipeline can be used to quantify known miRNAs, discovers novel ones using a reference genome and performs differential expression analysis. Additional analysis may include pathway testing, target candidates analysis or miRNA editing.
 
