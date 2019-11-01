@@ -245,8 +245,8 @@ Certain pipelines where samples are compared against other samples, like chipseq
     Readset file, the Design file is not required by every pipeline. To check whether the pipeline
     you are interested in requires a Design file and to understand the format of the file, read the specific help pages for your pipeline of interest.
 
-Running GenPipes on Cedar or Graham:
-------------------------------------
+Running GenPipes on Compute Canada Servers: 
+---------------------------------------------
 
 Guillimin, unlike Cedar, Graham and now Mammouth (mp2b), use the PBS scheduler. To use GenPipes on Guillimin, don’t forget to add the **“-j pbs”** option (default is -j Slurm).
 

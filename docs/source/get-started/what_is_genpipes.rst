@@ -24,7 +24,7 @@ Following genomics application pipelines are already implemented and validated t
 * De-Novo RNA Sequencing
 * Deep Whole Genome Sequencing
 * Exome Sequencing
-* Hi-C / Capture Hi-Ca
+* Hi-C / Capture Hi-C
 * Illumina raw data processing
 * Metagenomics
 * PacBio De novo Assembly
@@ -83,10 +83,23 @@ GenPipes is a Python based object-oriented framework that is available to users 
 
 .. image:: /img/gp_working.png
 
+Each GenPipes Pipeline can be launched using a command line instruction. There are three kinds of inputs for each such instruction as shown in the figure above.
+
+* Mandatory command options
+* Optional command options
+* Input Files
+
+The input files can be of two kinds - mandatory ones, that are needed for every pipeline and pipeline specific input files. 
+
+Mandatory input files include :ref:`Configuration files<docs_config_ini_file>` and :ref:`Readset files<docs_readset_file>`. Configuration files contain details regarding machine environment where the pipeline is executed and parameters that need to be set for each step of the pipeline. Default values are provided and can be changed in case of specific genomic analysis. GenPipes can be deployed locally in your data center or users can access pre-installed GenPipes on Compute Canada servers.  For details regarding different kinds of GenPipes deployment, refer to :ref:`GenPipes Deployment Guide<docs_how_to_deploy_genpipes>`. If you are using GenPipes pre-installed on Compute Canada servers, then the basic configuration files are installed along with GenPipes. These can be supplemented with additional configuration files provided using the '-c' option while running the command line instruction.
+
+Besides the mandatory configuration files, some pipelines have their own specific input file that must be provided. These include :ref:`Design Files<docs_design_file>` and :ref:`Test Dataset files<docs_testdatasets>`. These files are not provided by default and users need to supply them while running the pipelines. For the pipelines that require test dataset files, if you do not have access to any test datasets, you can try out some of the available :ref:`Sample Test Dataset Files<docs_testdatasets>` that are available as additional GenPipes resources for users.
+
 When the GenPipes command is launched, required modules and files will be searched for and validated. If all required modules and files are found, the analysis commands will be produced. GenPipes will create a directed acyclic graph that defines job dependency based on input and output of each step.
 
 Once launched, the jobs are sent to the scheduler and queued. As jobs complete successfully, their dependent jobs are released by the scheduler to run. If a job fails, all its dependent jobs are terminated and an email notification is sent to the user. When GenPipes is re-run, it will detect which steps have successfully completed, as described in section “Smart relaunch features,” and skip them but will create the command script for the jobs that were not completed successfully. To force the entire command generation, despite successful completion, the “-f” option should be added.  
-
+The output of the command line instruction are in the form of summary reports and job status. Depending upon the pipeline, there are varied tools that can be used to view and analyze the results.  See :ref:`Viewing and Analyzing GenPipes Results<docs_gp_job_results>` for further information.
+ 
 For details on GenPipes usage and various bioinformatics pipelines see :ref:`GenPipes User Guide<docs_user_guide>`.
 
 Bioinformatics and the role of GenPipes
