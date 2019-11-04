@@ -51,7 +51,7 @@ The Hi-C pipeline, selected using the "-t hic" parameter, starts by trimming ada
 
 The capture Hi-C pipeline, selected using the "-t capture" parameter, starts by trimming adapters and low quality bases. It then maps the reads to a reference genome using HiCUP. HiCUP first truncates chimeric reads, maps reads to the genome, then it filters Hi-C artifacts and removes read duplicates. Samples from different lanes are merged and CHiCAGO is then used to filter capture-specific artifacts and call significant interactions. This pipeline also identifies enrichment of regulatory features when provided with ChIP-Seq marks. It can also return bed interactions with significant baits (bait_intersect step) or with captured interactions (capture_intersect step).
 
-An example of the Hi-C report for an analysis on public data (GM12878 Rao. et al.) is available for illustration purpose only: `Hi-C report`_.
+An example of the Hi-C report for an analysis on public data (GM12878 Rao. et al.) is available for illustration purposes only: `Hi-C report`_.
 
 ----
 
