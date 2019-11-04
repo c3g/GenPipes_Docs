@@ -59,7 +59,8 @@ The bam file produced by HiCUP is used to create a tag directory using HOMER for
 .. _Interaction Matrices Chr:
 
 **Interaction Matrices Chr** 
-In this step, IntraChromosomal interaction matrices are produced by Homer at resolutions defined in the ini config file and plotted by HiCPlotter. For details, see `Homer Matrices <http://homer.ucsd.edu/homer/interactions/HiCmatrices.html>`_. For details visit `HiCPlotter Page <https://github.com/kcakdemir/HiCPlotter>`_.
+
+In this step, intra-chromosomal interaction matrices are produced by `Homer Matrices <http://homer.ucsd.edu/homer/interactions/HiCmatrices.html>`_ at resolutions defined in the ini config file and plotted by `HiCPlotter <https://github.com/kcakdemir/HiCPlotter>`_. 
 
 .. _Interaction Matrices Genome:
 
