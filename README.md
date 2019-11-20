@@ -1,7 +1,7 @@
 # GenPipes
-_This is the source code repository for GenPipes Documentation.
+_This is the source code repository for GenPipes Documentation._
 
-The latest GenPipes documentation is now hosted via_ [Read The Docs](http://readthedocs.org). You can refer to it at the link https://genpipes.readthedocs.io/en/latest/.
+The latest GenPipes documentation is now hosted via [Read The Docs](http://readthedocs.org). You can refer to it at the link https://genpipes.readthedocs.io/en/latest/.
 
 If you make any changes to the GenPipes documentation sources, the updates will show up on Read The Docs links above once they are merged into the master branch.
 
