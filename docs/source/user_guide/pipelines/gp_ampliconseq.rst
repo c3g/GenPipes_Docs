@@ -113,7 +113,7 @@ You can download `amplicon sequencing test dataset <https://datahub-7826hyc9.ude
 
 ::
 
- ampliconseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/ampliconseq/ampliconseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/ampliconseq/ampliconseq.guillimin.ini -r readset.ampliconseq.txt -s 1-32 > ampliconseqCommands.sh
+ ampliconseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/ampliconseq/ampliconseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/ampliconseq/ampliconseq.guillimin.ini -r readset.ampliconseq.txt -t dada2 -s 1-32 > ampliconseqCommands.sh
  
  bash ampliconseqCommands.sh 
 
