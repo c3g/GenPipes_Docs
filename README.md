@@ -22,7 +22,7 @@ cd docs
 make html
 ```
 
-By default, html documentation is generated in _build directory. You can change the location of build directory using the following command:
+By default, html documentation is generated in 'build' sub-directory in the docs directory. You can change the location of build directory using the following command:
 
 ```
 cd docs 
