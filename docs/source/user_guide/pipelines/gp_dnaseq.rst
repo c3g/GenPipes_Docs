@@ -25,6 +25,8 @@ DNA Sequencing GenPipes pipeline has been implemented optimizing the Genome Anal
 
 The `Genome in a Bottle dataset`_ was used to select steps and parameters minimizing the false-positive rate and maximizing the true-positive variants to achieve a sensitivity of 99.7%, precision of 99.1%, and F1 score of 99.4%. Finally, additional annotations are incorporated using `dbNSFP`_ and / or Gemini and QC metrics are collected at various stages and visualized using `MultiQC`_. This pipeline has two different protocols, the default protocol based on the GATK variant caller, haplotype caller, (-t mugqic) and one based on the mpileup/bcftools caller (-t mpileup).
 
+The DNA sequencing pipeline support two trimmers: Trimmomatic or `Skewer <https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-15-182>`_.
+
 See :ref:`More Information on DNA Sequencing` section below for details. 
 
 ----
