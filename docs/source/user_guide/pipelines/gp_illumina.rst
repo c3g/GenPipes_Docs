@@ -134,7 +134,7 @@ You can download the test dataset for this pipeline :ref:`here<docs_testdatasets
 Pipeline Schema
 ---------------- 
 
-No image or figure available in https://bitbucket.org/mugqic/genpipes/src/master/resources folder. TBD.
+No image or figure available in https://bitbucket.org/mugqic/genpipes/src/master/resources folder. TBD-GenPipes-Dev.
 
 ----
 

@@ -21,7 +21,7 @@ The trim statistics per readset are merged in this step.
 
 **Flash Pass 1**
 
-TBD
+TBD-GenPipes-Dev
 
 .. _Amplicon Length Parser:
 

@@ -137,7 +137,7 @@ Run Kallisto on fastq files for a fast estimate of abundance.
 
 #### Kallisto Count Matrix
 
-TBD
+TBD-GenPipes-Dev
 
 #### GQ Seq Utils Exploratory
 

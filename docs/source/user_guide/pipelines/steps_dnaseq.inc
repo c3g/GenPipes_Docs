@@ -43,7 +43,7 @@ Convert SAM/BAM files from the input readset file into FASTQ format if FASTQ fil
 
 **Sym Link FastQ**
 
-TBD
+TBD-GenPipes-Dev
 
 .. _Step Trimmomatic:
 

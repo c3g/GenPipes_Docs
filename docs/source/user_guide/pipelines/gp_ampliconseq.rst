@@ -132,7 +132,7 @@ Figure below shows the schema of the amplicon sequencing protocol - QIIME type. 
 
 The following figure shows the pipeline schema for `DADA2 Pipeline`_ type of amplicon sequencing protocol. 
 
-TBD
+TBD-GenPipes-Dev
 
  - Refer to the high resolution image in GenPipes sources
  - currently unavailable.
