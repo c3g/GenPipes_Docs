@@ -30,10 +30,6 @@ Thank you for your valuable inputs.
 
 .. note:: You can contribute to GenPipes documentation.
           
-          TBD Insert a CTA here if documentation open source collaboration is sought for GenPipes.
-          For now, this is a placeholder text until clear directive is obtained from GSoD mentors regarding this.
-	  Please note, we will need to add content or links related to the GenPipes documentation contribution policy here.
-
 How to contribute to GenPipes documentation?
 ---------------------------------------------
 

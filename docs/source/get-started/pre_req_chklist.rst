@@ -60,5 +60,3 @@ Checklist of Pre-requisites for Running GenPipes
   - ini or configuration files
   - Readset file
   - Design file
-
-**CHK4**: TBD Other items in GenPipes checklist that must be addressed before pipeline can be run for genomic analysis 

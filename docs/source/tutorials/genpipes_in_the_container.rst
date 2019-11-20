@@ -12,7 +12,7 @@ Running GenPipes in a local Containerized Infrastructure
 
      The following is work in progress.
 
-This tutorial is TBD. For now here is the information we have regarding how to run GenPipes locally within your infrastructure in a containerized environment.
+This tutorial provides information regarding how to run GenPipes locally within your infrastructure in a containerized environment.
 
 GenPipes pipelines use scheduler's calls (qsub, sbatch) for submitting genomic analysis compute jobs. If you plan to use GenPipes locally using your infrastructure, inside a container, you need to run the GenPipes pipeline python scripts using the "batch mode" option.  For local containerized versions of GenPipes, this is the preferred way of running the pipelines, if you don't have access to a scheduler locally such as SLURM or PBS.  
 

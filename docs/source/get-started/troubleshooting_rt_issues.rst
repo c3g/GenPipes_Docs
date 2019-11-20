@@ -87,7 +87,7 @@ Users have reported issues while running RNA Sequencing Pipeline. One such issue
 
 **Fix**
 
-TBD - To understand the issue more and document the fix (Consult Pierre, Hector, Rola)
+TBD-GenPipes-Dev 
 
 ----
 
