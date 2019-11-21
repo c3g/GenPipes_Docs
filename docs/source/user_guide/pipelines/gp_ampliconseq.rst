@@ -134,7 +134,7 @@ The following figure shows the pipeline schema for `DADA2 Pipeline`_ type of amp
 
 TBD-GenPipes-Dev
 
- - Refer to the high resolution image in GenPipes sources. At present pipeline schema for DADA2 Amplicon Sequencing Pipeline is not avilable.  The following figure is a placeholder and it shows QIIME Amplicon Sequencing.
+ - Refer to the high resolution image in GenPipes sources. At present pipeline schema for DADA2 Amplicon Sequencing Pipeline is not available in GenPipes sources or resources directory.  The following figure is a placeholder and it shows QIIME Amplicon Sequencing.
 
 .. figure:: /img/pipelines/ampseq2.png
    :align: center
