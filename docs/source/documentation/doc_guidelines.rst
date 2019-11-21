@@ -159,4 +159,4 @@ Documentation Do not's
 
 .. _Other Style Guides: https://developers.google.com/style/resources
 
-.. _Sphinx Documentation Style Guide: http://documentation-style-guide-sphinx.readthedocs.io/en/latest/style-guide.html
+.. _Sphinx Documentation Style Guide: https://documentation-style-guide-sphinx.readthedocs.io/en/latest/style-guide.html

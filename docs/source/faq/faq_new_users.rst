@@ -49,7 +49,7 @@ My account is activated but I cannot login into beluga-computecanada or any othe
 
 **Response**
 
-Check out the current CCDB server status `here <http://status.computecanada.ca/>`_. Many a times, not being able to log in might just be due to system unavailability.
+Check out the current CCDB server status `here <https://status.computecanada.ca/>`_. Many a times, not being able to log in might just be due to system unavailability.
 
 Please note that if you try to log in 3 or more times consecutively with a wrong password, your account gets deactivated and your IP address might get blacklisted. You would need to write to `Compute Canada Support`_ to get that reversed. 
 

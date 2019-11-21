@@ -28,7 +28,7 @@ Citation Examples
 
 #. (June 2019) GenPipes: an open-source framework for distributed and scalable genomic analysis. `GigaScience, Volume 8, Issue 6, <https://academic.oup.com/gigascience/article/8/6/giz037/5513895>`_.
 
-#. BioRxiv GenPipes Paper `DOI <https://doi.org/10.1101/459552>`_.
+#. BioRxiv GenPipes Paper `DOI <https://www.biorxiv.org/content/10.1101/459552v1>`_.
 
 .. _doc_download_citation_format:
 
