@@ -32,3 +32,10 @@ A new developer trying to setup and run GenPipes tests found the following issue
 Once your account is activated, you can login in CCDB servers such as Beluga, Cedar, Niagra.  However, these are National Systems on a shared grid and users don't have permission to install or upgrade the software there.
 
 For more information on what software is installed on Compute Canada infrastructure, refer to `https://docs.computecanada.ca/wiki/Available_software <https://docs.computecanada.ca/wiki/Available_software>`_.
+
+What kind of further analysis be done using `HiC sequencing Pipeline <https://genpipes.readthedocs.io/en/latest/user_guide/pipelines/gp_hicseq.html>`_?
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+**Response**
+
+GenPipes `Real Life Applications <https://genpipes.readthedocs.io/en/latest/get-started/gp_usecases.html>`_ section of the documentation states that the Hi-C pipeline’s further analyses may integrate ChIP-seq/RNA-seq data. Refer to the :ref:`Bait Intersect<Bait Intersect>` and :ref:`Capture Intersect<Capture Intersect>` steps of the pipeline. These steps help to integrate CHiP-seq / RNA-seq data. You can see which of your regions have CHiP-seq or RNA-seq signal.
