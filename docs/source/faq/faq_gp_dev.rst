@@ -39,3 +39,4 @@ What kind of further analysis be done using `HiC sequencing Pipeline <https://ge
 **Response**
 
 GenPipes `Real Life Applications <https://genpipes.readthedocs.io/en/latest/get-started/gp_usecases.html>`_ section of the documentation states that the Hi-C pipeline’s further analyses may integrate ChIP-seq/RNA-seq data. Refer to the :ref:`Bait Intersect<Bait Intersect>` and :ref:`Capture Intersect<Capture Intersect>` steps of the pipeline. These steps help to integrate CHiP-seq / RNA-seq data. You can see which of your regions have CHiP-seq or RNA-seq signal.
+
