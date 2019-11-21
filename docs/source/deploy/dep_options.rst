@@ -35,7 +35,7 @@ Through a partnership with the `Compute Canada <https://www.computecanada.ca/>`_
 
 GenPipes deployment on GCP
 --------------------------
-If you need to run large scale genomic analysis that requires resource scaling, GenPipes can be deployed and accessed from cloud.  At present, Google Compute Platform (GCP) is supported.  You may require assistance from System Administrator or your local cloud expert to install and deploy GenPipes in the cloud before you can access and run genomic analysis pipelines provided by GenPipes.  For details refer to GenPipes installation guide section titled :ref:`How to deploy GenPipes in the cloud?<docs_dep_gp_cloud>`.
+If you need to run large scale genomic analysis that requires resource scaling, GenPipes can be deployed and accessed from cloud.  At present, Google Compute Platform (GCP) is supported.  You may require assistance from System Administrator or your local cloud expert to install and deploy GenPipes in the cloud before you can access and run genomic analysis pipelines provided by GenPipes.  For details refer to GenPipes installation guide section titled :ref:`"How to deploy GenPipes in the cloud?"<docs_dep_gp_cloud>`.
 
 Local deployment
 -----------------

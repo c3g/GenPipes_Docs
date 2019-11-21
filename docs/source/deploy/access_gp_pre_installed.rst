@@ -38,7 +38,7 @@ Step 2: Connect to Compute Canada servers
 
 **Unix / Linux / Mac or Windows (bash)**
 
-. Open a shell or terminal (bash preferably) and type the following command:
+a. Open a shell or terminal (bash preferably) and type the following command:
 
 :: 
 
@@ -114,7 +114,7 @@ You will need to replace the text in "<>" with your account and GenPipes softwar
 
 **JOB_MAIL** is the environment variable that needs to be set to the email ID on which GenPipes job status notifications are sent corresponding to each job initiated by your account. It is advised that you create a separate email for jobs since you can receive hundreds of emails per pipeline. You can also de-activate the email sending option by removing the “-M $JOB_MAIL” option from the .ini files.
 
-**RAP_ID** is the Resource Allocation Project ID from Compute Canada. It is usually in the format: rrg-lab-xy OR def-lab
+**RAP_ID** is the Resource Allocation Project ID from Compute Canada. It is usually in the format: rrg-lab-xy OR def-lab.
 
 **Environment settings for MUGQIC analysts**
 
