@@ -23,7 +23,7 @@ GenPipes Documentation Contributor's Map
 ----------------------------------------
 
 This map is meant for GenPipes documentation contributors.  It highlights the GenPipes source code directories and the documentation components that are generated using sources in the specific folders as shown by the arrows.
-^
+
 The tip of the yellow arrow points to the sub-folder that contains restructured text and markdown files used to generate that particular section of the document visible in the navigation bar.
 
 .. figure:: /img/gp_documentation_contrib_map.png
