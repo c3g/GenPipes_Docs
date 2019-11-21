@@ -13,7 +13,7 @@ Troubleshooting Runtime Issues
 ===============================
 This document lists some commonly faced issues related to GenPipes deployment and usage.  These could be related to GenPipes deployment, software dependencies, environment setup or usage options.
 
-The objective here is to list some commonly encountered issues and their fixes so that new users can benefit and focus more on using GenPipes.  These are mostly run-time issues that a new user may face. If you are looking at troubleshooting GenPipes as part of feature development or contributing to GenPipes code, please refer to the :ref:'Development` section of this documentation and refer to :ref:`Developer Guide<docs_dev_guide>` and :ref:`Troubleshooting Guide<docs_troubleshooting_guide>`.
+The objective here is to list some commonly encountered issues and their fixes so that new users can benefit and focus more on using GenPipes.  These are mostly run-time issues that a new user may face. If you are looking at troubleshooting GenPipes as part of feature development or contributing to GenPipes code, please refer to the :ref:`Developer Guide<docs_dev_guide>` and :ref:`Troubleshooting Guide<docs_troubleshooting_guide>`.
 
 **Contents**
 
@@ -77,6 +77,7 @@ Make sure you have updated your .bashrc file as directed in :ref:`setting_up_gp_
 Several users have encountered this issue.
 
 **Fix**
+
 Most of the GenPipes pipeline commands require you to supply input data in the form of readsets, design files and configuration.  If a specific genome that you need to provide to the pipeline is not available in the pre-installed GenPipes setup deployed on Compute Canada servers as listed in test `datasets <http://www.computationalgenomics.ca/test-dataset/>`_and available `genomes <https://genpipes.readthedocs.io/en/latest/c3gres/cvmfs_genomes.html>`_.
 
 ----
@@ -97,7 +98,7 @@ First time users may issue the pipeline command and assume it will generate jobs
 
 **Fix**
 
-This is a very common issue.  GenPipes pipeline command does NOT issue the commands on its own.  When you run the pipeline, it simply generates a bunch of commands to execute but does not execute them.  You need to redirect the output of pipeline command into a file and then bash execute that file containing all the commands corresponding to a genomic analysis.  See Mathieu Bourgey's `response for details <https://groups.google.com/forum/#!msg/genpipes/4jxFWDC_Otw/K0ULgt7-AQAJ;context-place=forum/genpipes>`_.
+This is a very common issue.  GenPipes pipeline command does NOT issue the commands on its own.  When you run the pipeline, it simply generates a bunch of commands to execute but does not execute them.  You need to redirect the output of pipeline command into a file and then bash execute that file containing all the commands corresponding to a genomic analysis.  See GenPipes Google Group discussions and Mathieu Bourgey's `response for details <https://groups.google.com/forum/#!msg/genpipes/4jxFWDC_Otw/K0ULgt7-AQAJ;context-place=forum/genpipes>`_.
 
 ----
 
@@ -116,29 +117,3 @@ try to change the STAR parameters in your ini files to something like in the .in
 The problem should be solved by setting io_buffer to a higher value like 1G or 4G. The command you show indicates you are using 8M.
 
 At some point io_buffer was decreased in the template .ini but this exposed a bug in STAR where a negative memory allocation is attempted.
-
-
-----
-
-8. Error: Other commonly faced errors for new users
-----------------------------------------------------
-
-Other issues need to be listed here along with their workaround and fix (if any). The following note is a placeholder to identify GenPipes troubleshooting issues related to the topics listed below:
-
-----
-
-.. note:: 
-
-	* Deployment issues
-
-          - Container (local deployment)
-	  - Cloud deployment
-	  - Accessing C3G pre-installed GenPipes
-
-	* Usage issues
-
-	  - Input parameters
-	  - Design file
-	  - Pre-requisites not taken care of – SW/ Input / File format
-	  - Scheduler related usage issues
-

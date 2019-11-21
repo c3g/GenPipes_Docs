@@ -20,7 +20,7 @@ GenPipes Real-life Applications
 
 GenPipes offers several :ref:`genomic analysis pipelines<docs_pipeline_ref>` that can be used for various bioinformatic analyses.
 
-These can be utilized for performing a wide range of standardized and tailored analysis. Following is a brief summary highlighting potential use case for each of the GenPipes Pipelines.  
+These can be utilized for performing a wide range of standardized and tailored analysis. Following is a brief summary that highlights potential use case for each of the GenPipes Pipelines.  
 
 C3G has extensive experience analyzing data from various sequencing applications with state of the art computation methods. It offers various `services <http://www.computationalgenomics.ca/services/>`_ to next-generation sequencing researchers who wish to use these pipelines for advanced genomic analysis. For customized and case-by-case analysis service, `submit your request today <http://www.computationalgenomics.ca/services/#submitRequestInquiry>`_.
 
@@ -36,7 +36,7 @@ The :ref:`RNA Sequencing Pipeline<docs_gp_rnaseq>` helps to quantify transcripts
 De Novo RNA Sequencing
 -----------------------
 
-The :ref:`De Novo RNA Sequencing Pipeline<docs_gp_rnaseq_denovo>` assembles reads to transcripts in the absence of a reference genome, annotates transcripts and tests for differential expression. This is well suited to organisms that are not yet characterized..
+The :ref:`De Novo RNA Sequencing Pipeline<docs_gp_rnaseq_denovo>` assembles reads to transcripts in the absence of a reference genome, annotates transcripts and tests for differential expression. This is well suited to organisms that are not yet characterized.
 
 miRNA Sequencing
 -----------------
@@ -56,7 +56,7 @@ The :ref:`Methylation Pipeline<docs_methylation>` helps to analyze data coming f
 HiC Pipeline
 -------------
 
-The :ref:`HiC Pipeline<docs_gp_hicseq>` offers data analysis and provides interaction matrices at several resolutions, compartment analysis, topologically associating domain (TAD) predictions, as well as significant chromosomal interactions. Further analyses may include comparisons across samples/conditions and integration of various sample data (expression data, methylation, CTCF/histone binding sites…) with Hi-C data.
+The :ref:`HiC Pipeline<docs_gp_hicseq>` offers data analysis and provides interaction matrices at several resolutions, compartment analysis, topologically associating domain (TAD) predictions, as well as significant chromosomal interactions. Further analyses may include comparisons across samples/conditions and integration of various sample data (expression data, methylation, CTCF/histone binding sites) with Hi-C data.
 
 Amplicon Sequencing Pipeline
 -----------------------------
