@@ -48,4 +48,4 @@ Here are some guidelines to contribute to GenPipes documentation:
 References for Sphinx based documentation
 -----------------------------------------
 
-* Using Sphinx and ReadTheDocs for building documentation of Python projects - a very informative 'reference <https://brendanhasz.github.io/2019/01/05/sphinx.html>`_.
+* Using Sphinx and ReadTheDocs for building documentation of Python projects - a very informative `reference <https://brendanhasz.github.io/2019/01/05/sphinx.html>`_.

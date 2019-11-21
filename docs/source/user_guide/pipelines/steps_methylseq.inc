@@ -79,11 +79,10 @@ The script in this pipeline step reads in a bisulfite read alignment file produc
 **Wiggle Tracks**
 
 This step generates wiggle tracks suitable for multiple browsers, to show coverage and methylation data. When using GRCh37 build of Human genome, to be compatible with the UCSC Genome Browser we only keep chromosomes 1-22, X, Y and MT, and we also rename them by prefixing "chr" to the chromosome name (e.g. "1" becomes "chr1"), and changing the mitochondrial chromosome from "MT" to "chrM", and keeping the GRCh37 coordinates.
-.. Following are the html links used in this content.
 
 .. _Methylation Profile:
 
-**Methylation Profile**:
+**Methylation Profile**
 
 This step involves generation of a CpG methylation profile by combining both forward and reverse strand Cs. 
 

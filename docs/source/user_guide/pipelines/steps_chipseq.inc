@@ -93,7 +93,7 @@ Sequencing quality metrics as tag count, tag autocorrelation, sequence bias and 
 
 **Homer Make UCSC files**
 
-Wiggle Track Format files are generated from the aligned reads using Homer.  The resulting files can be loaded in browsers like `IGV <https://software.broadinstitute.org/software/igv/>`_ or i`UCSC <https://genome.ucsc.edu>`_.
+Wiggle Track Format files are generated from the aligned reads using Homer.  The resulting files can be loaded in browsers like `IGV <https://software.broadinstitute.org/software/igv/>`_ or `UCSC <https://genome.ucsc.edu>`_.
 
 .. _MACS2 call peak:
 

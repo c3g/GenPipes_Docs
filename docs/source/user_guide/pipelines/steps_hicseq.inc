@@ -35,7 +35,7 @@ The trim statistics per Readset file are merged at this step.
 
 **Fastq ReadName Edit**
 
-Removes the added /1 and /2 by picard's sam_to_fastq transformation to avoid issues with downstream software like HOMER
+Removes the added /1 and /2 by picard's sam_to_fastq transformation to avoid issues with downstream software like HOMER.
 
 .. _Hicup Align:
 

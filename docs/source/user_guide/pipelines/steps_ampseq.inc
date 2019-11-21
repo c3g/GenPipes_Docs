@@ -33,7 +33,7 @@ In this step, we look at `FLASH`_ output to set amplicon lengths input for `DADA
 
 **Flash Pass 2**
 
-TBD
+TBD-GenPipes-Dev
 
 .. _Merge Flash Stats:
 
@@ -232,7 +232,6 @@ Here the last part of the final report for Amplicon sequencing pipeline is gener
 
 **Asva**
 
-TBD
 This step checks for the design file (required for `PCA plots`_) 
 
 .. Following are the html link references:

@@ -63,7 +63,7 @@ The trim statistics per readset file are merged in this step.
 
 **Skewer Trimming**
 
-TBD
+TBD-GenPipes-Dev
 
 .. _BWA Picard Sort SAM:
 
@@ -118,31 +118,31 @@ Recalibrate base quality scores of sequencing-by-synthesis reads in an aligned B
 
 **Sym Link Final BAM**
 
-TBD
+TBD-GenPipes-Dev
 
 .. _Metrics DNA Picard:
 
 **Metrics DNA Picard**
 
-TBD
+TBD-GenPipes-Dev
 
 .. _Metrics DNA Sample Quality Map:
 
 **Metrics DNA Sample Quality Map**
 
-TBD
+TBD-GenPipes-Dev
 
 .. _Metrics DNA SAMBAM Flag Stats:
 
 **Metrics DNA SAMBAM Flag Stats**
 
-TBD
+TBD-GenPipes-Dev
 
 .. _Metrics DNA FastQC:
 
 **Metrics DNA FastQC**
 
-TBD
+TBD-GenPipes-Dev
 
 .. _Picard Calculate HS Metrics:
 
@@ -202,7 +202,7 @@ This step involves GATK variant recalibrator. The purpose of the variant recalib
 
 **Haplotype caller decompose and normalize**
 
-TBD
+TBD-GenPipes-Dev
 
 .. _Haplotype caller flag mappability:
 
@@ -232,7 +232,7 @@ Additional SVN annotations applied to haplotype caller vcf. Provides extra infor
 
 **Haplotype caller Gemini annotation**
 
-TBD
+TBD-GenPipes-Dev
 
 .. _Haplotype caller metrics VCF stats:
 
@@ -244,7 +244,7 @@ Metrics SNV applied to haplotype caller vcf. Multiple metrics associated to anno
 
 **Run MultiQC**
 
-TBD
+TBD-GenPipes-Dev
 
 .. _Raw MPileup:
 
@@ -274,7 +274,7 @@ bcftools is used to merge the raw binary variants files created in the snpAndInd
 
 **MPileup decompose and normalize**
 
-TBD
+TBD-GenPipes-Dev
 
 .. _MPileup Flag Mappability:
 
@@ -304,7 +304,7 @@ Additional SVN annotations applied to mpileup vcf. Provides extra information ab
 
 **MPileup Gemini annotation**
 
-TBD
+TBD-GenPipes-Dev
 
 .. _MPileup Metrics VCF stats:
 

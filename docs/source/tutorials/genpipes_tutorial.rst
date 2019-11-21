@@ -411,9 +411,7 @@ Our pipelines are built around third party tools that the community uses in part
 For more information or help with particular pipelines, you can send us an email to:
 `info@computationalgenomics.ca <info@computationalgenomics.ca>`_
 
-Or drop by during our `Open Door <http://www.computationalgenomics.ca/open-door/>`__ slots.
-We are located at:
+Or drop by during our `Open Door <http://www.computationalgenomics.ca/open-door/>`_ slots.  We are located at:
 
-
-740 Dr. Penfield avenue, room 4200
-Montréal, QC H3A 1A5
+*740 Dr. Penfield avenue, room 4200
+Montréal, QC H3A 1A5*
