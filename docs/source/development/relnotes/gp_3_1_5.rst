@@ -1,0 +1,49 @@
+:orphan:
+
+.. _docs_gp_relnote_3_1_5:
+
+.. spelling::
+
+     methylkit
+     cufflinks
+     genpipes
+
+GenPipes 3.1.5 Release Notes
+============================
+
+What's new? 
+-----------
+
+* This is mainly a bug-fix release; many glitches have been corrected
+* New Sanity check mode\:
+
+  - Checks for any missing file, parameter, setting or anything else that could break the pipeline execution
+  - Creates a report of what needs to be fixed to run the pipeline
+
+* MethylSeq pipeline\:
+
+  - Single-end sequencing analysis are now handled
+
+* CRAM output step added to all pipelines
+* Command of each job is now sent to file (along with the job output files)
+* Config files for Cedar, Mp2b, Beluga, Gtaham clusters have been corrected for all the pipelines
+
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+ 
+* This version tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-3.1.5.tar.gz
+
+* If you have a Compute Canada CCDB user account, the module mugqic/genpipes/3.1.5 is installed on Abacus, Mp2b, Béluga, Graham and Cedar clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes
+
+Where is the detailed ChangeLog? 
+================================= 
+A ChangeLog (`CHANGELOG.md <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_) is available in the archive as well as in the repository.
+
+Since we use git, there are many ways to get the details in many formats. 
+One of our preferred ways is to use a script written by the author of the Ray assembler: Sébastien Boisvert, 
+which lists the commits by tag and author: 
+
+https://raw.github.com/sebhtml/ray/master/scripts/dump-ChangeLog.sh 
