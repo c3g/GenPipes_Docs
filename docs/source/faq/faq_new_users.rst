@@ -53,6 +53,17 @@ Check out the current CCDB server status `here <https://status.computecanada.ca/
 
 Please note that if you try to log in 3 or more times consecutively with a wrong password, your account gets deactivated and your IP address might get blacklisted. You would need to write to `Compute Canada Support`_ to get that reversed. 
 
+What is the best place to report GenPipes bugs?
++++++++++++++++++++++++++++++++++++++++++++++++
+
+**Response**
+
+The preferred way to report GenPipes bugs is on our Bitbucket issue page : https://bitbucket.org/mugqic/genpipes/issues.
+
+You can always reach us by email at mailto:pipelines@computationalgenomics.ca or use `Google Group for GenPipes <https://groups.google.com/forum/#!forum/GenPipes>`_ for any requests.
+
+For more details, visit :ref:`GenPipes Support<docs_how_to_get_support>` and :ref:`GenPipes Channels<docs_channels>` page in this documentation.
+
 I was trying to use `GenPipes deployed in a Docker Container`_. What <tag> value should I use?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
