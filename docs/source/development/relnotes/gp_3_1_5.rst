@@ -26,7 +26,7 @@ What's new?
 
 * CRAM output step added to all pipelines
 * Command of each job is now sent to file (along with the job output files)
-* Config files for Cedar, Mp2b, Beluga, Gtaham clusters have been corrected for all the pipelines
+* Config files for Cedar, Mp2b, Beluga, Graham clusters have been corrected for all the pipelines
 
 
 Quick! Where can I find it? I can't wait! 
