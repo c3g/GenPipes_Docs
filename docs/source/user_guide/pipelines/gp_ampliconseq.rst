@@ -109,7 +109,7 @@ Usage
 Example Run
 -----------
 
-You can download `amplicon sequencing test dataset <https://datahub-7826hyc9.udes.genap.ca/ampliconseq.tar.gz>`_ and run the following commands:
+You can download `amplicon sequencing test dataset <https://datahub-90-cw3.p.genap.ca/ampliconseq.tar.gz>`_ and run the following commands:
 
 ::
 
