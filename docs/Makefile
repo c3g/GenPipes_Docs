@@ -23,7 +23,7 @@ download:
 usage:
 	@$(shell curl -s https://datahub-90-cw3.p.genap.ca/testCommands.txt > source/resources/testCommands.txt)
 
-html:usage
+html:
 	@echo "Making html docs"
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 	@echo
