@@ -17,3 +17,4 @@ The GenPipes tutorials listed below demonstrate how GenPipes can be deployed and
    ../tutorials/genpipes_tutorial
    ../tutorials/genpipes_in_the_cloud
    ../tutorials/genpipes_in_the_container
+   ../tutorials/pipeline_usage_examples
