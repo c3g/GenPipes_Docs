@@ -39,9 +39,24 @@ In contrast to the test dataset, a :ref:`Readset File<docs_readset_file>` in the
 | :ref:`TumorPair Seq<docs_gp_dnaseq>`      |   `Download TumorPair Seq Dataset`_      |
 +-------------------------------------------+------------------------------------------+
 
+----------------------------
+Test Dataset Usage Examples
+----------------------------
+
+For various GenPipes pipelines, you can refer to usage examples and commands for issuing pipeline jobs using various options in the individual pipeline reference guide listed above or a short summary :ref:`here <doc_pipeline_usage_examples>`.
+
+------------------------
+Bioinformatic resources
+------------------------
+
 If you are looking for Bioinformatic resources such as available genomes with FASTA sequence, aligner indices and annotation files listed on `Bioinformatics resources <http://www.computationalgenomics.ca/cvmfs-genomes/>`_ C3G website page, you can download those from the public repositories using scripts provided in `GenPipes Repository <https://bitbucket.org/mugqic/genpipes/src/master/resources/genomes/>`_.
 
 You can also download the latest test datasets from Computational Genomics website `download page <http://www.computationalgenomics.ca/test-dataset/>`_.
+
+--------------------------
+Latest available datasets
+--------------------------
+
 
 .. _Download HiC Pipeline Dataset: https://datahub-90-cw3.p.genap.ca/hicseq.chr19.tar.gz
 .. _Download Amplicon Seq Dataset: https://datahub-90-cw3.p.genap.ca/ampliconseq.tar.gz
