@@ -99,7 +99,7 @@ Wiggle Track Format files are generated from the aligned reads using Homer.  The
 
 **MACS2 call peak**
 
-Peaks are called using the `MACS2 <http://liulab.dfci.harvard.edu/MACS/>`_ software. Different calling strategies are used for narrow and broad peaks.  The mfold parameter used in the model building step is estimated from a peak enrichment diagnosis run.  The estimated mfold lower bound is 10 and the estimated upper bound can vary between 15 and 100.
+Peaks are called using the `MACS2 <https://www.biorxiv.org/content/10.1101/496521v1>`_ software. Different calling strategies are used for narrow and broad peaks.  The mfold parameter used in the model building step is estimated from a peak enrichment diagnosis run.  The estimated mfold lower bound is 10 and the estimated upper bound can vary between 15 and 100.
 
 The default mfold parameter of MACS2 is [10,30].
 

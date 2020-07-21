@@ -75,7 +75,7 @@ We will now run the pipeline using a test dataset. We will use the first 2 milli
 
 You need to first download the test dataset by visiting this link: 
 
-`Hi-C Sequencing Test Dataset <http://www.computationalgenomics.ca/tutorial/hicseq.zip>`_
+`Hi-C Sequencing Test Dataset <https://www.computationalgenomics.ca/tutorial/hicseq.zip>`_
 
 In the downloaded zip file, you will find the two fastq read files in folder “rawData” and will find the readset file (readsets.HiC010.tsv) that describes that dataset.
 
@@ -159,7 +159,7 @@ Certain pipelines that involve comparing and contrasting samples, need a :ref:`D
 
 We will use a subset of the ENCODE data. Specifically, the reads that map to chr22 of the following samples `ENCFF361CSC <https://www.encodeproject.org/experiments/ENCSR828XQV/>`_ and `ENCFF837BCE <https://www.encodeproject.org/experiments/ENCSR236YGF/>`_. They represent a ChIP-Seq analysis dataset with the CTCF transcription factor and its control input.
 
-First, you need to download the test dataset from `here <http://www.computationalgenomics.ca/tutorial/chipseq.zip>`_.
+First, you need to download the test dataset from `here <https://www.computationalgenomics.ca/tutorial/chipseq.zip>`_.
 
 In the downloaded zip file, you will find the two fastq read files in folder rawData and will find the readset file (readsets.chipseqTest.chr22.tsv) that describes that dataset. You will also find the design file (designfile_chipseq.chr22.txt) that contains the contrast of interest.
 

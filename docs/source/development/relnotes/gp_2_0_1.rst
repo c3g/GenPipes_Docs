@@ -21,7 +21,7 @@ What's new?
 Quick! Where can I find it? I can't wait! 
 ------------------------------------------
 
-This version tarball is in: https://bitbucket.org/mugqic/mugqic_pipelines/downloads/mugqic_pipelines-2.0.1.tar.gz 
+This version tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/mugqic_pipelines-2.0.1.tar.gz 
 
 The module mugqic/mugqic_pipelines/2.0.1  is installed on abacus, guillimin and mammouth clusters. 
 

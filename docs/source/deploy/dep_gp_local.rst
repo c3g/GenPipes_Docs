@@ -38,7 +38,7 @@ Add the following line in your your *$HOME/.bash_profile*: to set MUGQIC_PIPELIN
 Step 3: Accessing software modules and genomes needed for GenPipe
 -----------------------------------------------------------------
 
-GenPipes was formerly known as MUGQIC Pipelines. Genomic analysis executed using these pipelines requires `genomes <http://www.computationalgenomics.ca/cvmfs-genomes/>`_ and `software modules <https://docs.python.org/3/tutorial/modules.html>`_. You need to load the software modules in your shell environment. To do so, set the environment variable **MUGQIC_INSTALL_HOME** to the directory where you want to install those resources in your **$HOME/.bash_profile** as follows:
+GenPipes was formerly known as MUGQIC Pipelines. Genomic analysis executed using these pipelines requires `genomes <https://www.computationalgenomics.ca/cvmfs-genomes/>`_ and `software modules <https://docs.python.org/3/tutorial/modules.html>`_. You need to load the software modules in your shell environment. To do so, set the environment variable **MUGQIC_INSTALL_HOME** to the directory where you want to install those resources in your **$HOME/.bash_profile** as follows:
 
 ::
 

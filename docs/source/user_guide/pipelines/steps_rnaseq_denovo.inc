@@ -84,7 +84,7 @@ Identifies protein domains using `HMMER Biosequence Analysis <http://hmmer.janel
 
 **RNAmmer Method**
 
-Identify potential rRNA transcripts using `RNAmmer Transcriptome <http://www.cbs.dtu.dk/cgi-bin/sw_request?rnammer>`_.
+Identify potential rRNA transcripts using `RNAmmer Transcriptome <http://www.cbs.dtu.dk/services/RNAmmer/>`_.
 
 .. _BLAST Transdecoder UniProt:
 
@@ -96,13 +96,13 @@ Search Transdecoder-predicted coding regions for sequence homologies on UniProt 
 
 **SignalP Method**
 
-Predict the presence of signal peptides and the location of their cleavage sites in proteins using `SignalP <http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?signalp>`_.
+Predict the presence of signal peptides and the location of their cleavage sites in proteins using `SignalP <http://www.cbs.dtu.dk/services/SignalP/>`_.
 
 .. _TMHMM Method:
 
 **TMHMM Method**
 
-This step involves prediction of transmembrane helices regions in proteins using `THMMM <http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?tmhmm>`_.
+This step involves prediction of transmembrane helices regions in proteins using `TMHMM <http://www.cbs.dtu.dk/services/TMHMM/>`_.
 
 .. _Trinotate Step:
 

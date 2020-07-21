@@ -3,7 +3,7 @@
 GenPipes User Guide
 ===================
 
-GenPipes is an open source framework developed at `Canadian Centre for Computational Genomics (C3G) <http://www.computationalgenomics.ca/>`_ to facilitate writing and execution of multi-step processing pipelines on HPC clusters. GenPipes is written in Python and is primarily geared towards Next Generation Sequencing analysis. It comes with 12 validated pipelines that include RNA-Seq, ChIP-Seq, DNA-Seq, Methyl-Seq and Hi-C processing.
+GenPipes is an open source framework developed at `Canadian Centre for Computational Genomics (C3G) <https://www.computationalgenomics.ca/>`_ to facilitate writing and execution of multi-step processing pipelines on HPC clusters. GenPipes is written in Python and is primarily geared towards Next Generation Sequencing analysis. It comes with 12 validated pipelines that include RNA-Seq, ChIP-Seq, DNA-Seq, Methyl-Seq and Hi-C processing.
 
 The new users can get started by referring to the :ref:`Quick Start Guide<docs_quickstart_gp>`. Seasoned users can refer to specifics of any of the pipelines by browsing the :ref:`Pipeline Reference section<docs_pipeline_ref>`. 
 

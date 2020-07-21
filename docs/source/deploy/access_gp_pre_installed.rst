@@ -67,7 +67,7 @@ You are all set to use GenPipes deployed on Compute Canada data centre.
 
 .. note::
 
-         Canadian Centre for Computational Genomics (C3G), in partnership with Compute Canada, offers and maintains a large set of bioinformatics resources for the community. For a complete list of software currently deployed on several HPC centres, including Guillimin, Cedar, Graham and Mammouth, refer to `Bioinformatics Resources <http://www.computationalgenomics.ca/cvmfs-modules/>`_. Several reference genomes are also available. You can refer to the `available genomes <http://www.computationalgenomics.ca/cvmfs-genomes/>`_ and the environment setup to access these genomes.
+         Canadian Centre for Computational Genomics (C3G), in partnership with Compute Canada, offers and maintains a large set of bioinformatics resources for the community. For a complete list of software currently deployed on several HPC centres, including Guillimin, Cedar, Graham and Mammouth, refer to `Bioinformatics Resources <https://www.computationalgenomics.ca/cvmfs-modules/>`_. Several reference genomes are also available. You can refer to the `available genomes <https://www.computationalgenomics.ca/cvmfs-genomes/>`_ and the environment setup to access these genomes.
 
 
 .. _setting_up_gp_environment_modules:
@@ -94,7 +94,7 @@ Genomes and modules used by the pipelines are already installed on a CVMFS parti
 
    GenPipes have been tested with Python 2.7
 
-Next, you need to load the `software modules <https://docs.python.org/3/tutorial/modules.html>`_ in your shell environment that are required to run GenPipes. For a full list of modules available on Compute Canada servers see the `module page <http://www.computationalgenomics.ca/cvmfs-modules/>`_
+Next, you need to load the `software modules <https://docs.python.org/3/tutorial/modules.html>`_ in your shell environment that are required to run GenPipes. For a full list of modules available on Compute Canada servers see the `module page <https://www.computationalgenomics.ca/cvmfs-modules/>`_
 
 To load the GenPipes modules, paste the following lines of code and save the file, then exit (Ctrl-X):
 
@@ -191,7 +191,7 @@ This also gives you access to hundreds of bioinformatics tools pre-installed by 
 
   module avail mugqic/
 
-For a full list of all available modules on Compute Canada servers, visit `module page <http://www.computationalgenomics.ca/cvmfs-modules/>`_.
+For a full list of all available modules on Compute Canada servers, visit `module page <https://www.computationalgenomics.ca/cvmfs-modules/>`_.
 
 To load a tool available on Compute Canada servers, for example - samtools, use the following command:
 
@@ -223,7 +223,7 @@ All genome-related files, including indices for different aligners and annotatio
   ## so for Homo Sapiens hg19 assembly, that would be:
   ls $MUGQIC_INSTALL_HOME/genomes/species/Homo_sapiens.hg19/
 
-For a complete list of all available reference genomes, visit `genome page <http://www.computationalgenomics.ca/cvmfs-genomes/>`_.
+For a complete list of all available reference genomes, visit `genome page <https://www.computationalgenomics.ca/cvmfs-genomes/>`_.
 
 Step 4: Running GenPipes pipelines
 ----------------------------------

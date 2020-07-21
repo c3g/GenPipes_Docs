@@ -28,6 +28,6 @@ If you are facing any issues in using or deploying GenPipes, you can report bugs
 
 .. _GenPipes Google Forum: https://groups.google.com/forum/#!forum/GenPipes
 .. _GenPipes Help Desk: pipelines@computationalgenomics.ca 
-.. _Canadian Centre for Computational Genomics: http://www.computationalgenomics.ca
-.. _C3G Open Door: http://www.computationalgenomics.ca/open-door/
+.. _Canadian Centre for Computational Genomics: https://www.computationalgenomics.ca
+.. _C3G Open Door: https://www.computationalgenomics.ca/open-door/
 .. _GenPipes Support Email: pipelines@computationalgenomics.ca

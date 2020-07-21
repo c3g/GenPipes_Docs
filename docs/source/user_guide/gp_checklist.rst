@@ -44,6 +44,6 @@ Besides the skills and technologies listed above, you need powerful hardware and
 .. _Cloud environment: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6452449/
 .. _usage account: https://ccdb.computecanada.ca/account_application
 .. _CVMFS: https://cvmfs.readthedocs.io/en/latest/
-.. _PBS: https://hpcc.usc.edu/support/documentation/running-a-job-on-the-hpcc-cluster-using-pbs/
+.. _PBS: https://www.openpbs.org 
 .. _Slurm: https://slurm.schedmd.com/tutorials.html
 

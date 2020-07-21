@@ -260,7 +260,7 @@ hicseq Test Dataset:
 
 Let’s now run the pipeline using a test dataset. We will use the first 2 million reads from HIC010 from Rao et al. 2014 (SRR1658581.sra). This is an in situ Hi-C experiment of GM12878 using MboI restriction enzyme.
 
-We will start by downloading the dataset from `HERE <http://www.computationalgenomics.ca/tutorial/hicseq.zip>`__.
+We will start by downloading the dataset from `HERE <https://www.computationalgenomics.ca/tutorial/hicseq.zip>`__.
 In the downloaded zip file, you will find the two fastq read files in folder “rawData” and will find the readset file (readsets.HiC010.tsv) that describes that dataset.
 
 We will run this analysis on guillimin as follows:
@@ -350,7 +350,7 @@ chipseq Test Dataset:
 
 We will use a subset of the ENCODE data. Specifically, the reads that map to chr22 of the following samples `ENCFF361CSC <https://www.encodeproject.org/experiments/ENCSR828XQV/>`__ and `ENCFF837BCE <https://www.encodeproject.org/experiments/ENCSR236YGF/>`_. They represent a ChIP-Seq analysis dataset with the CTCF transcription factor and its control input.
 
-We will start by downloading the dataset from `HERE <http://www.computationalgenomics.ca/tutorial/chipseq.zip>`_
+We will start by downloading the dataset from `HERE <https://www.computationalgenomics.ca/tutorial/chipseq.zip>`_
 
 In the downloaded zip file, you will find the two fastq read files in folder rawData and will find the readset file (readsets.chipseqTest.chr22.tsv) that describes that dataset. You will also find the design file 
 
@@ -411,7 +411,7 @@ Our pipelines are built around third party tools that the community uses in part
 For more information or help with particular pipelines, you can send us an email to:
 `info@computationalgenomics.ca <info@computationalgenomics.ca>`_
 
-Or drop by during our `Open Door <http://www.computationalgenomics.ca/open-door/>`_ slots.  We are located at:
+Or drop by during our `Open Door <https://www.computationalgenomics.ca/open-door/>`_ slots.  We are located at:
 
 *740 Dr. Penfield avenue, room 4200
 Montréal, QC H3A 1A5*
