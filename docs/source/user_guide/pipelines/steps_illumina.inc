@@ -95,7 +95,7 @@ Send an optional notification to notify that the copy is finished.  The command 
 
 .. The following html links are used in the text above
 
-.. _STAR User Guide: http://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/Releases/FromGitHub/STAR-2.6.0c/doc/STARmanual.pdf
+.. _STAR User Guide: https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf 
 
 .. _STAR Software: https://github.com/alexdobin/STAR
 

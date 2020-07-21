@@ -49,9 +49,9 @@ For various GenPipes pipelines, you can refer to usage examples and commands for
 Bioinformatic resources
 ------------------------
 
-If you are looking for Bioinformatic resources such as available genomes with FASTA sequence, aligner indices and annotation files listed on `Bioinformatics resources <http://www.computationalgenomics.ca/cvmfs-genomes/>`_ C3G website page, you can download those from the public repositories using scripts provided in `GenPipes Repository <https://bitbucket.org/mugqic/genpipes/src/master/resources/genomes/>`_.
+If you are looking for Bioinformatic resources such as available genomes with FASTA sequence, aligner indices and annotation files listed on `Bioinformatics resources <https://www.computationalgenomics.ca/cvmfs-genomes/>`_ C3G website page, you can download those from the public repositories using scripts provided in `GenPipes Repository <https://bitbucket.org/mugqic/genpipes/src/master/resources/genomes/>`_.
 
-You can also download the latest test datasets from Computational Genomics website `download page <http://www.computationalgenomics.ca/test-dataset/>`_.
+You can also download the latest test datasets from Computational Genomics website `download page <https://www.computationalgenomics.ca/test-dataset/>`_.
 
 --------------------------
 Latest available datasets

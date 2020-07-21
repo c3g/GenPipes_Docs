@@ -101,7 +101,7 @@ You can download the test dataset for this pipeline :ref:`here<docs_testdatasets
 Pipeline Schema
 ---------------
 
-Figure below shows the schema of the PacBio Whole Genome Assembly sequencing pipeline. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/pacbio_assembly/>`_ and see here to download a high resolution image of `PacBio Assembly Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/enPipes_pacbio_assembly.png>`_ to download a high resolution image of the same.
+Figure below shows the schema of the PacBio Whole Genome Assembly sequencing pipeline. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/pacbio_assembly/>`_ and see here to download a high resolution image of `PacBio Assembly Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/GenPipes_pacbio_assembly.png>`_ to download a high resolution image of the same.
 
 .. figure:: /img/pipelines/pacbio.png
    :align: center
@@ -181,7 +181,7 @@ You can refer to the following publications for details on PacBio Whole Genome A
 .. _modification detection: https://github.com/PacificBiosciences/Bioinformatics-Training/wiki/Methylome-Analysis-Technical-Note
 .. _Circlator:  https://www.ncbi.nlm.nih.gov/pubmed/26714481
 .. _SMRT Link: https://www.pacb.com/products-and-services/sequel-system/software/
-.. _HGAP4: https://www.pacb.com/training/hgap4-de-novo-assembly-application/
+.. _HGAP4: https://www.pacb.com/videos/tutorial-hgap4-de-novo-assembly-application/
 .. _FALCON: https://github.com/PacificBiosciences/FALCON/wiki
 .. _Arrow: https://github.com/PacificBiosciences/GenomicConsensus
 .. _Quiver: https://github.com/PacificBiosciences/GenomicConsensus

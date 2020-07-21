@@ -61,7 +61,7 @@ Let’s use ChIPSeq as an example:
 
 .. code-block:: bash
 
-    wget http://www.computationalgenomics.ca/tutorial/chipseq.zip
+    wget https://www.computationalgenomics.ca/tutorials/chipseq.zip
     unzip chipseq.zip
 
 

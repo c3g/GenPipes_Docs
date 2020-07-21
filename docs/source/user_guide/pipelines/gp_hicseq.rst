@@ -129,7 +129,7 @@ Usage
 Example Run
 -----------
 
-You can download `Hi-C test dataset <http://www.computationalgenomics.ca/tutorial/hicseq.zip>`_ and run the following commands:
+You can download `Hi-C test dataset <https://www.computationalgenomics.ca/tutorial/hicseq.zip>`_ and run the following commands:
 
 ::
 

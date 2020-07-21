@@ -157,6 +157,6 @@ For more detailed information see `MultiQC documentation <http://multiqc.info/>`
 .. _Chicago documentation: https://bioconductor.org/packages/release/bioc/vignettes/Chicago/inst/doc/Chicago.html
 .. _NPerBin file: http://regulatorygenomicsgroup.org/resources/Chicago_vignette.html
 .. _Proximal Other End: https://buildmedia.readthedocs.org/media/pdf/chi-c/stable/chi-c.pdf
-.. _GWAS: https://en.wikipedia.org/wiki/Genome-wide_association_study`:w
+.. _GWAS: https://en.wikipedia.org/wiki/Genome-wide_association_study
 .. _epigenome: https://www.genome.gov/about-genomics/fact-sheets/Epigenomics-Fact-Sheet
 .. _WashU: https://epigenomegateway.wustl.edu 

@@ -125,3 +125,17 @@ html_theme_options = {
 	'display_version': True,
 #        'style_nav_header_background': '#1d75c8',
 }
+
+#linkcheck configuration settings
+
+user_agent = 'Mozilla/5.0 (X11; Linux x86_64; rv:25.0) Gecko/20100101 Firefox/25.0'
+
+#linkcheck_timeout = 10 
+#linkcheck_workers = 10
+#linkcheck_retries = 3
+linkcheck_ignore = [ 
+        r'https://www.computationalgenomics.ca/*.gz$',
+        r'https://datahub-90-cw3.p.genap.ca/*',
+        r'https://www.computationalgenomics.ca/tutorial/*',
+        r'https://bitbucket.org/mugqic/genpipes/downloads/*',
+        ]

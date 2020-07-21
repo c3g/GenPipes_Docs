@@ -22,8 +22,8 @@ What's new?
 Quick! Where can I find it? I can't wait! 
 ------------------------------------------
 
-* This version tarball is in: https://bitbucket.org/mugqic/mugqic_pipelines/downloads/mugqic_pipelines-2.2.0.tar.gz 
+* This version tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/mugqic_pipelines-2.2.0.tar.gz 
 
 Compute Canada Servers abacus, guillimin and mammouth clusters are updated with this new release.
 
-The source code is in bitbucket: https://bitbucket.org/mugqic/mugqic_pipelines 
+The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes/src/master 

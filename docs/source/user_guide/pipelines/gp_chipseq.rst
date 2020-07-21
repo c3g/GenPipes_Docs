@@ -172,7 +172,7 @@ For the latest implementation and usage details, see `ChIP-Seq Pipeline README`_
 
 * `ChIP-Seq and Beyond <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3591838/>`_. 
 
-* `ChIP-Seq Technology and Workflow <http://biocluster.ucr.edu/~rkaundal/workshops/R_feb2016/ChIPseq/ChIPseq.html>`_.
+* `ChIP-Seq Technology and Workflow <https://www.sciencedirect.com/science/article/pii/S1046202320300591>`_.
 
 * `Schematic representation of major methods to detect functional elements in DNA <https://journals.plos.org/plosbiology/article/figure?id=10.1371/journal.pbio.1001046.g001>`_.
 
@@ -209,12 +209,12 @@ For the latest implementation and usage details, see `ChIP-Seq Pipeline README`_
 .. _ENCODE Project: https://www.genome.gov/Funded-Programs-Projects/ENCODE-Project-ENCyclopedia-Of-DNA-Elements
 .. _Burrows-Wheeler Aligner: http://bio-bwa.sourceforge.net
 .. _Homer routines: https://www.researchgate.net/publication/44640585_Simple_Combinations_of_Lineage-Determining_Factors_Prime_cis-Regulatory_Elements_Required_for_Macrophage_and_B-Cell_Identities
-.. _Model based Analysis for Chip Sequencing (MACS2): http://liulab.dfci.harvard.edu/MACS/
+.. _Model based Analysis for Chip Sequencing (MACS2): https://genomebiology.biomedcentral.com/articles/10.1186/gb-2008-9-9-r137
 .. _IHEC requirements: https://github.com/IHEC/ihec-assay-standards
 .. _ATAC-Seq: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4374986/
 .. _ChIP-Seq Guidelines: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3431496/
 .. _ChIP-Seq report: http://gqinnovationcenter.com/services/bioinformatics/tools/chipReport/index.html
 .. _ChIP-Seq Pipeline README: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/chipseq/README.md 
-.. _ChIP-Seq test dataset: http://www.computationalgenomics.ca/tutorial/chipseq.zip
+.. _ChIP-Seq test dataset: https://www.computationalgenomics.ca/tutorials/chipseq.zip
 .. _GenPipes ChIP-Seq pipeline implementation: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/chipseq/ 
 .. _ChIP-Seq Schema high resolution image: https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_chipseq.png
