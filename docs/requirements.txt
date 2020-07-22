@@ -1,5 +1,5 @@
-Sphinx>=3.1.2
-sphinx_rtd_theme>=1.1.1
+sphinx
+sphinx_rtd_theme
 pyenchant>=1.6.6
 sphinx-tabs>=1.1.11
 sphinxcontrib-spelling>=4.2.1
