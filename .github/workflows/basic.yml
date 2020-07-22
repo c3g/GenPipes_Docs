@@ -12,7 +12,6 @@ jobs:
         ref: ${{ github.event.pull_request.head.sha }}
         fetch-depth: 0
     - run: git fetch origin master
-#  spelling:
    check-html:
     runs-on: ubuntu-latest
     steps:
@@ -20,6 +19,5 @@ jobs:
     - uses: ammaraskar/sphinx-action@master
       with:
         pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx sphinx_rtd_theme"  
-#        build-command: 'make spelling'
         build-command: 'make html'
-        docs-folder: './docs/'
+        docs-folder: './docs'
