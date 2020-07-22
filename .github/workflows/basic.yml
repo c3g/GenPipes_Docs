@@ -21,4 +21,4 @@ jobs:
       with:
         pre-build-command: "apt-get update -y && apt-get install -y enchant"  
         build-command: 'make spelling'
-        docs-folder: './'
+        docs-folder: './docs/'
