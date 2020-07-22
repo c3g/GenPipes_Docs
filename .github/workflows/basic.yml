@@ -12,11 +12,12 @@ jobs:
         ref: ${{ github.event.pull_request.head.sha }}
         fetch-depth: 0
     - run: git fetch origin master
-    - uses: flux-framework/pr-validator@master
-  spelling:
+   check-html:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - uses: ammaraskar/sphinx-action@master
       with:
-        build-command: 'make spelling'
+        pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx sphinx_rtd_theme"  
+        build-command: 'make spelling html'
+        docs-folder: './docs'
