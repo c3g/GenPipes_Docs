@@ -19,5 +19,5 @@ jobs:
     - uses: ammaraskar/sphinx-action@master
       with:
         pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx sphinx_rtd_theme"  
-        build-command: 'make html'
+        build-command: 'make spelling html'
         docs-folder: './docs'
