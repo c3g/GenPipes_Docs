@@ -55,10 +55,10 @@ autosectionlabel_prefix_document = True
 autosectionlabel_maxdepth = 3
 
 # Spelling language.
-spelling_lang = 'en_UK'
+spelling_lang = 'en_US'
 
 # Location of word list.
-spelling_word_list_filename = 'spelling_wordlist'
+spelling_word_list_filename = 'spelling_wordlist.txt'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
