@@ -18,17 +18,17 @@ jobs:
         name: spell-log
         path: ${{ github.workspace }}/build/spelling/output.txt
 
- displaylog:
-     name: show spelling log
-     needs: build
-     runs-on: ubuntu-latest
-     steps:
-       - name: get logfile
-         uses: actions/download-artifact@v2
-         with:
-           name: spell-log
-       - name: print output
-       - shell: bash
-         run: |
-           value=`cat ${{ github.workspace }}/build/spelling/output.txt`
-           echo The Spelling Output is $value
+  displaylog:
+    name: show spelling log
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: get logfile
+        uses: actions/download-artifact@v2
+        with:
+          name: spell-log
+      - name: print output
+      - shell: bash
+        run: |
+          value=`cat ${{ github.workspace }}/build/spelling/output.txt`
+          echo The Spelling Output is $value
