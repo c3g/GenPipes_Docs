@@ -1,20 +1,14 @@
 # This is a basic workflow to help you get started with Actions
 
-name: GenPipes CI PR Check
+name: GenPipes Check 
 
-on: [push, pull_request] 
+on: [push]
 jobs:
    job1:
     name: unit testing
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - uses: ammaraskar/sphinx-action@master
       with:
-        pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx_rtd_theme"  
-        build-command: 'make spelling html'
-        docs-folder: './docs'
-    - shell: bash
-      run: |
-          value=`cat build/spelling/output.txt`
-          echo Spelling Output is $value
+          docs-folder: "docs/"
