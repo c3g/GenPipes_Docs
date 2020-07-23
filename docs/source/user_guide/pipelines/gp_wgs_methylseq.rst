@@ -16,6 +16,8 @@ Methylation Sequencing Pipeline
 
 GenPipes methylation sequencing workflow is adapted from the `Bismark pipeline`_. It aligns paired-end reads with `Bowtie 2`_ default mode. Duplicates are removed with `Picard`_, and methylation calls are extracted using Bismark. `Wiggle`_ tracks for both read coverage and methylation profile are generated for visualization. Variant calls can be extracted from the whole-genome bisulfite sequencing (WGBS) data directly using `Bis-SNP caller`_. Bisulfite conversion rates are estimated with lambda genome or from human non-CpG methylation directly. Several metrics based on IHEC requirements are also calculated. Methylation sequencing can also process capture data if provided with a capture `BED file`_. 
 
+Both paired-end reads as well as single-end reads are supported by this pipeline. Paired-end reading improves the ability to identify the relative positions of various reads in the genome making it much more effective than single-end reading for resolving structural rearrangements such as gene insertions, deletions or inversions and assembly of repetive regions.  Single-end reads are much less expensive in terms of resource consumption and time needed for analysis and can be used for experiments that do not require higher degrees of accuracy offered by paired-reads.
+
 .. contents:: :local:
 
 ----
