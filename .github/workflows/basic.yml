@@ -13,3 +13,7 @@ jobs:
         pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx sphinx_rtd_theme"  
         build-command: 'make spelling'
         docs-folder: "docs/"
+   - shell: bash
+     run: |
+         value=`cat build/spelling/output.txt`
+         echo The Spelling Output is $value
