@@ -11,12 +11,12 @@ jobs:
     - uses: ammaraskar/sphinx-action@master
       with:
         pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx sphinx_rtd_theme"  
-        build-command: 'make spelling'
+        build-command: 'make spelling BUILDDIR=${{ github.workspace }}/build'
         docs-folder: "docs/"
     - uses: actions/upload-artifact@v2
       with:
         name: spell-log
-        path: build/spelling/output.txt
+        path: ${{ github.workspace }}/build/spelling/output.txt
 
  displaylog:
      name: show spelling log
@@ -30,5 +30,5 @@ jobs:
        - name: print output
        - shell: bash
          run: |
-           value=`cat build/spelling/output.txt`
+           value=`cat ${{ github.workspace }}/build/spelling/output.txt`
            echo The Spelling Output is $value
