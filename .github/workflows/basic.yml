@@ -1,23 +1,15 @@
 # This is a basic workflow to help you get started with Actions
 
 name: CI
-on: pull_request
+on: push
 jobs:
-  check-pr:
+  build:
     name: validate commits
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.pull_request.head.sha }}
-        fetch-depth: 0
-    - run: git fetch origin master
-   check-html:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - uses: ammaraskar/sphinx-action@master
       with:
         pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx sphinx_rtd_theme"  
-        build-command: 'make spelling html'
-        docs-folder: './docs'
+        build-command: 'make html'
+        docs-folder: "/docs"
