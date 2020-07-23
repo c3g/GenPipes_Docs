@@ -9,6 +9,6 @@ jobs:
     - uses: actions/checkout@v1
     - uses: ammaraskar/sphinx-action@master
       with:
-        pre-build-command: "apt-get update -y && apt-get install -y enchant git latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended && pip3 install sphinx sphinx_rtd_theme"  
-        build-command: 'make html latexpdf'
+        pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx sphinx_rtd_theme"  
+        build-command: 'make html'
         docs-folder: "docs/"
