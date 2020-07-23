@@ -13,7 +13,22 @@ jobs:
         pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx sphinx_rtd_theme"  
         build-command: 'make spelling'
         docs-folder: "docs/"
-   - shell: bash
-     run: |
-         value=`cat build/spelling/output.txt`
-         echo The Spelling Output is $value
+     - uses: actions/upload-artifact@v2
+       with:
+         name: spell-log
+         path build/spelling/output.txt
+
+ displaylog:
+     name: show spelling log
+     needs: build
+     runs-on: ubuntu-latest
+     steps:
+         - name: get logfile
+           uses: actions/download-artifact@v2
+           with:
+               name: spell-log
+        - name: print output
+        - shell: bash
+          run: |
+            value=`cat build/spelling/output.txt`
+            echo The Spelling Output is $value
