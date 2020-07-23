@@ -12,4 +12,4 @@ jobs:
       with:
         pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx sphinx_rtd_theme"  
         build-command: 'make html'
-        docs-folder: "/docs"
+        docs-folder: "docs/"
