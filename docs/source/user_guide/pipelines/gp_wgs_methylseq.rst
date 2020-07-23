@@ -16,6 +16,8 @@ Methylation Sequencing Pipeline
 
 GenPipes methylation sequencing workflow is adapted from the `Bismark pipeline`_. It aligns paired-end reads with `Bowtie 2`_ default mode. Duplicates are removed with `Picard`_, and methylation calls are extracted using Bismark. `Wiggle`_ tracks for both read coverage and methylation profile are generated for visualization. Variant calls can be extracted from the whole-genome bisulfite sequencing (WGBS) data directly using `Bis-SNP caller`_. Bisulfite conversion rates are estimated with lambda genome or from human non-CpG methylation directly. Several metrics based on IHEC requirements are also calculated. Methylation sequencing can also process capture data if provided with a capture `BED file`_. 
 
+Both paired-end reads as well as single-end reads are supported by this pipeline. Paired-end reading improves the ability to identify the relative positions of various reads in the genome making it much more effective than single-end reading for resolving structural rearrangements such as gene insertions, deletions or inversions and assembly of repetive regions.  Single-end reads are much less expensive in terms of resource consumption and time needed for analysis and can be used for experiments that do not require higher degrees of accuracy offered by paired-reads.
+
 .. contents:: :local:
 
 ----
@@ -45,8 +47,10 @@ Usage
 
   methylseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
                     [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
-                    [--json] [--report] [--clean]
-                    [-l {debug,info,warning,error,critical}] [-d DESIGN]
+                    [--no-json] [--report] [--clean]
+                    [-l {debug,info,warning,error,critical}] [--sanity-check]
+                    [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}] 
+                    [-d DESIGN]
                     [-t {mugqic,mpileup,light}] [-r READSETS] [-v]
 
 
@@ -67,8 +71,8 @@ Usage
                         job scheduler type (default: slurm)
   -f, --force           force creation of jobs even if up to date (default:
                         false)
-  --json                create a JSON file per analysed sample to track the
-                        analysis status (default: false)
+  --no-json             do not create a JSON file per analysed sample to track the
+                        analysis status (default: false i.e. JSON file will be created)
   --report              create 'pandoc' command to merge all job markdown
                         report files in the given step range into HTML, if
                         they exist; if --report is set, --job-scheduler,
@@ -80,6 +84,12 @@ Usage
                         date status are ignored (default: false)
   -l {debug,info,warning,error,critical}, --log {debug,info,warning,error,critical}
                         log level (default: info)
+  --sanity-check        run the pipeline in `sanity check mode` to verify that 
+                        all the input files needed for hte pipeline to run are
+                        available on the system (default: false)
+  --container {docker, singularity,} {<CONTAINER PATH>, <CONTAINER NAME>}
+                        run pipeline inside a container providing a container
+                        image path or accessible docker/singularity hub path
   -d DESIGN, --design DESIGN
                         design file
   -t {mugqic,mpileup,light}, --type {mugqic,mpileup,light}

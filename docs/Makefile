@@ -23,6 +23,9 @@ download:
 usage:
 	@$(shell curl -s https://datahub-90-cw3.p.genap.ca/testCommands.txt > source/resources/testCommands.txt)
 
+workflow:
+	@$(shell curl -s https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_methylseq.png > source/img/pipelines/wgs_methylseq.png)
+
 html:
 	@echo "Making html docs"
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
