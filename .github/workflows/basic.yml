@@ -4,7 +4,6 @@ name: CI
 on: push
 jobs:
   build:
-    name: validate commits
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -23,11 +22,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: get logfile
         uses: actions/download-artifact@v2
         with:
           name: spell-log
-      - name: print output
       - shell: bash
         run: |
           value=`cat ${{ github.workspace }}/build/spelling/output.txt`
