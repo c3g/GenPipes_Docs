@@ -11,10 +11,10 @@ jobs:
     - uses: actions/checkout@v1
     - uses: ammaraskar/sphinx-action@master
       with:
-        pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx sphinx_rtd_theme"  
+        pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx_rtd_theme"  
         build-command: 'make spelling html'
         docs-folder: './docs'
     - shell: bash
       run: |
-          value=`cat ./docs/build/spelling/output.txt`
-          echo .......... $value
+          value=`cat build/spelling/output.txt`
+          echo Spelling Output is $value
