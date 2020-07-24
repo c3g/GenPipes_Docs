@@ -1,7 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 
 name: CI
-on: push
+on: [push, pull_request]
 jobs:
   macos_build:
     runs-on: macos-latest
@@ -12,6 +12,8 @@ jobs:
         python-version: 3.8
     - name: Install Dependencies
       run: |
+          brew update
+          brew install enchant
           python -m pip install --upgrade pip
           pip install sphinx sphinx_rtd_theme
           pip install -r docs/requirements.txt
