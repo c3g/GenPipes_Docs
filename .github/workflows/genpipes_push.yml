@@ -20,13 +20,15 @@ jobs:
     - name: Sphinx build
       run: |
           val=`ls -alth`
-          echo This is current dir contents $value
-          cd ${{ github.workspace }}
-          make -C docs/ spelling > ${{ github.workspace }}/spell-log.txt
+          echo This is current dir contents $val
+          make -C docs/ spelling > spell-log.txt
+          val2=`ls -alth`
+          echo This is current dir contents $val2
+    - name: Upload artifacts 
     - uses: actions/upload-artifact@v2
       with:
           name: spellinglogfile
-          path: ${{ github.workspace }}/spell-log.txt
+          path: spell-log.txt
 
   show_log:
     needs: macos_build
@@ -38,6 +40,6 @@ jobs:
           name: spellinglogfile
     - shell: bash
       run: | 
-          value=`cat ${{ github.workspace }}/spell-log.txt`
+          value=`cat spell-log.txt`
           echo The OUTPUT of spelling check is ......
           echo $value
