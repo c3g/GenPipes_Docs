@@ -21,7 +21,7 @@ jobs:
       run: |
           val=`ls -alth`
           echo This is current dir contents $val
-          make -C docs/ clean html spelling >buildlog.txt
+          make -C docs/ clean html >buildlog.txt
     - name: Check dir contents
       run: | 
           val2=`ls -alth`
