@@ -17,6 +17,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install sphinx sphinx_rtd_theme
           pip install -r docs/requirements.txt
+    - name: Sphinx build
+      run: |
+          val=`ls -alth`
+          echo This is current dir contents $value
+          cd ${{ github.workspace }}
           make -C docs/ spelling > ${{ github.workspace }}/spell-log.txt
     - uses: actions/upload-artifact@v2
       with:
@@ -27,7 +32,8 @@ jobs:
     needs: macos_build
     runs-on: macos_latest
     steps:
-    - uses: actions/download-artifact@v2
+    - name: Show the Log
+      uses: actions/download-artifact@v2
       with:
           name: spellinglogfile
     - shell: bash
