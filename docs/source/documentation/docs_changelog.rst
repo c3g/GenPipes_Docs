@@ -3,6 +3,11 @@
 GenPipes Documentation Changelog
 ================================
 
+.. spelling::
+
+     onpr
+     gh
+
 GenPipes documentation is continually being improved. 
 The current release corresponds to GenPipes version x.y.z
 

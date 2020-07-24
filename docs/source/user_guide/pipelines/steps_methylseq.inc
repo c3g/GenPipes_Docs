@@ -110,13 +110,13 @@ Identifying SNPs is important for accurate quantification of methylation levels 
 
 **Filter SNP CpGs**
 
-This step involves SNP CpGs filtering. The goal here is to use a known variants db (vcf file provided via the ini file) to filter the CpG sites produced earlier during the step `Methylation Profile`_.
+This step involves SNP CpGs filtering. The goal here is to use a known variants db (:abbr:`Variant Call Format(VCF)` file provided via the ini file) to filter the CpG sites produced earlier during the step `Methylation Profile`_.
 
 .. _Prepare for MethylKit Differential Analysis:
 
 **Prepare for MethylKit Differential Analysis**
 
-This step enables comparison of methylation profile across samples. It prepares inputs that re required for the subsequent step of MethylKit Differential Analysis.
+This step enables comparison of methylation profile across samples. It prepares inputs that are required for the subsequent step of MethylKit Differential Analysis.
 
 .. _MethylKit Differential Analysis:
 

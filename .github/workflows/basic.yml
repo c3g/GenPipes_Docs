@@ -3,7 +3,7 @@
 name: CI
 on: push
 jobs:
-  build:
+  ubuntu_build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -11,4 +11,13 @@ jobs:
       with:
         pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx sphinx_rtd_theme"  
         build-command: 'make html'
+        docs-folder: "docs/"
+  macos_build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ammaraskar/sphinx-action@master
+      with:
+        pre-build-command: "pip3 install sphinx_rtd_theme && pip3 install -r requirements.txt"  
+        build-command: 'make spelling'
         docs-folder: "docs/"

@@ -1,5 +1,6 @@
 TBD
 txt
+vcf
 pairCommands
 testdata
 hicseqCommands
