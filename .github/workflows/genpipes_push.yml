@@ -27,7 +27,7 @@ jobs:
           val2=`ls -alth`
           echo This is current dir contents $val2
     - name: Upload artifacts 
-    - uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v2
       with:
           name: buildlogfile
           path: buildlog.txt
