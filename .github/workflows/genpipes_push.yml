@@ -1,7 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
-on: [push, pull_request]
+name: Spell Check 
+on: [push]
 jobs:
   macos_build:
     runs-on: macos-latest
@@ -17,5 +17,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install sphinx sphinx_rtd_theme
           pip install -r docs/requirements.txt
-          make -C docs/ spelling
-          cat build/spelling/output.txt
+          make -C docs/ spelling > ${{ github.workspace }}/spell-log.txt
+    - uses: actions/upload-artifact@v2
+      with:
+          name: spellinglogfile
+          path: ${{ github.workspace }}/spell-log.txt
+
+  show_log:
+    needs: macos_build
+    runs-on: macos_latest
+    steps:
+    - uses: actions/download-artifact@v2
+      with:
+          name: spellinglogfile
+    - shell: bash
+      run: | 
+          value=`cat ${{ github.workspace }}/spell-log.txt`
+          echo The OUTPUT of spelling check is ......
+          echo $value
