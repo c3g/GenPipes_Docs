@@ -33,6 +33,7 @@ jobs:
           path: buildlog.txt
 
   show_log:
+    name: Display build logs
     needs: macos_build
     runs-on: macos_latest
     steps:
