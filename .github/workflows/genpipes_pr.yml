@@ -1,7 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 
 name: CI
-on: [push, pull_request]
+on: [pull_request]
 jobs:
   ubuntu_build:
     runs-on: ubuntu-latest

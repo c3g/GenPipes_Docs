@@ -21,14 +21,16 @@ jobs:
       run: |
           val=`ls -alth`
           echo This is current dir contents $val
-          make -C docs/ spelling > spell-log.txt
+          make -C docs/ clean html spelling >buildlog.txt
+    - name: Check dir contents
+      run: | 
           val2=`ls -alth`
           echo This is current dir contents $val2
     - name: Upload artifacts 
     - uses: actions/upload-artifact@v2
       with:
-          name: spellinglogfile
-          path: spell-log.txt
+          name: buildlogfile
+          path: buildlog.txt
 
   show_log:
     needs: macos_build
@@ -37,9 +39,9 @@ jobs:
     - name: Show the Log
       uses: actions/download-artifact@v2
       with:
-          name: spellinglogfile
+          name: buildlogfile
     - shell: bash
       run: | 
-          value=`cat spell-log.txt`
+          value=`cat buildlog.txt`
           echo The OUTPUT of spelling check is ......
           echo $value
