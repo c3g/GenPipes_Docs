@@ -21,9 +21,9 @@ jobs:
         python-version: 3.8
     - name: Install Dependencies
       run: |
-          pip3 install --upgrade pip3
-          pip3 install sphinx sphinx_rtd_theme
-          pip3 install -r docs/requirements.txt
+          python -m pip install --upgrade pip
+          pip install sphinx sphinx_rtd_theme
+          pip install -r docs/requirements.txt
     - name: Build Sphinx Documentation
       run: |
           make -C docs/ spelling
