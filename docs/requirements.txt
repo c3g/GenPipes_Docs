@@ -1,6 +1,6 @@
 ###sphinx>=3.0.0
 ###sphinx_rtd_theme
-pyenchant>=1.6.6
+pyenchant>=2.0.0
 sphinx-tabs>=1.1.11
 sphinxcontrib-spelling>=4.2.1
 imagesize>=0.7.1
