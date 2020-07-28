@@ -17,6 +17,7 @@
       biom
       otus
       subsamples
+      subsample
       config
       param
       chao

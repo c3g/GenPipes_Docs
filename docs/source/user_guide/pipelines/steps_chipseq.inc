@@ -87,7 +87,7 @@ The Homer Tag directories, used to check for quality metrics, are computed at th
 
 **QC Metrics**
 
-Sequencing quality metrics as tag count, tag autocorrelation, sequence bias and GC bias are generated.
+Sequencing quality metrics as tag count, tag auto-correlation, sequence bias and GC bias are generated.
 
 .. _Homer Make UCSC file:
 

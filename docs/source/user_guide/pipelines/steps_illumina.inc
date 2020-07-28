@@ -3,6 +3,7 @@
 .. spelling::
 
       md
+      subsample
 
 Step Details
 -------------

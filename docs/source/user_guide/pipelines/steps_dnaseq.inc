@@ -13,6 +13,7 @@
     vcf
     gvcfs
     recalibrator
+    recalibrate
     Omni
     Biomart
     dbNSFP
@@ -112,7 +113,7 @@ This step marks duplicates. Aligned reads per sample are duplicates if they have
 
 **Recalibration**
 
-Recalibrate base quality scores of sequencing-by-synthesis reads in an aligned BAM file. After recalibration, the quality scores in the QUAL field in each read in the output BAM are more accurate in that the reported quality score is closer to its actual probability of mismatching the reference genome. Moreover, the recalibration tool attempts to correct for variation in quality with machine cycle and sequence context, and by doing so, provides not only more accurate quality scores but also more widely dispersed ones.
+This step is used to recalibrate base quality scores of sequencing-by-synthesis reads in an aligned BAM file. After recalibration, the quality scores in the QUAL field in each read in the output BAM are more accurate in that the reported quality score is closer to its actual probability of mismatching the reference genome. Moreover, the recalibration tool attempts to correct for variation in quality with machine cycle and sequence context, and by doing so, provides not only more accurate quality scores but also more widely dispersed ones.
 
 .. _Sym Link Final BAM:
 
