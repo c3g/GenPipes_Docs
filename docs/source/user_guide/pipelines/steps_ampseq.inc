@@ -7,9 +7,13 @@ Following are the various steps that are part of GenPipes Amplicon Sequencing ge
 
 .. _Trimmomatic16S Step:
 
-**Trimmomatic16S Step**
+**Trimmomatic16S**
 
-MiSeq raw reads adapter & primers trimming and basic QC is performed using `Trimmomatic`_. If an adapter FASTA file is specified in the config file (section 'trimmomatic', param 'adapter_fasta'), it is used first. Else, Adapter1, Adapter2, Primer1 and Primer2 columns from the readset file are used to create an adapter FASTA file, given then to Trimmomatic. Sequences are reversed-complemented and swapped. This step takes as input files: 1. MiSeq paired-End FASTQ files from the readset file.
+MiSeq raw reads adapter & primers trimming and basic QC is performed using `Trimmomatic`_. If an adapter FASTA file is specified in the config file (section 'trimmomatic', param 'adapter_fasta'), it is used first. Else, Adapter1, Adapter2, Primer1 and Primer2 columns from the readset file are used to create an adapter FASTA file, given then to Trimmomatic. Sequences are reversed-complemented and swapped. 
+
+This step takes as input files: 
+
+#. MiSeq paired-End FASTQ files from the readset file.
 
 .. _Merge Trimmomatic Stats:
 
@@ -25,7 +29,7 @@ TBD-GenPipes-Dev
 
 .. _Amplicon Length Parser:
 
-**AMplicon Length Parser**
+**Amplicon Length Parser**
 
 In this step, we look at `FLASH`_ output to set amplicon lengths input for `DADA2`_. As minimum eligible length, a given length needs to have at least 1% of the total number of amplicons.
 
@@ -49,7 +53,7 @@ This step catenates all the reads in one file for further analysis. As input, it
 
 .. _UCHIME Step:
 
-**UCHIME Step**
+**UCHIME**
 
 This step takes catenated FASTA file from the previous Catenate step and uses it for reference based chimera detection using `VSearch tool`_.
 
@@ -82,7 +86,7 @@ This step takes as input files:
 
 **OTU Assigning**
 
-Given a set of OTUS, this step attempts to assign the taxonomy of each OTU using `Uclust algorithm`_. As input, it takes OTU representative sequence file from the previous step.
+Given a set of OTUs, this step attempts to assign the taxonomy of each OTU using `Uclust algorithm`_. As input, it takes OTU representative sequence file from the previous step.
 
 .. _OTU Table:
 
@@ -123,13 +127,13 @@ In this step, the first part of the report for taxonomic affiliation is created.
 
 **Multiple Rarefaction**
 
-This is the first of the four steps (1/4) for rarefaction plot. It takes OUT non-rarefied table in biom format as input. It rarefies OTU table by random sampling (without replacement) at different depth in order to perform rarefaction analysis. You need to provide the minimum/maximum number of sequences per samples and the size of each steps between the min/max of seqs/sample.
+This is the first of the four steps (1/4) for rarefaction plot. It takes OTU non-rarefied table in biom format as input. It rarefies OTU table by random sampling (without replacement) at different depth in order to perform rarefaction analysis. You need to provide the minimum/maximum number of sequences per samples and the size of each steps between the min/max of seqs/sample.
 
 .. _Alpha Diversity:
 
 **Alpha Diversity**
 
-This is the second of the four steps (2/4) for rarefaction plot. It takes as input, multiple OUT rarefied table in biom format from the previous step and calculates alpha diversity on each sample using a variety of alpha diversity metrics (chao1, shannon, observed otus).
+This is the second of the four steps (2/4) for rarefaction plot. It takes as input, multiple OUT rarefied table in biom format from the previous step and calculates alpha diversity on each sample using a variety of alpha diversity metrics (chao1, shannon, observed OTUs).
 
 .. _Collate Alpha:
 
@@ -160,7 +164,6 @@ Single rarefaction takes OTU table in biom format as input. This step is recomme
 **CSS Normalization**
 
 CSS Normalization takes OTU table in biom format as input. This is the alternative method for normalization to rarefaction. The CSS Matrix normalization step is recommended.
-
 
 .. _Rarefaction Plot:
 
@@ -232,7 +235,7 @@ Here the last part of the final report for Amplicon sequencing pipeline is gener
 
 **Asva**
 
-This step checks for the design file (required for `PCA plots`_) 
+This step checks for the design file (required for `PCoA Plot`_) 
 
 .. Following are the html link references:
 
