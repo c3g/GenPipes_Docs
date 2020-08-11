@@ -164,6 +164,8 @@ The table below shows various steps that constitute the WGS or Methylation Seque
 +----+--------------------------------------+
 | 16.| |methylkit_differential_analysis|    |
 +----+--------------------------------------+
+| 16.| |cram_output|                        |
++----+--------------------------------------+
 
 
 ----
@@ -225,3 +227,4 @@ For the latest implementation and usage details refer to WGS or Methylation Sequ
 .. |filter_snp_cpg| replace:: `Filter SNP CpGs`_
 .. |prepare_methylkit| replace:: `Prepare for MethylKit Differential Analysis`_
 .. |methylkit_differential_analysis| replace:: `MethylKit Differential Analysis`_
+.. include:: repl_cram_op.inc

@@ -139,12 +139,14 @@ This step runs spp to estimate NSC and RSC ENCODE metrics. For more information 
 
 This step generates IHEC's `standard metrics <http://ihec-epigenomes.org/research/reference-epigenome-standards/>`_.
 
-.. _Multiqc Report:
+.. _MultiQC Report:
 
-**Multiqc Report** 
+**MultiQC Report** 
 
 A quality control report for all samples is generated.
 For more detailed information see `MultiQC documentation <http://multiqc.info/>`_.
+
+.. include:: steps_cram_op.inc
 
 .. _Samtools: http://www.htslib.org/
 .. _Picard: http://broadinstitute.github.io/picard/

@@ -124,11 +124,7 @@ This step enables comparison of methylation profile across samples. It prepares 
 
 This step involves running of `MethylKit`_ to get DMCs & DMRs for different designed comparisons.
 
-.. _cram_output:
-
-**CRAM Output**
-
-Generate long term storage version of the final alignment files in `CRAM file format`_. Using this function will include the original final BAM file into the removable file list.
+.. include:: steps_cram_op.inc 
 
 .. Following are the html links used in this text
 
