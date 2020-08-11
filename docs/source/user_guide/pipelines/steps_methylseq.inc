@@ -124,6 +124,11 @@ This step enables comparison of methylation profile across samples. It prepares 
 
 This step involves running of `MethylKit`_ to get DMCs & DMRs for different designed comparisons.
 
+.. _cram_output:
+
+**CRAM Output**
+
+Generate long term storage version of the final alignment files in `CRAM file format`_. Using this function will include the original final BAM file into the removable file list.
 
 .. Following are the html links used in this text
 
@@ -133,4 +138,5 @@ This step involves running of `MethylKit`_ to get DMCs & DMRs for different desi
 .. _fgbio tool: https://github.com/fulcrumgenomics/fgbio 
 .. _bedGraph: https://genome.ucsc.edu/goldenPath/help/bedgraph.html 
 .. _Bis-SNP: http://people.csail.mit.edu/dnaase/bissnp2011/
+.. _CRAM file format: https://samtools.github.io/hts-specs/CRAMv3.pdf
 .. _MethylKit: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3491415/
