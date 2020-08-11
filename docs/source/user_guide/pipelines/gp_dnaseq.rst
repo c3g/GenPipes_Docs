@@ -25,7 +25,7 @@ DNA Sequencing GenPipes pipeline has been implemented optimizing the Genome Anal
 
 The `Genome in a Bottle dataset`_ was used to select steps and parameters minimizing the false-positive rate and maximizing the true-positive variants to achieve a sensitivity of 99.7%, precision of 99.1%, and F1 score of 99.4%. Finally, additional annotations are incorporated using `dbNSFP`_ and / or Gemini and QC metrics are collected at various stages and visualized using `MultiQC`_. This pipeline has two different protocols, the default protocol based on the GATK variant caller, haplotype caller, (-t mugqic) and one based on the mpileup/bcftools caller (-t mpileup).
 
-The DNA sequencing pipeline support two trimmers: Trimmomatic or `Skewer <https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-15-182>`_.
+The DNA sequencing pipeline supports two trimmers: `Trimmomatic`_ and `Skewer <https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-15-182>`_.
 
 See :ref:`More Information on DNA Sequencing` section below for details. 
 
@@ -45,7 +45,12 @@ Usage
 
 ::
 
-  dnaseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS] [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f] [--json] [--report] [--clean] [-l {debug,info,warning,error,critical}] [-t {mugqic,mpileup,light}] [-r READSETS] [-v]
+  dnaseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
+            [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
+            [--no-json] [--report] [--clean]
+            [-l {debug,info,warning,error,critical}] [--sanity-check]
+            [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}] 
+            [-t {mugqic,mpileup,light}] [-r READSETS] [-v]
 
 **Optional Arguments**
 
@@ -64,8 +69,9 @@ Usage
                         job scheduler type (default: slurm)
   -f, --force           force creation of jobs even if up to date (default:
                         false)
-  --json                create a JSON file per analysed sample to track the
-                        analysis status (default: false)
+  --no-json             do not create a JSON file per analysed sample to track the
+                        analysis status (default: false i.e., JSON file will be
+                        created)
   --report              create 'pandoc' command to merge all job markdown
                         report files in the given step range into HTML, if
                         they exist; if --report is set, --job-scheduler,
@@ -77,6 +83,12 @@ Usage
                         date status are ignored (default: false)
   -l {debug,info,warning,error,critical}, --log {debug,info,warning,error,critical}
                         log level (default: info)
+  --sanity-check        run the pipeline in `sanity check mode` to verify that
+                        all the input files needed for the pipeline to run are
+                        available on the system (default: false)
+  --container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}
+                        run pipeline inside a container providing a container
+                        image path or accessible docker/singularity hub path
   -t {mugqic,mpileup,light}, --type {mugqic,mpileup,light}
                         DNAseq analysis type
   -r READSETS, --readsets READSETS
@@ -127,6 +139,8 @@ The following figure shows the pipeline schema for `Mpileup`_ type of DNA sequen
 
    Figure: Schema of Mpileup DNA Sequencing protocol
 
+There is another choice of DNA Sequencing protocol called DNA Light.  Refer to the Pipeline steps for details.
+
 ----
 
 Pipeline Steps
@@ -134,77 +148,79 @@ Pipeline Steps
 
 The table below shows various steps that constitute the MUGQIC and Mpileup types of DNA Sequencing for genomic analysis pipelines.
 
-+----+-------------------------------------+--------------------------------------+
-|    |  *MUGQIC DNA Sequencing Steps*      |   *MPileup DNA Sequencing Steps*     |
-+====+=====================================+======================================+
-| 1. | |picard_sam_to_fastq|               | |picard_sam_to_fastq|                |
-+----+-------------------------------------+--------------------------------------+
-| 2. | |sym_link_fastq|                    | |sym_link_fastq|                     |
-+----+-------------------------------------+--------------------------------------+
-| 3. | |trimmomatic|                       | |trimmomatic|                        |
-+----+-------------------------------------+--------------------------------------+
-| 4. | |merge_trimmomatic_stats|           | |merge_trimmomatic_stats|            |
-+----+-------------------------------------+--------------------------------------+
-| 5. | |skewer_trim|                       | |skewer_trim|                        |
-+----+-------------------------------------+--------------------------------------+
-| 6. | |bwa_mem_picard_sort_sam|           | |bwa_mem_picard_sort_sam|            |
-+----+-------------------------------------+--------------------------------------+
-| 7. | |sambamba_merge|                    | |sambamba_merge|                     |
-+----+-------------------------------------+--------------------------------------+
-| 8. | |gatk_indel_realigner|              | |gatk_indel_realigner|               |
-+----+-------------------------------------+--------------------------------------+
-| 9. | |sambamba_merge_realigned|          | |sambamba_merge_realigned|           |
-+----+-------------------------------------+--------------------------------------+
-| 10.| |fix_mate_by_coor|                  | |fix_mate_by_coor|                   |
-+----+-------------------------------------+--------------------------------------+
-| 11.| |picard_mark_dup|                   | |picard_mark_dup|                    |
-+----+-------------------------------------+--------------------------------------+
-| 12.| |recalib|                           | |recalib|                            |
-+----+-------------------------------------+--------------------------------------+
-| 13.| |sym_link_final_bam|                | |sym_link_final_bam|                 |
-+----+-------------------------------------+--------------------------------------+
-| 14.| |m_dna_picard|                      | |m_dna_picard|                       |
-+----+-------------------------------------+--------------------------------------+
-| 15.| |m_dna_sample|                      | |m_dna_sample|                       |
-+----+-------------------------------------+--------------------------------------+
-| 16.| |m_dna_sambamba|                    | |m_dna_sambamba|                     |
-+----+-------------------------------------+--------------------------------------+
-| 17.| |m_dna_fastqc|                      | |m_dna_fastqc|                       |
-+----+-------------------------------------+--------------------------------------+
-| 18.| |picard_calc_hs_m|                  | |picard_calc_hs_m|                   |
-+----+-------------------------------------+--------------------------------------+
-| 19.| |gatk_call_loci|                    | |gatk_call_loci|                     |
-+----+-------------------------------------+--------------------------------------+
-| 20.| |extract_com_snp|                   | |extract_com_snp|                    |
-+----+-------------------------------------+--------------------------------------+
-| 21.| |baf_plot|                          | |baf_plot|                           |
-+----+-------------------------------------+--------------------------------------+
-| 22.| |gatk_hp_c|                         | |rawmpileup|                         |
-+----+-------------------------------------+--------------------------------------+
-| 23.| |merge_call_i_gvcf|                 | |rawmp_cat|                          |
-+----+-------------------------------------+--------------------------------------+
-| 24.| |combine_gvcf|                      | |snp_n_indel_bcf|                    |
-+----+-------------------------------------+--------------------------------------+
-| 25.| |merge_call_c_gvcf|                 | |merge_filter_bcf|                   |
-+----+-------------------------------------+--------------------------------------+
-| 26.| |variant_recalib|                   | |mp_dcom_norm|                       |
-+----+-------------------------------------+--------------------------------------+
-| 27.| |hc_dec_norm|                       | |mp_flag_map|                        |
-+----+-------------------------------------+--------------------------------------+
-| 28.| |hc_flag_map|                       | |mp_snp_id_ann|                      |
-+----+-------------------------------------+--------------------------------------+
-| 29.| |hc_snp_ann|                        | |mp_snp_eff|                         |
-+----+-------------------------------------+--------------------------------------+
-| 30 | |hc_snp_eff|                        | |mp_dbnsfp_ann|                      |
-+----+-------------------------------------+--------------------------------------+
-| 31.| |hc_dbnsfp_ann|                     | |mp_gemini_ann|                      |
-+----+-------------------------------------+--------------------------------------+
-| 32.| |hc_gemini_ann|                     | |mp_m_vcf_stat|                      |
-+----+-------------------------------------+--------------------------------------+
-| 33.| |hc_met_vcf_stat|                   | |run_multiqc|                        |
-+----+-------------------------------------+--------------------------------------+
-| 34.| |run_multiqc|                       |                                      |
-+----+-------------------------------------+--------------------------------------+
++----+--------------------------------+---------------------------------+---------------------------------+
+|    |  *MUGQIC DNA Sequencing Steps* |   *MPileup DNA Sequencing Steps*| *Light DNA Sequencing Steps*    |
++====+================================+=================================+=================================+
+| 1. | |picard_sam_to_fastq|          | |picard_sam_to_fastq|           | |picard_sam_to_fastq|           |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 2. | |sym_link_fastq|               | |sym_link_fastq|                | |skewer_trim|                   |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 3. | |trimmomatic|                  | |trimmomatic|                   | |bwa_mem_picard_sort_sam|       |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 4. | |merge_trimmomatic_stats|      | |merge_trimmomatic_stats|       | |sambamba_merge|                |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 5. | |skewer_trim|                  | |skewer_trim|                   | |gatk_indel_realigner|          |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 6. | |bwa_mem_picard_sort_sam|      | |bwa_mem_picard_sort_sam|       | |sambamba_merge_realigned|      |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 7. | |sambamba_merge|               | |sambamba_merge|                | |sambamba_mark_duplicates|      |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 8. | |gatk_indel_realigner|         | |gatk_indel_realigner|          | |m_dna_picard|                  |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 9. | |sambamba_merge_realigned|     | |sambamba_merge_realigned|      | |m_dna_sample|                  |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 10.| |fix_mate_by_coor|             | |fix_mate_by_coor|              | |m_dna_sambamba|                |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 11.| |picard_mark_dup|              | |picard_mark_dup|               | |m_dna_fastqc|                  |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 12.| |recalib|                      | |recalib|                       | |picard_calc_hs_m|              |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 13.| |sym_link_final_bam|           | |sym_link_final_bam|            | |gatk_call_loci|                |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 14.| |m_dna_picard|                 | |m_dna_picard|                  | |extract_com_snp|               |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 15.| |m_dna_sample|                 | |m_dna_sample|                  | |baf_plot|                      |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 16.| |m_dna_sambamba|               | |m_dna_sambamba|                | |gatk_hp_c|                     |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 17.| |m_dna_fastqc|                 | |m_dna_fastqc|                  | |merge_call_i_gvcf|             |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 18.| |picard_calc_hs_m|             | |picard_calc_hs_m|              | |combine_gvcf|                  |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 19.| |gatk_call_loci|               | |gatk_call_loci|                | |merge_call_c_gvcf|             |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 20.| |extract_com_snp|              | |extract_com_snp|               | |combine_gvcf|                  |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 21.| |baf_plot|                     | |baf_plot|                      | |variant_recalib|               | 
++----+--------------------------------+---------------------------------+---------------------------------+
+| 22.| |gatk_hp_c|                    | |rawmpileup|                    | |hc_dec_norm|                   |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 23.| |merge_call_i_gvcf|            | |rawmp_cat|                     | |hc_flag_map|                   |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 24.| |combine_gvcf|                 | |snp_n_indel_bcf|               | |hc_snp_ann|                    |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 25.| |merge_call_c_gvcf|            | |merge_filter_bcf|              | |hc_snp_eff|                    |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 26.| |variant_recalib|              | |mp_dcom_norm|                  | |hc_dbnsfp_ann|                 | 
++----+--------------------------------+---------------------------------+---------------------------------+
+| 27.| |hc_dec_norm|                  | |mp_flag_map|                   | |hc_gemini_ann|                 |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 28.| |hc_flag_map|                  | |mp_snp_id_ann|                 | |run_multiqc|                   | 
++----+--------------------------------+---------------------------------+---------------------------------+
+| 29.| |hc_snp_ann|                   | |mp_snp_eff|                    | |cram_output|                   |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 30 | |hc_snp_eff|                   | |mp_dbnsfp_ann|                 |                                 |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 31.| |hc_dbnsfp_ann|                | |mp_gemini_ann|                 |                                 |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 32.| |hc_gemini_ann|                | |mp_m_vcf_stat|                 |                                 |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 33.| |hc_met_vcf_stat|              | |run_multiqc|                   |                                 |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 34.| |run_multiqc|                  | |cram_output|                   |                                 |
++----+--------------------------------+---------------------------------+---------------------------------+
+| 35.| |cram_output|                  |                                 |                                 |
++----+--------------------------------+---------------------------------+---------------------------------+
 
 ----
 
@@ -274,6 +290,9 @@ For the latest implementation and usage details refer to DNA Sequencing implemen
 .. |mp_dbnsfp_ann| replace:: `MPileup dbNSFP annotation`_
 .. |mp_gemini_ann| replace:: `MPileup Gemini annotation`_
 .. |mp_m_vcf_stat| replace:: `MPileup Metrics VCF stats`_
+.. |sambamba_mark_duplicates| replace:: `SAMBAM Mark Duplicates`_
+
+.. include::  repl_cram_op.inc
 
 .. The following are html links used in this text
 

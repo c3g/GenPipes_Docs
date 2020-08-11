@@ -313,6 +313,14 @@ TBD-GenPipes-Dev
 
 Metrics SNV applied to mpileup caller vcf. Multiple metrics associated to annotations and effect prediction are generated at this step: change rate by chromosome, changes by type, effects by impact, effects by functional class, counts by effect, counts by genomic region, SNV quality, coverage, InDel lengths, base changes, transition-transversion rates, summary of allele frequencies, codon changes, amino acid changes, changes per chromosome, change rates.
 
+.. _SAMBAM Mark Duplicates:
+
+**SAMBAM Mark Duplicates**
+
+In this step duplicates are marked. Aligned reads per sample are duplicates if they have the same 5' alignment positions (for both mates in case of paired-end reads). All but the best pair (based on alignment score) will be marked as duplicates in the BAM file. Marking duplicates is done using `Picard`_.
+
+.. include:: steps_cram_op.inc
+
 .. Following are the html link references:
 
 .. _Trimmomatic: http://www.usadellab.org/cms/index.php?page=trimmomatic
