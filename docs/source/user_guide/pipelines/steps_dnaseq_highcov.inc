@@ -42,7 +42,7 @@ This step takes as input files:
 - Else, FASTQ files from the readset file if available
 - Else, FASTQ output files from previous picard_sam_to_fastq conversion of BAM files
 
-The filtered reads are aligned to a reference genome. The alignment is done per sequencing readset. The alignment software used is `BWA with algorithm: bwa mem <http://bio-bwa.sourceforge.net/>`. BWA output BAM files are then sorted by coordinate using `Picard Tools <http://broadinstitute.github.io/picard/>`_.
+The filtered reads are aligned to a reference genome. The alignment is done per sequencing readset. The alignment software used is `BWA with algorithm: bwa mem <http://bio-bwa.sourceforge.net/>`_. BWA output BAM files are then sorted by coordinate using `Picard Tools <http://broadinstitute.github.io/picard/>`_.
 
 .. _Picard Merge SAM Files:
 
@@ -114,3 +114,5 @@ This step performs Variant effect annotation. The .vcf files are annotated for v
 **Gemini Annotations**
 
 This step loads functionally annotated vcf file into a mysql lite annotation database as part of `Gemini processing <http://gemini.readthedocs.org/en/latest/index.html>`_.
+
+.. include:: steps_cram_op.inc

@@ -26,7 +26,7 @@ DNA Sequencing (High Coverage) is another GenPipes pipeline that is optimized fo
 Introduction
 ------------
 
-The DnaSeq high Coverage Pipeline is based on the :ref:`DNA Sequencing Pipeline<docs_gp_dnaseq>` and follows the same initial pipeline steps. The difference begins at the Mark Duplicates step. Since this data is high coverage Mark Duplicates step is not run. Recalibration is not run either because typically, these datasets are targeted with amplicons or custom capture which render recalibration useless. Also variant calling is done only using frequency. Bayesian callers are not used because these typically don't fare well with the high coverage.
+The DnaSeq High Coverage Pipeline is based on the :ref:`DNA Sequencing Pipeline<docs_gp_dnaseq>` and follows the same initial pipeline steps. The difference begins at the Mark Duplicates step. Since this data is high coverage Mark Duplicates step is not run. Recalibration is not run either because typically, these datasets are targeted with amplicons or custom capture which render recalibration useless. Also variant calling is done only using frequency. Bayesian callers are not used because these typically don't fare well with the high coverage.
 
 ----
 
@@ -46,9 +46,11 @@ Usage
 
   dnaseq_high_coverage.py [-h] [--help] [-c CONFIG [CONFIG ...]]
                                [-s STEPS] [-o OUTPUT_DIR]
-                               [-j {pbs,batch,daemon,slurm}] [-f] [--json]
+                               [-j {pbs,batch,daemon,slurm}] [-f] [--no-json]
                                [--report] [--clean]
                                [-l {debug,info,warning,error,critical}]
+                               [--sanity-check]
+                               [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}]
                                [-r READSETS] [-v]
 
 **Optional Arguments**
@@ -68,8 +70,9 @@ Usage
                         job scheduler type (default: slurm)
   -f, --force           force creation of jobs even if up to date (default:
                         false)
-  --json                create a JSON file per analysed sample to track the
-                        analysis status (default: false)
+  --no-json             do not create a JSON file per analysed sample to track the
+                        analysis status (default: false i.e., JSON file will be
+                        created)
   --report              create 'pandoc' command to merge all job markdown
                         report files in the given step range into HTML, if
                         they exist; if --report is set, --job-scheduler,
@@ -81,6 +84,12 @@ Usage
                         date status are ignored (default: false)
   -l {debug,info,warning,error,critical}, --log {debug,info,warning,error,critical}
                         log level (default: info)
+  --sanity-check        run the pipeline in `sanity check mode` to verify that
+                        all the input files needed for the pipeline to run are
+                        available on the system (default: false)
+  --container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}
+                        run pipeline inside a container providing a container
+                        image path or accessible docker/singularity hub path
   -r READSETS, --readsets READSETS
                         readset file
   -v, --version         show the version information and exit
@@ -154,6 +163,8 @@ The table below shows various steps that constitute the DNA Sequencing (High Cov
 +----+----------------------------------------------+
 | 15.| |gemini_annotations|                         |
 +----+----------------------------------------------+
+| 15.| |cram_output|                                |
++----+----------------------------------------------+
 
 ----
 
@@ -189,3 +200,4 @@ For the latest implementation and usage details refer to DNA Sequencing (High Co
 .. |snp_effect| replace:: `SNP Effect`_
 .. |gemini_annotations| replace:: `Gemini Annotations`_
 
+.. include:: repl_cram_op.inc
