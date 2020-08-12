@@ -26,7 +26,7 @@ Following are the various steps that are part of GenPipes Tumor Pair Pipeline:
 
 **Picard SAM to FastQ**
 
-Convert SAM/BAM files from the input readset file into FASTQ format if FASTQ files are not already specified in the readset file. Do nothing otherwise.
+This step converts SAM/BAM files from the input readset file into FASTQ format, if FASTQ files are not already specified in the readset file. Otherwise, it does nothing.
 
 .. _Trimmomatic:
 
@@ -47,7 +47,7 @@ The trim statistics per readset are merged at this step.
 
 .. _BWA Picard Sort:
 
-**BWA Picard Sort**
+**BWA Picard Sort SAM**
 
 This step takes as input files:
 
@@ -64,7 +64,7 @@ The filtered reads are aligned to a reference genome. The alignment is done per 
 
 This step takes as input files:
 
-* Aligned and sorted BAM output files from previous bwa_mem_picard_sort_sam step if available
+* Aligned and sorted BAM output files from previous `BWA Picard Sort`_ step, if available
 * Else, BAM files from the readset file
 
 BAM readset files are merged into one file per sample. Merge is done using `Picard`_.
@@ -112,9 +112,13 @@ Full pileup (optional). A raw Mpileup file is created using samtools Mpileup and
 
 **Paired VarScan 2**
 
-Variant calling and somatic mutation/CNV detection for next-generation sequencing data. Koboldt et al., 2012. VarScan 2: Somatic mutation and copy number alteration discovery in cancer by exome sequencing
+This step involves variant calling and somatic mutation/CNV detection for next-generation sequencing data. For details see - `VarScan 2 Somatic mutation and copy number alteration discovery in cancer by exome sequencing <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3290792/>`_.
+
+This is a test.
 
 .. _Merge VarScan 2 Panel:
+
+**Merge VarScan 2 Panel**
 
 Merge Mpileup files per sample/chromosome into one compressed gzip file per sample.
 
@@ -304,6 +308,8 @@ Variant effect annotation. The .vcf files are annotated for variant effects usin
 **Gemini Annotations Germline**
 
 Load functionally annotated VCF file into a MySQL lite annotation database `Gemini`_.
+
+.. include:: steps_cram_op.inc
 
 .. Html links 
 

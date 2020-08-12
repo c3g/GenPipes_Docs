@@ -27,7 +27,7 @@ Inferring absolute copy number is difficult for `three reasons`_:
 
 Tumor purity and ploidy have a substantial impact on next-gen sequence analyses of tumor samples and may alter the biological and clinical interpretation of results.
 
-GenPipes Tumor Analysis pipeline is designed to detect somatic variants from a tumor and matched normal sample pair more accurately.
+GenPipes Tumor Analysis pipeline is designed to detect somatic variants from a tumor and match normal sample pair more accurately.
 
 .. contents:: :local:
 
@@ -36,13 +36,13 @@ GenPipes Tumor Analysis pipeline is designed to detect somatic variants from a t
 Introduction
 ------------
 
-GenPipes Tumor Pair workflow consumes BAM files. Though it inherits the BAM processing protocol from DNA-seq implementation to retain the benchmarking optimizations but differs in alignment refinement and mutation identification. It achieves this by maximizing the information utilizing both tumor and normal samples together. 
+GenPipes Tumor Pair workflow consumes BAM files. It inherits the BAM processing protocol from DNA-seq implementation, for retaining the benchmarking optimizations, but differs in alignment refinement and mutation identification. It achieves this by maximizing the information, utilizing both tumor and normal samples together. 
 
 The pipeline is based on an ensemble approach, which was optimized using both the `DREAM3 challenge`_ and the CEPH mixture datasets to select the best combination of callers for both SNV and structural variation detection. For SNVs, multiple callers such as 'GATK MuTect2`_, `VarScan 2`_, `BCFTools`_, `VarDict`_ were combined to achieve a sensitivity of 97.5%, precision of 98.8%, and F1 score of 98.1% for variants found in ≥2 callers.
 
-Similarly, SVs were identified using multiple callers such as `DELLY`_, `LUMPY`_, `WHAM`_, `CNVKit`_, and `SvABA`_ combined using `MetaSV`_ to achieve a sensitivity of 84.6%, precision of 92.4%, and F1 score of 88.3% for duplication variants found in the DREAM3 dataset (for more details, refer to Supplementary Material). The pipeline also integrates specific cancer tools to estimate tumor purity and tumor ploidy of sample pair normal−tumor.  
+Similarly, SVs were identified using multiple callers such as `DELLY`_, `LUMPY`_, `WHAM`_, `CNVKit`_, and `SvABA`_ combined using `MetaSV`_ to achieve a sensitivity of 84.6%, precision of 92.4%, and F1 score of 88.3% for duplication variants found in the DREAM3 dataset. The pipeline also integrates specific cancer tools to estimate tumor purity and tumor ploidy of sample pair normal−tumor.  
 
-Additional annotations are incorporated to the SNV calls using `dbNSFP`_ and/or Gemini [21], and QC metrics are collected at various stages and visualized using MulitQC [22]. 
+Additional annotations are incorporated to the SNV calls using `dbNSFP`_ and/or `Gemini`_, and QC metrics are collected at various stages and visualized using `MultiQC`_. 
 
 GenPipes Tumor Pair pipeline has three protocol options: sv, ensemble, or fastpass.  For details refer to `Pipeline Schema`_ section below. 
 
@@ -64,9 +64,10 @@ Usage
 
   python tumor_pair.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
                      [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
-                     [--json] [--report] [--clean]
-                     [-l {debug,info,warning,error,critical}] [-p PAIRS]
-                     [-t {sv,ensemble,fastpass}] [-r READSETS] [-v] 
+                     [--no-json] [--report] [--clean]
+                     [-l {debug,info,warning,error,critical}] [--sanity-check]
+                     [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}]
+                     [-p PAIRS] [-t {sv,ensemble,fastpass}] [-r READSETS] [-v] 
 
 **Optional Arguments**
 
@@ -85,8 +86,9 @@ Usage
                         job scheduler type (default: slurm)
   -f, --force           force creation of jobs even if up to date (default:
                         false)
-  --json                create a JSON file per analysed sample to track the
-                        analysis status (default: false)
+  --no-json             do not create a JSON file per analysed sample to track the
+                        analysis status (default: false i.e., JSON file will be
+                        created)
   --report              create 'pandoc' command to merge all job markdown
                         report files in the given step range into HTML, if
                         they exist; if --report is set, --job-scheduler,
@@ -98,6 +100,12 @@ Usage
                         date status are ignored (default: false)
   -l {debug,info,warning,error,critical}, --log {debug,info,warning,error,critical}
                         log level (default: info)
+  --sanity-check        run the pipeline in `sanity check mode` to verify that
+                        all the input files needed for the pipeline to run are
+                        available on the system (default: false)
+  --container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}
+                        run pipeline inside a container providing a container
+                        image path or accessible docker/singularity hub path
   -p PAIRS, --pairs PAIRS
                         pairs file
   -t {sv,ensemble,fastpass}, --type {sv,ensemble,fastpass}
@@ -234,6 +242,8 @@ The table below shows various steps that constitute the Tumor Pair Pipeline.
 +----+--------------------------------------------+
 | 44.| |gemini_annotations_germline|              |
 +----+--------------------------------------------+
+| 45.| |cram_output|                              |
++----+--------------------------------------------+
 
 ----
 
@@ -300,6 +310,8 @@ For the latest implementation and usage details refer to the latest `pipeline im
 .. |all_pairs_compute_effects_germline| replace:: `All Pairs Compute Effects Germline`_
 .. |gemini_annotations_germline| replace:: `Gemini Annotations Germline`_
 
+.. include:: repl_cram_op.inc
+
 .. Following are the links used in the text above
 
 .. _three reasons: https://software.broadinstitute.org/cancer/software/genepattern/modules/docs/ABSOLUTE/1
@@ -316,3 +328,4 @@ For the latest implementation and usage details refer to the latest `pipeline im
 .. _MetaSV: https://www.ncbi.nlm.nih.gov/pubmed/25861968
 .. _dbNSFP: https://www.ncbi.nlm.nih.gov/pubmed/26555599
 .. _GATK MuTect2: https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_cancer_m2_MuTect2.php
+.. _MultiQC: https://multiqc.info/docs/
