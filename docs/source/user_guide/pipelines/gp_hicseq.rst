@@ -2,6 +2,8 @@
 
 .. spelling:: 
 
+   epigenome
+   rmap
    picard
    sam
    readName
@@ -10,14 +12,12 @@
    TopDom
    RobusTAD
    multiqc
-   rmap
    baitmap
    runChicago
    featureOverlap
    readname
    interactome
    config
-   Rmap
    NPerBin
    nbaitsperbin
    npb
@@ -45,7 +45,7 @@ Introduction
 
 **Hi-C**
 
-The Hi-C pipeline, selected using the "-t hic" parameter, starts by trimming adapters and low quality bases. It then maps the reads to a reference genome using `HiCUP`_.  HiCUP first truncates chimeric reads, maps reads to the genome, then it filters Hi-C artifacts and removes read duplicates.  Samples from different lanes are merged and a tag directory is created by Homer, which is also used to produce the interaction matrices and compartments. TopDom is used to predict topologically associating domains (TADs) and homer is used to identify significant interactions.
+The Hi-C pipeline, selected using the "-t hic" parameter, starts by trimming adapters and low quality bases. It then maps the reads to a reference genome using `HiCUP`_.  HiCUP first truncates chimeric reads, maps reads to the genome, then it filters Hi-C artifacts and removes read duplicates.  Samples from different lanes are merged and a tag directory is created by Homer, which is also used to produce the interaction matrices and compartments. TopDom is used to predict topologically associating domains (TADs) and Homer is used to identify significant interactions.
 
 **Hi-C capture**
 
@@ -70,9 +70,12 @@ Usage
 ::
 
   hicseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
-  [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f] [--json]
-  [--report] [--clean] [-l {debug,info,warning,error,critical}]
-  -e {DpnII,HindIII,NcoI,MboI,Arima} [-t {hic,capture}] [-r READSETS] [-v]
+  [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
+  [--no-json] [--report] [--clean]
+  [-l {debug,info,warning,error,critical}] [--sanity-check]
+  [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}]
+  -e {DpnII,HindIII,NcoI,MboI,Arima} [-t {hic,capture}]
+  [-r READSETS] [-v]
 
 **Optional Arguments**
 
@@ -96,8 +99,9 @@ Usage
     -f,
     --force                                  force creation of jobs even if up to date (default: false)
   
-    --json                                   create a JSON file per analysed sample to track the
-                                             analysis status (default: false)
+    --no-json                                do not create a JSON file per analysed sample to track the
+                                             analysis status (default: false i.e., JSON file will be 
+                                             created)
   
     --report                                 create 'pandoc' command to merge all job markdown report 
                                              files in the given step range into HTML, if they exist; 
@@ -111,7 +115,15 @@ Usage
   
     -l {debug,info,warning,error,critical},
     --log {debug,info,warning,error,critical} log level (default: info)
-  
+
+    --sanity-check                           run the pipeline in `sanity check mode` to verify that
+                                             all the input files needed for the pipeline to run are
+                                             available on the system (default: false)
+
+    --container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}
+                                             run pipeline inside a container providing a container
+                                             image path or accessible docker/singularity hub path
+
     -e {DpnII,HindIII,NcoI,MboI,Arima},
     --enzyme {DpnII,HindIII,NcoI,MboI,Arima} Restriction Enzyme used to generate Hi-C library (default DpnII)
   
@@ -199,7 +211,9 @@ The table below shows various steps that constitute the Hi-C and Hi-C capture ge
 +----+--------------------------------+-------------------------------------+
 | 16.| |multiqc_report|               | |create_hic_file|                   |
 +----+--------------------------------+-------------------------------------+
-| 17.|                                | |multiqc_report|                    |
+| 17.| |cram_output|                  | |multiqc_report|                    |
++----+--------------------------------+-------------------------------------+
+| 18.|                                | |cram_output|                       |
 +----+--------------------------------+-------------------------------------+
 
 ----
@@ -223,7 +237,7 @@ For the latest implementation and usage details refer to Hi-C Sequencing impleme
 .. _HiCUP: https://www.ncbi.nlm.nih.gov/pubmed/26835000
 .. _TopDom: https://www.ncbi.nlm.nih.gov/pubmed/26704975
 .. _RobusTAD: https://www.biorxiv.org/content/10.1101/293175v1
-.. _JuiceBox: http://aidenlab.org/documentation.html
+.. _JuiceBox Documenation: http://aidenlab.org/documentation.html
 .. _MultiQC: https://multiqc.info
 .. _CHICAGO: http://regulatorygenomicsgroup.org/chicago
 .. _Hi-C report: https://bitbucket.org/mugqic/genpipes/src/341cab2f01883af0184b850062bd8537dcd32e41/pipelines/hicseq/url 
@@ -244,7 +258,7 @@ For the latest implementation and usage details refer to Hi-C Sequencing impleme
 .. |identify_TADs_TopDom| replace:: `Identify TADs TopDom`_
 .. |identify_TADs_RobusTAD| replace:: `Identify TADs RobusTAD`_
 .. |identify_peaks| replace:: `Identify Peaks`_
-.. |create_rmap_file| replace:: `Create Rmap File`_
+.. |create_rmap_file| replace:: `Create RMAP File`_
 .. |create_baitmap_file| replace:: `Create Baitmap File`_
 .. |create_design_files| replace:: `Create Design Files`_
 .. |create_input_files| replace:: `Create Input Files`_
@@ -255,3 +269,4 @@ For the latest implementation and usage details refer to Hi-C Sequencing impleme
 .. |create_hic_file| replace:: `Create Hic File`_
 .. |multiqc_report| replace:: `Multiqc Report`_
 
+.. include:: repl_cram_op.inc
