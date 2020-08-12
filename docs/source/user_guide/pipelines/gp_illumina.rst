@@ -23,9 +23,9 @@ Introduction
 
 The standard MUGQIC Illumina Run Processing pipeline uses the `Illumina bcl2fastq software`_ to convert and demultiplex the base call files (BCL) to FASTQ files. The pipeline runs some QCs on the raw data, on the FASTQ and on the alignment. It performs the core primary data transformation steps: image analysis, intensity scoring, base calling, and alignment.
 
-#. Image Analysis: interpreting the image data to identify distinct clusters of genes
-#. Base Calling: profiles for each cluster are used to call bases. Obtaining the quality of each base call is crucial for downstream analysis.
-#. Alignment: entire set of called sequence reads are aligned to create a final sequence output file optimized for SNP identification.
+#. **Image Analysis:** interpreting the image data to identify distinct clusters of genes
+#. **Base Calling:** profiles for each cluster are used to call bases. Obtaining the quality of each base call is crucial for downstream analysis.
+#. **Alignment:** entire set of called sequence reads are aligned to create a final sequence output file optimized for SNP identification.
 
 **Sample Files**
 
@@ -54,9 +54,11 @@ Usage
 
   illumina_run_processing.py [-h] [--help] [-c CONFIG [CONFIG ...]]
                                   [-s STEPS] [-o OUTPUT_DIR]
-                                  [-j {pbs,batch,daemon,slurm}] [-f] [--json]
-                                  [--report] [--clean]
+                                  [-j {pbs,batch,daemon,slurm}] [-f]
+                                  [--no-json] [--report] [--clean]
                                   [-l {debug,info,warning,error,critical}]
+                                  [--sanity-check]
+                                  [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}]
                                   [-d RUN_DIR] [--lane LANE_NUMBER]
                                   [-r READSETS] [-i CASAVA_SHEET_FILE]
                                   [-x FIRST_INDEX] [-y LAST_INDEX]
@@ -80,8 +82,9 @@ Usage
                         job scheduler type (default: slurm)
   -f, --force           force creation of jobs even if up to date (default:
                         false)
-  --json                create a JSON file per analysed sample to track the
-                        analysis status (default: false)
+  --no-json                create a JSON file per analysed sample to track the
+                        analysis status (default: false i.e., JSON file is
+                        created)
   --report              create 'pandoc' command to merge all job markdown
                         report files in the given step range into HTML, if
                         they exist; if --report is set, --job-scheduler,
@@ -93,6 +96,12 @@ Usage
                         date status are ignored (default: false)
   -l {debug,info,warning,error,critical}, --log {debug,info,warning,error,critical}
                         log level (default: info)
+  --sanity-check        run the pipeline in `sanity check mode` to verify that
+                        all the input files needed for the pipeline to run are
+                        available on the system (default: false)
+  --container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}
+                        run pipeline inside a container providing a container
+                        image path or accessible docker/singularity hub path
   -d RUN_DIR, --run RUN_DIR
                         run directory
   --lane LANE_NUMBER    lane number
@@ -197,4 +206,3 @@ More Information
 .. _Illumina bcl2fastq software: http://sapac.support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html
 .. _Casava: https://www.illumina.com/Documents/seminars/presentations/2011_09_smith.pdf
 .. _Casava User Guide: http://gensoft.pasteur.fr/docs/casava/1.8.2/CASAVA_1_8_2_UG_15011196C.pdf
-
