@@ -23,7 +23,7 @@ The PacBio whole-genome assembly pipeline is built following the Hierarchical Ge
 Introduction
 ------------
 
-In GenPipes PacBio Whole Genome Assembly Pipeline, contigs assembly with PacBio reads is done using `HGAP`_ workflow. Briefly, raw subreads generated from raw .ba(s|x).h5 PacBio data files are filtered for quality. A subread length cutoff value is extracted from subreads, depending on subreads distribution, and used into the preassembly (aka correcting step) using the long read aligner, ('BLASR'_) step which consists of aligning short subreads on long subreads. Since errors in PacBio reads is random, the alignment of multiple short reads on longer reads allows to correct sequencing error on long reads. These long corrected reads are then used as seeds into assembly (Celera assembler) which gives contigs. These contigs are then polished by aligning raw reads on contigs, `BLASR`_, that are then processed through a variant calling algorithm,(`Quiver`_), that generates high quality consensus sequences using local realignments and PacBio quality scores.
+In GenPipes PacBio Whole Genome Assembly Pipeline, contigs assembly with PacBio reads is done using `HGAP`_ workflow. Briefly, raw subreads generated from raw .ba(s|x).h5 PacBio data files are filtered for quality. A subread length cutoff value is extracted from subreads, depending on subreads distribution, and used into the preassembly (aka correcting step) using the long read aligner, (`BLASR`_ step), which consists of aligning short subreads on long subreads. Since errors in PacBio reads is random, the alignment of multiple short reads on longer reads allows to correct sequencing error on long reads. These long corrected reads are then used as seeds into assembly (Celera assembler) which gives contigs. These contigs are then polished by aligning raw reads on contigs, `BLASR`_, that are then processed through a variant calling algorithm,(`Quiver`_), that generates high quality consensus sequences using local realignments and PacBio quality scores.
 
 ----
 
@@ -43,8 +43,10 @@ Usage
 
   pacbio_assembly.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
                           [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
-                          [--json] [--report] [--clean]
+                          [--no-json] [--report] [--clean]
                           [-l {debug,info,warning,error,critical}]
+                          [--sanity-check]
+                          [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}]
                           [-r READSETS] [-v]
 
 **Optional Arguments**
@@ -64,8 +66,9 @@ Usage
                         job scheduler type (default: slurm)
   -f, --force           force creation of jobs even if up to date (default:
                         false)
-  --json                create a JSON file per analysed sample to track the
-                        analysis status (default: false)
+  --no-json             do not create a JSON file per analysed sample to track the
+                        analysis status (default: false i.e., JSON file will be
+                        created)
   --report              create 'pandoc' command to merge all job markdown
                         report files in the given step range into HTML, if
                         they exist; if --report is set, --job-scheduler,
@@ -77,6 +80,12 @@ Usage
                         date status are ignored (default: false)
   -l {debug,info,warning,error,critical}, --log {debug,info,warning,error,critical}
                         log level (default: info)
+  --sanity-check        run the pipeline in `sanity check mode` to verify that
+                        all the input files needed for the pipeline to run are
+                        available on the system (default: false)
+  --container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}
+                        run pipeline inside a container providing a container
+                        image path or accessible docker/singularity hub path
   -r READSETS, --readsets READSETS
                         readset file
   -v, --version         show the version information and exit
@@ -101,7 +110,7 @@ You can download the test dataset for this pipeline :ref:`here<docs_testdatasets
 Pipeline Schema
 ---------------
 
-Figure below shows the schema of the PacBio Whole Genome Assembly sequencing pipeline. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/pacbio_assembly/>`_ and see here to download a high resolution image of `PacBio Assembly Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/GenPipes_pacbio_assembly.png>`_ to download a high resolution image of the same.
+Figure below shows the schema of the PacBio Whole Genome Assembly sequencing pipeline. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/pacbio_assembly/>`_ and see here to download a high resolution image of `PacBio Assembly Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/GenPipes_pacbio_assembly.png>`_. 
 
 .. figure:: /img/pipelines/pacbio.png
    :align: center
