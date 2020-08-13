@@ -136,13 +136,33 @@ You can download the test dataset for this pipeline :ref:`here<docs_testdatasets
 Pipeline Schema
 ---------------
 
-Figure below shows the schema of the Tumor Pair Pipeline. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/tumor_pair/>`_ and see here to download a high resolution image of `Tumor PairSequencing Pipeline <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_ensemble.png>`_ to download a high resolution image of the same.
+Pair Pipeline. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/tumor_pair/>`_.
 
-.. figure:: /img/pipelines/tumor_pair.png
+There are three options for Tumor Pair Pipeline: sv, ensemble and fastpass.
+
+Figure below shows the schema of the Tumor Pair Pipeline (sv) option. See here to download a high resolution image of `Tumor Pair Sequencing Pipeline (sv) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_sv.png>`_ to download a high resolution image of the same.
+
+.. figure:: /img/pipelines/GenPipes_tumor_pair_sv.png
    :align: center
-   :alt: tumor_pair schema
+   :alt: tumor_pair_sv schema
 
-   Figure: Schema of Tumor Pair Pipeline
+   Figure: Schema of Tumor Pair Pipeline (sv)
+
+Figure below shows the schema of the Tumor Pair Pipeline (ensemble) option. See here to download a high resolution image of `Tumor Pair Sequencing Pipeline (ensemble) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_ensemble.png>`_ to download a high resolution image of the same.
+
+.. figure:: /img/pipelines/GenPipes_tumor_pair_ensemble.png
+   :align: center
+   :alt: tumor_pair_ensemble schema
+
+   Figure: Schema of Tumor Pair Pipeline (ensemble)
+
+Figure below shows the schema of the Tumor Pair Pipeline (fastpass) option. See here to download a high resolution image of `Tumor Pair Sequencing Pipeline (fastpass) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_fastpass.png>`_ to download a high resolution image of the same.
+
+.. figure:: /img/pipelines/GenPipes_tumor_pair_fastpass.png
+   :align: center
+   :alt: tumor_pair_fastpass schema
+
+   Figure: Schema of Tumor Pair Pipeline (fastpass)
 
 ----
 
@@ -151,99 +171,99 @@ Pipeline Steps
 
 The table below shows various steps that constitute the Tumor Pair Pipeline.
 
-+----+--------------------------------------------+
-|    | *Tumor Pair Pipeline Steps*                |
-+====+============================================+
-| 1. | |picard_sam_to_fastq|                      |
-+----+--------------------------------------------+
-| 2. | |trimmomatic|                              |
-+----+--------------------------------------------+
-| 3. | |merge_trimmomatic_stats|                  |
-+----+--------------------------------------------+
-| 4. | |bwa_mem_picard_sort_sam|                  |
-+----+--------------------------------------------+
-| 5. | |sambamba_merge_sam_files|                 |
-+----+--------------------------------------------+
-| 6. | |gatk_indel_realigner|                     |
-+----+--------------------------------------------+
-| 7. | |sambamba_merge_realigned|                 |
-+----+--------------------------------------------+
-| 8. | |sambamba_mark_duplicates|                 |
-+----+--------------------------------------------+
-| 9. | |recalibration|                            |
-+----+--------------------------------------------+
-| 10.| |conpair_concordance_contamination|        |
-+----+--------------------------------------------+
-| 11.| |rawmpileup_panel|                         |
-+----+--------------------------------------------+
-| 12.| |paired_varscan2_panel|                    |
-+----+--------------------------------------------+
-| 13.| |merge_varscan2_panel|                     |
-+----+--------------------------------------------+
-| 14.| |preprocess_vcf_panel|                     |
-+----+--------------------------------------------+
-| 15.| |snp_effect_panel|                         |
-+----+--------------------------------------------+
-| 16.| |gemini_annotations_panel|                 |
-+----+--------------------------------------------+
-| 17.| |metrics|                                  |
-+----+--------------------------------------------+
-| 18.| |picard_calculate_hs_metrics|              |
-+----+--------------------------------------------+
-| 19.| |gatk_callable_loci|                       |
-+----+--------------------------------------------+
-| 20.| |extract_common_snp_freq|                  |
-+----+--------------------------------------------+
-| 21.| |baf_plot|                                 |
-+----+--------------------------------------------+
-| 22.| |rawmpileup|                               |
-+----+--------------------------------------------+
-| 23.| |paired_varscan2|                          |
-+----+--------------------------------------------+
-| 24.| |merge_varscan2|                           |
-+----+--------------------------------------------+
-| 25.| |paired_mutect2|                           |
-+----+--------------------------------------------+
-| 26.| |merge_mutect2|                            |
-+----+--------------------------------------------+
-| 27.| |samtools_paired|                          |
-+----+--------------------------------------------+
-| 28.| |merge_filter_paired_samtools|             |
-+----+--------------------------------------------+
-| 29.| |vardict_paired|                           |
-+----+--------------------------------------------+
-| 30.| |merge_filter_paired_vardict|              |
-+----+--------------------------------------------+
-| 31.| |ensemble_somatic|                         | 
-+----+--------------------------------------------+
-| 32.| |gatk_variant_annotator_somatic|           |
-+----+--------------------------------------------+
-| 33.| |merge_gatk_variant_annotator_somatic|     |
-+----+--------------------------------------------+
-| 34.| |compute_cancer_effects_somatic|           |
-+----+--------------------------------------------+
-| 35.| |combine_tumor_pairs_somatic|              |
-+----+--------------------------------------------+
-| 36.| |all_pairs_compute_effects_somatic|        |
-+----+--------------------------------------------+
-| 37.| |gemini_annotations_somatic|               |
-+----+--------------------------------------------+
-| 38.| |ensemble_germline_loh|                    |
-+----+--------------------------------------------+
-| 39.| |gatk_variant_annotator_germline|          |
-+----+--------------------------------------------+
-| 40.| |merge_gatk_variant_annotator_germline|    |
-+----+--------------------------------------------+
-| 41.| |compute_cancer_effects_germline|          |
-+----+--------------------------------------------+
-| 42.| |combine_tumor_pairs_germline|             |
-+----+--------------------------------------------+
-| 43.| |all_pairs_compute_effects_germline|       |
-+----+--------------------------------------------+
-| 44.| |gemini_annotations_germline|              |
-+----+--------------------------------------------+
-| 45.| |cram_output|                              |
-+----+--------------------------------------------+
++----+-----------------------------------------+
+|    | *Tumor Pair Pipeline Steps*             |
++====+=========================================+
+| 1. | |picard_sam_to_fastq|                   |
++----+-----------------------------------------+
+| 2. | |trimmomatic|                           |
++----+-----------------------------------------+
+| 3. | |merge_trimmomatic_stats|               |
++----+-----------------------------------------+
+| 4. | |bwa_mem_picard_sort_sam|               |
++----+-----------------------------------------+
+| 5. | |sambamba_merge_sam_files|              |
++----+-----------------------------------------+
+| 6. | |gatk_indel_realigner|                  |
++----+-----------------------------------------+
+| 7. | |sambamba_merge_realigned|              |
++----+-----------------------------------------+
+| 8. | |sambamba_mark_duplicates|              |
++----+-----------------------------------------+
+| 9. | |recalibration|                         |
++----+-----------------------------------------+
+| 10.| |conpair_concordance_contamination|     |
++----+-----------------------------------------+
+| 11.| |rawmpileup_panel|                      |
++----+-----------------------------------------+
+| 12.| |paired_varscan2_panel|                 |
++----+-----------------------------------------+
+| 13.| |merge_varscan2_panel|                  |
++----+-----------------------------------------+
+| 14.| |preprocess_vcf_panel|                  |
++----+-----------------------------------------+
+| 15.| |snp_effect_panel|                      |
++----+-----------------------------------------+
+| 16.| |gemini_annotations_panel|              |
++----+-----------------------------------------+
+| 17.| |metrics|                               |
++----+-----------------------------------------+
+| 18.| |picard_calculate_hs_metrics|           |
++----+-----------------------------------------+
+| 19.| |gatk_callable_loci|                    |
++----+-----------------------------------------+
+| 20.| |extract_common_snp_freq|               |
++----+-----------------------------------------+
+| 21.| |baf_plot|                              |
++----+-----------------------------------------+
+| 22.| |rawmpileup|                            |
++----+-----------------------------------------+
+| 23.| |paired_varscan2|                       |
++----+-----------------------------------------+
+| 24.| |merge_varscan2|                        |
++----+-----------------------------------------+
+| 25.| |paired_mutect2|                        |
++----+-----------------------------------------+
+| 26.| |merge_mutect2|                         |
++----+-----------------------------------------+
+| 27.| |samtools_paired|                       |
++----+-----------------------------------------+
+| 28.| |merge_filter_paired_samtools|          |
++----+-----------------------------------------+
+| 29.| |vardict_paired|                        |
++----+-----------------------------------------+
+| 30.| |merge_filter_paired_vardict|           |
++----+-----------------------------------------+
+| 31.| |ensemble_somatic|                      | 
++----+-----------------------------------------+
+| 32.| |gatk_variant_annotator_somatic|        |
++----+-----------------------------------------+
+| 33.| |merge_gatk_variant_annotator_somatic|  |
++----+-----------------------------------------+
+| 34.| |compute_cancer_effects_somatic|        |
++----+-----------------------------------------+
+| 35.| |combine_tumor_pairs_somatic|           |
++----+-----------------------------------------+
+| 36.| |all_pairs_compute_effects_somatic|     |
++----+-----------------------------------------+
+| 37.| |gemini_annotations_somatic|            |
++----+-----------------------------------------+
+| 38.| |ensemble_germline_loh|                 |
++----+-----------------------------------------+
+| 39.| |gatk_variant_annotator_germline|       |
++----+-----------------------------------------+
+| 40.| |merge_gatk_variant_annotator_germline| |
++----+-----------------------------------------+
+| 41.| |compute_cancer_effects_germline|       |
++----+-----------------------------------------+
+| 42.| |combine_tumor_pairs_germline|          |
++----+-----------------------------------------+
+| 43.| |all_pairs_compute_effects_germline|    |
++----+-----------------------------------------+
+| 44.| |gemini_annotations_germline|           |
++----+-----------------------------------------+
+| 45.| |cram_output|                           |
++----+-----------------------------------------+
 
 ----
 

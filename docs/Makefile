@@ -25,6 +25,9 @@ usage:
 
 workflow:
 	@$(shell curl -s https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_methylseq.png > source/img/pipelines/wgs_methylseq.png)
+	@$(shell curl -s https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/GenPipes_tumor_pair_fastpass.png > source/img/pipelines/GenPipes_tumor_pair_fastpass.png)
+	@$(shell curl -s https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/GenPipes_tumor_pair_sv.png > source/img/pipelines/GenPipes_tumor_pair_sv.png)
+	@$(shell curl -s https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/GenPipes_tumor_pair_ensemble.png > source/img/pipelines/GenPipes_tumor_pair_ensemble.png)
 
 html:
 	@echo "Making html docs"
