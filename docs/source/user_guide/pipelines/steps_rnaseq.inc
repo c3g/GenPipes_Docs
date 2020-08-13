@@ -175,13 +175,6 @@ Generates GO annotations for differential gene expression analysis.
 
 Generate IHEC's standard metrics.
 
-.. _Verify BAM ID:
-
-**Verify BAM ID**
-
-The software `verifyBamId <http://csg.sph.umich.edu/kang/verifyBamID/>`_ is used in this step to verify whether the reads in particular file match previously known genotypes for an individual (or group of individuals), and checks whether the reads are contaminated
-as a mixture of two samples. verifyBamID can detect sample contamination and swaps when external genotypes are available. When external genotypes are not available, verifyBamID still robustly detects sample swaps.  
-
 .. _Stringtie:
 
 **Stringtie**
@@ -205,3 +198,5 @@ Merge assemblies into a master transcriptome reference using `Stringtie assemble
 **Ballgown Gene Expression**
 
 `Ballgown tool <https://bioconductor.org/packages/release/bioc/html/ballgown.html>`_ is used to calculate differential transcript and gene expression levels and test them for significant differences. 
+
+.. include:: steps_cram_op.inc
