@@ -40,8 +40,10 @@ Usage
 ::
 
   usage: rnaseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
-                 [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f] [--json]
-                 [--report] [--clean] [-l {debug,info,warning,error,critical}]
+                 [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
+                 [--no-json] [--report] [--clean]
+                 [-l {debug,info,warning,error,critical}] [--sanity-check]
+                 [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}]
                  [-d DESIGN] [-t {cufflinks,stringtie}] [-r READSETS] [-v]
 
 **Optional Arguments**
@@ -61,8 +63,9 @@ Usage
                           job scheduler type (default: slurm)
     -f, --force           force creation of jobs even if up to date (default:
                           false)
-    --json                create a JSON file per analysed sample to track the
-                          analysis status (default: false)
+    --no-json             do not create a JSON file per analysed sample to track the
+                          analysis status (default: false i.e., JSON file will be
+                          created)
     --report              create 'pandoc' command to merge all job markdown
                           report files in the given step range into HTML, if
                           they exist; if --report is set, --job-scheduler,
@@ -74,10 +77,17 @@ Usage
                           date status are ignored (default: false)
     -l {debug,info,warning,error,critical}, --log {debug,info,warning,error,critical}
                           log level (default: info)
+    --sanity-check        run the pipeline in `sanity check mode` to verify that
+                          all the input files needed for the pipeline to run are
+                          available on the system (default: false)
+    --container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}
+                          run pipeline inside a container providing a container
+                          image path or accessible docker/singularity hub path
     -d DESIGN, --design DESIGN
                           design file
     -t {cufflinks,stringtie}, --type {cufflinks,stringtie}
-                          Type of RNA-seq assembly method (default cufflinks)
+                          Type of RNA-seq assembly method (default stringtie, faster
+                          than cufflinks)
     -r READSETS, --readsets READSETS
                           readset file
     -v, --version         show the version information and exit
@@ -160,8 +170,8 @@ The table below lists various steps of GenPipes RNA Sequencing Pipeline:
 +----+-------------------------------------------+----------------------------------------+
 | 19.| |cuffnorm|                                |  |differential_expression|             |
 +----+-------------------------------------------+----------------------------------------+
-| 20.| |fpkm_correlation_matrix|                 |                                        |
-+----+-------------------------------------------+                                        |
+| 20.| |fpkm_correlation_matrix|                 |  |cram_output|                         |
++----+-------------------------------------------+----------------------------------------+
 | 21.| |gq_seq_utils_exploratory_analysis_rnaseq||                                        |
 +----+-------------------------------------------+                                        |
 | 22.| |differential_expression|                 |                                        |
@@ -170,7 +180,7 @@ The table below lists various steps of GenPipes RNA Sequencing Pipeline:
 +----+-------------------------------------------+                                        |
 | 24.| |ihec_metrics|                            |                                        |
 +----+-------------------------------------------+                                        |
-| 25.| |verify_bam_id|                           |                                        |
+| 25.| |cram_output|                             |                                        |
 +----+-------------------------------------------+----------------------------------------+
 
 ----
@@ -221,3 +231,5 @@ For the latest implementation and usage details refer to `README.md <https://bit
 .. |stringtie_abund| replace:: `Stringtie Assemble Transcriptome`_
 .. |stringtie_merge| replace:: `Stringtie Merge`_
 .. |ballgown| replace:: `Ballgown Gene Expression`_
+
+.. include:: repl_cram_op.inc
