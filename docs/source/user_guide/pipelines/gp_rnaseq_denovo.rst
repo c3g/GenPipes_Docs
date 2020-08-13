@@ -14,7 +14,7 @@
       sam
       rRNA
       Transdecoder
-      EdgeR 
+      edgeR 
       denovo
       Grabherr
       Yassour
@@ -24,7 +24,7 @@ De-Novo RNA Sequencing Pipeline
 
 RNA Sequencing is a technique that allows `transcriptome studies`_ based on high throughput next-generation gene sequencing (NGS). De novo sequencing refers to sequencing a novel genome where there is no reference sequence available for alignment. Sequence reads are assembled as contigs, and the coverage quality of de novo sequence data depends on the size and continuity of the contigs (i.e., the number of gaps in the data).
 
-De-Novo RNASeq pipeline is adapted from the `Trinity-Trinotate`_ `suggested workflow`_. It reconstructs transcripts from short reads, predicts proteins, and annotates, leveraging several databases. Quantification is computed using RSEM, and differential expression is tested in a manner identical to the RNA-seq pipeline. We observed that the default parameters of the Trinity suite are very conservative, which could result in the loss of low-expressed but biologically relevant transcripts. To provide the most complete set of transcripts, the pipeline was designed with lower stringency during the assembly step in order to produce every possible transcript and not miss low-expressed messenger RNA. A stringent filtration step is included afterward in order to provide a set of transcripts that make sense biologically.
+De-Novo RNASeq pipeline is adapted from the `Trinity-Trinotate`_ `suggested workflow`_. It reconstructs transcripts from short reads, predicts proteins, and annotates, leveraging several databases. Quantification is computed using `RSEM Tool`_, and differential expression is tested in a manner identical to the RNA-seq pipeline. We observed that the default parameters of the Trinity suite are very conservative, which could result in the loss of low-expressed but biologically relevant transcripts. To provide the most complete set of transcripts, the pipeline was designed with lower stringency during the assembly step in order to produce every possible transcript and not miss low-expressed messenger RNA. A stringent filtration step is included afterward in order to provide a set of transcripts that make sense biologically.
 
 .. contents:: :local:
 
@@ -32,13 +32,13 @@ De-Novo RNASeq pipeline is adapted from the `Trinity-Trinotate`_ `suggested work
 
 Introduction
 ------------
-The standard MUGQIC RNA-Seq De Novo Assembly pipeline uses the `Trinity <http://trinityrnaseq.sourceforge.net/>`_ software suite to reconstruct transcriptomes from RNA-Seq data without using any reference genome or transcriptome.  First, reads are trimmed with `Trimmomatic <http://www.usadellab.org/cms/index.php?page=trimmomatic>`_ and normalized in order to reduce memory requirement and decrease assembly runtime, using the Trinity normalization utility inspired by the `Diginorm <http://arxiv.org/abs/1203.4802>`_ algorithm.
+The standard MUGQIC RNA-Seq *De Novo* Assembly pipeline uses the `Trinity <http://trinityrnaseq.sourceforge.net/>`_ software suite to reconstruct transcriptomes from RNA-Seq data without using any reference genome or transcriptome.  First, reads are trimmed with `Trimmomatic <http://www.usadellab.org/cms/index.php?page=trimmomatic>`_ and normalized in order to reduce memory requirement and decrease assembly runtime, using the Trinity normalization utility inspired by the `Diginorm <http://arxiv.org/abs/1203.4802>`_ algorithm.
 
-Then, the transcriptome is assembled on normalized reads using the Trinity assembler. Trinity creates a Trinity.fasta file with a list of contigs representing the transcriptome isoforms. Those transcripts are grouped in components mostly representing genes.  Components and transcripts are functionally annotated using the `Trinotate <http://trinotate.sourceforge.net/>`_ suite.  Gene abundance estimation for each sample has been performed using `RSEM <http://deweylab.biostat.wisc.edu/rsem/>`_ (RNA-Seq by Expectation-Maximization). Differential gene expression analysis is performed using `DESeq <http://genomebiology.com/2010/11/10/R106>`_ and `edgeR <http://bioinformatics.oxfordjournals.org/content/26/1/139/>`_ R Bioconductor packages.
+Then, the transcriptome is assembled on normalized reads using the Trinity assembler. Trinity creates a Trinity.fasta file with a list of contigs representing the transcriptome isoforms. Those transcripts are grouped in components mostly representing genes.  Components and transcripts are functionally annotated using the `Trinotate <http://trinotate.sourceforge.net/>`_ suite.  Gene abundance estimation for each sample has been performed using `RSEM Tool`_ (RNA-Seq by Expectation-Maximization). Differential gene expression analysis is performed using `DESeq2`_ and `edgeR`_ Bioconductor packages.
   
-The DESeq and edgeR methods model **count data** by a negative binomial distribution. The parameters of the distribution (mean and dispersion) are estimated from the data, i.e. from the read counts in the input files.  Both methods compute a measure of read abundance, i.e. expression level (called *base mean* or *mean of normalized counts* in DESeq, and *concentration* in edgeR) for each gene and apply a hypothesis test to each gene to evaluate differential expression. In particular, both methods determine a p-value and a log2 fold change (in expression level) for each gene. The Log2 FC of EdgeR is reported in the differential gene results file, one file per design.
+The `DESeq2`_ and `edgeR`_ methods model **count data** by a negative binomial distribution. The parameters of the distribution (mean and dispersion) are estimated from the data, i.e. from the read counts in the input files.  Both methods compute a measure of read abundance, i.e. expression level (called *base mean* or *mean of normalized counts* in `DESeq2`_, and *concentration* in `edgeR`_) for each gene and apply a hypothesis test to each gene to evaluate differential expression. In particular, both methods determine a p-value and a log2 fold change (in expression level) for each gene. The Log2 FC of edgeR is reported in the differential gene results file, one file per design.
 
-The log2fold change is the logarithm (to basis 2) of the fold change condition from condition A to B (mutation or treatment are the most common conditions). A "fold change" between conditions A and B at a gene or transcript is normally computed as the ratio at gene or transcript of the base mean of scaled counts for condition B to the base mean of scaled counts for condition A. Counts are scaled by a size factor in a step called normalization (if the counts of non-differentially expressed genes in one sample are, on average, twice as high as in another,  the size factor for the first sample should be twice that of the other sample).  Each column of the count table is then divided by the size factor for this column and the count values are brought to a common scale, making them comparable. See the `EdgeR vignette <http://www.bioconductor.org/packages/2.12/bioc/vignettes/edgeR/inst/doc/edgeR.pdf>`_ for additional information on normalization approaches used in the pipeline.
+The log2fold change is the logarithm (to basis 2) of the fold change condition from condition A to B (mutation or treatment are the most common conditions). A "fold change" between conditions A and B at a gene or transcript is normally computed as the ratio at gene or transcript of the base mean of scaled counts for condition B to the base mean of scaled counts for condition A. Counts are scaled by a size factor in a step called normalization (if the counts of non-differentially expressed genes in one sample are, on average, twice as high as in another,  the size factor for the first sample should be twice that of the other sample).  Each column of the count table is then divided by the size factor for this column and the count values are brought to a common scale, making them comparable. See the `edgeR vignette <http://www.bioconductor.org/packages/2.12/bioc/vignettes/edgeR/inst/doc/edgeR.pdf>`_ for additional information on normalization approaches used in the pipeline.
   
 The differential gene analysis is followed by a Gene Ontology (GO) enrichment analysis.  This analysis use the `goseq approach <http://bioconductor.org/packages/release/bioc/html/goseq.html>`_.  The goseq is based on the use of non-native GO terms resulting from trinotate annotations (see details in the section 5 of `the corresponding vignette <http://bioconductor.org/packages/release/bioc/vignettes/goseq/inst/doc/goseq.pdf>`_.
   
@@ -115,7 +115,7 @@ Usage
 Example Run
 -----------
 
-Use the following commands to execute the De Novo sequencing pipeline:
+Use the following commands to execute the *De Novo* sequencing pipeline:
 
 ::
 
@@ -130,7 +130,7 @@ You can download the test dataset for this pipeline :ref:`here<docs_testdatasets
 Pipeline Schema
 ---------------
 
-Figure below shows the schema of RNA Sequencing De Novo Assembly pipeline. You can refer to the latest `RNA Sequencing De Novo pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq_denovo_assembly/README.md>`_ and `high resolution schema image <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_rnaseq_denovo_assembly.png>`_. 
+Figure below shows the schema of RNA Sequencing *De Novo* Assembly pipeline. You can refer to the latest `RNA Sequencing De Novo pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq_denovo_assembly/README.md>`_ and `high resolution schema image <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_rnaseq_denovo_assembly.png>`_. 
 
 .. figure:: /img/pipelines/rnaseq_denovo.png 
    :align: center
@@ -143,7 +143,7 @@ Figure below shows the schema of RNA Sequencing De Novo Assembly pipeline. You c
 Pipeline Steps
 --------------
 
-The table below lists various steps that constitute the RNA Sequencing De Novo Assembly.
+The table below lists various steps that constitute the RNA Sequencing *De Novo* Assembly.
 
 +----+-------------------------------------------+
 |    | RNA Sequencing De Novo Assembly Steps     |
@@ -206,7 +206,7 @@ The table below lists various steps that constitute the RNA Sequencing De Novo A
 More information
 -----------------
 
-You can find more information about RNA Sequencing De Novo Assembly Pipeline in the following references:
+You can find more information about RNA Sequencing *De Novo* Assembly Pipeline in the following references:
 
 * Grabherr MG, Haas BJ, Yassour M, et al. Full-length transcriptome assembly from RNA-Seq data without a reference genome - `Trinity-Trinotate`_.
 
@@ -248,3 +248,6 @@ You can find more information about RNA Sequencing De Novo Assembly Pipeline in 
 .. _transcriptome studies: https://en.wikipedia.org/wiki/Transcriptome
 .. _Trinity-Trinotate: https://www.ncbi.nlm.nih.gov/pubmed/21572440
 .. _suggested workflow: https://www.ncbi.nlm.nih.gov/pubmed/23644548
+.. _RSEM Tool: https://github.com/deweylab/RSEM
+.. _DESeq2: https://bioconductor.org/packages/release/bioc/html/DESeq2.html
+.. _edgeR: http://bioinformatics.oxfordjournals.org/content/26/1/139/
