@@ -8,6 +8,8 @@ GenPipes Documentation
 
           C3G has created a distributed innovation node with broad expertise in bioinformatics. It offers bioinformatics analysis and HPC services for the life sciences research community. These services include customized and case-by-case analysis, along with an extensive suite of software solutions for the genomics community.  
 
+.. warning:: You are referring to the latest version of GenPipes. We are working on updating it for recent release |genpipes_version| (Jan 28, 2021 `GitHub Issue 110`_). You may wish to refer to the last release 3.1.5 docs until this is done. See left hand side navigation menu and choose v3.1.5 to see documentation corresponding to GenPipes v3.1.5 
+        
 Welcome to the GenPipes Documentation!
 ----------------------------------------
 
@@ -86,3 +88,5 @@ Following is the **Table of Contents** of GenPipes documentation.
 .. * :ref:`genindex`
 .. * :ref:`modindex`
 .. * :ref:`search`
+
+.. _GitHub Issue 110: https://github.com/c3g/GenPipes/issues/110
