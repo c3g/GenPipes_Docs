@@ -1,0 +1,48 @@
+:orphan:
+
+.. _docs_gp_relnote_3_2_0:
+
+GenPipes 3.2.0 Release Notes
+============================
+
+What's new? 
+-----------
+
+* CovSeq pipeline:
+
+  - Major change to the host-read filtering with sambamba. Pipeline will now remove any read mapping to the human genome with a mapping quality of >= 0, instead of >0. This results in a greater stringency for de-hosting.
+  - Major update to the version of iVar (1.3) used for variant calling and consensus generation. New version of iVar now considers reads with insert size less than read length as unpaired and trims both forward and reverse primers, improving variant calling in primer regions. Also, reads with pairs that cross amplicon boundaries are considered “aberrant” and removed from variant calling.
+  - Update to the Kraken2 database, from 2.0.9-beta to 2.1.0
+
+* DNASeq pipeline:
+
+  - QC additions: NGScheckmate and peddy
+
+* The Tumor pair pipeline is undergoing a major refactoring and will not be part of the 3.2.X releases. For a stable version of this pipeline use a Genpipes 3.1.X release.
+
+* GenPipes version 3.2.0 comes with support to run all Genpipes Pipelines on a single machine, on a Slurm or PBS/TORQUE cluster with the help of singularity with only minimal installation.
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+ 
+* This version tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-3.2.0.tar.gz
+
+* If you have a Compute Canada CCDB user account, the module mugqic/genpipes/3.1.5 is installed on Abacus, Mp2b, Béluga, Graham and Cedar clusters.
+
+* The module mugqic/genpipes/3.2.0 is installed on Abacus (MGC), Béluga, Graham and Cedar clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes
+
+* For more documentation, please refer to: https://genpipes.readthedocs.io/
+
+Where is the detailed ChangeLog? 
+================================= 
+A ChangeLog (`CHANGELOG.md <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_) is available in the archive as well as in the repository.
+
+Since we use git, there are many ways to get the details in many formats. 
+One of our preferred ways is to use a script written by the author of the Ray assembler: Sébastien Boisvert, 
+which lists the commits by tag and author: 
+
+https://raw.github.com/sebhtml/ray/master/scripts/dump-ChangeLog.sh 
+
+Enjoy our pipelines on the many clusters where they are installed!

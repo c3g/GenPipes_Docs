@@ -43,10 +43,10 @@ miRNA Sequencing
 
 This pipeline can be used to quantify known miRNAs, discovers novel ones using a reference genome and performs differential expression analysis. Additional analysis may include pathway testing, target candidates analysis or miRNA editing.
 
-Pac Bio Genomic Assembly Pipeline
----------------------------------
+SARS-CoV-2 Genome Sequencing Pipeline
+--------------------------------------
 
-The :ref:`Pac Bio WGS Pipeline<docs_gp_pacbio>` helps to assemble small bacterial to larger genomes sequenced with the Pacific Biosciences technology. Genomes can be polished with Illumina short reads, circularized, called for base modifications and annotated.
+The :ref:`SARS-CoV-2 genome Sequencing Pipeline<docs_gp_covseq>` is designed for COVID-19 Coronavirus research and surveillance, enabling complete genome sequencing of the new SARS-CoV-2 virus responsible for the COVID-19 pandemic. 
 
 DNA Methylation Pipeline
 -------------------------

@@ -39,6 +39,12 @@ In contrast to the test dataset, a :ref:`Readset File<docs_readset_file>` in the
 | :ref:`TumorPair Seq<docs_gp_dnaseq>`      |   `Download TumorPair Seq Dataset`_      |
 +-------------------------------------------+------------------------------------------+
 
+.. warning:: 
+
+     PacBio Sequencing Pipeline is no longer available in GenPipes Release 3.2.0 and beyond.
+
+     TumorPair Sequencing Pipeline is under major overhaul and not available *only* in GenPipes Release 3.2.0 
+
 ----------------------------
 Test Dataset Usage Examples
 ----------------------------

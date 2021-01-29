@@ -27,7 +27,7 @@ Following genomics application pipelines are already implemented and validated t
 * Hi-C / Capture Hi-C
 * Illumina raw data processing
 * Metagenomics
-* PacBio De novo Assembly
+* SARS-CoV-2 genome sequencing
 * RNA Sequencing / Unmapped RNA Quality Control
 * Transcriptonomics Assembly
 * Tumour Analysis

@@ -14,6 +14,15 @@
 Tumor Pair Sequencing Pipeline
 ================================
 
+.. warning::  Not available in GenPipes 3.2.0
+
+     Please note that Tumor Pair Sequencing Pipeline is not available in GenPipes Release 3.2.0
+     
+     If you wish to use this pipeline, you may need to deploy GenPipes 3.1.5
+
+     The documentation below refers to the pipeline corresponding to GenPipes Release 3.1.5.
+     It is available here only for reference.
+
 Human genome comprises of a set of chromosome pairs. One chromosome in each pair, called homolog, is derived from each parent. It is typically referred to as diploid whereas the set of chromosomes from a single parent is called haploid genome. For a given gene on a given chromosome, there is a comparable, if not identical, gene on the other chromosome in the pair, known as an allele. Large structural alterations in chromosomes can change the number of copies of affected genes on those chromosomes. This is one of the key reasons for causing cancer.  In cancer cells, instead of having a homologous pair of alleles for a given gene, there may be deletions or duplications of those genes. 
 
 

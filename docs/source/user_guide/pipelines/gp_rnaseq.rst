@@ -226,7 +226,6 @@ For the latest implementation and usage details refer to `README.md <https://bit
 .. |differential_expression| replace:: `Differential Expression`_
 .. |differential_expression_goseq| replace:: `Differential Expression GO sequencing`_
 .. |ihec_metrics| replace:: `IHEC Metrics`_
-.. |verify_bam_id| replace:: `Verify BAM ID`_
 .. |stringtie| replace:: `Stringtie`_
 .. |stringtie_abund| replace:: `Stringtie Assemble Transcriptome`_
 .. |stringtie_merge| replace:: `Stringtie Merge`_

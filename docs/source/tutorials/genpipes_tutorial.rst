@@ -3,10 +3,7 @@
 GenPipes Tutorial 
 ==================
 
-GenPipes bioinformatics pipelines developed at the Canadian Centre for Computational Genomics (C3G), as part of the
-GenAP project, are available for public use. They include a wide array of pipelines, including RNA-Seq, ChIP-Seq, WGS,
-exome sequencing, Bisulfite sequencing, Hi-C, capture Hi-C, Metagenomics and long read PacBio assembly. This document
-explains how to use the pipelines using Hi-C analysis pipeline and the ChIP-Seq pipeline, as examples.
+GenPipes bioinformatics pipelines developed at the Canadian Centre for Computational Genomics (C3G), as part of the GenAP project, are available for public use. They include a wide array of pipelines, including RNA-Seq, ChIP-Seq, WGS, exome sequencing, Bisulfite sequencing, Hi-C, capture Hi-C, Metagenomics and SARS-CoV-2 genome sequencing pipeline. This document explains how to use the pipelines using Hi-C analysis pipeline and the ChIP-Seq pipeline, as examples.
 
 Setting up the environment
 --------------------------
@@ -14,11 +11,9 @@ Setting up the environment
 Abacus, Compute Canada users
 ''''''''''''''''''''''''''''
 
-software and scripts used by GenPipes are already installed on several Compute Canada servers including Guillimin, Mammouth,
-Cedar and Graham, and will soon be installed on Beluga. To access the tools, you will need to add the tool path to your
-**bash_profile**. The bash profile is a hidden file in your home directory that sets up your environment every time you log in.
-You can also use your bashrc file. For more information on the differences between the .bash_profile and the .bashrc profile,
-consult `this page <http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html>`__.
+Software and scripts used by GenPipes are already installed on several Compute Canada servers including Guillimin, Mammouth, Cedar and Graham, and will soon be installed on Beluga. To access the tools, you will need to add the tool path to your **bash_profile**. The bash profile is a hidden file in your home directory that sets up your environment every time you log in.
+
+You can also use your bashrc file. For more information on the differences between the .bash_profile and the .bashrc profile, consult `this page <http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html>`__.
 
 .. code-block:: bash
 
