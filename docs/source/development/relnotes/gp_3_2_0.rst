@@ -17,8 +17,13 @@ What's new?
 * DNASeq pipeline:
 
   - QC additions: NGScheckmate and peddy
+  - QCs added: GATK CrossCheckFingerprints, NGScheckmate, vcftool imiss, vcftools idepth
+  - addition of GATK4: gatk4.ini available in dnaseq pipeline folder
+  - There are now 4 protocols for DNASeq: mugqic, mpileup, light and sv
 
 * The Tumor pair pipeline is undergoing a major refactoring and will not be part of the 3.2.X releases. For a stable version of this pipeline use a Genpipes 3.1.X release.
+
+* PacBio sequencing pipeline is no longer part of GenPipes from release 3.2.0
 
 * GenPipes version 3.2.0 comes with support to run all Genpipes Pipelines on a single machine, on a Slurm or PBS/TORQUE cluster with the help of singularity with only minimal installation.
 

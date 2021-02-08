@@ -1,3 +1,5 @@
+:orphan:
+
 .. _docs_gp_nanopore:
   
 Nanopore ARTIC-Nanopolish SOP Pipeline
