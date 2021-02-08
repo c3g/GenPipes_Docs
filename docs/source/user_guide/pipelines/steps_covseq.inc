@@ -1,5 +1,9 @@
 .. _docs_steps_covseq:
 
+.. spelling::
+
+     metagenomic
+
 Step Details
 -------------
 
@@ -21,15 +25,15 @@ Input files for this step include:
 
 **Kraken Analysis**
 
-`Kraken`_ is an ultrafast and highly accurate mechanism for assigning taxonomic abels to metagenomic DNA sequences. It achieves high sensitivity and speed by utilizing exact alignments of k-mers and a novel classification algorithm. This step performs Kraken analysis using output of the Sambamba processing in :ref:`previous step<Host Reads Removal>`.
+`Kraken`_ is an ultra fast and highly accurate mechanism for assigning taxonomic labels to metagenomic DNA sequences. It achieves high sensitivity and speed by utilizing exact alignments of k-mers and a novel classification algorithm. This step performs Kraken analysis using output of the Sambamba processing in :ref:`previous step<Host Reads Removal>`.
 
 .. _Cutadapt:
 
 **Cutadapt**
 
-`Cutadapt processing`_ cleans data by finding and removing adapter sequences, primers, poly-A tails and other types of unwanted sequence from high throughput sequencing reads obtained after Kraken analysis. In this step, quality trimming of raw reads and removing of adapters is performed by giving 'Adapter1' and 'Adapter2' columns from the readset file to Cutadapt. For PAIRED_END readsets, both adpaters are used. For SINGLE_END readsets, only Adapter1 is used and left unchanged.
+`Cutadapt processing`_ cleans data by finding and removing adapter sequences, primers, poly-A tails and other types of unwanted sequence from high throughput sequencing reads obtained after Kraken analysis. In this step, quality trimming of raw reads and removing of adapters is performed by giving 'Adapter1' and 'Adapter2' columns from the readset file to Cutadapt. For PAIRED_END readsets, both adapters are used. For SINGLE_END readsets, only Adapter1 is used and left unchanged.
 
-To trim the front of the read, use adapter_5p_fwd and adapter_5p_rev (For PAIRED_END obly) in cutadpat setction of the .ini file.
+To trim the front of the read, use adapter_5p_fwd and adapter_5p_rev (For PAIRED_END only) in cutadapt section of the .ini file.
 
 This step takes as input files:
 
@@ -68,12 +72,12 @@ In this step, primer sequences are removed from individual BAM files using iVar.
 
 **CoVSeq Metrics**
 
-In this step, multiple metrices are computed from sequencing:
+In this step, multiple metrics are computed from sequencing:
 
 * DNA Sample `Qualimap`_ to facilitate quality control of alignment sequencing
 * `Sambamba-flagstat`_ for obtaining flag statistics from BAM file
 * `BED Tools GenomeCov`_ is used for computing histograms(default), per-base reports and BEDGRAPH summaries of feature coverage of aligned sequences for a given genome.
-* `Picard HS Metrics`_ are picked from SAM/BAM files. Only those metrics are collected that are specific for sequence datasets generated through hybrid-selection. Hybrid-selection (HS) is the most commonly used technique to capture exon-specific sequences for tageted sequencing experiments such as exome sequencing.
+* `Picard HS Metrics`_ are picked from SAM/BAM files. Only those metrics are collected that are specific for sequence datasets generated through hybrid-selection. Hybrid-selection (HS) is the most commonly used technique to capture exon-specific sequences for targeted sequencing experiments such as exome sequencing.
 
 .. _iVar Calling:
 
@@ -85,7 +89,7 @@ In this step, `iVar`_ is used for creating a trimmed BAM file after trimming ali
 
 **QUAST Consensus Metrics**
 
-In this step, QUAST is used to compare and evaluate assemblies to rule out mis-assemblies.
+In this step, QUAST is used to compare and evaluate assemblies to rule out misassemblies.
 
 .. _Rename Consensus Header:
 

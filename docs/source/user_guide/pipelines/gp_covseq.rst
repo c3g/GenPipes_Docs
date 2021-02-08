@@ -1,14 +1,17 @@
 .. _docs_gp_covseq:
-  
+
+.. spelling::
+
+     des
+     du
+     sociaux
+     santé
+     Ministere
+
 CoV Sequencing Pipeline
 ========================
 
-.. note:: Work in Progress...
-
-      We are currently working on documenting this pipeline introduced in GenPipes 3.2.0
-      Stay tuned!!!
-
-CoV Sequencing Pipeline can be used to effectively amplify and detect SARS-CoV-2 RNA in samples such that it enables reliable results from even low copy numbers. It helps to assay clean characteristic target peaks of defined sizes, allowing for direct detection of the presence of viral genome from the Coronaviridae family.  Sequencing provides confirmation fo the species as well as phylogenetic information for the specific strain discrimination.
+CoV Sequencing Pipeline can be used to effectively amplify and detect SARS-CoV-2 RNA in samples such that it enables reliable results from even low copy numbers. It helps to assay clean characteristic target peaks of defined sizes, allowing for direct detection of the presence of viral genome from the Coronaviridae family.  Sequencing provides confirmation for the species as well as phylogenetic information for the specific strain discrimination.
 
 The design of this pipeline is directed against SARS-CoV-2 and other coronaviruses as well. By amplifying conserved regions of other coronaviruses in a sample, along with mutation tolerant panels, it can provide additional insights and pinpoint sequence variability, thus offering a powerful solution for more in-depth research and surveillance of the rapidly evolving virus.
 
