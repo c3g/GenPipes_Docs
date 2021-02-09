@@ -13,6 +13,10 @@ Welcome to the GenPipes Documentation!
 
 GenPipes is a flexible Python-based framework that facilitates the development and deployment of multi-step genomic workflows, optimized for High-Performance Computing (HPC) clusters and the cloud.  It offers 12 open source, validated and scalable :ref:`pipelines<docs_pipeline_ref>` for various :ref:`genomics applications<docs_gp_usecases>`.
 
+.. tip::  **CoVSeq Pipeline - Fighting COVID-19**
+
+      GenPipes offers CoVSeq pipeline to help researchers sequence and detect mutations quickly to prevent the spread of new strains. See :ref:`GenPipes CoVSeq Pipeline User Guide<docs_gp_covseq>`, for details.
+
 GenPipes documentation is organized to address the needs of new users as well as seasoned users and contributors. Refer to the :ref:`Documenatation Map<docs_genpipes_archmap>` for details on how GenPipes documentation is organized.
 
 Following is the **Table of Contents** of GenPipes documentation.  
