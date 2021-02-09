@@ -58,6 +58,12 @@ Available Pipelines
    | Cancer Analysis  |::                            |          | `Cancer Analysis Manual`_       |
    |                  |                              |          |                                 |
    |                  |   tumor_pair.py              |          |                                 |
+   |                  |                              |          |                                 |
+   |                  |.. note:: Deprecated          |          |                                 |
+   |                  |                              |          |                                 |
+   |                  |   As of GenPipes release     |          |                                 |
+   |                  |   3.2.0 this pipeline is no  |          |                                 |
+   |                  |   longer available.          |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
    | Meta Genomics    |::                            |          | `Meta Genomics Manual`_         |
    |                  |                              |          |                                 |

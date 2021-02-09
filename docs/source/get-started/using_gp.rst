@@ -63,7 +63,7 @@ To launch GenPipes, the following is needed:
 
 4. The specific steps to be executed, indicated by the flag “-s”. 
 
-In addition to the :ref:`configuration files<docs_config_ini_file>` and the input :ref:`readset file<docs_readset_file>`, certain pipelines such as ChIP-Seq and RNA sequencing (RNA-Seq), require a :ref:`design file<docs_design_file>` that describes each contrast. Custom sample groupings can be defined in the design file. :ref:`Design files<docs_design_file>` are indicated by the flag “-d”. The tumor_pair pipeline requires normal−tumor pairing information provided in a standard comma-separated values file using the “-p” option. More information on the design file and the content of each file type can be found in the :ref:`GenPipes User Guide<docs_user_guide>`. 
+In addition to the :ref:`configuration files<docs_config_ini_file>` and the input :ref:`readset file<docs_readset_file>`, certain pipelines such as ChIP-Seq and RNA sequencing (RNA-Seq), require a :ref:`design file<docs_design_file>` that describes each contrast. Custom sample groupings can be defined in the design file. :ref:`Design files<docs_design_file>` are indicated by the flag “-d”. More information on the design file and the content of each file type can be found in the :ref:`GenPipes User Guide<docs_user_guide>`. 
 
 .. image:: /img/gp_command_profile.png
 
