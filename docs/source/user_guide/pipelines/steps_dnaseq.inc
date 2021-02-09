@@ -28,6 +28,7 @@
     covarying
     bcf
     Mappability
+    translocations
 
 Step Details
 -------------
@@ -395,7 +396,7 @@ This step performs CNVkit SV annotation.
 
 **Run BreakSeq2**
 
-In this step, `BreakSeq2`_ is used to combine DNA double-strand breaks (DSBs) labeling with next generation sequencing (NGS) to map chromosome breaks with improved sensitivity and resolution. It is an ultrafast and accurate nucleotide-resolution analysis of structural variants.
+In this step, `BreakSeq2`_ is used to combine DNA double-strand breaks (DSBs) labeling with next generation sequencing (NGS) to map chromosome breaks with improved sensitivity and resolution. It is an ultra fast and accurate nucleotide-resolution analysis of structural variants.
 
 .. _Ensemble MetaSV:
 
@@ -416,7 +417,7 @@ This step uses output from previous step and performs SV annotations.
 .. _Trimmomatic: http://www.usadellab.org/cms/index.php?page=trimmomatic
 .. _BWA: http://bio-bwa.sourceforge.net
 .. _Picard: http://broadinstitute.github.io/picard/
-.. _GATK Software: https://software.broadinstitute.org/gatk/
+.. _GATK Software: https://gatk.broadinstitute.org/hc/en-us
 .. _SAMBAMBA: http://lomereiter.github.io/sambamba/index.html
 .. _BVATools: https://bitbucket.org/mugqic/bvatools/src/master/
 .. _SNPEff Suite: http://snpeff.sourceforge.net

@@ -287,7 +287,7 @@ More information
 
 For the latest implementation and usage details refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/tumor_pair/>`_.
 
-* MuTect2 Tool for calling somatic SNVs and indels via local assembly of haplotypes - `See here <https://software.broadinstitute.org/gatk/documentation/tooldocs/current/org_broadinstitute_hellbender_tools_walkers_mutect_Mutect2.php>`_.
+* MuTect2 Tool for calling somatic SNVs and indels via local assembly of haplotypes - `See here <https://gatk.broadinstitute.org/hc/en-us/articles/360037593851-Mutect2>`_.
 
 * A `three-caller pipeline <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5428716/>`_ for variant analysis of cancer whole-exome sequencing data. 
 

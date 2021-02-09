@@ -193,13 +193,13 @@ Merge Mpileup files per sample/chromosome into one compressed gzip file per samp
 
 **Paired Mutect2**
 
-`GATK MuTect2`_ caller for SNVs and Indels.
+`GATK MuTect2 Overview`_ caller for SNVs and Indels.
 
 .. _Merge Mutect2:
 
 **Merge Mutect2**
 
-Merge SNVs and indels for `GATK MuTect2`_ Replace TUMOR and NORMAL sample names in VCF to the exact tumor/normal sample names Generate a somatic VCF containing only PASS variants
+Merge SNVs and indels for `GATK MuTect2 Overview`_ Replace TUMOR and NORMAL sample names in VCF to the exact tumor/normal sample names Generate a somatic VCF containing only PASS variants
 
 .. _SAM Tools Paired:
 
@@ -229,7 +229,7 @@ The fully merged VCF is filtered using following steps: 1. Retain only variants 
 
 **Ensemble Somatic**
 
-Apply `Bcbio.variations`_ ensemble approach for `GATK MuTect2`_, `VarDict`_, Samtools and `VarScan 2`_ calls Filter ensemble calls to retain only calls overlapping 2 or more callers
+Apply `Bcbio.variations`_ ensemble approach for `GATK MuTect2 Overview`_, `VarDict`_, Samtools and `VarScan 2`_ calls Filter ensemble calls to retain only calls overlapping 2 or more callers
 
 .. _GATK Variant Annotator Somatic:
 
@@ -316,12 +316,12 @@ Load functionally annotated VCF file into a MySQL lite annotation database `Gemi
 .. _Trimmomatic Method: http://www.usadellab.org/cms/index.php?page=trimmomatic
 .. _BWA: http://bio-bwa.sourceforge.net/
 .. _Picard: http://broadinstitute.github.io/picard/
-.. _GATK: https://www.broadinstitute.org/gatk/
+.. _GATK: https://gatk.broadinstitute.org/hc/en-us
 .. _SamBamba: http://lomereiter.github.io/sambamba/index.html
 .. _Vt: http://genome.sph.umich.edu/wiki/Vt
 .. _Gemini: http://gemini.readthedocs.org/en/latest/index.html
 .. _DREAM3 results: https://github.com/dkoboldt/varscan/releases
-.. _GATK MuTect2: https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_cancer_m2_MuTect2.php
+.. _GATK MuTect2 Overview: https://gatk.broadinstitute.org/hc/en-us/articles/360037593851-Mutect2 
 .. _bcftools: http://www.htslib.org/doc/bcftools.html
 .. _loh: https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/loh
 .. _germline: https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/germline-variant 

@@ -228,7 +228,7 @@ For the latest implementation and usage details refer to Hi-C Sequencing impleme
 
 * Comprehensive Mapping of Long-Range Interactions Reveals Folding Principles of the Human Genome - `Paper introducing Hi-C <https://pdfs.semanticscholar.org/ca99/4823723e34e8b2c7c44848ad85ae2c7cf0be.pdf>`_.
 
-* A high-resolution map of the three-dimensional chromatin interactome in human cells - `Defining target gene using Hi-C <A high-resolution map of the three-dimensional chromatin interactome in human cells>`_. 
+* A high-resolution map of the three-dimensional chromatin interactome in human cells. `Defining target gene using Hi-C`_.
 
 ----
 
@@ -241,6 +241,7 @@ For the latest implementation and usage details refer to Hi-C Sequencing impleme
 .. _MultiQC: https://multiqc.info
 .. _CHICAGO: http://regulatorygenomicsgroup.org/chicago
 .. _Hi-C report: https://bitbucket.org/mugqic/genpipes/src/341cab2f01883af0184b850062bd8537dcd32e41/pipelines/hicseq/url 
+.. _Defining  target gene using Hi-C: https://www.nature.com/articles/nature12644
 
 .. The following are replacement texts used in this file
 

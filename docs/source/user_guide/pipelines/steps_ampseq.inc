@@ -244,7 +244,7 @@ This step checks for the design file (required for `PCoA Plot`_)
 .. _DADA2: https://benjjneb.github.io/dada2/tutorial.html
 .. _VSearch tool: https://github.com/torognes/vsearch
 .. _QIIME tool: http://qiime.org
-.. _Uclust algorithm: http://drive5.com/usearch/manual/uclust_algo.html
+.. _Uclust algorithm: https://www.drive5.com/usearch/manual/uclust_algo.html
 .. _PyNAST tool: http://biocore.github.io/pynast/
 .. _FastTree algorithm: http://www.microbesonline.org/fasttree/
 .. _Krona chart: https://github.com/marbl/Krona/wiki

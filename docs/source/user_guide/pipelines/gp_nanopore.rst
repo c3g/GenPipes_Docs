@@ -1,16 +1,35 @@
 :orphan:
 
 .. _docs_gp_nanopore:
-  
+
+.. spelling::
+
+   Conda
+   Minimap
+   Nanopore
+   basecalled
+   basecaller
+   basecalling
+   bp
+   coronavirus
+   epigenomics
+   mRNA
+   metagenomic
+   nCoV
+   nanopolish
+   nt
+   transcriptonomics
+   minimap 
+
 Nanopore ARTIC-Nanopolish SOP Pipeline
 ======================================
 
 .. note:: Work in Progress...
 
-      We are currently working on updating the documentation for this new pipeine introduced in GenPipes 3.2.0
+      We are currently working on updating the documentation for this new pipeline introduced in GenPipes 3.2.0
       Stay tuned!!!
 
-The `Nanopore ARTIC-Nanopolish protocol`_ has been widely adopted by research groups worldwide to assist in epidemiological investigations. This protocol is mainly focussed around the use of portable Oxford Nanopore MinION sequencer. However, other aspects of the protocol related to primer scheme and sample amplification can be generalised to other sequencing platforms.
+The `Nanopore ARTIC-Nanopolish protocol`_ has been widely adopted by research groups worldwide to assist in epidemiological investigations. This protocol is mainly focused around the use of portable Oxford Nanopore MinION sequencer. However, other aspects of the protocol related to primer scheme and sample amplification can be generalized to other sequencing platforms.
 
 Direct amplification of the virus using tiled, multiplexed primers approach has been proven to have high sensitivity. It enables researchers to work directly from clinical samples compared to metagenomic projects.  It has been widely used to analyze viral genome data generated during outbreaks such as SARS-CoV-2 for information about relatedness to other viruses.
 
@@ -23,21 +42,21 @@ The GenPipes Nanopore Sequencing Pipeline is based on nCoV-2019 novel coronaviru
 Introduction
 ------------
 
-The SOP for Nanopore data is based on the `ARTIC SARS-CoV2 protocol <https://artic.network/ncov-2019/ncov2019-bioinformatics-sop.html>`_ using nanopolish. This protocol is closely followed in GenPipes Nanopore sequencing pipeline with majority of changes related to technical adaptation of the protocol to be able to run in a High Performance Compting (HPC) environment. In such environments, Conda is not advisable.
+The SOP for Nanopore data is based on the `ARTIC SARS-CoV2 protocol <https://artic.network/ncov-2019/ncov2019-bioinformatics-sop.html>`_ using nanopolish. This protocol is closely followed in GenPipes Nanopore sequencing pipeline with majority of changes related to technical adaptation of the protocol to be able to run in a High Performance Computing (HPC) environment. In such environments, Conda is not advisable.
 
 Key steps include `basecalling with Guppy`_, demultiplexing, read filtering and consensus sequencing.
 
-The Nanopore is used to analyse long reads produced by the Oxford Nanopore Technologies (ONT) sequencers. Currently, the pipeline uses minimap2 to align reads to the reference genome. Additionally, it produces a QC report that includes an interactive dashboard for each readset with data from the basecalling summary file as well as the alignment. A step aligning random reads to the NCBI nt database and reporting the species of the highest hits is also done as QC.
+The Nanopore is used to analyze long reads produced by the Oxford Nanopore Technologies (ONT) sequencers. Currently, the pipeline uses Minimap2 to align reads to the reference genome. Additionally, it produces a QC report that includes an interactive dashboard for each readset with data from the basecalling summary file as well as the alignment. A step aligning random reads to the NCBI nt database and reporting the species of the highest hits is also done as QC.
 
-Once the QC and alignments have been produced, Picard is used to merge readsets coming from the same sample. Finally, SVIM is used to detect Structural Variants (SV) including deletions, insertions and translocations. For a full summary of the types of SVs detected, refer to background material on `Structural Variants and Long Reads`_.
+Once the QC and alignments have been produced, Picard is used to merge readsets coming from the same sample. Finally, SVIM is used to detect Structural Variants (SV) including deletions, insertions and translocation. For a full summary of the types of SVs detected, refer to background material on `Structural Variants and Long Reads`_.
 
 The SV calls produced by SVIM are saved as VCFs for each sample, which can then be used in downstream analyses. No filtering is performed on the SV calls.
 
-This pipeline currently does not perform base calling and requires both FASTQ and a sequencing_summary file produced by a ONT supported basecaller (we recommend Guppy). Additionally, the testing and development of the pipeline were focused on genomics applications, and functionality has not been tested for transcriptomics or epigenomics datasets. Beyond the QC dashboards for each readset, there is currently no implemented reporting step in this pipeline.
+This pipeline currently does not perform base calling and requires both FASTQ and a sequencing_summary file produced by a ONT supported basecaller (we recommend Guppy). Additionally, the testing and development of the pipeline were focused on genomics applications, and functionality has not been tested for transcriptonomics or epigenomics datasets. Beyond the QC dashboards for each readset, there is currently no implemented reporting step in this pipeline.
 
 For more information on using ONT data for structural variant detection, as well as an alternative approach, see `pipeline-structural-variation on GitHub`_.
 
-Details of structure and contents of the Nanopore readset file are available `here <https://bitbucket.org/mugqic/genpipes/src/master/#markdown-header-nanopore>`_.
+Details of structure and contents of the `Nanopore readset file are available here <https://bitbucket.org/mugqic/genpipes/src/master/README.md#markdown-header-nanopore>`_.
 
 
 ----
@@ -118,7 +137,7 @@ Use the following commands to execute Nanopore sequencing pipeline:
 
   bash nanoporeseqCommands_mugqic.sh
 
-You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`. Nanopore readset file structure and content details are avialable `here <https://bitbucket.org/mugqic/genpipes/src/master/#markdown-header-nanopore>`_.
+You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`. Nanopore readset file structure and content details are available `here <https://bitbucket.org/mugqic/genpipes/src/master/README.md#markdown-header-nanopore>`_.
 
 .. note::
 
@@ -142,7 +161,7 @@ Figure below shows the schema of the Nanopore ARTIC SARS-CoV2 sequencing protoco
 Pipeline Steps
 --------------
 
-The table below shows various steps that constitute the Nanpore genomic analysis pipeline.
+The table below shows various steps that constitute the Nanopore genomic analysis pipeline.
 
 +----+--------------------------------+
 |    |  *Nanopore Sequencing Steps*   |
@@ -192,5 +211,5 @@ For the latest implementation and usage details refer to CoVSeq Pipeline impleme
 .. _nCoV-2019 novel coronavirus bioinformatics protocol: https://artic.network/ncov-2019/ncov2019-bioinformatics-sop.html
 .. _Tiling Amplicon sequencing and downstream bioinformatics analysis: https://artic.network/quick-guide-to-tiling-amplicon-sequencing-bioinformatics.html
 .. _basecalling with Guppy: https://timkahlke.github.io/LongRead_tutorials/BS_G.html
-.. _Structural Variants and Long Reads: https://github.com/eldariont/svim#background-on-structural-variants-and-long-reads
+.. _Structural Variants and Long Reads: https://github.com/eldariont/svim/blob/master/README.rst 
 .. _pipeline-structural-variation on GitHub: https://github.com/nanoporetech/pipeline-structural-variation

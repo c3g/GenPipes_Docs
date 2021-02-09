@@ -84,7 +84,7 @@ Visualization and Analysis
 
 GenPipes output results vary a lot depending upon each specific pipeline and the way it is configured to run. Also, the way results are analyzed is also dependent on the final objective of the analysis. For example, in case of visualizations, the results have to be imported to R or Python or some alternative visualization package. 
 
-Tools such as Integrative Genomics Viewer (`IGV <integrative genomics viewer>`_), `Genome Browser Gateway <https://genome.ucsc.edu/cgi-bin/hgGateway>`_ and several others are utilized for visualization of results. **These tools vary from pipeline to pipeline.** 
+Tools such as Integrative Genomics Viewer (`IGV`_ - Integrative Genomics Viewer), `Genome Browser Gateway <https://genome.ucsc.edu/cgi-bin/hgGateway>`_ and several others are utilized for visualization of results. **These tools vary from pipeline to pipeline.** 
 
 Figure below demonstrates one such tool used for RNA Sequencing Analysis.
 
@@ -124,3 +124,4 @@ Tracking GenPipes Environment Parameters for quoting in Publications
 
 In order to keep track of all parameters used, GenPipes creates a final .config.trace.ini file each time it is run. It is a good idea to keep a copy of that file in order to keep track of software versions used when publishing your paper or publication.
 
+.. _IGV: http://software.broadinstitute.org/software/igv/

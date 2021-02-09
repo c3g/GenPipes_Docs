@@ -21,9 +21,12 @@ Catenate
 Catenated
 Celera
 Changelog
+CoV
+Coronaviridae
 CpG
 Cufflinks
 Customizable
+Cutadapt
 Dataset
 Dev
 Differentiators
@@ -50,6 +53,7 @@ INsertions
 Illumina
 Kallisto
 Kegg
+Kraken
 Krona
 MMUL
 Macaca
@@ -78,8 +82,10 @@ Readset
 Recalibration
 Rnor
 Rola
+SAR
 SINGLE_END
 Saccharomyces
+Sambamba
 Schizosaccharomyces
 SeQC
 Sequencing
@@ -112,6 +118,7 @@ acyclic
 adaptively
 aeruginosa
 al
+amplicon
 ampliconseq
 ampliconseqCommands
 analytics
@@ -159,12 +166,14 @@ coli
 complementation
 config
 contigs
+coronaviruses
 covalently
 coverageCommands
 csi
 csv
 csvToreadset
 customizable
+cutadapt
 dada
 datacenter
 dataset
@@ -206,6 +215,7 @@ filesCreate
 filesSummarize
 freemium
 gallus
+gatk
 gcc
 genomic
 genomics
@@ -228,6 +238,7 @@ homolog
 homologies
 homologs
 htslib
+iVar
 igvtools
 implementers
 indels
@@ -260,6 +271,7 @@ methylseq
 miRDeep
 microRNA
 microRNAs
+misassemblies
 mitochondrial
 mpich
 mpileup
@@ -338,6 +350,7 @@ subsampling
 subsmapling
 substr
 summarization
+sv
 symlinks
 tarball
 taurus
@@ -374,13 +387,3 @@ xyz
 zebrafish
 Â
 â
-CoV
-Coronaviridae
-Cutadapt
-Kraken
-SAR
-Sambamba
-coronaviruses
-cutadapt
-iVar
-misassemblies

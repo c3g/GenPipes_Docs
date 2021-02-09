@@ -14,6 +14,7 @@
     immunoprecipitated
     CpG
     exomes
+    Coronavirus
 
 GenPipes Real-life Applications
 ===============================

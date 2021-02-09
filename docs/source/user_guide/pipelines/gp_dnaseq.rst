@@ -6,6 +6,14 @@
      Mpileup
      mpileup
      bcftools
+     kilobases
+     telomere
+     mappability
+     indel
+     dna
+     callsets
+     intra
+     nucleotid
 
 DNA Sequencing Pipeline
 ========================

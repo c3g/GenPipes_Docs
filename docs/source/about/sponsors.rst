@@ -15,7 +15,7 @@ C3G is an academically-affiliated entity that provides bioinformatics analysis a
 #. Writing Open Source software to facilitate bioinformatics analysis. See `here <https://www.computationalgenomics.ca/tools/>`_ for details.
 #. Providing `data analysis services <https://www.computationalgenomics.ca/services/>`_ to the genomics community.
 #. Training graduate students and researchers through `bioinformatics workshops <https://www.computationalgenomics.ca/2019-2/>`_.
-#. Providing support for large scale genomics projects like `IHEC <http://ihec-epigenomes.org/>`_, `Profyle <https://www.terryfox.org/recent-posts/profyle/>`_ & `BRIDGET <https://bridget.u-bordeaux.fr/>`_.
+#. Providing support for large scale genomics projects like `IHEC <http://ihec-epigenomes.org/>`_, `BRIDGET <https://bridget.u-bordeaux.fr/>`_.
 
 You can learn more `about C3G <https://www.computationalgenomics.ca/about/>`_ and their `partners <https://www.computationalgenomics.ca/partners/>`_ on the `website <https://www.computationalgenomics.ca/>`_.
 
