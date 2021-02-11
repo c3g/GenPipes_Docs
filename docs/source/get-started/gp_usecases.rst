@@ -29,6 +29,17 @@ C3G has extensive experience analyzing data from various sequencing applications
 
 Following is a summary of real-life application use case for each of the GenPipes Pipelines:
 
+COVID-19 genome sequencing to detect mutations
+----------------------------------------------
+
+GenPipes :ref:`CoVSeQ Pipeline<docs_gp_covseq>` has been used as part of `CoVSeQ <https://covseq.ca>`_ project.  CoVSeQ deals with real-time tracking of Quebec SARS-CoV-2 evolution. 
+
+CoVSeQ is a partnership between the `Institut National de Santé Publique du Québec (INSPQ) <https://www.inspq.qc.ca/>`_ and the `McGill Genome Center <http://www.mcgillgenomecentre.org/>`_ to sequence the viral genome of Quebec patients with COVID-19 disease. The viral samples are taken from a Quebec viral biobank, termed the CoVBanQ, which is hosted in the `Laboratoire de Santé; Publique du Québec (LSPQ) <https://www.inspq.qc.ca/lspq>`_.
+
+You can obtain a real-time snapshot of evolving SARS-CoV-2 populations in Québecand access interactive data visualizations. It is meant for virologists, epidemiologists, public health officials and citizen scientists. Through interactive data visualizations, CoVSeQ allows exploration of continually up-to-date datasets, providing a novel surveillance tool to the scientific and public health communities.
+
+For more details, visit `CoVSeQ Website <https://covseq.ca>`_ and `Sequencing Workflows <https://covseq.ca/methods>`_.
+
 RNA Sequencing
 --------------
 
