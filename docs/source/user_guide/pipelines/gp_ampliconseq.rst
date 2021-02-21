@@ -187,7 +187,7 @@ The table below shows various steps that constitute the Amplicon Sequencing QIIM
 +----+--------------------------------+                                 |
 | 13.| |otu_table|                    |                                 |
 +----+--------------------------------+                                 |
-| 14 | |otu_alignment|                |                                 |
+| 14.| |otu_alignment|                |                                 |
 +----+--------------------------------+                                 |
 | 15.| |filter_alignment|             |                                 |
 +----+--------------------------------+                                 |
