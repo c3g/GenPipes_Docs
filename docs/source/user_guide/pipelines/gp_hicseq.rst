@@ -209,11 +209,13 @@ The table below shows various steps that constitute the Hi-C and Hi-C capture ge
 +----+--------------------------------+-------------------------------------+
 | 15.| |create_hic_file|              | |capture_intersect|                 |
 +----+--------------------------------+-------------------------------------+
-| 16.| |multiqc_report|               | |create_hic_file|                   |
+| 16.| |repro_scores|                 | |create_hic_file|                   |
 +----+--------------------------------+-------------------------------------+
-| 17.| |cram_output|                  | |multiqc_report|                    |
+| 17.| |quality_scores|               | |multiqc_report|                    |
 +----+--------------------------------+-------------------------------------+
-| 18.|                                | |cram_output|                       |
+| 18.| |cram_output|                  | |cram_output|                       |
++----+--------------------------------+-------------------------------------+
+| 19.| |multiqc_report|               |                                     |
 +----+--------------------------------+-------------------------------------+
 
 ----
@@ -229,6 +231,8 @@ For the latest implementation and usage details refer to Hi-C Sequencing impleme
 * Comprehensive Mapping of Long-Range Interactions Reveals Folding Principles of the Human Genome - `Paper introducing Hi-C <https://pdfs.semanticscholar.org/ca99/4823723e34e8b2c7c44848ad85ae2c7cf0be.pdf>`_.
 
 * A high-resolution map of the three-dimensional chromatin interactome in human cells. `Defining target gene using Hi-C`_.
+
+* `Measuring the reproducibility of Hi-C data <Measuring the reproducibility of Hi-C data>`_.
 
 ----
 
@@ -269,5 +273,7 @@ For the latest implementation and usage details refer to Hi-C Sequencing impleme
 .. |capture_intersect| replace:: `Capture Intersect`_
 .. |create_hic_file| replace:: `Create Hic File`_
 .. |multiqc_report| replace:: `Multiqc Report`_
+.. |repro_scores| replace:: `Reproducibility Scores`_
+.. |quality_scores| replace:: `Quality Scores`_
 
 .. include:: repl_cram_op.inc

@@ -1,5 +1,12 @@
 .. _docs_steps_hicseq:
 
+.. spelling::
+
+     Hicrep
+     hicrep
+     pairwiseß
+     hifive
+
 Step Details
 ------------
 
@@ -152,6 +159,35 @@ A `RMAP`_ file for Chicago Capture Analysis is created using the HiCUP digestion
 
 A quality control report for all samples is generated.
 For more detailed information see `MultiQC documentation <http://multiqc.info/>`_.
+
+.. _Reproducibility Scores:
+
+**Reproducibility Scores**
+
+In this step, R package `hicrep <https://bioconductor.org/packages/release/bioc/html/hicrep.html>`_ is used for calculating the inter-chromosomal reproducibility score. Hicrep considers spatial features in Hi-C data, such as domain structure and distance-dependence, so that there are no misleading results in Hi-C data reproducibility while studying genome-wide chromatin interactions.
+
+The novel reproducibility measure in hicrep can assess pairwiseß differences between Hi-C matrices under a wide range of settings, and can be used to determine optimal sequencing depth. Compared to existing approaches, it consistently shows higher accuracy in distinguishing subtle differences in reproducibility and depicting interrelationships of cell lineages than existing approaches.
+
+Pairwise reproducibility scores are calculated for each chromosome pair in each sample pair, using hicrep at resolutions (bin size) defined in `Interaction Matrices Chr`_ step. Other parameters are defined in `reproducibility_scores <https://bitbucket.org/mugqic/genpipes/src/dev/pipelines/hicseq/hicseq.base.ini>`_ section of the hicseq.base.ini file. 
+
+All the scores are finally merged together and an output .csv file is created using the parameters specified during the analysis.  Chromosome number, reproducibility scores, standard deviation and smoothing value are used in the analysis. In order to compare samples, ensure that the smoothing value and the sequencing depth are similar across samples.  
+
+Down sampling of samples can be performed using the down_sampling parameter in the .ini config file. Correlation matrices and wight matrices can be saved using the following initialization values in the .ini config file::
+
+  corr=TRUE
+  weights=TRUE
+
+.. _Quality Scores:
+
+**Quality Scores**
+
+In this step, Quality score per chromosome for each sample is calculated using QuSAR-QC at all resolutions, sequencing depth (coverage) and down_sampling value (coverage) defined in quality_scores step of .ini config file. `QUSAR-QC <http://hifive.docs.taylorlab.org/en/latest/quasar_scoring.html>`_ is a part of the hifive hic-seq analysis suite. 
+
+Quality Assessment of Spatial Arrangement Reproducibility (QuASAR) transformation and scoring uses the consistency between the raw interaction matrix and the correlation matrix of distance-corrected signal to determine sample quality. For all interactions less than or equal to 100 times the resolution of size, the correlation value is calculated. 
+
+In order to determine the quality score for a given chromosome, the weighted average of the correlation values (weighted by the raw interaction signal) minus the unweighted correlation signal average is calculated. A genome-wide value is calculated by summing all numerators and denominators across all chromosomes prior to dividing and subtracting score components. The replicate score is calculated by finding the correlation between the weighted correlation matrices for two samples.
+
+For details, see `hifive suite <http://hifive.docs.taylorlab.org/en/latest/introduction.html>`_.
 
 .. include:: steps_cram_op.inc
 

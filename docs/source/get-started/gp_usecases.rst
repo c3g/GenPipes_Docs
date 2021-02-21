@@ -15,6 +15,7 @@
     CpG
     exomes
     Coronavirus
+    biobank
 
 GenPipes Real-life Applications
 ===============================
@@ -36,7 +37,7 @@ GenPipes :ref:`CoVSeQ Pipeline<docs_gp_covseq>` has been used as part of `CoVSeQ
 
 CoVSeQ is a partnership between the `Institut National de Santé Publique du Québec (INSPQ) <https://www.inspq.qc.ca/>`_ and the `McGill Genome Center <http://www.mcgillgenomecentre.org/>`_ to sequence the viral genome of Quebec patients with COVID-19 disease. The viral samples are taken from a Quebec viral biobank, termed the CoVBanQ, which is hosted in the `Laboratoire de Santé; Publique du Québec (LSPQ) <https://www.inspq.qc.ca/lspq>`_.
 
-You can obtain a real-time snapshot of evolving SARS-CoV-2 populations in Québecand access interactive data visualizations. It is meant for virologists, epidemiologists, public health officials and citizen scientists. Through interactive data visualizations, CoVSeQ allows exploration of continually up-to-date datasets, providing a novel surveillance tool to the scientific and public health communities.
+You can obtain a real-time snapshot of evolving SARS-CoV-2 populations in Québec and access interactive data visualizations. It is meant for virologists, epidemiologists, public health officials and citizen scientists. Through interactive data visualizations, CoVSeQ allows exploration of continually up-to-date datasets, providing a novel surveillance tool to the scientific and public health communities.
 
 For more details, visit `CoVSeQ Website <https://covseq.ca>`_ and `Sequencing Workflows <https://covseq.ca/methods>`_.
 
