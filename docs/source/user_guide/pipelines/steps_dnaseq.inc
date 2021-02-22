@@ -29,6 +29,13 @@
     bcf
     Mappability
     translocations
+    bgzipped
+    vcfs
+    indv
+    missingness
+    idepth
+    readgroups
+    imiss
 
 Step Details
 -------------
@@ -409,6 +416,60 @@ In this step, `BreakSeq2`_ is used to combine DNA double-strand breaks (DSBs) la
 **MetaSV Annotation**
 
 This step uses output from previous step and performs SV annotations.
+
+.. _Metrics:
+
+**Metrics**
+
+This step computes metrics and generates coverage tracks per sample. Multiple metrics are computed at this stage:
+
+* Number of raw reads,
+* Number of filtered reads,
+* Number of aligned reads,
+* Number of duplicate reads,
+* Median, mean and standard deviation of insert sizes of reads after alignment,
+* Percentage of bases covered at X reads (%_bases_above_50 means the % of exons bases which have at least 50 reads)
+* Whole genome or targeted percentage of bases covered at X reads (%_bases_above_50 means the % of exons bases which have at least 50 reads).
+
+A TDF (.tdf) coverage track is also generated at this step for easy visualization of coverage in the IGV browser.
+
+.. _Metrics NGSCheckmate:
+
+**Metrics NGSCheckmate**
+
+`NGSCheckMate <https://github.com/parklab/NGSCheckMate>`_ is a software package for identifying next generation sequencing (NGS) data files from the same individual. It analyzes various types of NGS data files including (but not limited to) whole genome sequencing (WGS), whole exome sequencing (WES), RNA-seq, ChIP-seq, and targeted sequencing of various depths. Data types can be mixed (e.g. WES and RNA-seq, or RNA-seq and ChIP-seq). It takes BAM (reads aligned to the genome), VCF (variants) or FASTQ (unaligned reads) files as input. NGSCheckMate uses depth-dependent correlation models of allele fractions of known single-nucleotide polymorphisms (SNPs) to identify samples from the same individual. 
+
+This step takes as input the file containing all vcfs in project output.
+
+.. _Metrics Verify BAM ID:
+
+**Metrics Verify BAM ID**
+
+In this step, `VerifyBAMID <https://genome.sph.umich.edu/wiki/VerifyBamID>`_ software is used to verify whether the reads in particular file match previously known genotypes for an individual (or group of individuals), and checks whether the reads are contaminated as a mixture of two samples. 
+
+.. _Metrics VCFTools Missing Individual:
+
+**Metrics VCFTools Missing Individual**
+
+This step uses `VCFtools <https://vcftools.github.io/index.html>`_ and --missing_indv option to generate a file reporting the `missingness` factor in the analysis on a per-individual basis. It takes bgzipped .vcf file as input and creates .imiss flat file indicating missingness.
+
+.. _Metrics VCFTools Depth Individual:
+
+**Metrics VCFTools Depth Individual**
+
+This step uses `VCFtools <https://vcftools.github.io/index.html>`_ and --depth option to generate a file containing the mean depth per individual. It takes as input bgzipped .vcf file and creates a .idepth flat file.
+
+.. _Metrics GATK Sample Fingerprint:
+
+**Metrics GATK Sample Fingerprint**
+
+`CrosscheckFingerprints (Picard) <https://gatk.broadinstitute.org/hc/en-us/articles/360040098592-CrosscheckFingerprints-Picard->`_ functionality in GATK toolkit is used to cross-check readgroups, libraries, samples, or files to determine if all data in the set of input files appears to come from the same individual. In this step, sample SAM/BAM or VCF file is taken as input and a fingerprint file is generated using CrosscheckFingerprints (Picard) in GATK. It checks the sample identity of the sequence/genotype data in the provided file (SAM/BAM or VCF) against a set of known genotypes in the supplied genotype file (in VCF format).
+
+.. _Metrics GATK Cluster Fingerprint:
+
+**Metrics GATK Cluster Fingerprint**
+
+In this step, ClusterCrosscheckMetrics function from GATK is used as a follow-up step to running CrosscheckFingerprints created in the `Metrics GATK Sample Fingerprint`_ step earlier. There are cases where one would like to identify a few groups out of a collection of many possible groups (say to link a bam to it's correct sample in a multi-sample vcf. In this step, sample SAM/BAM or VCF file is taken as input and a fingerprint file is generated.
 
 .. include:: steps_cram_op.inc
 
