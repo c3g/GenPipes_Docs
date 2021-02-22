@@ -50,9 +50,8 @@ Usage
                     [--no-json] [--report] [--clean]
                     [-l {debug,info,warning,error,critical}] [--sanity-check]
                     [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}] 
-                    [-d DESIGN]
-                    [-t {mugqic,mpileup,light}] [-r READSETS] [-v]
-
+                    [-d DESIGN] [-r READSETS]
+                    [-v]
 
 **Optional Arguments**
 
@@ -92,8 +91,6 @@ Usage
                         image path or accessible docker/singularity hub path
   -d DESIGN, --design DESIGN
                         design file
-  -t {mugqic,mpileup,light}, --type {mugqic,mpileup,light}
-                        DNAseq analysis type
   -r READSETS, --readsets READSETS
                         readset file
   -v, --version         show the version information and exit

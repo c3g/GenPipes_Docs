@@ -36,7 +36,7 @@ rnaseq_light.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
                        [-l {debug,info,warning,error,critical}] [-d DESIGN]
                        [--sanity-check]
                        [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}]
-                       [-t {cufflinks,stringtie}] [-r READSETS] [-v]
+                       [-r READSETS] [-v]
 ```
 
 **Optional Arguments**
@@ -77,9 +77,6 @@ rnaseq_light.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
                         image path or accessible docker/singularity hub path
   -d DESIGN, --design DESIGN
                         design file
-  -t {cufflinks,stringtie}, --type {cufflinks,stringtie}
-                        Type of RNA-seq assembly method (default stringtie, faster
-                        than cufflinks)
   -r READSETS, --readsets READSETS
                         readset file
   -v, --version         show the version information and exit

@@ -1,5 +1,3 @@
-:orphan:
-
 .. _docs_gp_nanopore:
 
 .. spelling::
@@ -23,11 +21,6 @@
 
 Nanopore ARTIC-Nanopolish SOP Pipeline
 ======================================
-
-.. note:: Work in Progress...
-
-      We are currently working on updating the documentation for this new pipeline introduced in GenPipes 3.2.0
-      Stay tuned!!!
 
 The `Nanopore ARTIC-Nanopolish protocol`_ has been widely adopted by research groups worldwide to assist in epidemiological investigations. This protocol is mainly focused around the use of portable Oxford Nanopore MinION sequencer. However, other aspects of the protocol related to primer scheme and sample amplification can be generalized to other sequencing platforms.
 

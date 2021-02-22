@@ -44,7 +44,8 @@ Usage
                  [--no-json] [--report] [--clean]
                  [-l {debug,info,warning,error,critical}] [--sanity-check]
                  [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}]
-                 [-d DESIGN] [-t {cufflinks,stringtie}] [-r READSETS] [-v]
+                 [-d DESIGN] [-t {cufflinks,stringtie}]
+                 [-t {cufflinks,stringtie}] [-r READSETS] [-v]
 
 **Optional Arguments**
 
