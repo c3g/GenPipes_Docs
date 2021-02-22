@@ -99,7 +99,15 @@ Wiggle Track Format files are generated from the aligned reads using Homer.  The
 
 **MACS2 call peak**
 
-Peaks are called using the `MACS2 <https://www.biorxiv.org/content/10.1101/496521v1>`_ software. Different calling strategies are used for narrow and broad peaks.  The mfold parameter used in the model building step is estimated from a peak enrichment diagnosis run.  The estimated mfold lower bound is 10 and the estimated upper bound can vary between 15 and 100.
+Peaks are called using the `MACS2`_ software. Different calling strategies are used for narrow and broad peaks.  The mfold parameter used in the model building step is estimated from a peak enrichment diagnosis run.  The estimated mfold lower bound is 10 and the estimated upper bound can vary between 15 and 100.
+
+The default mfold parameter of MACS2 is [10,30].
+
+.. _MACS2 ATAC-seq call peak:
+
+**MACS2 ATAC-seq call peak**
+
+Assay for Transposon Accessible Chromatin (ATAC-seq) analysis enables measurement of chromatin structure modifications (nucleosome free regions) on gene regulation. This step involves calling peaks using the `MACS2`_ software. Different calling strategies are used for narrow and broad peaks. The mfold parameter used in the model building step is estimated from a peak enrichment diagnosis run. The estimated mfold lower bound is 10 and the estimated upper bound can vary between 15 and 100.
 
 The default mfold parameter of MACS2 is [10,30].
 
@@ -150,3 +158,4 @@ For more detailed information see `MultiQC documentation <http://multiqc.info/>`
 
 .. _Samtools: http://www.htslib.org/
 .. _Picard: http://broadinstitute.github.io/picard/
+.. _MACS2: https://www.biorxiv.org/content/10.1101/496521v1

@@ -4,6 +4,9 @@
 
    transposase
    Immunoprecipitation
+   atacseq
+   Transposon
+   nucleosome
 
 ChIP Sequencing Pipeline
 ========================
@@ -42,7 +45,7 @@ Usage
                   [--no-json] [--report] [--clean]
                   [-l {debug,info,warning,error,critical}] [--sanity-check]
                   [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}]
-                  [-d DESIGN] [-t {mugqic,mpileup,light}] [-r READSETS] [-v]
+                  [-d DESIGN] [-t {chipseq, atacseq}] [-r READSETS] [-v]
 
 **Optional Arguments**
 
@@ -83,8 +86,8 @@ Usage
                                   image path or accessible docker/singularity hub path
   -d DESIGN, --design DESIGN
                                   design file
-  -t {mugqic,mpileup,light}, --type {mugqic,mpileup,light}
-                                  DNAseq analysis type
+  -t {chipseq, atacseq}, --type {chipseq, atacseq}
+                                  Type of piipeline (default chipseq)
   -r READSETS, --readsets READSETS
                                   readset file
   -v, --version                   show the version information and exit
@@ -123,49 +126,49 @@ Pipeline Steps
 
 The table below shows various steps that constitute the ChIP sequencing pipeline:
 
-+----+---------------------------+
-|    | ChIP Sequencing Steps     |
-+====+===========================+
-| 1. | |picard_sam_to_fastq|     |
-+----+---------------------------+
-| 2. | |trimmomatic|             |
-+----+---------------------------+
-| 3. | |merge_trimmomatic_stats| |
-+----+---------------------------+
-| 4. | |bwa_mem_picard_sort_sam| |
-+----+---------------------------+
-| 5. | |samtools_view_filter|    |
-+----+---------------------------+
-| 6. | |picard_merge_sam_files|  |
-+----+---------------------------+
-| 7. | |picard_mark_duplicates|  |
-+----+---------------------------+
-| 8. | |metrics|                 |
-+----+---------------------------+
-| 9. | |homer_make_tag_directory||
-+----+---------------------------+
-| 10.| |qc_metrics|              |
-+----+---------------------------+
-| 11.| |homer_make_ucsc_file|    |
-+----+---------------------------+
-| 12.| |macs2_callpeak|          |     
-+----+---------------------------+
-| 13.| |homer_annotate_peaks|    |
-+----+---------------------------+
-| 14.| |homer_find_motifs_genome||
-+----+---------------------------+
-| 15.| |annotation_graphs|       |
-+----+---------------------------+
-| 16.| |ihec_preprocess_files|   |
-+----+---------------------------+
-| 17.| |run_spp|                 |
-+----+---------------------------+
-| 18.| |ihec_metrics|            |
-+----+---------------------------+
-| 19.| |multiqc_report|          |
-+----+---------------------------+
-| 20.| |cram_output|             |
-+----+---------------------------+
++----+---------------------------+--------------------------------------+
+|    | ChIP Sequencing Steps     |    ChIP Sequencing (atacseq)         |
++====+===========================+======================================+
+| 1. | |picard_sam_to_fastq|     | |picard_sam_to_fastq|                |
++----+---------------------------+--------------------------------------+
+| 2. | |trimmomatic|             | |trimmomatic|                        |
++----+---------------------------+--------------------------------------+
+| 3. | |merge_trimmomatic_stats| | |merge_trimmomatic_stats|            |
++----+---------------------------+--------------------------------------+
+| 4. | |bwa_mem_picard_sort_sam| | |bwa_mem_picard_sort_sam|            |
++----+---------------------------+--------------------------------------+
+| 5. | |samtools_view_filter|    | |samtools_view_filter|               |
++----+---------------------------+--------------------------------------+
+| 6. | |picard_merge_sam_files|  | |picard_merge_sam_files|             | 
++----+---------------------------+--------------------------------------+
+| 7. | |picard_mark_duplicates|  | |picard_mark_duplicates|             |
++----+---------------------------+--------------------------------------+
+| 8. | |metrics|                 | |metrics|                            |
++----+---------------------------+--------------------------------------+
+| 9. | |homer_make_tag_directory|| |homer_make_tag_directory|           |
++----+---------------------------+--------------------------------------+
+| 10.| |qc_metrics|              | |qc_metrics|                         |
++----+---------------------------+--------------------------------------+
+| 11.| |homer_make_ucsc_file|    | |homer_make_ucsc_file|               |
++----+---------------------------+--------------------------------------+
+| 12.| |macs2_callpeak|          | |macs2_atacseq_callpeak|             |    
++----+---------------------------+--------------------------------------+
+| 13.| |homer_annotate_peaks|    | |homer_annotate_peaks|               |
++----+---------------------------+--------------------------------------+
+| 14.| |homer_find_motifs_genome|| |homer_find_motifs_genome|           |
++----+---------------------------+--------------------------------------+
+| 15.| |annotation_graphs|       | |annotation_graphs|                  |
++----+---------------------------+--------------------------------------+
+| 16.| |ihec_preprocess_files|   | |ihec_preprocess_files|              |
++----+---------------------------+--------------------------------------+
+| 17.| |run_spp|                 | |run_spp|                            |
++----+---------------------------+--------------------------------------+
+| 18.| |ihec_metrics|            | |ihec_metrics|                       |
++----+---------------------------+--------------------------------------+
+| 19.| |multiqc_report|          | |multiqc_report|                     |
++----+---------------------------+--------------------------------------+
+| 20.| |cram_output|             | |cram_output|                        |
++----+---------------------------+--------------------------------------+
 
 ----
 
@@ -183,6 +186,8 @@ For the latest implementation and usage details, see `ChIP-Seq Pipeline README`_
 * `ChIP-Seq Technology and Workflow <https://www.sciencedirect.com/science/article/pii/S1046202320300591>`_.
 
 * `Schematic representation of major methods to detect functional elements in DNA <https://journals.plos.org/plosbiology/article/figure?id=10.1371/journal.pbio.1001046.g001>`_.
+
+* `ChIP Sequencing and ATAC Sequencing <https://bioinformatics-core-shared-training.github.io/cruk-autumn-school-2017/ChIP/Materials/Lectures/Lecture4_Introduction%20to%20ChIP-seq%20and%20ATAC-seq_SS.pdf>`_
 
 .. figure:: /img/pipelines/ChIP-Seq-hl-diag.png
    :align: center
@@ -204,6 +209,7 @@ For the latest implementation and usage details, see `ChIP-Seq Pipeline README`_
 .. |qc_metrics| replace:: `QC Metrics`_
 .. |homer_make_ucsc_file| replace:: `Homer Make UCSC file`_
 .. |macs2_callpeak| replace:: `MACS2 call peak`_
+.. |macs2_atacseq_callpeak| replace:: `MACS2 ATAC-seq call peak`_
 .. |homer_annotate_peaks| replace:: `Homer annotate peaks`_
 .. |homer_find_motifs_genome| replace:: `Homer find motifs genome`_
 .. |annotation_graphs| replace:: `Annotation Graphs`_
