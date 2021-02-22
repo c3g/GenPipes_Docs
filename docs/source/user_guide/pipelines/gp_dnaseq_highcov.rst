@@ -135,33 +135,31 @@ The table below shows various steps that constitute the DNA Sequencing (High Cov
 +====+==============================================+
 | 1. | |picard_sam_to_fastq|                        |
 +----+----------------------------------------------+
-| 2. | |trimmomatic|                                |
+| 2. | |skewer_trimming|                            |
 +----+----------------------------------------------+
-| 3. | |merge_trimmomatic_stats|                    |
+| 3. | |bwa_mem_sambamba_sort_sam|                  |
 +----+----------------------------------------------+
-| 4. | |bwa_mem_picard_sort_sam|                    |
+| 4. | |sambamba_merge|                             |
 +----+----------------------------------------------+
-| 5. | |picard_merge_sam_files|                     |
+| 5. | |gatk_indel_realigner|                       |
 +----+----------------------------------------------+
-| 6. | |gatk_indel_realigner|                       |
+| 6. | |sambamba_merge_realigned|                   |
 +----+----------------------------------------------+
-| 7. | |merge_realigned|                            |
+| 7. | |picard_fixmate|                             |
 +----+----------------------------------------------+
-| 8. | |picard_fixmate|                             |
+| 8. | |metrics|                                    |
 +----+----------------------------------------------+
-| 9. | |metrics|                                    |
+| 9. | |picard_calculate_hs_metrics|                |
 +----+----------------------------------------------+
-| 10.| |picard_calculate_hs_metrics|                |
+| 10 | |gatk_callable_loci|                         |
 +----+----------------------------------------------+
-| 11.| |gatk_callable_loci|                         |
+| 11.| |call_variants|                              |
 +----+----------------------------------------------+
-| 12.| |call_variants|                              |
+| 12.| |pre-process_vcf|                            |
 +----+----------------------------------------------+
-| 13.| |pre-process_vcf|                            |
+| 13.| |snp_effect|                                 |
 +----+----------------------------------------------+
-| 14.| |snp_effect|                                 |
-+----+----------------------------------------------+
-| 15.| |gemini_annotations|                         |
+| 14.| |gemini_annotations|                         |
 +----+----------------------------------------------+
 | 15.| |cram_output|                                |
 +----+----------------------------------------------+
@@ -185,12 +183,7 @@ For the latest implementation and usage details refer to DNA Sequencing (High Co
 .. The following are replacement texts used in this file
 
 .. |picard_sam_to_fastq| replace:: `Picard SAM to FastQ`_
-.. |trimmomatic| replace:: `Trimmomatic`_
-.. |merge_trimmomatic_stats| replace:: `Merge Trimmomatic Stats`_
-.. |bwa_mem_picard_sort_sam| replace:: `BWA Mem Picard Sort SAM`_
-.. |picard_merge_sam_files| replace:: `Picard Merge SAM Files`_
 .. |gatk_indel_realigner| replace:: `GATK Indel Realigner`_
-.. |merge_realigned| replace:: `Merge Realigned`_
 .. |picard_fixmate| replace:: `Picard Fixmate`_
 .. |metrics| replace:: `Metrics`_
 .. |picard_calculate_hs_metrics| replace:: `Picard Calculate HS Metrics`_
@@ -199,5 +192,9 @@ For the latest implementation and usage details refer to DNA Sequencing (High Co
 .. |pre-process_vcf| replace:: `Pre-process VCF`_
 .. |snp_effect| replace:: `SNP Effect`_
 .. |gemini_annotations| replace:: `Gemini Annotations`_
+.. |skewer_trimming| replace:: `Skewer Trimming`_
+.. |bwa_mem_sambamba_sort_sam| replace:: `BWA SAMbamba Sort SAM`_
+.. |sambamba_merge| replace:: `SAMBAM Merge SAM Files`_
+.. |sambamba_merge_realigned| replace:: `SAMBAM Merge Realigned`_
 
 .. include:: repl_cram_op.inc

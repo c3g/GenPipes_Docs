@@ -32,40 +32,11 @@ Raw reads quality trimming and removing of Illumina adapters is performed using 
 
 The trim statistics per readset are merged at this step.
 
-.. _BWA Mem Picard Sort SAM:
-
-**BWA Mem Picard Sort SAM**
-
-This step takes as input files:
-
-- Trimmed FASTQ files if available
-- Else, FASTQ files from the readset file if available
-- Else, FASTQ output files from previous picard_sam_to_fastq conversion of BAM files
-
-The filtered reads are aligned to a reference genome. The alignment is done per sequencing readset. The alignment software used is `BWA with algorithm: bwa mem <http://bio-bwa.sourceforge.net/>`_. BWA output BAM files are then sorted by coordinate using `Picard Tools <http://broadinstitute.github.io/picard/>`_.
-
-.. _Picard Merge SAM Files:
-
-**Picard Merge SAM Files**
-
-This step takes as input files:
-
-- Aligned and sorted BAM output files from previous bwa_mem_picard_sort_sam step if available
-- Else, BAM files from the readset file
-
-BAM readset files are merged into one file per sample. Merge is done using `Picard Tools <http://broadinstitute.github.io/picard/>`_.
-
 .. _GATK Indel Realigner:
 
 **GATK Indel Realigner**
 
 Insertion and deletion realignment is performed on regions where multiple base mismatches are preferred over indels by the aligner since it can appear to be less costly by the algorithm. Such regions will introduce false positive variant calls which may be filtered out by realigning those regions properly. Realignment is done using `GATK Toolkit <https://gatk.broadinstitute.org/hc/en-us>`_. The reference genome is divided by a number regions given by the nb_jobs parameter.
-
-.. _Merge Realigned:
-
-**Merge Realigned**
-
-BAM files of regions of realigned reads are merged per sample using `Picard Tools <http://broadinstitute.github.io/picard/>`_.
 
 .. _Picard Fixmate:
 
@@ -115,4 +86,5 @@ This step performs Variant effect annotation. The .vcf files are annotated for v
 
 This step loads functionally annotated vcf file into a mysql lite annotation database as part of `Gemini processing <http://gemini.readthedocs.org/en/latest/index.html>`_.
 
+.. include:: steps_dnaseq_common.inc
 .. include:: steps_cram_op.inc

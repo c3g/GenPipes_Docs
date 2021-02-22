@@ -68,42 +68,11 @@ Raw reads quality trimming and removing of Illumina adapters is performed using 
 
 The trim statistics per readset file are merged in this step.
 
-.. _Skewer Trimming:
-
-**Skewer Trimming**
-
-TBD-GenPipes-Dev
-
-.. _BWA SAMbamba Sort SAM:
-
-**BWA SAMbamba Sort SAM**
-
-The input for this step is the trimmed FASTQ files if available. Otherwise, it uses the FASTQ files from the readset. If those are not available then it uses FASTQ output files from the previous 'Picard SAM to FastQ`_ step where BAM files are converted to FASTQ format.
-
-In this step, filtered reads are aligned to a reference genome. The alignment is done per sequencing readset. The alignment software used is `BWA`_ with algorithm: bwa mem. BWA output BAM files are then sorted by coordinate using `SAMBAMBA`_.
-
-.. _SAMBAM Merge SAM Files:
-
-**SAMBAM Merge SAM Files**
-
-This step takes as input files:
-
-* Aligned and sorted BAM output files from previous bwa_mem_picard_sort_sam step if available
-* Else, BAM files from the readset file
-
-In this step, BAM readset files are merged into one file per sample. Merge is done using `Picard`_.
-
 .. _GATK Indel Re-aligner:
 
 **GATK Indel Re-aligner**
 
 Insertion and deletion realignment is performed on regions where multiple base mismatches are preferred over indels by the aligner since it can appear to be less costly by the algorithm. Such regions will introduce false positive variant calls which may be filtered out by realigning those regions properly. Realignment is done using `GATK Software`_. The reference genome is divided by a number regions given by the nb_jobs parameter.
-
-.. _SAMBAM Merge Realigned:
-
-**SAMBAM Merge Realigned**
-
-In this step, BAM files of regions of realigned reads are merged per sample using `SAMBAMBA`_.
 
 .. _Fix Mate by Coordinate:
 
@@ -471,15 +440,13 @@ This step uses `VCFtools <https://vcftools.github.io/index.html>`_ and --depth o
 
 In this step, ClusterCrosscheckMetrics function from GATK is used as a follow-up step to running CrosscheckFingerprints created in the `Metrics GATK Sample Fingerprint`_ step earlier. There are cases where one would like to identify a few groups out of a collection of many possible groups (say to link a bam to it's correct sample in a multi-sample vcf. In this step, sample SAM/BAM or VCF file is taken as input and a fingerprint file is generated.
 
+.. include:: steps_dnaseq_common.inc
 .. include:: steps_cram_op.inc
 
 .. Following are the html link references:
 
 .. _Trimmomatic: http://www.usadellab.org/cms/index.php?page=trimmomatic
-.. _BWA: http://bio-bwa.sourceforge.net
-.. _Picard: http://broadinstitute.github.io/picard/
 .. _GATK Software: https://gatk.broadinstitute.org/hc/en-us
-.. _SAMBAMBA: http://lomereiter.github.io/sambamba/index.html
 .. _BVATools: https://bitbucket.org/mugqic/bvatools/src/master/
 .. _SNPEff Suite: http://snpeff.sourceforge.net
 .. _Delly2: https://github.com/dellytools/delly
