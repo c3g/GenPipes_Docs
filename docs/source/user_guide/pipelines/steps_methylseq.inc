@@ -45,16 +45,15 @@ In this step, reads are aligned using the `Bismark Tool`_.
 
 This step uses `fgbio tool`_ to add read UMI tag to individual BAM files.
 
-.. _Picard merge SAM files:
+.. _Sambamba Merge SAM Files:
 
-**Picard merge SAM files**
+**Sambamba Merge SAM Files**
 
-This step takes as input files:
+`Sambamba`_ is a powerful filtering tool used for extracting information from SAM/BAM files.
 
-* Aligned and sorted BAM output files from previous bwa_mem_picard_sort_sam step if available
-* Else, BAM files from the readset file
+In this step, BAM readset files are merged into one file per sample. Merge is done using `Picard Tool`_.  
 
-BAM readset files are merged into one file per sample. Merge is done using `Picard Tool`_.
+As input, this step takes the aligned and sorted BAM output files from previous step, `UMI BAM Tag Processing`_,  if available. Otherwise, it uses BAM files from the readset file as input.
 
 .. _Picard remove duplicates:
 
@@ -136,3 +135,4 @@ This step involves running of `MethylKit`_ to get DMCs & DMRs for different desi
 .. _Bis-SNP: http://people.csail.mit.edu/dnaase/bissnp2011/
 .. _CRAM file format: https://samtools.github.io/hts-specs/CRAMv3.pdf
 .. _MethylKit: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3491415/
+.. _Sambamba:  https://lomereiter.github.io/sambamba/

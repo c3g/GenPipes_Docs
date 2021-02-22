@@ -139,7 +139,7 @@ The table below shows various steps that constitute the WGS or Methylation Seque
 +----+--------------------------------------+
 | 5. | |add_bam_umi|                        |
 +----+--------------------------------------+
-| 6. | |picard_merge_sam_files|             |
+| 6. | |sambamba_merge_sam_files|           |
 +----+--------------------------------------+
 | 7. | |picard_remove_duplicates|           |
 +----+--------------------------------------+
@@ -158,8 +158,6 @@ The table below shows various steps that constitute the WGS or Methylation Seque
 | 14.| |filter_snp_cpg|                     |
 +----+--------------------------------------+
 | 15.| |prepare_methylkit|                  |
-+----+--------------------------------------+
-| 16.| |methylkit_differential_analysis|    |
 +----+--------------------------------------+
 | 16.| |cram_output|                        |
 +----+--------------------------------------+
@@ -213,7 +211,7 @@ For the latest implementation and usage details refer to WGS or Methylation Sequ
 .. |merge_trimmomatic_stats| replace:: `Merge Trimmomatic Statistics`_
 .. |bismark_align| replace:: `Bismark Aligner Step`_
 .. |add_bam_umi| replace:: `UMI BAM Tag Processing`_
-.. |picard_merge_sam_files| replace:: `Picard merge SAM files`_
+.. |sambamba_merge_sam_files| replace:: `Sambamba Merge SAM Files`_
 .. |picard_remove_duplicates| replace:: `Picard remove duplicates`_
 .. |metrics| replace:: `Compute Metrics`_
 .. |methylation_call| replace:: `Methylation Call`_
