@@ -8,7 +8,7 @@ TBD-GenPipes-Dev
 
 **BWA SAMbamba Sort SAM**
 
-The input for this step is the trimmed FASTQ files if available. Otherwise, it uses the FASTQ files from the readset. If those are not available then it uses FASTQ output files from the previous 'Picard SAM to FastQ`_ step where BAM files are converted to FASTQ format.
+The input for this step is the trimmed FASTQ files if available. Otherwise, it uses the FASTQ files from the readset. If those are not available then it uses FASTQ output files from the previous 'Picard SAM to FASTQ`_ step where BAM files are converted to FASTQ format.
 
 In this step, filtered reads are aligned to a reference genome. The alignment is done per sequencing readset. The alignment software used is `BWA`_ with algorithm: bwa mem. BWA output BAM files are then sorted by coordinate using `SAMBAMBA`_.
 

@@ -12,7 +12,7 @@
       tdf
       vcf
       mysql
-            
+      FASTQ       
  
 DNA Sequencing (High Coverage) Pipeline
 =======================================
@@ -182,7 +182,7 @@ For the latest implementation and usage details refer to DNA Sequencing (High Co
 
 .. The following are replacement texts used in this file
 
-.. |picard_sam_to_fastq| replace:: `Picard SAM to FastQ`_
+.. |picard_sam_to_fastq| replace:: `Picard SAM to FASTQ`_
 .. |gatk_indel_realigner| replace:: `GATK Indel Realigner`_
 .. |picard_fixmate| replace:: `Picard Fixmate`_
 .. |metrics| replace:: `Metrics`_

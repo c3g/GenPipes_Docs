@@ -9,9 +9,9 @@ Step Details
 
 Following are the various steps that are part of GenPipes DNA (High Coverage) Sequencing genomic analysis pipeline:
 
-.. _Picard SAM to FastQ:
+.. _Picard SAM to FASTQ:
 
-**Picard SAM to FastQ**
+**Picard SAM to FASTQ**
 
 This step converts SAM/BAM files from the input readset file into FASTQ format if FASTQ files are not already specified in the readset file. Otherwise, it does no processing.
 
