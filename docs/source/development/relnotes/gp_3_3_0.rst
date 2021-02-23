@@ -1,0 +1,43 @@
+:orphan:
+
+.. _docs_gp_relnote_3_3_0:
+
+.. spelling::
+
+     genpipes
+
+GenPipes 3.3.0 Release Notes
+============================
+
+What's new? 
+-----------
+
+* Two new steps were added in the :ref:`HiC Sequencing Pipeline<docs_gp_hicseq>`:
+
+  - *Reproducibility Scores*: R package `hicrep <https://bioconductor.org/packages/release/bioc/html/hicrep.html>`_ is used to calculate inter-chromosomal reproducibility scores.
+  - *Quality Scores*: `QuASAR <http://hifive.docs.taylorlab.org/en/latest/quasar_scoring.html>`_ (part of `hifive <http://hifive.docs.taylorlab.org/en/latest/introduction.html>`_ suite), is used to calculate quality score per chromosome.
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+ 
+* This version tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-3.3.0.tar.gz
+
+* The module mugqic/genpipes/3.3.0 is installed on Abacus (MGC), Béluga, Graham and Cedar clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes
+
+* For more documentation, please refer to: https://genpipes.readthedocs.io/
+
+Where is the detailed ChangeLog? 
+================================= 
+A ChangeLog (`CHANGELOG.md <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_) is available in the archive as well as in the repository.
+
+Since we use git, there are many ways to get the details in many formats. 
+One of our preferred ways is to use a script written by the author of the Ray assembler: Sébastien Boisvert, 
+which lists the commits by tag and author: 
+
+https://raw.github.com/sebhtml/ray/master/scripts/dump-ChangeLog.sh 
+
+Enjoy our pipelines on the many clusters where they are installed!
+
+.. _vcftool imiss: http://vcftools.sourceforge.net/man_latest.html
