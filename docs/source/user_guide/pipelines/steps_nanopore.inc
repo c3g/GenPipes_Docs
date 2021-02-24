@@ -5,12 +5,6 @@ Step Details
 
 Following are the various steps that are part of GenPipes CoVSeq genomic analysis pipeline:
 
-.. _BlastQC:
-
-**BlastQC**
-
-In this step, `Blast-QC utility`_ is used for sequence alignment and identification. It performs a basic QC test by aligning 1000bp of randomly selected reads to the `NCBI Nucleotide Database`_ in order to detect potential contamination.
-
 .. _Minimap2 Align:
 
 **Minimap2 Align**
