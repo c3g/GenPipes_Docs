@@ -1,13 +1,9 @@
-.. _docs_steps_nanopore:
-
-.. spelling::
-
-     basecalled
+.. _docs_steps_cov_nanopore:
 
 Step Details
 -------------
 
-Following are the various steps that are part of GenPipes Nanopore genomic analysis pipeline:
+Following are the various steps that are part of GenPipes CoVSeq genomic analysis pipeline:
 
 .. _BlastQC:
 
