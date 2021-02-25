@@ -86,8 +86,6 @@ Usage
   --container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}
                         run pipeline inside a container providing a container
                         image path or accessible docker/singularity hub path
-  -t {mugqic,mpileup,light}, --type {mugqic,mpileup,light}
-                        DNAseq analysis type
   -r READSETS, --readsets READSETS
                         readset file
   -v, --version         show the version information and exit
