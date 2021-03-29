@@ -161,7 +161,7 @@ Figure below shows the schema of the DNA sequencing protocol - MUGQIC type. You 
 
    Figure: Schema of MUGQIC DNA Sequencing protocol
 
-The following figure shows the pipeline schema for `Mpileup`_ type of DNA sequencing protocol. Refer to the `high resolution image in GenPipes sources <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_dnaseq_mpileup.png>`_.
+The following figure shows the pipeline schema for `Mpileup`_ type of DNA sequencing protocol. Refer to the `mpileup high resolution image in GenPipes sources <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_dnaseq_mpileup.png>`_.
 
 .. figure:: /img/pipelines/dnaseq-mpileup.png
    :align: center
@@ -170,15 +170,16 @@ The following figure shows the pipeline schema for `Mpileup`_ type of DNA sequen
    Figure: Schema of Mpileup DNA Sequencing protocol
 
 
-The following figure shows the pipeline schema for 'Light' type of DNA sequencing protocol. Refer to the `high resolution image in GenPipes sources <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_dnaseq_mpileup.png>`_.
+The following figure shows the pipeline schema for 'Light' type of DNA sequencing protocol. Refer to the `light option protocol using a high resolution image in GenPipes sources <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_dnaseq_light.png>`_.
 
-.. figure:: /img/pipelines/dnaseq-mpileup.png
+.. figure:: /img/pipelines/dnaseq-light.png
    :align: center
    :alt: dnaseq3 schema 
+   :width: 75%
 
    Figure: Schema of Light DNA Sequencing protocol
 
-The following figure shows the pipeline schema for `Structural Variation`_ type of DNA sequencing protocol. Refer to the `high resolution image in GenPipes sources <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_dnaseq_mpileup.png>`_.
+The following figure shows the pipeline schema for `Structural Variation`_ type of DNA sequencing protocol. Refer to the `sv option schema in high resolution image <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_dnaseq_mpileup.png>`_.
 
 .. figure:: /img/pipelines/dnaseq-mpileup.png
    :align: center
