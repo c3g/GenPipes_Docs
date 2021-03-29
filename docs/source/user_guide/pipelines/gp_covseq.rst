@@ -116,7 +116,7 @@ Pipeline Schema
 
 Figure below shows the schema of the CovSeq sequencing protocol. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/covseq/>`_  
 
-.. figure:: /img/pipelines/Illumina_ArticPipelineDigaram.png
+.. figure:: /img/pipelines/covseq.png
    :align: center
    :alt: covseq schema
 
