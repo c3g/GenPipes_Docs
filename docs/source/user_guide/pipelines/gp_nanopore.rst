@@ -129,7 +129,14 @@ You can download the test dataset for this pipeline :ref:`here<docs_testdatasets
 Pipeline Schema
 ---------------- 
 
-No image or figure available in https://bitbucket.org/mugqic/genpipes/src/master/resources folder. TBD-GenPipes-Dev.
+The following figure shows the schema for Nanopore sequencing pipeline:
+
+.. figure:: /img/pipelines/nanopore.png
+   :align: center
+   :alt: nanopore schema 
+   :width: 60%
+
+   Figure: Schema of Nanopore Sequencing protocol
 
 ----
 
