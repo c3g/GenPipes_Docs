@@ -116,8 +116,17 @@ Figure below shows the schema of ChIP-Seq protocol. You can refer to the latest 
 .. figure:: /img/pipelines/chipseq.png
    :align: center
    :alt: ChIP-Seq schema
+   :width: 80%
 
    Figure: Schema of ChIP Sequencing protocol
+
+Following is the schema for the ChIP-Seq pipeline using the -t atacseq option:
+
+.. figure:: /img/pipelines/chipseq-atac.png
+   :align: center
+   :alt: ChIP-Seq schema atacseq option
+
+   Figure: Schema of ChIP Sequencing -t atacseq protocol
 
 ----
 
