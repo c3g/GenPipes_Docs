@@ -150,9 +150,13 @@ The table below shows various steps that constitute the CoVSeq genomic analysis 
 +----+--------------------------------+
 | 9. | |ivar_calling|                 |
 +----+--------------------------------+
-| 10.| |quast_consensus_metrics|      |
+| 10.| |snpeff_annotate|              |
 +----+--------------------------------+
-| 11.| |rename_consensus_header|      |
+| 11.| |ivar_create_consensus|        |
++----+--------------------------------+
+| 12.| |quast_consensus_metrics|      |
++----+--------------------------------+
+| 13.| |rename_consensus_header|      |
 +----+--------------------------------+
 
 ----
@@ -183,9 +187,10 @@ For the latest implementation and usage details refer to CoVSeq Pipeline impleme
 .. |ivar_trim_primers| replace:: `iVar Trim Primers`_
 .. |covseq_metrics| replace:: `CoVSeq Metrics`_
 .. |ivar_calling| replace:: `iVar Calling`_
+.. |snpeff_annotate| replace:: `SNPEff Annotate`_
+.. |ivar_create_consensus| replace:: `iVar Create Consensus`_
 .. |quast_consensus_metrics| replace:: `QUAST Consensus Metrics`_
 .. |rename_consensus_header| replace:: `Rename Consensus Header`_
-
 
 .. The following are links and references used in this file
 

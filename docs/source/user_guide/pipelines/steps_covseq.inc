@@ -85,6 +85,18 @@ In this step, multiple metrics are computed from sequencing:
 
 In this step, `iVar`_ is used for creating a trimmed BAM file after trimming aligned reads in the input BAM file using primer positions specified in the BED input file.
 
+.. _SNPEff Annotate:
+
+**SNPEff Annotate**
+
+This step uses `SNPEff`_ to annotate the data.
+
+.. _iVar Create Consensus:
+
+**iVar Create Consensus**
+
+In this step, `iVar`_ is used to create consensus. Also, it removes primer sequences to individual BAM files using `fgbio`_.
+
 .. _QUAST Consensus Metrics:
 
 **QUAST Consensus Metrics**
@@ -117,3 +129,5 @@ This is the final step of CovSeq pipeline.
 .. _Picard HS Metrics:  https://github.com/broadinstitute/picard/blob/master/src/main/java/picard/analysis/directed/CollectHsMetrics.java
 .. _Consensus sequence: https://en.wikipedia.org/wiki/Consensus_sequence
 .. _header sequence: http://www.sing-group.org/seda/downloads/manuals/0.4.0/operations.html#rename-header
+.. _SNPEff: http://snpeff.sourceforge.net
+.. _fgbio: http://fulcrumgenomics.github.io/fgbio/
