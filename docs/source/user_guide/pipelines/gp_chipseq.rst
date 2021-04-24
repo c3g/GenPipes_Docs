@@ -144,13 +144,13 @@ The table below shows various steps that constitute the ChIP sequencing pipeline
 +----+---------------------------+--------------------------------------+
 | 3. | |merge_trimmomatic_stats| | |merge_trimmomatic_stats|            |
 +----+---------------------------+--------------------------------------+
-| 4. | |bwa_mem_picard_sort_sam| | |bwa_mem_picard_sort_sam|            |
+| 4. | |mapping_bwamem_sambamba| | |mapping_bwamem_sambamba|            |
 +----+---------------------------+--------------------------------------+
-| 5. | |samtools_view_filter|    | |samtools_view_filter|               |
+| 5. | |sambamba_merge_bam|      | |sambamba_merge_bam|                 |
 +----+---------------------------+--------------------------------------+
-| 6. | |picard_merge_sam_files|  | |picard_merge_sam_files|             | 
+| 6. | |sambamba_mark_dup|       | |sambamba_mark_dup|                  | 
 +----+---------------------------+--------------------------------------+
-| 7. | |picard_mark_duplicates|  | |picard_mark_duplicates|             |
+| 7. | |sambamba_view_filter|    | |sambamba_view_filter|               |
 +----+---------------------------+--------------------------------------+
 | 8. | |metrics|                 | |metrics|                            |
 +----+---------------------------+--------------------------------------+
@@ -168,15 +168,13 @@ The table below shows various steps that constitute the ChIP sequencing pipeline
 +----+---------------------------+--------------------------------------+
 | 15.| |annotation_graphs|       | |annotation_graphs|                  |
 +----+---------------------------+--------------------------------------+
-| 16.| |ihec_preprocess_files|   | |ihec_preprocess_files|              |
+| 16.| |run_spp|                 | |run_spp|                            |
 +----+---------------------------+--------------------------------------+
-| 17.| |run_spp|                 | |run_spp|                            |
+| 17.| |ihec_metrics|            | |ihec_metrics|                       |
 +----+---------------------------+--------------------------------------+
-| 18.| |ihec_metrics|            | |ihec_metrics|                       |
+| 18.| |multiqc_report|          | |multiqc_report|                     |
 +----+---------------------------+--------------------------------------+
-| 19.| |multiqc_report|          | |multiqc_report|                     |
-+----+---------------------------+--------------------------------------+
-| 20.| |cram_output|             | |cram_output|                        |
+| 19.| |cram_output|             | |cram_output|                        |
 +----+---------------------------+--------------------------------------+
 
 ----
@@ -209,10 +207,6 @@ For the latest implementation and usage details, see `ChIP-Seq Pipeline README`_
 .. |picard_sam_to_fastq| replace:: `Picard Sam to Fastq`_
 .. |trimmomatic| replace:: `Trimmomatic`_
 .. |merge_trimmomatic_stats| replace:: `Merge Trimmomatic Stats`_
-.. |bwa_mem_picard_sort_sam| replace:: `BWA Mem Picard Sort`_
-.. |samtools_view_filter| replace:: `Samtools View Filter`_
-.. |picard_merge_sam_files| replace:: `Picard Merge SAM Files`_
-.. |picard_mark_duplicates| replace:: `Picard Mark Duplicates`_
 .. |metrics| replace:: `Metrics`_
 .. |homer_make_tag_directory| replace:: `Homer Make Tag Directory`_
 .. |qc_metrics| replace:: `QC Metrics`_
@@ -222,10 +216,13 @@ For the latest implementation and usage details, see `ChIP-Seq Pipeline README`_
 .. |homer_annotate_peaks| replace:: `Homer annotate peaks`_
 .. |homer_find_motifs_genome| replace:: `Homer find motifs genome`_
 .. |annotation_graphs| replace:: `Annotation Graphs`_
-.. |ihec_preprocess_files| replace:: `IEHC Preprocess file`_
 .. |run_spp| replace:: `Run SPP`_
 .. |ihec_metrics| replace:: `IHEC Metrics`_
 .. |multiqc_report| replace:: `MultiQC Report`_
+.. |mapping_bwamem_sambamba| replace:: `Mapping BWA Mem Sambamba`_
+.. |sambamba_merge_bam| replace:: `SAMbamba Merge BAM`_
+.. |sambamba_mark_dup| replace:: `SAMbamba Mark Duplicates`_
+.. |sambamba_view_filter| replace:: `SAMbamba View Filter`_ 
 
 .. include:: repl_cram_op.inc
 

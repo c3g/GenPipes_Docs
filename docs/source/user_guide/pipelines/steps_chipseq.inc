@@ -28,7 +28,7 @@ If FASTQ files are not already specified in the Readset file, then this step con
 
 Raw reads quality trimming and removing of Illumina adapters is performed using `Trimmomatic Process <http://www.usadellab.org/cms/index.php?page=trimmomatic>`_.  If an adapter FASTA file is specified in the config file (section 'trimmomatic', param 'adapter_fasta'), it is used first. Else, 'Adapter1' and 'Adapter2' columns from the readset file are used to create an adapter FASTA file, given then to Trimmomatic. For PAIRED_END readsets, readset adapters are reversed-complemented and swapped, to match Trimmomatic Palindrome strategy. For SINGLE_END readsets, only Adapter1 is used and left unchanged.  
 
-If available, trimmomatic step in Hi-C analysis takes FASTQ files from the readset file as input. Otherwise, it uses the FASTQ output file generated from the previous `Picard Sam to Fastq` step conversion of the BAM files. 
+If available, trimmomatic step in Hi-C analysis takes FASTQ files from the readset file as input. Otherwise, it uses the FASTQ output file generated from the previous `Picard Sam to Fastq`_ step conversion of the BAM files. 
 
 .. _Merge Trimmomatic Stats:
 
@@ -36,41 +36,32 @@ If available, trimmomatic step in Hi-C analysis takes FASTQ files from the reads
 
 The trim statistics per Readset file are merged at this step.
 
-.. _BWA Mem Picard Sort:
+.. _Mapping BWA Mem Sambamba:
 
-**BWA Mem Picard Sort**
+**Mapping BWA Mem Sambamba**
 
-In this step, the filtered reads are aligned to a reference genome. The alignment is done per sequencing readset.  The alignment software used is `BWA <http://bio-bwa.sourceforge.net/>`_ with algorithm: bwa mem.  BWA output BAM files are then sorted by coordinate using `Picard`_.
+This step takes as input files trimmed FASTQ files, if available. Otherwise it takes FASTQ files from the readset. If readset is not supplied then it uses FASTQ output files from the previous `Picard Sam to Fastq`_ conversion of BAM files.
 
-This step takes as input files:
+.. _SAMbamba Merge BAM:
 
-* Trimmed FASTQ files if available
-* Else, FASTQ files from the readset file if available
-* Else, FASTQ output files from previous picard_sam_to_fastq conversion of BAM files
+**SAMbamba Merge BAM**
 
-.. _Samtools View Filter:
+BAM readset files are merged into one file per sample. Merge is done using `Sambamba`_.
 
-**Samtools View Filter**
+If available, the aligned and sorted BAM output files from previous `Mapping BWA Mem Sambamba`_ step are used as input. Otherwise, BAM files from the readset file is used as input.
 
-This step filter unique reads by mapping quality using `Samtools`_.
+.. _SAMbamba Mark Duplicates:
 
-.. _Picard Merge SAM Files:
+**SAMbamba Mark Duplicates**
 
-**Picard Merge SAM Files**
+Mark duplicates. Aligned reads per sample are duplicates if they have the same 5' alignment positions (for both mates in the case of paired-end reads). All but the best pair (based on alignment score) will be marked as a duplicate in the BAM file. Marking duplicates is done using `SAMbamba`_.
 
-BAM readset files are merged into one file per sample. Merge is done using `Picard`_.
+.. _SAMbamba View Filter:
 
-This step takes as input files:
+**SAMbamba View Filter**
 
-* Aligned and sorted BAM output files from previous bwa_mem_picard_sort_sam step if available
-* Else, BAM files from the readset file
+Filter unique reads by mapping quality using `SAMbamba`_.
 
-.. _Picard Mark Duplicates:
-
-**Picard Mark Duplicates**
-
-Mark duplicates. Aligned reads per sample are duplicates if they have the same 5' alignment positions (for both mates in the case of paired-end reads). All but the best pair (based on alignment score) will be marked as a duplicate in the BAM file. Marking duplicates is done using `Picard`_. 
- 
 .. _Metrics:
 
 **Metrics**
@@ -129,12 +120,6 @@ In this step, De novo and known motif analysis per design are performed using `H
 
 This step focuses on peak location statistics. The following peak location statistics are generated per design: proportions of the genomic locations of the peaks. The locations are: Gene (exon or intron), Proximal ([0;2] kb upstream of a transcription start site), Distal ([2;10] kb upstream of a transcription start site), 5d ([10;100] kb upstream of a transcription start site), Gene desert (>= 100 kb upstream or downstream of a transcription start site), Other (anything not included in the above categories); The distribution of peaks found within exons and introns; The distribution of peak distance relative to the transcription start sites (TSS); the Location of peaks per design.
 
-.. _IEHC Preprocess file:
-
-**IEHC Preprocess file**
-
-This step generates `IHEC <http://ihec-epigenomes.org/research/tools/>`_ files.
-
 .. _Run SPP:
 
 **Run SPP**
@@ -159,3 +144,4 @@ For more detailed information see `MultiQC documentation <http://multiqc.info/>`
 .. _Samtools: http://www.htslib.org/
 .. _Picard: http://broadinstitute.github.io/picard/
 .. _MACS2: https://www.biorxiv.org/content/10.1101/496521v1
+.. _SAMbamba: https://lomereiter.github.io/sambamba/
