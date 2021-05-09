@@ -101,7 +101,7 @@ Pipeline Schema
 
 Refer to the diagram below for the schema of RNA Sequencing (Light) Pipeline.
 
-![rnaseq_light workflow diagram](https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_rnaseq_light.resized.png)
+![rnaseq_light workflow diagram](/img/pipelines/rnaseq_light.png)
 
 You can [download a higher resolution diagram here](https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_rnaseq_light.png)
 
