@@ -10,13 +10,28 @@ This document contains information on available current publications and other m
    .. tab:: Papers
 
       1. GigaScience Article June 2019: `GenPipes: an open-source framework for distributed and scalable genomic analysis <https://academic.oup.com/gigascience/article/8/6/giz037/5513895>`_.
+
       2. Biorxiv Archives Nov 2018 : `GenPipes Paper <https://www.biorxiv.org/content/biorxiv/early/2018/11/01/459552.full.pdf>`_.
 
    .. tab:: Videos
 
-      1. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` generates metagenomics output. This `Metagenomics Figures video`_ shows how to build custom OTU figures and tables from C3G's metagenomics output.
+      1. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` generates metagenomics output. The `Metagenomics Figures video`_ shows how to build custom OTU figures and tables from C3G's metagenomics output.
+
+         .. raw:: html
+
+              <div style="border: lightgray;">
+              <p> this is a test </p>
+              <iframe src="https://www.youtube.com/embed/twdAteVJALk" frameborder="2"></iframe>
+              </div>
 
       2. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` pipeline Trimmomatic16S Step generates 16S analysis data that can be examined and plotted as demonstrated in `16S analysis video`_.
+
+         .. raw:: html
+
+              <div style="border: lightgray;">
+              <p> this is a test </p>
+              <iframe src="https://www.youtube.com/embed/BsrKUpzxY2s" frameborder="2"></iframe>
+              </div>
 
    .. tab:: Presentations
 
