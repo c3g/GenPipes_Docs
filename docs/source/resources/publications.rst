@@ -17,21 +17,11 @@ This document contains information on available current publications and other m
 
       1. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` generates metagenomics output. The `Metagenomics Figures video`_ shows how to build custom OTU figures and tables from C3G's metagenomics output.
 
-         .. raw:: html
-
-              <div style="border: lightgray;">
-              <p> this is a test </p>
-              <iframe src="https://www.youtube.com/embed/twdAteVJALk" frameborder="2" allowfullscreen></iframe>
-              </div>
+         |metagenomics_video|
 
       2. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` pipeline Trimmomatic16S Step generates 16S analysis data that can be examined and plotted as demonstrated in `16S analysis video`_.
 
-         .. raw:: html
-
-              <div style="border: lightgray;">
-              <p> this is a test </p>
-              <iframe src="https://www.youtube.com/embed/BsrKUpzxY2s" frameborder="2" allowfullscreen></iframe>
-              </div>
+         |16S_analysis_video|
 
    .. tab:: Presentations
 
@@ -43,3 +33,17 @@ This document contains information on available current publications and other m
 
 .. _Metagenomics Figures video: https://www.youtube.com/watch?v=twdAteVJALk
 .. _16S analysis video: https://www.youtube.com/watch?v=BsrKUpzxY2s
+
+.. Video Tags
+
+.. |metagenomics_video| raw:: html
+
+   <div style="border: lightgray;">
+     <iframe src="https://www.youtube.com/embed/twdAteVJALk" frameborder="2" allowfullscreen></iframe>
+   </div>
+
+.. |16S_analysis_video| raw:: html
+
+   <div style="border: lightgray;">
+     <iframe src="https://www.youtube.com/embed/BsrKUpzxY2s" frameborder="2" allowfullscreen></iframe>
+   </div>
