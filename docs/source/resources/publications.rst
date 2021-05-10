@@ -21,7 +21,7 @@ This document contains information on available current publications and other m
 
               <div style="border: lightgray;">
               <p> this is a test </p>
-              <iframe src="https://www.youtube.com/embed/twdAteVJALk" frameborder="2"></iframe>
+              <iframe src="https://www.youtube.com/embed/twdAteVJALk" frameborder="2" allowfullscreen></iframe>
               </div>
 
       2. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` pipeline Trimmomatic16S Step generates 16S analysis data that can be examined and plotted as demonstrated in `16S analysis video`_.
@@ -30,7 +30,7 @@ This document contains information on available current publications and other m
 
               <div style="border: lightgray;">
               <p> this is a test </p>
-              <iframe src="https://www.youtube.com/embed/BsrKUpzxY2s" frameborder="2"></iframe>
+              <iframe src="https://www.youtube.com/embed/BsrKUpzxY2s" frameborder="2" allowfullscreen></iframe>
               </div>
 
    .. tab:: Presentations
