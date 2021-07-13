@@ -170,11 +170,13 @@ The table below shows various steps that constitute the ChIP sequencing pipeline
 +----+---------------------------+--------------------------------------+
 | 16.| |run_spp|                 | |run_spp|                            |
 +----+---------------------------+--------------------------------------+
-| 17.| |ihec_metrics|            | |ihec_metrics|                       |
+| 17.| |differential_binding|    | |ihec_metrics|                       |
 +----+---------------------------+--------------------------------------+
-| 18.| |multiqc_report|          | |multiqc_report|                     |
+| 18.| |ihec_metrics|            | |multiqc_report|                     |
 +----+---------------------------+--------------------------------------+
-| 19.| |cram_output|             | |cram_output|                        |
+| 19.| |multiqc_report|          | |cram_output|                        |
++----+---------------------------+                                      |
+| 20.| |cram_output|             |                                      |
 +----+---------------------------+--------------------------------------+
 
 ----
@@ -217,6 +219,7 @@ For the latest implementation and usage details, see `ChIP-Seq Pipeline README`_
 .. |homer_find_motifs_genome| replace:: `Homer find motifs genome`_
 .. |annotation_graphs| replace:: `Annotation Graphs`_
 .. |run_spp| replace:: `Run SPP`_
+.. |differential_binding| replace:: `Differential Binding`_
 .. |ihec_metrics| replace:: `IHEC Metrics`_
 .. |multiqc_report| replace:: `MultiQC Report`_
 .. |mapping_bwamem_sambamba| replace:: `Mapping BWA Mem Sambamba`_

@@ -126,6 +126,18 @@ This step focuses on peak location statistics. The following peak location stati
 
 This step runs spp to estimate NSC and RSC ENCODE metrics. For more information - see quality enrichment of ChIP sequence data, `phantompeakqualtools <https://github.com/kundajelab/phantompeakqualtools>`_.
 
+.. _Differential Binding:
+
+**Differential Binding**
+
+Differential Binding step is meant for processing DNA data enriched for genomic loci, including ChIP- seq data enriched for sites where specific protein/DNA binding occurs, or histone marks are enriched, as well as open-chromatin assays such as ATAC-seq. It uses `DiffBind`_ package that helps in identifying sites that are differentially bound between sample groups. 
+
+GenPipes Chipseq pipeline performs differential binding based on the provided treatments and controls as per the particular comparison specified in the design file. The differential analysis results are generated separately for each specified comparison, with correctly specified treatments (2) and controls (1) samples.
+
+Samples with '0' (zero) are ignored during the comparison. For comparison, at least two samples for each group must be specified. If two samples per group are not specified, the differential binding step will be skipped during the pipeline run.
+
+The output of differential analysis containing differentially bound peaks are saved as a TSV. In addition, for each comparison done using `DiffBind`_, an html report is also generated for QC differential analysis.
+
 .. _IHEC Metrics:
 
 **IHEC Metrics**
@@ -145,3 +157,4 @@ For more detailed information see `MultiQC documentation <http://multiqc.info/>`
 .. _Picard: http://broadinstitute.github.io/picard/
 .. _MACS2: https://www.biorxiv.org/content/10.1101/496521v1
 .. _SAMbamba: https://lomereiter.github.io/sambamba/
+.. _DiffBind: http://bioconductor.org/packages/release/bioc/vignettes/DiffBind/inst/doc/DiffBind.pdf

@@ -15,6 +15,8 @@
       pearson
       rRNA
       cuffnorm 
+      cufflinks
+      stringtie
 
 Step Details
 -------------
