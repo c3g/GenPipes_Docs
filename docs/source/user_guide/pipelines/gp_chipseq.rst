@@ -92,6 +92,25 @@ Usage
                                   readset file
   -v, --version                   show the version information and exit
 
+.. _ref_chipseq_design_ff:
+
+.. note::  ChIPSeq Pipeline Design File Format
+
+     .. code::
+
+         Sample        MarkName        EW22_EW3_vs_EW7_TC71
+         EW22          H3K27ac         1
+         EW3           H3K27ac         1
+         EW7           H3K27ac         2
+         TC71          H3K27ac         2
+
+     where, the numbers specify the sample group membership for this contrast:
+
+     .. code::
+
+           '0' or '': the sample does not belong to any group;
+           '1': the sample belongs to the control group;
+           '2': the sample belongs to the treatment test case group.  
 
 Example Run
 -----------

@@ -1,0 +1,62 @@
+:orphan:
+
+.. _docs_gp_relnote_3_5_0:
+
+.. spelling::
+
+     genpipes
+
+GenPipes 3.5.0 Release Notes
+============================
+
+What's new? 
+-----------
+
+* :ref:`ChIPSeq pipeline<docs_gp_chipseq>` updates:
+
+  - **Differential Analysis:** A new step (Step 17) has been added to perform Differential Analysis using `DiffBind Package`_.
+  - **Design File:** In the previous release, design file was removed from Chip sequencing pipeline. It has been re-introduced with a brand new format. For details see :ref:`ChIPSeq Pipeline Design File Format<ref_chipseq_design_ff>`.
+  - **TSV File:** The analysis generates a TSV file with differentially bound peaks and html reports for QC.
+  - Workflow for ChIPSeq Pipeline has been updated to reflect addition of :ref:`Differential Binding<docs_gp_chipseq>` step.
+
+* Added the "genpipes_file" parameter (optional) to allow users to specify the output file directly from the genpipes command line.
+
+  For example:,
+
+  Earlier, for the same purpose, users redirected the output to the command file before running the pipeline:
+
+  .. code::
+
+        chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini -r readset.chipseq.txt -d design.chipseq.txt -j slurm -t chipseq > chip_cmd.sh
+
+  In the latest release, for any pipeline, users can use the following command and specify the command file name as an option:
+
+  .. code::
+
+        chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini -r readset.chipseq.txt -d design.chipseq.txt -j slurm -t chipseq --genpipes-file chip_cmd.sh
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+ 
+* This version tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-3.5.0.tar.gz
+
+* The module mugqic/genpipes/3.5.0 is installed on Abacus (MGC), Béluga, Graham and Cedar clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes
+
+* For more documentation, please refer to: https://genpipes.readthedocs.io/
+
+Where is the detailed ChangeLog? 
+================================= 
+A ChangeLog (`CHANGELOG.md <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_) is available in the archive as well as in the repository.
+
+Since we use git, there are many ways to get the details in many formats. 
+One of our preferred ways is to use a script written by the author of the Ray assembler: Sébastien Boisvert, 
+which lists the commits by tag and author: 
+
+https://raw.github.com/sebhtml/ray/master/scripts/dump-ChangeLog.sh 
+
+Enjoy our pipelines on the many clusters where they are installed!
+
+.. _vcftool imiss: http://vcftools.sourceforge.net/man_latest.html
+.. _DiffBind Package: http://bioconductor.org/packages/release/bioc/vignettes/DiffBind/inst/doc/DiffBind.pdf
