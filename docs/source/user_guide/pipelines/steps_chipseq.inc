@@ -130,13 +130,17 @@ This step runs spp to estimate NSC and RSC ENCODE metrics. For more information 
 
 **Differential Binding**
 
-Differential Binding step is meant for processing DNA data enriched for genomic loci, including ChIP- seq data enriched for sites where specific protein/DNA binding occurs, or histone marks are enriched, as well as open-chromatin assays such as ATAC-seq. It uses `DiffBind`_ package that helps in identifying sites that are differentially bound between sample groups. 
+Differential Binding step is meant for processing DNA data enriched for genomic loci, including ChIP- seq data enriched for sites where specific protein binding occurs, or histone marks are enriched. It uses `DiffBind`_ package that helps in identifying sites that are differentially bound between sample groups. 
 
 GenPipes Chipseq pipeline performs differential binding based on the provided treatments and controls as per the particular comparison specified in the design file. The differential analysis results are generated separately for each specified comparison in the :ref:`Design File<ref_chipseq_design_ff>`, with correctly specified treatments (2) and controls (1) samples.
 
 Samples with '0' (zero) are ignored during the comparison. For details regarding how to specify sample group membership in the design file, refer to :ref:`Design File Format details<ref_chipseq_design_ff>`.
 
 For comparison, at least two samples for each group must be specified. If two samples per group are not specified, the differential binding step will be skipped during the pipeline run.
+
+.. warning:: Incorrect Design File Format
+
+     If the specified design file does not follow the specified :ref:`Design File Format<ref_chipseq_design_ff>` for ChIPseq pipeline, the differential binding step will be skipped during the pipeline run.
 
 The output of differential analysis containing differentially bound peaks are saved as a TSV. In addition, for each comparison done using `DiffBind`_, an html report is also generated for QC differential analysis.
 

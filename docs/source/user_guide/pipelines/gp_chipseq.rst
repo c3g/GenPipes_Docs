@@ -112,6 +112,15 @@ Usage
            '1': the sample belongs to the control group;
            '2': the sample belongs to the treatment test case group.  
 
+
+     The design file only accepts 1 for control, 2 for treatment and 0 for other samples that do not need to compare. 
+    
+.. warning::  Incorrect Design File Format
+
+     Please note that the first and second column in the design file must be sample name and histone mark/binding protein respectively. 
+     
+     **If the user specifies any value other than the permitted ones above in the design file, the pipeline will fail.**
+
 Example Run
 -----------
 
@@ -119,7 +128,7 @@ You can download `ChIP-Seq test dataset`_ and use the following command to execu
 
 ::
 
-  chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.guillimin.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
+  chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini -r readset.chipseq.txt -d design.chipseq.txt -s 1-20 > chipseqScript.txt
 
   bash chipseqScript.txt
 
