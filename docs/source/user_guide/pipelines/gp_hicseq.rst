@@ -70,12 +70,13 @@ Usage
 ::
 
   hicseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
-  [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
-  [--no-json] [--report] [--clean]
-  [-l {debug,info,warning,error,critical}] [--sanity-check]
-  [--container {wrapper, singularity} <IMAGE PATH>
-  -e {DpnII,HindIII,NcoI,MboI,Arima} [-t {hic,capture}]
-  [-r READSETS] [-v]
+                 [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
+                 [--no-json] [--report] [--clean]
+                 [-l {debug,info,warning,error,critical}] [--sanity-check]
+                 [--container {wrapper, singularity} <IMAGE PATH>
+                 [--genpipes_file GENPIPES_FILE]
+                 -e {DpnII,HindIII,NcoI,MboI,Arima} [-t {hic,capture}]
+                 [-r READSETS] [-v]
 
 **Optional Arguments**
 

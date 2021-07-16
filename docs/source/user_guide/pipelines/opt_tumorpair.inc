@@ -2,10 +2,10 @@
 
   -p PAIRS, --pairs PAIRS
 
-                        pairs file
+                            pairs file
 
 ::
 
   -t {sv,ensemble,fastpass}, --type {sv,ensemble,fastpass}
 
-                        tumor pair analysis type
+                            tumor pair analysis type

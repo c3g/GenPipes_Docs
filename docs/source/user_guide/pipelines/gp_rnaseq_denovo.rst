@@ -71,6 +71,7 @@ Usage
                                  [-l {debug,info,warning,error,critical}]
                                  [--sanity-check]
                                  [--container {wrapper, singularity} <IMAGE PATH>
+                                 [--genpipes_file GENPIPES_FILE]
                                  [-d DESIGN] [-t {cufflinks,stringtie}]
                                  [-r READSETS] [-v]
 

@@ -14,7 +14,7 @@
 Tumor Pair Sequencing Pipeline
 ================================
 
-.. warning::  Not available in GenPipes 3.2.0
+.. warning::  Not available in GenPipes 3.2.0 and later, until further notice.
 
      Please note that Tumor Pair Sequencing Pipeline is not available in GenPipes Release 3.2.0
      
@@ -76,6 +76,7 @@ Usage
                      [--no-json] [--report] [--clean]
                      [-l {debug,info,warning,error,critical}] [--sanity-check]
                      [--container {wrapper, singularity} <IMAGE PATH>
+                     [--genpipes_file GENPIPES_FILE]
                      [-p PAIRS] [-t {sv,ensemble,fastpass}] [-r READSETS] [-v] 
 
 **Optional Arguments**

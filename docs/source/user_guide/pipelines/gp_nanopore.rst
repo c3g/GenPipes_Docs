@@ -65,8 +65,8 @@ Usage
               [-l {debug,info,warning,error,critical}]
               [--sanity-check]
               [--container {wrapper, singularity} <IMAGE FILE>
+              [--genpipes_file GENPIPES_FILE]
               [-r READSETS] [-v]
-
 
 **Optional Arguments**
 
