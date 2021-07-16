@@ -58,7 +58,7 @@ Usage
                                   [--no-json] [--report] [--clean]
                                   [-l {debug,info,warning,error,critical}]
                                   [--sanity-check]
-                                  [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}]
+                                  [--container {wrapper, singularity} <IMAGE PATH>
                                   [-d RUN_DIR] [--lane LANE_NUMBER]
                                   [-r READSETS] [-i CASAVA_SHEET_FILE]
                                   [-x FIRST_INDEX] [-y LAST_INDEX]
@@ -67,61 +67,9 @@ Usage
 
 **Optional Arguments**
 
-::
-
-  -h                    show this help message and exit
-  --help                show detailed description of pipeline and steps
-  -c CONFIG [CONFIG ...], --config CONFIG [CONFIG ...]
-                        config INI-style list of files; config parameters are
-                        overwritten based on files order
-  -s STEPS, --steps STEPS
-                        step range e.g. '1-5', '3,6,7', '2,4-8'
-  -o OUTPUT_DIR, --output-dir OUTPUT_DIR
-                        output directory (default: current)
-  -j {pbs,batch,daemon,slurm}, --job-scheduler {pbs,batch,daemon,slurm}
-                        job scheduler type (default: slurm)
-  -f, --force           force creation of jobs even if up to date (default:
-                        false)
-  --no-json                create a JSON file per analysed sample to track the
-                        analysis status (default: false i.e., JSON file is
-                        created)
-  --report              create 'pandoc' command to merge all job markdown
-                        report files in the given step range into HTML, if
-                        they exist; if --report is set, --job-scheduler,
-                        --force, --clean options and job up-to-date status are
-                        ignored (default: false)
-  --clean               create 'rm' commands for all job removable files in
-                        the given step range, if they exist; if --clean is
-                        set, --job-scheduler, --force options and job up-to-
-                        date status are ignored (default: false)
-  -l {debug,info,warning,error,critical}, --log {debug,info,warning,error,critical}
-                        log level (default: info)
-  --sanity-check        run the pipeline in `sanity check mode` to verify that
-                        all the input files needed for the pipeline to run are
-                        available on the system (default: false)
-  --container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}
-                        run pipeline inside a container providing a container
-                        image path or accessible docker/singularity hub path
-  -d RUN_DIR, --run RUN_DIR
-                        run directory
-  --lane LANE_NUMBER    lane number
-  -r READSETS, --readsets READSETS
-                        nanuq readset file. The default file is
-                        'run.nanuq.csv' in the output folder. Will be
-                        automatically downloaded if not present.
-  -i CASAVA_SHEET_FILE  illumina casava sheet. The default file is
-                        'SampleSheet.nanuq.csv' in the output folder. Will be
-                        automatically downloaded if not present
-  -x FIRST_INDEX        first index base to use for demultiplexing
-                        (inclusive). The index from the sample sheet will be
-                        adjusted according to that value.
-  -y LAST_INDEX         last index base to use for demultiplexing (inclusive)
-  -m NUMBER_OF_MISMATCHES
-                        number of index mistmaches allowed for demultiplexing
-                        (default 1). Barcode collisions are always checked.
-  -w, --force-download  force the download of the samples sheets (default:
-                        false)
-  -v, --version         show the version information and exit
+.. include:: opt_illumina.inc
+.. include:: /common/gp_readset_opt.inc
+.. include:: /common/gp_common_opt.inc
 
 ----
 
