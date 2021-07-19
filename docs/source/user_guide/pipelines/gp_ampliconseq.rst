@@ -96,22 +96,36 @@ Pipeline Schema
 ---------------
 Figure below shows the schema of the amplicon sequencing protocol - QIIME type. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_ampliconseq.png>`_ to download a high resolution image of the same.
 
-.. figure:: /img/pipelines/ampseq.png
+.. figure:: /img/pipelines/mmd/ampliconseq.qiime.mmd.png
    :align: center
-   :alt: QIIME ampseq 
+   :alt: QIIME ampseq
+   :width: 100%
+   :figwidth: 95% 
 
    Figure: Schema of QIIME Amplicon Sequencing protocol
 
+.. mermaid:: /mmd/pipelines/ampliconseq.qiime.mmd
+     :caption: Amplicon Sequencing (QIIME)  Pipeline Schema
+
+.. mermaid:: /mmd/pipelines/legend.mmd
+     :caption: Legend
 
 The following figure shows the pipeline schema for `DADA2 Pipeline`_ type of amplicon sequencing protocol. 
 
 
-.. figure:: /img/pipelines/ampseq-dada2.png
+.. figure:: /img/pipelines/mmd/ampliconseq.dada2.mmd.png
    :align: center
    :alt: dada2 ampseq 
-   :width: 65%
+   :width: 100%
+   :figwidth: 95%
 
    Figure: Schema of DADA2 Amplicon Sequencing protocol
+
+.. mermaid:: /mmd/pipelines/ampliconseq.dada2.mmd
+     :caption: Amplicon Sequencing (DADA2) Pipeline Schema
+
+.. mermaid:: /mmd/pipelines/legend.mmd
+     :caption: Legend
 
 ----
 

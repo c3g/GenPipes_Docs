@@ -95,12 +95,18 @@ Pipeline Schema
 
 The following figure shows the schema for Nanopore sequencing pipeline:
 
-.. figure:: /img/pipelines/nanopore.png
-   :align: center
-   :alt: nanopore schema 
-   :width: 60%
+.. .. figure:: /img/pipelines/nanopore.png
+..    :align: center
+..    :alt: nanopore schema 
+..    :width: 60%
 
-   Figure: Schema of Nanopore Sequencing protocol
+..    Figure: Schema of Nanopore Sequencing protocol
+
+.. mermaid:: /mmd/pipelines/nanopore.mmd
+     :caption: Nanopore Pipeline Schema
+
+.. mermaid:: /mmd/pipelines/legend.mmd
+     :caption: Legend
 
 ----
 
