@@ -1,0 +1,108 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
+
+        %% GenPipes Schema for Covseq.py
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/chipseq/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+
+        graph LR
+        Node1{{ 1. <br/> Picard SAM <br/>to FASTQ }}:::nodefill
+        Node2{{ 2. <br/> Trimmomatic }}:::nodefillblack
+        Node3{{ 3. <br/> Merge <br/> Trimmomatic<br/> Stats }}:::nodefill
+        Node4{{ 4. <br/> Mapping <br/> BWA <br/> sambamba }}:::nodefill
+        Node5{{ 5. <br/> SAMbamba <br/> Merge <br/> BAM Files }}:::nodefillblack
+        Node6{{ 6. <br/> SAMbamba <br/> Mark<br/> Duplicates }}:::nodefill
+        Node7{{ 7. <br/> SAMbamba <br/> View<br/> Filter }}:::nodefill
+        Node8{{ 8. <br/> Metrics }}:::nodefill
+        Node9{{ 9. <br/> Homer <br/> Make Tag <br/> Directory }}:::nodefill
+        Node10{{ 10. <br/> QC <br/> Metrics }}:::nodefill
+        Node11{{ 11. <br/> Homer Make <br/>UCSC file }}:::nodefill
+        Node12{{ 12. <br/> MACS2 <br/> call-peaks }}:::nodefill
+        Node13{{ 13. <br/> Homer <br/>annotate <br/>peaks }}:::nodefill
+        Node14{{ 14. <br/> Homer find <br/>motif genomes }}:::nodefill
+        Node15{{ 15. <br/> Annotation<br/> Graphs }}:::nodefill
+        Node16{{ 16. <br/> Run SPP }}:::nodefill
+        Node17{{ 17. <br/> Differential<br/> Binding }}:::nodefill
+        Node18{{ 18. <br/> IHEC<br/> Metrics }}:::nodefill
+        Node19{{ 19. <br/> MultiQC <br/> Report }}:::nodefill
+        Node20{{ 20. <br/> Cram Output }}:::nodefill
+
+
+        Input1[[fa:fa-file-archive-o .BAM]]
+        Input2[[fa:fa-file-archive-o .FASTQ]]
+        MTSOutput([fa:fa-sticky-note-o Report ])
+        SVFOutput([fa:fa-sticky-note-o Report ])
+        MetOutput([fa:fa-sticky-note-o Report ])
+        QCMOutput([fa:fa-sticky-note-o Report ])
+        MQCOutput([fa:fa-sticky-note-o Report ])
+        HMUFOutput([fa:fa-sticky-note-o Report ])
+        AGOutput([fa:fa-sticky-note-o Report ])
+        DBOutput([fa:fa-sticky-note-o Report ])
+        IHECOutput([fa:fa-sticky-note-o Report ])
+        CramOutput([fa:fa-sticky-note-o Report ])
+
+        Input1 --> Node1
+        Input2 --> Node2
+
+        Node2 -.-> Node3 & Node4
+        Node4 -.-> Node5 -.-> Node6
+        Node6 -.-> Node7 & Node8 & Node18
+        Node7 -.-> Node8 & Node9 & Node12 & Node16 & Node20
+        Node8 -.-> Node19
+        Node9 -.-> Node10 & Node11 & Node19
+        Node12 -.-> Node13 & Node14 & Node17 & Node18
+        Node13 -.-> Node15
+        Node16 -.-> Node18
+
+
+        Node3 --> MTSOutput
+        Node7 --> SVFOutput
+        Node8 --> MetOutput
+        Node10 --> QCMOutput
+        Node11 --> HMUFOutput
+        Node15 --> AGOutput
+        Node17 --> DBOutput
+        Node18 --> IHECOutput
+        Node19 --> MQCOutput
+        Node20 --> CramOutput
+
+        subgraph readSetSteps[" "]
+          Node1
+          Node2
+          Node3
+          Node4
+          MTSOutput
+        end
+        subgraph sampleSetSteps[" "]
+          Node6
+          Node7
+          Node8
+          Node9
+          Node10
+          Node11
+          Node12
+          Node13
+          Node14
+          Node15
+          Node16
+          Node17
+          Node18
+          Node19
+          Node20
+          MTSOutput
+          SVFOutput
+          MetOutput
+          QCMOutput
+          HMUFOutput
+          AGOutput
+          MQCOutput
+          DBOutput
+          IHECOutput
+          CramOutput
+        end
+
+        classDef greenRect fill:#E4FBF4,stroke:white
+        class readSetSteps greenRect
+        classDef blueRect fill:#DEF6FC,stroke:white
+        class sampleSetSteps blueRect
+        classDef nodefill fill:#ffffff,stroke:gray,stroke-width:2px
+        classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px
