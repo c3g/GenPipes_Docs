@@ -48,12 +48,7 @@ extensions = [ 'sphinxcontrib.spelling',
                'sphinx.ext.autosectionlabel',
                'sphinx.ext.imgmath',
                'sphinx_tabs.tabs',
-               'sphinxcontrib.mermaid',
 ]
-
-#mermaid_params = ['--theme', 'forest', '--width', '600', '--backgroundColor', 'transparent']
-# The resolution is not great
-#mermaid_output_format = 'png'
 
 # Configure autosectionlabel extension
 autosectionlabel_prefix_document = True
