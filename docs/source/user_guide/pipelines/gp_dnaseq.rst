@@ -115,17 +115,21 @@ Pipeline Schema
 
 Figure below shows the schema of the DNA sequencing protocol - MUGQIC type. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/>`_ and see here to download a high resolution image of `DNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_dnaseq_mugqic.png>`_ to download a high resolution image of the same.
 
-.. figure:: /img/pipelines/dnaseq-mugqic.png
+.. figure:: /img/pipelines/mmd/dnaseq.mugqic.mmd.png
    :align: center
    :alt: dnaseq1 schema
+   :width: 100%
+   :figwidth: 95%
 
    Figure: Schema of MUGQIC DNA Sequencing protocol
 
 The following figure shows the pipeline schema for `Mpileup`_ type of DNA sequencing protocol. Refer to the `mpileup high resolution image in GenPipes sources <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_dnaseq_mpileup.png>`_.
 
-.. figure:: /img/pipelines/dnaseq-mpileup.png
+.. figure:: /img/pipelines/mmd/dnaseq.mpileup.mmd.png
    :align: center
    :alt: dnaseq2 schema 
+   :width: 100%
+   :figwidth: 95%
 
    Figure: Schema of Mpileup DNA Sequencing protocol
 

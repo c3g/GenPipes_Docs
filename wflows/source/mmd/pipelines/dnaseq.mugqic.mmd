@@ -3,43 +3,44 @@
         %% GenPipes Schema for Covseq.py
         %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/
         %% Author Shaloo Shalini <shalz@hotmail.com>
+        %% -t MUGQIC
 
         graph LR
-        Node1{{ 1. <br/> Picard SAM <br/>to FASTQ }}:::nodefill
-        Node2{{ 2. <br/> Skewer Trimming }}:::nodefill
-        Node3{{ 3. <br/> BWA SAMbamba sort SAM }}:::nodefill
-        Node4{{ 4. <br/> SAMbamba merge SAM files }}:::nodefillblack
-        Node5{{ 5. <br/> GATK indel re-aligner }}:::nodefill
-        Node6{{ 6. <br/> SAMBAM merge realigned }}:::nodefill
-        Node7{{ 7. <br/> Picard Mark Duplicates }}:::nodefill
+        Node1{{ 1. <br/> Picard <br/>SAM <br/>to FASTQ }}:::nodefill
+        Node2{{ 2. <br/> Skewer <br/>Trimming }}:::nodefill
+        Node3{{ 3. <br/> BWA <br/>SAMbamba <br/>sort <br/>SAM }}:::nodefill
+        Node4{{ 4. <br/> SAMbamba <br/>merge <br/>SAM <br/>files }}:::nodefillblack
+        Node5{{ 5. <br/> GATK <br/>indel <br/>re-aligner }}:::nodefill
+        Node6{{ 6. <br/> SAMBAM <br/>merge <br/>realigned }}:::nodefill
+        Node7{{ 7. <br/> Picard <br/>Mark <br/>Duplicates }}:::nodefill
         Node8{{ 8. <br/> Recalibration }}:::nodefill
-        Node9{{ 9. <br/> GATK Haplotype Caller }}:::nodefill
-        Node10{{ 10. <br/> Merge & call-individual GVCF}}:::nodefill
-        Node11{{ 11. <br/> Combine GVCF }}:::nodefill
-        Node12{{ 12. <br/> Merge and call-combined GVCF }}:::nodefill
-        Node13{{ 13. <br/> Variant Recalibrator }}:::nodefill
-        Node14{{ 14. <br/> HC caller decompose & normalize }}:::nodefill
-        Node15{{ 15. <br/> HC caller flag mappability }}:::nodefill
-        Node16{{ 16. <br/> HC caller SNP ID annotation }}:::nodefill
-        Node17{{ 17. <br/> HC caller SNP effect  }}:::nodefill
-        Node18{{ 18. <br/> HC caller dbnsfp annotation }}:::nodefill
-        Node19{{ 19. <br/> HC aller Gemini Annotation }}:::nodefill
-        Node20{{ 20. <br/> DNA Picard Metrics }}:::nodefill
-        Node21{{ 21. <br/> DNA Sample Qualimap }}:::nodefill
-        Node22{{ 22. <br/> DNA FASTQC }}:::nodefill
-        Node23{{ 23. <br/> Picard Calculate HS Metrics }}:::nodefill
+        Node9{{ 9. <br/> GATK <br/>Haplotype <br/>Caller }}:::nodefill
+        Node10{{ 10. <br/> Merge & <br/>call-individual <br/>GVCF}}:::nodefill
+        Node11{{ 11. <br/> Combine <br/>GVCF }}:::nodefill
+        Node12{{ 12. <br/> Merge and <br/>call-combined <br/>GVCF }}:::nodefill
+        Node13{{ 13. <br/> Variant <br/>Recalibrator }}:::nodefill
+        Node14{{ 14. <br/> HC caller <br/>decompose & <br/>normalize }}:::nodefill
+        Node15{{ 15. <br/> HC caller <br/>flag <br/>mappability }}:::nodefill
+        Node16{{ 16. <br/> HC caller <br/>SNP ID <br/>annotation }}:::nodefill
+        Node17{{ 17. <br/> HC caller <br/>SNP effect  }}:::nodefill
+        Node18{{ 18. <br/> HC caller <br/>dbnsfp <br/>annotation }}:::nodefill
+        Node19{{ 19. <br/> HC caller <br/>Gemini <br/>Annotation }}:::nodefill
+        Node20{{ 20. <br/> DNA <br/>Picard <br/>Metrics }}:::nodefill
+        Node21{{ 21. <br/> DNA <br/>Sample <br/>Qualimap }}:::nodefill
+        Node22{{ 22. <br/> DNA <br/>FASTQC }}:::nodefill
+        Node23{{ 23. <br/> Picard <br/>Calculate <br/>HS Metrics }}:::nodefill
         Node24{{ 24. <br/> Metrics }}:::nodefill
-        Node25{{ 25. <br/> GATK Callable Loci }}:::nodefill
-        Node26{{ 26. <br/> Extract Common SNP Frequency }}:::nodefill
-        Node27{{ 27. <br/> BAF Plot }}:::nodefill
-        Node28{{ 28. <br/> Run MultiQC }}:::nodefill
-        Node29{{ 29. <br/> Cram Output }}:::nodefill
-        Node30{{ 30. <br/> Symlink FASTQ }}:::nodefill
-        Node31{{ 31. <br/> Symlink final BAM }}:::nodefill
+        Node25{{ 25. <br/> GATK <br/>Callable <br/>Loci }}:::nodefill
+        Node26{{ 26. <br/> Extract <br/>Common <br/>SNP <br/>Frequency }}:::nodefill
+        Node27{{ 27. <br/> BAF <br/>Plot }}:::nodefill
+        Node28{{ 28. <br/> Run <br/>MultiQC }}:::nodefill
+        Node29{{ 29. <br/> Cram <br/>Output }}:::nodefill
+        Node30{{ 30. <br/> Symlink <br/>FASTQ }}:::nodefill
+        Node31{{ 31. <br/> Symlink <br/>final <br/>BAM }}:::nodefill
         Node32{{ 32. <br/> NGScheckmate }}:::nodefill
-        Node33{{ 33. <br/> Verify BAM ID }}:::nodefill
-        Node34{{ 34. <br/> VCFTools missing individual }}:::nodefill
-        Node35{{ 35. <br/> VCFTools depth individual }}:::nodefill
+        Node33{{ 33. <br/> Verify <br/>BAM ID }}:::nodefill
+        Node34{{ 34. <br/> VCFTools <br/>missing <br/>individual }}:::nodefill
+        Node35{{ 35. <br/> VCFTools <br/>depth <br/>individual }}:::nodefill
         Node36{{ 36. <br/> GATK <br/>Sample <br/>Fingerprint }}:::nodefill
         Node37{{ 37. <br/> GATK <br/>Cluster <br/>Fingerprint }}:::nodefill
 
