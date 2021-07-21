@@ -1,8 +1,9 @@
 %%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
 
-        %% GenPipes Schema for Covseq.py
+        %% GenPipes Schema for chipseq.py
         %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/chipseq/
         %% Author Shaloo Shalini <shalz@hotmail.com>
+        %% -t atac
 
         graph LR
         Node1{{ 1. <br/> Picard SAM <br/>to FASTQ }}:::nodefill
@@ -36,7 +37,7 @@
         IHECOutput([fa:fa-sticky-note-o Report ])
         CramOutput([fa:fa-sticky-note-o Report ])
 
-        Input1 --> Node1
+        Input1 --> Node1 -.-> Node2
         Input2 --> Node2
 
         Node2 -.-> Node3 & Node4

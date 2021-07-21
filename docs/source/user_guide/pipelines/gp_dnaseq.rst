@@ -113,7 +113,7 @@ You can download the test dataset for this pipeline :ref:`here<docs_testdatasets
 Pipeline Schema
 ---------------
 
-Figure below shows the schema of the DNA sequencing protocol - MUGQIC type. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/>`_ and see here to download a high resolution image of `DNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_dnaseq_mugqic.png>`_ to download a high resolution image of the same.
+Figure below shows the schema of the DNA sequencing protocol - MUGQIC type. 
 
 .. figure:: /img/pipelines/mmd/dnaseq.mugqic.mmd.png
    :align: center
@@ -123,7 +123,13 @@ Figure below shows the schema of the DNA sequencing protocol - MUGQIC type. You 
 
    Figure: Schema of MUGQIC DNA Sequencing protocol
 
-The following figure shows the pipeline schema for `Mpileup`_ type of DNA sequencing protocol. Refer to the `mpileup high resolution image in GenPipes sources <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_dnaseq_mpileup.png>`_.
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: dada2 ampseq
+   :width: 100%
+   :figwidth: 75%
+
+The following figure shows the pipeline schema for `Mpileup`_ type of DNA sequencing protocol. 
 
 .. figure:: /img/pipelines/mmd/dnaseq.mpileup.mmd.png
    :align: center
@@ -133,8 +139,14 @@ The following figure shows the pipeline schema for `Mpileup`_ type of DNA sequen
 
    Figure: Schema of Mpileup DNA Sequencing protocol
 
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: dada2 ampseq
+   :width: 100%
+   :figwidth: 75%
 
-The following figure shows the pipeline schema for 'Light' type of DNA sequencing protocol. Refer to the `light option protocol using a high resolution image in GenPipes sources <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_dnaseq_light.png>`_.
+
+The following figure shows the pipeline schema for 'Light' type of DNA sequencing protocol. 
 
 .. figure:: /img/pipelines/mmd/dnaseq.light.mmd.png
    :align: center
@@ -144,7 +156,13 @@ The following figure shows the pipeline schema for 'Light' type of DNA sequencin
 
    Figure: Schema of Light DNA Sequencing protocol
 
-The following figure shows the pipeline schema for `Structural Variation`_ type of DNA sequencing protocol. Refer to the `sv option schema in high resolution image <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_dnaseq_mpileup.png>`_.
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: dada2 ampseq
+   :width: 100%
+   :figwidth: 75%
+
+The following figure shows the pipeline schema for `Structural Variation`_ type of DNA sequencing protocol. 
 
 .. figure:: /img/pipelines/mmd/dnaseq.sv.mmd.png
    :align: center
@@ -153,6 +171,12 @@ The following figure shows the pipeline schema for `Structural Variation`_ type 
    :figwidth: 95%
 
    Figure: Schema of Structural Variations (SV) DNA Sequencing protocol
+
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: dada2 ampseq
+   :width: 100%
+   :figwidth: 75%
 
 Refer to the Pipeline steps below, for details.
 

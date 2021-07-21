@@ -94,7 +94,8 @@ You can download `amplicon sequencing test dataset <https://datahub-90-cw3.p.gen
 
 Pipeline Schema
 ---------------
-Figure below shows the schema of the amplicon sequencing protocol - QIIME type. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_ampliconseq.png>`_ to download a high resolution image of the same.
+
+Figure below shows the schema of the amplicon sequencing protocol - `QIIME Pipeline`_.
 
 .. figure:: /img/pipelines/mmd/ampliconseq.qiime.mmd.png
    :align: center
@@ -104,16 +105,27 @@ Figure below shows the schema of the amplicon sequencing protocol - QIIME type. 
 
    Figure: Schema of QIIME Amplicon Sequencing protocol
 
-The following figure shows the pipeline schema for `DADA2 Pipeline`_ type of amplicon sequencing protocol. 
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: dada2 ampseq 
+   :width: 100%
+   :figwidth: 75%
 
+The following figure shows the pipeline schema for `DADA2 Pipeline`_ type of amplicon sequencing protocol. 
 
 .. figure:: /img/pipelines/mmd/ampliconseq.dada2.mmd.png
    :align: center
    :alt: dada2 ampseq 
-   :width: 100%
+   :width: 70%
    :figwidth: 95%
 
    Figure: Schema of DADA2 Amplicon Sequencing protocol
+
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: dada2 ampseq 
+   :width: 100%
+   :figwidth: 75%
 
 ----
 
@@ -218,6 +230,7 @@ For the latest implementation and usage details refer to Amplicon Sequencing imp
 
 .. The following are html links used in this text
 
+.. _QIIME Pipeline: http://qiime.org
 .. _DADA2 Pipeline: https://benjjneb.github.io/dada2/tutorial.html
 
 .. The following are replacement texts used in this file

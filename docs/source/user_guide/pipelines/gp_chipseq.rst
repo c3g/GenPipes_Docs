@@ -102,22 +102,37 @@ The commands will be sent to the job queue and you will be notified once each st
 Pipeline Schema
 ---------------
 
-Figure below shows the schema of ChIP-Seq protocol. You can refer to the latest `GenPipes ChIP-Seq pipeline implementation`_ and refer to the `ChIP-Seq Schema high resolution image`_.
+Figure below shows the schema of ChIP-Seq protocol. 
 
-.. figure:: /img/pipelines/chipseq.png
+.. figure:: /img/pipelines/mmd/chipseq.mmd.png
    :align: center
    :alt: ChIP-Seq schema
-   :width: 80%
+   :figwidth: 95%
+   :width: 100%
 
    Figure: Schema of ChIP Sequencing protocol
 
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: dada2 ampseq
+   :width: 100%
+   :figwidth: 75%
+
 Following is the schema for the ChIP-Seq pipeline using the -t atacseq option:
 
-.. figure:: /img/pipelines/chipseq-atac.png
+.. figure:: /img/pipelines/mmd/chipseq.atac.mmd.png
    :align: center
    :alt: ChIP-Seq schema atacseq option
+   :figwidth: 95%
+   :width: 100%
 
    Figure: Schema of ChIP Sequencing -t atacseq protocol
+
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: dada2 ampseq
+   :width: 100%
+   :figwidth: 75%
 
 ----
 

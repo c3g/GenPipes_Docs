@@ -63,29 +63,35 @@ DNA Sequencing Pipeline
 DNA Sequencing (High Coverage) Pipeline
 ========================================
 
-TBD
+.. mermaid:: /mmd/pipelines/dnaseq.highcov.mmd
+     :caption: DNA Sequencing High Coverage Pipeline
 
 ----
 
 HiC Sequencing Pipeline
 ========================
 
-TBD
+.. mermaid:: /mmd/pipelines/hicseq.mmd
+     :caption: Hi-C Sequencing Pipeline
 
+.. mermaid:: /mmd/pipelines/hicseq.capture.mmd
+     :caption: Hi-C Sequencing (capture) Pipeline
 
 ----
 
 Illumina Run Processing
 =======================
 
-TBD
+.. mermaid:: /mmd/pipelines/illumina.mmd
+     :caption: Illumina Sequencing Pipeline Schema
 
 ----
 
 Methyl Sequencing Pipeline
 ==========================
 
-TBD
+.. mermaid:: /mmd/pipelines/methylseq.mmd
+     :caption: MethylSeq Pipeline Schema
 
 ----
 
@@ -100,25 +106,31 @@ Nanopore Pipeline
 RNA Sequencing Pipeline
 =======================
 
-TBD
+.. mermaid:: /mmd/pipelines/rnaseq.cufflinks.mmd
+     :caption: RNA Sequencing (Cufflinks) Pipeline Schema
+
+.. mermaid:: /mmd/pipelines/rnaseq.stringtie.mmd
+     :caption: RNA Sequencing (Stringtie) Pipeline Schema
 
 ----
 
 RNA Sequencing DeNovo Assembly
 ===============================
 
-TBD
+.. mermaid:: /mmd/pipelines/rnaseq.denovo.mmd
+     :caption: RNA Sequencing DeNovo Assembly Pipeline Schema
 
 ----
 
 RNA Sequencing (Light) Pipeline
 ===============================
 
-TBD
+.. mermaid:: /mmd/pipelines/rnaseq.light.mmd
+     :caption: RNA Sequencing Light Pipeline Schema
 
 ----
 
 Tumor Pair Pipeline
 ====================
 
-TBD
+Not yet available in GenPipes 3.5.0 - to be updated when released after fixes

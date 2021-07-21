@@ -1,9 +1,9 @@
 %%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
 
-        %% GenPipes Schema for Covseq.py
+        %% GenPipes Schema for dnaseq.py
         %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/
         %% Author Shaloo Shalini <shalz@hotmail.com>
-        %% -t LIGHT
+        %% -t light
 
         graph LR
         Node1{{ 1. <br/> Picard<br/>SAM<br/>to FASTQ }}:::nodefill
@@ -44,7 +44,7 @@
         MultiQCOP([fa:fa-sticky-note-o Report ])
         CramOP([fa:fa-sticky-note-o Report ])
 
-        Input1 --> Node1
+        Input1 --> Node1 -.-> Node2
         Input2 --> Node2
 
         Node2 -.-> Node3 -.-> Node4 -.-> Node5 -.-> Node6 -.-> Node7 -.-> Node8 -.-> Node9

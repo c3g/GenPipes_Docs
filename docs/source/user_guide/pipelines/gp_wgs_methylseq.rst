@@ -80,9 +80,11 @@ Pipeline Schema
 ---------------
 Figure below shows the schema of the WGS or Methylation sequencing pipeline. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_methylseq.png>`_ to download a high resolution image of the same.
 
-.. figure:: /img/pipelines/wgs_methylseq.png
+.. figure:: /img/pipelines/mmd/methylseq.mmd.png
    :align: center
    :alt: methylation_seq 
+   :width: 100%
+   :figwidth: 95%
 
    Figure: Schema of WGS or Methylation Sequencing pipeline
 

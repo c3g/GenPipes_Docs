@@ -1,0 +1,90 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
+
+        %% GenPipes Schema for rnaseq.py
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+        %% -t stringtie
+
+        graph LR
+        Node1{{ 1. <br/> Picard <br/> SAM <br/> to <br/> FASTQ }}:::nodefill
+        Node2{{ 2. <br/> Trimmomatic }}:::nodefill
+        Node3{{ 3. <br/> Merge <br/> Trimmomatic <br/> Stats }}:::nodefill
+        Node4{{ 4. <br/> Star <br/> Processing }}:::nodefill
+        Node5{{ 5. <br/> Picard Merge <br/> SAM <br/> files }}:::nodefillblack
+        Node6{{ 6. <br/> Picard Sort <br/> SAM }}:::nodefill
+        Node7{{ 7. <br/> Picard Mark <br/> Duplicates }}:::nodefill
+        Node8{{ 8. <br/> Picard RNA <br/> Metrics }}:::nodefill
+        Node9{{ 9. <br/> Estimate <br/> Ribosomal <br/> RNA }}:::nodefill
+        Node10{{ 10. <br/> BAM <br/> Hard <br/> Clip }}:::nodefill
+        Node11{{ 11. <br/> RNA <br/> Seq <br/> Compress }}:::nodefill
+        Node12{{ 12. <br/> Wiggle }}:::nodefill
+        Node13{{ 13. <br/> RAW <br/> Counts }}:::nodefill
+        Node14{{ 14. <br/> RAW <br/> Counts Metrics }}:::nodefill
+        Node15{{ 15. <br/> Stringtie }}:::nodefill
+        Node16{{ 16. <br/> Stringtie <br/> Merge }}:::nodefill
+        Node17{{ 17. <br/> Stringtie <br/> Abund }}:::nodefill
+        Node18{{ 18. <br/> Ballgown }}:::nodefill
+        Node19{{ 19. <br/> Differential <br/> Expression }}:::nodefill
+        Node20{{ 20. <br/> Cram <br/> Output }}:::nodefill
+
+        Input1[[fa:fa-file-archive-o .BAM]]
+        Input2[[fa:fa-file-archive-o .FASTQ]]
+
+        StarOP([fa:fa-sticky-note-o Report ])
+        RcmOP([fa:fa-sticky-note-o Report ])
+        RnaOP([fa:fa-sticky-note-o Report ])
+        BallgownOP([fa:fa-sticky-note-o Report ])
+
+        Input1 --> Node1 -.-> Node2
+        Input2 --> Node2
+
+        Node2 -.-> Node3 & Node4
+        Node4 -.-> Node5 & Node6 & Node7 & Node9
+        Node5 -.-> Node6
+        Node6 -.-> Node13 & Node19
+        Node7 -.-> Node8 & Node10 & Node11 & Node12 & Node20
+        Node10 -.-> Node15 & Node17
+        Node12 -.-> Node14
+        Node13 -.-> Node14 & Node19
+        Node14 -.-> Node19
+        Node15 -.-> Node16 -.-> Node17 -.-> Node18 -.-> Node19
+
+        Node4 ---> StarOP
+        Node11 --> RnaOP
+        Node14 --> RcmOP
+        Node18 --> BallgownOP
+
+        subgraph readSetSteps[" "]
+          Node1
+          Node2
+          Node3
+          Node4
+        end
+        subgraph sampleSetSteps[" "]
+          Node6
+          Node7
+          Node8
+          Node9
+          Node10
+          Node11
+          Node12
+          Node13
+          Node14
+          Node15
+          Node16
+          Node17
+          Node18
+          Node19
+          Node20
+
+          StarOP
+          RcmOP
+          RnaOP
+          BallgownOP
+        end
+        classDef greenRect fill:#E4FBF4,stroke:white
+        class readSetSteps greenRect
+        classDef blueRect fill:#DEF6FC,stroke:white
+        class sampleSetSteps blueRect
+        classDef nodefill fill:#ffffff,stroke:gray,stroke-width:2px
+        classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px

@@ -84,9 +84,11 @@ Pipeline Schema
 
 Figure below shows the schema of the DNA Sequencing (High Coverage) sequencing protocol. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_dnaseq_high_coverage.png>`_ to download a high resolution image of the same.
 
-.. figure:: /img/pipelines/dnaseq_highcov.png
+.. figure:: /img/pipelines/mmd/dnaseq.highcov.mmd.png
    :align: center
    :alt: schema
+   :width: 100%
+   :figwidth: 95%
 
    Figure: Schema of DNA Sequencing (High Coverage) Sequencing protocol
 

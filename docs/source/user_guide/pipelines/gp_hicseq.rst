@@ -103,17 +103,21 @@ Pipeline Schema
 ---------------
 Figure below shows the schema of the Hi-C protocol. You can refer to the latest `Hi-C pipeline implementation <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_hicseq_hic.png>`_ to download a high resolution image of the same.
 
-.. figure:: /img/pipelines/hicseq_hic.png
+.. figure:: /img/pipelines/mmd/hicseq.mmd.png
    :align: center
    :alt: HiC schema
+   :width: 100%
+   :figwidth: 95%
 
    Figure: Schema of Hi-C Sequencing protocol
 
 The following figure shows the pipeline schema for capture Hi-C protocol. See latest `Hi-C capture implementation <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_hicseq_capture.png>`_ to download a high resolution image of this schema.
 
-.. figure:: /img/pipelines/hicseq_hic_capture.png
+.. figure:: /img/pipelines/mmd/hicseq.capture.mmd.png
    :align: center
    :alt: HiC schema
+   :width: 100%
+   :figwidth: 95%
 
    Figure: Schema of Hi-C capture protocol
 

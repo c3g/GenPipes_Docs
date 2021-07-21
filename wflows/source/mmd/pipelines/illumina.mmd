@@ -1,0 +1,63 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}, 'fontFamily': 'Montserrat', 'fontSize': 10}}%%
+
+        %% GenPipes Schema for illumina_run_processing.py
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/illumina_run_processing/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+
+        graph LR
+          Inputbarcode[[fa:fa-file-archive-o .tsv Barcode]]
+          InputBED[[fa:fa-file-archive-o .tsv .bed]]
+          Casava[[fa:fa-sticky-note-o Casava Sheet ]]
+
+          Node1{{ 1. <br/> Index }}:::nodefill
+          Node2{{ 2. <br/> FASTQ }}:::nodefill
+          Node3{{ 3. <br/> Align }}:::nodefill
+          Node4{{ 4. <br/> Picard <br/> Mark <br/> Duplicates }}:::nodefillblack
+          Node5{{ 5. <br/> Metrics }}:::nodefill
+          Node6{{ 6. <br/> Blast }}:::nodefill
+          Node7{{ 7. <br/> QC Graphs }}:::nodefill
+          Node8{{ 8. <br/> md5 checksum }}:::nodefill
+          Node9{{ 9. <br/> Copy }}:::nodefill
+          Node10{{ 10. <br/> End Copy<br/> Notification }}:::nodefill
+
+          FASTQOutput([fa:fa-sticky-note-o .FASTQ ])
+          BAMOutput([fa:fa-sticky-note-o .BAM ])
+
+          Node1 -.-> Node2 -.-> Node3 -.-> Node4
+          Node4 -.-> Node5 & Node6
+          Node6 -.-> Node7
+          Node2 & Node3 -.-> Node8
+          Node7 & Node8 -.-> Node9 -.-> Node10
+
+          Inputbarcode --> Node1
+          Casava --> Node2
+          InputBED --> Node5
+          Node2 -->FASTQOutput
+          Node3 --> BAMOutput
+
+
+          subgraph readSetSteps[" "]
+            Node1
+            Node2
+            Node3
+          end
+
+          subgraph sampleSetSteps[" "]
+            Node5
+            Node6
+            Node7
+            Node8
+            Node9
+            Node10
+          end
+
+          classDef greenRect fill:#E4FBF4,stroke:white
+          class readSetSteps greenRect
+          classDef blueRect fill:#DEF6FC,stroke:white
+          class sampleSetSteps blueRect
+          classDef inputfill fill:#ffffff,stroke:gray,stroke-width:1px
+          classDef nodefill fill:#ffffff,stroke:black,stroke-width:1px
+          classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px
+          class Inputbarcode inputfill
+          class InputBED inputfill
+          class Casava inputfill

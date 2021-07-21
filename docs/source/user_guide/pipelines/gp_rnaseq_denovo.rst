@@ -104,9 +104,11 @@ Pipeline Schema
 
 Figure below shows the schema of RNA Sequencing *De Novo* Assembly pipeline. You can refer to the latest `RNA Sequencing De Novo pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq_denovo_assembly/README.md>`_ and `high resolution schema image <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_rnaseq_denovo_assembly.png>`_. 
 
-.. figure:: /img/pipelines/rnaseq_denovo.png 
+.. figure:: /img/pipelines/mmd/rnaseq.denovo.mmd.png 
    :align: center
    :alt: RNA Sequencing De Novo schema
+   :width: 100%
+   :figwidth: 95%
 
    Figure: Schema of De Novo assembly RNA Sequencing protocol
 

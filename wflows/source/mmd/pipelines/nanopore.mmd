@@ -1,7 +1,7 @@
 %%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
 
-        %% GenPipes Schema for Covseq.py
-        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/covseq/
+        %% GenPipes Schema for nanopore.py
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore/
         %% Author Shaloo Shalini <shalz@hotmail.com>
 
         graph LR
@@ -12,9 +12,8 @@
           Node5{{ 5. <br/> SVIM }}:::nodefill
           Output([fa:fa-sticky-note-o Report ])
 
-          Input1[[fa:fa-file-archive-o .BAM]] --> Node1
+          Input1[[fa:fa-file-archive-o .BAM]] --> Node1 -.-> Node2
           Input2[[fa:fa-file-archive-o .FASTQ]] --> Node2
-          Node1 -.-> Node2
           Node2 -.-> Node3
           Node3 -.-> Node4
           Node2 -.-> Node4

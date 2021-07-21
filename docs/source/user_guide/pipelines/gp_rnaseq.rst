@@ -79,17 +79,21 @@ Pipeline Schema
 
 Figure below shows the schema of the RNA sequencing protocol (cufflinks). You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq/>`_ and see here to download a high resolution image of `RNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_rnaseq.png>`_ to download a high resolution image of the same.
 
-.. figure:: /img/pipelines/rnaseq.png
+.. figure:: /img/pipelines/mmd/rnaseq.cufflinks.mmd.png
    :align: center
    :alt: rnaseq schema
+   :width: 100%
+   :figwidth: 95%
 
    Figure: Schema of RNA Sequencing pipeline (Cufflinks)
 
 The following figure shows the schema of the RNA sequencing protocol (stringtie).
 
-.. figure:: /img/pipelines/rnaseq-stringtie.png
+.. figure:: /img/pipelines/mmd/rnaseq.stringtie.mmd.png
    :align: center
    :alt: rnaseq schema stringtie
+   :width: 100%
+   :figwidth: 95%
 
    Figure: Schema of RNA Sequencing pipeline (Stringtie)
 
