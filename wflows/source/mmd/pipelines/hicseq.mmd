@@ -1,0 +1,88 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
+
+        %% GenPipes Schema for HiCseq.py
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/hicseq/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+
+        graph LR
+          Node1{{ 1. <br/> SAMtools <br/>BAM <br/>sort }}:::nodefill
+          Node2{{ 2. <br/> Picard <br/>SAM<br/>to FASTQ }}:::nodefill
+          Node3{{ 3. <br/> Trimmomatic }}:::nodefill
+          Node4{{ 4. <br/> Merge <br/>Trimmomatic <br/>stats }}:::nodefillblack
+          Node5{{ 5. <br/> FASTQ <br/>Readname <br/>Edit }}:::nodefill
+          Node6{{ 6. <br/> HiCup <br/>Align }}:::nodefill
+          Node7{{ 7. <br/> SAMtools <br/>merge<br/>BAMs }}:::nodefillblack
+          Node8{{ 8. <br/> Homer<br/>Tag<br/>Directory }}:::nodefill
+          Node9{{ 9. <br/> Interaction <br/>Matrices<br/>Chr  }}:::nodefill
+          Node10{{ 10. <br/> Interaction <br/>Matrices<br/>Genome }}:::nodefill
+          Node11{{ 11. <br/> Identify <br/>Compartments }}:::nodefill
+          Node12{{ 12. <br/> Identify <br/> TAD<br/> TopDom }}:::nodefill
+          Node13{{ 13. <br/> Identify<br/>TAD<br/>RobustTAD }}:::nodefill
+          Node14{{ 14. <br/> Identify <br/>Peaks }}:::nodefill
+          Node15{{ 15. <br/> Create <br/>HiC<br/>File }}:::nodefill
+          Node16{{ 16. <br/> Reproducibility<br/>Scores }}:::nodefill
+          Node17{{ 17. <br/> Quality<br/>Scores }}:::nodefill
+          Node18{{ 18. <br/> Cram<br/>Output }}:::nodefill
+          Node19{{ 19. <br/> MultiQC<br/>Report }}:::nodefillblack
+
+          Input1[[fa:fa-file-archive-o .BAM]]
+          Input2[[fa:fa-file-archive-o .FASTQ]]
+
+          HiCupOP([fa:fa-sticky-note-o Report ])
+          QSOP([fa:fa-sticky-note-o Report ])
+          CramOP([fa:fa-sticky-note-o Report ])
+          MQCOP([fa:fa-sticky-note-o Report ])
+          HomerOP([fa:fa-sticky-note-o Homer R Plots ])
+
+
+          Input1 --> Node1
+          Input2 --> Node2
+
+          Node2 -.-> Node3
+          Node3 -.-> Node4 & Node5
+          Node5 -.-> Node6 -.-> Node7
+          Node7 -.-> Node8 & Node15 & Node18 & Node19
+          Node8 -.-> Node9 & Node10 & Node11 & Node14
+          Node9 -.-> Node12 & Node13 & Node16 & Node17
+
+          Node6 --> HiCupOP
+          Node8 ---> HomerOP
+          Node17 --> QSOP
+          Node18 --> CramOP
+          Node19 --> MQCOP
+
+          subgraph readSetSteps[" "]
+            Node1
+            Node2
+            Node3
+          end
+          subgraph sampleSetSteps[" "]
+            Node5
+            Node6
+            Node7
+            Node8
+            Node9
+            Node10
+            Node11
+            Node12
+            Node13
+            Node14
+            Node15
+            Node16
+            Node17
+            Node18
+            Node19
+
+            HiCupOP
+            HomerOP
+            QSOP
+            CramOP
+            MQCOP
+          end
+
+          classDef greenRect fill:#E4FBF4,stroke:white
+          class readSetSteps greenRect
+          classDef blueRect fill:#DEF6FC,stroke:white
+          class sampleSetSteps blueRect
+          classDef nodefill fill:#ffffff,stroke:gray,stroke-width:2px
+          classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px

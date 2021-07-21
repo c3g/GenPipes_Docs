@@ -1,0 +1,37 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
+
+        %% GenPipes Schema for nanopore.py
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+
+        graph LR
+          Node1{{ 1. <br/> BlastQC }}:::nodefill
+          Node2{{ 2. <br/> Minimap2 <br/> Align }}:::nodefill
+          Node3{{ 3. <br/> PycoQC }}:::nodefill
+          Node4{{ 4. <br/> Picard Merge <br/> SAM Files }}:::nodefillblack
+          Node5{{ 5. <br/> SVIM }}:::nodefill
+          Output([fa:fa-sticky-note-o Report ])
+
+          Input1[[fa:fa-file-archive-o .BAM]] --> Node1 -.-> Node2
+          Input2[[fa:fa-file-archive-o .FASTQ]] --> Node2
+          Node2 -.-> Node3
+          Node3 -.-> Node4
+          Node2 -.-> Node4
+          Node4 -.-> Node5
+          Output([fa:fa-sticky-note-o Report ])
+          Node5 ---> Output
+          subgraph readSetSteps[" "]
+            Node1
+            Node2
+            Node3
+          end
+          subgraph sampleSetSteps[" "]
+            Node5
+            Output
+          end
+          classDef greenRect fill:#E4FBF4,stroke:white
+          class readSetSteps greenRect
+          classDef blueRect fill:#DEF6FC,stroke:white
+          class sampleSetSteps blueRect
+          classDef nodefill fill:#ffffff,stroke:gray,stroke-width:2px
+          classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px

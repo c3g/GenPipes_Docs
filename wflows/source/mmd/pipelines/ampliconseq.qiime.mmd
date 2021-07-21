@@ -1,0 +1,141 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
+
+        %% GenPipes Schema for Ampliconseq.py
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/ampliconseq/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+        %% -t qiime
+
+        graph LR
+        Node1{{ 1. <br/> Trimmomatic}}:::nodefill
+        Node2{{ 2. <br/> Merge <br/> Trimmomatic <br/>Stats  }}:::nodefillblack
+        Node3{{ 3. <br/> Flash <br/> Pass 1}}:::nodefill
+        Node4{{ 4. <br/> Amplicon <br/> length <br/>parser }}:::nodefill
+        Node5{{ 5. <br/> Flash <br/> Pass 2 }}:::nodefill
+        Node6{{ 6. <br/> Merge Flash <br/> Stats }}:::nodefillblack
+        Node7{{ 7. <br/> Catenate }}:::nodefill
+        Node8{{ 8. <br/> uchime }}:::nodefill
+        Node9{{ 9. <br/> Merge <br/> uchime <br/>stats }}:::nodefill
+        Node10{{ 10. <br/> OTU Picking }}:::nodefill
+        Node11{{ 11. <br/> OTU rep <br/> Picking }}:::nodefill
+        Node12{{ 12. <br/> OTU Assigning }}:::nodefill
+        Node13{{ 13. <br/> OTU Table }}:::nodefill
+        Node14{{ 14. <br/> OTU Alignment }}:::nodefill
+        Node15{{ 15. <br/> Filter<br/> Alignment }}:::nodefill
+        Node16{{ 16. <br/> Phylogeny }}:::nodefill
+        Node17{{ 17. <br/> Qiime Report }}:::nodefill
+        Node18{{ 18. <br/> Multiple<br/> Rarefaction }}:::nodefill
+        Node19{{ 19. <br/> Alpha <br/>Diversity }}:::nodefill
+        Node20{{ 20. <br/> Collate Alpha }}:::nodefill
+        Node21{{ 21. <br/> Sample<br/> Rarefaction <br/>Plot }}:::nodefill
+        Node22{{ 22. <br/> Qiime <br/>Report 2 }}:::nodefillblack
+        Node23{{ 23. <br/> Single <br/>Rarefaction }}:::nodefill
+        Node24{{ 24. <br/> Css <br/>Normalization }}:::nodefill
+        Node25{{ 25. <br/> Rarefaction<br/>Plot }}:::nodefill
+        Node26{{ 26. <br/> Summarize <br/>Taxa }}:::nodefill
+        Node27{{ 27. <br/> Plot <br/>Taxonomy }}:::nodefill
+        Node28{{ 28. <br/> Plot <br/>Heatmap }}:::nodefill
+        Node29{{ 29. <br/> Knona }}:::nodefill
+        Node30{{ 30. <br/> Plot to<br/> Alpha }}:::nodefill
+        Node31{{ 31. <br/> Beta<br/> Diversity }}:::nodefill
+        Node32{{ 32. <br/> Pcoa }}:::nodefill
+        Node33{{ 33. <br/> Pcoa <br/>Plot }}:::nodefill
+        Node34{{ 34. <br/> Plot to<br/> Beta }}:::nodefill
+
+        Input1[[fa:fa-file-archive-o .FASTQ]]
+        AlphaOutput([fa:fa-sticky-note-o Report ])
+        MFPOutput([fa:fa-sticky-note-o Report ])
+        UchimeOutput([fa:fa-sticky-note-o Report ])
+        BetaPOutput([fa:fa-sticky-note-o Report ])
+
+        Input1 --> Node1
+        Node1 -.-> Node2 & Node3 & Node4 & Node5
+        Node3 -.-> Node4 & Node7
+        Node4 -.-> Node5
+        Node5 -.-> Node6 & Node7 & Node9
+        Node7 -.-> Node8
+        Node8 -.-> Node9 & Node10 & Node11
+        Node10 -.-> Node11 & Node13
+        Node11 -.-> Node12 & Node14
+        Node12 -.-> Node13
+        Node13 -.-> Node17 & Node18 & Node23
+        Node14 -.-> Node15
+        Node15 -.-> Node16
+        Node16 -.-> Node31
+        Node18 -.-> Node19
+        Node19 -.-> Node20
+        Node20 -.-> Node21 & Node23
+        Node21 -.-> Node22
+        Node23 -.-> Node24 & Node25 & Node29
+        Node24 -.-> Node31 & Node25
+        Node25 -.-> Node26 & Node30
+        Node26 -.-> Node27
+        Node27 -.-> Node28
+        Node28 -.-> Node30
+        Node30 -.-> Node34
+        Node31 -.-> Node32 -.-> Node33 -.-> Node34
+
+        Node30 --> AlphaOutput
+        Node6 --> MFPOutput
+        Node9 --> UchimeOutput
+        Node34 --> BetaPOutput
+
+        subgraph readSetSteps[" "]
+          Node1
+        end
+        subgraph sampleSetSteps[" "]
+          Node3
+          Node4
+          Node5
+          Node6
+          Node7
+          Node8
+          Node9
+          Node10
+          Node11
+          Node12
+          Node13
+          Node14
+          Node15
+          Node16
+          Node17
+          Node18
+          Node19
+          Node20
+          Node21
+          Node27
+          Node28
+          Node29
+          Node30
+          Node31
+          Node32
+          Node33
+          Node34
+          Node22
+          AlphaOutput
+          MFPOutput
+          UchimeOutput
+          BetaPOutput
+          subgraph Combo2324[" "]
+            Node23
+            Node24
+          end
+          subgraph Combo2526[" "]
+            Node25
+            Node26
+          end
+          subgraph Combo2728[" "]
+            Node27
+            Node28
+          end
+        end
+
+        classDef greenRect fill:#E4FBF4,stroke:white
+        class readSetSteps greenRect
+        classDef blueRect fill:#DEF6FC,stroke:white
+        classDef transparentRect fill:#DEF6FC,stroke:gray
+        class Combo2324 transparentRect
+        class Combo2526 transparentRect
+        class Combo2728 transparentRect
+        class sampleSetSteps blueRect
+        classDef nodefill fill:#ffffff,stroke:gray,stroke-width:2px
+        classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px

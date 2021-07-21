@@ -1,0 +1,44 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
+
+        %% GenPipes Schema for Ampliconseq.py
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/ampliconseq/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+        %% -t dada2
+
+        graph LR
+        Node1{{ 1. <br/> Trimmomatic }}:::nodefill
+        Node2{{ 2. <br/> Merge <br/> Trimmomatic Stats  }}:::nodefillblack
+        Node3{{ 3. <br/> Flash <br/> Pass 1 }}:::nodefill
+        Node4{{ 4. <br/> Amplicon <br/> length parser }}:::nodefill
+        Node5{{ 5. <br/> Flash <br/> Pass 2 }}:::nodefill
+        Node6{{ 6. <br/> Merge <br/> Flash Stats }}:::nodefillblack
+        Node7{{ 7. <br/> ASVA }}:::nodefill
+
+        Input[[fa:fa-file-archive-o .FASTQ]]
+        Output([fa:fa-sticky-note-o Report ])
+
+        Input --> Node1
+        Node1 -.-> Node2 & Node3 & Node4 & Node5 & Node7
+        Node3 -.-> Node4
+        Node4 -.-> Node5 & Node7
+        Node5 -.-> Node6
+        Node7 --> Output
+
+        subgraph readSetSteps[" "]
+          Node1
+        end
+        subgraph sampleSetSteps[" "]
+          Node3
+          Node4
+          Node5
+          Node6
+          Node7
+          Output
+        end
+
+        classDef greenRect fill:#E4FBF4,stroke:white
+        class readSetSteps greenRect
+        classDef blueRect fill:#DEF6FC,stroke:white
+        class sampleSetSteps blueRect
+        classDef nodefill fill:#ffffff,stroke:gray,stroke-width:2px
+        classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px

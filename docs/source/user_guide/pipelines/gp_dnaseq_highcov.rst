@@ -82,13 +82,21 @@ Following instructions are meant to be run on C3G deployed GenPipes on Beluga se
 Pipeline Schema
 ---------------
 
-Figure below shows the schema of the DNA Sequencing (High Coverage) sequencing protocol. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_dnaseq_high_coverage.png>`_ to download a high resolution image of the same.
+Figure below shows the schema of the DNA Sequencing (High Coverage) sequencing protocol. 
 
-.. figure:: /img/pipelines/dnaseq_highcov.png
+.. figure:: /img/pipelines/mmd/dnaseq.highcov.mmd.png
    :align: center
    :alt: schema
+   :width: 100%
+   :figwidth: 95%
 
    Figure: Schema of DNA Sequencing (High Coverage) Sequencing protocol
+
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: legend
+   :width: 100%
+   :figwidth: 75%
 
 ----
 

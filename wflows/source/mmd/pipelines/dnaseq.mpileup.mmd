@@ -1,0 +1,127 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
+
+        %% GenPipes Schema for dnaseq.py
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+        %% -t mpileup
+
+        graph LR
+        Node1{{ 1. <br/> Picard<br/>SAM<br/>to FASTQ }}:::nodefill
+        Node2{{ 2. <br/> Skewer<br/>Trimming }}:::nodefill
+        Node3{{ 3. <br/> BWA<br/>SAMbamba<br/>sort<br/>SAM }}:::nodefill
+        Node4{{ 4. <br/> SAMbamba<br/>merge<br/>SAM<br/>files }}:::nodefillblack
+        Node5{{ 5. <br/> GATK<br/>indel<br/>re-aligner }}:::nodefill
+        Node6{{ 6. <br/> SAMBAM<br/>merge<br/>realigned }}:::nodefill
+        Node7{{ 7. <br/> Picard<br/>Mark<br/>Duplicates }}:::nodefill
+        Node8{{ 8. <br/> Recalibration }}:::nodefill
+        Node9{{ 9. <br/> Raw<br/>Mpileup }}:::nodefill
+        Node10{{ 10. <br/> Raw<br/>Mpileup<br/> cat}}:::nodefill
+        Node11{{ 11. <br/> SNP &<br/>indel<br/>BCF }}:::nodefill
+        Node12{{ 12. <br/> Merge<br/>filter<br/>BCF }}:::nodefill
+        Node13{{ 13. <br/> Mpileup<br/>decompose<br/> & normalize }}:::nodefill
+        Node14{{ 14. <br/> Mpileup<br/>flag<br/>mappability }}:::nodefill
+        Node15{{ 15. <br/> Mpileup<br/>SNP ID<br/>annotation }}:::nodefill
+        Node16{{ 16. <br/> Mpileup<br/>SNP effect  }}:::nodefill
+        Node17{{ 17. <br/> Mpileup<br/>dbnsfp<br/>annotation }}:::nodefill
+        Node18{{ 18. <br/> Mpileup<br/>Gemini<br/>Annotation }}:::nodefill
+        Node19{{ 19. <br/> Mpileup<br/>Metrics<br/>VCF<br/>stats }}:::nodefill
+        Node20{{ 20. <br/> Cram<br/>Output }}:::nodefill
+        Node21{{ 21. <br/> DNA<br/>Picard<br/>Metrics }}:::nodefill
+        Node22{{ 22. <br/> DNA<br/>Sample<br/>Qualimap }}:::nodefill
+        Node23{{ 23. <br/> DNA<br/>FASTQC }}:::nodefill
+        Node24{{ 24. <br/> Picard<br/>Calculate<br/>HS Metrics }}:::nodefill
+        Node25{{ 25. <br/> GATK<br/>Callable<br/>Loci }}:::nodefill
+        Node26{{ 26. <br/> Extract<br/>Common<br/>SNP<br/>Frequency }}:::nodefill
+        Node27{{ 27. <br/> BAF<br/>Plot }}:::nodefill
+        Node28{{ 28. <br/> Run<br/>MultiQC }}:::nodefill
+        Node29{{ 29. <br/> Symlink<br/>FASTQ }}:::nodefill
+        Node30{{ 30. <br/> Symlink<br/>final <br/>BAM}}:::nodefill
+
+        Input1[[fa:fa-file-archive-o .BAM]]
+        Input2[[fa:fa-file-archive-o .FASTQ]]
+
+        RecalibOP([fa:fa-sticky-note-o Report ])
+        MultiQCOP([fa:fa-sticky-note-o Report ])
+        CramOP([fa:fa-sticky-note-o Report ])
+
+        Input1 --> Node1 -.-> Node2
+        Input2 --> Node2
+
+        Node2 -.-> Node3 -.-> Node4 -.-> Node5 -.-> Node6 -.-> Node7 -.-> Node8
+        Node7 -.-> Node9 & Node11 & Node23 & Node25 & Node26 & Node29 & Node30
+        Node8 -.-> Node20 & Node21 & Node22
+        Node9 -.-> Node10 -.-> Node11 -.-> Node12 -.-> Node13 -.-> Node14 -.-> Node15 -.-> Node16 -.-> Node17 -.-> Node18
+        Node17 -.-> Node19
+        Node21 & Node22 & Node23 -.-> Node28
+        Node26 -.-> Node27
+
+        Node8 --> RecalibOP
+        Node28 --> MultiQCOP
+        Node20 ---> CramOP
+
+        subgraph readSetSteps[" "]
+          Node1
+          Node2
+          Node3
+          MTSOutput
+        end
+        subgraph sampleSetSteps[" "]
+          Node5
+          Node6
+          Node7
+          Node8
+          Node9
+          Node10
+          Node11
+          Node12
+          Node13
+          Node14
+          Node15
+          Node16
+          Node17
+          Node18
+          Node19
+          Node20
+          Node21
+          Node22
+          Node23
+          Node24
+          Node25
+          Node26
+          Node27
+          Node28
+          Node29
+
+          subgraph combo2122[" "]
+            Node21
+            Node22
+          end
+          subgraph combo2324[" "]
+            Node23
+            Node24
+          end
+          subgraph combo2526[" "]
+            Node25
+            Node26
+          end
+          subgraph combo2930[" "]
+            Node29
+            Node30
+          end
+
+          RecalibOP
+          MultiQCOP
+          CramOP
+        end
+
+        classDef greenRect fill:#E4FBF4,stroke:white
+        class readSetSteps greenRect
+        classDef blueRect fill:#DEF6FC,stroke:white
+        class sampleSetSteps blueRect
+        classDef transparentRect fill:#DEF6FC,stroke:gray
+        class combo2122 transparentRect
+        class combo2324 transparentRect
+        class combo2526 transparentRect
+        class combo2930 transparentRect
+        classDef nodefill fill:#ffffff,stroke:gray,stroke-width:2px
+        classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px

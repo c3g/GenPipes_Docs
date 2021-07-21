@@ -1,0 +1,5 @@
+Amplicon
+ChIPseq
+Nanopore
+HiC
+Illumina

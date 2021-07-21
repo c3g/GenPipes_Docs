@@ -1,0 +1,69 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}, 'fontFamily': 'Montserrat', 'fontSize': 10}}%%
+
+        %% GenPipes Schema for Covseq.py
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/covseq/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+
+        graph LR
+          InputFASTQ[[fa:fa-file-archive-o .FASTQ]]
+          Node1{{ 1. <br/> Host <br/> read removal }}:::nodefill
+          Node2{{ 2. <br/> Kraken <br/> Analysis }}:::nodefill
+          Node3{{ 3. <br/> Cutadapt }}:::nodefill
+          Node4{{ 4. <br/> Mapping BWA <br/> mem SAMbamba }}:::nodefill
+          Node5{{ 5. <br/> SAMbamba merge <br/> SAM files }}:::nodefillblack
+          Node6{{ 6. <br/> SAMbamba Filtering }}:::nodefill
+          Node7{{ 7. <br/> Ivar trim <br/> primer }}:::nodefill
+          Node8{{ 8. <br/> Covseq Metrics }}:::nodefill
+          Node9{{ 9. <br/> Ivar Calling }}:::nodefill
+          Node10{{ 10. <br/> SnpEff <br/> Annotation }}:::nodefill
+          Node11{{ 11. <br/> Ivar create <br/> consensus }}:::nodefill
+          Node12{{ 12. <br/> Quast <br/> consensus }}:::nodefill
+          Node13{{ 13. <br/> Rename <br/> consensus header }}:::nodefill
+          QuastOutput([fa:fa-sticky-note-o Report ])
+          CovseqOutput([fa:fa-sticky-note-o Report ])
+          KrakenOutput([fa:fa-sticky-note-o Report ])
+          Output([fa:fa-sticky-note-o Report ])
+
+          InputFASTQ --> Node1
+          Node1 -.-> Node2 & Node3
+          Node2 -.-> KrakenOutput
+          Node3 -.-> Node4 -.-> Node5 -.-> Node6
+          Node6 -.-> Node7 & Node8
+          Node7 -.-> Node8 & Node9 & Node11
+          Node8 ---> CovseqOutput
+          Node9 -.-> Node10 -.-> Node13
+          Node11 -.-> Node12 & Node13
+          Node12 -.-> Node13
+          Node12 --> QuastOutput
+          Node13 --> Output
+
+          subgraph readSetSteps[" "]
+            Node1
+            Node2
+            Node3
+            Node4
+            KrakenOutput
+          end
+
+          subgraph sampleSetSteps[" "]
+            Node6
+            Node7
+            Node8
+            Node9
+            Node10
+            Node11
+            Node12
+            Node13
+            QuastOutput
+            CovseqOutput
+            Output
+          end
+
+          classDef greenRect fill:#E4FBF4,stroke:white
+          class readSetSteps greenRect
+          classDef blueRect fill:#DEF6FC,stroke:white
+          class sampleSetSteps blueRect
+          classDef inputfill fill:#ffffff,stroke:gray,stroke-width:1px
+          classDef nodefill fill:#ffffff,stroke:black,stroke-width:1px
+          classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px
+          class InputFASTQ inputfill

@@ -47,7 +47,7 @@ extensions = [ 'sphinxcontrib.spelling',
                'sphinx_rtd_theme',
                'sphinx.ext.autosectionlabel',
                'sphinx.ext.imgmath',
-               'sphinx_tabs.tabs'
+               'sphinx_tabs.tabs',
 ]
 
 # Configure autosectionlabel extension
