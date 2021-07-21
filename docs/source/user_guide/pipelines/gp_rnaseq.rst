@@ -77,7 +77,7 @@ This set of commands is meant for running GenPipes on C3 data center. For more d
 Pipeline Schema
 ---------------
 
-Figure below shows the schema of the RNA sequencing protocol (cufflinks). You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq/>`_ and see here to download a high resolution image of `RNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_rnaseq.png>`_ to download a high resolution image of the same.
+Figure below shows the schema of the RNA sequencing protocol (cufflinks). 
 
 .. figure:: /img/pipelines/mmd/rnaseq.cufflinks.mmd.png
    :align: center
@@ -86,6 +86,12 @@ Figure below shows the schema of the RNA sequencing protocol (cufflinks). You ca
    :figwidth: 95%
 
    Figure: Schema of RNA Sequencing pipeline (Cufflinks)
+
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: dada2 ampseq
+   :width: 100%
+   :figwidth: 75%
 
 The following figure shows the schema of the RNA sequencing protocol (stringtie).
 
@@ -96,6 +102,12 @@ The following figure shows the schema of the RNA sequencing protocol (stringtie)
    :figwidth: 95%
 
    Figure: Schema of RNA Sequencing pipeline (Stringtie)
+
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: dada2 ampseq
+   :width: 100%
+   :figwidth: 75%
 
 ----
 

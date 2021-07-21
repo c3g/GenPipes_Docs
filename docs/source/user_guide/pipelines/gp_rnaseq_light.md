@@ -188,7 +188,7 @@ Refer to the diagram below for the schema of RNA Sequencing (Light) Pipeline.
 
 ![rnaseq_light workflow diagram](/img/pipelines/mmd/rnaseq.light.mmd.png)
 
-You can [download a higher resolution diagram here](https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_rnaseq_light.png)
+![legend](/img/pipelines/mmd/legend.mmd.png)
 
 Pipeline Steps
 --------------

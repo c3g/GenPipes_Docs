@@ -98,9 +98,16 @@ The following figure shows the schema for Nanopore sequencing pipeline:
 .. figure:: /img/pipelines/mmd/nanopore.mmd.png
     :align: center
     :alt: nanopore schema 
-    :width: 60%
+    :width: 80%
+    :figwidth: 95%
 
     Figure: Schema of Nanopore Sequencing protocol
+
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: dada2 ampseq
+   :width: 100%
+   :figwidth: 75%
 
 ----
 

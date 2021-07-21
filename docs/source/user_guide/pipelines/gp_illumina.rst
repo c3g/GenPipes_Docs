@@ -92,7 +92,7 @@ You can download the test dataset for this pipeline :ref:`here<docs_testdatasets
 Pipeline Schema
 ---------------- 
 
-Figure below shows the schema of the Illumina Sequencing workflow. Double click on the image for full page view.
+Figure below shows the schema of the Illumina Sequencing workflow. 
 
 .. figure:: /img/pipelines/mmd/illumina.mmd.png
    :align: center
@@ -101,6 +101,12 @@ Figure below shows the schema of the Illumina Sequencing workflow. Double click 
    :figwidth: 95%
 
    Figure: Schema of Illumina Sequencing protocol
+
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: dada2 ampseq
+   :width: 100%
+   :figwidth: 75%
 
 ----
 

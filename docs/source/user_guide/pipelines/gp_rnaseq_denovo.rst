@@ -102,7 +102,7 @@ You can download the test dataset for this pipeline :ref:`here<docs_testdatasets
 Pipeline Schema
 ---------------
 
-Figure below shows the schema of RNA Sequencing *De Novo* Assembly pipeline. You can refer to the latest `RNA Sequencing De Novo pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq_denovo_assembly/README.md>`_ and `high resolution schema image <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_rnaseq_denovo_assembly.png>`_. 
+Figure below shows the schema of RNA Sequencing *De Novo* Assembly pipeline. 
 
 .. figure:: /img/pipelines/mmd/rnaseq.denovo.mmd.png 
    :align: center
@@ -111,6 +111,12 @@ Figure below shows the schema of RNA Sequencing *De Novo* Assembly pipeline. You
    :figwidth: 95%
 
    Figure: Schema of De Novo assembly RNA Sequencing protocol
+
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: dada2 ampseq
+   :width: 100%
+   :figwidth: 75%
 
 ----
 

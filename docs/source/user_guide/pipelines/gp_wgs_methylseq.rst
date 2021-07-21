@@ -78,7 +78,7 @@ You can download the test dataset for this pipeline :ref:`in Reference section<d
 
 Pipeline Schema
 ---------------
-Figure below shows the schema of the WGS or Methylation sequencing pipeline. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_methylseq.png>`_ to download a high resolution image of the same.
+Figure below shows the schema of the WGS or Methylation sequencing pipeline. 
 
 .. figure:: /img/pipelines/mmd/methylseq.mmd.png
    :align: center
@@ -88,6 +88,11 @@ Figure below shows the schema of the WGS or Methylation sequencing pipeline. You
 
    Figure: Schema of WGS or Methylation Sequencing pipeline
 
+.. figure:: /img/pipelines/mmd/legend.mmd.png
+   :align: center
+   :alt: legend
+   :width: 100%
+   :figwidth: 75%
 
 Pipeline Steps
 --------------
