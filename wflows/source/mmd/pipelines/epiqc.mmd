@@ -1,0 +1,65 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}, 'fontFamily': 'Montserrat', 'fontSize': 10}}%%
+
+        %% GenPipes Schema for epiqc.py
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/epiqc/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+
+        graph TD
+          InputBW[[fa:fa-file-archive-o .BigWig]]
+          Node1{{ 1. <br/> BigWigInfo }}:::nodefill
+          Node2{{ 2. <br/> CromImpute }}:::nodefill
+          Node2a{{ 2a. <br/> BigWig to <br/> BED Graph }}:::nodefill
+          Node2b{{ 2b. <br/> ChromImpute <br/> Preprocess }}:::nodefill
+          Node2c{{ 2c. <br/> ChromImpute <br/> Convert }}:::nodefill
+          Node2d{{ 2d. <br/> ChromImpute <br/> Compute <br/> Global <br/> Distance }}:::nodefill
+          Node2e{{ 2e. <br/> ChromImpute <br/> Generate <br/> Train Data }}:::nodefill
+          Node2f{{ 2f. <br/> ChromImpute <br/> Train }}:::nodefill
+          Node2g{{ 2g. <br/> ChromImpute <br/> Apply }}:::nodefill
+          Node2h{{ 2h. <br/> ChromImpute <br/> Eval }}:::nodefill
+          Node3{{ 3. <br/> Signal to Noise }}:::nodefill
+          Node4{{ 4. <br/> epiGeEC Correlation }}:::nodefill
+          Node5{{ 5. <br/> epiQC Report }}:::nodefill
+          Node5a{{ 5a. <br/> BigWigInfo Report }}:::nodefill
+          Node5b{{ 5b. <br/> ChromImpute Report }}:::nodefill
+          Node5c{{ 5c. <br/> Signal to Noise Report }}:::nodefill
+          Node5d{{ 5d. <br/> epiGeEC Report }}:::nodefill
+          Output([fa:fa-sticky-note-o epiQC Final Report ])
+
+          InputBW --> Node1 & Node2a
+          Node1 & Node2 & Node3 & Node4 -.-> Node5
+          Node2h -.-> Node2
+          Node2a -.-> Node2b & Node2c
+          Node2b & Node2c -.-> Node2d
+          Node2b & Node2c & Node2d -.-> Node2e
+          Node2e -.-> Node2f -.-> Node2g
+          Node2b & Node2c & Node2g -.-> Node2h
+          Node2c -.-> Node3
+          Node5a & Node5b & Node5c & Node5d -.-> Node5
+
+          Node5 --> Output
+
+          subgraph cisubs[" "]
+            Node2a
+            Node2b
+            Node2c
+            Node2d
+            Node2e
+            Node2f
+            Node2g
+            Node2h
+          end
+
+          subgraph repsubs[" "]
+            Node5a
+            Node5b
+            Node5c
+            Node5d
+          end
+
+          classDef inputfill fill:#ffffff,stroke:gray,stroke-width:1px
+          classDef nodefill fill:#ffffff,stroke:black,stroke-width:1px
+          classDef whiterect fill:#eaeaea,stroke:#eaeaea
+
+          class InputBW inputfill
+          class cisubs whiterect
+          class repsubs whiterect

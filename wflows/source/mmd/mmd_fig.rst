@@ -68,6 +68,14 @@ DNA Sequencing (High Coverage) Pipeline
 
 ----
 
+epiQC Pipeline
+==============
+
+.. mermaid:: /mmd/pipelines/epiqc.mmd
+   :caption: epiQC Pipeline
+
+----
+
 HiC Sequencing Pipeline
 ========================
 
