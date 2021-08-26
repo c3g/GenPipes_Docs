@@ -19,7 +19,7 @@ The epiQC is a quality control pipeline for signal files (`BigWig`_) generated d
 As part of epiQC pipeline, four different metrics are computed from a single `BigWig`_ file. 
 
 #. `BigWigInfo`_ tool prints out information about a BigWig file. This tool is used to perform the initial quality check on signal tracks.
-#. `ChromImpute`_ processing step imputes signal tracks for the given chromosome (currently only chr1 is supported). These imputed files are then used by epiQC to compute two other metrics. 
+#. `ChromImpute`_ processing step imputes signal tracks for the given chromosome (currently only chr1 is supported, but it is sufficient to accurately detect issues in signal files).
 #. `Signal to Noise`_ step of the epiQC pipeline processes the signal to noise measurement by calculating the proportion of signal in top bins. 
 #. This is followed by heatmap creation from the correlation matrix obtained via the epiGenomic Efficient Correlator (`epiGeEC`_) tool by comparing only the user samples.
 
@@ -27,7 +27,7 @@ As part of epiQC pipeline, four different metrics are computed from a single `Bi
        
          At present, comparing large reference database with user samples is not supported.
   
-The epiQC pipeline executes four consecutive report steps to create the `epiQC Final Report`_ of the pipeline with quality control labels.
+After the completion of computing metrics, the epiQC pipeline executes four consecutive report steps to create the `epiQC Final Report`_ of the pipeline with quality control labels.
 
 This brand new epiQC pipeline can be used for pre-validation of samples, in order to assess the usability of a dataset in any given study, even in the absence of the original raw reads files. This presents a huge advantage, for instance, in the case of human epigenomic datasets available in the `IHEC Datasets`_, as signal tracks are made publicly available, while raw data files are stored in controlled access repositories.
 
@@ -37,7 +37,7 @@ You can test this pipeline with ChIP-Seq samples from the `IHEC Portal <https://
    
      Please **note** that GenPipes epiQC Pipeline allows you to use the same readset file as the one used in ChIP-seq pipeline **without any modifications**. However, make sure that the readset file is located in the same folder as the ChIP-Seq output. This is because the input files for epiQC pipeline are located based on the readset file path.
 
-For more information on epiQC pipeline implementation and design, refer to this `presentation on ChIP Sequencing <https://bitbucket.org/mugqic/genpipes/downloads/MUGQIC_Bioinfo_ChIP-Seq.pptx>`_ process and the role of quality control in genomic analysis. 
+For more information on epiQC pipeline implementation and design, refer to the `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/epiqc/README.md>`_ file.
 
 .. contents:: :local:
 
@@ -46,7 +46,7 @@ For more information on epiQC pipeline implementation and design, refer to this 
 Introduction
 ------------
 
-GenPipes introduces epiQC as a brand new pipeline with the sole focus of quality control for `BigWig`_ signal files. These `BigWig`_ signal files are generated as part of :ref:`ChIP-Sequencing Pipeline<docs_gp_chipseq>`. It is important to determine the quality of bases before using them for subsequent analysis as low quality bases can bias the subsequent analysis such as SNP and SV calling.
+GenPipes introduces epiQC as a brand new pipeline with the sole focus of quality control for `BigWig`_ signal files. These `BigWig`_ signal files are generated as part of :ref:`ChIP-Sequencing Pipeline<docs_gp_chipseq>`. It is important to determine the quality of bases before using them for subsequent analysis as low quality bases can bias the downstream analysis such as SNP and SV calling.
 
 The following sections describe pipeline usage and various steps in the epiQC pipeline.
 

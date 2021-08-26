@@ -70,7 +70,7 @@ This sub-step of ChromImpute Processing is performed to create ChromImpute direc
 
      The chromsizes and inputinfo files are created dynamically when the user runs the epiQC pipeline. It is not necessary to submit jobs to create them.
     
-     Although the current implementation supports only GRCh38 chr1 for ChromImpute analysis but it is sufficient to accurately evaluate the signal quality. Chromosome name can be specified in the `ChromImpute Preprocessing`_ section of the epiQC pipeline .ini file.
+     Although the current implementation supports only GRCh38 chr1 for ChromImpute analysis, it is sufficient to accurately evaluate the signal quality. Chromosome name can be specified in the `ChromImpute Preprocessing`_ section of the epiQC pipeline .ini file.
 
 .. _ChromImpute Convert:
 

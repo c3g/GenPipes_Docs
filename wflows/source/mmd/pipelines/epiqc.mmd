@@ -29,10 +29,12 @@
           Node1 & Node2 & Node3 & Node4 -.-> Node5
           Node2h -.-> Node2
           Node2a -.-> Node2b & Node2c
+          Node2b -.-> Node2c -.-> Node2g
           Node2b & Node2c -.-> Node2d
           Node2b & Node2c & Node2d -.-> Node2e
+          Node2b -.-> Node2g & Node2f
           Node2e -.-> Node2f -.-> Node2g
-          Node2b & Node2c & Node2g -.-> Node2h
+          Node2c & Node2g -.-> Node2h
           Node2c -.-> Node3
           Node5a & Node5b & Node5c & Node5d -.-> Node5
 
