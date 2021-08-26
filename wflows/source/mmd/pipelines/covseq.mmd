@@ -14,28 +14,43 @@
           Node6{{ 6. <br/> SAMbamba Filtering }}:::nodefill
           Node7{{ 7. <br/> Ivar trim <br/> primer }}:::nodefill
           Node8{{ 8. <br/> Covseq Metrics }}:::nodefill
-          Node9{{ 9. <br/> Ivar Calling }}:::nodefill
-          Node10{{ 10. <br/> SnpEff <br/> Annotation }}:::nodefill
-          Node11{{ 11. <br/> Ivar create <br/> consensus }}:::nodefill
-          Node12{{ 12. <br/> Quast <br/> consensus }}:::nodefill
-          Node13{{ 13. <br/> Rename <br/> consensus header }}:::nodefill
+          Node9{{ 9. <br/> Freebayes Calling }}:::nodefill
+          Node10{{ 10. <br/> Ivar Calling }}:::nodefill
+          Node11{{ 11. <br/> SnpEff <br/> Annotation }}:::nodefill
+          Node12{{ 12. <br/> Ivar create <br/> consensus }}:::nodefill
+          Node13{{ 13. <br/> Bcftools create <br/> consensus }}:::nodefill
+          Node14{{ 14. <br/> Quast <br/> consensus }}:::nodefill
+          Node15{{ 15. <br/> Rename <br/> consensus header <br/> ivar }}:::nodefill
+          Node16{{ 16. <br/> Rename <br/> consensus header <br/> freebayes }}:::nodefill
+          Node17{{ 17. <br/> ncovtools <br/> Quickalign }}:::nodefill
+          Node18{{ 18. <br/> Prepare <br/> Table }}:::nodefill
+          Node19{{ 19. <br/> Prepare <br/> Report ivar }}:::nodefill
+          Node20{{ 20. <br/> Prepare <br/> Report Freebayes }}:::nodefill
           QuastOutput([fa:fa-sticky-note-o Report ])
           CovseqOutput([fa:fa-sticky-note-o Report ])
           KrakenOutput([fa:fa-sticky-note-o Report ])
-          Output([fa:fa-sticky-note-o Report ])
+          Outputivar([fa:fa-sticky-note-o Report ])
+          Outputfb([fa:fa-sticky-note-o Report ])
 
           InputFASTQ --> Node1
           Node1 -.-> Node2 & Node3
           Node2 -.-> KrakenOutput
           Node3 -.-> Node4 -.-> Node5 -.-> Node6
           Node6 -.-> Node7 & Node8
-          Node7 -.-> Node8 & Node9 & Node11
+          Node7 -.-> Node8 & Node9 & Node10 & Node12 
+          Node7 & Node9 -.-> Node11
           Node8 ---> CovseqOutput
-          Node9 -.-> Node10 -.-> Node13
-          Node11 -.-> Node12 & Node13
-          Node12 -.-> Node13
-          Node12 --> QuastOutput
-          Node13 --> Output
+          Node9 -.-> Node13
+          Node12 & Node13 -.-> Node14
+          Node12 & Node14 -.-> Node15
+          Node13 & Node14 -.-> Node16
+          Node15 -.-> Node17
+          Node2 & Node6 & Node8 & Node14 -.-> Node18 -.-> Node19
+          Node6 & Node7 & Node10 & Node15 -.-> Node19
+          Node6 & Node7 & Node9 & Node16 & Node18 -.-> Node20
+          Node14 --> QuastOutput
+          Node19 --> Outputivar
+          Node20 --> Outputfb
 
           subgraph readSetSteps[" "]
             Node1
@@ -54,9 +69,17 @@
             Node11
             Node12
             Node13
+            Node14
+            Node15
+            Node16
+            Node17
+            Node18
+            Node19
+            Node20
             QuastOutput
             CovseqOutput
-            Output
+            Outputivar
+            Outputfb
           end
 
           classDef greenRect fill:#E4FBF4,stroke:white

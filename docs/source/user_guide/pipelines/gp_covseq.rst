@@ -121,15 +121,29 @@ The table below shows various steps that constitute the CoVSeq genomic analysis 
 +----+--------------------------------+
 | 8. | |covseq_metrics|               |
 +----+--------------------------------+
-| 9. | |ivar_calling|                 |
+| 9. | |freebayes_calling|            |
 +----+--------------------------------+
-| 10.| |snpeff_annotate|              |
+| 10.| |ivar_calling|                 |
 +----+--------------------------------+
-| 11.| |ivar_create_consensus|        |
+| 11.| |snpeff_annotate|              |
 +----+--------------------------------+
-| 12.| |quast_consensus_metrics|      |
+| 12.| |ivar_create_consensus|        |
 +----+--------------------------------+
-| 13.| |rename_consensus_header|      |
+| 13.| |bcftools_create_consensus|    |
++----+--------------------------------+
+| 14.| |quast_consensus_metrics|      |
++----+--------------------------------+
+| 15.| |rename_consensus_header_ivar| |
++----+--------------------------------+
+| 16.| |rename_consensus_h_freebayes| |
++----+--------------------------------+
+| 17.| |ncovtools_quickalign|         |
++----+--------------------------------+
+| 18.| |prepare_table|                |
++----+--------------------------------+
+| 19.| |prepare_report_ivar|          |
++----+--------------------------------+
+| 20.| |prepare_report_freebayes|     |
 +----+--------------------------------+
 
 ----
@@ -159,11 +173,18 @@ For the latest implementation and usage details refer to CoVSeq Pipeline impleme
 .. |sambamba_filtering| replace:: `Sambamba Filtering`_
 .. |ivar_trim_primers| replace:: `iVar Trim Primers`_
 .. |covseq_metrics| replace:: `CoVSeq Metrics`_
+.. |freebayes_calling| replace:: `Freebayes Calling`_
 .. |ivar_calling| replace:: `iVar Calling`_
 .. |snpeff_annotate| replace:: `SNPEff Annotate`_
 .. |ivar_create_consensus| replace:: `iVar Create Consensus`_
+.. |bcftools_create_consensus| replace:: `BCFTools Create Consensus`_
 .. |quast_consensus_metrics| replace:: `QUAST Consensus Metrics`_
-.. |rename_consensus_header| replace:: `Rename Consensus Header`_
+.. |rename_consensus_header_ivar| replace:: `Rename Consensus Header ivar`_
+.. |rename_consensus_h_freebayes| replace:: `Rename Consensus Header freebayes`_
+.. |ncovtools_quickalign| replace:: `ncovtools Quickalign`_
+.. |prepare_table| replace:: `Prepare Table`_
+.. |prepare_report_ivar| replace:: `Prepare Report ivar`_
+.. |prepare_report_freebayes| replace:: `Prepare Report Freebayes`_
 
 .. The following are links and references used in this file
 

@@ -79,11 +79,19 @@ In this step, multiple metrics are computed from sequencing:
 * `BED Tools GenomeCov`_ is used for computing histograms(default), per-base reports and BEDGRAPH summaries of feature coverage of aligned sequences for a given genome.
 * `Picard HS Metrics`_ are picked from SAM/BAM files. Only those metrics are collected that are specific for sequence datasets generated through hybrid-selection. Hybrid-selection (HS) is the most commonly used technique to capture exon-specific sequences for targeted sequencing experiments such as exome sequencing.
 
+.. _Freebayes Calling:
+
+**Freebayes Calling**
+
+Freebayes is a haplotype-based variant detector designed to find small polymorphisms, specifically SNPs (single-nucleotide polymorphisms), indels (insertions and deletions), MNPs (multi-nucleotide polymorphisms), and complex events (composite insertion and substitution events) smaller than the length of a short-read sequencing alignment.
+
+This method avoids one of the core problems with alignment-based variant detection— that identical sequences may have multiple possible alignments. See `Freebayes details here <https://github.com/freebayes/freebayes>`_.
+
 .. _iVar Calling:
 
 **iVar Calling**
 
-In this step, `iVar`_ is used for creating a trimmed BAM file after trimming aligned reads in the input BAM file using primer positions specified in the BED input file.
+In this step, `iVar`_ is used for creating a trimmed BAM file after trimming aligned reads in the input BAM file using primer positions specified in the BED input file. Besides the `Freebayes Calling`_ tool, ivar calling is also used in covseq pipeline as part of the latest release.
 
 .. _SNPEff Annotate:
 
@@ -97,19 +105,56 @@ This step uses `SNPEff`_ to annotate the data.
 
 In this step, `iVar`_ is used to create consensus. Also, it removes primer sequences to individual BAM files using `fgbio`_.
 
+.. _BCFTools Create Consensus:
+
+**BCFTools Create Consensus**
+
+BCFtools consensus is created in this step. BCFtools is a set of utilities that manipulate variant calls in the Variant Call Format (VCF) and its binary counterpart BCF
+
 .. _QUAST Consensus Metrics:
 
 **QUAST Consensus Metrics**
 
 In this step, QUAST is used to compare and evaluate assemblies to rule out misassemblies.
 
-.. _Rename Consensus Header:
+.. _Rename Consensus Header ivar:
 
-**Rename Consensus Header**
+**Rename Consensus Header ivar**
 
 `Consensus sequence`_ is the calculated order of most frequent residues found at each position in a sequence alignment. This information is important when considering sequence-dependent enzymes such as RNA Polymerase which is important for SAR-CoV-2 studies. In this step, `header sequence`_ can be modified in various ways as specified in rename type parameter: Multipart header, Replace word, Replace interval, and Add prefix/suffix.
 
-This is the final step of CovSeq pipeline.
+.. _Rename Consensus Header freebayes:
+
+**Rename Consensus Header freebayes**
+
+Two variant calling tools are used in covseq pipeline - ivar and freebayes. In this step, the consensus header rename for freebayes is done.
+
+.. _ncovtools Quickalign:
+
+**ncovtools Quickalign**
+
+Uses quickalign to provides summary statistics, which can be used to determine the sequencing quality and evolutionary novelty of input genomes (e.g. number of new mutations and indels).
+
+It uses ivar consensus as well as freebayes consensus to arrive at the alignment decisions.
+
+.. _Prepare Table:
+
+**Prepare Table**
+
+Gathers all analysis data for quast, kraken and other metrics and module
+ details.
+
+.. _Prepare Report ivar:
+
+**Prepare Report ivar**
+
+Prepare ivar analysis report.
+
+.. _Prepare Report Freebayes:
+
+**Prepare Report Freebayes**
+
+Prepare `Freebayes`_ analysis report.
 
 .. Following are the links used as references above
 
@@ -122,6 +167,7 @@ This is the final step of CovSeq pipeline.
 .. _Kraken: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4053813/
 .. _Kraken speed: http://ccb.jhu.edu/software/kraken/
 .. _Cutadapt processing: https://cutadapt.readthedocs.io/en/stable/index.html
+.. _Freebayes: https://github.com/freebayes/freebayes
 .. _Sambamba-Merge Tool: https://lomereiter.github.io/sambamba/docs/sambamba-merge.html
 .. _Sambamba-flagstat: https://lomereiter.github.io/sambamba/docs/sambamba-flagstat.html
 .. _Qualimap: http://qualimap.conesalab.org
