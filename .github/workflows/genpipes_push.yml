@@ -13,6 +13,7 @@ jobs:
     - name: Install Dependencies
       run: |
           brew update
+          brew upgrade
           brew install enchant
           brew install mermaid-cli
           python -m pip install --upgrade pip
