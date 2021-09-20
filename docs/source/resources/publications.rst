@@ -15,11 +15,15 @@ This document contains information on available current publications and other m
 
    .. tab:: Videos
 
-      1. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` generates metagenomics output. The `Metagenomics Figures video`_ shows how to build custom OTU figures and tables from C3G's metagenomics output.
+      1. How to run C3G-GenPipes on Compute Canada cluster - see video below.
+
+         |howtorun_c3g_gp|
+         
+      2. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` generates metagenomics output. The `Metagenomics Figures video`_ shows how to build custom OTU figures and tables from C3G's metagenomics output.
 
          |metagenomics_video|
 
-      2. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` pipeline Trimmomatic16S Step generates 16S analysis data that can be examined and plotted as demonstrated in `16S analysis video`_.
+      3. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` pipeline Trimmomatic16S Step generates 16S analysis data that can be examined and plotted as demonstrated in `16S analysis video`_.
 
          |16S_analysis_video|
 
@@ -35,6 +39,12 @@ This document contains information on available current publications and other m
 .. _16S analysis video: https://www.youtube.com/watch?v=BsrKUpzxY2s
 
 .. Video Tags
+
+.. |howtorun_c3g_gp| raw:: html
+
+   <div style="border: lightgray;">
+     <iframe src="https://www.youtube.com/embed/oNNIYxp8KEw" frameborder="2" allowfullscreen></iframe>
+   </div>
 
 .. |metagenomics_video| raw:: html
 
