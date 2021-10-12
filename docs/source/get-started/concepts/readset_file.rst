@@ -7,7 +7,7 @@ Readset File
 
 Readsets refer to replicates that belong to a particular sample. If a sample was divided over 3 lanes, each lane output would be a readset of that sample. Most pipelines merge readsets and run the analysis based on samples. You can think of readsets as technical replicates while Samples as biological replicates.
 
-.. note::  ** Why does GenPipes need Readset file?**
+.. note::  **Why does GenPipes need Readset file?**
 
         A readset file is another file that accompanies our pipelines. While the configuration files contains information about the parameters needed by the tools in the pipeline, the readset file contains information about the samples to be analyzed. In the Readset file, you list each readset used for the analysis, which samples are to be merged and where your fastq files or bam files are located.
 
@@ -22,6 +22,9 @@ The readset file is a tab-separated file that contains the following information
 +==================+===========================================================================================+
 | **Sample:**      | Sample must contain letters A-Z, numbers 0-9, hyphens (-) or underscores (_) only; BAM    |
 |                  | files will be merged into a file named after this value; mandatory.                       |
+|                  |                                                                                           | 
+|                  | |sample_note_francois|                                                                    | 
+|                  |                                                                                           | 
 +------------------+-------------------------------------------------------------------------------------------+
 |**Readset:**      | a unique readset name with the same allowed characters as above; mandatory.               |
 +------------------+-------------------------------------------------------------------------------------------+
@@ -82,3 +85,7 @@ Example of Readset File
             sampleB readset3 lib0002 PAIRED_END run200 5 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 33 path/to/file.bed path/to/readset3.paired1.fastq.gz path/to/readset3.paired2.fastq.gz path/to/readset3.bam
 
             sampleB readset4 lib0002 PAIRED_END run200 6 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 33 path/to/file.bed path/to/readset4.paired1.fastq.gz path/to/readset4.paired2.fastq.gz path/to/readset4.bam
+
+.. Add a note from Francois via Paul S regarding Sample definition
+
+.. |sample_note_francois| replace:: **Note**:  The definition of a sample in the context of GenPipes is the "input" biological sample, i.e. the sample on which processing such as IP, IgG assay (ChIPSeq Pipeline) or nothing (input) was performed. This is in contrast to sample being defined as the "sample sent for sequencing".

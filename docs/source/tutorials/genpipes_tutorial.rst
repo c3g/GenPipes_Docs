@@ -175,6 +175,13 @@ Readset File:
 The readset file is a **tab-separated** file that contains the following information:
 
 **Sample:** must contain letters A-Z, numbers 0-9, hyphens (-) or underscores (_) only; BAM files will be merged into a file named after this value; mandatory.
+
+.. note::
+
+   **Sample**
+
+     The definition of a sample in the context of GenPipes is the "input" biological sample, i.e. the sample on which processing such as IP, IgG assay (ChIPSeq Pipeline) or nothing (input) was performed. This is in contrast to sample being defined as the "sample sent for sequencing".
+
 **Readset:** a unique readset name with the same allowed characters as above; mandatory.
 
 .. role:: red

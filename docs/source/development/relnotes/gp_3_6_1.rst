@@ -1,0 +1,46 @@
+:orphan:
+
+.. _docs_gp_relnote_3_6_1:
+
+.. spelling::
+
+     genpipes
+
+GenPipes 3.6.1 Release Notes
+============================
+
+.. note::
+
+     This is a minor release of GenPipes.
+
+     Watch out for the next release with full support for Python3!!!!
+
+What's new? 
+-----------
+
+* DNA Sequencing pipeline bug related to capture/exome datasets has been fixed.
+
+* Log Report Bug fix.
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+ 
+* This version tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-3.6.1.tar.gz
+
+* The module mugqic/genpipes/3.6.1 is installed on Abacus (MGC), Béluga, Graham and Cedar clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes
+
+* For more documentation, please refer to: https://genpipes.readthedocs.io/
+
+Where is the detailed ChangeLog? 
+================================= 
+A ChangeLog (`CHANGELOG.md <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_) is available in the archive as well as in the repository.
+
+Since we use git, there are many ways to get the details in many formats. 
+One of our preferred ways is to use a script written by the author of the Ray assembler: Sébastien Boisvert, 
+which lists the commits by tag and author: 
+
+https://raw.github.com/sebhtml/ray/master/scripts/dump-ChangeLog.sh 
+
+Enjoy our pipelines on the many clusters where they are installed!
