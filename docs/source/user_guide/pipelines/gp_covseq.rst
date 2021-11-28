@@ -7,6 +7,8 @@
      sociaux
      santé
      Ministere
+     quast
+     covseq
 
 CoV Sequencing Pipeline
 ========================

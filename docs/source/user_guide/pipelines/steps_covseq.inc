@@ -3,6 +3,8 @@
 .. spelling::
 
      metagenomic
+     quast
+     quickalign
 
 Step Details
 -------------
@@ -141,8 +143,7 @@ It uses ivar consensus as well as freebayes consensus to arrive at the alignment
 
 **Prepare Table**
 
-Gathers all analysis data for quast, kraken and other metrics and module
- details.
+Gathers all analysis data for quast, kraken and other metrics and module details.
 
 .. _Prepare Report ivar:
 

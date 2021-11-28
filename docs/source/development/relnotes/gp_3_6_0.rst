@@ -5,6 +5,7 @@
 .. spelling::
 
      genpipes
+     Strelka
 
 GenPipes 3.6.0 Release Notes
 ============================
@@ -20,14 +21,14 @@ What's new?
 
 * :ref:`Pipeline DNAseq<docs_gp_dnaseq>` updates : 
 
-  - Addition of VariantBam implementation for further space reduction of base recalibrated crams
+  - Addition of VariantBam implementation for further space reduction of base re-calibrated crams
 
 * :ref:`Tumor Pair<docs_gp_tumorpair>` pipeline is back !
 
   - Use of GATK4 for bam processing and mutect2 is now default
-  - Removal of samtools in ensemble protocol in favour of strelka somatic and germline caller
+  - Removal of samtools in ensemble protocol in favor of Strelka somatic and germline caller
   - Addition of newer purity estimate - purple
-  - Improved behaviour for WES data
+  - Improved behavior for WES data
   - Next to be improved : reporting system for somatic and germline calls
 
 Quick! Where can I find it? I can't wait! 
