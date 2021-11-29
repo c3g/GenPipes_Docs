@@ -24,7 +24,7 @@ De-Novo RNA Sequencing Pipeline
 
 RNA Sequencing is a technique that allows `transcriptome studies`_ based on high throughput next-generation gene sequencing (NGS). De novo sequencing refers to sequencing a novel genome where there is no reference sequence available for alignment. Sequence reads are assembled as contigs, and the coverage quality of de novo sequence data depends on the size and continuity of the contigs (i.e., the number of gaps in the data).
 
-The standard MUGQIC RNA-Seq De Novo Assembly pipeline now has two protocols. One uses the `Trinity software suite <https://github.com/trinityrnaseq/trinityrnaseq/wiki>`_ to reconstruct transcriptomes from RNA-Seq data without using any reference genome or transcriptome. The other one uses `Seq2Fun <https://www.seq2fun.ca>`_, a functional profiling tool which can directly perform functional quantification of RNA-seq reads without transcriptome de novo assembly.
+De-Novo RNASeq pipeline is adapted from the `Trinity-Trinotate`_ `suggested workflow`_. It reconstructs transcripts from short reads, predicts proteins, and annotates, leveraging several databases. Quantification is computed using `RSEM Tool`_, and differential expression is tested in a manner identical to the RNA-seq pipeline. We observed that the default parameters of the Trinity suite are very conservative, which could result in the loss of low-expressed but biologically relevant transcripts. To provide the most complete set of transcripts, the pipeline was designed with lower stringency during the assembly step in order to produce every possible transcript and not miss low-expressed messenger RNA. A stringent filtration step is included afterward in order to provide a set of transcripts that make sense biologically.
 
 .. contents:: :local:
 
@@ -32,15 +32,7 @@ The standard MUGQIC RNA-Seq De Novo Assembly pipeline now has two protocols. One
 
 Introduction
 ------------
-
-De-Novo RNASeq pipeline supports two protocols:  Trinity and Seq2Fun.
-
-Trinity Protocol (Default)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-De-Novo RNASeq pipeline using the Trinity protocol is adapted from the `Trinity-Trinotate`_ `suggested workflow`_. It reconstructs transcripts from short reads, predicts proteins, and annotates, leveraging several databases. Quantification is computed using `RSEM Tool`_, and differential expression is tested in a manner identical to the RNA-seq pipeline. We observed that the default parameters of the Trinity suite are very conservative, which could result in the loss of low-expressed but biologically relevant transcripts. To provide the most complete set of transcripts, the pipeline was designed with lower stringency during the assembly step in order to produce every possible transcript and not miss low-expressed messenger RNA. A stringent filtration step is included afterward in order to provide a set of transcripts that make sense biologically.
-
-By default, the standard MUGQIC RNA-Seq *De Novo* Assembly pipeline uses the `Trinity <http://trinityrnaseq.sourceforge.net/>`_ software suite to reconstruct transcriptomes from RNA-Seq data without using any reference genome or transcriptome.  First, reads are trimmed with `Trimmomatic <http://www.usadellab.org/cms/index.php?page=trimmomatic>`_ and normalized in order to reduce memory requirement and decrease assembly runtime, using the Trinity normalization utility inspired by the `Diginorm <http://arxiv.org/abs/1203.4802>`_ algorithm.
+The standard MUGQIC RNA-Seq *De Novo* Assembly pipeline uses the `Trinity <http://trinityrnaseq.sourceforge.net/>`_ software suite to reconstruct transcriptomes from RNA-Seq data without using any reference genome or transcriptome.  First, reads are trimmed with `Trimmomatic <http://www.usadellab.org/cms/index.php?page=trimmomatic>`_ and normalized in order to reduce memory requirement and decrease assembly runtime, using the Trinity normalization utility inspired by the `Diginorm <http://arxiv.org/abs/1203.4802>`_ algorithm.
 
 Then, the transcriptome is assembled on normalized reads using the Trinity assembler. Trinity creates a Trinity.fasta file with a list of contigs representing the transcriptome isoforms. Those transcripts are grouped in components mostly representing genes.  Components and transcripts are functionally annotated using the `Trinotate <http://trinotate.sourceforge.net/>`_ suite.  Gene abundance estimation for each sample has been performed using `RSEM Tool`_ (RNA-Seq by Expectation-Maximization). Differential gene expression analysis is performed using `DESeq2`_ and `edgeR`_ Bioconductor packages.
   
@@ -55,18 +47,6 @@ Thus a high quality contigs assembly is created by extracting all transcripts ha
 Finally, different exploratory data analysis (EDA) techniques are applied to filtered isoforms expression levels.  Main goals of expression level EDA are the detection of outliers, potential mislabeling,  to explore the homogeneity of biological replicates and  to appreciate the global effects of the different experimental variables.
   
 An HTML summary report is automatically generated by the pipeline. This report contains description of the sequencing experiment as well as a detailed presentation of the pipeline steps and results. Various Quality Control (QC) summary statistics are included in the report and additional QC analysis is accessible for download directly through the report. The report includes also the main references of the software and methods used during the analysis, together with the full list of parameters that have been passed to the pipeline main script.
-
-Seq2Fun protocol
-^^^^^^^^^^^^^^^^
-
-RNA-seq is a powerful tool to answer many biological questions. While the majority of RNA-seq data has been collected and analyzed in model organisms, it is increasingly collected in non-model organisms such as many species of environmental and/or economical importance, to answer some very basic questions, such as which genes are up- and down- regulated, which pathways are changed under different conditions. In most cases, they either lack of genome references or do not have high-quality genome, which has posed great challenge for RNA-seq data analysis for these organisms.
-
-Therefore, Seq2Fun, an ultra-fast, assembly-free, all-in-one tool has been developed based on a modern data structure full-text in minute space (FM) index and burrow wheeler transformation (BWT), to functional quantification of RNA-seq reads for non-model organisms without transcriptome assembly and genome references.
-
-For further information regarding Seq2Fun visit: `https://www.seq2fun.ca/motivation.xhtml <https://www.seq2fun.ca/motivation.xhtml>`_
-
-The Seq2fun protocol starts with merging fastq files with multiple readsets. Then Seq2fun use the fastq files to generate KO abundance table and several other files (such as `seq2fun output files <https://www.seq2fun.ca/manual.xhtml#sect4>`_) that can be used to perform downstream analysis on NetworkAnalyst. A HTML report for seq2fun analysis is generated.
-Additionally differential KO analysis is performed using `DESeq2 <https://pubmed.ncbi.nlm.nih.gov/25516281/>`_and `edgeR <http://bioinformatics.oxfordjournals.org/content/26/1/139/>`_ R Bioconductor packages. on KO count files and result tables will be generated. Moreover, a pathway analysis using differential analysis is performed using `fgsea <https://www.biorxiv.org/content/10.1101/060012v3>`_.
 
 ----
 
@@ -92,7 +72,7 @@ Usage
                                  [--sanity-check]
                                  [--container {wrapper, singularity} <IMAGE PATH>
                                  [--genpipes_file GENPIPES_FILE]
-                                 [-d DESIGN] [-t {trinity, seq2fun}]
+                                 [-d DESIGN] [-t {cufflinks,stringtie}]
                                  [-r READSETS] [-v]
 
 **Optional Arguments**
@@ -145,55 +125,55 @@ Pipeline Steps
 
 The table below lists various steps that constitute the RNA Sequencing *De Novo* Assembly.
 
-+----+-------------------------------------------+
-|    | RNA Sequencing De Novo Assembly Steps     |
-+====+===========================================+
-| 1. | |picard_sam_to_fastq|                     |
-+----+-------------------------------------------+
-| 2. | |trimmomatic|                             |
-+----+-------------------------------------------+
-| 3. | |merge_trimmomatic_stats|                 |
-+----+-------------------------------------------+
-| 4. | |insilico_read_normalization_readsets|    |
-+----+-------------------------------------------+
-| 5. | |insilico_read_normalization_all|         |
-+----+-------------------------------------------+
-| 6. | |trinity_step|                            |
-+----+-------------------------------------------+
-| 7. | |exonerate_fastasplit|                    |
-+----+-------------------------------------------+
-| 8. | |blastx_trinity_uniprot|                  |
-+----+-------------------------------------------+
-| 9. | |blastx_trinity_uniprot_merge|            |
-+----+-------------------------------------------+
-| 10.| |transdecoder_s|                          |
-+----+-------------------------------------------+
-| 11.| |hmmer|                                   |
-+----+-------------------------------------------+
-| 12.| |rnammer_transcriptome|                   |
-+----+-------------------------------------------+
-| 13.| |blastp_transdecoder_uniprot|             |
-+----+-------------------------------------------+
-| 14.| |signalp|                                 |
-+----+-------------------------------------------+
-| 15.| |tmhmm|                                   |
-+----+-------------------------------------------+
-| 16.| |trinotate_step|                          |
-+----+-------------------------------------------+
-| 17.| |align_and_estimate_abn_p_ref|            |
-+----+-------------------------------------------+
-| 18.| |align_and_estimate_abn|                  |
-+----+-------------------------------------------+
-| 19.| |gq_seq_rna_denovo|                       |
-+----+-------------------------------------------+
-| 20.| |differential_expression|                 |
-+----+-------------------------------------------+
-| 21.| |filter_annotated_components|             |
-+----+-------------------------------------------+
-| 22.| |gq_seq_rna_denovo_filtered|              |
-+----+-------------------------------------------+
-| 23.| |differential_expression_filtered|        |
-+----+-------------------------------------------+
++----+-------------------------------------------+----------------------------------+
+|    | Trinity Protocol Steps                    | Seq2Fun Protocol Steps           |
++====+===========================================+==================================+
+| 1. | |picard_sam_to_fastq|                     | |picard_sam_to_fastq|            |
++----+-------------------------------------------+----------------------------------+
+| 2. | |trimmomatic|                             | |merge_fastq|                    |
++----+-------------------------------------------+----------------------------------+
+| 3. | |merge_trimmomatic_stats|                 | |seq2fun|                        |
++----+-------------------------------------------+----------------------------------+
+| 4. | |insilico_read_normalization_readsets|    | |diff_expr_seq2fun|              |
++----+-------------------------------------------+----------------------------------+
+| 5. | |insilico_read_normalization_all|         | |pathway_enrichment_seq2fun|     |
++----+-------------------------------------------+----------------------------------+
+| 6. | |trinity_step|                            |                                  |
++----+-------------------------------------------+                                  |
+| 7. | |exonerate_fastasplit|                    |                                  |
++----+-------------------------------------------+                                  |
+| 8. | |blastx_trinity_uniprot|                  |                                  |
++----+-------------------------------------------+                                  |
+| 9. | |blastx_trinity_uniprot_merge|            |                                  |
++----+-------------------------------------------+                                  |
+| 10.| |transdecoder_s|                          |                                  |
++----+-------------------------------------------+                                  |
+| 11.| |hmmer|                                   |                                  |
++----+-------------------------------------------+                                  |
+| 12.| |rnammer_transcriptome|                   |                                  |
++----+-------------------------------------------+                                  |
+| 13.| |blastp_transdecoder_uniprot|             |                                  |
++----+-------------------------------------------+                                  |
+| 14.| |signalp|                                 |                                  |
++----+-------------------------------------------+                                  |
+| 15.| |tmhmm|                                   |                                  |
++----+-------------------------------------------+                                  |
+| 16.| |trinotate_step|                          |                                  |
++----+-------------------------------------------+                                  |
+| 17.| |align_and_estimate_abn_p_ref|            |                                  |
++----+-------------------------------------------+                                  |
+| 18.| |align_and_estimate_abn|                  |                                  |
++----+-------------------------------------------+                                  |
+| 19.| |gq_seq_rna_denovo|                       |                                  |
++----+-------------------------------------------+                                  |
+| 20.| |differential_expression|                 |                                  |
++----+-------------------------------------------+                                  |
+| 21.| |filter_annotated_components|             |                                  |
++----+-------------------------------------------+                                  |
+| 22.| |gq_seq_rna_denovo_filtered|              |                                  |
++----+-------------------------------------------+                                  |
+| 23.| |differential_expression_filtered|        |                                  |
++----+-------------------------------------------+----------------------------------+
 
 ----
 
@@ -241,7 +221,10 @@ You can find more information about RNA Sequencing *De Novo* Assembly Pipeline i
 .. |filter_annotated_components| replace:: `Filter Annotated Components`_
 .. |gq_seq_rna_denovo_filtered| replace:: `Exploratory Analysis with subset of filtered transcripts`_
 .. |differential_expression_filtered| replace:: `GOSEQ using filtered transcripts`_
-
+.. |merge_fastq| replace:: `Merge FASTQ`_
+.. |seq2fun| replace:: `Seq2Fun`_
+.. |diff_expr_seq2fun| replace:: `Differential Expression Seq2Fun`_
+.. |pathway_enrichment_seq2fun| replace:: `Pathway Enrichment Seq2Fun`_
 
 .. The following are the html links referred to in this text.
 

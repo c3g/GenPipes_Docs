@@ -152,6 +152,41 @@ In this step, exploratory analysis is performed by the gqSeqUtils R package usin
 
 In this step, differential expression and `goseq`_ analysis is performed based on filtered transcripts and genes.
 
+.. _Merge FASTQ:
+
+**Merge FASTQ**
+
+TBD
+
+.. _Seq2Fun:
+
+**Seq2Fun**
+
+The Seq2Fun step takes as input files:
+
+#. FASTQ files from the readset file, if available
+#. Otherwise, it uses FASTQ output files from previous picard_sam_to_fastq conversion of BAM files
+
+This step perform seq2fun analysis and generates output files including KO abundance table and KO mapped fastq files (https://www.seq2fun.ca/manual.xhtml#sect4) and (https://www.seq2fun.ca/manual.xhtml#sect20)
+
+For each contrast different folders and all the files for that particular contrast are generated. Therefore, only pairwise comparisons are possible.
+
+.. note::
+
+     Treatment and controls will be added in the design file depending upon what input is provided, 1 or 2 above.
+
+.. _Differential Expression Seq2Fun:
+
+**Differential Expression Seq2Fun**
+
+TBD
+
+.. _Pathway Enrichment Seq2Fun:
+
+**Pathway Enrichment Seq2Fun**
+
+TBD
+
 .. HTML links commonly used in this file
 
 .. _Trinity align_and_estimate_abundance.pl utility: https://github.com/trinityrnaseq/trinityrnaseq
