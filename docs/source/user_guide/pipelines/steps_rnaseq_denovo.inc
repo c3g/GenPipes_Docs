@@ -162,18 +162,13 @@ TBD
 
 **Seq2Fun**
 
-The Seq2Fun step takes as input files:
-
-#. FASTQ files from the readset file, if available
-#. Otherwise, it uses FASTQ output files from previous picard_sam_to_fastq conversion of BAM files
-
-This step perform seq2fun analysis and generates output files including KO abundance table and KO mapped fastq files (https://www.seq2fun.ca/manual.xhtml#sect4) and (https://www.seq2fun.ca/manual.xhtml#sect20)
+The Seq2Fun step takes FASTQ files from the readset file as input if available. Otherwise, it uses FASTQ output files from previous `Picard SAM to FastQ`_ conversion of BAM files. The seq2fun analysis is performed in this step and generates output files including `KO abundance table <https://www.seq2fun.ca/manual.xhtml#sect4>`_ and `KO mapped fastq files <https://www.seq2fun.ca/manual.xhtml#sect20>`_.
 
 For each contrast different folders and all the files for that particular contrast are generated. Therefore, only pairwise comparisons are possible.
 
 .. note::
 
-     Treatment and controls will be added in the design file depending upon what input is provided, 1 or 2 above.
+     Treatment and controls will be added in the design file depending upon what input is provided, FASTQ fiels from the readset or FASTQ output files from the previous `Picard SAM to FastQ`_ conversion of BAM files step.
 
 .. _Differential Expression Seq2Fun:
 
