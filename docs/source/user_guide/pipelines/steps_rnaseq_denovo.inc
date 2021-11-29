@@ -158,9 +158,9 @@ In this step, differential expression and `goseq`_ analysis is performed based o
 
 TBD
 
-.. _Seq2Fun:
+.. _Seq2Fun Step:
 
-**Seq2Fun**
+**Seq2Fun Step**
 
 The Seq2Fun step takes FASTQ files from the readset file as input if available. Otherwise, it uses FASTQ output files from previous `Picard SAM to FastQ`_ conversion of BAM files. The seq2fun analysis is performed in this step and generates output files including `KO abundance table <https://www.seq2fun.ca/manual.xhtml#sect4>`_ and `KO mapped fastq files <https://www.seq2fun.ca/manual.xhtml#sect20>`_.
 
@@ -168,7 +168,7 @@ For each contrast different folders and all the files for that particular contra
 
 .. note::
 
-     Treatment and controls will be added in the design file depending upon what input is provided, FASTQ fiels from the readset or FASTQ output files from the previous `Picard SAM to FastQ`_ conversion of BAM files step.
+     Treatment and controls will be added in the design file depending upon what input is provided, FASTQ files from the readset or FASTQ output files from the previous `Picard SAM to FastQ`_ conversion of BAM files step.
 
 .. _Differential Expression Seq2Fun:
 
