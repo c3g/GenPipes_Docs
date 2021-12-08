@@ -250,7 +250,6 @@ After downloading the database and performing the steps listed above, next, spec
 
 ``user_pathway_list`` is a file with pathway that are interested with KEGG map id (only one column). You must specify the file path to the ``user_pathway_list`` in a ``custom.ini`` file.
 
-
 .. HTML links commonly used in this file
 
 .. _Trinity align_and_estimate_abundance.pl utility: https://github.com/trinityrnaseq/trinityrnaseq
