@@ -89,11 +89,9 @@ Example Run
 
 You can download `ChIP-Seq test dataset`_ and use the following command to execute the ChIP-Seq genomics pipeline:
 
-::
+.. include:: /user_guide/pipelines/example_runs/chipseq.inc
 
-  chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini -r readset.chipseq.txt -d design.chipseq.txt -s 1-20 > chipseqScript.txt
-
-  bash chipseqScript.txt
+.. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
 The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get MUGQICexitStatus:0 or Exit_status=0. If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the job_output folder.
 

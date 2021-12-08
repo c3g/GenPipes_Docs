@@ -93,11 +93,9 @@ Example Run
 
 Use the following commands to execute Nanopore sequencing pipeline:
 
-::
+.. include::  /user_guide/pipelines/example_runs/cov_nanopore.inc
 
-  nanopore.py -c $MUGQIC_PIPELINES_HOME/pipelines/nanopore/nanopore.base.ini $MUGQIC_PIPELINES_HOME/pipelines/nanopore/nanopore.beluga.ini > nanoporeseqCommands_mugqic.sh
-
-  bash nanoporeseqCommands_mugqic.sh
+.. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
 You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`. Nanopore readset file structure and content details are available `here <https://bitbucket.org/mugqic/genpipes/src/master/README.md#markdown-header-nanopore>`_.
 
