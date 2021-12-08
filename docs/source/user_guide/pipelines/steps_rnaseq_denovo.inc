@@ -152,6 +152,36 @@ In this step, exploratory analysis is performed by the gqSeqUtils R package usin
 
 In this step, differential expression and `goseq`_ analysis is performed based on filtered transcripts and genes.
 
+.. _Merge FASTQ:
+
+**Merge FASTQ**
+
+In this step FASTQ files are merged if the sample contains multiple readsets. One FASTQ file is crated for each sample.
+
+.. _Seq2Fun Step:
+
+**Seq2Fun Step**
+
+The Seq2Fun step takes FASTQ files from the readset file as input if available. Otherwise, it uses FASTQ output files from previous `Picard SAM to FastQ`_ conversion of BAM files. The seq2fun analysis is performed in this step and generates output files including `KO abundance table <https://www.seq2fun.ca/manual.xhtml#sect4>`_ and `KO mapped fastq files <https://www.seq2fun.ca/manual.xhtml#sect20>`_.  These output files can be used for downstream analysis using `Network Analyst web application <https://www.networkanalyst.ca/NetworkAnalyst/uploads/TableUploadView.xhtml>`_. The interested comparisons should be specified using a design file (Format is similar to the default RNA-seq design file).
+
+For each contrast different folders and all the files for that particular contrast are generated. Therefore, only pairwise comparisons are possible.
+
+.. note::
+
+     Treatment and controls will be added in the design file depending upon what input is provided, FASTQ files from the readset or FASTQ output files from the previous `Picard SAM to FastQ`_ conversion of BAM files step.
+
+.. _Differential Expression Seq2Fun:
+
+**Differential Expression Seq2Fun**
+
+`DESeq2 <https://bioconductor.org/packages/release/bioc/html/DESeq2.html>`_ and `edgeR`_ are used to perform differential KO expression analysis in this step.
+
+.. _Pathway Enrichment Seq2Fun:
+
+**Pathway Enrichment Seq2Fun**
+
+In this step, a `KEGG ortholog <https://www.genome.jp/kegg/ko.html>`_ pathway analysis is performed using `fgsea`_ R package. The differential KO expression results obtained from `edgeR`_ are used as input for the pathway enrichment analysis.
+
 .. HTML links commonly used in this file
 
 .. _Trinity align_and_estimate_abundance.pl utility: https://github.com/trinityrnaseq/trinityrnaseq
