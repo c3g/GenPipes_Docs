@@ -1,0 +1,51 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}, 'fontFamily': 'Montserrat', 'fontSize': 10}}%%
+
+        %% GenPipes Diagram for monitor.sh working
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/utils/monitor.sh
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+
+        graph TD
+          InputBW[[fa:fa-file-archive-o Pipeline Command]]
+          Node1{{ 1. <br/> Pipeline Commands Script }}:::nodefill
+          Node2{{ 2. <br/> chunk_genpipes.sh utility }}:::nodefill
+          Node3{{ 3. <br/> Job Chunks Folder }}:::nodefill
+          Node4{{ 4. <br/> monitor.sh utility }}:::nodefill
+          Output([fa:fa-sticky-note-o Chunks of job that are submitted for Pipeline ])
+          Status([fa:fa-sticky-note-o Status / Observations ])
+
+          InputBW --> Node1
+          Node1 -.-> Node2 -.-> Output -.-> Node3
+          Node4 -.-> Node3
+          Node3 -.-> Node4 -.-> Status
+
+          subgraph pipeline[" "]
+            Node1
+          end
+
+          subgraph chunk[" "]
+            Node2
+          end
+
+           subgraph monitorutil[" "]
+            Node4
+          end
+          
+           subgraph monitor[" "]
+            Node3
+            monitorutil
+            Output
+          end
+
+          classDef inputfill fill:#ffffff,stroke:gray,stroke-width:1px
+          classDef nodefill fill:#ffffff,stroke:black,stroke-width:1px
+          classDef whiterect fill:#eaeaea,stroke:#eaeaea
+          classDef yellowrect fill:#f8d354,stroke:#ffffff
+          classDef creamrect fill:#fef8ec, stroke:#ffffff
+          classDef lightgrect fill:#aaaaaa, stroke:#f0f0f0
+
+          class InputBW inputfill
+          class pipeline whiterect
+          class chunk yellowrect
+          class monitor creamrect
+          class monitorutil lightgrect
+

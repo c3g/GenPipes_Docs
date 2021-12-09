@@ -4,6 +4,7 @@
 
    userID
    txt
+   Moab
    
 Using GenPipes for genomic analysis
 ====================================
@@ -34,7 +35,7 @@ Here is how you can launch GenPipes. Following is the generic command to run Gen
 
 .. code-block:: bash
 
-   <pipeline-name>.py -c config -r readset-file -s 1-n > list-of-commands.txt
+   <pipeline-name>.py -c config -r readset-file -s 1-n -g list-of-commands.txt
    bash list-of-commands.txt
        
 
@@ -68,7 +69,8 @@ In addition to the :ref:`configuration files<docs_config_ini_file>` and the inpu
 .. image:: /img/gp_command_profile.png
 
 Example Run
------------
+^^^^^^^^^^^^
+
 The following example shows how you can run Hi-C sequencing pipeline using GenPipes installed on Compute Canada data centres. Please ensure you have login access to GenPipes servers.  Refer to :ref:`checklist of pre-requisites for GenPipes<docs_pre_req_chklist>` before you run this example.
 
 We will now run the pipeline using a test dataset. We will use the first 2 million reads from HIC010 from Rao et al. 2014 (SRR1658581.sra). This is an in-situ Hi-C experiment of GM12878 using MboI restriction enzyme.
@@ -83,7 +85,7 @@ Please ensure you have access to "guillimin" server in Compute Canada data centr
 
 ::
 
-  hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimin.ini -r readsets.HiC010.tsv -s 1-15 -e MboI > hicseqScript_SRR1658581.txt
+  hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimin.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -g hicseqScript_SRR1658581.txt
 
 To understand what $MUGQIC_PIPELINES_HOME refers to, please see instructions on how to :ref:`access GenPipes on Compute Canada servers<docs_access_gp_pre_installed>`.
 
@@ -101,7 +103,7 @@ By default, on Compute Canada servers such as "Cedar", "Graham" or "Mammouth", S
 
 ::
 
-  hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimn.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -j pbs > hicseqScript_SRR1658581.txt
+  hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimn.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -j pbs -g hicseqScript_SRR1658581.txt
 
 The above command generates a list of instructions that need to be executed to run Hi-C sequencing pipeline.  These instructions are stored in the file:
 
@@ -151,7 +153,7 @@ For more information about output formats please consult the webpage of the thir
   hicseq -h
 
 Example Run with Design File
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Certain pipelines that involve comparing and contrasting samples, need a :ref:`Design File<docs_design_file>`. The design file can contain more than one way to contrast and compare samples.  To see how this works with GenPipes pipelines, lets run a ChIP-Sequencing experiment.
 
@@ -187,10 +189,46 @@ Let us now run this ChIP-Sequencing analysis on *guillimin* server at Compute Ca
 
 ::
 
-  chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.guillimin.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
+  chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.guillimin.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 -g chipseqScript.txt
   bash chipseqScript.txt
 
 The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get **MUGQICexitStatus:0** or **Exit_status=0.** If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the **job_output** folder.
+
+Monitoring GenPipes Pipeline Runs
+---------------------------------
+
+HPC site policies typically limit the number of jobs that a user can submit in a queue. These sites deploy resource schedulers such as Slurm, Moab, PBS and Torque for scheduling and managing sharing of HPC resources. 
+
+GenPipes offers a utility script ```monitor.sh``` to enable better integration with resource schedulers (Slurm, Moab, PBS and Torque) deployed on HPC clusters.  It also provides a fail safe mechanism to GenPipes users for re-submitting selected pipeline steps that failed to run due to timeouts. These timeouts are often caused by insufficient resource conditions for jobs running large, complex analysis that need more HPC resources. Another cause of timeouts could be errors in the HPC job queue management system.
+
+The monitoring script lets GenPipes users manage resource constraints in a flexible and robust manner.
+
+Example: Monitoring hicseq.py
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Here is an example of to use the monitoring script with :ref:`HiC Sequencing Pipeline<docs_gp_hicseq>`:
+
+::
+
+  M_FOLDER=path_to_folder
+
+  hicseq.py <options> --genpipes_file hicseq_script.sh
+
+  $MUGQIC_PIPELINES_HOME/utils/chunk_genpipes.sh hicseq_script.sh $M_FOLDER
+
+  $MUGQIC_PIPELINES_HOME/utils/monitor.sh  $M_FOLDER
+
+The ```chunk_genpipes.sh``` script is used to create job chunks of specified size that are submitted at a time. Please note that this script should be executed only once when used in the context of monitoring.  The monitor.sh script can be invoked multiple times to check on the status of submitted jobs. The monitor.sh script runs can be canceled or killed by ```Ctrl-C``` keystroke or disconnecting the `ssh` shell and restarting monitoring again when required. The monitor.sh script has intelligent lock mechanism to prevent accidentally invoking two monitor.sh script runs in parallel on the on the same folder or GenPipes pipeline run.
+
+Figure below demonstrates how ```monitor.sh``` utility works. The pipeline command file output is fed into ```chunk_genpipes.sh``` script which creates the chunks folder as a one time activity. This chunk folder is monitored by the ```monitor.sh``` script which can be invoked multiple times to monitor the status of job chunk completion or resubmission if required.
+
+.. figure:: /img/monitor_utility.png
+   :align: center
+   :width: 60%
+   :figwidth: 60%
+   :alt: monitor util
+
+For a complete list of available GenPipes utilities, refer to the ```genpipes/util``` folder in the source tree.
 
 Further Information
 -------------------

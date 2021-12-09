@@ -34,7 +34,7 @@ The process followed for GenPipes RTD documentation is as follows:
    :caption: Mermaid Diagrams
 
    mmd/mmd_fig
-
+   mmd/diagram_fig
 
 .. Indices and tables
 .. ==================
