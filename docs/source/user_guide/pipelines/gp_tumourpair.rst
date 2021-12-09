@@ -91,11 +91,9 @@ Example Run
 
 Use the following commands to execute MUGQIC DNA sequencing pipeline:
 
-::
+.. include::  /user_guide/pipelines/example_runs/tumor_pair.inc
 
-  python tumor_pair.py -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/tumor_pair/tumor_pair.base.ini $MUGQIC_PIPELINES_HOME/pipelines/tumor_pair/tumor_pair.guillimin.ini -r readset.tumorPair.txt -p pairs.csv -s 1-44 > tumor_pairCommands.sh
-
-  bash tumor_pairCommands.sh 
+.. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
 where, p pairs : format - patient_name,normal_sample_name,tumor_sample_name
 

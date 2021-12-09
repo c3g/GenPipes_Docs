@@ -68,11 +68,9 @@ Example Run
 
 Use the following commands to execute the methylation pipeline:
 
-::
+.. include::  /user_guide/pipelines/example_runs/methylseq.inc
 
-  methylseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/methylseq/methylseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/methylseq/methylseq.guillimin.ini -r readset.methylseq.txt -s 1-14 > methylseq.sh
-
-  bash methylseq.sh
+.. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
 You can download the test dataset for this pipeline :ref:`in Reference section<docs_testdatasets>`.
 

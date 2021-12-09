@@ -62,13 +62,9 @@ Example Run
 
 You can download `RNA Sequencing Pipeline test dataset <https://www.computationalgenomics.ca/tutorial/c3g_analysis_workshop/C3GAW_RNA_TestData_Aug2018.zip>`_ and use the following command to execute the RNA Sequencing genomics pipeline:
 
-::
+.. include::  /user_guide/pipelines/example_runs/rnaseq.inc
 
-  rnaseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.base.ini 
-               $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.cedar.ini workshop.ini
-               -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-24 -j slurm > commands.txt
-
-  bash commands.txt 
+.. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
 This set of commands is meant for running GenPipes on C3 data center. For more details, you can refer to GenPipes `RNA Sequencing Workshop 2018 presentation <https://www.computationalgenomics.ca/tutorial/c3g_analysis_workshop/C3GAW_RNASeq_Aug2018.zip>`_.
 

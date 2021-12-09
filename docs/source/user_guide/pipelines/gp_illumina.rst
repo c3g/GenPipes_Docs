@@ -79,11 +79,9 @@ Example Run
 
 Use the following commands to execute Illumina Sequencing Pipeline:
 
-::
+.. include::  /user_guide/pipelines/example_runs/illumina.inc
 
-  illumina_run_processing.py <Add options - info not available in README file> >illumina_cmd.sh
-
-  bash illumina_cmd.sh
+.. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
 You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 

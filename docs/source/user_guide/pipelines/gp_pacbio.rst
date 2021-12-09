@@ -63,11 +63,9 @@ Example Run
 
 Use the following commands to execute PacBio Assembly Pipeline:
 
-::
+.. include::  /user_guide/pipelines/example_runs/pacbio.inc
 
-  pacbio_assembly.py -c $MUGQIC_PIPELINES_HOME/pipelines/pacbio_assembly/pacbio_assembly.base.ini $MUGQIC_PIPELINES_HOME/pipelines/pacbio_assembly/pacbio_assembly.guillimin.ini -r readset.pacbio.txt -s 1-12 > pacbioCommands.sh
-
-  bash pacbioCommands.sh
+.. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
 You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 

@@ -80,11 +80,9 @@ Example Run
 
 Use the following commands to execute Nanopore Sequencing Pipeline:
 
-::
+.. include::  /user_guide/pipelines/example_runs/nanopore.inc
 
-  nanopore.py <Add options - info not available in README file> >nanopore_cmd.sh
-
-  bash nanopore_cmd.sh
+.. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
 You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 

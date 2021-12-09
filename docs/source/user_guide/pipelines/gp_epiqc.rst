@@ -72,6 +72,7 @@ Usage
            [-l {debug,info,warning,error,critical}] [--sanity-check]
            [--container {wrapper, singularity} <IMAGE PATH>]
            [-r READSETS] [-v]
+           [--genpipes_file GENPIPES_FILE]
 
 **Optional Arguments**
 
@@ -85,17 +86,16 @@ Example Run
 
 Use the following commands to execute epiQC pipeline:
 
-::
+.. include:: /user_guide/pipelines/example_runs/epiqc.inc
 
-  epiqc.py -c $MUGQIC_PIPELINES_HOME/pipelines/epiqc/epiqc.base.ini $MUGQIC_PIPELINES_HOME/pipelines/epiqc/epiqc.beluga.ini > epiqcCommands_mugqic.sh
-
-  bash epiqcCommands_mugqic.sh
+.. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
 You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 
 .. note::
 
      Check with Pubudu if this pipeline requires a test dataset and whether one is available. Then update/edit the test dataset link above accordingly.
+
  
 ----
 
