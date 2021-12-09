@@ -22,3 +22,4 @@ Contents
    faq_new_users
    faq_gp_dev
    faq_c3g_res
+   faq_hpc

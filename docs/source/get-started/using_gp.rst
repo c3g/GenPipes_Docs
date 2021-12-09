@@ -194,6 +194,8 @@ Let us now run this ChIP-Sequencing analysis on *guillimin* server at Compute Ca
 
 The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get **MUGQICexitStatus:0** or **Exit_status=0.** If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the **job_output** folder.
 
+.. _ref_monitoring_gp:
+
 Monitoring GenPipes Pipeline Runs
 ---------------------------------
 
@@ -220,7 +222,7 @@ Here is an example of to use the monitoring script with :ref:`HiC Sequencing Pip
 
 The ```chunk_genpipes.sh``` script is used to create job chunks of specified size that are submitted at a time. Please note that this script should be executed only once when used in the context of monitoring.  The monitor.sh script can be invoked multiple times to check on the status of submitted jobs. The monitor.sh script runs can be canceled or killed by ```Ctrl-C``` keystroke or disconnecting the `ssh` shell and restarting monitoring again when required. The monitor.sh script has intelligent lock mechanism to prevent accidentally invoking two monitor.sh script runs in parallel on the on the same folder or GenPipes pipeline run.
 
-Figure below demonstrates how ```monitor.sh``` utility works. The pipeline command file output is fed into ```chunk_genpipes.sh``` script which creates the chunks folder as a one time activity. This chunk folder is monitored by the ```monitor.sh``` script which can be invoked multiple times to monitor the status of job chunk completion or resubmission if required.
+Figure below demonstrates how ```monitor.sh``` utility works. The pipeline command file output is fed into ```chunk_genpipes.sh``` script which creates the chunks folder as a one time activity. This chunk folder is monitored by the ```monitor.sh``` script. The monitoring script can be invoked multiple times during the pipeline run. With this script user can monitor the status of the submitted job chunks, whether they have completed successfully or require to be re-submitted.
 
 .. figure:: /img/monitor_utility.png
    :align: center
