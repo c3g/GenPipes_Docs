@@ -22,6 +22,7 @@ This guide contains usage manual and reference information for all available Gen
    pipelines/gp_covseq
    pipelines/gp_dnaseq
    pipelines/gp_dnaseq_highcov
+   pipelines/gp_epiqc
    pipelines/gp_hicseq
    pipelines/gp_illumina
    pipelines/gp_wgs_methylseq
