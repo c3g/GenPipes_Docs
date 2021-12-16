@@ -5,19 +5,19 @@ on: [pull_request]
 jobs:
   ubuntu_build:
     runs-on: ubuntu-18.04
-#    runs-on: ubuntu-latest
+#   runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-#    - uses: ammaraskar/sphinx-action@master
-#      with:
-#        pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx sphinx-rtd-theme && pip3 install -r docs/requirements.txt"  
-#        build-command: 'make spelling html'
-#        docs-folder: "docs/"
+#   - uses: ammaraskar/sphinx-action@master
+#     with:
+#       pre-build-command: "apt-get update -y && apt-get install -y enchant git && pip3 install sphinx sphinx-rtd-theme && pip3 install -r docs/requirements.txt"  
+#       build-command: 'make spelling html'
+#       docs-folder: "docs/"
     - name: linux build dependencies
       run: |
           export SETUPTOOLS_USE_DISTUTILS=stdlib
-#          build dependencies for pdf build and fonts (if additional ones)
-#          sudo apt-get update -y && sudo apt-get install -y build-essential make libenchant-dev enchant git latexmk texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-luatex texlive-xetex dialog apt-utils && sudo apt-get autoremove && sudo apt-get clean && cp -rfv beta/docs/resources/fonts /usr/share/fonts && fc-cache -f -v
+#         build dependencies for pdf build and fonts (if additional ones)
+#         sudo apt-get update -y && sudo apt-get install -y build-essential make libenchant-dev enchant git latexmk texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-luatex texlive-xetex dialog apt-utils && sudo apt-get autoremove && sudo apt-get clean && cp -rfv beta/docs/resources/fonts /usr/share/fonts && fc-cache -f -v
           sudo apt-get update -y && sudo apt-get install -y build-essential make libenchant-dev enchant git dialog apt-utils && sudo apt-get autoremove && sudo apt-get clean
           python3 -m pip install --upgrade setuptools
           python3 -m pip install -r docs/requirements.txt
