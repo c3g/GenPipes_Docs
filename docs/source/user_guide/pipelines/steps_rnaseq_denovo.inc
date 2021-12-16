@@ -5,6 +5,9 @@
       picard 
       blastx
       gqSeqUtils
+      Protists
+      kegg
+      rds
 
 Step Details
 -------------
@@ -151,6 +154,101 @@ In this step, exploratory analysis is performed by the gqSeqUtils R package usin
 **GOSEQ using filtered transcripts**
 
 In this step, differential expression and `goseq`_ analysis is performed based on filtered transcripts and genes.
+
+.. _Merge FASTQ:
+
+**Merge FASTQ**
+
+In this step FASTQ files are merged if the sample contains multiple readsets. One FASTQ file is crated for each sample.
+
+.. _Seq2Fun Step:
+
+**Seq2Fun Step**
+
+For most non-model organisms, biological understanding of study outcomes is limited to protein-coding genes with functional annotations such as KEGG pathways or Gene Ontology or PANTHER classification system. Therefore, Seq2Fun databases focused on functionally annotated genes such as KOs largely meets the preferred needs of most scientists studying non-model organisms.
+
+.. note::
+
+    We have stored number of pre-built databases by the Seq2Fun developers and the list can be found below.
+
+    -  Eukaryotes
+    -  Animals
+    -  Plants
+    -  Fungi
+    -  Protists
+    -  Mammals
+    -  Birds
+    -  Reptiles
+    -  Amphibians
+    -  Fishes
+    -  Arthropods
+    -  Nematodes
+
+    For further information see `Seq2Fun Database details here <https://github.com/xia-lab/Seq2Fun#step-3-database-download>`.
+
+    You can specify the required database in a custom.ini file by changing "group" key. The default group is "birds".
+
+    * These KOs in the database are KOs assigned to KEGG pathways and they are only a proportion of whole list of KOs.
+    * All KOs include KOs not assigned to KEGG pathways.
+
+The Seq2Fun step takes FASTQ files from the readset file as input if available. Otherwise, it uses FASTQ output files from previous `Picard SAM to FastQ`_ conversion of BAM files. The seq2fun analysis is performed in this step and generates output files including `KO abundance table <https://www.seq2fun.ca/manual.xhtml#sect4>`_ and `KO mapped fastq files <https://www.seq2fun.ca/manual.xhtml#sect20>`_.  These output files can be used for downstream analysis using `Network Analyst web application <https://www.networkanalyst.ca/NetworkAnalyst/uploads/TableUploadView.xhtml>`_. The interested comparisons should be specified using a design file (Format is similar to the default RNA-seq design file). Therefore, only pairwise comparisons are possible unlike the original Seq2Fun program.
+
+.. note::
+
+     Treatment and controls will be added in the design file depending upon what input is provided, FASTQ files from the readset or FASTQ output files from the previous `Picard SAM to FastQ`_ conversion of BAM files step.
+
+If you want to compare multiple groups you will have to break the comparison in to pairs.
+
+For example, for 3 group comparison, the design file should be as follows:
+
+::
+
+   Sample   A_vs_B   B_vs_C  A_vs_C
+   A1       1        0       1
+   B1       2        1       0
+   A2       1        0       1
+   B2       2        1       0
+   C1       0        2       2
+   C2       0        2       2
+
+Seq2Fun analysis is performed using FASTQ files and it generates a sample table.
+
+.. _Differential Expression Seq2Fun:
+
+**Differential Expression Seq2Fun**
+
+`DESeq2 <https://bioconductor.org/packages/release/bioc/html/DESeq2.html>`_ and `edgeR`_ are used to perform differential KO expression analysis in this step.
+
+.. _Pathway Enrichment Seq2Fun:
+
+**Pathway Enrichment Seq2Fun**
+
+In this step, a `KEGG ortholog <https://www.genome.jp/kegg/ko.html>`_ pathway analysis is performed using `fgsea`_ R package. 
+
+Current KEGG database used for the analysis was created on August, 2021. If you'd like to update the database, please follow below instructions to download the latest KEGG pathway database and create pathway list for the kegg_all key in the ini file and kegg.rds file. Download the latest KEGG database.
+
+**Instructions for download on Linux**
+
+:: 
+
+    wget http://rest.kegg.jp/list/pathway`
+    sed -i 's/path://g' pathway
+    mv pathway KEGG_all_pathways.txt
+
+**Instructions for download using R**
+
+::
+
+    library(data.table)
+    pathway_list <- fread("KEGG_all_pathways.txt", header =F)`
+    kegg_ko <- lapply(unique(pathway_list$mapID), fun)
+    names(kegg_ko) <- (pathway_list$mapID)
+    kegg <- lapply(kegg_ko, substring, 4)
+    saveRDS(kegg, "kegg.rds")
+
+After downloading the database and performing the steps listed above, next, specify created files in a custom ini file.
+
+``user_pathway_list`` is a file with pathway that are interested with KEGG map id (only one column). You must specify the file path to the ``user_pathway_list`` in a ``custom.ini`` file.
 
 .. HTML links commonly used in this file
 
