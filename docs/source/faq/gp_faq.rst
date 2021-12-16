@@ -5,10 +5,11 @@ Frequently asked questions
 
 Queries related to GenPipes and its usage are categorized broadly as follows:
 
-- General
-- New Users
-- GenPipes Developers
-- C3G Resources
+- :ref:`General<docs_faq_general>`
+- :ref:`New Users<docs_faq_new_users>`
+- :ref:`GenPipes Developers<docs_faq_gp_dev>`
+- :ref:`C3G Resources<docs_faq_c3g_res>`
+- :ref:`GenPipes HPC Jobs<docs_faq_hpc>`
 
 ----
 
