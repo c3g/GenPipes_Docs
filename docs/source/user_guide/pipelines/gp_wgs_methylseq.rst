@@ -56,8 +56,10 @@ Usage
 
 **Optional Arguments**
 
-.. include:: opt_methylseq.inc
-.. include:: /common/gp_design_opt.inc
+.. The design and options in methylseq not supported hence removing
+
+.. .. include:: opt_methylseq.inc
+.. .. include:: /common/gp_design_opt.inc
 .. include:: /common/gp_readset_opt.inc
 .. include:: /common/gp_common_opt.inc
 

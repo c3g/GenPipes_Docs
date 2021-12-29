@@ -18,7 +18,7 @@ What's new?
 
 * Major Update:
 
-  -  GenPipes now supports Python3 and is **NOT** backwards compatible with GenPipes versions before this release wrt Python3 support.
+  -  GenPipes now supports Python3 and is **NOT** backwards compatible with GenPipes versions before this release regarding Python3 support.
 
      Python3 version(s) supported: 3.10, 3.9, 3.8 (?)
 
@@ -26,8 +26,8 @@ What's new?
 
   -  GenPipes offers new helper utilities that make submitting jobs and monitoring them much easier with better scheduler integration. These utilities are:
 
-     - Watchdog.sh
      - chunk_genpipes.sh
+     - Watchdog.sh
 
      For detailed usage, refer to GenPipes documentation for: :ref:`Monitoring Jobs<ref_monitoring_gp>`.
 

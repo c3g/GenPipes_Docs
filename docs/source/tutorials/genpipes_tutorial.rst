@@ -11,7 +11,7 @@ Setting up the environment
 Abacus, Compute Canada users
 ''''''''''''''''''''''''''''
 
-Software and scripts used by GenPipes are already installed on several Compute Canada servers including Guillimin, Mammouth, Cedar and Graham, and will soon be installed on Beluga. To access the tools, you will need to add the tool path to your **bash_profile**. The bash profile is a hidden file in your home directory that sets up your environment every time you log in.
+Software and scripts used by GenPipes are already installed on several Compute Canada servers including Beluga, Cedar and others. To access the tools, you will need to add the tool path to your **bash_profile**. The bash profile is a hidden file in your home directory that sets up your environment every time you log in.
 
 You can also use your bashrc file. For more information on the differences between the .bash_profile and the .bashrc profile, consult `this page <http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html>`__.
 
@@ -134,11 +134,11 @@ For chipseq, that would be:
 
     ls $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.*.ini
 
-You will find a **<pipeline_name>.base.ini** as well as an ini file for particular servers like Guillimin (<pipeline_name>.guillimin.ini). The base.ini file has all the parameters needed by the pipeline but is optimized for usage on our own server, Abacus. To use the pipeline on Guillimin, you will need to use both base.ini and guillimin.ini, as such:
+You will find a **<pipeline_name>.base.ini** as well as an ini file for particular servers like Beluga (<pipeline_name>.beluga.ini). The base.ini file has all the parameters needed by the pipeline but is optimized for usage on our own server, Abacus. To use the pipeline on Guillimin, you will need to use both base.ini and beluga.ini, as such:
 
 .. code-block:: bash
 
-    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimin.ini …
+    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.beluga.ini …
 
 To change different parameters in the ini files, you can create your own ini file and overwrite the required parameters. For example, to change the number of threads for trimmomatic and hicup, I can create my own ini file: hicseq.test.ini
 and in it I can include the parameters to be changed:
@@ -157,7 +157,7 @@ then add my ini file after the other ini files:
 
 .. code-block:: bash
 
-    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimin.ini hicseq.test.ini...
+    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.beluga.ini hicseq.test.ini...
 
 For different species, we have custom ini files stored in **$MUGQIC_PIPELINES_HOME/resources/genomes/config/**
 
@@ -167,7 +167,7 @@ To run the hicseq pipeline on mouse mm9, for example, you can do the following:
 
 .. code-block:: bash
 
-    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimin.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/Mus_musculus.mm9.ini ...
+    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.beluga.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/Mus_musculus.mm9.ini ...
 
 Readset File:
 -------------
@@ -250,7 +250,11 @@ Certain pipelines where samples are compared against other samples, like chipseq
 Running GenPipes on Compute Canada Servers: 
 ---------------------------------------------
 
-Guillimin, unlike Cedar, Graham and now Mammouth (mp2b), use the PBS scheduler. To use GenPipes on Guillimin, don’t forget to add the **“-j pbs”** option (default is -j Slurm).
+Make sure you are logged into the server, say Beluga. The default scheduler is Slurm.
+
+.. note::
+
+     Guillimin, unlike Beluga, Cedar, Narval use the PBS scheduler. To use GenPipes on Guillimin, don’t forget to add the **“-j pbs”** option (default is -j Slurm).
 
 See example below for more details.
 
@@ -265,11 +269,11 @@ Let’s now run the pipeline using a test dataset. We will use the first 2 milli
 We will start by downloading the dataset from `HERE <https://www.computationalgenomics.ca/tutorial/hicseq.zip>`__.
 In the downloaded zip file, you will find the two fastq read files in folder “rawData” and will find the readset file (readsets.HiC010.tsv) that describes that dataset.
 
-We will run this analysis on guillimin as follows:
+We will run this analysis on Beluga server as follows:
 
 .. code-block:: bash
 
-    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimin.ini -r readsets.HiC010.tsv -s 1-15 -e MboI > hicseqScript_SRR1658581.txt
+    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.beluga.ini -r readsets.HiC010.tsv -s 1-15 -e MboI > hicseqScript_SRR1658581.txt
 
 **-c** defines the ini configuration files
 **-r** defines the readset file
@@ -278,11 +282,11 @@ We will run this analysis on guillimin as follows:
 
 The pipelines do not run the commands directly; they output them as text commands. So we need to redirect them into a file using “>”. In this case, **hicseqScript_SRR1658581.txt** is the script that contains the analysis commands.
 
-This command works for servers using a SLURM scheduler like Cedar, Mammouth or Graham. For the PBS scheduler, used by Guillimin, you need to add the “-j pbs” option, as follows:
+This command works for servers using a SLURM scheduler like Cedar, Graham or Beluga. For the PBS scheduler, used by Guillimin, you need to add the “-j pbs” option, as follows:
 
 .. code-block:: bash
 
-    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.guillimn.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -j pbs > hicseqScript_SRR1658581.txt
+    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.beluga.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -j pbs > hicseqScript_SRR1658581.txt
 
 
 To run it, use:
@@ -394,11 +398,11 @@ we see:
 
 We see a single analysis CTCF_Input run as Narrow peaks (coded by “N”; you can use “B” for broad peak analysis). This analysis compares CTCF peaks in ENCFF837BCE_ctcf to its input control peaks identified from ENCFF361CSC_ctrl.
 
-We will run this analysis on guillimin as follows:
+We will run this analysis on Beluga server as follows:
 
 .. code-block:: bash
 
-    chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.guillimin.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
+    chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
     bash chipseqScript.txt
 
 The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get **MUGQICexitStatus:0** or **Exit_status=0**. If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the **job_output** folder.

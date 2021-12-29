@@ -3,7 +3,7 @@
 GenPipes Genome resources
 =========================
 
-C3G, in partnership with Compute Canada, maintains several genomes that are available on several HPC centres including Guillimin, Cedar, Graham and Mammouth. In addition to the fasta sequence, many genomes include aligner indices and annotation files.
+C3G, in partnership with Compute Canada, maintains several genomes that are available on several HPC centres including Beluga, Cedar and others. In addition to the fasta sequence, many genomes include aligner indices and annotation files.
 
 To access these genomes, you need to add the following lines to your .bashrc file.
 

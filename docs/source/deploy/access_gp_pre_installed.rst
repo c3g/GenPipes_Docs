@@ -67,7 +67,7 @@ You are all set to use GenPipes deployed on Compute Canada data centre.
 
 .. note::
 
-         Canadian Centre for Computational Genomics (C3G), in partnership with Compute Canada, offers and maintains a large set of bioinformatics resources for the community. For a complete list of software currently deployed on several HPC centres, including Guillimin, Cedar, Graham and Mammouth, refer to `Bioinformatics Resources <https://www.computationalgenomics.ca/cvmfs-modules/>`_. Several reference genomes are also available. You can refer to the `available genomes <https://www.computationalgenomics.ca/cvmfs-genomes/>`_ and the environment setup to access these genomes.
+         Canadian Centre for Computational Genomics (C3G), in partnership with Compute Canada, offers and maintains a large set of bioinformatics resources for the community. For a complete list of software currently deployed on several HPC centres, including Beluga, Cedar and others, refer to `Bioinformatics Resources <https://www.computationalgenomics.ca/cvmfs-modules/>`_. Several reference genomes are also available. You can refer to the `available genomes <https://www.computationalgenomics.ca/cvmfs-genomes/>`_ and the environment setup to access these genomes.
 
 
 .. _setting_up_gp_environment_modules:
@@ -77,7 +77,7 @@ Step 3: Setting up your user environment for GenPipes access
 
 **For Abacus, Compute Canada Users only**
 
-All of the software and scripts used by GenPipes are already installed on several Compute Canada servers including Guillimin, Mammouth, Cedar and Graham, and will soon be installed on Beluga. To access the tools, you will need to add the tool path to your bash_profile. The bash profile is a hidden file in your home directory that sets up your environment every time you log in. You can also use your bashrc file.
+All of the software and scripts used by GenPipes are already installed on several Compute Canada servers including Beluga, Cedar and others. To access the tools, you will need to add the tool path to your bash_profile. The bash profile is a hidden file in your home directory that sets up your environment every time you log in. You can also use your bashrc file.
 
 Genomes and modules used by the pipelines are already installed on a CVMFS partition mounted on all those clusters in /cvmfs/soft.mugqic/CentOS6
 

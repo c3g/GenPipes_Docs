@@ -58,13 +58,13 @@ A default configuration file (``.base.ini`` extension) is set for running on aba
 
 You can also add a list of other configuration files to ``--config``. Files are read in the list order and each parameter value is overwritten if redefined in the next file.
 
-This is useful to customize settings for a specific cluster or genome. Each pipeline has a special configuration file for guillimin and mammouth clusters (``.guillimin.ini`` and ``.mammouth.ini`` extensions respectively) in the same directory. And various genome settings are available in ``$MUGQIC_PIPELINES_HOME/resources/genomes/config/``.
+This is useful to customize settings for a specific cluster or genome. Each pipeline has a special configuration file for beluga and cedar clusters (``.beluga.ini`` and ``.cedar.ini`` extensions respectively) in the same directory. And various genome settings are available in ``$MUGQIC_PIPELINES_HOME/resources/genomes/config/``.
 
-For example, to run the DNA-Seq pipeline on guillimin cluster with Mus musculus reference genome:
+For example, to run the DNA-Seq pipeline on beluga cluster with Mus musculus reference genome:
 
 ::
 
     #!bash
-    $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.py --config $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.guillimin.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/Mus_musculus.GRCm38.ini ...
+    $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.py --config $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.beluga.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/Mus_musculus.GRCm38.ini ...
 
 
