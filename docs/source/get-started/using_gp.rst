@@ -199,13 +199,13 @@ The commands will be sent to the job queue and you will be notified once each st
 Monitoring GenPipes Pipeline Runs
 ---------------------------------
 
-HPC site policies typically limit the number of jobs that a user can submit in a queue. These sites deploy resource schedulers such as Slurm, Moab, PBS and Torque for scheduling and managing sharing of HPC resources. Integrating with the resource schedulers and dealing with resource constraints are critical to ensuring productivity of HPC users. GenPipes caters to these user pain points through intelligent utilities that help in monitoring pipeline runs, resubmitting jobs and ensuring that there are no errors in scheduler calls.
+HPC site policies typically limit the number of jobs that a user can submit in a queue. These sites deploy resource schedulers such as Slurm, or PBS/Torque for scheduling and sharing of HPC resources. Integrating with the resource schedulers and dealing with resource constraints are critical to ensuring productivity of HPC users. GenPipes caters to these user pain points through intelligent utilities that help in monitoring pipeline runs, resubmitting jobs and ensuring that there are no errors in scheduler calls.
 
-GenPipes offers a utility script ```watchdog.sh``` to enable better integration with resource schedulers (Slurm, Moab, PBS and Torque) deployed on HPC clusters. Before running ```watchdog.sh```, you need to run another utility called ```chunk_genpipes.sh``` **only once**. Better integration is offered by ```watchdog``` as it looks for any error in the calls made to the scheduler and makes sure to auto-correct them based on chunking specified through ```chunk_genpipes.sh```.
+GenPipes offers a utility script ```watchdog``` to enable better integration with resource schedulers (Slurm, PBS/Torque) deployed on HPC clusters. Before running ```watchdog```, you need to run another utility called ```chunk_genpipes.sh``` **only once**. Better HPC integration is offered by ```watchdog``` as it looks for any error in the calls made to the scheduler and makes sure to auto-correct them based on chunking specified through ```chunk_genpipes.sh```.
 
-The ```watchdog.sh``` script lets GenPipes users manage resource constraints in a flexible and robust manner. GenPipes users can stop monitoring submitted job chunks by simply issuing ```Ctrl-C``` to actively running watchdog script or stop the ssh session using ```kill```. After cleanly stopping, users can simply restart GenPipes job monitoring again later by invoking ```watchdog.sh``` script again, without having  to care about where the monitoring process was at when it was forcibly stopped.
+The ```watchdog``` script lets GenPipes users manage resource constraints in a flexible and robust manner. GenPipes users can stop submiting job by issuing ```Ctrl-C``` to a running watchdog script. After a clean ```ctrl-C``` stop of or if the script was killed in another manner, for example when a session is killed be an ssh disconnection, users can restart sending GenPipes jobs to the queueing system by simply invoking the ```watchdog``` script again.
 
-Watchdog also provides a fail safe mechanism to GenPipes users for re-submitting selected pipeline steps that failed to run due to timeouts. These timeouts are often caused by insufficient resource conditions for jobs running large, complex analysis that need more HPC resources. Another cause of timeouts could be errors in the HPC job queue management system.
+Watchdog comes with a fail safe mechanism that will resubmit jobs that failed to be sent to the scheduler up to 10 times (default). 
 
 Example: Monitoring hicseq.py
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -220,7 +220,7 @@ Here is an example of to use the monitoring script with :ref:`HiC Sequencing Pip
 
   $MUGQIC_PIPELINES_HOME/utils/chunk_genpipes.sh hicseq_script.sh $M_FOLDER
 
-  $MUGQIC_PIPELINES_HOME/utils/watchdog.sh  $M_FOLDER
+  $MUGQIC_PIPELINES_HOME/utils/watchdog  $M_FOLDER
 
 The ```chunk_genpipes.sh``` script is used to create job chunks of specified size that are submitted at a time. Please note that this script should be executed **only once** when used in the context of monitoring.  
 
@@ -228,11 +228,11 @@ The ```chunk_genpipes.sh``` script is used to create job chunks of specified siz
 
      * Watchdog script can be invoked *multiple times* to check on the status of submitted jobs. 
 
-     * Watchdog script runs can be *canceled* or *killed* by ```Ctrl-C``` keystroke or disconnecting the `ssh` shell and restarting monitoring again when required. 
+     * Watchdog script runs can be *stopped* by ```Ctrl-C``` keystroke and restarted at will. 
 
      * Watchdog script has intelligent lock mechanism that *prevents invoking two simultaneous runs* of ```watchdog.sh``` in parallel, on the on the same job chunking folder or GenPipes pipeline run.
 
-Figure below demonstrates how ```watchdog.sh``` utility works. The pipeline command file output is fed into ```chunk_genpipes.sh``` script which creates the chunks folder as a one time activity. This chunk folder is monitored by the ```watchdog.sh``` script. The watchdog script can be invoked multiple times during the pipeline run. With this script user can monitor the status of the submitted job chunks, whether they have completed successfully or require to be re-submitted.
+Figure below demonstrates how ```watchdog``` utility works. The pipeline command file output is fed into ```chunk_genpipes.sh``` script which creates the chunks folder as a one time activity. This chunk folder is monitored by the ```watchdog``` script.
 
 .. figure:: /img/monitor_utility.png
    :align: center
@@ -245,7 +245,7 @@ For a complete list of available GenPipes utilities, refer to the ```genpipes/ut
 Sample Output
 ^^^^^^^^^^^^^^
 
-This section demonstrates how a GenPipes user can chunk job submission and monitor job status using ```chunk_genpipes.sh``` and ```watchdog.sh``` utilities.
+This section demonstrates how a GenPipes user can chunk job submission and monitor job status using ```chunk_genpipes.sh``` and ```watchdog``` utilities.
 
 After generating GenPipes command file, say for GenPipes DNASeq Pipeline, 'dnaseq.sh`, follow these two steps:
 
@@ -273,7 +273,7 @@ Figure below shows the output of the command above:
 
 :: 
 
-  watchdog.sh job_chunks -n 800
+  watchdog job_chunks -n 800
 
 .. note::
 
