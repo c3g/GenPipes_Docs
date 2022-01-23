@@ -57,6 +57,7 @@ Kallisto
 Kegg
 Kraken
 Krona
+Moab
 MMUL
 Macaca
 Mathieu
@@ -354,6 +355,7 @@ screenshots
 sequencing
 signalP
 situ
+slurm
 spp
 squeue
 str

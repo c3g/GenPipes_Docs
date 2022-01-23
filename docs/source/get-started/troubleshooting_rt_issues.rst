@@ -3,10 +3,7 @@
 .. spelling::
 
     qsub
-    slurm
-    moab
     Runtime
-    Ehresmann
     io
 
 Troubleshooting Runtime Issues 

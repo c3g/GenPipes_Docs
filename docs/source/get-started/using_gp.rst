@@ -4,7 +4,6 @@
 
    userID
    txt
-   Moab
    
 Using GenPipes for genomic analysis
 ====================================
@@ -203,7 +202,7 @@ HPC site policies typically limit the number of jobs that a user can submit in a
 
 GenPipes offers a utility script ```watchdog``` to enable better integration with resource schedulers (Slurm, PBS/Torque) deployed on HPC clusters. Before running ```watchdog```, you need to run another utility called ```chunk_genpipes.sh``` **only once**. Better HPC integration is offered by ```watchdog``` as it looks for any error in the calls made to the scheduler and makes sure to auto-correct them based on chunking specified through ```chunk_genpipes.sh```.
 
-The ```watchdog``` script lets GenPipes users manage resource constraints in a flexible and robust manner. GenPipes users can stop submiting job by issuing ```Ctrl-C``` to a running watchdog script. After a clean ```ctrl-C``` stop of or if the script was killed in another manner, for example when a session is killed be an ssh disconnection, users can restart sending GenPipes jobs to the queueing system by simply invoking the ```watchdog``` script again.
+The ```watchdog``` script lets GenPipes users manage resource constraints in a flexible and robust manner. GenPipes users can stop submitting job by issuing ```Ctrl-C``` to a running watchdog script. After a clean ```ctrl-C``` stop of or if the script was killed in another manner, for example when a session is killed be an ssh disconnection, users can restart sending GenPipes jobs to the queuing system by simply invoking the ```watchdog``` script again.
 
 Watchdog comes with a fail safe mechanism that will resubmit jobs that failed to be sent to the scheduler up to 10 times (default). 
 

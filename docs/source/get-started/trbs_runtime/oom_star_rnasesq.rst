@@ -1,5 +1,9 @@
 .. _docs_troubleshooting_rt_oom_star_rnaseq:
 
+.. spelling::
+
+    io
+
 Error: RNA Sequencing Star alignment - Out of Memory
 -----------------------------------------------------
 

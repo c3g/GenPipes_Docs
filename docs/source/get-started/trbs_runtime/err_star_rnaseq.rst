@@ -1,5 +1,9 @@
 .. _docs_troubleshooting_rt_err_star_rna:
 
+.. spelling::
+
+      Ehresmann
+
 Error: While using STAR option in RNA Sequencing Pipeline
 ----------------------------------------------------------
 
