@@ -91,11 +91,6 @@ Use the following commands to execute epiQC pipeline:
 .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
 You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
-
-.. note::
-
-     Check with Pubudu if this pipeline requires a test dataset and whether one is available. Then update/edit the test dataset link above accordingly.
-
  
 ----
 

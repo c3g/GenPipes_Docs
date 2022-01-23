@@ -230,7 +230,7 @@ The ```chunk_genpipes.sh``` script is used to create job chunks of specified siz
 
      * Watchdog script runs can be *stopped* by ```Ctrl-C``` keystroke and restarted at will. 
 
-     * Watchdog script has intelligent lock mechanism that *prevents invoking two simultaneous runs* of ```watchdog.sh``` in parallel, on the on the same job chunking folder or GenPipes pipeline run.
+     * Watchdog script has intelligent lock mechanism that *prevents invoking two simultaneous runs* of ```watchdog``` in parallel, on the on the same job chunking folder or GenPipes pipeline run.
 
 Figure below demonstrates how ```watchdog``` utility works. The pipeline command file output is fed into ```chunk_genpipes.sh``` script which creates the chunks folder as a one time activity. This chunk folder is monitored by the ```watchdog``` script.
 

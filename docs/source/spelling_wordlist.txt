@@ -66,6 +66,7 @@ Metagenomics
 Montréal
 Nanopore
 Nanuq
+Narval
 PGM
 Pacbio
 Pandoc

@@ -30,6 +30,8 @@ In contrast to the test dataset, a :ref:`Readset File<docs_readset_file>` in the
 +-------------------------------------------+------------------------------------------+
 | :ref:`DNA Seq<docs_gp_dnaseq>`            |   `Download DNA Seq Dataset`_            |
 +-------------------------------------------+------------------------------------------+
+| :ref:`epiQC<docs_gp_epiqc>`               |   `Download epiQC Dataset`_              |
++-------------------------------------------+------------------------------------------+
 | :ref:`RNA Seq<docs_gp_rnaseq>`            |   `Download RNA Seq Dataset`_            |
 +-------------------------------------------+------------------------------------------+
 | :ref:`Methyl Seq<docs_methylation>`       |   `Download Methyl Seq Dataset`_         |
@@ -68,6 +70,7 @@ Latest available datasets
 .. _Download Amplicon Seq Dataset: https://datahub-90-cw3.p.genap.ca/ampliconseq.tar.gz
 .. _Download ChIP Seq Dataset: https://datahub-90-cw3.p.genap.ca/chipseq.chr19.tar.gz
 .. _Download DNA Seq Dataset: https://datahub-90-cw3.p.genap.ca/dnaseq.chr19.tar.gz
+.. _Download epiQC Dataset: https://datahub-90-cw3.p.genap.ca/epiqc.chr19.tar.gz
 .. _Download RNA Seq Dataset: https://datahub-90-cw3.p.genap.ca/rnaseq.chr19.tar.gz
 .. _Download Methyl Seq Dataset: https://datahub-90-cw3.p.genap.ca/methylseq.chr19.tar.gz
 .. _Download PacBio Seq Dataset: https://datahub-90-cw3.p.genap.ca/pacbio.tar.gz
