@@ -5,6 +5,7 @@
 .. spelling::
 
      genpipes
+     insilico
 
 GenPipes 3.6.2 Release Notes
 ============================
@@ -20,8 +21,8 @@ What's new?
 
 * Minor updates:
 
-  - Bug fixes such as white space cleanup, protocol mixup for rnaseq pipeline 
-  - All pipelines now support pandoc 2.16.1
+  - Bug fixes such as white space cleanup, protocol mix up for rnaseq pipeline 
+  - All pipelines now support Pandoc 2.16.1
   - RNA sequencing (denovo assembly) pipeline updated for merge_trimmomatic_stats outputs to fix insilico_read_normalization_all_report dependencies
   - Readset file parser improvements to handle duplicate IDs
   - All GenPipes utilities and tools are updated

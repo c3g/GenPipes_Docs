@@ -1,5 +1,10 @@
 .. _Skewer Trimming:
 
+.. spelling::
+
+      transcriptome
+      Nextera
+
 **Skewer Trimming**
 
 `Skewer`_ is used for adapter `trimming`_ in GenPipes pipelines. `Adapter trimming`_ is a prerequisite step for analyzing next-generation sequencing (NGS) data when the reads are longer than the target DNA/RNA fragments. Although typically used in small RNA sequencing, adapter trimming is also used widely in other applications, such as genome DNA sequencing and transcriptome RNA/cDNA sequencing, where fragments shorter than a read are sometimes obtained because of the limitations of NGS protocols. For the newly emerged Nextera long mate-pair (LMP) protocol, junction adapters are located in the middle of all properly constructed fragments; hence, adapter trimming is essential to gain the correct paired reads.

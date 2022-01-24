@@ -1,5 +1,9 @@
 .. _docs_troubleshooting_rt_err_qsub_cmd:
 
+.. spelling::
+
+     qsub
+
 Error: qsub command not found
 ------------------------------
 

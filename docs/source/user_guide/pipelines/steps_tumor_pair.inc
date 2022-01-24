@@ -16,7 +16,16 @@
       germline
       haplotypes
       loh
-      
+      sym
+      deconvolution
+      indel
+      collectOxoGMetrics
+      cellularity
+      bcf
+      callsets
+      intra
+      translocations
+     
 Step Details
 -------------
 
@@ -200,7 +209,7 @@ Variant effect annotation. The .vcf files are annotated for variant effects usin
 
 **Ensemble Somatic dbNSFP Annotation**
 
-This step performs additional Single Nucleotide Variants (SVN) annotations. It provides extra information about SVN by using numerous published databases. This is applicable to human samples. Databases that are available include Biomart (adds GO annotations based on gene information) and `dbNSFP`_ (an integrated database of functional annotations from multiple sources for the comprehensive collection of human non-synonymous SNPs. It compiles prediction scores from four prediction algorithms (`SIFT`_, `Polyphen2`_, LRT and `MutationTaster`_), three conservation scores (`PhyloP`_, `GERP++`_ and `SiPhy`_) and other function annotations).
+This step performs additional Single Nucleotide Variants (SVN) annotations. It provides extra information about SVN by using numerous published databases. This is applicable to human samples. Databases that are available include `Biomart`_ (adds GO annotations based on gene information) and `dbNSFP`_ (an integrated database of functional annotations from multiple sources for the comprehensive collection of human non-synonymous SNPs. It compiles prediction scores from four prediction algorithms (`SIFT`_, `Polyphen2`_, LRT and `MutationTaster`_), three conservation scores (`PhyloP`_, `GERP++`_ and `SiPhy`_) and other function annotations).
 
 .. _Sample Gemini ANnotations Somatic:
 
@@ -236,19 +245,19 @@ Variant effect annotation. The .vcf files are annotated for variant effects usin
 
 **Ensemble Germline dbNSFP Annotation**
 
-Additional SVN annotations. Provides extra information about SVN by using numerous published databases. Applicable to human samples. Databases available include Biomart (adds GO annotations based on gene information) and dbNSFP (an integrated database of functional annotations from multiple sources for the comprehensive collection of human non-synonymous SNPs. It compiles prediction scores from four prediction algorithms (`SIFT`_, `Polyphen2`_, LRT and `MutationTaster`_), three conservation scores (PhyloP, GERP++ and SiPhy) and other function annotations).
+Additional SVN annotations. Provides extra information about SVN by using numerous published databases. Applicable to human samples. Databases available include `Biomart`_ (adds GO annotations based on gene information) and dbNSFP (an integrated database of functional annotations from multiple sources for the comprehensive collection of human non-synonymous SNPs. It compiles prediction scores from four prediction algorithms (`SIFT`_, `Polyphen2`_, LRT and `MutationTaster`_), three conservation scores (PhyloP, GERP++ and SiPhy) and other function annotations).
 
 .. _Sample Gemini Annotations Germline:
 
 **Sample Gemini Annotations Germline**
 
-Load functionally annotated vcf file into a mysql lite annotation database : `Gemini`_
+Load functionally annotated vcf file into a MySQL lite annotation database : `Gemini`_
 
 .. _Run Pair MultiQC:
 
 **Run Pair MultiQC**
 
-Aggregate results from bioinformatics analyses across many samples into a single report. MultiQC searches a given directory for analysis logs and compiles a HTML report. It's a general use tool, perfect for summarising the output from numerous bioinformatics tools. For details, refer to `MultiQC Info <https://multiqc.info>`_.
+Aggregate results from bioinformatics analyses across many samples into a single report. MultiQC searches a given directory for analysis logs and compiles a HTML report. It's a general use tool, perfect for summarizing the output from numerous bioinformatics tools. For details, refer to `MultiQC Info <https://multiqc.info>`_.
 
 .. _Sym Link FASTQ Pair:
 
@@ -260,7 +269,7 @@ Generates symbolic links for FASTQ Pair output files.
 
 **Sym Link Final BAM**
 
-Genearates symbolic links for Final BAM output files.
+Generates symbolic links for Final BAM output files.
 
 .. _Sym Link Report:
 
@@ -278,7 +287,7 @@ Generates symbolic links for Ensemble processing output.
 
 **Sym Link Panel**
 
-This step create sym links of panel variants for generating reports and deliverables to the clients.
+This step create sym links of panel variants for generating reports and deliverable to the clients.
 
 .. _Manta SV Calls:
 
@@ -399,7 +408,7 @@ In this step, structural variant annotation is carried out after CNVKit batch pr
 
 This step aims to estimate somatic **copy number variation** using `BVAtools`_ and `SCONE`_. 
 
-`BVAtools`_ generate the binned Depth ratio values from the tumor and normal BAM files. `SCONE is tool`_ to deconvolution the logR signal of the tumor-normal coverage into a mixture of Baysian sub-signal for each copy number state. The result is a set of several deconvolution using  0-7 sub-signal. As each tumor sample is unique the choice of the best final model (number of sub-signal) needs to be manually evaluated using the log ratio graphical representation.
+`BVAtools`_ generate the binned Depth ratio values from the tumor and normal BAM files. `SCONE is tool`_ to deconvolution the `logR Signal`_ of the tumor-normal coverage into a mixture of Bayesian sub-signal for each copy number state. The result is a set of several deconvolution using  0-7 sub-signal. As each tumor sample is unique the choice of the best final model (number of sub-signal) needs to be manually evaluated using the log ratio graphical representation.
 
 .. _SvABA SV Assemble:
 
@@ -512,3 +521,5 @@ In this step, sym links for CNVKit output are generated.
 .. _SvABA: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5880247/
 .. _MetaSV: http://bioinform.github.io/metasv/
 .. _MetaSV Tool: https://academic.oup.com/bioinformatics/article/31/16/2741/321286
+.. _logR Signal: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6778654/
+.. _Biomart: https://m.ensembl.org/info/data/biomart/index.html

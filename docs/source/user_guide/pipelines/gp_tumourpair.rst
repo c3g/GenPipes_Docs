@@ -10,6 +10,7 @@
       CNV
       Koboldt
       Preprocess
+      bp
       
 Tumor Pair Sequencing Pipeline
 ================================
@@ -78,7 +79,7 @@ Usage
 
 .. note::  **About -t fastpass option**
 
-     The fastpass option in tumor_pair.py pipeline is meant for quick assesement using exome capture regions and the 1000bp flanking regions. The somatic/germline calls are made using one variant caller `VarScan 2`_ with permissive variant calling thresholds.
+     The fastpass option in tumor_pair.py pipeline is meant for quick assessment using exome capture regions and the 1000bp flanking regions. The somatic/germline calls are made using one variant caller `VarScan 2`_ with permissive variant calling thresholds.
 
 .. note::  **-p option Pairs File Format**
 

@@ -29,6 +29,7 @@ Cufflinks
 Customizable
 Cutadapt
 Dataset
+Delly
 Dev
 Differentiators
 Drosophila
@@ -68,6 +69,7 @@ Montréal
 Nanopore
 Nanuq
 Narval
+Pandoc
 PGM
 Pacbio
 Pandoc
@@ -75,6 +77,7 @@ PapAnu
 Papio
 Penfield
 Petersburg
+PhyloP
 Polymerase
 Prokaryotic
 Prot
@@ -93,7 +96,8 @@ Saccharomyces
 Sambamba
 Schizosaccharomyces
 SeQC
-Sequencing
+Sequencinga
+Sequenza
 Shostscript
 SignalP
 Slurm
@@ -185,6 +189,7 @@ dada
 datacenter
 dataset
 datasets
+dbNSFP
 dd
 de
 deduplicated
