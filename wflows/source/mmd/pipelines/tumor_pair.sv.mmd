@@ -15,9 +15,9 @@
         Node7{{ 7. <br/> SAMBAM<br/>Mark<br/>Duplicates }}:::nodefill
         Node8{{ 8. <br/> Recalibration }}:::nodefill
         Node9{{ 9. <br/> Strelka2<br/>Paired<br/>Somatic }}:::nodefill
-        Node10{{ 10. <br/> Strelka2<br/>& Paired<br/>Germlin}}:::nodefill
+        Node10{{ 10. <br/> Strelka2<br/>Paired<br/>Germline}}:::nodefill
         Node11{{ 11. <br/> Metrics&<br/>DNA<br/>Picard<br/>Metrics }}:::nodefill
-        Node12{{ 12. <br/> Sequenz }}:::nodefill
+        Node12{{ 12. <br/> Sequenza }}:::nodefill
         Node13{{ 13. <br/> Delly2<br/>call<br/>Filter }}:::nodefill
         Node14{{ 14. <br/> Delly2<br/>SV<br/>Annotation }}:::nodefill
         Node15{{ 15. <br/> Manta<br/>SV<br/>calls }}:::nodefill
@@ -45,27 +45,43 @@
         Input1[[fa:fa-file-archive-o .BAM]]
         Input2[[fa:fa-file-archive-o .FASTQ]]
 
-        RecalibOP([fa:fa-sticky-note-o Report ])
-        MetricsOP([fa:fa-sticky-note-o Report ])
-        MetaSVOP([fa:fa-sticky-note-o Report ])
+        RepSequenza([fa:fa-sticky-note-o Report ])
+        RepMetaSV([fa:fa-sticky-note-o Report ])
+        RepDelly([fa:fa-sticky-note-o Report ])
+        RepManta([fa:fa-sticky-note-o Report ])
+        RepLumpy([fa:fa-sticky-note-o Report ])
+        RepWHAM([fa:fa-sticky-note-o Report ])
+        RepCNVKit([fa:fa-sticky-note-o Report ])
+
+        Node29 -.-> RepSequenza
+        Node30 -.-> RepMetaSV
+        Node31 -.-> RepDelly
+        Node32 -.-> RepManta
+        Node33 -.-> RepLumpy
+        Node34 -.-> RepWHAM
+        Node35 -.-> RepCNVKit
 
         Input1 --> Node1 -.-> Node2
         Input2 --> Node2
 
         Node2 -.-> Node3 -.-> Node4 -.-> Node5 -.-> Node6 -.-> Node7 -.-> Node8
         Node7 -.-> Node9 -.-> Node10
-        Node8 -.-> Node11 & Node12 & Node14 & Node16 & Node18 & Node19 & Node20 & Node22 & Node23
-        Node12 -.-> Node13
-        Node13 & Node14 & Node16 & Node18 & Node20 & Node22-.-> Node23
-        Node14 -.-> Node15
-        Node16 -.-> Node17
-        Node18 -.-> Node19
-        Node20 -.-> Node21
-        Node23 -.-> Node24
+        Node8 -.-> Node9 & Node11 & Node12 & Node13 & Node15 & Node16 & Node17 & Node19 & Node21 & Node23 & Node24 & Node26
+        Node13 -.-> Node14
+        Node15 -.-> Node16
+        Node17 -.-> Node18
+        Node19 -.-> Node20
+        Node21 -.-> Node22
+        Node24 -.-> Node25
+        Node26 -.-> Node27 -.-> Node28
 
-        Node8 --> RecalibOP
-        Node11 --> MetricsOP
-        Node24 ---> MetaSVOP
+        Node12 -.-> Node29
+        Node28 -.-> Node30
+        Node15 -.-> Node31
+        Node16 -.-> Node32
+        Node18 -.-> Node33
+        Node20 -.-> Node34
+        Node22 -.-> Node35
 
         subgraph readSetSteps[" "]
           Node1
@@ -94,10 +110,26 @@
           Node22
           Node23
           Node24
+          Node25
+          Node26
+          Node27
+          Node28
+          Node29
+          Node30
+          Node31
+          Node32
+          Node33
+          Node34
+          Node35
 
-          RecalibOP
-          MetricsOP
-          MetaSVOP
+          RepSequenza
+          RepMetaSV
+          RepDelly
+          RepManta
+          RepLumpy
+          RepWHAM
+          RepCNVKit
+
         end
 
         classDef greenRect fill:#E4FBF4,stroke:white
