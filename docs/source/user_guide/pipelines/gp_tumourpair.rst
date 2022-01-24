@@ -117,25 +117,31 @@ There are three options for Tumor Pair Pipeline: sv, ensemble and fastpass.
 
 Figure below shows the schema of the Tumor Pair Pipeline (sv) option. See here to download a high resolution image of `Tumor Pair Sequencing Pipeline (sv) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_sv.png>`_ to download a high resolution image of the same.
 
-.. figure:: /img/pipelines/GenPipes_tumor_pair_sv.png
+.. figure:: /img/pipelines/mmd/tumor_pair.sv.png
    :align: center
    :alt: tumor_pair_sv schema
+   :width: 100%
+   :figwidth: 95%
 
    Figure: Schema of Tumor Pair Pipeline (sv)
 
 Figure below shows the schema of the Tumor Pair Pipeline (ensemble) option. See here to download a high resolution image of `Tumor Pair Sequencing Pipeline (ensemble) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_ensemble.png>`_ to download a high resolution image of the same.
 
-.. figure:: /img/pipelines/GenPipes_tumor_pair_ensemble.png
+.. figure:: /img/pipelines/mmd/tumor_pair.ensemble.png
    :align: center
    :alt: tumor_pair_ensemble schema
+   :width: 100%
+   :figwidth: 95%
 
    Figure: Schema of Tumor Pair Pipeline (ensemble)
 
 Figure below shows the schema of the Tumor Pair Pipeline (fastpass) option. See here to download a high resolution image of `Tumor Pair Sequencing Pipeline (fastpass) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_fastpass.png>`_ to download a high resolution image of the same.
 
-.. figure:: /img/pipelines/GenPipes_tumor_pair_fastpass.png
+.. figure:: /img/pipelines/mmd/tumor_pair.fastpass.png
    :align: center
    :alt: tumor_pair_fastpass schema
+   :width: 100%
+   :figwidth: 95%
 
    Figure: Schema of Tumor Pair Pipeline (fastpass)
 
@@ -183,7 +189,7 @@ The table below shows various steps that constitute the Tumor Pair Pipeline.
 +----+-----------------------------------------+---------------------------------------+---------------------------------+
 | 17.| |rawmpileup|                            | |metrics_dna_picard_metrics|          | |lumpy_paired_sv|               |
 +----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 18.| |paired_varscan2|                       | |metrics_dna_picard_metrics|          | |lumpy_sv_annotation|           |
+| 18.| |paired_varscan2|                       | |metrics_dna_sample_qualimap|         | |lumpy_sv_annotation|           |
 +----+-----------------------------------------+---------------------------------------+---------------------------------+
 | 19.| |merge_varscan2|                        | |metrics_dna_fastqc|                  | |wham_call_sv|                  |
 +----+-----------------------------------------+---------------------------------------+---------------------------------+

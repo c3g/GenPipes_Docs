@@ -1,0 +1,129 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
+
+        %% GenPipes Schema for tumor_pair.py
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/tumor_pair/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+        %% -t ensemble
+
+        graph LR
+        Node1{{ 1. <br/> Picard<br/>SAM<br/>to FASTQ }}:::nodefill
+        Node2{{ 2. <br/> Skewer<br/>Trimming }}:::nodefill
+        Node3{{ 3. <br/> BWA<br/>SAMbamba<br/>sort<br/>SAM }}:::nodefill
+        Node4{{ 4. <br/> SAMbamba<br/>merge<br/>SAM<br/>files }}:::nodefillblack
+        Node5{{ 5. <br/> GATK<br/>indel<br/>re-aligner }}:::nodefill
+        Node6{{ 6. <br/> SAMBAM<br/>merge<br/>realigned }}:::nodefill
+        Node7{{ 7. <br/> SAMBAM<br/>Mark<br/>Duplicates }}:::nodefill
+        Node8{{ 8. <br/> Recalibration }}:::nodefill
+        Node9{{ 9. <br/> Conpair<br/>Concordance<br/>Contamination }}:::nodefill
+        Node10{{ 10. <br/> Metrics<br/>DNA<br/>Picard<br/>Metrics}}:::nodefill
+        Node12{{ 11. <br/> Metrics<br/>DNA Sample<br/>Qualimap }}:::nodefill
+        Node12{{ 12. <br/> Metrics<br/>DNA<br/>FastQC }}:::nodefill
+        Node13{{ 13. <br/> Sequenza }}:::nodefill
+        Node14{{ 14. <br/> Strelka2<br/>Paired<br/>Somatic }}:::nodefill
+        Node15{{ 15. <br/> Strelka2<br/>Paired<br/>Germline }}:::nodefill
+        Node16{{ 16. <br/> Purple }}:::nodefill
+        Node17{{ 17. <br/> Raw Mpileup<br/>Paired<br/>SV  }}:::nodefill
+        Node18{{ 18. <br/> Paired<br/>VARScan2 }}:::nodefill
+        Node19{{ 19. <br/> Merge<br/>VARScan2 }}:::nodefill
+        Node20{{ 20. <br/> Paired<br/>Mutect2 }}:::nodefill
+        Node21{{ 21. <br/> Merge<br/>Mutect2 }}:::nodefill
+        Node22{{ 22. <br/> VARDict<br/>Paired }}:::nodefill
+        Node23{{ 23. <br/> Merge<br>Filter<br/>Paired<br/>VARDict }}:::nodefill
+        Node24{{ 24. <br/>Ensemble<br/>Somatic }}:::nodefill
+        Node25{{ 25. <br/> GATK<br/>Variant<br/>Annotator<br/>Somatic }}:::nodefill
+        Node26{{ 26. <br/> Merge<br/>GATK<br/>Variant<br/>Annotator<br/>Somatic }}:::nodefill
+        Node27{{ 27. <br/> Compute<br/>Cancer<br/>Effect<br/>Somatic }}:::nodefill
+        Node28{{ 28. <br/> Ensemble<br/>Somatic<br/>dbNFSP<br/>Annotation }}:::nodefill
+        Node29{{ 29. <br/> Sample<br/>Gemini<br/>Annotations<br/>Somatic }}:::nodefill
+        Node30{{ 30. <br/> Ensemble<br/>Germline<br/>Loh }}:::nodefill
+        Node31{{ 31. <br/> GATK<br/>Variant<br/>Annotator<br/>Germline }}:::nodefill
+        Node32{{ 32. <br/> Merge<br/>GATK<br/>Variant<br/>Annotator<br/>Germline }}:::nodefill
+        Node33{{ 33. <br/> Compute<br/>Cancer<br/>Effects<br/>Germline }}:::nodefill
+        Node34{{ 34. <br/> Ensemble<br/>Germline<br/>dbNSFP<br/>Annotation }}:::nodefill
+        Node35{{ 35. <br/> Sample<br/>Gemini<br/>Annotations<br/>Germline }}:::nodefill
+        Node36{{ 36. <br/> Run Pair<br/>MultiQC  }}:::nodefill
+        Node37{{ 37. <br/> Sym Link<br/>FASTQ Pair }}:::nodefill
+        Node38{{ 38. <br/> Sym Link<br/>Final BAM }}:::nodefill
+        Node39{{ 39. <br/> Sym Link<br/>Report }}:::nodefill
+        Node40{{ 40. <br/> Run Pair<br/>Ensemble }}:::nodefill
+
+        Input1[[fa:fa-file-archive-o .BAM]]
+        Input2[[fa:fa-file-archive-o .FASTQ]]
+
+        RepFASTQPair([fa:fa-sticky-note-o Report ])
+        RepFinalBAM([fa:fa-sticky-note-o Report ])
+        Report([fa:fa-sticky-note-o Report ])
+        RepEnsemble([fa:fa-sticky-note-o Report ])
+
+
+        Node37 -.-> RepFASTQPair
+        Node38 -.-> RepFinalBAM
+        Node39 -.-> Report
+        Node40 -.-> RepEnsemble
+
+        Input1 --> Node1 -.-> Node2
+        Input2 --> Node2
+
+        Node2 -.-> Node3 -.-> Node4 -.-> Node5 -.-> Node6 -.-> Node7 -.-> Node8
+        Node7 -.-> Node9 -.-> Node10
+        Node8 -.-> Node9 & Node11 & Node12 & Node13 & Node15 & Node16 & Node17 & Node19 & Node21 & Node23 & Node24 & Node26
+        Node13 -.-> Node14
+        Node15 -.-> Node16
+        Node17 -.-> Node18
+        Node19 -.-> Node20
+        Node21 -.-> Node22
+
+
+        subgraph readSetSteps[" "]
+          Node1
+          Node2
+          Node3
+          MTSOutput
+        end
+        subgraph sampleSetSteps[" "]
+          Node5
+          Node6
+          Node7
+          Node8
+          Node9
+          Node10
+          Node11
+          Node12
+          Node13
+          Node14
+          Node15
+          Node16
+          Node17
+          Node18
+          Node19
+          Node20
+          Node21
+          Node22
+          Node23
+          Node24
+          Node25
+          Node26
+          Node27
+          Node28
+          Node29
+          Node30
+          Node31
+          Node32
+          Node33
+          Node34
+          Node35
+          Node36
+          Node37
+          Node38
+          Node39
+          Node40
+
+
+        end
+
+        classDef greenRect fill:#E4FBF4,stroke:white
+        class readSetSteps greenRect
+        classDef blueRect fill:#DEF6FC,stroke:white
+        class sampleSetSteps blueRect
+        classDef nodefill fill:#ffffff,stroke:gray,stroke-width:2px
+        classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px

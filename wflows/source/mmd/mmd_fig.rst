@@ -141,11 +141,11 @@ RNA Sequencing (Light) Pipeline
 Tumor Pair Pipeline
 ====================
 
-.. mermaid:: /mmd/pipelines/tumor_pair_ensemble.mmd
+.. mermaid:: /mmd/pipelines/tumor_pair.ensemble.mmd
      :caption: Tumor Pair Ensemble Schema
 
-.. mermaid:: /mmd/pipelines/tumor_pair_fastpass.mmd
+.. mermaid:: /mmd/pipelines/tumor_pair.fastpass.mmd
      :caption: Tumor Pair Fastpass Schema
 
-.. mermaid:: /mmd/pipelines/tumor_pair_sv.mmd
+.. mermaid:: /mmd/pipelines/tumor_pair.sv.mmd
      :caption: Tumor Pair SV Schema
