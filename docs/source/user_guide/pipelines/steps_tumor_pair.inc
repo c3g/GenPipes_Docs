@@ -16,7 +16,16 @@
       germline
       haplotypes
       loh
-      
+      sym
+      deconvolution
+      indel
+      collectOxoGMetrics
+      cellularity
+      bcf
+      callsets
+      intra
+      translocations
+     
 Step Details
 -------------
 
@@ -28,35 +37,13 @@ Following are the various steps that are part of GenPipes Tumor Pair Pipeline:
 
 This step converts SAM/BAM files from the input readset file into FASTQ format, if FASTQ files are not already specified in the readset file. Otherwise, it does nothing.
 
-.. _Trimmomatic:
+.. _BWA Mem SAMBAMBA Sort SAM:
 
-**Trimmomatic**
+**BWA Mem SAMBAMBA Sort SAM**
 
-This step takes as input files:
+In this step, the filtered reads are aligned to a reference genome. The alignment is done per sequencing readset. The `BWA alignment software`_ is with algorithm: bwa mem. BWA output BAM files are then sorted by coordinate using `SamBamba`_.
 
-* FASTQ files from the readset file if available
-* Else, FASTQ output files from previous picard_sam_to_fastq conversion of BAM files
-
-Raw reads quality trimming and removing of Illumina adapters is performed using `Trimmomatic Method`_. If an adapter FASTA file is specified in the config file (section 'trimmomatic', param 'adapter_fasta'), it is used first. Else, 'Adapter1' and 'Adapter2' columns from the readset file are used to create an adapter FASTA file, given then to Trimmomatic. For PAIRED_END readsets, readset adapters are reversed-complemented and swapped, to match Trimmomatic Palindrome strategy. For SINGLE_END readsets, only Adapter1 is used and left unchanged.
-
-.. _Merge Trimmomatic Stats:
-
-**Merge Trimmomatic Stats**
-
-The trim statistics per readset are merged at this step.
-
-.. _BWA Picard Sort:
-
-**BWA Picard Sort SAM**
-
-This step takes as input files:
-
-#. Trimmed FASTQ files if available
-#. Else, FASTQ files from the readset file if available
-#. Else, FASTQ output files from previous picard_sam_to_fastq conversion of BAM files
-
-
-The filtered reads are aligned to a reference genome. The alignment is done per sequencing readset. The alignment software used is `BWA`_ with algorithm: bwa mem. BWA output BAM files are then sorted by coordinate using `Picard`_.
+This step uses trimmed FASTQ files, or FASTQ files from the readset file as input. If neither of these are available, then FASTQ output files from previous picard_sam_to_fastq conversion of BAM files is used as input.
 
 .. _SamBamba Merge Files:
 
@@ -64,7 +51,7 @@ The filtered reads are aligned to a reference genome. The alignment is done per 
 
 This step takes as input files:
 
-* Aligned and sorted BAM output files from previous `BWA Picard Sort`_ step, if available
+* Aligned and sorted BAM output files from previous `BWA SAMBAMBA Sort SAM`_ step, if available
 * Else, BAM files from the readset file
 
 BAM readset files are merged into one file per sample. Merge is done using `Picard`_.
@@ -76,7 +63,6 @@ BAM readset files are merged into one file per sample. Merge is done using `Pica
 Insertion and deletion realignment is performed on regions where multiple base mismatches are preferred over indels by the aligner since it can appear to be less costly by the algorithm. Such regions will introduce false positive variant calls which may be filtered out by realigning those regions properly. Realignment is done using `GATK`_. The reference genome is divided by a number regions given by the nb_jobs parameter.
 
 Note: modified to use both normal and tumor BAMs to reduce FPs around indels
-
 
 .. _SamBamba Merge Realigned:
 
@@ -102,80 +88,59 @@ This step re-calibrates base quality scores of sequencing-by-synthesis reads in 
 
 `Conpair <https://github.com/nygenome/Conpair>`_ is a concordance and contamination estimator for tumor–normal pairs. This step is a quality control process to ensure the normal sample and cancer sample come from the same patient. It estimates this by determining the amount of normal sample in the tumor and the amount of tumor in normal sample.
 
-.. _Raw Mpileup Panel:
+.. _Metrics DNA Picard Metrics:
 
-**Raw Mpileup Panel**
+**Metrics DNA Picard Metrics**
 
-Full pileup (optional). A raw Mpileup file is created using samtools Mpileup and compressed in gzipped format. One packaged Mpileup file is created per sample/chromosome.
+This step runs specific QC metrics on DNA data Functions:
 
-.. _Paired VarScan 2:
+* collect_multiple_metrics,
+* collectOxoGMetrics,
+* collect_sequencing_artifacts_metrics 
 
-**Paired VarScan 2**
+using `Picard Metric Definition Tools`_.
 
-This step involves variant calling and somatic mutation/CNV detection for next-generation sequencing data. For details see - `VarScan 2 Somatic mutation and copy number alteration discovery in cancer by exome sequencing <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3290792/>`_.
+.. _Metrics DNA Sample Qualimap:
 
-This is a test.
+**Metrics DNA Sample Qualimap**
 
-.. _Merge VarScan 2 Panel:
+In this step, QC alignment metrics generated by `Qualimap`_.
 
-**Merge VarScan 2 Panel**
+.. _Metrics DNA FASTQ:
 
-Merge Mpileup files per sample/chromosome into one compressed gzip file per sample.
+**Metrics DNA FASTQ**
 
-.. _PreProcess VCF Panel:
+In this step, quality controlling metrics are generated on the read level using `FastQC`_.
 
-**PreProcess VCF Panel**
+.. _Sequenza Step:
 
-Preprocess VCF for loading into a annotation database called `Gemini`_. Processes include normalization and decomposition of MNPs by `Vt` and VCF modification for correct loading into `Gemini`_.
+**Sequenza Step**
 
-.. _SNP Effect Panel:
+`Sequenza`_ is a novel set of tools providing a fast python script to genotype cancer samples, and an R package to estimate cancer cellularity, ploidy, genome wide copy number profile and infer for mutated alleles.
 
-**SNP Effect Panel**
+.. _Strelka2 Paired Somatic:
 
-Variant effect annotation. The .vcf files are annotated for variant effects using the SnpEff software. SnpEff annotates and predicts the effects of variants on genes (such as amino acid changes).
+**Strelka2 Paired Somatic**
 
-.. _Gemini Annotations Panel:
+`Strelka2`_ is a fast and accurate small variant caller optimized for analysis of germline variation in small cohorts and somatic variation in tumor/normal sample pairs This implementation is optimized for somatic calling.
 
-**Gemini Annotations Panel**
+.. _Strelka2 Paired Germline:
 
-Load functionally annotated VCF file into a MySQL lite annotation database `Gemini`_.
+**Strelka2 Paired Germline**
 
-.. _Metrics:
+`Strelka2`_ is a fast and accurate small variant caller optimized for analysis of germline variation in small cohorts and somatic variation in tumor/normal sample pairs This implementation is optimized for germline calling in cancer pairs.
 
-**Metrics**
+.. _Purple Step:
 
-Compute metrics and generate coverage tracks per sample. Multiple metrics are computed at this stage: Number of raw reads, Number of filtered reads, Number of aligned reads, Number of duplicate reads, Median, mean and standard deviation of insert sizes of reads after alignment, percentage of bases covered at X reads (%_bases_above_50 means the % of exons bases which have at least 50 reads) whole genome or targeted percentage of bases covered at X reads (%_bases_above_50 means the % of exons bases which have at least 50 reads). A TDF (.tdf) coverage track is also generated at this step for easy visualization of coverage in the IGV browser.
+**Purple Step**
 
-.. _Picard Calculate HS Metrics:
-
-**Picard Calculate HS Metrics**
-
-Compute on target percent of hybridization based capture.
-
-.. _GATK callable Loci:
-
-**GATK callable Loci**
-
-Computes the callable region or the genome as a bed track.
-
-.. _Extract Common SNP Frequency:
-
-**Extract Common SNP Frequency**
-
-Extracts allele frequencies of possible variants across the genome.
-
-.. _BAF Plot:
-
-**BAF Plot**
-
-Plots DepthRatio and B allele frequency of previously extracted alleles.
+`Purple`_ is a purity ploidy estimator for whole genome sequenced (WGS) data. It combines B-allele frequency (BAF) from `AMBER`_, read depth ratios from `COBALT`_, somatic variants and structural variants to estimate the purity and copy number profile of a tumor sample.
 
 .. _Raw Mpileup:
 
 **Raw Mpileup**
 
 Full pileup (optional). A raw Mpileup file is created using samtools Mpileup and compressed in gzipped format. One packaged Mpileup file is created per sample/chromosome.
-
 
 .. _Paired Var Scan 2:
 
@@ -193,25 +158,13 @@ Merge Mpileup files per sample/chromosome into one compressed gzip file per samp
 
 **Paired Mutect2**
 
-`GATK MuTect2 Overview`_ caller for SNVs and Indels.
+`GATK Mutect2 Overview`_ caller for SNVs and Indels.
 
 .. _Merge Mutect2:
 
 **Merge Mutect2**
 
 Merge SNVs and indels for `GATK MuTect2 Overview`_ Replace TUMOR and NORMAL sample names in VCF to the exact tumor/normal sample names Generate a somatic VCF containing only PASS variants
-
-.. _SAM Tools Paired:
-
-**SAM Tools Paired**
-
-Samtools caller for SNVs and Indels using version 0.1.19.
-
-.. _Merge Filter Paired SAM Tools:
-
-**Merge Filter Paired SAM Tools**
-
-In this step, `bcftools`_ is used to merge the raw binary variants files created in the snpAndIndelBCF step. The output of bcftools is fed to varfilter, which does an additional filtering of the variants and transforms the output into the VCF (.vcf) format. One VCF file contain the SNP/INDEL calls for all samples in the experiment. Additional somatic filters are performed to reduce the number of FPs: 1. vcflibs vcfsamplediff tags each variant with <tag>={`germline`_,`somatic`_,`loh`_} to specify the type of variant given the genotype difference between the two samples. 2. bcftools filter is used to retain only variants with CLR>=15 and have STATUS=somatic from VCFsamplediff 3. bcftools filter is used to retain only variants that have STATUS=germline or STATUS=loh from vcfsamplediff
 
 .. _VarDict Paired:
 
@@ -223,7 +176,10 @@ In this step, `VarDict`_ caller is used for SNVs and Indels. Note: variants are 
 
 **Merge Filter Paired VarDict**
 
-The fully merged VCF is filtered using following steps: 1. Retain only variants designated as somatic by VarDict: either StrongSomatic or LikelySomatic 2. Somatics identified in step 1 must have PASS filter.
+The fully merged VCF is filtered using following steps: 
+
+#. Retain only variants designated as somatic by VarDict: either StrongSomatic or LikelySomatic 
+#. Somatics identified in step 1 must have PASS filter.
 
 .. _Ensemble Somatic:
 
@@ -249,29 +205,23 @@ Merge annotated somatic VCFs.
 
 Variant effect annotation. The .vcf files are annotated for variant effects using the SnpEff software. SnpEff annotates and predicts the effects of variants on genes (such as amino acid changes). Modified arguments to consider paired cancer data.
 
-.. _Combine Tumor Pairs Somatic:
+.. _Ensemble Somatic dbNSFP Annotation:
 
-**Combine Tumor Pairs Somatic**
+**Ensemble Somatic dbNSFP Annotation**
 
-Combine numerous ensemble VCFs into one VCF for `Gemini`_ annotations.
+This step performs additional Single Nucleotide Variants (SVN) annotations. It provides extra information about SVN by using numerous published databases. This is applicable to human samples. Databases that are available include `Biomart`_ (adds GO annotations based on gene information) and `dbNSFP`_ (an integrated database of functional annotations from multiple sources for the comprehensive collection of human non-synonymous SNPs. It compiles prediction scores from four prediction algorithms (`SIFT`_, `Polyphen2`_, LRT and `MutationTaster`_), three conservation scores (`PhyloP`_, `GERP++`_ and `SiPhy`_) and other function annotations).
 
-.. _All Pairs Compute Effects Somatic:
+.. _Sample Gemini ANnotations Somatic:
 
-**All Pairs Compute Effects Somatic**
+**Sample Gemini ANnotations Somatic**
 
-Variant effect annotation. The .vcf files are annotated for variant effects using the SnpEff software. SnpEff annotates and predicts the effects of variants on genes (such as amino acid changes). Modified arguments to consider paired cancer data. Applied to all tumor pairs.
-
-.. _Gemini Annotations Somatic:
-
-**Gemini Annotations Somatic**
-
-Load functionally annotated VCF file into a MySQL lite annotation database `Gemini`_.
+This step loads functionally annotated .vcf file into a MySQL lite annotation database - `Gemini`_.
 
 .. _Ensemble Germline Loh:
 
 **Ensemble Germline Loh**
 
-Apply Bcbio.variations ensemble approach for `VarDict`_, Samtools and `VarScan 2`_ calls Filter ensemble calls to retain only calls overlapping 2 or more callers.
+This step applies Bcbio.variations ensemble approach for `VarDict`_, Samtools and `VarScan 2`_ calls. It also filters ensemble calls to retain only calls overlapping 2 or more callers.
 
 .. _GATK Variant Annotator Germline:
 
@@ -291,31 +241,265 @@ Merge annotated germline and LOH VCFs.
 
 Variant effect annotation. The .vcf files are annotated for variant effects using the SnpEff software. SnpEff annotates and predicts the effects of variants on genes (such as amino acid changes). Modified arguments to consider paired cancer data.
 
-.. _Combine Tumor Pairs Germline:
+.. _Ensemble Germline dbNSFP Annotation:
 
-**Combine Tumor Pairs Germline**
+**Ensemble Germline dbNSFP Annotation**
 
-Combine numerous ensemble VCFs into one VCF for `Gemini`_ annotations.
+Additional SVN annotations. Provides extra information about SVN by using numerous published databases. Applicable to human samples. Databases available include `Biomart`_ (adds GO annotations based on gene information) and dbNSFP (an integrated database of functional annotations from multiple sources for the comprehensive collection of human non-synonymous SNPs. It compiles prediction scores from four prediction algorithms (`SIFT`_, `Polyphen2`_, LRT and `MutationTaster`_), three conservation scores (PhyloP, GERP++ and SiPhy) and other function annotations).
 
-.. _All Pairs Compute Effects Germline:
+.. _Sample Gemini Annotations Germline:
 
-**All Pairs Compute Effects Germline**
+**Sample Gemini Annotations Germline**
 
-Variant effect annotation. The .vcf files are annotated for variant effects using the SnpEff software. SnpEff annotates and predicts the effects of variants on genes (such as amino acid changes). Modified arguments to consider paired cancer data. Applied to all tumor pairs.
+Load functionally annotated vcf file into a MySQL lite annotation database : `Gemini`_
 
-.. _Gemini Annotations Germline:
+.. _Run Pair MultiQC:
 
-**Gemini Annotations Germline**
+**Run Pair MultiQC**
+
+Aggregate results from bioinformatics analyses across many samples into a single report. MultiQC searches a given directory for analysis logs and compiles a HTML report. It's a general use tool, perfect for summarizing the output from numerous bioinformatics tools. For details, refer to `MultiQC Info <https://multiqc.info>`_.
+
+.. _Sym Link FASTQ Pair:
+
+**Sym Link FASTQ Pair**
+
+Generates symbolic links for FASTQ Pair output files.
+
+.. _Sym Link Final BAM:
+
+**Sym Link Final BAM**
+
+Generates symbolic links for Final BAM output files.
+
+.. _Sym Link Report:
+
+**Sym Link Report**
+
+Generates symbolic links for Tumor Pair pipeline report.
+
+.. _Sym Link Ensemble:
+
+**Sym Link Ensemble**
+
+Generates symbolic links for Ensemble processing output.
+
+.. _Sym Link Panel:
+
+**Sym Link Panel**
+
+This step create sym links of panel variants for generating reports and deliverable to the clients.
+
+.. _Manta SV Calls:
+
+**Manta SV Calls**
+
+In this step`Manta`_ is deployed for calling structural variants (SVs) and indels from mapped paired-end sequencing reads. It is optimized for the following analysis:
+
+* Germline variation in small sets of individuals.
+* Somatic variation in tumor/normal sample pairs.
+
+`Manta`_ discovers, assembles and scores large-scale SVs, medium-sized indels and large insertions within a single efficient workflow. The Manta step accepts input read mappings from BAM or CRAM files and reports all SV and indel inferences in VCF 4.1 format.
+
+.. _Raw Mpileup Panel:
+
+**Raw Mpileup Panel**
+
+Full pileup (optional). A raw Mpileup file is created using samtools Mpileup and compressed in gzipped format. One packaged Mpileup file is created per sample/chromosome.
+
+.. _Paired VarScan 2:
+
+**Paired VarScan 2**
+
+This step involves variant calling and somatic mutation/CNV detection for next-generation sequencing data. For details see - `VarScan 2 Somatic mutation and copy number alteration discovery in cancer by exome sequencing <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3290792/>`_.
+
+.. _Merge VarScan 2 Panel:
+
+**Merge VarScan 2 Panel**
+
+Merge Mpileup files per sample/chromosome into one compressed gzip file per sample.
+
+.. _PreProcess VCF Panel:
+
+**PreProcess VCF Panel**
+
+Preprocess VCF for loading into a annotation database called `Gemini`_. Processes include normalization and decomposition of MNPs by `Vt` and VCF modification for correct loading into `Gemini`_.
+
+.. _SNP Effect Panel:
+
+**SNP Effect Panel**
+
+Variant effect annotation. The .vcf files are annotated for variant effects using the SnpEff software. SnpEff annotates and predicts the effects of variants on genes (such as amino acid changes).
+
+.. _Gemini Annotations Panel:
+
+**Gemini Annotations Panel**
 
 Load functionally annotated VCF file into a MySQL lite annotation database `Gemini`_.
 
-.. include:: steps_cram_op.inc
+.. _Delly Call Filter:
+
+**Delly Call Filter**
+
+`Delly2`_ is an integrated structural variant (SV) prediction method. It can discover, genotype and visualize deletions, tandem duplications, inversions and translocations at single-nucleotide resolution, in case of short-read, massively parallel sequencing data.
+
+Delly2 uses paired-ends and split-reads to sensitively and accurately delineate genomic rearrangements throughout the genome. SVs can be visualized using Delly-maze and Delly-suave. 
+
+This step takes as input the normal and tumor final BAM files. It returns output in the form of .bcf file.
+
+.. _Delly SV Annotation:
+
+**Delly SV Annotation**
+
+The Delly SV Annotation or SV Genotype is typically a time consuming step. This exhaustive and comprehensive step interrogates every read overlapping putative SV breakpoints so that Delly can yield accurate read counts for reference-supporting and alternative allele-supporting reads and paired-ends. 
+
+.. _Manta SV Annotation:
+
+**Manta SV Annotation**
+
+This step uses Manta results and performs SV filtering and annotations to enable data visualizations. It uses Manta SV call step output VCF file and performs SV annotations to compares types and breakpoints for candidate SVs from different callsets and enables fast comparison of SVs to genomic features such as genes and repetitive regions, as well as to previously established SV datasets.
+
+.. _Lumpy Paired SV:
+
+**Lumpy Paired SV**
+
+This step uses `Lumpy`_ for structural variant discovery in the given input file. The output is available in BAM format.
+
+Comprehensive discovery of structural variation (SV) from whole genome sequencing data requires multiple detection signals including read-pair, split-read, read-depth and prior knowledge. Owing to technical challenges, extant SV discovery algorithms either use one signal in isolation, or at best use two sequentially. Lumpy is a novel SV discovery framework that naturally integrates multiple SV signals jointly across multiple samples. It yields improved sensitivity, especially when SV signal is reduced owing to either low coverage data or low intra-sample variant allele frequency.
+
+.. _Lumpy SV Annotation:
+
+**Lumpy SV Annotation**
+
+This step performs LumPy SV Annotation for mapping and characterization of SVs.
+
+.. _Wham Call SV:
+
+**Wham Call SV**
+
+`WHAM`_ (Whole-genome Alignment Metrics) provides a single, integrated framework for both structural variant calling and association testing, thereby bypassing many of the difficulties that currently frustrate attempts to employ SVs in association testing.  This step returns a VCF file.
+
+.. _Wham SV Annotation:
+
+**Wham SV Annotation**
+
+This step uses the VCF file generated in the previous step `Wham Call SV`_ and performs SV annotations.
+
+.. _CNVKit Batch:
+
+**CNVKit Batch** 
+
+`CNVkit`_ is a Python library and `command-line software toolkit <https://github.com/etal/cnvkit>`_ to infer and visualize copy number from high-throughput DNA sequencing data. It is designed for use with hybrid capture, including both whole-exome and custom target panels, and short-read sequencing platforms such as Illumina and Ion Torrent.
+
+In this step, the CNVKit library used to run 'batch' command. Following steps are automated with the `CNVKit batch command`_. 
+#. Create a pooled reference of per-bin copy number estimates from several normal samples; then
+#. Use this reference in processing all tumor samples that were sequenced with the same platform and library prep.
+
+CNVkit uses the bait BED file, reference genome sequence, and (optionally) sequencing-accessible regions along with your BAM files as input for the batch command.
+
+.. _CNVKit SV Annotation:
+
+**CNVKit SV Annotation**
+
+In this step, structural variant annotation is carried out after CNVKit batch processing.
+
+.. _Scones:
+
+**Scones**
+
+This step aims to estimate somatic **copy number variation** using `BVAtools`_ and `SCONE`_. 
+
+`BVAtools`_ generate the binned Depth ratio values from the tumor and normal BAM files. `SCONE is tool`_ to deconvolution the `logR Signal`_ of the tumor-normal coverage into a mixture of Bayesian sub-signal for each copy number state. The result is a set of several deconvolution using  0-7 sub-signal. As each tumor sample is unique the choice of the best final model (number of sub-signal) needs to be manually evaluated using the log ratio graphical representation.
+
+.. _SvABA SV Assemble:
+
+**SvABA SV Assemble**
+
+This step performs structural variation and indel analysis by assembly.  It uses `SvABA tool` to perform this analysis. `SvABA`_ is an efficient and accurate method for detecting SVs from short-read sequencing data using genome-wide local assembly with low memory and computing requirements.
+
+.. _SvABA SV Annotation:
+
+**SvABA SV Annotation**
+
+In this step, the output generated by `SvABA SV Assemble`_ step as VCF file is used as input and SV annotations are done.
+
+.. _Ensemble MetaSV Somatic:
+
+**Ensemble MetaSV Somatic**
+
+This step uses `MetaSV Tool`_ to perform an accurate and integrative structural-variant calling analysis. `MetaSV`_, an integrated SV caller which leverages multiple orthogonal SV signals for high accuracy and resolution. MetaSV proceeds by merging SVs from multiple tools for all types of SVs. It also analyzes soft-clipped reads from alignment to detect insertions accurately since existing tools underestimate insertion SVs. Local assembly in combination with dynamic programming is used to improve breakpoint resolution. Paired-end and coverage information is used to predict SV genotypes.  
+
+.. _Ensemble MetaSV Germline:
+
+**Ensemble MetaSV Germline**
+
+Performs MetaSV Germline analysis.
+
+.. _MetaSV SV Annotation:
+
+**MetaSV SV Annotation**
+
+In this step the output of MetaSV analysis earlier is annotated for structural variant detection.
+
+.. _Sym Link Sequenza:
+
+**Sym Link Sequenza**
+
+In this step, sym links for Sequenza output are generated.
+
+.. _Sym Link MetaSV:
+
+**Sym Link MetaSV**
+
+In this step, sym links for MetaSV output are generated.
+
+.. _Sym Link Manta:
+
+**Sym Link Manta**
+
+In this step, sym links for Manta output are generated.
+
+.. _Sym Link Delly:
+
+**Sym Link Delly**
+
+In this step, sym links for Delly output are generated.
+
+.. _Sym Link Lumpy:
+
+**Sym Link Lumpy**
+
+In this step, sym links for Lumpy output are generated.
+
+.. _Sym Link Wham:
+
+**Sym Link Wham**
+
+In this step, sym links for Wham output are generated.
+
+.. _Sym Link CNVKit:
+
+**Sym Link CNVKit**
+
+In this step, sym links for CNVKit output are generated.
+
+.. include:: steps_dnaseq_common.inc
 
 .. Html links 
 
-.. _Trimmomatic Method: http://www.usadellab.org/cms/index.php?page=trimmomatic
-.. _BWA: http://bio-bwa.sourceforge.net/
+.. _BWA alignment software: http://bio-bwa.sourceforge.net/
 .. _Picard: http://broadinstitute.github.io/picard/
+.. _Picard Metric Definition Tools: https://broadinstitute.github.io/picard/picard-metric-definitions.html
+.. _Qualimap: http://qualimap.conesalab.org/
+.. _FastQC: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+.. _AMBER: https://github.com/hartwigmedical/hmftools/blob/master/amber/README.md
+.. _COBALT: https://github.com/hartwigmedical/hmftools/tree/master/cobalt
+.. _dbNSFP: https://sites.google.com/site/jpopgen/dbNSFP
+.. _SIFT: https://sift.bii.a-star.edu.sg
+.. _Polyphen2: http://genetics.bwh.harvard.edu/pph2/
+.. _MutationTaster: https://www.mutationtaster.org
+.. _Siphy: http://portals.broadinstitute.org/genome_bio/siphy/index.html
+.. _GERP++: https://bio.tools/gerp
+.. _PhyloP: https://ionreporter.thermofisher.com/ionreporter/help/GUID-03D1F68A-E646-4B49-AD59-AF2F51874BD2.html
 .. _GATK: https://gatk.broadinstitute.org/hc/en-us
 .. _SamBamba: http://lomereiter.github.io/sambamba/index.html
 .. _Vt: http://genome.sph.umich.edu/wiki/Vt
@@ -328,3 +512,14 @@ Load functionally annotated VCF file into a MySQL lite annotation database `Gemi
 .. _somatic: https://www.cancer.gov/publications/dictionaries/genetics-dictionary/def/somatic-variant
 .. _Bcbio.variations: https://github.com/chapmanb/bcbio.variation
 .. _VarDict: https://www.ncbi.nlm.nih.gov/pubmed/27060149
+.. _CNVKit: https://cnvkit.readthedocs.io/en/stable/
+.. _CNVKit batch command: https://cnvkit.readthedocs.io/en/stable/pipeline.html#batch
+.. _BVATools: https://bitbucket.org/mugqic/bvatools/src/master/
+.. _SCONE: https://www.bioconductor.org/packages/devel/bioc/vignettes/scone/inst/doc/sconeTutorial.html
+.. _SCONE is tool: https://github.com/YosefLab/scone
+.. _SvABA tool: https://github.com/walaj/svaba/blob/master/README.md
+.. _SvABA: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5880247/
+.. _MetaSV: http://bioinform.github.io/metasv/
+.. _MetaSV Tool: https://academic.oup.com/bioinformatics/article/31/16/2741/321286
+.. _logR Signal: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6778654/
+.. _Biomart: https://m.ensembl.org/info/data/biomart/index.html
