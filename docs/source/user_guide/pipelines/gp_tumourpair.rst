@@ -258,7 +258,7 @@ For the latest implementation and usage details refer to the latest `pipeline im
 .. |sambamba_merge_realigned| replace:: `SamBamba Merge Realigned`_
 .. |sambamba_mark_duplicates| replace:: `SamBamba Mark Duplicates`_ 
 .. |recalibration| replace:: `Recalibration`_
-.. |conpair_concordance_contamination| replace:: `Conpair Concorance Contamination`_
+.. |conpair_concordance_contamination| replace:: `Conpair Concordance Contamination`_
 .. |metrics_dna_picard_metrics| replace:: `Metrics DNA Picard Metrics`_
 .. |metrics_dna_sample_qualimap| replace:: `Metrics DNA Sample Qualimap`_
 .. |metrics_dna_fastqc| replace:: `Metrics DNA FASTQ`_

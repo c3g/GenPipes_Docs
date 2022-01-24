@@ -141,4 +141,11 @@ RNA Sequencing (Light) Pipeline
 Tumor Pair Pipeline
 ====================
 
-Not yet available in GenPipes 3.5.0 - to be updated when released after fixes
+.. mermaid:: /mmd/pipelines/tumor_pair_ensemble.mmd
+     :caption: Tumor Pair Ensemble Schema
+
+.. mermaid:: /mmd/pipelines/tumor_pair_fastpass.mmd
+     :caption: Tumor Pair Fastpass Schema
+
+.. mermaid:: /mmd/pipelines/tumor_pair_sv.mmd
+     :caption: Tumor Pair SV Schema

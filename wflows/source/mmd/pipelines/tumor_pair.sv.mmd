@@ -1,0 +1,108 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
+
+        %% GenPipes Schema for tumor_pair.py
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/tumor_pair/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+        %% -t sv
+
+        graph LR
+        Node1{{ 1. <br/> Picard<br/>SAM<br/>to FASTQ }}:::nodefill
+        Node2{{ 2. <br/> Skewer<br/>Trimming }}:::nodefill
+        Node3{{ 3. <br/> BWA<br/>SAMbamba<br/>sort<br/>SAM }}:::nodefill
+        Node4{{ 4. <br/> SAMbamba<br/>merge<br/>SAM<br/>files }}:::nodefillblack
+        Node5{{ 5. <br/> GATK<br/>indel<br/>re-aligner }}:::nodefill
+        Node6{{ 6. <br/> SAMBAM<br/>merge<br/>realigned }}:::nodefill
+        Node7{{ 7. <br/> SAMBAM<br/>Mark<br/>Duplicates }}:::nodefill
+        Node8{{ 8. <br/> Recalibration }}:::nodefill
+        Node9{{ 9. <br/> Strelka2<br/>Paired<br/>Somatic }}:::nodefill
+        Node10{{ 10. <br/> Strelka2<br/>& Paired<br/>Germlin}}:::nodefill
+        Node11{{ 11. <br/> Metrics&<br/>DNA<br/>Picard<br/>Metrics }}:::nodefill
+        Node12{{ 12. <br/> Sequenz }}:::nodefill
+        Node13{{ 13. <br/> Delly2<br/>call<br/>Filter }}:::nodefill
+        Node14{{ 14. <br/> Delly2<br/>SV<br/>Annotation }}:::nodefill
+        Node15{{ 15. <br/> Manta<br/>SV<br/>calls }}:::nodefill
+        Node16{{ 16. <br/> Manta<br/>SV<br/>Annotation }}:::nodefill
+        Node17{{ 17. <br/> Lumpy<br/>Paired<br/>SV  }}:::nodefill
+        Node18{{ 18. <br/> Lumpy<br/>SV<br/>Annotation }}:::nodefill
+        Node19{{ 19. <br/> WHAM<br/>Call<br/>SV }}:::nodefill
+        Node20{{ 20. <br/> WHAM<br/>SV<br/>Annotation }}:::nodefill
+        Node21{{ 21. <br/> CNVKit<br/>Batch }}:::nodefill
+        Node22{{ 22. <br/> CNVKit<br/>SV<br/>Annotation }}:::nodefill
+        Node23{{ 23. <br/> Scones }}:::nodefill
+        Node24{{ 24. <br/> SvABA<br/>Assemble }}:::nodefill
+        Node25{{ 25. <br/> SvABA<br/>Annotation }}:::nodefill
+        Node26{{ 26. <br/> Ensemble<br/>MetaSV<br/>Somatic }}:::nodefill
+        Node27{{ 27. <br/> Ensemble<br/>MetaSV<br/>Germline }}:::nodefill
+        Node28{{ 28. <br/> MetaSV<br/>SV<br/>Annotation }}:::nodefill
+        Node29{{ 29. <br/> Sym<br/>Link<br/>Sequenza }}:::nodefill
+        Node30{{ 30. <br/> Sym<br/>Link<br/>MetaSV }}:::nodefill
+        Node31{{ 31. <br/> Sym<br/>Link<br/>Delly }}:::nodefill
+        Node32{{ 32. <br/> Sym<br/>Link<br/>Manta }}:::nodefill
+        Node33{{ 33. <br/> Sym<br/>Link<br/>Lumpy }}:::nodefill
+        Node34{{ 34. <br/> Sym<br/>Link<br/>WHAM }}:::nodefill
+        Node35{{ 35. <br/> Sym<br/>Link<br/>CNVKit }}:::nodefill
+
+        Input1[[fa:fa-file-archive-o .BAM]]
+        Input2[[fa:fa-file-archive-o .FASTQ]]
+
+        RecalibOP([fa:fa-sticky-note-o Report ])
+        MetricsOP([fa:fa-sticky-note-o Report ])
+        MetaSVOP([fa:fa-sticky-note-o Report ])
+
+        Input1 --> Node1 -.-> Node2
+        Input2 --> Node2
+
+        Node2 -.-> Node3 -.-> Node4 -.-> Node5 -.-> Node6 -.-> Node7 -.-> Node8
+        Node7 -.-> Node9 -.-> Node10
+        Node8 -.-> Node11 & Node12 & Node14 & Node16 & Node18 & Node19 & Node20 & Node22 & Node23
+        Node12 -.-> Node13
+        Node13 & Node14 & Node16 & Node18 & Node20 & Node22-.-> Node23
+        Node14 -.-> Node15
+        Node16 -.-> Node17
+        Node18 -.-> Node19
+        Node20 -.-> Node21
+        Node23 -.-> Node24
+
+        Node8 --> RecalibOP
+        Node11 --> MetricsOP
+        Node24 ---> MetaSVOP
+
+        subgraph readSetSteps[" "]
+          Node1
+          Node2
+          Node3
+          MTSOutput
+        end
+        subgraph sampleSetSteps[" "]
+          Node5
+          Node6
+          Node7
+          Node8
+          Node9
+          Node10
+          Node11
+          Node12
+          Node13
+          Node14
+          Node15
+          Node16
+          Node17
+          Node18
+          Node19
+          Node20
+          Node21
+          Node22
+          Node23
+          Node24
+
+          RecalibOP
+          MetricsOP
+          MetaSVOP
+        end
+
+        classDef greenRect fill:#E4FBF4,stroke:white
+        class readSetSteps greenRect
+        classDef blueRect fill:#DEF6FC,stroke:white
+        class sampleSetSteps blueRect
+        classDef nodefill fill:#ffffff,stroke:gray,stroke-width:2px
+        classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px
