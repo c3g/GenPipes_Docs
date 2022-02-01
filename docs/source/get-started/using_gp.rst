@@ -238,8 +238,8 @@ Figure below demonstrates how ```monitor.sh``` utility works. The pipeline comma
 
 .. figure:: /img/monitor_utility.png
    :align: center
-   :width: 60%
-   :figwidth: 60%
+   :width: 90%
+   :figwidth: 90%
    :alt: monitor.sh util
 
 For a complete list of available GenPipes utilities, refer to the ```genpipes/util``` folder in the source tree.
