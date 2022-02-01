@@ -28,9 +28,9 @@ What's new?
   -  GenPipes offers new helper utilities that make submitting jobs and monitoring them much easier with better scheduler integration. These utilities are:
 
      - chunk_genpipes.sh
-     - Watchdog.sh
+     - monitor.sh
 
-     For detailed usage, refer to GenPipes documentation for: :ref:`Monitoring Jobs<ref_monitoring_gp>`.
+     For detailed usage, refer to GenPipes documentation for: :ref:`Submitting GenPipes Jobs<ref_submitting_gp>`.
 
 * Other Updates:
 

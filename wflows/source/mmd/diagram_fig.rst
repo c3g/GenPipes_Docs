@@ -9,5 +9,5 @@ Monitor.sh Script: How it works?
 ================================
 
 .. mermaid:: /mmd/diagrams/monitor_pl.mmd
-   :caption: GenPipes Monitoring Utility
+   :caption: GenPipes Smart Job Chunking & Submission Use Model 
 

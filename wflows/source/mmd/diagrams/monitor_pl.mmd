@@ -5,35 +5,35 @@
         %% Author Shaloo Shalini <shalz@hotmail.com>
 
         graph TD
-          InputBW[[fa:fa-file-archive-o Pipeline Command]]
-          Node1{{ 1. <br/> Pipeline Commands Script }}:::nodefill
-          Node2{{ 2. <br/> chunk_genpipes.sh utility }}:::nodefill
-          Node3{{ 3. <br/> Job Chunks Folder }}:::nodefill
-          Node4{{ 4. <br/> monitor.sh utility }}:::nodefill
-          Output([fa:fa-sticky-note-o Chunks of job that are submitted for Pipeline ])
-          Status([fa:fa-sticky-note-o Status / Observations ])
+          InputBW[[fa:fa-file-archive-o Pipeline Command]]:::inputfill
+          Node1{{ 1. <br/> -g PipelineScript.sh }}:::nodefill
+          Node2{{ 2. <br/> chunk_genpipes.sh utility }}
+          Node2out{{ Job Chunks Folder }}:::inputfill
+          Node3{{ 3. <br/> monitor.sh utility }}:::nodefill
+          Node4{{ 4. <br/>Watch command }}:::nodefill
+          Scheduler([fa:fa-sticky-note-o Scheduler ])
 
           InputBW --> Node1
-          Node1 -.-> Node2 -.-> Output -.-> Node3
-          Node4 -.-> Node3
-          Node3 -.-> Node4 -.-> Status
-
+          Node1 -.-> Node2 -.-> Node2out -.-> Node3 
+          Node3 -. Smartly submit <br/> chunked jobs .-> Scheduler
+          Node3 -. Monitor <br/> job chunk <br/> folder .-> Node2out
+          Node4 -.-> Scheduler
+ 
           subgraph pipeline[" "]
             Node1
           end
 
           subgraph chunk[" "]
             Node2
+            Node2out
           end
 
            subgraph monitorutil[" "]
-            Node4
+            Node3
           end
           
            subgraph monitor[" "]
-            Node3
-            monitorutil
-            Output
+            Node4
           end
 
           classDef inputfill fill:#ffffff,stroke:gray,stroke-width:1px
