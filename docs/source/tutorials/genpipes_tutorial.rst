@@ -27,7 +27,7 @@ paste the following lines of code and save the file and Exit (Control + X):
     ## GenPipes/MUGQIC genomes and modules
     export MUGQIC_INSTALL_HOME=/cvmfs/soft.mugqic/CentOS6
     module use $MUGQIC_INSTALL_HOME/modulefiles
-    module load mugqic/python/2.7.14
+    module load mugqic/python/3.9.1
     module load mugqic/genpipes/<latest_version>
     export JOB_MAIL=<my.name@my.email.ca>
     export RAP_ID=<my-rap-id>
