@@ -24,7 +24,7 @@ Checklist of Pre-requisites for Running GenPipes
 
     * Software requirements
 
-      - Python 2.7
+      - Python  3.9.1
       - :ref:`Modules that are required<accessing_sw_mod_genomes_local_dp>`
       - :ref:`Genomes that need to be referenced<ref_installing_genomes>`
 

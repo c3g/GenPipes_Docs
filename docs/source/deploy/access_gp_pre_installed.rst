@@ -92,7 +92,7 @@ Genomes and modules used by the pipelines are already installed on a CVMFS parti
 
 .. note::
 
-   GenPipes have been tested with Python 2.7
+      GenPipes 4.0 release has been verified for Python 3.9.1 version. It no longer supports Python 2.7 version. 
 
 Next, you need to load the `software modules <https://docs.python.org/3/tutorial/modules.html>`_ in your shell environment that are required to run GenPipes. For a full list of modules available on Compute Canada servers see the `module page <https://www.computationalgenomics.ca/cvmfs-modules/>`_
 
@@ -105,7 +105,7 @@ To load the GenPipes modules, paste the following lines of code and save the fil
    ## GenPipes/MUGQIC genomes and modules
    export MUGQIC_INSTALL_HOME=/cvmfs/soft.mugqic/CentOS6
    module use $MUGQIC_INSTALL_HOME/modulefiles
-   module load mugqic/python/2.7.14
+   module load mugqic/python/3.9.1
    module load mugqic/genpipes/<latest_version>
    export JOB_MAIL=<my.name@my.email.ca>
    export RAP_ID=<my-rap-id>
@@ -152,7 +152,7 @@ For MUGQIC analysts, add the following lines to your $HOME/.bash_profile:
   fi
 
   module use $MUGQIC_INSTALL_HOME/modulefiles $MUGQIC_INSTALL_HOME_DEV/modulefiles
-  module load mugqic/python/2.7.14
+  module load mugqic/python/3.9.1
   module load mugqic/genpipes/<latest_version>
 
   export RAP_ID=<my-rap-id>

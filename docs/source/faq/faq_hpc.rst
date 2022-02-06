@@ -28,9 +28,9 @@ For example, hicseq.py pipeline commands can be chunked as follows:
 
 Here, ```-n 15``` input specifies that the maximum number of jobs in a chunk is 15.  This is an optional parameter.  By default, the chunk size is 20.
 
-You can use the ```monitor.sh``` GenPipes utility to monitor the status of these job `chunks`.
+You can use the ```monitor.sh``` GenPipes utility to submit jobs smartly to the scheduler and use scheduler ```watch``` command to monitor the status of these job `chunks`.
 
-For details, refer to :ref:`Monitoring GenPipes Pipeline runs<ref_monitoring_gp>` and see genpipes/utils in the source tree.
+For details, refer to :ref:`Submitting GenPipes Pipeline runs<ref_submitting_gp>` and see genpipes/utils in the source tree.
 
 .. warning::
 
@@ -45,6 +45,5 @@ When there is an error or timeout with the scheduler, user can avoid canceling a
 
 **Response**
 
-GenPipes utilities such as ```chunk_genpipes.sh``` and ```monitor.sh``` can be used to smartly chunk pipeline command script and submit these chunks to the HPC scheduler queue instead of the full pipeline run script at once.The ```monitor.sh``` script can be used to monitor status of job runs. Only the job chunks that timeout or encounter error can be re-submitted to the scheduling queue. 
-
-For details, refer to :ref:`Monitoring GenPipes Pipeline runs<ref_monitoring_gp>` and see genpipes/utils in the source tree.
+GenPipes utilities such as ```chunk_genpipes.sh``` and ```monitor.sh``` can be used to smartly chunk pipeline command script and submit these chunks to the HPC scheduler queue instead of the full pipeline run script at once.The ```monitor.sh``` script can be used to smartly submit jobs to the scheduler and then use the scheduler's ```watch``` command to monitor status of job runs. Only the job chunks that timeout or encounter error can be re-submitted to the scheduling queue. 
+For details, refer to :ref:`Submitting GenPipes Pipeline runs<ref_submitting_gp>` and see genpipes/utils in the source tree.
