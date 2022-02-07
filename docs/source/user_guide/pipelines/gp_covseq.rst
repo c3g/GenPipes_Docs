@@ -68,6 +68,8 @@ Use the following commands to execute CoVSeq sequencing pipeline:
 
 .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
+.. include:: /user_guide/pipelines/notes/artic_version.inc
+
 You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 
 .. note::
