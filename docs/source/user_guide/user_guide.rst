@@ -18,8 +18,9 @@ If you wish to not only use GenPipes Open Source offering but also contribute to
 This GenPipes User Guide is organized as follows:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :name: toc-user-guide
+   :caption: GenPipes Pipelines 
 
    quickstart_gp
    pipeline_ref

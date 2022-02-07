@@ -1,9 +1,15 @@
+:orphan:
+
 .. _docs_gp_illumina_run_proc:
 
 .. spelling::
 
       qc
- 
+
+.. warning:: **Not supported in GenPipes 4.0 Release**
+
+     Please note that Illumina Run Processing Pipeline is not supported in GenPipes Release 4.0.  The pipeline is undergoing updates and enhancements. These include updates to run processing and MGI support. Watch out for future release of GenPipes.
+
 Illumina Run Processing Pipeline
 =================================
 Genomic Analyzers create massive amounts of data. The Illumina Run Processing Pipeline transforms primary imaging output from the Genome Analyzer into discrete aligned strings of bases. A package of integrated algorithms perform the core primary data transformation steps: image analysis, intensity scoring, base calling, and alignment. It also converts Base Call (BCL) files into `FASTQ`_ files that are needed for higher genomic analysis such as :ref:`ChIP Sequencing<docs_gp_chipseq>`.

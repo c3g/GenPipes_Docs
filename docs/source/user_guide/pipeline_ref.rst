@@ -20,14 +20,17 @@ This guide contains usage manual and reference information for all available Gen
    pipelines/gp_ampliconseq
    pipelines/gp_chipseq
    pipelines/gp_covseq
+   pipelines/gp_cov_nanopore
    pipelines/gp_dnaseq
    pipelines/gp_dnaseq_highcov
    pipelines/gp_epiqc
    pipelines/gp_hicseq
-   pipelines/gp_illumina
    pipelines/gp_wgs_methylseq
    pipelines/gp_nanopore
    pipelines/gp_rnaseq
    pipelines/gp_rnaseq_denovo
    pipelines/gp_rnaseq_light
    pipelines/gp_tumourpair
+
+.. Issue #168 comment out for 4.0 Release
+..   pipelines/gp_illumina

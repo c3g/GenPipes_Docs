@@ -31,6 +31,7 @@ Following genomics application pipelines are already implemented and validated t
 * RNA Sequencing / Unmapped RNA Quality Control
 * Transcriptonomics Assembly
 * Tumour Analysis
+* EpiQC Analysis
 * Whole Exome Sequencing (WES)
 * Whole Genome Bisulphate Sequencing (WGBS)/ Reduced Representation Bisulphate Sequencing (RRBS)
 * Whole Genome Sequencing (WGS)

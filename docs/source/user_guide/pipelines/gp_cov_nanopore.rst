@@ -1,5 +1,3 @@
-:orphan:
-
 .. _docs_gp_cov_nanopore:
 
 .. spelling::
@@ -20,10 +18,6 @@
    nt
    transcriptonomics
    minimap 
-
-.. note::
-
-      This documentation is work-in-progress. This CoV Nanopore pipeline is not tested yet.
 
 Nanopore ARTIC-Nanopolish SOP Pipeline
 ======================================
