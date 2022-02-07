@@ -33,7 +33,8 @@ vstr1=versionfile.read()
 versionfile.close()
 
 version = u'Version '+vstr1
-release = u' '+vstr1+u'( 0.9 draft )' 
+#release = u' '+vstr1+u'( 0.9 draft )' 
+release = u' '+vstr1 
 
 # -- General configuration ---------------------------------------------------
 
@@ -103,7 +104,7 @@ if on_rtd:
 else:
     html_theme = 'sphinx_rtd_theme'
 
-html_logo = '_static/genpipes_doc_img.png'
+html_logo = 'img/genpipes_doc_img.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -140,3 +141,70 @@ linkcheck_ignore = [
         r'https://www.computationalgenomics.ca/tutorial/*',
         r'https://bitbucket.org/mugqic/genpipes/downloads/*',
         ]
+
+# -- Options for LaTeX output ------------------------------------------------
+
+latex_logo = 'img/genpipe_logo.png'
+
+latex_engine = 'xelatex'
+latex_use_xindy = False
+latex_appendices = []
+latex_show_urls = 'no'
+latex_show_pagerefs = True
+
+latex_elements = {
+        # -- The paper size ('letterpaper' or 'a4paper').  ---------------------
+        # 'papersize': 'letterpaper',
+
+        #'fncychap': r'',
+        'fncychap': r'\usepackage[Lenny]{fncychap}',
+        #'fncychap': r'\usepackage[Bjornstrup]{fncychap}',
+        #'fncychap': r'\usepackage[Rejne]{fncychap}',
+
+        'printindex': r'\footnotesize\raggedright\printindex',
+        'extraclassoptions': 'openany',
+
+        # -- The font size ('10pt', '11pt' or '12pt'). -------------------------
+        'pointsize': '11pt',
+
+        #'pxunit': '0.6bp',
+
+        # -- Additional stuff for the LaTeX preamble. --------------------------
+        'preamble': r'''
+                        \makeatletter
+                        \usepackage{hyperxmp}
+                        \usepackage{hyperref}
+                        \usepackage{libertine}
+                        \usepackage{etoc}
+                        \usepackage[flushleft]{ragged2e}
+                        \raggedright
+                        \renewcommand{\@chapapp}{}
+                        \ChRuleWidth{0pt}
+                        \setcounter{tocdepth}{3}
+                        \makeatother
+                    ''',
+
+        # -- Latex figure (float) alignment ------------------------------------
+        #'figure_align': 'htbp',
+        'figure_align': 'H',
+
+        'sphinxsetup': \
+                      'InnerLinkColor={rgb}{0.2,0.51,0.96}, \
+                       OuterLinkColor={rgb}{0.2,0.51,0.96}, \
+                       shadowsep={0pt}, \
+                       shadowsize={0pt}, \
+                       shadowrule={0pt}',
+    }
+
+numfig = True
+numfig_format = {'figure': 'Figure %s'}
+numfig_secnum_depth = 1
+
+# -- Grouping the document tree into LaTeX files.  -----------------------------
+# List of tuples (source start file, target name, title, author,
+# documentclass [howto, manual, or own class]).
+
+latex_documents = [
+        (master_doc, 'index.tex', u'GenPipes Documentation', '', 'manual', False),
+]
+
