@@ -23,7 +23,7 @@ Following is the **Table of Contents** of GenPipes documentation.
 
 .. toctree::
    :maxdepth: 1
-   :caption: General
+   :caption: GenPipes
    :name: sec-general
 
    about/index

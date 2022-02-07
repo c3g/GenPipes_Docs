@@ -145,7 +145,8 @@ linkcheck_ignore = [
 # -- Options for LaTeX output ------------------------------------------------
 
 latex_logo = 'img/genpipe_logo.png'
-
+latex_additional_files = ['gp_pdf.txt']
+latex_toplevel_sectioning = 'section'
 latex_engine = 'xelatex'
 latex_use_xindy = False
 latex_appendices = []
@@ -169,18 +170,11 @@ latex_elements = {
 
         #'pxunit': '0.6bp',
 
+
         # -- Additional stuff for the LaTeX preamble. --------------------------
         'preamble': r'''
                         \makeatletter
-                        \usepackage{hyperxmp}
-                        \usepackage{hyperref}
-                        \usepackage{libertine}
-                        \usepackage{etoc}
-                        \usepackage[flushleft]{ragged2e}
-                        \raggedright
-                        \renewcommand{\@chapapp}{}
-                        \ChRuleWidth{0pt}
-                        \setcounter{tocdepth}{3}
+                        \input{gp_pdf.txt}
                         \makeatother
                     ''',
 

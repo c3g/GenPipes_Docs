@@ -1,0 +1,25 @@
+%
+% Author: Shaloo Shalini
+% Content: PDF layout template for GenPipes PDF documentation
+%
+\usepackage{hyperxmp}
+\usepackage{hyperref}
+\usepackage{colortbl}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+% \usepackage[titles]{tocloft}
+% \cftsetpnumwidth {1.25cm}\cftsetrmarg{1.5cm}
+% \setlength{\cftchapnumwidth}{0.75cm}
+% \setlength{\cftsecindent}{\cftchapnumwidth}
+% \setlength{\cftsecnumwidth}{1.25cm}
+\renewcommand{\@chapapp}{}
+\renewcommand{\chaptermark}[1]{\markboth{Section\ \thechapter\ #1}{}}
+\protected\def\sphinxstyletheadfamily {\cellcolor{lightgray}\sffamily\bfseries}
+% \renewcommand{\labelitemi}{\tiny $\blacksquare$}
+\usepackage{libertine}
+\usepackage[flushleft]{ragged2e}
+\raggedright
+\ChRuleWidth{0pt}
+\setlength{\headheight}{14pt}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{3}
