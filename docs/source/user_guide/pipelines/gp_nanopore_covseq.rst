@@ -41,7 +41,7 @@ Introduction
 
 The Nanopore CoVSeQ pipeline is used to analyze long reads produced by the Oxford Nanopore Technologies (ONT) sequencers. 
 
-The SOP for Nanopore data is based on the `ARTIC SARS-CoV2 protocol <https://artic.network/ncov-2019>`_, Version 3 (`V4.1 <https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019/V4.1>`_), using nanopolish. This protocol is closely followed in GenPipes Nanopore sequencing pipeline with majority of changes related to technical adaptation of the protocol to be able to run in a High Performance Computing (HPC) environment. In such environments, Conda is not advisable.
+The SOP for Nanopore data is based on the `ARTIC SARS-CoV2 protocol <https://artic.network/ncov-2019>`_, Version 4 / 4.1 (`V4.1 <https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019/V4.1>`_), using nanopolish. This protocol is closely followed in GenPipes Nanopore sequencing pipeline with majority of changes related to technical adaptation of the protocol to be able to run in a High Performance Computing (HPC) environment. In such environments, Conda is not advisable.
 
 Key steps in this pipeline include `basecalling with Guppy`_, demultiplexing, read filtering and consensus sequencing. Basecalling with Guppy happens only if the ```-t basecalling``` option is selected.
 

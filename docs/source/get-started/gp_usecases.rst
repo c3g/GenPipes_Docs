@@ -41,6 +41,8 @@ You can obtain a real-time snapshot of evolving SARS-CoV-2 populations in Québe
 
 For more details, visit `CoVSeQ Website <https://covseq.ca>`_ and `Sequencing Workflows <https://covseq.ca/methods>`_.
 
+GenPipes Release version 4.1 supports a new sequencing pipeline to support Nanopore CoVSeQ analysis.  For details, visit :ref:`Nanopore CoVSeQ Pipeline<docs_gp_nanopore_cov>`.
+
 RNA Sequencing
 --------------
 
@@ -60,6 +62,11 @@ SARS-CoV-2 Genome Sequencing Pipeline
 --------------------------------------
 
 The :ref:`SARS-CoV-2 genome Sequencing Pipeline<docs_gp_covseq>` is designed for COVID-19 Coronavirus research and surveillance, enabling complete genome sequencing of the new SARS-CoV-2 virus responsible for the COVID-19 pandemic. 
+
+SARS-CoV-2 Nanopore CoVSeQ Pipeline
+-----------------------------------
+
+The :ref:`SARS-CoV-2 Nanopore CoVSeQ Pipeline<docs_gp_nanopore_cov>` is designed to implement `ARTIC SARS-CoV2 protocol <https://artic.network/ncov-2019>`_, Version 4 / 4.1 (`V4.1 <https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019/V4.1>`_), using nanopolish. This protocol is closely followed in GenPipes Nanopore sequencing pipeline with majority of changes related to technical adaptation of the protocol to be able to run in a High Performance Computing (HPC) environment.
 
 DNA Methylation Pipeline
 -------------------------

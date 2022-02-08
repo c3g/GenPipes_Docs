@@ -201,18 +201,18 @@ Submitting GenPipes Pipeline Runs
 
 HPC site policies typically limit the number of jobs that a user can submit in a queue. These sites deploy resource schedulers such as Slurm, or PBS/Torque for scheduling and sharing of HPC resources. Integrating with the resource schedulers and dealing with resource constraints are critical to ensuring productivity of HPC users. GenPipes caters to these user pain points through intelligent utilities that help in smartly chunking and submitting pipeline runs, resubmitting the jobs and ensuring that there are no errors in scheduler calls.
 
-GenPipes offers a utility scripts namely, ```chunk_genpipes.sh``` and ```monitor.sh``` to enable better integration with resource schedulers (Slurm, PBS/Torque) deployed on HPC clusters. 
+GenPipes offers a utility scripts namely, ```chunk_genpipes.sh``` and ```submit_genpipes``` to enable better integration with resource schedulers (Slurm, PBS/Torque) deployed on HPC clusters. 
 
-The usage model is as follows. First, you need to issue GenPipes pipeline command with -g GENPIPES_FILE option to store all pipeline commands in a bash script.  Next, you need to use the utility called ```chunk_genpipes.sh``` that takes as input this bash script file GENPIPES_FILE and chunks scheduler jobs into a folder ```job_chunks``` (default) or the one you specify. Note that chunk_genpipes.sh utility is supposed to be run for a pipeline bash script  **only once**. After successful chunking, user can use the ```monitor.sh``` utility to smartly submit the pipeline jobs to the scheduler without having to worry about scheduler integration and exceeding queue limits as these utilities take care of that.  Better HPC integration is offered by ```monitor.sh``` as it looks for any error in the calls made to the scheduler and makes sure to auto-correct them based on chunking limits specified through ```chunk_genpipes.sh``` earlier.
+The usage model is as follows. First, you need to issue GenPipes pipeline command with -g GENPIPES_FILE option to store all pipeline commands in a bash script.  Next, you need to use the utility called ```chunk_genpipes.sh``` that takes as input this bash script file GENPIPES_FILE and chunks scheduler jobs into a folder ```job_chunks``` (default) or the one you specify. Note that chunk_genpipes.sh utility is supposed to be run for a pipeline bash script  **only once**. After successful chunking, user can use the ```submit_genpipes``` utility to smartly submit the pipeline jobs to the scheduler without having to worry about scheduler integration and exceeding queue limits as these utilities take care of that.  Better HPC integration is offered by ```submit_genpipes``` as it looks for any error in the calls made to the scheduler and makes sure to auto-correct them based on chunking limits specified through ```chunk_genpipes.sh``` earlier.
 
-The ```monitor.sh``` script lets GenPipes users manage resource constraints in a flexible and robust manner. GenPipes user can delegate job submission to this script and use ```watch``` command to monitor the submitted jobs. At any time,  GenPipes users can stop monitoring the submitted jobs by issuing ```Ctrl-C``` to a running ```watch``` command in the terminal. After a clean ```ctrl-C``` stop of or if the watch command was killed in another manner, for example when a session is killed after ssh disconnection, users can restart monitoring GenPipes jobs to the queuing system by simply invoking the ```watch``` command again.
+The ```submit_genpipes``` script lets GenPipes users manage resource constraints in a flexible and robust manner. GenPipes user can delegate job submission to this script and use ```watch``` command to monitor the submitted jobs. At any time,  GenPipes users can stop monitoring the submitted jobs by issuing ```Ctrl-C``` to a running ```watch``` command in the terminal. After a clean ```ctrl-C``` stop of or if the watch command was killed in another manner, for example when a session is killed after ssh disconnection, users can restart monitoring GenPipes jobs to the queuing system by simply invoking the ```watch``` command again.
 
-The ```monitor.sh``` script comes with a fail safe mechanism that will resubmit jobs that failed to be sent to the scheduler up to 10 times (default). 
+The ```submit_genpipes``` script comes with a fail safe mechanism that will resubmit jobs that failed to be sent to the scheduler up to 10 times (default). 
 
 Example: Submitting hicseq.py jobs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Here is an example of to use the ```monitor.sh``` script with :ref:`HiC Sequencing Pipeline<docs_gp_hicseq>`:
+Here is an example of to use the ```submit_genpipes``` script with :ref:`HiC Sequencing Pipeline<docs_gp_hicseq>`:
 
 ::
 
@@ -222,32 +222,32 @@ Here is an example of to use the ```monitor.sh``` script with :ref:`HiC Sequenci
 
   $MUGQIC_PIPELINES_HOME/utils/chunk_genpipes.sh hicseq_script.sh $M_FOLDER
 
-  $MUGQIC_PIPELINES_HOME/utils/monitor.sh  $M_FOLDER
+  $MUGQIC_PIPELINES_HOME/utils/submit_genpipes  $M_FOLDER
 
-The ```chunk_genpipes.sh``` script is used to create job chunks of specified size that are submitted at a time. Please note that this script should be executed **only once** before using ```monitor.sh``` to submit jobs.  
+The ```chunk_genpipes.sh``` script is used to create job chunks of specified size that are submitted at a time. Please note that this script should be executed **only once** before using ```submit_genpipes``` to submit jobs.  
 
 .. note::
 
-     * The monitor.sh script can be run for multiple GenPipes pipelines simultaneously, to submit jobs belonging to respective pipelines. You need to ensure that each monitor.sh script invocation refers to a different job_chunks folder corresponding to the pipeline.
+     * The ```submit_genpipes``` script can be run for multiple GenPipes pipelines simultaneously, to ```submit jobs``` belonging to respective pipelines. You need to ensure that each submit_genpipes script invocation refers to a different job_chunks folder corresponding to the pipeline.
 
-     * monitor.sh script runs can be *stopped* by ```Ctrl-C``` keystroke and restarted at will. 
+     * ```submit_genpipes``` script runs can be *stopped* by ```Ctrl-C``` keystroke and restarted at will. 
 
-     * monitor.sh script has intelligent lock mechanism that *prevents invoking two simultaneous runs* of ```monitor.sh``` in parallel, on the on the same job chunking folder or GenPipes pipeline run.
+     * ```submit_genpipes``` script has intelligent lock mechanism that *prevents invoking two simultaneous runs* of ```submit_genpipes``` in parallel, on the on the same job chunking folder or GenPipes pipeline run.
 
-Figure below demonstrates how ```monitor.sh``` utility works. The pipeline command file output is fed into ```chunk_genpipes.sh``` script which creates the chunks folder as a one time activity. This chunk folder is monitored by the ```monitor.sh``` script.
+Figure below demonstrates how ```submit_genpipes``` utility works. The pipeline command file output is fed into ```chunk_genpipes.sh``` script which creates the chunks folder as a one time activity. This chunk folder is monitored by the ```submit_genpipes``` script.
 
-.. figure:: /img/monitor_utility.png
+.. figure:: /img/submit_genpipes_utility.png
    :align: center
    :width: 90%
    :figwidth: 90%
-   :alt: monitor.sh util
+   :alt: submit_genpipes util
 
 For a complete list of available GenPipes utilities, refer to the ```genpipes/util``` folder in the source tree.
 
 Sample Output
 ^^^^^^^^^^^^^^
 
-This section demonstrates how a GenPipes user can chunk job submission and submit job, monitor their status using ```chunk_genpipes.sh``` and ```monitor.sh``` utilities  and ```watch``` command.
+This section demonstrates how a GenPipes user can chunk job submission and submit job, monitor their status using ```chunk_genpipes.sh``` and ```submit_genpipes``` utilities  and ```watch``` command.
 
 After generating GenPipes command file, say for GenPipes DNASeq Pipeline, 'dnaseq.sh`, follow these two steps:
 
@@ -271,17 +271,17 @@ Figure below shows the output of the command above:
 
    Output of chunk_genpipes command
 
-**Step 2: Invoke monitor.sh script to monitor the submitted GenPipes jobs**
+**Step 2: Invoke submit_genpipes script to monitor the submitted GenPipes jobs**
 
 :: 
 
-  monitor.sh job_chunks -n 800
+  submit_genpipes job_chunks -n 800
 
 .. note::
 
      In the command above, 800 refers to the total number of jobs that can be submitted simultaneously at a time to the scheduler.
 
-Figure below shows the output of the monitor.sh command:
+Figure below shows the output of the submit_genpipes command:
 
 .. figure:: /img/monitorsh_output.png
    :align: center
@@ -289,7 +289,7 @@ Figure below shows the output of the monitor.sh command:
    :figwidth: 60%
    :alt: chunk_gp output
 
-   Output of monitor.sh command
+   Output of submit_genpipes command
 
 Further Information
 -------------------

@@ -33,7 +33,7 @@ Getting Help
 
 GenPipes is under active development. If you need help, would like to contribute, or simply want to talk about the project with the team members, we have a number of open channels for communication.
 
-To report bugs or file feature requests: use the `GenPipes issue tracke <https://bitbucket.org/mugqic/genpipes/issues?status=new&status=open>`_. For details, see the :ref:`GenPipes Support Page<docs_how_to_get_support>`.
+To report bugs or file feature requests: use the `GenPipes issue tracker <https://bitbucket.org/mugqic/genpipes/issues?status=new&status=open>`_. For details, see the :ref:`GenPipes Support Page<docs_how_to_get_support>`.
 
 To talk about the project with people in real time: join the `GenPipes Channel on Google Groups <https://groups.google.com/forum/#!forum/GenPipes>`_. For more details refer to the :ref:`docs_channels` page. 
 
