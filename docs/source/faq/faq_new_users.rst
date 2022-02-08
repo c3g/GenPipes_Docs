@@ -7,6 +7,9 @@
    GMail
    qsub
    sbatch
+   phred
+   bp
+   fastqc
 
 New Users
 ---------
@@ -85,6 +88,25 @@ This is how you can run GenPipes pipelines such as :ref:`DNA Sequencing Pipeline
   bash run-in-container-dnaseq-script.sh
 
 Please note, there is a disadvantage to running GenPipes Pipelines without a scheduler.  In the batch mode, which is configured using the "-j batch" option, all the jobs would run as a batch, one after another, on a single node.  If your server is powerful enough, this might be your preferable option.  Otherwise, if you would like to take advantage of GenPipes' job scheduling capabilities, you need to install a job scheduler locally in your infrastructure so that GenPipes can work effectively.  We recommend SLURM scheduler for GenPipes.
+
+GenPipes 3.4 RNA Sequencing Pipeline moved from using Trimmomatic to Skewer. Why? What does this change mean for GenPipes users?
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+In addition to why, there are additional queries that we received. So we/ll respond to all of these together:
+
+In RNA-seq skewer,
+a. What does the untrimmed read pairs available after processing refer to?
+b. If a large proportion of the reads are untrimmed does this mean the adapter sequence is wrong and how to troubleshoot this issue?
+
+**Why the switch?**
+
+The switch from trimmomatic to skewer was based on benchmarking. Skewer had improved F1 score across numerous truth sets over trimmomatic.
+
+**Untrimmed Reads and Troubleshooting**
+
+Untrimmed read pairs refers to read pairs which did not require quality 3' trimming i.e. the quality was above 25 phred score or were above the size selection criteria of 50 bp after trimming and/or adapter removal.
+
+Typically when the fastqc are generated after sequencing the adapters are removed, but in some cases the adapter remains. You can use fastqc on the raw reads to visualize the proportion of these. Also if you are unsure check that the adapters you are using are inline with sequencer and libraries you are using.
 
 .. _new CCDB account: https://ccdb.computecanada.ca/account_application
 .. _GenPipes deployed in a Docker Container: https://genpipes.readthedocs.io/en/latest/deploy/dep_gp_container.html

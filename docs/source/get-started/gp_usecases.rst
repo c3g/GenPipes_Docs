@@ -66,7 +66,7 @@ The :ref:`SARS-CoV-2 genome Sequencing Pipeline<docs_gp_covseq>` is designed for
 SARS-CoV-2 Nanopore CoVSeQ Pipeline
 -----------------------------------
 
-The :ref:`SARS-CoV-2 Nanopore CoVSeQ Pipeline<docs_gp_nanopore_cov>` is designed to implement `ARTIC SARS-CoV2 protocol <https://artic.network/ncov-2019>`_, Version 4 / 4.1 (`V4.1 <https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019/V4.1>`_), using nanopolish. This protocol is closely followed in GenPipes Nanopore sequencing pipeline with majority of changes related to technical adaptation of the protocol to be able to run in a High Performance Computing (HPC) environment.
+The :ref:`SARS-CoV-2 Nanopore CoVSeQ Pipeline<docs_gp_nanopore_cov>` is designed to implement `ARTIC SARS-CoV2 protocol <https://artic.network/ncov-2019>`_, Version 4 / 4.1 (`V4.1 <https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019/V4.1>`_), using Nanopolish. This protocol is closely followed in GenPipes Nanopore sequencing pipeline with majority of changes related to technical adaptation of the protocol to be able to run in a High Performance Computing (HPC) environment.
 
 DNA Methylation Pipeline
 -------------------------

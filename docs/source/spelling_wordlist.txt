@@ -67,6 +67,7 @@ Metagenomic
 Metagenomics
 Montréal
 Nanopore
+Nanopolish
 Nanuq
 Narval
 Pandoc
