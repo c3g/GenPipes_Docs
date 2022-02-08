@@ -2,6 +2,13 @@
 
 .. _docs_gp_relnote_4_1_0:
 
+.. spelling::
+
+     nanopore
+     covseq
+     atacseq
+     genpipes
+
 GenPipes 4.1.0 Release Notes
 ============================
 
@@ -10,7 +17,7 @@ What's new?
 
 * Major Updates:
 
-  - **New pipeline introduced** : nanopore_covseq  is designed to help run the ARTIC Bioinformatics SARS-CoV-2 coronavirus protocol. Both V4 and V4.1 of the protocol are supported. It requires additional .ini file, read :ref:`Nanopore CoVSeQ Pipeline Documentation<docs_gp_nanopore_cov>` for usage details and more.
+  - **New pipeline introduced** : nanopore_covseq  is designed to help run the ARTIC Bioinformatics SARS-CoV-2 corona virus protocol. Both V4 and V4.1 of the protocol are supported. It requires additional .ini file, read :ref:`Nanopore CoVSeQ Pipeline Documentation<docs_gp_nanopore_cov>` for usage details and more.
 
 * Other Updates:
 

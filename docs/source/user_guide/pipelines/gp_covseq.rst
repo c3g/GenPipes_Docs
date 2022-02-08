@@ -26,7 +26,19 @@ CoVSeQ pipeline is designed as part of the `partnership for Québec SARS-CoV-2`_
 Introduction
 ------------
 
-TBD some high level introduction about Pipeline steps et all and how it is different from other available CoV Seq pipelines (if any). Refer to Ed and Hector.
+The ongoing COVID-19 pandemic demands surveillance of the SARS-CoV-2 variants and fast spreading mutants through rapid and near real-time sequencing of the viral genome.  This is critical for effective health policy decision making. Gene sequencing pipelines require to be focused on specific characteristics of the COVID genome such as spike protein. To that effect, SARS-CoV-2 sequencing has been standardized through initiatives such as the Advancing Real-Time Infection Control Network (ARTIC) international initiative in which Illumina or Oxford Nanopore sequencing is carried out prior to whole viral genome amplification by tiling PCR or metagenomic approaches. 
+
+SARS-CoV-2 whole genome sequencing data can help researchers in the following ways:
+
+* characterize viral variants that occur within a given host
+* understand variant fixation in a given population
+* understand how the virus changes over time.
+
+GenPipes offers CoVSeQ Pipeline, a bioinformatic workflow that incorporates Illumina and ONT sequence. This pipeline is intended to address both short as well as long reads and input data obtained from Illumina as well as ONT Nanopore instruments.
+ 
+CoVSeQ pipeline helps in the genomic epidemiology of SARS-CoV-2 that output sequence alignment analysis and/or variants in various formats. It uses `Kraken2`_, `FreeBayes`_, `SnpEff`_ for genomic processing and `bcftools`_, `QUAST`_ for consensus. The latest version of the pipeline uses ncov-tools v1.8 for alignment and quality control. SAM Tools are used for sorting and indexing BAM files. It performs variant calling on every sorted BAM file, obtaining major frequency viral variants per genome in VCF format using the Freebayes variant calling program, as frequency-based pooled caller. Merged variants are annotated using SnpEff.  
+
+CoVSeQ pipeline can be used for SARS-CoV-2 whole genome sequencing as per `ARTIC`_ protocol `V4`_ or `V4.1`_ by specifying appropriate .ini file as described below in usage and example sections. 
 
 ----
 
@@ -72,10 +84,6 @@ Use the following commands to execute CoVSeq sequencing pipeline:
 
 You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 
-.. note::
-
-     Check with Paul/Hector if this pipeline requires a test dataset and whether one is available. Then update/edit the test dataset link above accordingly.
- 
 ----
 
 Pipeline Schema
@@ -195,3 +203,9 @@ For the latest implementation and usage details refer to CoVSeq Pipeline impleme
 .. _Paragon CleanPlex Product Documents: https://www.paragongenomics.com/customer-support/product_documents/ 
 .. _CoVSeq Cost Effective Workflow: https://www.researchgate.net/publication/348593724_COVseq_is_a_cost-effective_workflow_for_mass-scale_SARS-CoV-2_genomic_surveillance
 .. _CoVSeq Genome Analysis and Visualization: https://www.researchgate.net/publication/341117511_CoV-Seq_SARS-CoV-2_Genome_Analysis_and_Visualization
+.. _FreeBayes: https://github.com/freebayes/freebayes
+.. _ARTIC: https://github.com/artic-network
+.. _V4: https://github.com/replikation/poreCov/tree/master/data/external_primer_schemes/nCoV-2019/V4
+.. _V4.1: https://github.com/replikation/poreCov/tree/master/data/external_primer_schemes/nCoV-2019/V4.1
+.. _Kraken2: https://github.com/DerrickWood/kraken2/blob/master/docs/MANUAL.markdown
+.. _bcftools: https://github.com/samtools/bcftools 
