@@ -5,8 +5,8 @@
 Mermaid Diagrams
 *****************
 
-Monitor.sh Script: How it works?
-================================
+submit_genpipes Script: How it works?
+======================================
 
 .. mermaid:: /mmd/diagrams/monitor_pl.mmd
    :caption: GenPipes Smart Job Chunking & Submission Use Model 

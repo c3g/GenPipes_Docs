@@ -1,7 +1,7 @@
 %%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}, 'fontFamily': 'Montserrat', 'fontSize': 10}}%%
 
-        %% GenPipes Diagram for monitor.sh working
-        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/utils/monitor.sh
+        %% GenPipes Diagram for submit_genpipes working
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/utils/submit_genpipes
         %% Author Shaloo Shalini <shalz@hotmail.com>
 
         graph TD
@@ -9,7 +9,7 @@
           Node1{{ 1. <br/> -g PipelineScript.sh }}:::nodefill
           Node2{{ 2. <br/> chunk_genpipes.sh utility }}
           Node2out{{ Job Chunks Folder }}:::inputfill
-          Node3{{ 3. <br/> monitor.sh utility }}:::nodefill
+          Node3{{ 3. <br/> submit_genpipes utility }}:::nodefill
           Node4{{ 4. <br/>Watch command }}:::nodefill
           Scheduler([fa:fa-sticky-note-o Scheduler ])
 
@@ -28,7 +28,7 @@
             Node2out
           end
 
-           subgraph monitorutil[" "]
+           subgraph submitgenpipesutil[" "]
             Node3
           end
           
@@ -47,5 +47,5 @@
           class pipeline whiterect
           class chunk yellowrect
           class monitor creamrect
-          class monitorutil lightgrect
+          class submitgenpipesutil lightgrect
 

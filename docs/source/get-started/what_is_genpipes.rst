@@ -24,9 +24,12 @@ Following genomics application pipelines are already implemented and validated t
 * De-Novo RNA Sequencing
 * Deep Whole Genome Sequencing
 * Exome Sequencing
+* EpiQC Analysis
 * Hi-C / Capture Hi-C
 * Illumina raw data processing
 * Metagenomics
+* Nanopore Analysis
+* Nanopore CoVSeQ Analysis using ARTIC Nanopolish protocol
 * SARS-CoV-2 genome sequencing
 * RNA Sequencing / Unmapped RNA Quality Control
 * Transcriptonomics Assembly
