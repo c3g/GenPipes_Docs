@@ -10,10 +10,6 @@
 GenPipes 4.0.0 Release Notes
 ============================
 
-.. warning::
-
-    This is a placeholder Release Note that I have put together as a first draft. Waiting on Ed to send me his official one :-)
-
 What's new? 
 -----------
 
@@ -21,7 +17,7 @@ What's new?
 
   -  GenPipes now supports Python3 and is **NOT** backwards compatible with GenPipes versions before this release regarding Python3 support.
 
-     Python3 version(s) supported: 3.10, 3.9, 3.8 (?)
+     Python3 version(s) supported: 3.9.1
 
   -  A new GenPipes Pipeline epiQC has now been added! Refer to :ref:`Pipeline Reference Guide<docs_pipeline_ref>` for details.
 
@@ -36,9 +32,7 @@ What's new?
 
   - RNASeq Denovo assembly now supports two protocols:  Trinity and Seq2Fun.  For details, refer to :ref:`RNASeq DeNovo Assembly<docs_gp_rnaseq_denovo>` documentation. 
 
-  - Tumor Pair Pipeline documentation is pending (Jan 2022)
-
-  - Covseq pipeline documentation is pending (Jan 2022)
+  - Tumor Pair Pipeline documentation is not yet current, we are working on it.
 
 Quick! Where can I find it? I can't wait! 
 ------------------------------------------

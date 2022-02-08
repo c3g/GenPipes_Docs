@@ -1,0 +1,52 @@
+:orphan:
+
+.. _docs_gp_relnote_4_1_0:
+
+GenPipes 4.1.0 Release Notes
+============================
+
+What's new? 
+-----------
+
+* Major Updates:
+
+  - **New pipeline introduced** : nanopore_covseq  is designed to help run the ARTIC Bioinformatics SARS-CoV-2 coronavirus protocol. Both V4 and V4.1 of the protocol are supported. It requires additional .ini file, read :ref:`Nanopore CoVSeQ Pipeline Documentation<docs_gp_nanopore_cov>` for usage details and more.
+
+* Other Updates:
+
+  - CoVSeQ Pipeline handles both Illumina and Nanopore read files:
+    
+      - Added compatibility to ARTIC primer versions 4 and 4.1
+      - `ncov-tools <https://github.com/jts/ncov-tools/releases/tag/v1.8.0>`_ version 1.8 is now supported by this pipeline for better quality control using latest ARTIC v4 primer schemes.
+
+  - ChIPSeq : added differential binding to the atacseq protocol
+
+  -  GenPipes helper utility introduced in :ref:`GenPipes V4.0.0<docs_gp_relnote_4_0_0>` called ```monitor.sh``` has been **renamed** to ```submit_genpipes``` in this release.
+
+     For detailed usage of submit_genpipes utility, refer to GenPipes documentation for: :ref:`Submitting GenPipes Jobs<ref_submitting_gp>`.
+
+
+  - Tumor Pair Pipeline documentation is partially updated, we are working on completing the pipeline schema and workflow diagrams. 
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+ 
+* This version tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-4.1.0.tar.gz
+
+* The module mugqic/genpipes/4.1.0 is installed on Abacus (MGC), Béluga, Narval, Graham and Cedar clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes
+
+* For latest GenPipes documentation, please refer to: https://genpipes.readthedocs.io/
+
+Where is the detailed ChangeLog? 
+================================= 
+A ChangeLog (`CHANGELOG.md <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_) is available in the archive as well as in the repository.
+
+Since we use git, there are many ways to get the details in many formats. 
+One of our preferred ways is to use a script written by the author of the Ray assembler: Sébastien Boisvert, 
+which lists the commits by tag and author: 
+
+https://raw.github.com/sebhtml/ray/master/scripts/dump-ChangeLog.sh 
+
+Enjoy our pipelines on the many clusters where they are installed!
