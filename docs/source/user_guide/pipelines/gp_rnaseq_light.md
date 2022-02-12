@@ -249,6 +249,6 @@ More Information
 [//]: # (Following are the references of html links used in the text above.)
 
 [Kallisto_id]: https://www.nature.com/articles/nbt.3519
-[ultra-fast-Kallisto-id]: http://nextgenseek.com/2015/05/kallisto-a-new-ultra-fast-rna-seq-quantitation-method/
+[ultra-fast-Kallisto-id]: https://altanalyze.readthedocs.io/en/latest/Kallisto-Splice/
 [limitation-Kallisto-id]: https://www.biorxiv.org/content/biorxiv/early/2018/01/11/246967.full.pdf
 [Salmon_id]: https://www.ncbi.nlm.nih.gov/pubmed/28263959

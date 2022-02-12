@@ -15,7 +15,7 @@ What's new?
 * Two new steps were added in the :ref:`HiC Sequencing Pipeline<docs_gp_hicseq>`:
 
   - *Reproducibility Scores*: R package `hicrep <https://bioconductor.org/packages/release/bioc/html/hicrep.html>`_ is used to calculate inter-chromosomal reproducibility scores.
-  - *Quality Scores*: `QuASAR <http://hifive.docs.taylorlab.org/en/latest/quasar_scoring.html>`_ (part of `hifive <http://hifive.docs.taylorlab.org/en/latest/introduction.html>`_ suite), is used to calculate quality score per chromosome.
+  - *Quality Scores*: `QuASAR <https://www.biorxiv.org/node/62284.full>`_ (part of `hifive <https://github.com/bxlab/hifive>`_ suite), is used to calculate quality score per chromosome.
 
 Quick! Where can I find it? I can't wait! 
 ------------------------------------------

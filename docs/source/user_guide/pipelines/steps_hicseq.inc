@@ -181,13 +181,13 @@ Down sampling of samples can be performed using the down_sampling parameter in t
 
 **Quality Scores**
 
-In this step, Quality score per chromosome for each sample is calculated using QuSAR-QC at all resolutions, sequencing depth (coverage) and down_sampling value (coverage) defined in quality_scores step of .ini config file. `QUSAR-QC <http://hifive.docs.taylorlab.org/en/latest/quasar_scoring.html>`_ is a part of the hifive hic-seq analysis suite. 
+In this step, Quality score per chromosome for each sample is calculated using QuSAR-QC at all resolutions, sequencing depth (coverage) and down_sampling value (coverage) defined in quality_scores step of .ini config file. `Quasar-QC <https://bxlab-hifive.readthedocs.io/en/latest/quasar.html>`_ is a part of the hifive hic-seq analysis suite. 
 
 Quality Assessment of Spatial Arrangement Reproducibility (QuASAR) transformation and scoring uses the consistency between the raw interaction matrix and the correlation matrix of distance-corrected signal to determine sample quality. For all interactions less than or equal to 100 times the resolution of size, the correlation value is calculated. 
 
 In order to determine the quality score for a given chromosome, the weighted average of the correlation values (weighted by the raw interaction signal) minus the unweighted correlation signal average is calculated. A genome-wide value is calculated by summing all numerators and denominators across all chromosomes prior to dividing and subtracting score components. The replicate score is calculated by finding the correlation between the weighted correlation matrices for two samples.
 
-For details, see `hifive suite <http://hifive.docs.taylorlab.org/en/latest/introduction.html>`_.
+For details, see `hifive suite <https://github.com/bxlab/hifive>`_.
 
 .. include:: steps_cram_op.inc
 

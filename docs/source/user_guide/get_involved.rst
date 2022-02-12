@@ -54,4 +54,4 @@ You can report a bug or an issue related to GenPipes using the following templat
 * What was expected and what actually happened
 * Other insights or logs that can help debug the issue.
 
-This guide is adapted from `FaceBook Draft.js Guide <https://github.com/facebook/draft-js/blob/a9316a723f9e918afde44dea68b5f9f39b7d9b00/CONTRIBUTING.md>`_.
+This guide is adapted from `FaceBook Draft.js Guide <https://github.com/facebook/draft-js/blob/main/CONTRIBUTING.md>`_.

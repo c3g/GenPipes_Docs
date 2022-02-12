@@ -28,9 +28,13 @@ In contrast to the test dataset, a :ref:`Readset File<docs_readset_file>` in the
 +-------------------------------------------+------------------------------------------+
 | :ref:`ChIP Seq<docs_gp_chipseq>`          |   `Download ChIP Seq Dataset`_           |
 +-------------------------------------------+------------------------------------------+
+| :ref:`CoV Seq<docs_gp_covseq>`            |   `Download CoV Seq Dataset`_            |
++-------------------------------------------+------------------------------------------+
 | :ref:`DNA Seq<docs_gp_dnaseq>`            |   `Download DNA Seq Dataset`_            |
 +-------------------------------------------+------------------------------------------+
 | :ref:`epiQC<docs_gp_epiqc>`               |   `Download epiQC Dataset`_              |
++-------------------------------------------+------------------------------------------+
+| :ref:`Nanopore<docs_gp_nanopore>`         |   `Download Nanopore Dataset`_           |
 +-------------------------------------------+------------------------------------------+
 | :ref:`RNA Seq<docs_gp_rnaseq>`            |   `Download RNA Seq Dataset`_            |
 +-------------------------------------------+------------------------------------------+
@@ -44,8 +48,6 @@ In contrast to the test dataset, a :ref:`Readset File<docs_readset_file>` in the
 .. warning:: 
 
      PacBio Sequencing Pipeline is no longer available in GenPipes Release 3.2.0 and beyond.
-
-     TumorPair Sequencing Pipeline is under major overhaul and not available *only* in GenPipes Release 3.2.0 
 
 ----------------------------
 Test Dataset Usage Examples
@@ -61,17 +63,17 @@ If you are looking for Bioinformatic resources such as available genomes with FA
 
 You can also download the latest test datasets from Computational Genomics website `download page <https://www.computationalgenomics.ca/test-dataset/>`_.
 
---------------------------
-Latest available datasets
---------------------------
-
+.. Test dataset archive reference
 
 .. _Download HiC Pipeline Dataset: https://datahub-90-cw3.p.genap.ca/hicseq.chr19.tar.gz
 .. _Download Amplicon Seq Dataset: https://datahub-90-cw3.p.genap.ca/ampliconseq.tar.gz
 .. _Download ChIP Seq Dataset: https://datahub-90-cw3.p.genap.ca/chipseq.chr19.tar.gz
+.. _Download CoV Seq Dataset: https://datahub-90-cw3.p.genap.ca/covseq.chr19.tar.gz
 .. _Download DNA Seq Dataset: https://datahub-90-cw3.p.genap.ca/dnaseq.chr19.tar.gz
 .. _Download epiQC Dataset: https://datahub-90-cw3.p.genap.ca/epiqc.chr19.tar.gz
+.. _Download Nanopore Dataset: https://datahub-90-cw3.p.genap.ca/nanopore.chr19.tar.gz
 .. _Download RNA Seq Dataset: https://datahub-90-cw3.p.genap.ca/rnaseq.chr19.tar.gz
+.. _Download RNA Seq Light Dataset: https://datahub-90-cw3.p.genap.ca/rnaseq_light.chr19.tar.gz
 .. _Download Methyl Seq Dataset: https://datahub-90-cw3.p.genap.ca/methylseq.chr19.tar.gz
 .. _Download PacBio Seq Dataset: https://datahub-90-cw3.p.genap.ca/pacbio.tar.gz
 .. _Download TumorPair Seq Dataset: https://datahub-90-cw3.p.genap.ca/tumorPair.chr19.tar.gz

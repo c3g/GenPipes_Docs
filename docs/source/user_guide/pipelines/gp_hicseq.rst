@@ -196,7 +196,7 @@ For the latest implementation and usage details refer to Hi-C Sequencing impleme
 
 * A high-resolution map of the three-dimensional chromatin interactome in human cells. `Defining target gene using Hi-C`_.
 
-* `Measuring the reproducibility of Hi-C data <Measuring the reproducibility of Hi-C data>`_.
+* `Measuring the reproducibility of Hi-C data`_.
 
 ----
 
@@ -210,6 +210,7 @@ For the latest implementation and usage details refer to Hi-C Sequencing impleme
 .. _CHICAGO: http://regulatorygenomicsgroup.org/chicago
 .. _Hi-C report: https://bitbucket.org/mugqic/genpipes/src/341cab2f01883af0184b850062bd8537dcd32e41/pipelines/hicseq/url 
 .. _Defining  target gene using Hi-C: https://www.nature.com/articles/nature12644
+.. _Measuring the reproducibility of Hi-C data: https://pubmed.ncbi.nlm.nih.gov/30890172/
 
 .. The following are replacement texts used in this file
 

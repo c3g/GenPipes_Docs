@@ -25,4 +25,4 @@ Here is a sample of Casava Sheet:
   H84WNADXX,1,sample1_MPS0001,,TAAGGCGA-AGAGTAGA,,N,,,nanuq
   H84WNADXX,1,sample47_MPS0047,,GTAGAGGA-CTAAGCCT,,N,,,nanuq
 
-For more details, you can refer to `Casava User Guide <http://gensoft.pasteur.fr/docs/casava/1.8.2/CASAVA_1_8_2_UG_15011196C.pdf>`_.
+For more details, you can refer to `Casava User Guide <https://manualzz.com/doc/o/gzeeq/casava-v1.8.2-user-guide--15011196-b--introduction>`_.

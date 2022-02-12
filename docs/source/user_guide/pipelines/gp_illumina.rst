@@ -173,4 +173,4 @@ More Information
 .. _Illumina bcl2fastq software: http://sapac.support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html
 .. commeting out - no longer available -  _Casava: https://www.illumina.com/Documents/seminars/presentations/2011_09_smith.pdf
 .. _Casava: https://www.illumina.com/Documents/products/technotes/technote_snp_caller_sequencing.pdf
-.. _Casava User Guide: http://gensoft.pasteur.fr/docs/casava/1.8.2/CASAVA_1_8_2_UG_15011196C.pdf
+.. _Casava User Guide: https://manualzz.com/doc/o/gzef1/casava-v1.8.2-user-guide--15011196-b--running-bcl-conversion-and-demultiplexing 
