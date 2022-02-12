@@ -244,7 +244,7 @@ For the latest implementation and usage details, see `ChIP-Seq Pipeline README`_
 .. _ChIP-Seq Guidelines: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3431496/
 .. _ChIP-Seq report: http://gqinnovationcenter.com/services/bioinformatics/tools/chipReport/index.html
 .. _ChIP-Seq Pipeline README: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/chipseq/README.md 
-.. _ChIP-Seq test dataset: https://www.computationalgenomics.ca/tutorials/chipseq.zip
+.. _ChIP-Seq test dataset: https://datahub-90-cw3.p.genap.ca/chipseq.chr19.tar.gz
 .. _GenPipes ChIP-Seq pipeline implementation: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/chipseq/ 
 .. _ChIP-Seq Schema high resolution image: https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_chipseq.png
 .. _MUGQIC_Bioinfo_ChIP-Seq.pptx: https://bitbucket.org/mugqic/genpipes/downloads/MUGQIC_Bioinfo_ChIP-Seq.pptx
