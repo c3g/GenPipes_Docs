@@ -1,0 +1,46 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
+
+        %% GenPipes Schema for nanopore_covseq.py -t default
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore_covseq/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+
+        graph LR
+          Node1{{ 1. <br/> Host Reads <br/> Removal }}:::nodefill
+          Node2{{ 2. <br/> Kraken <br/> Analysis }}:::nodefill
+          Node3{{ 3. <br/> Artic <br/> Nanopolish }}:::nodefillblack
+          Node4{{ 4. <br/> Wub Metricss }}:::nodefill
+          Node5{{ 5. <br/> CoVSeQ Metrics }}:::nodefill
+          Node6{{ 6. <br/> SnpEff <br/> Annotation }}:::nodefill
+	  Node7{{ 7. <br/> QUAST <br/> Consensus <br/> Metrics }}:::nodefill
+	  Node8{{ 8. <br/> Rename <br/> Consensus <br/> Header }}:::nodefill
+ 	  Node9{{ 9. <br/> Prepare <br/> Report }}:::nodefill
+          Output([fa:fa-sticky-note-o Report ])
+
+          Input[[fa:fa-file-archive-o .FASTA/FASTQ]] --> Node1
+          Node1 -.-> Node2 & Node3
+          Node3 -.-> Node4 & Node5 & Node6 & Node7 & Node8 & Node9
+          Node4 -.-> Node5
+          Node7 -.-> Node8
+          Node9 ---> Output
+          subgraph preprocessing[" "]
+            Node1
+            Node2
+            Node3
+          end
+          subgraph metrics[" "]
+            Node4
+            Node5
+          end
+          subgraph consensus[" "]
+            Node6
+            Node7
+            Node8
+          end
+          classDef greenRect fill:#E4FBF4,stroke:white
+          class preprocessing greenRect
+          classDef blueRect fill:#DEF6FC,stroke:white
+          class metrics blueRect
+          classDef greyRect fill:#EAEAEA,stroke:white
+          class consensus greyRect
+          classDef nodefill fill:#ffffff,stroke:gray,stroke-width:2px
+          classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px

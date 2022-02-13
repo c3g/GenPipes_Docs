@@ -101,11 +101,18 @@ Pipeline Schema
 
 Figure below shows the schema of the Nanopore CoVSeQ ARTIC SARS-CoV2 sequencing protocol. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore_covseq/>`_  
 
-.. figure:: /img/pipelines/ONT_ArticPipelineDigaram.png
+.. figure:: /img/pipelines/nanopore_covseq_df.png
    :align: center
-   :alt: nanopore covseq schema
+   :alt: nanopore covseq (-t default) schema
 
-   Figure: Schema of Nanopore CoVSeQ Sequencing protocol
+   Figure: Schema of Nanopore CoVSeQ (Default)  Sequencing protocol
+
+
+.. figure:: /img/pipelines/nanopore_covseq_bc.png
+   :align: center
+   :alt: nanopore covseq (-t basecalling) schema
+
+   Figure: Schema of Nanopore CoVSeQ (Basecalling)  Sequencing protocol
 
 ----
 

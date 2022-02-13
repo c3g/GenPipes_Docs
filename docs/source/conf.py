@@ -190,8 +190,8 @@ latex_elements = {
                        shadowrule={0pt}',
     }
 
-numfig = True
-numfig_format = {'figure': 'Figure %s'}
+#numfig = True
+numfig_format = {'figure': 'Fig. %s'}
 numfig_secnum_depth = 1
 
 # -- Grouping the document tree into LaTeX files.  -----------------------------

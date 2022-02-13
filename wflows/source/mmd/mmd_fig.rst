@@ -111,6 +111,17 @@ Nanopore Pipeline
 
 ----
 
+Nanopore CovSeQ Pipeline
+========================
+
+.. mermaid:: /mmd/pipelines/nanopore_covseq_default.mmd
+     :caption: Nanopore CoVSeQ (Default) Pipeline Schema
+
+.. mermaid:: /mmd/pipelines/nanopore_covseq_basecall.mmd
+     :caption: Nanopore CoVSeQ (Basecall) Pipeline Schema
+
+----
+
 RNA Sequencing Pipeline
 =======================
 

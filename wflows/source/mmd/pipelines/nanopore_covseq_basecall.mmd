@@ -1,0 +1,57 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
+
+        %% GenPipes Schema for nanopore_covseq.py -t basecall
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore_covseq/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+
+        graph LR
+          Node1{{ 1. <br/> Guppy <br/> Basecall }}:::nodefill
+          Node2{{ 2. <br/> Guppy <br/> Demultiplex }}:::nodefill
+          Node3{{ 3. <br/> PycoQC}}:::nodefill
+          Node4{{ 4. <br/> Host Reads <br/> Removal }}:::nodefill
+          Node5{{ 5. <br/> Kraken <br/> Analysis }}:::nodefill
+          Node6{{ 6. <br/> Artic <br/> Nanopolish }}:::nodefillblack
+          Node7{{ 7. <br/> Wub Metricss }}:::nodefill
+          Node8{{ 8. <br/> CoVSeQ Metrics }}:::nodefill
+          Node9{{ 9. <br/> SnpEff <br/> Annotation }}:::nodefill
+	  Node10{{ 10. <br/> QUAST <br/> Consensus <br/> Metrics }}:::nodefill
+	  Node11{{ 11. <br/> Rename <br/> Consensus <br/> Header }}:::nodefill
+ 	  Node12{{ 12. <br/> Prepare <br/> Report }}:::nodefill
+          Output([fa:fa-sticky-note-o Report ])
+
+          Input[[fa:fa-file-archive-o .FAST5]] --> Node1
+          Node1 -.-> Node2 & Node3 & Node8
+          Node2 -.-> Node4 -.-> Node5 & Node6
+          Node6 -.-> Node7 & Node8 & Node9 & Node10 & Node12
+          Node7 -.-> Node8
+          Node10 -.-> Node11
+          Node12 ---> Output
+          subgraph basecalling[" "]
+            Node1
+            Node2
+            Node3
+          end
+          subgraph preprocessing[" "]
+            Node4
+            Node5
+            Node6
+          end
+          subgraph metrics[" "]
+            Node7
+            Node8
+          end
+          subgraph consensus[" "]
+            Node9
+            Node10
+            Node11
+          end
+          classDef yRect fill:#ffffcf,stroke:white
+          class basecalling yRect
+          classDef greenRect fill:#E4FBF4,stroke:white
+          class preprocessing greenRect
+          classDef blueRect fill:#DEF6FC,stroke:white
+          class metrics blueRect
+          classDef greyRect fill:#EAEAEA,stroke:white
+          class consensus greyRect
+          classDef nodefill fill:#ffffff,stroke:gray,stroke-width:2px
+          classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px
