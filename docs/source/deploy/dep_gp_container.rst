@@ -98,7 +98,7 @@ After installing FUSE, run the following command:
 Step 4: Load GenPipes dependency modules in the container
 -----------------------------------------------------------
 
-As shown in previous step, you can initiate the container process on your machine locally. Next, you need to load GenPipes module using the following command:
+As shown in previous steps, you can initiate the container process on your machine locally. Next, you need to load GenPipes module using the following command:
 
 ::
 
