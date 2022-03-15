@@ -67,10 +67,11 @@ You can also download the latest test datasets from Computational Genomics websi
 
 .. _Download HiC Pipeline Dataset: https://datahub-90-cw3.p.genap.ca/hicseq.chr19.tar.gz
 .. _Download Amplicon Seq Dataset: https://datahub-90-cw3.p.genap.ca/ampliconseq.tar.gz
-.. _Download ChIP Seq Dataset: https://datahub-90-cw3.p.genap.ca/chipseq.chr19.tar.gz
+.. _Download ChIP Seq Dataset:  https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz
+.. oldchipseq file commented out https://datahub-90-cw3.p.genap.ca/chipseq.chr19.tar.gz
 .. _Download CoV Seq Dataset: https://datahub-90-cw3.p.genap.ca/covseq.chr19.tar.gz
 .. _Download DNA Seq Dataset: https://datahub-90-cw3.p.genap.ca/dnaseq.chr19.tar.gz
-.. _Download epiQC Dataset: https://datahub-90-cw3.p.genap.ca/epiqc.chr19.tar.gz
+.. _Download epiQC Dataset: https://datahub-90-cw3.p.genap.ca/epiQC.tar.gz
 .. _Download Nanopore Dataset: https://datahub-90-cw3.p.genap.ca/nanopore.chr19.tar.gz
 .. _Download RNA Seq Dataset: https://datahub-90-cw3.p.genap.ca/rnaseq.chr19.tar.gz
 .. _Download RNA Seq Light Dataset: https://datahub-90-cw3.p.genap.ca/rnaseq_light.chr19.tar.gz
