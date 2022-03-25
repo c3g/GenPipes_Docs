@@ -92,7 +92,7 @@ Use the following commands to execute Nanopore sequencing pipeline:
 
 .. include:: /user_guide/pipelines/notes/artic_version.inc
 
-You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`. Nanopore CoVSeQ readset file structure and content details are available `here <https://bitbucket.org/mugqic/genpipes/src/master/README.md#markdown-header-nanopore>`_.
+You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`. Nanopore CoVSeQ readset file structure and content details are available `here <https://bitbucket.org/mugqic/genpipes/src/master/README.md#markdown-header-nanopore-nanopore-cov-seq>`_.
 
 ----
 
