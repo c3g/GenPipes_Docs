@@ -150,12 +150,18 @@ Example of ChIP-Seq Readset File
 
             sampleA readset1 H3K27ac  N        lib0001 PAIRED_END  run100  1       AGATCGGAAGAGCACACGTCTGAACTCCAGTCA   AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT   33              path/to/file.bed       path/to/readset1.paired1.fastq.gz   path/to/readset1.paired2.fastq.gz   path/to/readset1.bam
 
-            sampleA readset2 H3K27ac  N        lib0001 PAIRED_END  run100  2       AGATCGGAAGAGCACACGTCTGAACTCCAGTCA   AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT   33              path/to/file.bed       path/to/readset2.paired1.fastq.gz   path/to/readset2.paired2.fastq.gz   path/to/readset2.bam
+            sampleA readset2 H3K27ac  I        lib0001 PAIRED_END  run100  2       AGATCGGAAGAGCACACGTCTGAACTCCAGTCA   AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT   33              path/to/file.bed       path/to/readset2.paired1.fastq.gz   path/to/readset2.paired2.fastq.gz   path/to/readset2.bam
 
-            sampleB readset3 Input    I        lib0002 PAIRED_END  run200  5       AGATCGGAAGAGCACACGTCTGAACTCCAGTCA   AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT   33              path/to/file.bed       path/to/readset3.paired1.fastq.gz   path/to/readset3.paired2.fastq.gz   path/to/readset3.bam
+            sampleB readset3 Input    N        lib0002 PAIRED_END  run200  5       AGATCGGAAGAGCACACGTCTGAACTCCAGTCA   AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT   33              path/to/file.bed       path/to/readset3.paired1.fastq.gz   path/to/readset3.paired2.fastq.gz   path/to/readset3.bam
 
             sampleB readset4 Input    I        lib0002 PAIRED_END  run200  6       AGATCGGAAGAGCACACGTCTGAACTCCAGTCA   AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT   33              path/to/file.bed       path/to/readset4.paired1.fastq.gz   path/to/readset4.paired2.fastq.gz   path/to/readset4.bam
 
+
+.. note::
+
+    The sample name of the treatment and control sample should be matched. 
+
+    If there are multiple histone marks for the same sample, make sure that the sample name is the same for all.
 
 PacBio Assembly Readset File Format
 -------------------------------------
