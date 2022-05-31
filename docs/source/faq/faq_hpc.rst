@@ -7,6 +7,12 @@
 GenPipes HPC Jobs
 -------------------
 
+.. contents::
+  :local:
+  :depth: 1
+
+----
+
 How do I run GenPipes pipelines when the number of steps or jobs exceeds HPC site queue limit?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

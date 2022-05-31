@@ -7,6 +7,12 @@
 General
 -------
 
+.. contents::
+  :local:
+  :depth: 1
+
+----
+
 What is GenPipes?
 +++++++++++++++++
 

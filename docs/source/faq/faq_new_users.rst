@@ -14,6 +14,12 @@
 New Users
 ---------
 
+.. contents::
+  :local:
+  :depth: 1
+
+----
+
 To create a `new CCDB account`_, what should I fill in the form field: 'position'?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
