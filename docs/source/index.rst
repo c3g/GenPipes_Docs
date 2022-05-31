@@ -1,25 +1,37 @@
+.. codeauthor:: Shaloo Shalini <shaloo_shalini@yahoo.com>
+
+.. important:: **GenPipes User Survey**
+
+     Please take a moment to answer these 3 questions about your GenPipes usage.  This will help us prioritize new features and pipeline enhancements.
+
+     `Click here to take the survey <https://forms.gle/JGSvgJnNn4hNgBs47>`_.
+
+     *Thank you!*
+
 GenPipes Documentation 
 =======================
-
-.. codeauthor:: Shaloo Shalini <shaloo_shalini@yahoo.com>
 
 .. note:: GenPipes is sponsored by `Canadian Center for Computational Genomics
           <https://www.computationalgenomics.ca>`_ (C3G).
 
           C3G has created a distributed innovation node with broad expertise in bioinformatics. It offers bioinformatics analysis and HPC services for the life sciences research community. These services include customized and case-by-case analysis, along with an extensive suite of software solutions for the genomics community.  
 
-Welcome to the GenPipes Documentation!
-----------------------------------------
+Welcome onboard GenPipes!
+-------------------------
 
 GenPipes is a flexible Python-based framework that facilitates the development and deployment of multi-step genomic workflows, optimized for High-Performance Computing (HPC) clusters and the cloud.  It offers 14 open source, validated and scalable :ref:`pipelines<docs_pipeline_ref>` for various :ref:`genomics applications<docs_gp_usecases>`.
 
-.. tip::  **CoVSeq Pipeline - Fighting COVID-19**
+.. tip::  **Fighting COVID-19**
 
-      GenPipes offers CoVSeq pipeline to help researchers sequence and detect mutations quickly to prevent the spread of new strains. See :ref:`GenPipes CoVSeq Pipeline User Guide<docs_gp_covseq>`, for details.
+      GenPipes offers CoVSeq pipeline and Nanopore_CoVSeq pipeline to help researchers sequence and detect mutations quickly to prevent the spread of new strains. See :ref:`GenPipes CoVSeq Pipeline User Guide<docs_gp_covseq>`, :ref:`GenPipes Nanopore CoVSeq Pipeline User Guide<docs_gp_nanopore_cov>` for details.
 
 GenPipes documentation is organized to address the needs of new users as well as seasoned users and contributors. Refer to the :ref:`Documenatation Map<docs_genpipes_archmap>` for details on how GenPipes documentation is organized.
 
-Following is the **Table of Contents** of GenPipes documentation.  
+----
+
+**Table of Contents** 
+ 
+----
 
 .. toctree::
    :maxdepth: 1
