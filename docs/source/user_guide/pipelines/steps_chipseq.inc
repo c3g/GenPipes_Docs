@@ -138,11 +138,17 @@ Samples with '0' (zero) are ignored during the comparison. For details regarding
 
 For comparison, at least two samples for each group must be specified. If two samples per group are not specified, the differential binding step will be skipped during the pipeline run.
 
-.. warning:: Incorrect Design File Format
+.. warning:: **Incorrect Design File Format**
 
      If the specified design file does not follow the specified :ref:`Design File Format<ref_chipseq_design_ff>` for ChIPseq pipeline, the differential binding step will be skipped during the pipeline run.
 
 The output of differential analysis containing differentially bound peaks are saved as a TSV. In addition, for each comparison done using `DiffBind`_, an html report is also generated for QC differential analysis.
+
+.. note:: **Limitation of Differential Binding**
+
+     Differential Binding analysis currently supports pair-wise (two groups) comparisons **only**. If you have a more complex experimental design, you may manually conduct the analysis.
+
+ 
 
 .. _IHEC Metrics:
 
