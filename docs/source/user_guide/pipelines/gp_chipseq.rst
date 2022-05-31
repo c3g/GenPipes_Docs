@@ -55,6 +55,10 @@ Usage
 .. include:: /common/gp_readset_opt.inc
 .. include:: /common/gp_common_opt.inc
 
+.. warning::
+
+     Please make sure you use the special :ref:`ChIPSeq Pipeline Readfile format<ref_example_chipseq_readset_file>` and not the general readfile format.
+
 .. _ref_chipseq_design_ff:
 
 .. note::  ChIPSeq Pipeline Design File Format

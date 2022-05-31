@@ -94,6 +94,8 @@ Example of Readset File
 
             sampleB readset4    lib0002 PAIRED_END  run200  6       AGATCGGAAGAGCACACGTCTGAACTCCAGTCA   AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT   33              path/to/file.bed    path/to/readset4.paired1.fastq.gz   path/to/readset4.paired2.fastq.gz   path/to/readset4.bam
 
+.. _ref_example_chipseq_readset_file:
+
 ChIP-Seq Pipeline Readset File Format
 -------------------------------------
 
