@@ -7,6 +7,7 @@
    atacseq
    Transposon
    nucleosome
+   atac
 
 ChIP Sequencing Pipeline
 ========================
@@ -57,7 +58,7 @@ Usage
 
 .. warning::
 
-     Please make sure you use the special :ref:`ChIPSeq Pipeline Readfile format<ref_example_chipseq_readset_file>` and not the general readfile format.
+     Please make sure you use the special :ref:`ChIPSeq Pipeline Readset file format<ref_example_chipseq_readset_file>` and not the general readset file format.
 
 .. _ref_chipseq_design_ff:
 
