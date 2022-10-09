@@ -4,7 +4,8 @@
 
      html
      goseq
- 
+     Stringtie
+
 RNA Sequencing Pipeline
 ========================
 

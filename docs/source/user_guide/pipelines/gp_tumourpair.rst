@@ -11,9 +11,38 @@
       Koboldt
       Preprocess
       bp
+      Ensembl
+      vcfanno
+      Kataegis
+      Microsatellite
       
 Tumor Pair Sequencing Pipeline
 ================================
+
+.. note:: **Reporting System Changes**
+
+    From the GenPipes Release 4.2.0, the Tumor Pair pipeline reporting system has changed from `GEMINI Framework <https://gemini.readthedocs.io/en/latest/>`_ to `PCGR <https://sigven.github.io/pcgr/>`_/`CPSR <https://sigven.github.io/cpsr/index.html>`_ reporting.
+
+    PCGR interprets primarily somatic SNVs/InDels and copy number aberrations. The software extends basic gene and variant annotations from the Ensembl's Variant Effect Predictor (VEP) with oncology-relevant, up-to-date annotations retrieved flexibly through vcfanno, and produces interactive HTML reports intended for clinical interpretation. 
+
+    PCGR performs multiple types of analysis, including:
+
+    * Somatic variant classification (ACMG/AMP)
+
+    * mapping the therapeutic and prognostic implications of somatic DNA aberrations
+
+    * Tumor mutational burden (TMB) estimation
+
+    * Tumor-only analysis (variant filtering)
+
+    * Mutational signature analysis
+
+    * Kataegis detection
+
+    * Microsatellite instability (MSI) classification
+
+    The accompanying tool CPSR is used to interrogate germline variants and their relation to cancer predisposition. 
+
 
 Tumor Pair pipeline helps in inferring the cancer cell copy number to normal cell copy number.
 

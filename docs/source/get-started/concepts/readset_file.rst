@@ -238,7 +238,7 @@ Use the following readset file format for the Nanopore Pipeline. **Do NOT** use 
 |**FAST5:**                    | The path to the **directory** containing the raw fast5 files, before basecalling.         |
 +------------------------------+-------------------------------------------------------------------------------------------+
 
-Example of PacBio Assembly Readset File
+Example of Nanopore Readset File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
