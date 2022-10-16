@@ -32,7 +32,7 @@ Following genomics application pipelines are already implemented and validated t
 * Nanopore CoVSeQ Analysis using ARTIC Nanopolish protocol
 * SARS-CoV-2 genome sequencing
 * RNA Sequencing / Unmapped RNA Quality Control
-* Transcriptonomics Assembly
+* Transcriptomics Assembly
 * Tumour Analysis
 * EpiQC Analysis
 * Whole Exome Sequencing (WES)
