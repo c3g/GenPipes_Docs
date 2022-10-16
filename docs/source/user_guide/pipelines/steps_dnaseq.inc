@@ -92,6 +92,10 @@ This step marks duplicates. Aligned reads per sample are duplicates if they have
 
 This step is used to recalibrate base quality scores of sequencing-by-synthesis reads in an aligned BAM file. After recalibration, the quality scores in the QUAL field in each read in the output BAM are more accurate in that the reported quality score is closer to its actual probability of mismatching the reference genome. Moreover, the recalibration tool attempts to correct for variation in quality with machine cycle and sequence context, and by doing so, provides not only more accurate quality scores but also more widely dispersed ones.
 
+.. note::
+
+   The unmapped reads are extracted from the merged/sorted bam files. After the base recalibration step, the unmapped reads are re-injected into the fastq. This ensures that the unmapped reads are available for further analysis, if needed. Without this process, the base recalibration may eventually remove the unmapped reads.
+
 .. _Sym Link Final BAM:
 
 **Sym Link Final BAM**

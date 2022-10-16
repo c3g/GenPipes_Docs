@@ -51,7 +51,7 @@ Usage
                     [-l {debug,info,warning,error,critical}] [--sanity-check]
                     [--container {wrapper, singularity} <IMAGE PATH>
                     [--genpipes_file GENPIPES_FILE]
-                    [-r READSETS] [-v]
+                    [-t {bismark, dragen, hybrid}] [-r READSETS] [-v]
 
 **Optional Arguments**
 

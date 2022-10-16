@@ -1,5 +1,5 @@
 ::
 
-..  -t {mugqic,mpileup,light, sv}, --type {mugqic,mpileup,light,sv}
+-t {bismark, dragen, hybrid}, --type {bismark, dragen, hybrid}
 
                             Methylseq analysis type

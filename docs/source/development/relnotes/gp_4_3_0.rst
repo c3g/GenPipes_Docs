@@ -1,0 +1,53 @@
+:orphan:
+
+.. _docs_gp_relnote_4_3_0:
+
+.. spelling::
+
+     genpipes
+
+GenPipes 4.3.0 Release Notes
+============================
+
+What's new? 
+-----------
+
+* `MethylSeq <https://genpipes.readthedocs.io/en/latest/user_guide/pipelines/gp_wgs_methylseq.html>`_ Pipeline:  Two new protocols are newly added to MethylSequencing pipeline. These protocols are based on `Illumina Dragen Bio-IT Platform <https://www.illumina.com/products/by-type/informatics-products/dragen-bio-it-platform.html>`_. The new protocols are tested on Abacus (the McGill Genome Center HPC) and usable where a "Dragen" allocation is available.
+
+  - `bismark` option uses the `Bismark <https://support.illumina.com/help/BaseSpace_App_MethylSeq_help/Content/Vault/Informatics/Sequencing_Analysis/Apps/swSEQ_mAPP_MethylSeq_Bismark.htm>`_ protocol (formerly the default protocol) to perform the whole analysis including the read alignment, de-duplication, and methylation calls.
+  - `dragen` option uses the `Dragen <https://support.illumina.com/content/dam/illumina-support/help/Illumina_DRAGEN_Bio_IT_Platform_v3_7_1000000141465/Content/SW/Informatics/Dragen/MPipelineMeth_fDG.htm>`_ protocol to perform the whole analysis.
+  - `hybrid` option uses the Dragen protocol for fast read alignment and uses Bismark for the other steps.
+
+* DNASeq: In the latest release, the unmapped reads in DNASeq pipeline are now extracted from the merged/sorted bam files. After the base recalibration step, the unmapped reads are re-injected into the fastq. 
+
+  This ensures that the unmapped reads are available for further analysis, if needed. Without this process, the base recalibration may eventually remove the unmapped reads.
+
+Other Updates
+-------------
+
+* CovSeq Pipeline: Bug fixes such as CovSeq report is now repaired for cases with multiple readsets per sample.
+
+* The `.ini` files are now standardized.
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+ 
+* This version tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-4.3.0.tar.gz
+
+* The module mugqic/genpipes/4.3.0 is installed on Abacus (MGC), Béluga, Narval, Graham and Cedar clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes
+
+* For latest GenPipes documentation, please refer to: https://genpipes.readthedocs.io/
+
+Where is the detailed ChangeLog? 
+================================= 
+A ChangeLog (`CHANGELOG.md <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_) is available in the archive as well as in the repository.
+
+Since we use git, there are many ways to get the details in many formats. 
+One of our preferred ways is to use a script written by the author of the Ray assembler: Sébastien Boisvert, 
+which lists the commits by tag and author: 
+
+https://raw.github.com/sebhtml/ray/master/scripts/dump-ChangeLog.sh 
+
+Enjoy our pipelines on the many clusters where they are installed!

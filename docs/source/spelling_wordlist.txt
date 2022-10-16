@@ -1,9 +1,11 @@
+Â
 Amel
 Apis
 Arabidopsis
 Aspera
 Bam
 Barcode
+Béluga
 Bio
 Biorxiv
 Bisulphate
@@ -13,7 +15,6 @@ Bos
 Bourgey
 Bowtie
 Bwakit
-Béluga
 Caenorhabditis
 Canis
 Casava
@@ -32,6 +33,7 @@ Dataset
 Delly
 Dev
 Differentiators
+Dragen
 Drosophila
 Duk
 Elegans
@@ -40,6 +42,7 @@ GSoD
 Galgal
 Gallus
 GenPipes
+Génome
 Genomic
 Genomics
 Germline
@@ -48,7 +51,6 @@ Glycine
 Gnuplot
 Graham
 Guillimin
-Génome
 HiC
 HomerQcPlots
 INsertions
@@ -58,19 +60,18 @@ Kallisto
 Kegg
 Kraken
 Krona
-Moab
 MMUL
 Macaca
 Mathieu
 MboI
 Metagenomic
 Metagenomics
+Moab
 Montréal
-Nanopore
 Nanopolish
+Nanopore
 Nanuq
 Narval
-Pandoc
 PGM
 Pacbio
 Pandoc
@@ -83,8 +84,8 @@ Polymerase
 Prokaryotic
 Prot
 Qualimap
-Quickstart
 Québec
+Quickstart
 Rao
 Rattus
 Readset
@@ -97,13 +98,13 @@ Saccharomyces
 Sambamba
 Schizosaccharomyces
 SeQC
+Sébastien
 Sequencinga
 Sequenza
 Shostscript
 SignalP
 Slurm
 Solexa
-Sébastien
 TBD
 Tabix
 Tinotate
@@ -123,6 +124,7 @@ WBcel
 Webinar
 Workflow
 Workflows
+â
 abacus
 acyclic
 adaptively
@@ -391,6 +393,7 @@ txt
 typesValidate
 undescribed
 ungenotyped
+unmapped
 utils
 variantsCompare
 variantsConvert
@@ -406,5 +409,3 @@ workflows
 xy
 xyz
 zebrafish
-Â
-â
