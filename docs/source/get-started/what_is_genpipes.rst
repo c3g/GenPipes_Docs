@@ -21,7 +21,7 @@ are optimized for High-Performance Computing (HPC) clusters and the cloud.
 Following genomics application pipelines are already implemented and validated through GenPipes:
 
 * ChIP-Seq
-* De-Novo RNA Sequencing
+* *de-novo* RNA Sequencing
 * Deep Whole Genome Sequencing
 * Exome Sequencing
 * EpiQC Analysis
