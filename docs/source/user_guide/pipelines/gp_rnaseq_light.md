@@ -173,11 +173,15 @@ Example Run
 
 ```
 
-rnaseq_light.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq_light/rnaseq_light.base.ini $MUGQIC_PIPELINES_HOME/pipelines/rrnaseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-25 -g rnaseqCommands.sh
+rnaseq_light.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq_light/rnaseq_light.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-25 -g rnaseqCommands.sh
 
 bash rnaseqCommands.sh
 
 ```
+
+**Tip**
+
+Replace ``beluga.ini`` file name in the command above with the appropriate *clustername.ini* file located in the ``$MUGQIC_PIPELINES_HOME/pipelines/common_ini`` folder, depending upon the cluster where you are executing the pipeline.  For e.g., ``narval.ini``, ``cedar.ini``, ``graham.ini`` or ``narval.ini``.
 
 You can download the test dataset for this pipeline in the [TestData Reference section](https://genpipes.readthedocs.io/en/latest/resources/testdataset.html)
 

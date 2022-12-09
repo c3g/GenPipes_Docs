@@ -65,6 +65,6 @@ For example, to run the DNA-Seq pipeline on beluga cluster with Mus musculus ref
 ::
 
     #!bash
-    $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.py --config $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.beluga.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/Mus_musculus.GRCm38.ini ...
+    $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.py --config $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/Mus_musculus.GRCm38.ini ...
 
 

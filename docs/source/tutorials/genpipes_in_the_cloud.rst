@@ -79,7 +79,7 @@ Let’s use ChIPSeq as an example:
     bash # You do not need this line if you did a logout login cycle
     # The next line generates the pipeline script
     chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini \
-    $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.cedar.ini \
+    $MUGQIC_PIPELINES_HOME/pipelines/common_ini/cedar.ini \
     quick_start.ini \
     -j slurm \
     -r readsets.chipseqTest.chr22.tsv \

@@ -8,8 +8,8 @@
 
      *Thank you!*
 
-GenPipes Documentation 
-=======================
+GenPipes |genpipes_version| Documentation 
+==========================================
 
 .. note:: GenPipes is sponsored by `Canadian Center for Computational Genomics
           <https://www.computationalgenomics.ca>`_ (C3G).
@@ -30,12 +30,12 @@ GenPipes documentation is organized to address the needs of new users as well as
 ----
 
 **Table of Contents** 
- 
+
 ----
 
 .. toctree::
    :maxdepth: 1
-   :caption: GenPipes
+   :caption: GenPipes 
    :name: sec-general
 
    about/index

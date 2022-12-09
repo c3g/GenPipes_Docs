@@ -125,20 +125,20 @@ For hicseq, that would be:
 
 .. code-block:: bash
 
-    ls $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.*.ini
+    ls $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini
 
 
 For chipseq, that would be:
 
 .. code-block:: bash
 
-    ls $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.*.ini
+    ls $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini
 
-You will find a **<pipeline_name>.base.ini** as well as an ini file for particular servers like Beluga (<pipeline_name>.beluga.ini). The base.ini file has all the parameters needed by the pipeline but is optimized for usage on our own server, Abacus. To use the pipeline on Guillimin, you will need to use both base.ini and beluga.ini, as such:
+You will find a **<pipeline_name>.base.ini** as well as an ini file for particular servers like Beluga (<pipeline_name>.beluga.ini). The base.ini file has all the parameters needed by the pipeline but is optimized for usage on our own server, Abacus. To use the pipeline on beluga server, you will need to use both base.ini and beluga.ini, as such:
 
 .. code-block:: bash
 
-    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.beluga.ini …
+    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini …
 
 To change different parameters in the ini files, you can create your own ini file and overwrite the required parameters. For example, to change the number of threads for trimmomatic and hicup, I can create my own ini file: hicseq.test.ini
 and in it I can include the parameters to be changed:
@@ -273,7 +273,7 @@ We will run this analysis on Beluga server as follows:
 
 .. code-block:: bash
 
-    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.beluga.ini -r readsets.HiC010.tsv -s 1-15 -e MboI > hicseqScript_SRR1658581.txt
+    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.HiC010.tsv -s 1-15 -e MboI > hicseqScript_SRR1658581.txt
 
 **-c** defines the ini configuration files
 **-r** defines the readset file
@@ -286,7 +286,7 @@ This command works for servers using a SLURM scheduler like Cedar, Graham or Bel
 
 .. code-block:: bash
 
-    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.beluga.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -j pbs > hicseqScript_SRR1658581.txt
+    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -j pbs > hicseqScript_SRR1658581.txt
 
 
 To run it, use:
@@ -402,7 +402,7 @@ We will run this analysis on Beluga server as follows:
 
 .. code-block:: bash
 
-    chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
+    chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
     bash chipseqScript.txt
 
 The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get **MUGQICexitStatus:0** or **Exit_status=0**. If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the **job_output** folder.
