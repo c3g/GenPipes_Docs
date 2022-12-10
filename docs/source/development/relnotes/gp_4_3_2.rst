@@ -1,0 +1,51 @@
+:orphan:
+
+.. _docs_gp_relnote_4_3_2:
+
+.. spelling::
+
+     sambamba
+     genpipes
+
+GenPipes 4.3.2 Release Notes
+============================
+
+What's new? 
+-----------
+
+This release is mainly a bug-fix release.
+
+* `Tumor Pair <https://genpipes.readthedocs.io/en/genpipes-v4.3.2/user_guide/pipelines/gp_tumourpair.html>`_: Fixed 'sambamba sort' crashing issues encountered with some tumor pair samples.
+
+* `DNA Sequencing Pipeline (SV) <https://genpipes.readthedocs.io/en/genpipes-v4.3.2/user_guide/pipelines/gp_dnaseq.html>`_: Several bugs were fixed in this pipeline after we identified and repaired some weakness spots in our testing suite.
+
+* `RNA Sequencing Pipeline <https://genpipes.readthedocs.io/en/genpipes-v4.3.2/user_guide/pipelines/gp_rnaseq.html>`_: Now allows for batch effect correction (with DESeq2).
+
+* The "`resources <https://bitbucket.org/mugqic/genpipes/src/master/resources/>`" folder is no more part of the GenPipes 4.3.2 release but remains accessible in our repository. 
+
+  Please note that as a consequence, the ``Homo sapiens`` configuration files formerly in ``resources/genomes/config`` folder have been moved to ``pipelines/common ini`` folder.
+
+* Besides the above mentioned updates, this release includes lots of code clean ups and linting changes.
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+ 
+* The latest release for GenPipes version 4.3.2 tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-4.3.2.tar.gz
+
+* The module mugqic/genpipes/4.3.2 is installed on Abacus (MGC), Béluga, Narval, Graham and Cedar Compute Canada clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes
+
+* For latest GenPipes documentation, please refer to: https://genpipes.readthedocs.io/
+
+Where is the detailed ChangeLog? 
+================================= 
+A ChangeLog (`CHANGELOG.md <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_) is available in the archive as well as in the repository.
+
+Since we use git, there are many ways to get the details in many formats. 
+One of our preferred ways is to use a script written by the author of the Ray assembler: Sébastien Boisvert, 
+which lists the commits by tag and author: 
+
+https://raw.github.com/sebhtml/ray/master/scripts/dump-ChangeLog.sh 
+
+Enjoy our pipelines on the many clusters where they are installed!
