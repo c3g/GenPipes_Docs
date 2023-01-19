@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v1
     - uses: actions/setup-python@v1
       with:
-        python-version: 3.9.1
+        python-version: 3.9
     - name: Install Dependencies
       run: |
           brew update
@@ -17,7 +17,6 @@ jobs:
           brew install enchant
           brew install mermaid-cli
           python -m pip install --upgrade pip
-#          pip install sphinx sphinx_rtd_theme
           pip install -r docs/requirements.txt
     - name: Sphinx build
       run: |
