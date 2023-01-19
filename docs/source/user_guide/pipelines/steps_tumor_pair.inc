@@ -130,6 +130,12 @@ In this step, quality controlling metrics are generated on the read level using 
 
 `Strelka2`_ is a fast and accurate small variant caller optimized for analysis of germline variation in small cohorts and somatic variation in tumor/normal sample pairs This implementation is optimized for germline calling in cancer pairs.
 
+.. _Strelka2 Paired Germline SnpEff:
+
+**Strelka2 Paired Germline SnpEff**
+
+`Strelka2`_ is a fast and accurate small variant caller optimized for analysis of germline variation in small cohorts and somatic variation in tumor/normal sample pairs This implementation is optimized for germline calling in cancer pairs.
+
 .. _Purple Step:
 
 **Purple Step**
@@ -482,10 +488,43 @@ In this step, sym links for Wham output are generated.
 
 In this step, sym links for CNVKit output are generated.
 
+.. _SAMbamba Sort:
+
+**SAMbamba Sort**
+
+BWA output BAM files are sorted by coordinate using `Sambamba`_ This step takes as input files: BAM file from bwa mem alignment compressed by sambamba.
+
+.. _Filter Ensemble Germline:
+
+**Filter Ensemble Germline**
+
+Applies custom script to inject FORMAT information - tumor/normal DP and VAP into the INFO field the filter on those generated fields.
+
+.. _Filter Ensemble Somatic:
+
+**Filter Ensemble Germline**
+
+Applies custom script to inject FORMAT information - tumor/normal DP and VAP into the INFO field the filter on those generated fields.
+
+.. _Report CPSR:
+
+**Report CPSR**
+
+Creates a `CPSR Germline Report`_ where input is the filtered ensemble gremline vcf and output is the html report and addtional flat files.
+
+.. _Report PCGR:
+
+** Report PCGR**
+
+Creates a `PCGR Somatic Germline Report`_ where input is the filtered ensemble germline vcf and the output is the html report and addtional flat files.
+
 .. include:: steps_dnaseq_common.inc
 
 .. Html links 
 
+.. _CPSR Germline Report: https://sigven.github.io/cpsr/
+.. _PCGR Somatic Germline Report: https://sigven.github.io/pcgr/
+.. _Sambamba: http://lomereiter.github.io/sambamba/index.html
 .. _BWA alignment software: http://bio-bwa.sourceforge.net/
 .. _Picard: http://broadinstitute.github.io/picard/
 .. _Picard Metric Definition Tools: https://broadinstitute.github.io/picard/picard-metric-definitions.html
