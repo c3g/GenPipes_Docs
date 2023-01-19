@@ -9,8 +9,8 @@
         Node1{{ 1. <br/> Picard<br/>SAM<br/>to FASTQ }}:::nodefill
         Node2{{ 2. <br/> Skewer<br/>Trimming }}:::nodefill
         Node3{{ 3. <br/> BWA<br/>Mem<br/>SAMbamba }}:::nodefill
-        Node4{{ 4. <br/> SAMbamba<br/>sort }}:::nodefillblack
-        Node5{{ 5. <br/> SAMbamba<br/>Merge<br/>SAM Files }}:::nodefill
+        Node4{{ 4. <br/> SAMbamba<br/>sort }}:::nodefill
+        Node5{{ 5. <br/> SAMbamba<br/>Merge<br/>SAM Files }}:::nodefillblack
         Node6{{ 6. <br/> GATK<br/>indel<br/>re-aligner }}:::nodefill
         Node7{{ 7. <br/> SAMBAM<br/>merge<br/>realigned }}:::nodefill
         Node8{{ 8. <br/> SAMBAM<br/>Mark<br/>Duplicates }}:::nodefill
@@ -44,8 +44,8 @@
 
         Node2 -.-> Node3 -.-> Node4 -.-> Node5 -.-> Node6 -.-> Node7 -.-> Node8 -.-> Node9
         Node9 -.-> Node10 
-        Node8 -.-> Node11 -.-> Node12 -.-> Node13 -.-> Node14 -.-> Node15 -.-> Node16
-        Node8  -.->Node17 & Node20
+        Node9 -.-> Node11 -.-> Node12 -.-> Node13 -.-> Node14 -.-> Node15 -.-> Node16
+        Node9  -.->Node17 & Node20
         Node9 -.-> Node18 & Node19 & Node21
         Node18 & Node19 & Node20 -.-> Node22 
         Node22 -.-> Node23
@@ -59,9 +59,9 @@
           Node1
           Node2
           Node3
+          Node4
         end
         subgraph sampleSetSteps[" "]
-          Node5
           Node6
           Node7
           Node8

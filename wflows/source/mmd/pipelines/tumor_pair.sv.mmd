@@ -8,27 +8,27 @@
         graph LR
         Node1{{ 1. <br/> Picard<br/>SAM<br/>to FASTQ }}:::nodefill
         Node2{{ 2. <br/> Skewer<br/>Trimming }}:::nodefill
-        Node3{{ 3. <br/> BWA<br/>SAMbamba<br/>sort<br/>SAM }}:::nodefill
-        Node4{{ 4. <br/> SAMbamba<br/>merge<br/>SAM<br/>files }}:::nodefillblack
-        Node5{{ 5. <br/> GATK<br/>indel<br/>re-aligner }}:::nodefill
-        Node6{{ 6. <br/> SAMBAM<br/>merge<br/>realigned }}:::nodefill
-        Node7{{ 7. <br/> SAMBAM<br/>Mark<br/>Duplicates }}:::nodefill
-        Node8{{ 8. <br/> Recalibration }}:::nodefill
-        Node9{{ 9. <br/> Strelka2<br/>Paired<br/>Somatic }}:::nodefill
-        Node10{{ 10. <br/> Strelka2<br/>Paired<br/>Germline}}:::nodefill
-        Node11{{ 11. <br/> Metrics&<br/>DNA<br/>Picard<br/>Metrics }}:::nodefill
-        Node12{{ 12. <br/> Sequenza }}:::nodefill
-        Node13{{ 13. <br/> Delly2<br/>call<br/>Filter }}:::nodefill
-        Node14{{ 14. <br/> Delly2<br/>SV<br/>Annotation }}:::nodefill
-        Node15{{ 15. <br/> Manta<br/>SV<br/>calls }}:::nodefill
-        Node16{{ 16. <br/> Manta<br/>SV<br/>Annotation }}:::nodefill
-        Node17{{ 17. <br/> Lumpy<br/>Paired<br/>SV  }}:::nodefill
-        Node18{{ 18. <br/> Lumpy<br/>SV<br/>Annotation }}:::nodefill
-        Node19{{ 19. <br/> WHAM<br/>Call<br/>SV }}:::nodefill
-        Node20{{ 20. <br/> WHAM<br/>SV<br/>Annotation }}:::nodefill
-        Node21{{ 21. <br/> CNVKit<br/>Batch }}:::nodefill
-        Node22{{ 22. <br/> CNVKit<br/>SV<br/>Annotation }}:::nodefill
-        Node23{{ 23. <br/> Scones }}:::nodefill
+        Node3{{ 3. <br/> BWA<br/>Mem SAMbamba }}:::nodefill
+        Node4{{ 4. <br/> SAMBAM<br/>sort }}:::nodefill
+        Node5{{ 5. <br/> SAMbamba<br/>Merge<br/>SAM<br/>Files }}:::nodefillblack
+        Node6{{ 6. <br/> GATK<br/>Indel<br/>Re-aligner }}:::nodefill
+        Node7{{ 7. <br/> SAMbamba<br/>Merge<br/>Realigned }}:::nodefill
+        Node8{{ 8. <br/> SAMbamba<br/>Mark<br/>Duplicates }}:::nodefill
+        Node9{{ 9. <br/> Recalibration }}:::nodefill
+        Node10{{ 10. <br/> Manta<br/>SV<br/>Calls }}:::nodefill
+        Node11{{ 11. <br/> Strelka2<br/>Paired<br/>Somatic }}:::nodefill
+        Node12{{ 12. <br/> Strelka2<br/>Paired<br/>Germline}}:::nodefill
+        Node13{{ 13. <br/> Metrics&<br/>DNA<br/>Picard<br/>Metrics }}:::nodefill
+        Node14{{ 14. <br/> Sequenza }}:::nodefill
+        Node15{{ 15. <br/> Delly2<br/>call<br/>Filter }}:::nodefill
+        Node16{{ 16. <br/> Delly2<br/>SV<br/>Annotation }}:::nodefill
+        Node17{{ 17. <br/> Manta<br/>SV<br/>Annotation }}:::nodefill
+        Node18{{ 18. <br/> Lumpy<br/>Paired<br/>SV  }}:::nodefill
+        Node19{{ 19. <br/> Lumpy<br/>SV<br/>Annotation }}:::nodefill
+        Node20{{ 20. <br/> WHAM<br/>Call<br/>SV }}:::nodefill
+        Node21{{ 21. <br/> WHAM<br/>SV<br/>Annotation }}:::nodefill
+        Node22{{ 22. <br/> CNVKit<br/>Batch }}:::nodefill
+        Node23{{ 23. <br/> CNVKit<br/>SV<br/>Annotation }}:::nodefill
         Node24{{ 24. <br/> SvABA<br/>Assemble }}:::nodefill
         Node25{{ 25. <br/> SvABA<br/>Annotation }}:::nodefill
         Node26{{ 26. <br/> Ensemble<br/>MetaSV<br/>Somatic }}:::nodefill
@@ -65,32 +65,29 @@
         Input2 --> Node2
 
         Node2 -.-> Node3 -.-> Node4 -.-> Node5 -.-> Node6 -.-> Node7 -.-> Node8
-        Node7 -.-> Node9 -.-> Node10
-        Node8 -.-> Node9 & Node11 & Node12 & Node13 & Node15 & Node16 & Node17 & Node19 & Node21 & Node23 & Node24 & Node26
-        Node13 -.-> Node14
-        Node15 -.-> Node16
-        Node17 -.-> Node18
-        Node19 -.-> Node20
-        Node21 -.-> Node22
-        Node24 -.-> Node25
-        Node26 -.-> Node27 -.-> Node28
-
-        Node12 -.-> Node29
+        Node8 -.-> Node9 -.-> Node10
+        Node9 & Node10 -.-> Node11
+        Node9 & Node11 -.-> Node12
+        Node9 -.-> Node13 & Node14 & Node15 & Node18 & Node20 & Node22 & Node24 & Node26 & Node27
+        Node15 -.-> Node16 -.-> Node31
+        Node10 -.-> Node17 -.-> Node26
+        Node18 -.-> Node19 -.-> Node33
+        Node20 -.-> Node21 -.-> Node34
+        Node22 -.-> Node23 -.-> Node35
+        Node16 & Node19 & Node21 & Node22 &  Node24 -.-> Node25
+        Node17 & Node16 & Node19 & Node21 & Node23  -.-> Node27
+        Node27 -.-> Node28
+        Node14 -.-> Node29
         Node28 -.-> Node30
-        Node15 -.-> Node31
-        Node16 -.-> Node32
-        Node18 -.-> Node33
-        Node20 -.-> Node34
-        Node22 -.-> Node35
+        Node17 -.-> Node32
 
         subgraph readSetSteps[" "]
           Node1
           Node2
           Node3
-          MTSOutput
+          Node4
         end
         subgraph sampleSetSteps[" "]
-          Node5
           Node6
           Node7
           Node8
