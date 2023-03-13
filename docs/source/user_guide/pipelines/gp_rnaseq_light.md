@@ -20,12 +20,12 @@ The central computational problem in RNA-seq remains the efficient and accurate 
 
 Alignment-free RNA quantification tools have significantly increased the speed of RNA-seq analysis. The alignment-free pipelines are orders of magnitude faster than alignment-based pipelines, and they work by breaking sequencing reads into k-mers and then performing fast matches to pre-indexed transcript databases. To achieve fast transcript quantification without compromising quantification accuracy, different sophisticated algorithms were implemented in addition to k- mer counting, such as pseudo-alignments by [Kallisto technique][Kallisto_id] and quasi-mapping along with GC and sequence-bias corrections using [Salmon][Salmon_id].
 
-RNA Sequencing Light is a lightweight pipeline that performs quick QC and removes a major computation bottleneck in RNA Sequence analysis. Kallisto is is two orders of magnitude faster than previous approaches and achieves similar accuracy. Kallisto pseudo-aligns reads to a reference, producing a list of transcripts that are compatible with each read while avoiding alignment of individual bases. For details refer to [More Information](#more-info) section below.
+RNA Sequencing Light is a lightweight pipeline that performs quick QC and removes a major computation bottleneck in RNA Sequence analysis. Kallisto is two orders of magnitude faster than previous approaches and achieves similar accuracy. Kallisto pseudo-aligns reads to a reference, producing a list of transcripts that are compatible with each read while avoiding the alignment of individual bases. In the latest release of GenPipes, calls to `kallisto quant` are now aggregated by sample instead of by the readset for better performance. For details, see ['More Information'](#more-info) section below.
 
 Version
 -------
 
-3.1.5
+|genpipes_version| 
 
 Usage
 -----

@@ -1,0 +1,61 @@
+:orphan:
+
+.. _docs_gp_relnote_4_4_0:
+
+.. spelling::
+
+     sambamba
+     genpipes
+
+GenPipes 4.4.0 Release Notes
+============================
+
+What's new? 
+-----------
+
+This is a medium release with revamping of 'sv' protocol in the Tumor Pair pipeline and addition of a new protocol in the RNASeq pipeline.
+
+* `Tumor Pair <https://genpipes.readthedocs.io/en/genpipes-v4.4.0/user_guide/pipelines/gp_tumourpair.html>`_: 'sv' protocol updates
+  - supports GRIDSS to detect genomics rearrangements and call structural variations
+  - PURPLE adds information from the SV call to improve purity and ploidy estimates
+  - supports Linx for structural variants annotation
+
+* `RNA Sequencing Pipeline <https://genpipes.readthedocs.io/en/genpipes-v4.4.0/user_guide/pipelines/gp_rnaseq.html>`_: 
+  - Newly added protocols:
+
+    - 'variants' protocol provides support for small variant calling using GATK best practices
+    - 'cancer' protocol provides support for:
+
+       - small variant calling using GATK best practices
+       - fusion calling with `STAR-Fusion <https://github.com/STAR-Fusion/STAR-Fusion/wiki>`_, `Arriba <https://arriba.readthedocs.io/en/latest/>`_ and `annoFuse <https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-03922-7>`_
+       - CPSR/PCGR reporting
+       
+  - Deprecated - the 'cufflinks' protocol is no longer supported
+
+* `RNA Sequencing Light <https://genpipes.readthedocs.io/en/genpipes-v4.4.0/user_guide/pipelines/gp_rnaseq_light.html>`_:
+  - calls to `kallisto quant` are now aggregated by sample instead of by the readset
+
+* Overall, the job dependencies have been strengthened in GenPipes 4.4.0 release.
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+ 
+* The latest release for GenPipes version 4.4.0 tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-4.4.0.tar.gz
+
+* The module mugqic/genpipes/4.4.0 is installed on Abacus (MGC), Béluga, Narval, Graham and Cedar Compute Canada clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes
+
+* For latest GenPipes documentation, please refer to: https://genpipes.readthedocs.io/
+
+Where is the detailed ChangeLog? 
+================================= 
+A ChangeLog (`CHANGELOG.md <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_) is available in the archive as well as in the repository.
+
+Since we use git, there are many ways to get the details in many formats. 
+One of our preferred ways is to use a script written by the author of the Ray assembler: Sébastien Boisvert, 
+which lists the commits by tag and author: 
+
+https://raw.github.com/sebhtml/ray/master/scripts/dump-ChangeLog.sh 
+
+Enjoy our pipelines on the many clusters where they are installed!
