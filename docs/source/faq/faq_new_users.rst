@@ -27,17 +27,15 @@ To create a `new CCDB account`_, what should I fill in the form field: 'position
 
 **Response**
 
-Use the following option in the form:
+Chose the appropriate option in the form, for example:
 
 :: 
 
   external collaborator
 
-For the CCRI field, use the following as input:
+For the CCRI field, use the your sponsor's Compute Canada Role Identifier (CCRI) as input. 
+The CCRI has a structure similar to this: `abc-123-01`.
 
-:: 
-
-  bws-221-01
 
 What email ID should I use if I am an external collaborator?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
