@@ -27,7 +27,7 @@ To create a `new CCDB account`_, what should I fill in the form field: 'position
 
 **Response**
 
-Chose the appropriate option in the form, for example:
+Choose an appropriate option in the form, for example:
 
 :: 
 
