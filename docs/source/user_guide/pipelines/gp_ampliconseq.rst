@@ -50,7 +50,7 @@ See :ref:`More Information <More Information Ampliconseq>` section below for det
 Version
 -------
 
-|genpipes_version|
+|genpipes_version| 
 
 For the latest implementation and usage details refer to Amplicon Sequencing implementation `README <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/ampliconseq/README.md>`_ file.
 

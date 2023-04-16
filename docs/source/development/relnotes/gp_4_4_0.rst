@@ -16,6 +16,7 @@ What's new?
 This is a medium release with revamping of 'sv' protocol in the Tumor Pair pipeline and addition of a new protocol in the RNASeq pipeline.
 
 * `Tumor Pair <https://genpipes.readthedocs.io/en/genpipes-v4.4.0/user_guide/pipelines/gp_tumourpair.html>`_: 'sv' protocol updates
+
   - supports GRIDSS to detect genomics rearrangements and call structural variations
   - PURPLE adds information from the SV call to improve purity and ploidy estimates
   - supports Linx for structural variants annotation
