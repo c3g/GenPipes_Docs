@@ -20,11 +20,11 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'GenPipes'
-author = u'Shaloo Shalini (GSoD 2019) GenPipes' 
+author = u'Shaloo Shalini (GSoD 2019-23) GenPipes' 
 show_authors = False
 #copyright =  author
 
-copyright = u'GenPipes (GSoD 2019)'
+copyright = u'GenPipes (GSoD 2019-23)'
 
 # The full version, including alpha/beta/rc tags
 
