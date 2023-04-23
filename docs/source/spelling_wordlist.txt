@@ -50,6 +50,7 @@ Ghostscript
 Glycine
 Gnuplot
 Graham
+Guillimin
 HiC
 HomerQcPlots
 INsertions
@@ -186,6 +187,7 @@ coverageCommands
 csi
 csv
 csvToreadset
+cufflinks
 customizable
 cutadapt
 dada
@@ -244,6 +246,7 @@ germline
 google
 gorGor
 gqSeqUtils
+guillimin
 haplotype
 hg
 hic
@@ -318,6 +321,7 @@ perl
 phylogenetic
 picard
 pigz
+ploidy
 polymorphisms
 pombe
 pre

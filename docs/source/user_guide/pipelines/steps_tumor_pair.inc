@@ -492,7 +492,7 @@ In this step, sym links for CNVKit output are generated.
 
 **SAMbamba Sort**
 
-BWA output BAM files are sorted by coordinate using `Sambamba`_ This step takes as input files: BAM file from bwa mem alignment compressed by sambamba.
+BWA output BAM files are sorted by coordinate using `Sambamba`_ This step takes as input files: BAM file from bwa mem alignment compressed by SAMbamba.
 
 .. _Filter Ensemble Germline:
 
@@ -510,13 +510,13 @@ Applies custom script to inject FORMAT information - tumor/normal DP and VAP int
 
 **Report CPSR**
 
-Creates a `CPSR Germline Report`_ where input is the filtered ensemble gremline vcf and output is the html report and addtional flat files.
+Creates a `CPSR Germline Report`_ where input is the filtered ensemble germline vcf and output is the html report and additional flat files.
 
 .. _Report PCGR:
 
 ** Report PCGR**
 
-Creates a `PCGR Somatic Germline Report`_ where input is the filtered ensemble germline vcf and the output is the html report and addtional flat files.
+Creates a `PCGR Somatic Germline Report`_ where input is the filtered ensemble germline vcf and the output is the html report and additional flat files.
 
 .. include:: steps_dnaseq_common.inc
 
