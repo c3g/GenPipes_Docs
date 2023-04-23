@@ -99,11 +99,11 @@ In the command above,
 
 -e defines the restriction enzyme used in the HiC library
 
-By default, on Compute Canada servers such as "Cedar", "Beluga" or "Graham", SLURM scheduler is used. On guillimin server, you need to use PBS scheduler. For that you need to specify "-j pbs" option as shown below:
+By default, on Compute Canada servers such as "Cedar", "Beluga" or "Graham", SLURM scheduler is used. On abacus server, you need to use PBS scheduler. For that you need to specify "-j pbs" option as shown below:
 
 ::
 
-  hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/guillimin.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -j pbs -g hicseqScript_SRR1658581.txt
+  hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/abacus.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -j pbs -g hicseqScript_SRR1658581.txt
 
 The above command generates a list of instructions that need to be executed to run Hi-C sequencing pipeline.  These instructions are stored in the file:
 

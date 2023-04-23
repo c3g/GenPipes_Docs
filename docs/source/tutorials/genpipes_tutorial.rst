@@ -254,7 +254,7 @@ Make sure you are logged into the server, say Beluga. The default scheduler is S
 
 .. note::
 
-     Guillimin, unlike Beluga, Cedar, Narval use the PBS scheduler. To use GenPipes on Guillimin, don’t forget to add the **“-j pbs”** option (default is -j Slurm).
+     The Abacus server, unlike Beluga, Cedar, Narval servers, uses the PBS scheduler. To use GenPipes on Abacus, don’t forget to add the **“-j pbs”** option (default is -j Slurm).
 
 See example below for more details.
 
@@ -282,11 +282,11 @@ We will run this analysis on Beluga server as follows:
 
 The pipelines do not run the commands directly; they output them as text commands. So we need to redirect them into a file using “>”. In this case, **hicseqScript_SRR1658581.txt** is the script that contains the analysis commands.
 
-This command works for servers using a SLURM scheduler like Cedar, Graham or Beluga. For the PBS scheduler, used by Guillimin, you need to add the “-j pbs” option, as follows:
+This command works for servers using a SLURM scheduler like Cedar, Graham or Beluga. For the PBS scheduler, used by Abacus, you need to add the “-j pbs” option, as follows:
 
 .. code-block:: bash
 
-    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -j pbs > hicseqScript_SRR1658581.txt
+    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/abacus.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -j pbs > hicseqScript_SRR1658581.txt
 
 
 To run it, use:

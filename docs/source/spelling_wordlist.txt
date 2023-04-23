@@ -50,7 +50,6 @@ Ghostscript
 Glycine
 Gnuplot
 Graham
-Guillimin
 HiC
 HomerQcPlots
 INsertions
@@ -245,7 +244,6 @@ germline
 google
 gorGor
 gqSeqUtils
-guillimin
 haplotype
 hg
 hic
