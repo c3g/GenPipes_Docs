@@ -89,7 +89,7 @@ Usage
 Example Run
 -----------
 
-You can download `Hi-C test dataset <https://www.computationalgenomics.ca/tutorial/hicseq.zip>`_ and run the following commands:
+You can download `Hi-C test dataset <https://datahub-90-cw3.p.genap.ca/hicseq.chr19.tar.gz>`_ and run the following commands:
 
 .. include::  /user_guide/pipelines/example_runs/hicseq.inc
 

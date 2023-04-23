@@ -61,8 +61,8 @@ Let’s use ChIPSeq as an example:
 
 .. code-block:: bash
 
-    wget https://www.computationalgenomics.ca/tutorials/chipseq.zip
-    unzip chipseq.zip
+    wget https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz
+    gzip -d chipseq.chr19.new.tar.gz
 
 
 **3- Download the config file for this Quickstart:**

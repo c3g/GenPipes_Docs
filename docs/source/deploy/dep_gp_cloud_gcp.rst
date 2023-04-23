@@ -112,8 +112,8 @@ Step 2: Download test dataset and unzip it as shown below:
 
 ::
 
-  wget https://www.computationalgenomics.ca/tutorials/chipseq.zip
-  unzip chipseq.zip
+  wget https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz
+  gzip -d chipsseq.chr19.new.tar.gz
 
 Step 3: GenPipes ChIP Sequencing pipeline needs a configuration file to setup the parameters required by this pipeline. You can download it using the command:
 
