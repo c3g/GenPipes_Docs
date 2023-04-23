@@ -43,21 +43,38 @@ where, PIPELINE corresponds to the pipeline name and YEAR-MM-DDTHH.MM.SS to the 
 
        This job_list file can be used to check the status of only those jobs that are scheduled using PBS and Slurm schedulers.  Also, this feature is not supported when you run :ref:`GenPipes in a container<docs_dep_gp_container>`.
 
-You can type in:
+
+Abacus Reports (PBS Scheduler)
+++++++++++++++++++++++++++++++
+
+Use `log_report.pl` script to generate the html report for Abacus as shown in the command below:
 
 ::
 
-  #$MUGQIC_PIPELINES_HOME/utils/log_report.pl job_output/{TECHNOLOGY}_job_list_{DATE}T{TIME}
+  $MUGQIC_PIPELINES_HOME/utils/log_report.pl job_output/{TECHNOLOGY}_job_list_{DATE}T{TIME}
 
 For example:
 
 ::
 
-  #$MUGQIC_PIPELINES_HOME/utils/log_report.pl job_output/RnaSeq_job_list_2018-06-26T12.54.27
+  $MUGQIC_PIPELINES_HOME/utils/log_report.pl job_output/RnaSeq_job_list_2018-06-26T12.54.27
 
-This command shown above, returns the status of each job. It outputs a summary file that includes the number of jobs that completed successfully, those that failed, and those that are still active/inactive.
+This command shown above, returns the status of each job. In addition to the detailed report, it also outputs a summary file that includes the number of jobs that completed successfully, those that failed, and those that are still active/inactive.
 
-You can save the output as a file and open it in Excel on your laptop.  For each job, there is an exit code that indicates job status.  
+Compute Canada Reports (Slurm Scheduler)
++++++++++++++++++++++++++++++++++++++++++
+
+Use `log_report.py` script to generate the html report for Compute Canada Clusters running Slurm Scheduler:
+
+::
+
+ $MUGQIC_PIPELINES_HOME/utils/log_report.py job_output/{TECHNOLOGY}_job_list_{DATE}T{TIME} --tsv log.out 
+ 
+.. note::
+  
+     By default, unlike the `log_report.pl` script, the script `log_report.py` does not provide detailed output.  Use the --tsv option to get a detailed output.
+
+You can save the reports as .csv files open it in Excel on your laptop.  For each job, there is an exit code that indicates job status.  
 
 Exit Codes
 ++++++++++
