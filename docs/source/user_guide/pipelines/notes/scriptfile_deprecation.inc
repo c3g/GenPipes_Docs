@@ -12,4 +12,5 @@
 
      Please note that redirecting commands to a script ```> genpipe_script.sh``` is still supported for now. **But going forward, this mechanism might be dropped in a future GenPipes release.** 
 
-.. include:: /common/gp_cluster_ini.inc
+.. This is a comment - Issue #206 fix removing duplicate beluga tip
+.. ..include:: /common/gp_cluster_ini.inc
