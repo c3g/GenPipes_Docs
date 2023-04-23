@@ -40,9 +40,13 @@ Step 2: Connect to Compute Canada servers
 
 a. Open a shell or terminal (bash preferably) and type the following command:
 
-:: 
+.. code:: 
 
-  ssh myaccount@mp2b.ccs.usherbrooke.ca
+  ssh myaccount@beluga.computecanada.ca
+
+.. tip::
+     
+       Replace the server name `beluga` in the command above with the desired cluster name. 
 
 b. Enter your Compute Canada account password.
 
