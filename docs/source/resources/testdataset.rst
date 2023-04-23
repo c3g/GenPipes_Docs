@@ -28,7 +28,7 @@ In contrast to the test dataset, a :ref:`Readset File<docs_readset_file>` in the
 +-----------------------------------------------+------------------------------------------+
 | :ref:`ChIP Seq<docs_gp_chipseq>`              |   `Download ChIP Seq Dataset`_           |
 +-----------------------------------------------+------------------------------------------+
-| :ref:`CoV Seq<docs_gp_covseq>`                |   `Download CoV Seq Dataset`_            |
+| :ref:`CoV Seq<docs_gp_covseq>`                |   [Not available due to privacy]         |
 +-----------------------------------------------+------------------------------------------+
 | :ref:`DNA Seq<docs_gp_dnaseq>`                |   `Download DNA Seq Dataset`_            |
 +-----------------------------------------------+------------------------------------------+
@@ -61,9 +61,9 @@ For various GenPipes pipelines, you can refer to usage examples and commands for
 Bioinformatic resources
 ------------------------
 
-If you are looking for Bioinformatic resources such as available genomes with FASTA sequence, aligner indices and annotation files listed on `Bioinformatics resources <https://www.computationalgenomics.ca/cvmfs-genomes/>`_ C3G website page, you can download those from the public repositories using scripts provided in `GenPipes Repository <https://bitbucket.org/mugqic/genpipes/src/master/resources/genomes/>`_.
+If you are looking for Bioinformatic resources such as available genomes with FASTA sequence, aligner indices and annotation files listed on `Bioinformatics resources <https://computationalgenomics.ca/cvmfs-genome/>`_ C3G website page, you can download those from the public repositories using scripts provided in `GenPipes Repository <https://bitbucket.org/mugqic/genpipes/src/master/resources/genomes/>`_.
 
-You can also download the latest test datasets from Computational Genomics website `download page <https://www.computationalgenomics.ca/test-dataset/>`_.
+You can also download the latest test datasets from Computational Genomics website `download page <https://datahub-90-cw3.p.genap.ca>`_.
 
 .. Test dataset archive reference
 
