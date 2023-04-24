@@ -6,6 +6,7 @@
 
      sambamba
      genpipes
+     Linx
 
 GenPipes 4.4.0 Release Notes
 ============================
