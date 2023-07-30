@@ -100,7 +100,7 @@ master_doc = 'index'
 
 on_rtd = os.environ.get('READTHEDOCS') == 'True'
 if on_rtd:
-    html_theme = 'default'
+    html_theme = 'sphinx_rtd_theme'
 else:
     html_theme = 'sphinx_rtd_theme'
 
