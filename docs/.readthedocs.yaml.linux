@@ -7,15 +7,7 @@ version: 2
 
 # Set the version of Python and other tools you might need
 build:
-  os: ubuntu-20.04
-  apt_packages:
-    - build-essential
-    - make
-    - libenchant-dev
-    - enchant
-    - git
-    - dialog
-    - apt-utils
+  os: ubuntu-22.04
   tools:
     python: "3.9"
   jobs:
