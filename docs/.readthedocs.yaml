@@ -12,7 +12,7 @@ build:
     python: "3.9"
   jobs:
     pre_install:
-      - bash ../scripts/pre_install.sh
+      - bash ./scripts/pre_install.sh
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
