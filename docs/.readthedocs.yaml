@@ -11,8 +11,8 @@ build:
   tools:
     python: "3.9"
   jobs:
-    pre_install:
-      - bash ./scripts/pre_install.sh
+    post_system_dependencies:
+      - bash ./scripts/post_system_dependencies.sh
 python:
   # Install our python package before building the docs
   install:
