@@ -25,7 +25,7 @@ RNA Sequencing Light is a lightweight pipeline that performs quick QC and remove
 Version
 -------
 
-4.4.1
+4.4.2
 
 Usage
 -----

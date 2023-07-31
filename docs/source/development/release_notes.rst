@@ -9,6 +9,7 @@ The current release of GenPipes is |genpipes_version|.
 
 Following links point to the recent GenPipes release notes.
 
+* :ref:`GenPipes 4.4.2<docs_gp_relnote_4_4_2>` released on June 22, 2023
 * :ref:`GenPipes 4.4.1<docs_gp_relnote_4_4_1>` released on Mar 14, 2023
 * :ref:`GenPipes 4.4.0<docs_gp_relnote_4_4_0>` released on Mar 9, 2023
 * :ref:`GenPipes 4.3.2<docs_gp_relnote_4_3_2>` released on Dec 8, 2022
