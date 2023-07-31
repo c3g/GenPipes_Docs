@@ -4,6 +4,7 @@
 
 .. spelling::
 
+     mkdir
      sambamba
      genpipes
 

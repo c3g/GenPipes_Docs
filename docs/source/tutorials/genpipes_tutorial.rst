@@ -354,6 +354,10 @@ To see how this works, lets run a ChIP-Seq experiment.
 chipseq Test Dataset:
 ---------------------
 
+.. attention:: **Change in the Chipsequence Design File Format**
+
+    .. include:: /user_guide/pipelines/design_fileformat/chipseq_design.inc
+
 We will use a subset of the ENCODE data. Specifically, the reads that map to chr22 of the following samples `ENCFF361CSC <https://www.encodeproject.org/experiments/ENCSR828XQV/>`__ and `ENCFF837BCE <https://www.encodeproject.org/experiments/ENCSR236YGF/>`_. They represent a ChIP-Seq analysis dataset with the CTCF transcription factor and its control input.
 
 We will start by downloading the dataset from `here <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`_
@@ -386,7 +390,7 @@ Looking at the content of the Design file
 
 ::
 
-	designfile_chipseq.txt)
+	designfile_chipseq.txt
 
 we see:
 

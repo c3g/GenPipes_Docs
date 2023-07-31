@@ -4,6 +4,7 @@
 
 .. spelling::
 
+     sed
      sambamba
      genpipes
 
