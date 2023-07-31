@@ -4,7 +4,7 @@ name: macosbuild
 on: [push]
 jobs:
   macos_build:
-    runs-on: macos-latest
+    runs-on: macos-13
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
