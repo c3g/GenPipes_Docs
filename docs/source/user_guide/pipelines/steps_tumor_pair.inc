@@ -520,6 +520,36 @@ Creates a `PCGR Somatic Germline Report`_ where input is the filtered ensemble g
 
 .. include:: steps_dnaseq_common.inc
 
+.. _Purple SV:
+
+**Purple SV**
+
+TBD
+
+.. _Linx Annotations Somatic:
+
+**Linx Annotations Somatic**
+
+TBD
+
+.. _Linx Annotations Germline:
+
+**Linx Annotations Germline**
+
+TBD
+
+.. _Linx Plot:
+
+**Linx Plot**
+
+TBD
+
+.. _GridSS Paired Somatic:
+
+**GridSS Paired Somatic**
+
+TBD
+
 .. Html links 
 
 .. _CPSR Germline Report: https://sigven.github.io/cpsr/
