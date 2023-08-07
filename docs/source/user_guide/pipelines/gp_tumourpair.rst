@@ -19,6 +19,8 @@
 Tumor Pair Sequencing Pipeline
 ================================
 
+Version: |genpipes_version| 
+
 .. admonition:: **Reporting System Changes**
 
     .. container:: toggle, toggle-hidden
@@ -122,7 +124,7 @@ Tumor Pair Sequencing Pipeline
          You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 
       .. tab:: Schema
-         :name: Pipeline Schema
+           :name: Pipeline Schema
 
          There are three options for Tumor Pair Pipeline: sv, ensemble(default) and fastpass.
 
