@@ -69,13 +69,13 @@ Version: |genpipes_version|
          
          GenPipes Tumor Pair workflow consumes BAM files. It inherits the BAM processing protocol from DNA-seq implementation, for retaining the benchmarking optimizations. However, it differs from DNA-seq implementation in the indel alignment step. It achieves this by maximizing the information, utilizing both tumor and normal samples together. 
 
-         The pipeline is based on an ensemble approach, which was optimized using both the `DREAM3 challenge`_ and the CEPH mixture datasets to select the best combination of callers for both SNV and structural variation detection. For SNVs, multiple callers such as `GATK MuTect2`_, `Strelka2`_, `VarScan 2`_, and `VarDict`_ were combined for somatic calls to achieve a sensitivity of 98.1%, precision of 98.4%, and F1 score of 98.3% for variants found in ≥2 callers. For germline calls, `Strelka2`_, `VarScan 2`_ and `VarDict`_ calls were combined.
+         GenPipes Tumor Pair pipeline has three protocol options: sv, ensemble (default), and fastpass.  For details refer to `Pipeline Schema <Pipeline Schema>` section below.
 
-         Similarly, SVs were identified using multiple callers such as `Strelka2`_, `GridSS`_ to achieve a sensitivity of 84.6%, precision of 92.4%, and F1 score of 88.3% for duplication variants found in the DREAM3 dataset. The pipeline also integrates specific cancer tools to estimate tumor purity and tumor ploidy of sample pair normal−tumor using `Sequenza`_ and `PURPLE`_.  
+         The fastpass option of the pipeline is meant for quick assessment using exome capture regions and the 1000bp flanking regions. The somatic/germline calls are made using one variant caller `VarScan 2`_ with permissive variant calling thresholds.
 
-         Additional annotations are incorporated to the SNV calls using `dbNSFP`_ and/or `Gemini`_, and QC metrics are collected at various stages and visualized using `MultiQC`_. 
+         The pipeline's ensemble protocol is based on an ensemble approach, which was optimized using both the `DREAM3 challenge`_ and the CEPH mixture datasets to select the best combination of callers for both SNV and structural variation detection. For SNVs, multiple callers such as `GATK MuTect2`_, `Strelka2`_, `VarScan 2`_, and `VarDict`_ were combined for somatic calls to achieve a sensitivity of 98.1%, precision of 98.4%, and F1 score of 98.3% for variants found in ≥2 callers. For germline calls, `Strelka2`_, `VarScan 2`_ and `VarDict`_ calls were combined. Additional annotations are incorporated to the SNV calls using `CPSR`_ and/or `PCGR`_, which produce html reports of germline variants implicated in cancer predisposition and somatic variants detected in the tumor, respectively. QC metrics are collected at various stages and visualized using `MultiQC`_.
 
-         GenPipes Tumor Pair pipeline has three protocol options: sv, ensemble (default), and fastpass.  For details refer to `Pipeline Schema <Pipeline Schema>` section below. 
+         The sv protocol of the pipeline identifies SVs using `GridSS`_ to achieve a sensitivity of XX.X%, precision of XX.X%, and F1 score of XX.X% for duplication variants found in the DREAM3 dataset. The pipeline also estimates tumor purity and tumor ploidy of sample pair normal−tumor using specific cancer tool `PURPLE`_, followed by annotation and visualization with `Linx`_.    
 
       .. tab:: Usage
 
@@ -348,3 +348,6 @@ For the latest implementation and usage details see `pipeline implementation <ht
 .. _Manta: https://github.com/Illumina/manta
 .. _Delly2: https://github.com/dellytools/delly
 .. _GridSS: https://github.com/PapenfussLab/gridss
+.. _CPSR: https://sigven.github.io/cpsr/
+.. _PCGR: https://sigven.github.io/pcgr/index.html
+.. _Linx: https://github.com/hartwigmedical/hmftools/tree/master/linx
