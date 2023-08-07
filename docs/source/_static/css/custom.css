@@ -1,0 +1,5 @@
+
+ button.toggle-button.toggle-button-hidden:before {
+    border: 2px solid green;
+    padding-top: -10%;
+}

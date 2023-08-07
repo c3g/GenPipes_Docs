@@ -19,252 +19,236 @@
 Tumor Pair Sequencing Pipeline
 ================================
 
-.. note:: **Reporting System Changes**
+.. admonition:: **Reporting System Changes**
 
-    From the GenPipes Release 4.2.0, the Tumor Pair pipeline reporting system has changed from `GEMINI Framework <https://gemini.readthedocs.io/en/latest/>`_ to `PCGR <https://sigven.github.io/pcgr/>`_/`CPSR <https://sigven.github.io/cpsr/index.html>`_ reporting.
+    .. container:: toggle, toggle-hidden
 
-    PCGR interprets primarily somatic SNVs/InDels and copy number aberrations. The software extends basic gene and variant annotations from the Ensembl's Variant Effect Predictor (VEP) with oncology-relevant, up-to-date annotations retrieved flexibly through vcfanno, and produces interactive HTML reports intended for clinical interpretation. 
+         From the GenPipes Release 4.2.0, the Tumor Pair pipeline reporting system has changed from `GEMINI Framework <https://gemini.readthedocs.io/en/latest/>`_ to `PCGR <https://sigven.github.io/pcgr/>`_/`CPSR <https://sigven.github.io/cpsr/index.html>`_ reporting.
 
-    PCGR performs multiple types of analysis, including:
+         PCGR interprets primarily somatic SNVs/InDels and copy number aberrations. The software extends basic gene and variant annotations from the Ensembl's Variant Effect Predictor (VEP) with oncology-relevant, up-to-date annotations retrieved flexibly through vcfanno, and produces interactive HTML reports intended for clinical interpretation. 
 
-    * Somatic variant classification (ACMG/AMP)
+         PCGR performs multiple types of analysis, including:
 
-    * mapping the therapeutic and prognostic implications of somatic DNA aberrations
+         * Somatic variant classification (ACMG/AMP)
 
-    * Tumor mutational burden (TMB) estimation
+         * mapping the therapeutic and prognostic implications of somatic DNA aberrations
 
-    * Tumor-only analysis (variant filtering)
+         * Tumor mutational burden (TMB) estimation
 
-    * Mutational signature analysis
+         * Tumor-only analysis (variant filtering)
 
-    * Kataegis detection
+         * Mutational signature analysis
 
-    * Micro-satellite instability (MSI) classification
+         * Kataegis detection
 
-    The accompanying tool CPSR is used to interrogate germline variants and their relation to cancer predisposition. 
+         * Micro-satellite instability (MSI) classification
 
+         The accompanying tool CPSR is used to interrogate germline variants and their relation to cancer predisposition. 
 
-Tumor Pair pipeline helps in inferring the cancer cell copy number to normal cell copy number.
+.. tabs:: 
 
-Human genome comprises of a set of chromosome pairs. One chromosome in each pair, called homolog, is derived from each parent. It is typically referred to as diploid whereas the set of chromosomes from a single parent is called haploid genome. For a given gene on a given chromosome, there is a comparable, if not identical, gene on the other chromosome in the pair, known as an allele. Large structural alterations in chromosomes can change the number of copies of affected genes on those chromosomes. This is one of the key reasons for causing tumors or cancer. In cancer cells, instead of having a homologous pair of alleles for a given gene, there may be deletions or duplications of those genes. 
+      .. tab:: About
 
-Such alterations leads to unequal contribution of one allele over the other, altering the copy number of a given allele. These variations in copy number indicated by the ratio of cancer cell copy number to normal cell copy number can provide information regarding the structure and history of cancer. However, when DNA is extracted, there is a mix of cancer and normal cells and this information regarding absolute copy number per cancer cell is lost in DNA extraction process.  Hence it must be inferred.
+         Tumor Pair pipeline helps in inferring the cancer cell copy number to normal cell copy number.
 
-Inferring absolute copy number is difficult for `three reasons`_:
+         Human genome comprises of a set of chromosome pairs. One chromosome in each pair, called homolog, is derived from each parent. It is typically referred to as diploid whereas the set of chromosomes from a single parent is called haploid genome. For a given gene on a given chromosome, there is a comparable, if not identical, gene on the other chromosome in the pair, known as an allele. Large structural alterations in chromosomes can change the number of copies of affected genes on those chromosomes. This is one of the key reasons for causing tumors or cancer. In cancer cells, instead of having a homologous pair of alleles for a given gene, there may be deletions or duplications of those genes. 
 
-* Cancer cells are nearly always intermixed with an unknown fraction of normal cells; the measure for this is tumor purity.
-* The actual quantity of DNA in the cancer cells after gross numerical and structural chromosomal changes is unknown; the measure for this is tumor ploidy.
-* The cancer cell population may be heterogeneous, possibly because of ongoing mutations and changes.
+         Such alterations leads to unequal contribution of one allele over the other, altering the copy number of a given allele. These variations in copy number indicated by the ratio of cancer cell copy number to normal cell copy number can provide information regarding the structure and history of cancer. However, when DNA is extracted, there is a mix of cancer and normal cells and this information regarding absolute copy number per cancer cell is lost in DNA extraction process.  Hence it must be inferred.
 
-Tumor purity and ploidy have a substantial impact on next-gen sequence analyses of tumor samples and may alter the biological and clinical interpretation of results.
+         Inferring absolute copy number is difficult for `three reasons`_:
 
-GenPipes Tumor Analysis pipeline is designed to detect somatic variants from a tumor and match normal sample pair more accurately.
+         * Cancer cells are nearly always intermixed with an unknown fraction of normal cells; the measure for this is tumor purity.
+         * The actual quantity of DNA in the cancer cells after gross numerical and structural chromosomal changes is unknown; the measure for this is tumor ploidy.
+         * The cancer cell population may be heterogeneous, possibly because of ongoing mutations and changes.
 
-.. contents:: :local:
+         Tumor purity and ploidy have a substantial impact on next-gen sequence analyses of tumor samples and may alter the biological and clinical interpretation of results.
 
-----
+         GenPipes Tumor Analysis pipeline is designed to detect somatic variants from a tumor and match normal sample pair more accurately. 
+         
+         GenPipes Tumor Pair workflow consumes BAM files. It inherits the BAM processing protocol from DNA-seq implementation, for retaining the benchmarking optimizations. However, it differs from DNA-seq implementation in the indel alignment step. It achieves this by maximizing the information, utilizing both tumor and normal samples together. 
 
-Introduction
-------------
+         The pipeline is based on an ensemble approach, which was optimized using both the `DREAM3 challenge`_ and the CEPH mixture datasets to select the best combination of callers for both SNV and structural variation detection. For SNVs, multiple callers such as `GATK MuTect2`_, `Strelka2`_, `VarScan 2`_, and `VarDict`_ were combined for somatic calls to achieve a sensitivity of 98.1%, precision of 98.4%, and F1 score of 98.3% for variants found in ≥2 callers. For germline calls, `Strelka2`_, `VarScan 2`_ and `VarDict`_ calls were combined.
 
-GenPipes Tumor Pair workflow consumes BAM files. It inherits the BAM processing protocol from DNA-seq implementation, for retaining the benchmarking optimizations. However, it differs from DNA-seq implementation in the indel alignment step. It achieves this by maximizing the information, utilizing both tumor and normal samples together. 
+         Similarly, SVs were identified using multiple callers such as `Strelka2`_, `GridSS`_ to achieve a sensitivity of 84.6%, precision of 92.4%, and F1 score of 88.3% for duplication variants found in the DREAM3 dataset. The pipeline also integrates specific cancer tools to estimate tumor purity and tumor ploidy of sample pair normal−tumor using `Sequenza`_ and `PURPLE`_.  
 
-The pipeline is based on an ensemble approach, which was optimized using both the `DREAM3 challenge`_ and the CEPH mixture datasets to select the best combination of callers for both SNV and structural variation detection. For SNVs, multiple callers such as `GATK MuTect2`_, `Strelka2`_, `VarScan 2`_, and `VarDict`_ were combined for somatic calls to achieve a sensitivity of 98.1%, precision of 98.4%, and F1 score of 98.3% for variants found in ≥2 callers. For germline calls, `Strelka2`_, `VarScan 2`_ and `VarDict`_ calls were combined.
+         Additional annotations are incorporated to the SNV calls using `dbNSFP`_ and/or `Gemini`_, and QC metrics are collected at various stages and visualized using `MultiQC`_. 
 
-Similarly, SVs were identified using multiple callers such as `Delly`_, `Manta`_ `Lumpy`_, `WHAM`_, and `CNVKit`_ using `MetaSV`_ to achieve a sensitivity of 84.6%, precision of 92.4%, and F1 score of 88.3% for duplication variants found in the DREAM3 dataset. The pipeline also integrates specific cancer tools to estimate tumor purity and tumor ploidy of sample pair normal−tumor using `Sequenza`_ and `PURPLE`_.  
+         GenPipes Tumor Pair pipeline has three protocol options: sv, ensemble (default), and fastpass.  For details refer to `Pipeline Schema <Pipeline Schema>` section below. 
 
-Additional annotations are incorporated to the SNV calls using `dbNSFP`_ and/or `Gemini`_, and QC metrics are collected at various stages and visualized using `MultiQC`_. 
+      .. tab:: Usage
 
-GenPipes Tumor Pair pipeline has three protocol options: sv, ensemble (default), and fastpass.  For details refer to `Pipeline Schema`_ section below. 
+         .. code::
 
-----
+            python tumor_pair.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
+                                 [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
+                                 [--no-json] [--report] [--clean]
+                                 [-l {debug,info,warning,error,critical}] [--sanity-check]
+                                 [--container] {wrapper, singularity} <IMAGE PATH>
+                                 [--genpipes_file GENPIPES_FILE]
+                                 [-p PAIRS] [-t {sv,ensemble (default) ,fastpass}] [-r READSETS] [-v]
 
-Version
--------
 
-|genpipes_version|
+         .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
-For the latest implementation and usage details refer to Tumor Pair Pipeline implementation `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/tumor_pair/README.md>`_ file.
+      .. tab:: Options
 
-----
 
-Usage
------
+         .. include:: opt_tumorpair.inc
+         .. include:: /common/gp_readset_opt.inc
+         .. include:: /common/gp_common_opt.inc
 
-::
+         .. admonition::  -t fastpass
 
-  python tumor_pair.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
-                     [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
-                     [--no-json] [--report] [--clean]
-                     [-l {debug,info,warning,error,critical}] [--sanity-check]
-                     [--container] {wrapper, singularity} <IMAGE PATH>
-                     [--genpipes_file GENPIPES_FILE]
-                     [-p PAIRS] [-t {sv,ensemble (default) ,fastpass}] [-r READSETS] [-v] 
+            The fastpass option in tumor_pair.py pipeline is meant for quick assessment using exome capture regions and the 1000bp flanking regions. The somatic/germline calls are made using one variant caller `VarScan 2`_ with permissive variant calling thresholds.
 
-**Optional Arguments**
+         .. admonition:: -p option
 
-.. include:: opt_tumorpair.inc
-.. include:: /common/gp_readset_opt.inc
-.. include:: /common/gp_common_opt.inc
+               The pairs file specified along with -p option has the following format:
+         
+               <patient_name>,<normal_sample_name>,<tumor_sample_name>
 
-.. note::  **About -t fastpass option**
+               For example:
 
-     The fastpass option in tumor_pair.py pipeline is meant for quick assessment using exome capture regions and the 1000bp flanking regions. The somatic/germline calls are made using one variant caller `VarScan 2`_ with permissive variant calling thresholds.
+               ::
 
-.. note::  **-p option Pairs File Format**
+                  tumorPair_CEPHmixture_chr19,tumorPair_CEPHmixture_chr19_normal,tumorPair_CEPHmixture_chr19_tumor
 
-      The pairs file specified along with -p option has the following format:
-  
-      <patient_name>,<normal_sample_name>,<tumor_sample_name>
+      .. tab:: Example Run
 
-      For example:
+         Use the following commands to execute Tumor Pair pipeline:
 
-      ::
-
-         tumorPair_CEPHmixture_chr19,tumorPair_CEPHmixture_chr19_normal,tumorPair_CEPHmixture_chr19_tumor
-
-You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
-
-----
-
-Example Run
------------
-
-Use the following commands to execute Tumor Pair pipeline:
-
-.. include::  /user_guide/pipelines/example_runs/tumor_pair.inc
-
-.. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
-
-----
-
-Pipeline Schema
----------------
-
-There are three options for Tumor Pair Pipeline: sv, ensemble(default) and fastpass.
-
-Figure below shows the schema of the Tumor Pair Pipeline (sv) option. See here to download a high resolution image of `Tumor Pair Sequencing Pipeline (sv) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_sv.png>`_ to download a high resolution image of the same.
-
-.. figure:: /img/pipelines/mmd/tumor_pair.sv.png
-   :align: center
-   :alt: tumor_pair_sv schema
-   :width: 100%
-   :figwidth: 95%
-
-   Figure: Schema of Tumor Pair Pipeline (sv)
-
-Figure below shows the schema of the Tumor Pair Pipeline (ensemble) option. See here to download a high resolution image of `Tumor Pair Sequencing Pipeline (ensemble) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_ensemble.png>`_ to download a high resolution image of the same.
-
-.. figure:: /img/pipelines/mmd/tumor_pair.ensemble.png
-   :align: center
-   :alt: tumor_pair_ensemble schema
-   :width: 100%
-   :figwidth: 95%
-
-   Figure: Schema of Tumor Pair Pipeline (ensemble)
-
-Figure below shows the schema of the Tumor Pair Pipeline (fastpass) option. See here to download a high resolution image of `Tumor Pair Sequencing Pipeline (fastpass) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_fastpass.png>`_ to download a high resolution image of the same.
-
-.. figure:: /img/pipelines/mmd/tumor_pair.fastpass.png
-   :align: center
-   :alt: tumor_pair_fastpass schema
-   :width: 100%
-   :figwidth: 95%
-
-   Figure: Schema of Tumor Pair Pipeline (fastpass)
-
-----
-
-Pipeline Steps
---------------
-
-The table below shows various steps that constitute the Tumor Pair Pipeline.
-
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-|    | *Fastpass Tumor Pair Pipeline Steps*    | *Ensemble Tumor Pair Pipeline Steps*  | *SV Tumor Pair Pipeline Steps*  |
-+====+=========================================+=======================================+=================================+
-| 1. | |picard_sam_to_fastq|                   | |picard_sam_to_fastq|                 | |picard_sam_to_fastq|           |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 2. | |skewer_trim|                           | |skewer_trim|                         | |skewer_trim|                   |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 3. | |bwa_mem_sambamba_sort_sam|             | |bwa_mem_sambamba_sort_sam|           | |bwa_mem_sambamba_sort_sam|     |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 4. | |sambamba_sort|                         | |sambamba_sort|                       | |sambamba_sort|                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 5. | |sambamba_merge_sam_files|              | |sambamba_merge_sam_files|            | |sambamba_merge_sam_files|      |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 6. | |gatk_indel_realigner|                  | |gatk_indel_realigner|                | |gatk_indel_realigner|          |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 7. | |sambamba_merge_realigned|              | |sambamba_merge_realigned|            | |sambamba_merge_realigned|      |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 8. | |sambamba_mark_duplicates|              | |sambamba_mark_duplicates|            | |sambamba_mark_duplicates|      |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 9. | |recalibration|                         | |recalibration|                       | |recalibration|                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 10.| |manta_sv_calls|                        | |conpair_concordance_contamination|   | |manta_sv_calls|                |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 11.| |rawmpileup_panel|                      | |metrics_dna_picard_metrics|          | |strelka2_paired_somatic|       |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 12.| |paired_varscan2_panel|                 | |metrics_dna_sample_qualimap|         | |gridss_paired_somatic|         |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 13.| |merge_varscan2_panel|                  | |metrics_dna_fastqc|                  | |purple_sv|                     |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 14.| |preprocess_vcf_panel|                  | |sequenza|                            | |linx_annotations_somatic|      |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 15.| |snp_effect_panel|                      | |strelka2_paired_somatic|             | |linx_annotations_germline|     |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 16.| |gemini_annotations_panel|              | |strelka2_paired_germline|            | |linx_plot|                     |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 17.| |conpair_concordance_contamination|     | |strelka2_paired_germline_snpEff|     |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 18.| |metrics_dna_picard_metrics|            | |purple|                              |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 19.| |metrics_dna_sample_qualimap|           | |rawmpileup|                          |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 20.| |metrics_dna_fastqc|                    | |paired_varscan2|                     |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 21.| |sequenza|                              | |merge_varscan2|                      |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 22.| |run_pair_multiqc|                      | |paired_mutect2|                      |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 23.| |sym_link_report|                       | |merge_mutect2|                       |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 24.| |sym_link_fastq_pair|                   | |vardict_paired|                      |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 25.| |sym_link_panel|                        | |merge_filter_paired_vardict|         |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 26.|                                         | |ensemble_somatic|                    |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 27.|                                         | |gatk_variant_annotator_somatic|      |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 28.|                                         | |merge_gatk_variant_annotator_somatic||                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 29.|                                         | |ensemble_germline_loh|               |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 30.|                                         | |gatk_variant_annotator_germline|     |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 31.|                                         | |filter_ensemble_somatic|             |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 32.|                                         | |report_cpsr|                         |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 33.|                                         | |report_pcgr|                         |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 34.|                                         | |run_pair_multiqc|                    |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 35.|                                         | |sym_link_fastq_pair|                 |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 36.|                                         | |sym_link_final_bam|                  |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 37.|                                         | |sym_link_report|                     |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-| 38.|                                         | |sym_link_ensemble|                   |                                 |
-+----+-----------------------------------------+---------------------------------------+---------------------------------+
-
-----
-
-.. include:: steps_tumor_pair.inc
-
-----
+         .. include::  /user_guide/pipelines/example_runs/tumor_pair.inc
+
+         You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
+
+      .. tab:: Schema
+         :name: Pipeline Schema
+
+         There are three options for Tumor Pair Pipeline: sv, ensemble(default) and fastpass.
+
+         .. tabs::
+
+            .. tab:: SV
+
+               .. figure:: /img/pipelines/mmd/tumor_pair.sv.png
+                  :align: center
+                  :alt: tumor_pair_sv schema
+                  :width: 100%
+                  :figwidth: 95%
+
+                  Figure: Schema of Tumor Pair Pipeline (sv)
+
+               `Click for a high resolution image of Tumor Pair Sequencing Pipeline (sv) schema <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_sv.png>`_.
+
+            .. tab:: Ensemble
+
+               .. figure:: /img/pipelines/mmd/tumor_pair.ensemble.png
+                  :align: center
+                  :alt: tumor_pair_ensemble schema
+                  :width: 100%
+                  :figwidth: 95%
+
+                  Figure: Schema of Tumor Pair Pipeline (ensemble)
+
+               `Click for a high resolution image of Tumor Pair Sequencing Pipeline (ensemble) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_ensemble.png>`_.
+
+            .. tab:: Fastpass
+
+               .. figure:: /img/pipelines/mmd/tumor_pair.fastpass.png
+                  :align: center
+                  :alt: tumor_pair_fastpass schema
+                  :width: 100%
+                  :figwidth: 95%
+
+                  Figure: Schema of Tumor Pair Pipeline (fastpass)
+
+               `Click for a high resolution image of Tumor Pair Sequencing Pipeline (fastpass) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_fastpass.png>`_.
+
+      .. tab:: Steps
+
+         The table below shows various steps that constitute the Tumor Pair Pipeline.
+
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         |    | *Fastpass*                              | *Ensemble*                            | *SV*                            |
+         +====+=========================================+=======================================+=================================+
+         | 1. | |picard_sam_to_fastq|                   | |picard_sam_to_fastq|                 | |picard_sam_to_fastq|           |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 2. | |skewer_trim|                           | |skewer_trim|                         | |skewer_trim|                   |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 3. | |bwa_mem_sambamba_sort_sam|             | |bwa_mem_sambamba_sort_sam|           | |bwa_mem_sambamba_sort_sam|     |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 4. | |sambamba_sort|                         | |sambamba_sort|                       | |sambamba_sort|                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 5. | |sambamba_merge_sam_files|              | |sambamba_merge_sam_files|            | |sambamba_merge_sam_files|      |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 6. | |gatk_indel_realigner|                  | |gatk_indel_realigner|                | |gatk_indel_realigner|          |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 7. | |sambamba_merge_realigned|              | |sambamba_merge_realigned|            | |sambamba_merge_realigned|      |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 8. | |sambamba_mark_duplicates|              | |sambamba_mark_duplicates|            | |sambamba_mark_duplicates|      |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 9. | |recalibration|                         | |recalibration|                       | |recalibration|                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 10.| |manta_sv_calls|                        | |conpair_concordance_contamination|   | |manta_sv_calls|                |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 11.| |rawmpileup_panel|                      | |metrics_dna_picard_metrics|          | |strelka2_paired_somatic|       |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 12.| |paired_varscan2_panel|                 | |metrics_dna_sample_qualimap|         | |gridss_paired_somatic|         |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 13.| |merge_varscan2_panel|                  | |metrics_dna_fastqc|                  | |purple_sv|                     |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 14.| |preprocess_vcf_panel|                  | |sequenza|                            | |linx_annotations_somatic|      |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 15.| |snp_effect_panel|                      | |strelka2_paired_somatic|             | |linx_annotations_germline|     |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 16.| |gemini_annotations_panel|              | |strelka2_paired_germline|            | |linx_plot|                     |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 17.| |conpair_concordance_contamination|     | |strelka2_paired_germline_snpEff|     |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 18.| |metrics_dna_picard_metrics|            | |purple|                              |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 19.| |metrics_dna_sample_qualimap|           | |rawmpileup|                          |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 20.| |metrics_dna_fastqc|                    | |paired_varscan2|                     |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 21.| |sequenza|                              | |merge_varscan2|                      |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 22.| |run_pair_multiqc|                      | |paired_mutect2|                      |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 23.| |sym_link_report|                       | |merge_mutect2|                       |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 24.| |sym_link_fastq_pair|                   | |vardict_paired|                      |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 25.| |sym_link_panel|                        | |merge_filter_paired_vardict|         |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 26.|                                         | |ensemble_somatic|                    |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 27.|                                         | |gatk_variant_annotator_somatic|      |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 28.|                                         | |merge_gatk_variant_annotator_somatic||                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 29.|                                         | |ensemble_germline_loh|               |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 30.|                                         | |gatk_variant_annotator_germline|     |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 31.|                                         | |filter_ensemble_somatic|             |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 32.|                                         | |report_cpsr|                         |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 33.|                                         | |report_pcgr|                         |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 34.|                                         | |run_pair_multiqc|                    |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 35.|                                         | |sym_link_fastq_pair|                 |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 36.|                                         | |sym_link_final_bam|                  |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 37.|                                         | |sym_link_report|                     |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+         | 38.|                                         | |sym_link_ensemble|                   |                                 |
+         +----+-----------------------------------------+---------------------------------------+---------------------------------+
+
+         .. include:: steps_tumor_pair.inc
 
 .. _More Information on Tumor Pair Pipeline:
 
@@ -276,7 +260,6 @@ For the latest implementation and usage details see `pipeline implementation <ht
 * MuTect2 Tool for calling somatic SNVs and indels via local assembly of haplotypes - `See here <https://gatk.broadinstitute.org/hc/en-us/articles/360037593851-Mutect2>`_.
 
 * A `three-caller pipeline <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5428716/>`_ for variant analysis of cancer whole-exome sequencing data. 
-
 
 .. Following are the replacement texts used in this file
 
@@ -362,3 +345,4 @@ For the latest implementation and usage details see `pipeline implementation <ht
 .. _Sequenza: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4269342/
 .. _Manta: https://github.com/Illumina/manta
 .. _Delly2: https://github.com/dellytools/delly
+.. _GridSS: https://github.com/PapenfussLab/gridss

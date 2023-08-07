@@ -49,6 +49,7 @@ extensions = [ 'sphinxcontrib.spelling',
                'sphinx.ext.autosectionlabel',
                'sphinx.ext.imgmath',
                'sphinx_tabs.tabs',
+               'sphinx_togglebutton',
 ]
 
 # Configure autosectionlabel extension
@@ -127,6 +128,10 @@ html_theme_options = {
 	'display_version': True,
 #        'style_nav_header_background': '#1d75c8',
 }
+
+html_css_files = [
+    'css/custom.css',
+]
 
 #linkcheck configuration settings
 
