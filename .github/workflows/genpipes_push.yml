@@ -9,15 +9,15 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
-        python-version: 3.10
+        python-version: 3.11.4
     - name: Install Dependencies
       run: |
           brew update
           brew upgrade
           brew install enchant
           brew install mermaid-cli
-          python -m pip install --upgrade pip
-          pip install -r docs/requirements.txt
+          python3 -m pip3 install --upgrade pip3
+          pip3 install -r docs/requirements.txt
     - name: Sphinx build
       run: |
           val=`ls -alth`
