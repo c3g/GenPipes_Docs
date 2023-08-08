@@ -50,6 +50,7 @@ extensions = [ 'sphinxcontrib.spelling',
                'sphinx.ext.imgmath',
                'sphinx_tabs.tabs',
                'sphinx_togglebutton',
+               'sphinx_design',
 ]
 
 # Configure autosectionlabel extension

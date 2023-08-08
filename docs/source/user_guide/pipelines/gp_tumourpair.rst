@@ -21,35 +21,33 @@ Tumor Pair Sequencing Pipeline
 
 Version: |genpipes_version| 
 
-.. admonition:: **Reporting System Changes**
+.. dropdown:: **Reporting System Changes**
 
-    .. container:: toggle, toggle-hidden
+    From the GenPipes Release 4.2.0, the Tumor Pair pipeline reporting system has changed from `GEMINI Framework <https://gemini.readthedocs.io/en/latest/>`_ to `PCGR <https://sigven.github.io/pcgr/>`_/`CPSR <https://sigven.github.io/cpsr/index.html>`_ reporting.
 
-         From the GenPipes Release 4.2.0, the Tumor Pair pipeline reporting system has changed from `GEMINI Framework <https://gemini.readthedocs.io/en/latest/>`_ to `PCGR <https://sigven.github.io/pcgr/>`_/`CPSR <https://sigven.github.io/cpsr/index.html>`_ reporting.
+    PCGR interprets primarily somatic SNVs/InDels and copy number aberrations. The software extends basic gene and variant annotations from the Ensembl's Variant Effect Predictor (VEP) with oncology-relevant, up-to-date annotations retrieved flexibly through vcfanno, and produces interactive HTML reports intended for clinical interpretation. 
 
-         PCGR interprets primarily somatic SNVs/InDels and copy number aberrations. The software extends basic gene and variant annotations from the Ensembl's Variant Effect Predictor (VEP) with oncology-relevant, up-to-date annotations retrieved flexibly through vcfanno, and produces interactive HTML reports intended for clinical interpretation. 
+    PCGR performs multiple types of analysis, including:
 
-         PCGR performs multiple types of analysis, including:
+      * Somatic variant classification (ACMG/AMP)
 
-         * Somatic variant classification (ACMG/AMP)
+      * mapping the therapeutic and prognostic implications of somatic DNA aberrations
 
-         * mapping the therapeutic and prognostic implications of somatic DNA aberrations
+      * Tumor mutational burden (TMB) estimation
 
-         * Tumor mutational burden (TMB) estimation
+      * Tumor-only analysis (variant filtering)
 
-         * Tumor-only analysis (variant filtering)
+      * Mutational signature analysis
 
-         * Mutational signature analysis
+      * Kataegis detection
 
-         * Kataegis detection
+      * Micro-satellite instability (MSI) classification
 
-         * Micro-satellite instability (MSI) classification
+    The accompanying tool CPSR is used to interrogate germline variants and their relation to cancer predisposition. 
 
-         The accompanying tool CPSR is used to interrogate germline variants and their relation to cancer predisposition. 
+.. tab-set:: 
 
-.. tabs:: 
-
-      .. tab:: About
+      .. tab-item:: About
 
          Tumor Pair pipeline helps in inferring the cancer cell copy number to normal cell copy number.
 
@@ -75,9 +73,9 @@ Version: |genpipes_version|
 
          Additional annotations are incorporated to the SNV calls using `dbNSFP`_ and/or `Gemini`_, and QC metrics are collected at various stages and visualized using `MultiQC`_. 
 
-         GenPipes Tumor Pair pipeline has three protocol options: sv, ensemble (default), and fastpass.  For details refer to `Pipeline Schema <Pipeline Schema>` section below. 
+         GenPipes Tumor Pair pipeline has three protocol options: sv, ensemble (default), and fastpass.  For details refer to the :ref:`Tumor Pair Schema <tpschema>` tab. 
 
-      .. tab:: Usage
+      .. tab-item:: Usage
 
          .. code::
 
@@ -92,7 +90,7 @@ Version: |genpipes_version|
 
          .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
-      .. tab:: Options
+      .. tab-item:: Options
 
 
          .. include:: opt_tumorpair.inc
@@ -115,7 +113,7 @@ Version: |genpipes_version|
 
                   tumorPair_CEPHmixture_chr19,tumorPair_CEPHmixture_chr19_normal,tumorPair_CEPHmixture_chr19_tumor
 
-      .. tab:: Example Run
+      .. tab-item:: Example Run
 
          Use the following commands to execute Tumor Pair pipeline:
 
@@ -123,14 +121,14 @@ Version: |genpipes_version|
 
          You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 
-      .. tab:: Schema
-           :name: Pipeline Schema
+      .. tab-item:: Schema
+         :name: tpschema
 
          There are three options for Tumor Pair Pipeline: sv, ensemble(default) and fastpass.
 
-         .. tabs::
+         .. tab-set::
 
-            .. tab:: SV
+            .. tab-item:: SV
 
                .. figure:: /img/pipelines/mmd/tumor_pair.sv.png
                   :align: center
@@ -142,7 +140,7 @@ Version: |genpipes_version|
 
                `Click for a high resolution image of Tumor Pair Sequencing Pipeline (sv) schema <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_sv.png>`_.
 
-            .. tab:: Ensemble
+            .. tab-item:: Ensemble
 
                .. figure:: /img/pipelines/mmd/tumor_pair.ensemble.png
                   :align: center
@@ -154,7 +152,7 @@ Version: |genpipes_version|
 
                `Click for a high resolution image of Tumor Pair Sequencing Pipeline (ensemble) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_ensemble.png>`_.
 
-            .. tab:: Fastpass
+            .. tab-item:: Fastpass
 
                .. figure:: /img/pipelines/mmd/tumor_pair.fastpass.png
                   :align: center
@@ -166,7 +164,7 @@ Version: |genpipes_version|
 
                `Click for a high resolution image of Tumor Pair Sequencing Pipeline (fastpass) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_fastpass.png>`_.
 
-      .. tab:: Steps
+      .. tab-item:: Steps
 
          The table below shows various steps that constitute the Tumor Pair Pipeline.
 
