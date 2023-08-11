@@ -128,33 +128,9 @@ Version: |genpipes_version|
 
          .. tab-set::
 
-            .. tab-item:: SV
-
-               .. figure:: /img/pipelines/mmd/tumor_pair.sv.png
-                  :align: center
-                  :alt: tumor_pair_sv schema
-                  :width: 100%
-                  :figwidth: 95%
-
-                  Figure: Schema of Tumor Pair Pipeline (sv)
-
-               `Click for a high resolution image of Tumor Pair Sequencing Pipeline (sv) schema <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_sv.png>`_.
-
-            .. tab-item:: Ensemble
-
-               .. figure:: /img/pipelines/mmd/tumor_pair.ensemble.png
-                  :align: center
-                  :alt: tumor_pair_ensemble schema
-                  :width: 100%
-                  :figwidth: 95%
-
-                  Figure: Schema of Tumor Pair Pipeline (ensemble)
-
-               `Click for a high resolution image of Tumor Pair Sequencing Pipeline (ensemble) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_ensemble.png>`_.
-
             .. tab-item:: Fastpass
 
-               .. figure:: /img/pipelines/mmd/tumor_pair.fastpass.png
+               .. figure:: /img/pipelines/mmd/tumor_pair.fastpass.mmd.png
                   :align: center
                   :alt: tumor_pair_fastpass schema
                   :width: 100%
@@ -162,7 +138,49 @@ Version: |genpipes_version|
 
                   Figure: Schema of Tumor Pair Pipeline (fastpass)
 
+               .. figure:: /img/pipelines/mmd/legend.mmd.png
+                  :align: center
+                  :alt: dada2 ampseq
+                  :width: 100%
+                  :figwidth: 75%
+
                `Click for a high resolution image of Tumor Pair Sequencing Pipeline (fastpass) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_fastpass.png>`_.
+
+            .. tab-item:: Ensemble
+
+               .. figure:: /img/pipelines/mmd/tumor_pair.ensemble.mmd.png
+                  :align: center
+                  :alt: tumor_pair_ensemble schema
+                  :width: 100%
+                  :figwidth: 95%
+
+                  Figure: Schema of Tumor Pair Pipeline (ensemble)
+
+               .. figure:: /img/pipelines/mmd/legend.mmd.png
+                  :align: center
+                  :alt: dada2 ampseq
+                  :width: 100%
+                  :figwidth: 75%
+
+               `Click for a high resolution image of Tumor Pair Sequencing Pipeline (ensemble) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_ensemble.png>`_.
+
+            .. tab-item:: SV
+
+               .. figure:: /img/pipelines/mmd/tumor_pair.sv.mmd.png
+                  :align: center
+                  :alt: tumor_pair_sv schema
+                  :width: 100%
+                  :figwidth: 95%
+
+                  Figure: Schema of Tumor Pair Pipeline (sv)
+
+               .. figure:: /img/pipelines/mmd/legend.mmd.png
+                  :align: center
+                  :alt: dada2 ampseq
+                  :width: 100%
+                  :figwidth: 75%
+                  
+               `Click for a high resolution image of Tumor Pair Sequencing Pipeline (sv) schema <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_sv.png>`_.
 
       .. tab-item:: Steps
 
