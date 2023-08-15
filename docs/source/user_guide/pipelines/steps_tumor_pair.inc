@@ -135,9 +135,9 @@ In this step, quality controlling metrics are generated on the read level using 
 
 `Strelka2`_ is a fast and accurate small variant caller optimized for analysis of germline variation in small cohorts and somatic variation in tumor/normal sample pairs This implementation is optimized for germline calling in cancer pairs.
 
-.. _Purple Step:
+.. _Purple Ploidy Estimator:
 
-**Purple Step**
+**Purple Ploidy Estimator**
 
 `Purple`_ is a purity ploidy estimator for whole genome sequenced (WGS) data. It combines B-allele frequency (BAF) from `AMBER`_, read depth ratios from `COBALT`_, somatic variants and structural variants to estimate the purity and copy number profile of a tumor sample.
 
@@ -216,9 +216,9 @@ Variant effect annotation. The .vcf files are annotated for variant effects usin
 
 This step performs additional Single Nucleotide Variants (SVN) annotations. It provides extra information about SVN by using numerous published databases. This is applicable to human samples. Databases that are available include `Biomart`_ (adds GO annotations based on gene information) and `dbNSFP`_ (an integrated database of functional annotations from multiple sources for the comprehensive collection of human non-synonymous SNPs. It compiles prediction scores from four prediction algorithms (`SIFT`_, `Polyphen2`_, LRT and `MutationTaster`_), three conservation scores (`PhyloP`_, `GERP++`_ and `SiPhy`_) and other function annotations).
 
-.. _Sample Gemini ANnotations Somatic:
+.. _Sample Gemini Annotations Somatic:
 
-**Sample Gemini ANnotations Somatic**
+**Sample Gemini Annotations Somatic**
 
 This step loads functionally annotated .vcf file into a MySQL lite annotation database - `Gemini`_.
 
@@ -513,41 +513,37 @@ Creates a `CPSR Germline Report`_ where input is the filtered ensemble germline 
 
 .. _Report PCGR:
 
-** Report PCGR**
+**Report PCGR**
 
 Creates a `PCGR Somatic Germline Report`_ where input is the filtered ensemble germline vcf and the output is the html report and additional flat files.
 
-.. include:: steps_dnaseq_common.inc
+.. _GRIDSS Paired Somatic:
 
-.. _Purple SV:
+**GRIDSS Paired Somatic**
 
-**Purple SV**
-
-TBD
+`GRIDSS <https://github.com/PapenfussLab/gridss>`_ is a module software suite containing tools useful for the detection of genomic rearrangements. GRIDSS includes a genome-wide break-end assembler, as well as a structural variation caller for Illumina sequencing data. GRIDSS calls variants based on alignment-guided positional de Bruijn graph genome-wide break-end assembly, split read, and read pair evidence.
 
 .. _Linx Annotations Somatic:
 
 **Linx Annotations Somatic**
 
-TBD
+The `LINX`_ algorithm classifies somatic structural variation in tumors. It is an annotation, interpretation and visualisation tool for structural variants. The primary function is grouping together individual SV calls into distinct events and properly classify and annotating the event to understand both its mechanism and genomic impact.
+
+LINX helps in the interpretation of structural variant and copy number data derived from short-read, whole-genome sequencing. It classifies raw structural variant calls into distinct events and predicts their effect on the local structure of the derivative chromosome and the functional impact on affected genes. Visualizations facilitate further investigation of complex rearrangements. LINX allows insights into a diverse range of structural variation events and can reliably detect pathogenic rearrangements, including gene fusions, immunoglobulin enhancer rearrangements, intragenic deletions, and duplications. 
 
 .. _Linx Annotations Germline:
 
 **Linx Annotations Germline**
 
-TBD
+Though `LINX`_ is designed primarily for somatic SV, it can also be run in a more limited germline mode to annotate and interpret germline rearrangements
 
 .. _Linx Plot:
 
 **Linx Plot**
 
-TBD
+`LINX`_ Plot offers visualisation methods that provide insight into complex genomic rearrangements. It leverages the integrated structural variant and copy number calling to cluster individual structural variants into higher order events and chains them together to predict local derivative chromosome structure.
 
-.. _GridSS Paired Somatic:
-
-**GridSS Paired Somatic**
-
-TBD
+.. include:: steps_dnaseq_common.inc
 
 .. Html links 
 
@@ -591,3 +587,4 @@ TBD
 .. _MetaSV Tool: https://academic.oup.com/bioinformatics/article/31/16/2741/321286
 .. _logR Signal: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6778654/
 .. _Biomart: https://m.ensembl.org/info/data/biomart/index.html
+.. _LINX: https://github.com/hartwigmedical/hmftools/blob/master/linx/README.md

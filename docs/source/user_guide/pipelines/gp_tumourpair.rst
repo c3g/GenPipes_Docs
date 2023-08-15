@@ -69,7 +69,7 @@ Version: |genpipes_version|
 
          The pipeline is based on an ensemble approach, which was optimized using both the `DREAM3 challenge`_ and the CEPH mixture datasets to select the best combination of callers for both SNV and structural variation detection. For SNVs, multiple callers such as `GATK MuTect2`_, `Strelka2`_, `VarScan 2`_, and `VarDict`_ were combined for somatic calls to achieve a sensitivity of 98.1%, precision of 98.4%, and F1 score of 98.3% for variants found in ≥2 callers. For germline calls, `Strelka2`_, `VarScan 2`_ and `VarDict`_ calls were combined.
 
-         Similarly, SVs were identified using multiple callers such as `Strelka2`_, `GridSS`_ to achieve a sensitivity of 84.6%, precision of 92.4%, and F1 score of 88.3% for duplication variants found in the DREAM3 dataset. The pipeline also integrates specific cancer tools to estimate tumor purity and tumor ploidy of sample pair normal−tumor using `Sequenza`_ and `PURPLE`_.  
+         Similarly, SVs were identified using multiple callers such as `Strelka2`_, `GRIDSS`_ to achieve a sensitivity of 84.6%, precision of 92.4%, and F1 score of 88.3% for duplication variants found in the DREAM3 dataset. The pipeline also integrates specific cancer tools to estimate tumor purity and tumor ploidy of sample pair normal−tumor using `Sequenza`_ and `Purple`_.  
 
          Additional annotations are incorporated to the SNV calls using `dbNSFP`_ and/or `Gemini`_, and QC metrics are collected at various stages and visualized using `MultiQC`_. 
 
@@ -179,7 +179,7 @@ Version: |genpipes_version|
                   :alt: dada2 ampseq
                   :width: 100%
                   :figwidth: 75%
-                  
+
                `Click for a high resolution image of Tumor Pair Sequencing Pipeline (sv) schema <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_sv.png>`_.
 
       .. tab-item:: Steps
@@ -223,7 +223,7 @@ Version: |genpipes_version|
          +----+-----------------------------------------+---------------------------------------+---------------------------------+
          | 17.| |conpair_concordance_contamination|     | |strelka2_paired_germline_snpEff|     |                                 |
          +----+-----------------------------------------+---------------------------------------+---------------------------------+
-         | 18.| |metrics_dna_picard_metrics|            | |purple|                              |                                 |
+         | 18.| |metrics_dna_picard_metrics|            | |purple_sv|                           |                                 |
          +----+-----------------------------------------+---------------------------------------+---------------------------------+
          | 19.| |metrics_dna_sample_qualimap|           | |rawmpileup|                          |                                 |
          +----+-----------------------------------------+---------------------------------------+---------------------------------+
@@ -298,7 +298,7 @@ For the latest implementation and usage details see `pipeline implementation <ht
 .. |strelka2_paired_somatic| replace:: `Strelka2 Paired Somatic`_
 .. |strelka2_paired_germline| replace:: `Strelka2 Paired Germline`_
 .. |strelka2_paired_germline_snpEff| replace:: `Strelka2 Paired Germline SnpEff`_
-.. |purple| replace:: `Purple Step`_
+.. |purple_sv| replace:: `Purple Ploidy Estimator`_
 .. |rawmpileup| replace:: `Raw Mpileup`_
 .. |paired_varscan2| replace:: `Paired Var Scan 2`_
 .. |merge_varscan2| replace:: `Merge Var Scan 2`_
@@ -311,7 +311,7 @@ For the latest implementation and usage details see `pipeline implementation <ht
 .. |merge_gatk_variant_annotator_somatic| replace:: `Merge GATK Variant Annotator Somatic`_
 .. |compute_cancer_effects_somatic| replace:: `Compute Cancer Efects Somatic`_
 .. |ensemble_somatic_dbnsfp_annotation| replace:: `Ensemble Somatic dbNSFP Annotation`_
-.. |sample_gemini_annotations_somatic| replace:: `Sample Gemini ANnotations Somatic`_
+.. |sample_gemini_annotations_somatic| replace:: `Sample Gemini Annotations Somatic`_
 .. |ensemble_germline_loh| replace:: `Ensemble Germline Loh`_
 .. |gatk_variant_annotator_germline| replace:: `GATK Variant Annotator Germline`_
 .. |merge_gatk_variant_annotator_germline| replace:: `Merge GATK Variant Annotator Germline`_
@@ -334,8 +334,7 @@ For the latest implementation and usage details see `pipeline implementation <ht
 .. |sym_link_panel| replace:: `Sym Link Panel`_
 .. |report_cpsr| replace:: `Report CPSR`_
 .. |report_pcgr| replace:: `Report PCGR`_
-.. |gridss_paired_somatic| replace:: `GridSS Paired Somatic`_
-.. |purple_sv| replace:: `Purple SV`_
+.. |gridss_paired_somatic| replace:: `GRIDSS Paired Somatic`_
 .. |linx_annotations_somatic| replace:: `Linx Annotations Somatic`_
 .. |linx_annotations_germline| replace:: `Linx Annotations Germline`_
 .. |linx_plot| replace:: `Linx Plot`_
@@ -359,8 +358,8 @@ For the latest implementation and usage details see `pipeline implementation <ht
 .. _GATK MuTect2: https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_cancer_m2_MuTect2.php
 .. _Strelka2: https://github.com/Illumina/strelka
 .. _MultiQC: https://multiqc.info/docs/
-.. _PURPLE: https://github.com/hartwigmedical/hmftools/blob/master/purple/README.md
+.. _Purple: https://github.com/hartwigmedical/hmftools/blob/master/purple/README.md
 .. _Sequenza: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4269342/
 .. _Manta: https://github.com/Illumina/manta
 .. _Delly2: https://github.com/dellytools/delly
-.. _GridSS: https://github.com/PapenfussLab/gridss
+.. _GRIDSS: https://github.com/PapenfussLab/gridss
