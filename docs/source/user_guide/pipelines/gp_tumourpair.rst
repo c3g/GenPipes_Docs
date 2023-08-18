@@ -21,7 +21,8 @@ Tumor Pair Sequencing Pipeline
 
 Version: |genpipes_version| 
 
-.. dropdown:: **Reporting System Changes**
+.. dropdown:: :material-outlined:`report;2em` Reporting System Changes
+   :color: warning
 
     From the GenPipes Release 4.2.0, the Tumor Pair pipeline reporting system has changed from `GEMINI Framework <https://gemini.readthedocs.io/en/latest/>`_ to `PCGR <https://sigven.github.io/pcgr/>`_/`CPSR <https://sigven.github.io/cpsr/index.html>`_ reporting.
 

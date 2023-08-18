@@ -4,8 +4,8 @@
 
      metagenomics
 
-Get Involved with GenPipes
-==========================
+Getting Involved
+================
 
 GenPipes bioinformatics pipelines were originally developed at the Canadian Centre for Computational Genomics (C3G), as part of the GenAP project. These, are now available for public use. GenPipes includes a wide array of :ref:`pipelines<docs_pipeline_ref>`, including RNA-Seq, ChIP-Seq, WGS, exome sequencing, Bisulfite sequencing, Hi-C, capture Hi-C, metagenomics and the latest SARS-CoV-2 genome sequencing pipeline.
 
