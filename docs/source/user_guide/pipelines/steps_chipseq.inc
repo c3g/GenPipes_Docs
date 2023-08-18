@@ -11,11 +11,6 @@
      intron
      introns
 
-Step Details
--------------
-
-Following are the various steps that are part of GenPipes ChIP-Seq genomic analysis pipeline:
-
 .. _Picard Sam to Fastq:
 
 **Picard Sam to Fastq**

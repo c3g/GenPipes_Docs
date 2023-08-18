@@ -19,7 +19,7 @@
 Tumor Pair Sequencing Pipeline
 ================================
 
-Version: |genpipes_version| 
+:bdg-primary:`Version` |genpipes_version|
 
 .. dropdown:: :material-outlined:`report;2em` Reporting System Changes
    :color: warning
@@ -279,7 +279,7 @@ Version: |genpipes_version|
 More information
 -----------------
 
-For the latest implementation and usage details see `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/tumor_pair/>`_.
+For the latest implementation and usage details see `pipeline implementation README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/tumor_pair/>`_.
 
 * MuTect2 Tool for calling somatic SNVs and indels via local assembly of haplotypes - `See here <https://gatk.broadinstitute.org/hc/en-us/articles/360037593851-Mutect2>`_.
 

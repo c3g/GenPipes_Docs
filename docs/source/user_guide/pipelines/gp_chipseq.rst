@@ -9,166 +9,161 @@
    nucleosome
    atac
 
-ChIP Sequencing Pipeline
+ChIP Sequencing Pipeline  
 ========================
 
-Chromatin Immunoprecipitation (ChIP) sequencing technique is used for mapping DNA-protein interactions. It is a powerful method for identifying genome-wide DNA binding sites for transcription factors and other proteins. The ChIP-Seq workflow is based on the `ENCODE Project`_ workflow. It aligns reads using the `Burrows-Wheeler Aligner`_. It creates tag directories using `Homer routines`_. Peaks are called using `Model based Analysis for Chip Sequencing (MACS2)`_ and annotated using Homer. Binding motifs are also identified using Homer. Metrics are calculated based on `IHEC requirements`_. The ChIP-Seq pipeline can also be used for assay for transposase-accessible chromatin using sequencing (ATAC-Seq) samples. At GenPipes, we are developing a pipeline that is specific to `ATAC-Seq`_.
+:bdg-primary:`Version` |genpipes_version|
 
-.. contents:: :local:
+.. tab-set:: 
 
-----
+      .. tab-item:: About
 
-Introduction
-------------
+         .. card::
 
-ChIP-Seq experiments allows the isolation and sequencing of genomic DNA bound by a specific transcription factor, covalently modified histone, or other nuclear protein. The pipeline starts by trimming adapters and low quality bases and mapping the reads (single end or paired end ) to a reference genome using `Burrows-Wheeler Aligner`_ (BWA). Reads are filtered by mapping quality and duplicate reads are marked. Then, Homer quality control routines are used to provide information and feedback about the quality of the experiment. Peak calls is executed by MACS and annotation and motif discovery for narrow peaks are executed using Homer. Statistics of annotated peaks are produced for narrow peaks and a standard report is generated.
+            Chromatin Immunoprecipitation (ChIP) sequencing technique is used for mapping DNA-protein interactions. It is a powerful method for identifying genome-wide DNA binding sites for transcription factors and other proteins. The ChIP-Seq workflow is based on the `ENCODE Project`_ workflow. It aligns reads using the `Burrows-Wheeler Aligner`_. It creates tag directories using `Homer routines`_. Peaks are called using `Model based Analysis for Chip Sequencing (MACS2)`_ and annotated using Homer. Binding motifs are also identified using Homer. Metrics are calculated based on `IHEC requirements`_. The ChIP-Seq pipeline can also be used for assay for transposase-accessible chromatin using sequencing (ATAC-Seq) samples. At GenPipes, we are developing a pipeline that is specific to `ATAC-Seq`_.
 
-For more details, see `ChIP-Seq Guidelines`_, and  `MUGQIC_Bioinfo_Chip-Seq.pptx`_.
+      .. tab-item:: Usage
 
-----
+         .. dropdown:: Command
 
-Version
--------
+            .. code::
 
-|genpipes_version|
+               chipseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
+                                 [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
+                                 [--no-json] [--report] [--clean]
+                                 [-l {debug,info,warning,error,critical}] [--sanity-check]
+                                 [--container {wrapper, singularity} <IMAGE PATH>
+                                 [--genpipes_file GENPIPES_FILE]
+                                 [-d DESIGN] [-t {chipseq, atacseq}] [-r READSETS] [-v]
 
-For the latest implementation and usage details refer to Hi-C Sequencing implementation `ChIP-Seq Pipeline README`_ file.
+            .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
-----
+         .. dropdown:: Example Run
 
-Usage
------
+            Use the following commands to execute the Chipseq pipeline.
 
-::
+            .. include:: /user_guide/pipelines/example_runs/chipseq.inc
+            
+            The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get MUGQICexitStatus:0 or Exit_status=0. If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the job_output folder.
 
-  chipseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
-                  [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
-                  [--no-json] [--report] [--clean]
-                  [-l {debug,info,warning,error,critical}] [--sanity-check]
-                  [--container {wrapper, singularity} <IMAGE PATH>
-                  [--genpipes_file GENPIPES_FILE]
-                  [-d DESIGN] [-t {chipseq, atacseq}] [-r READSETS] [-v]
+            .. card:: Test Dataset
+               :link: docs_testdatasets
+               :link-type: ref
 
-**Optional Arguments**
+               You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.            
 
-.. include:: opt_chipseq.inc
-.. include:: /common/gp_design_opt.inc
-.. include:: /common/gp_readset_opt.inc
-.. include:: /common/gp_common_opt.inc
+         .. dropdown:: Options
 
-.. warning::
+            .. include:: opt_chipseq.inc
+            .. include:: /common/gp_design_opt.inc
+            .. include:: /common/gp_readset_opt.inc
+            .. include:: /common/gp_common_opt.inc
 
-     Please make sure you use the special :ref:`ChIPSeq Pipeline Readset file format<ref_example_chipseq_readset_file>` and not the general readset file format.
+      .. tab-item:: Schema
+         :name: chipschema
+
+         .. dropdown:: ChipSeq
+
+            .. figure:: /img/pipelines/mmd/chipseq.mmd.png
+               :align: center
+               :alt: ChIP-Seq schema
+               :figwidth: 95%
+               :width: 100%
+
+               Figure: Schema of ChIP Sequencing protocol
+
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: dada2 ampseq
+               :width: 100%
+               :figwidth: 75%
+
+         .. dropdown:: ATACSeq
+
+            .. figure:: /img/pipelines/mmd/chipseq.atac.mmd.png
+               :align: center
+               :alt: ChIP-Seq schema atacseq option
+               :figwidth: 95%
+               :width: 100%
+
+               Figure: Schema of ChIP Sequencing -t atacseq protocol
+
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: dada2 ampseq
+               :width: 100%
+               :figwidth: 75%
+
+      .. tab-item:: Steps
+
+         +----+---------------------------+--------------------------------------+
+         |    | ChIP Sequencing Steps     |    ChIP Sequencing (atacseq)         |
+         +====+===========================+======================================+
+         | 1. | |picard_sam_to_fastq|     | |picard_sam_to_fastq|                |
+         +----+---------------------------+--------------------------------------+
+         | 2. | |trimmomatic|             | |trimmomatic|                        |
+         +----+---------------------------+--------------------------------------+
+         | 3. | |merge_trimmomatic_stats| | |merge_trimmomatic_stats|            |
+         +----+---------------------------+--------------------------------------+
+         | 4. | |mapping_bwamem_sambamba| | |mapping_bwamem_sambamba|            |
+         +----+---------------------------+--------------------------------------+
+         | 5. | |sambamba_merge_bam|      | |sambamba_merge_bam|                 |
+         +----+---------------------------+--------------------------------------+
+         | 6. | |sambamba_mark_dup|       | |sambamba_mark_dup|                  | 
+         +----+---------------------------+--------------------------------------+
+         | 7. | |sambamba_view_filter|    | |sambamba_view_filter|               |
+         +----+---------------------------+--------------------------------------+
+         | 8. | |metrics|                 | |metrics|                            |
+         +----+---------------------------+--------------------------------------+
+         | 9. | |homer_make_tag_directory|| |homer_make_tag_directory|           |
+         +----+---------------------------+--------------------------------------+
+         | 10.| |qc_metrics|              | |qc_metrics|                         |
+         +----+---------------------------+--------------------------------------+
+         | 11.| |homer_make_ucsc_file|    | |homer_make_ucsc_file|               |
+         +----+---------------------------+--------------------------------------+
+         | 12.| |macs2_callpeak|          | |macs2_atacseq_callpeak|             |    
+         +----+---------------------------+--------------------------------------+
+         | 13.| |homer_annotate_peaks|    | |homer_annotate_peaks|               |
+         +----+---------------------------+--------------------------------------+
+         | 14.| |homer_find_motifs_genome|| |homer_find_motifs_genome|           |
+         +----+---------------------------+--------------------------------------+
+         | 15.| |annotation_graphs|       | |annotation_graphs|                  |
+         +----+---------------------------+--------------------------------------+
+         | 16.| |run_spp|                 | |run_spp|                            |
+         +----+---------------------------+--------------------------------------+
+         | 17.| |differential_binding|    | |ihec_metrics|                       |
+         +----+---------------------------+--------------------------------------+
+         | 18.| |ihec_metrics|            | |multiqc_report|                     |
+         +----+---------------------------+--------------------------------------+
+         | 19.| |multiqc_report|          | |cram_output|                        |
+         +----+---------------------------+                                      |
+         | 20.| |cram_output|             |                                      |
+         +----+---------------------------+--------------------------------------+
+
+         .. card::
+
+            .. include:: steps_chipseq.inc
+
+      .. tab-item:: Details
+
+         .. card::
+
+            ChIP-Seq experiments allows the isolation and sequencing of genomic DNA bound by a specific transcription factor, covalently modified histone, or other nuclear protein. The pipeline starts by trimming adapters and low quality bases and mapping the reads (single end or paired end ) to a reference genome using `Burrows-Wheeler Aligner`_ (BWA). Reads are filtered by mapping quality and duplicate reads are marked. Then, Homer quality control routines are used to provide information and feedback about the quality of the experiment. Peak calls is executed by MACS and annotation and motif discovery for narrow peaks are executed using Homer. Statistics of annotated peaks are produced for narrow peaks and a standard report is generated.
+
+            See `ChIP-Seq Guidelines`_, and  `MUGQIC_Bioinfo_Chip-Seq.pptx`_ for more information.
+
+.. dropdown:: :material-outlined:`report;2em` Chip Sequencing Design File
+   :color: warning
+
+   Please make sure you use the special :ref:`ChIPSeq Pipeline Readset file format<ref_example_chipseq_readset_file>` and not the general readset file format.
 
 .. _ref_chipseq_design_ff:
 
-.. include:: /user_guide/pipelines/design_fileformat/chipseq_design.inc
+.. dropdown:: :material-outlined:`settings;2em` Chip Sequencing Design File Format
+   :color: info
 
-Example Run
------------
-
-You can download `ChIP-Seq test dataset`_ and use the following command to execute the ChIP-Seq genomics pipeline:
-
-.. include:: /user_guide/pipelines/example_runs/chipseq.inc
-
-.. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
-
-The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get MUGQICexitStatus:0 or Exit_status=0. If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the job_output folder.
-
-----
-
-Pipeline Schema
----------------
-
-Figure below shows the schema of ChIP-Seq protocol. 
-
-.. figure:: /img/pipelines/mmd/chipseq.mmd.png
-   :align: center
-   :alt: ChIP-Seq schema
-   :figwidth: 95%
-   :width: 100%
-
-   Figure: Schema of ChIP Sequencing protocol
-
-.. figure:: /img/pipelines/mmd/legend.mmd.png
-   :align: center
-   :alt: dada2 ampseq
-   :width: 100%
-   :figwidth: 75%
-
-Following is the schema for the ChIP-Seq pipeline using the -t atacseq option:
-
-.. figure:: /img/pipelines/mmd/chipseq.atac.mmd.png
-   :align: center
-   :alt: ChIP-Seq schema atacseq option
-   :figwidth: 95%
-   :width: 100%
-
-   Figure: Schema of ChIP Sequencing -t atacseq protocol
-
-.. figure:: /img/pipelines/mmd/legend.mmd.png
-   :align: center
-   :alt: dada2 ampseq
-   :width: 100%
-   :figwidth: 75%
-
-----
-
-Pipeline Steps
----------------
-
-The table below shows various steps that constitute the ChIP sequencing pipeline:
-
-+----+---------------------------+--------------------------------------+
-|    | ChIP Sequencing Steps     |    ChIP Sequencing (atacseq)         |
-+====+===========================+======================================+
-| 1. | |picard_sam_to_fastq|     | |picard_sam_to_fastq|                |
-+----+---------------------------+--------------------------------------+
-| 2. | |trimmomatic|             | |trimmomatic|                        |
-+----+---------------------------+--------------------------------------+
-| 3. | |merge_trimmomatic_stats| | |merge_trimmomatic_stats|            |
-+----+---------------------------+--------------------------------------+
-| 4. | |mapping_bwamem_sambamba| | |mapping_bwamem_sambamba|            |
-+----+---------------------------+--------------------------------------+
-| 5. | |sambamba_merge_bam|      | |sambamba_merge_bam|                 |
-+----+---------------------------+--------------------------------------+
-| 6. | |sambamba_mark_dup|       | |sambamba_mark_dup|                  | 
-+----+---------------------------+--------------------------------------+
-| 7. | |sambamba_view_filter|    | |sambamba_view_filter|               |
-+----+---------------------------+--------------------------------------+
-| 8. | |metrics|                 | |metrics|                            |
-+----+---------------------------+--------------------------------------+
-| 9. | |homer_make_tag_directory|| |homer_make_tag_directory|           |
-+----+---------------------------+--------------------------------------+
-| 10.| |qc_metrics|              | |qc_metrics|                         |
-+----+---------------------------+--------------------------------------+
-| 11.| |homer_make_ucsc_file|    | |homer_make_ucsc_file|               |
-+----+---------------------------+--------------------------------------+
-| 12.| |macs2_callpeak|          | |macs2_atacseq_callpeak|             |    
-+----+---------------------------+--------------------------------------+
-| 13.| |homer_annotate_peaks|    | |homer_annotate_peaks|               |
-+----+---------------------------+--------------------------------------+
-| 14.| |homer_find_motifs_genome|| |homer_find_motifs_genome|           |
-+----+---------------------------+--------------------------------------+
-| 15.| |annotation_graphs|       | |annotation_graphs|                  |
-+----+---------------------------+--------------------------------------+
-| 16.| |run_spp|                 | |run_spp|                            |
-+----+---------------------------+--------------------------------------+
-| 17.| |differential_binding|    | |ihec_metrics|                       |
-+----+---------------------------+--------------------------------------+
-| 18.| |ihec_metrics|            | |multiqc_report|                     |
-+----+---------------------------+--------------------------------------+
-| 19.| |multiqc_report|          | |cram_output|                        |
-+----+---------------------------+                                      |
-| 20.| |cram_output|             |                                      |
-+----+---------------------------+--------------------------------------+
-
-----
-
-.. include:: steps_chipseq.inc
-
-----
-
+   .. include:: /user_guide/pipelines/design_fileformat/chipseq_design.inc
+   
 More Information
 ----------------
 
