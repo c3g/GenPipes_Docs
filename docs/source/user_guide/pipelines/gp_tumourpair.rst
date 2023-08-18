@@ -24,11 +24,11 @@ Version: |genpipes_version|
 .. dropdown:: :material-outlined:`report;2em` Reporting System Changes
    :color: warning
 
-    From the GenPipes Release 4.2.0, the Tumor Pair pipeline reporting system has changed from `GEMINI Framework <https://gemini.readthedocs.io/en/latest/>`_ to `PCGR <https://sigven.github.io/pcgr/>`_/`CPSR <https://sigven.github.io/cpsr/index.html>`_ reporting.
+   From the GenPipes Release 4.2.0, the Tumor Pair pipeline reporting system has changed from `GEMINI Framework <https://gemini.readthedocs.io/en/latest/>`_ to `PCGR <https://sigven.github.io/pcgr/>`_/`CPSR <https://sigven.github.io/cpsr/index.html>`_ reporting.
 
-    PCGR interprets primarily somatic SNVs/InDels and copy number aberrations. The software extends basic gene and variant annotations from the Ensembl's Variant Effect Predictor (VEP) with oncology-relevant, up-to-date annotations retrieved flexibly through vcfanno, and produces interactive HTML reports intended for clinical interpretation. 
+   PCGR interprets primarily somatic SNVs/InDels and copy number aberrations. The software extends basic gene and variant annotations from the Ensembl's Variant Effect Predictor (VEP) with oncology-relevant, up-to-date annotations retrieved flexibly through vcfanno, and produces interactive HTML reports intended for clinical interpretation. 
 
-    PCGR performs multiple types of analysis, including:
+   PCGR performs multiple types of analysis, including:
 
       * Somatic variant classification (ACMG/AMP)
 
@@ -44,148 +44,133 @@ Version: |genpipes_version|
 
       * Micro-satellite instability (MSI) classification
 
-    The accompanying tool CPSR is used to interrogate germline variants and their relation to cancer predisposition. 
+   The accompanying tool CPSR is used to interrogate germline variants and their relation to cancer predisposition. 
 
 .. tab-set:: 
 
       .. tab-item:: About
 
-         Tumor Pair pipeline helps in inferring the cancer cell copy number to normal cell copy number.
+         .. card::
 
-         Human genome comprises of a set of chromosome pairs. One chromosome in each pair, called homolog, is derived from each parent. It is typically referred to as diploid whereas the set of chromosomes from a single parent is called haploid genome. For a given gene on a given chromosome, there is a comparable, if not identical, gene on the other chromosome in the pair, known as an allele. Large structural alterations in chromosomes can change the number of copies of affected genes on those chromosomes. This is one of the key reasons for causing tumors or cancer. In cancer cells, instead of having a homologous pair of alleles for a given gene, there may be deletions or duplications of those genes. 
-
-         Such alterations leads to unequal contribution of one allele over the other, altering the copy number of a given allele. These variations in copy number indicated by the ratio of cancer cell copy number to normal cell copy number can provide information regarding the structure and history of cancer. However, when DNA is extracted, there is a mix of cancer and normal cells and this information regarding absolute copy number per cancer cell is lost in DNA extraction process.  Hence it must be inferred.
-
-         Inferring absolute copy number is difficult for `three reasons`_:
-
-         * Cancer cells are nearly always intermixed with an unknown fraction of normal cells; the measure for this is tumor purity.
-         * The actual quantity of DNA in the cancer cells after gross numerical and structural chromosomal changes is unknown; the measure for this is tumor ploidy.
-         * The cancer cell population may be heterogeneous, possibly because of ongoing mutations and changes.
-
-         Tumor purity and ploidy have a substantial impact on next-gen sequence analyses of tumor samples and may alter the biological and clinical interpretation of results.
-
-         GenPipes Tumor Analysis pipeline is designed to detect somatic variants from a tumor and match normal sample pair more accurately. 
+            GenPipes Tumor Analysis pipeline is designed to detect somatic variants from a tumor and match normal sample pair more accurately. It has three protocol options: sv, ensemble (default), and fastpass. See :ref:`tpschema` tab for the pipeline workflow. 
          
-         GenPipes Tumor Pair workflow consumes BAM files. It inherits the BAM processing protocol from DNA-seq implementation, for retaining the benchmarking optimizations. However, it differs from DNA-seq implementation in the indel alignment step. It achieves this by maximizing the information, utilizing both tumor and normal samples together. 
+            The workflow consumes BAM files. Tumor Pair pipeline inherits the BAM processing protocol from DNA-seq implementation, for retaining the benchmarking optimizations. However, it differs from DNA-seq implementation in the indel alignment step. It achieves this by maximizing the information, utilizing both tumor and normal samples together. 
 
-         The pipeline is based on an ensemble approach, which was optimized using both the `DREAM3 challenge`_ and the CEPH mixture datasets to select the best combination of callers for both SNV and structural variation detection. For SNVs, multiple callers such as `GATK MuTect2`_, `Strelka2`_, `VarScan 2`_, and `VarDict`_ were combined for somatic calls to achieve a sensitivity of 98.1%, precision of 98.4%, and F1 score of 98.3% for variants found in ≥2 callers. For germline calls, `Strelka2`_, `VarScan 2`_ and `VarDict`_ calls were combined.
+            The pipeline is based on an ensemble approach, which was optimized using both the `DREAM3 challenge`_ and the CEPH mixture datasets to select the best combination of callers for both SNV and structural variation detection. For SNVs, multiple callers such as `GATK MuTect2`_, `Strelka2`_, `VarScan 2`_, and `VarDict`_ were combined for somatic calls to achieve a sensitivity of 98.1%, precision of 98.4%, and F1 score of 98.3% for variants found in ≥2 callers. For germline calls, `Strelka2`_, `VarScan 2`_ and `VarDict`_ calls were combined.
 
-         Similarly, SVs were identified using multiple callers such as `Strelka2`_, `GRIDSS`_ to achieve a sensitivity of 84.6%, precision of 92.4%, and F1 score of 88.3% for duplication variants found in the DREAM3 dataset. The pipeline also integrates specific cancer tools to estimate tumor purity and tumor ploidy of sample pair normal−tumor using `Sequenza`_ and `Purple`_.  
+            Similarly, SVs were identified using multiple callers such as `Strelka2`_, `GRIDSS`_ to achieve a sensitivity of 84.6%, precision of 92.4%, and F1 score of 88.3% for duplication variants found in the DREAM3 dataset. The pipeline also integrates specific cancer tools to estimate tumor purity and tumor ploidy of sample pair normal−tumor using `Sequenza`_ and `Purple`_.  
 
-         Additional annotations are incorporated to the SNV calls using `dbNSFP`_ and/or `Gemini`_, and QC metrics are collected at various stages and visualized using `MultiQC`_. 
-
-         GenPipes Tumor Pair pipeline has three protocol options: sv, ensemble (default), and fastpass.  For details refer to the :ref:`Tumor Pair Schema <tpschema>` tab. 
+            Additional annotations are incorporated to the SNV calls using `dbNSFP`_ and/or `Gemini`_, and QC metrics are collected at various stages and visualized using `MultiQC`_. 
 
       .. tab-item:: Usage
 
-         .. code::
+         .. dropdown:: Command
 
-            python tumor_pair.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
-                                 [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
-                                 [--no-json] [--report] [--clean]
-                                 [-l {debug,info,warning,error,critical}] [--sanity-check]
-                                 [--container] {wrapper, singularity} <IMAGE PATH>
-                                 [--genpipes_file GENPIPES_FILE]
-                                 [-p PAIRS] [-t {sv,ensemble (default) ,fastpass}] [-r READSETS] [-v]
+            .. code::
 
-
-         .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
-
-      .. tab-item:: Options
+               python tumor_pair.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
+                                    [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
+                                    [--no-json] [--report] [--clean]
+                                    [-l {debug,info,warning,error,critical}] [--sanity-check]
+                                    [--container] {wrapper, singularity} <IMAGE PATH>
+                                    [--genpipes_file GENPIPES_FILE]
+                                    [-p PAIRS] [-t {sv,ensemble (default) ,fastpass}] [-r READSETS] [-v]
 
 
-         .. include:: opt_tumorpair.inc
-         .. include:: /common/gp_readset_opt.inc
-         .. include:: /common/gp_common_opt.inc
+            .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
-         .. admonition::  -t fastpass
+         .. dropdown:: Example Run
 
-            The fastpass option in tumor_pair.py pipeline is meant for quick assessment using exome capture regions and the 1000bp flanking regions. The somatic/germline calls are made using one variant caller `VarScan 2`_ with permissive variant calling thresholds.
+            Use the following commands to execute Tumor Pair pipeline:
 
-         .. admonition:: -p option
+            .. include::  /user_guide/pipelines/example_runs/tumor_pair.inc
 
-               The pairs file specified along with -p option has the following format:
-         
-               <patient_name>,<normal_sample_name>,<tumor_sample_name>
+            .. card:: Test Dataset
+               :link: docs_testdatasets
+               :link-type: ref
 
-               For example:
+               You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 
-               ::
+         .. dropdown:: Options
 
-                  tumorPair_CEPHmixture_chr19,tumorPair_CEPHmixture_chr19_normal,tumorPair_CEPHmixture_chr19_tumor
+            .. include:: opt_tumorpair.inc
+            .. include:: /common/gp_readset_opt.inc
+            .. include:: /common/gp_common_opt.inc
 
-      .. tab-item:: Example Run
+            .. admonition::  -t fastpass
 
-         Use the following commands to execute Tumor Pair pipeline:
+               The fastpass option in tumor_pair.py pipeline is meant for quick assessment using exome capture regions and the 1000bp flanking regions. The somatic/germline calls are made using one variant caller `VarScan 2`_ with permissive variant calling thresholds.
 
-         .. include::  /user_guide/pipelines/example_runs/tumor_pair.inc
+            .. admonition:: -p option
 
-         You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
+                  The pairs file specified along with -p option has the following format:
+            
+                  <patient_name>,<normal_sample_name>,<tumor_sample_name>
+
+                  For example:
+
+                  ::
+
+                     tumorPair_CEPHmixture_chr19,tumorPair_CEPHmixture_chr19_normal,tumorPair_CEPHmixture_chr19_tumor
 
       .. tab-item:: Schema
          :name: tpschema
 
-         There are three options for Tumor Pair Pipeline: sv, ensemble(default) and fastpass.
+         .. dropdown:: Fastpass
 
-         .. tab-set::
+            .. figure:: /img/pipelines/mmd/tumor_pair.fastpass.mmd.png
+               :align: center
+               :alt: tumor_pair_fastpass schema
+               :width: 100%
+               :figwidth: 95%
 
-            .. tab-item:: Fastpass
+               Figure: Schema of Tumor Pair Pipeline (fastpass)
 
-               .. figure:: /img/pipelines/mmd/tumor_pair.fastpass.mmd.png
-                  :align: center
-                  :alt: tumor_pair_fastpass schema
-                  :width: 100%
-                  :figwidth: 95%
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: dada2 ampseq
+               :width: 100%
+               :figwidth: 75%
 
-                  Figure: Schema of Tumor Pair Pipeline (fastpass)
+            `Click for a high resolution image of Tumor Pair Sequencing Pipeline (fastpass) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_fastpass.png>`_.
 
-               .. figure:: /img/pipelines/mmd/legend.mmd.png
-                  :align: center
-                  :alt: dada2 ampseq
-                  :width: 100%
-                  :figwidth: 75%
+         .. dropdown:: Ensemble
 
-               `Click for a high resolution image of Tumor Pair Sequencing Pipeline (fastpass) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_fastpass.png>`_.
+            .. figure:: /img/pipelines/mmd/tumor_pair.ensemble.mmd.png
+               :align: center
+               :alt: tumor_pair_ensemble schema
+               :width: 100%
+               :figwidth: 95%
 
-            .. tab-item:: Ensemble
+               Figure: Schema of Tumor Pair Pipeline (ensemble)
 
-               .. figure:: /img/pipelines/mmd/tumor_pair.ensemble.mmd.png
-                  :align: center
-                  :alt: tumor_pair_ensemble schema
-                  :width: 100%
-                  :figwidth: 95%
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: dada2 ampseq
+               :width: 100%
+               :figwidth: 75%
 
-                  Figure: Schema of Tumor Pair Pipeline (ensemble)
+            `Click for a high resolution image of Tumor Pair Sequencing Pipeline (ensemble) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_ensemble.png>`_.
 
-               .. figure:: /img/pipelines/mmd/legend.mmd.png
-                  :align: center
-                  :alt: dada2 ampseq
-                  :width: 100%
-                  :figwidth: 75%
+         .. dropdown:: SV
 
-               `Click for a high resolution image of Tumor Pair Sequencing Pipeline (ensemble) <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_ensemble.png>`_.
+            .. figure:: /img/pipelines/mmd/tumor_pair.sv.mmd.png
+               :align: center
+               :alt: tumor_pair_sv schema
+               :width: 100%
+               :figwidth: 95%
 
-            .. tab-item:: SV
+               Figure: Schema of Tumor Pair Pipeline (sv)
 
-               .. figure:: /img/pipelines/mmd/tumor_pair.sv.mmd.png
-                  :align: center
-                  :alt: tumor_pair_sv schema
-                  :width: 100%
-                  :figwidth: 95%
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: dada2 ampseq
+               :width: 100%
+               :figwidth: 75%
 
-                  Figure: Schema of Tumor Pair Pipeline (sv)
-
-               .. figure:: /img/pipelines/mmd/legend.mmd.png
-                  :align: center
-                  :alt: dada2 ampseq
-                  :width: 100%
-                  :figwidth: 75%
-
-               `Click for a high resolution image of Tumor Pair Sequencing Pipeline (sv) schema <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_sv.png>`_.
+            `Click for a high resolution image of Tumor Pair Sequencing Pipeline (sv) schema <https://bitbucket.org/mugqic/genpipes/raw/master/resources/workflows/GenPipes_tumor_pair_sv.png>`_.
 
       .. tab-item:: Steps
-
-         The table below shows various steps that constitute the Tumor Pair Pipeline.
 
          +----+-----------------------------------------+---------------------------------------+---------------------------------+
          |    | *Fastpass*                              | *Ensemble*                            | *SV*                            |
@@ -267,7 +252,27 @@ Version: |genpipes_version|
          | 38.|                                         | |sym_link_ensemble|                   |                                 |
          +----+-----------------------------------------+---------------------------------------+---------------------------------+
 
-         .. include:: steps_tumor_pair.inc
+         .. card::
+
+            .. include:: steps_tumor_pair.inc
+
+      .. tab-item:: Details
+
+         .. card::
+
+            Tumor Pair pipeline helps in inferring the cancer cell copy number to normal cell copy number.
+
+            Human genome comprises of a set of chromosome pairs. One chromosome in each pair, called homolog, is derived from each parent. It is typically referred to as diploid whereas the set of chromosomes from a single parent is called haploid genome. For a given gene on a given chromosome, there is a comparable, if not identical, gene on the other chromosome in the pair, known as an allele. Large structural alterations in chromosomes can change the number of copies of affected genes on those chromosomes. This is one of the key reasons for causing tumors or cancer. In cancer cells, instead of having a homologous pair of alleles for a given gene, there may be deletions or duplications of those genes. 
+
+            Such alterations leads to unequal contribution of one allele over the other, altering the copy number of a given allele. These variations in copy number indicated by the ratio of cancer cell copy number to normal cell copy number can provide information regarding the structure and history of cancer. However, when DNA is extracted, there is a mix of cancer and normal cells and this information regarding absolute copy number per cancer cell is lost in DNA extraction process.  Hence it must be inferred.
+
+            Inferring absolute copy number is difficult for `three reasons`_:
+
+            * Cancer cells are nearly always intermixed with an unknown fraction of normal cells; the measure for this is tumor purity.
+            * The actual quantity of DNA in the cancer cells after gross numerical and structural chromosomal changes is unknown; the measure for this is tumor ploidy.
+            * The cancer cell population may be heterogeneous, possibly because of ongoing mutations and changes.
+
+            Tumor purity and ploidy have a substantial impact on next-gen sequence analyses of tumor samples and may alter the biological and clinical interpretation of results.
 
 .. _More Information on Tumor Pair Pipeline:
 
