@@ -39,7 +39,7 @@ Pull requests are the best way to propose changes to the code base. Please ensur
 License
 --------
 
-GenPipes is available under GPL v3 `license <https://bitbucket.org/mugqic/genpipes/src/master/COPYING.LESSER>`_. Any contributions you make will be under the GPL (v3) license.
+GenPipes is available under the LGPL `license <https://bitbucket.org/mugqic/genpipes/src/master/COPYING.LESSER>`_. Any contributions you make will be under the LGPLv3 license.
 
 Reporting a bug or issue
 -------------------------
