@@ -52,15 +52,17 @@ Tumor Pair Sequencing Pipeline
 
          .. card::
 
-            GenPipes Tumor Analysis pipeline is designed to detect somatic variants from a tumor and match normal sample pair more accurately. It has three protocol options: sv, ensemble (default), and fastpass. See :ref:`tpschema` tab for the pipeline workflow. 
-         
-            The workflow consumes BAM files. Tumor Pair pipeline inherits the BAM processing protocol from DNA-seq implementation, for retaining the benchmarking optimizations. However, it differs from DNA-seq implementation in the indel alignment step. It achieves this by maximizing the information, utilizing both tumor and normal samples together. 
+            GenPipes Tumor Analysis pipeline is designed to detect somatic variants from a tumor and match normal sample pair more accurately. It offers three protocol options: sv, ensemble (default), and fastpass.  See :ref:`tpschema` tab for the pipeline workflow.
 
-            The pipeline is based on an ensemble approach, which was optimized using both the `DREAM3 challenge`_ and the CEPH mixture datasets to select the best combination of callers for both SNV and structural variation detection. For SNVs, multiple callers such as `GATK MuTect2`_, `Strelka2`_, `VarScan 2`_, and `VarDict`_ were combined for somatic calls to achieve a sensitivity of 98.1%, precision of 98.4%, and F1 score of 98.3% for variants found in ≥2 callers. For germline calls, `Strelka2`_, `VarScan 2`_ and `VarDict`_ calls were combined.
+            **Fastpass**
+            
+            The fastpass option of the pipeline is meant for quick assessment using exome capture regions and the 1000bp flanking regions. The somatic/germline calls are made using one variant caller `VarScan 2`_ with permissive variant calling thresholds.
 
-            Similarly, SVs were identified using multiple callers such as `Strelka2`_, `GRIDSS`_ to achieve a sensitivity of 84.6%, precision of 92.4%, and F1 score of 88.3% for duplication variants found in the DREAM3 dataset. The pipeline also integrates specific cancer tools to estimate tumor purity and tumor ploidy of sample pair normal−tumor using `Sequenza`_ and `Purple`_.  
+            **Ensemble**
+            The pipeline's ensemble protocol is based on an ensemble approach, which was optimized using both the `DREAM3 challenge`_ and the CEPH mixture datasets to select the best combination of callers for both SNV and structural variation detection. For SNVs, multiple callers such as `GATK MuTect2`_, `Strelka2`_, `VarScan 2`_, and `VarDict`_ were combined for somatic calls to achieve a sensitivity of 98.1%, precision of 98.4%, and F1 score of 98.3% for variants found in ≥2 callers. For germline calls, `Strelka2`_, `VarScan 2`_ and `VarDict`_ calls were combined. Additional annotations are incorporated to the SNV calls using `CPSR`_ and/or `PCGR`_, which produce html reports of germline variants implicated in cancer predisposition and somatic variants detected in the tumor, respectively. QC metrics are collected at various stages and visualized using `MultiQC`_.
 
-            Additional annotations are incorporated to the SNV calls using `dbNSFP`_ and/or `Gemini`_, and QC metrics are collected at various stages and visualized using `MultiQC`_. 
+            **SV**
+            The sv protocol of the pipeline identifies SVs using `GridSS`_ to achieve a sensitivity of XX.X%, precision of XX.X%, and F1 score of XX.X% for duplication variants found in the DREAM3 dataset. The pipeline also estimates tumor purity and tumor ploidy of sample pair normal−tumor using specific cancer tool `PURPLE`_, followed by annotation and visualization with `Linx`_.
 
       .. tab-item:: Usage
 

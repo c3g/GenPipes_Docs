@@ -11,6 +11,10 @@
      intron
      introns
 
+**Step Details**
+
+Following are the various steps that are part of the ChIP Sequencing Pipeline:
+
 .. _Picard Sam to Fastq:
 
 **Picard Sam to Fastq**
@@ -143,8 +147,6 @@ The output of differential analysis containing differentially bound peaks are sa
 
      Differential Binding analysis currently supports pair-wise (two groups) comparisons **only**. If you have a more complex experimental design, you may manually conduct the analysis.
 
- 
-
 .. _IHEC Metrics:
 
 **IHEC Metrics**
@@ -158,6 +160,25 @@ This step generates IHEC's `standard metrics <http://ihec-epigenomes.org/researc
 A quality control report for all samples is generated.
 For more detailed information see `MultiQC documentation <http://multiqc.info/>`_.
 
+.. _Bedtools Blacklist Filter:
+
+**Bedtools Blacklist Filter**
+
+Remove reads in blacklist regions from BAM with `Bedtools`_ intersect, if blacklist file is supplied, otherwise, do nothing.
+
+.. _GATK Haplotype Caller:
+
+**GATK Haplotype Caller**
+
+Use `GATK Haplotype`_ caller for SNPs and small indels.
+
+.. _Merge and Call Individual GVCF:
+
+**Merge & Call Individual GVCF**
+
+Merges the GVCFs of haplotype caller and also generates a per sample VCF containing genotypes.
+
+.. 
 .. include:: steps_cram_op.inc
 
 .. _Samtools: http://www.htslib.org/
@@ -165,3 +186,5 @@ For more detailed information see `MultiQC documentation <http://multiqc.info/>`
 .. _MACS2: https://www.biorxiv.org/content/10.1101/496521v1
 .. _SAMbamba: https://lomereiter.github.io/sambamba/
 .. _DiffBind: http://bioconductor.org/packages/release/bioc/vignettes/DiffBind/inst/doc/DiffBind.pdf
+.. _Bedtools: https://bedtools.readthedocs.io
+.. _GATK Haplotype:  https://gatk.broadinstitute.org/hc/en-us/articles/360037225632-HaplotypeCaller

@@ -20,7 +20,13 @@ ChIP Sequencing Pipeline
 
          .. card::
 
-            Chromatin Immunoprecipitation (ChIP) sequencing technique is used for mapping DNA-protein interactions. It is a powerful method for identifying genome-wide DNA binding sites for transcription factors and other proteins. The ChIP-Seq workflow is based on the `ENCODE Project`_ workflow. It aligns reads using the `Burrows-Wheeler Aligner`_. It creates tag directories using `Homer routines`_. Peaks are called using `Model based Analysis for Chip Sequencing (MACS2)`_ and annotated using Homer. Binding motifs are also identified using Homer. Metrics are calculated based on `IHEC requirements`_. The ChIP-Seq pipeline can also be used for assay for transposase-accessible chromatin using sequencing (ATAC-Seq) samples. At GenPipes, we are developing a pipeline that is specific to `ATAC-Seq`_.
+            Chromatin Immunoprecipitation (ChIP) sequencing technique is used for mapping DNA-protein interactions. It is a powerful method for identifying genome-wide DNA binding sites for transcription factors and other proteins. 
+            
+            The ChIP-Seq workflow is based on the `ENCODE Project`_ workflow. It aligns reads using the `Burrows-Wheeler Aligner`_. It creates tag directories using `Homer routines`_. Peaks are called using `Model based Analysis for Chip Sequencing (MACS2)`_ and annotated using Homer. Binding motifs are also identified using Homer. Metrics are calculated based on `IHEC requirements`_. 
+            
+            The ChIP-Seq pipeline can also be used for assay for transposase-accessible chromatin using sequencing `ATAC-Seq`_ samples. Use 'ATAC' protocol option to run the pipeline using ATAC-Seq.
+
+            See :ref:`chipschema` tab for the pipeline workflow.
 
       .. tab-item:: Usage
 
@@ -113,34 +119,40 @@ ChIP Sequencing Pipeline
          +----+---------------------------+--------------------------------------+
          | 7. | |sambamba_view_filter|    | |sambamba_view_filter|               |
          +----+---------------------------+--------------------------------------+
-         | 8. | |metrics|                 | |metrics|                            |
+         | 8. | |bedtools_black_filter|   | |bedtools_black_filter|              |
          +----+---------------------------+--------------------------------------+
-         | 9. | |homer_make_tag_directory|| |homer_make_tag_directory|           |
+         | 9. | |metrics|                 | |metrics|                            |
          +----+---------------------------+--------------------------------------+
-         | 10.| |qc_metrics|              | |qc_metrics|                         |
+         | 10.| |homer_make_tag_directory|| |homer_make_tag_directory|           |
          +----+---------------------------+--------------------------------------+
-         | 11.| |homer_make_ucsc_file|    | |homer_make_ucsc_file|               |
+         | 11.| |qc_metrics|              | |qc_metrics|                         |
          +----+---------------------------+--------------------------------------+
-         | 12.| |macs2_callpeak|          | |macs2_atacseq_callpeak|             |    
+         | 12.| |homer_make_ucsc_file|    | |homer_make_ucsc_file|               |
          +----+---------------------------+--------------------------------------+
-         | 13.| |homer_annotate_peaks|    | |homer_annotate_peaks|               |
+         | 13.| |macs2_callpeak|          | |macs2_atacseq_callpeak|             |    
          +----+---------------------------+--------------------------------------+
-         | 14.| |homer_find_motifs_genome|| |homer_find_motifs_genome|           |
+         | 14.| |homer_annotate_peaks|    | |homer_annotate_peaks|               |
          +----+---------------------------+--------------------------------------+
-         | 15.| |annotation_graphs|       | |annotation_graphs|                  |
+         | 15.| |homer_find_motifs_genome|| |homer_find_motifs_genome|           |
          +----+---------------------------+--------------------------------------+
-         | 16.| |run_spp|                 | |run_spp|                            |
+         | 16.| |annotation_graphs|       | |annotation_graphs|                  |
          +----+---------------------------+--------------------------------------+
-         | 17.| |differential_binding|    | |ihec_metrics|                       |
+         | 17.| |run_spp|                 | |run_spp|                            |
          +----+---------------------------+--------------------------------------+
-         | 18.| |ihec_metrics|            | |multiqc_report|                     |
+         | 18.| |differential_binding|    | |differential_binding|               |
          +----+---------------------------+--------------------------------------+
-         | 19.| |multiqc_report|          | |cram_output|                        |
-         +----+---------------------------+                                      |
-         | 20.| |cram_output|             |                                      |
+         | 19.| |ihec_metrics|            | |ihec_metrics|                       |
+         +----+---------------------------+--------------------------------------+
+         | 20.| |multiqc_report|          | |multiqc_report|                     |
+         +----+---------------------------+--------------------------------------+
+         | 21.| |cram_output|             | |cram_output|                        |
+         +----+---------------------------+--------------------------------------+
+         | 22.| |gatk_haplotype_caller|   | |gatk_haplotype_caller|              |
+         +----+---------------------------+--------------------------------------+
+         | 23.| |merge_and_call_ind_gvcf| | |merge_and_call_ind_gvcf|            |
          +----+---------------------------+--------------------------------------+
 
-         .. card::
+        .. card::
 
             .. include:: steps_chipseq.inc
 
@@ -188,6 +200,7 @@ For the latest implementation and usage details, see `ChIP-Seq Pipeline README`_
 .. |picard_sam_to_fastq| replace:: `Picard Sam to Fastq`_
 .. |trimmomatic| replace:: `Trimmomatic`_
 .. |merge_trimmomatic_stats| replace:: `Merge Trimmomatic Stats`_
+.. |bedtools_black_filter| replace:: `Bedtools Blacklist Filter`_
 .. |metrics| replace:: `Metrics`_
 .. |homer_make_tag_directory| replace:: `Homer Make Tag Directory`_
 .. |qc_metrics| replace:: `QC Metrics`_
@@ -205,6 +218,9 @@ For the latest implementation and usage details, see `ChIP-Seq Pipeline README`_
 .. |sambamba_merge_bam| replace:: `SAMbamba Merge BAM`_
 .. |sambamba_mark_dup| replace:: `SAMbamba Mark Duplicates`_
 .. |sambamba_view_filter| replace:: `SAMbamba View Filter`_ 
+.. |gatk_haplotype_caller| replace:: `GATK Haplotype Caller`_
+.. |merge_and_call_ind_gvcf| replace:: `Merge and Call Individual GVCF`_
+
 
 .. include:: repl_cram_op.inc
 
