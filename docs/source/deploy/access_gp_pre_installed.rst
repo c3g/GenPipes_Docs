@@ -60,7 +60,11 @@ c. Select **"SSH"** and fill the *"Host Name"* entry with the following:
 
 ::
 
-  mp2b.ccs.usherbrooke.ca
+  beluga.computecanada.ca
+
+.. tip::
+     
+       Replace the server name `beluga` in the command above with the desired cluster name. 
 
 d. Click **"Open"**
 
