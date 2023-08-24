@@ -96,7 +96,7 @@ Please note, there is a disadvantage to running GenPipes Pipelines without a sch
 GenPipes 3.4 RNA Sequencing Pipeline moved from using Trimmomatic to Skewer. Why? What does this change mean for GenPipes users?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-In addition to why, there are additional queries that we received. So we/ll respond to all of these together:
+In addition to why, there are additional queries that we received. So we will respond to all of these together:
 
 In RNA-seq skewer,
 a. What does the untrimmed read pairs available after processing refer to?
