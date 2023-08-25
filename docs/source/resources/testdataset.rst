@@ -44,7 +44,7 @@ In contrast to the test dataset, a :ref:`Readset File<docs_readset_file>` in the
 +-----------------------------------------------+------------------------------------------+
 | :ref:`PacBio Seq<docs_gp_dnaseq>`             |   `Download PacBio Seq Dataset`_         |
 +-----------------------------------------------+------------------------------------------+
-| :ref:`TumorPair Seq<docs_gp_dnaseq>`          |   `Download TumorPair Seq Dataset`_      |
+| :ref:`TumorPair Seq<docs_gp_tumorpair>`       |   `Download TumorPair Seq Dataset`_      |
 +-----------------------------------------------+------------------------------------------+
 
 .. warning:: 
