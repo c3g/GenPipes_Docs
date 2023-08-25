@@ -7,6 +7,6 @@
 
 ::
 
-  -t {sv,ensemble,fastpass}, --type {sv,ensemble,fastpass}
+  -t {sv, ensemble, fastpass}, --type {sv, ensemble, fastpass}
 
                             tumor pair analysis type (default=ensemble)

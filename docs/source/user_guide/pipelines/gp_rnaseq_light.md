@@ -35,19 +35,12 @@ rnaseq_light.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
                        [--no-json] [--report] [--clean]
                        [-l {debug,info,warning,error,critical}] [-d DESIGN]
                        [--sanity-check]
-                       [--container {wrapper, singularity} <IMAGE PATH>
+                       [--container {wrapper, singularity} <IMAGE PATH>]
                        [--genpipes_file GENPIPES_FILE] [-d DESIGN]
-                       [-t {cufflinks,stringtie}] [-r READSETS] [-v]
+                       [-r READSETS] [-v]
 ```
 
 **Optional Arguments**
-
-```
-  -t {cufflinks,stringtie}, --type {cufflinks,stringtie}
-
-                            Type of RNA-seq (light) assembly method
-                            (default stringtie, faster than cufflinks)
-```
 
 ```
   -d DESIGN, --design DESIGN

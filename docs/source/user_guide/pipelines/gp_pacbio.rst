@@ -48,7 +48,7 @@ Usage
                           [--no-json] [--report] [--clean]
                           [-l {debug,info,warning,error,critical}]
                           [--sanity-check]
-                          [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}
+                          [--container {docker, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}]
                           [-r READSETS] [-v]
 
 **Optional Arguments**

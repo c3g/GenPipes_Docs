@@ -7,5 +7,5 @@
 
 ::
 
-    -t {hic,capture},
-    --type {hic,capture}       Hi-C experiment type (default hic)
+    -t {hic, capture},
+    --type {hic, capture}       Hi-C experiment type (default=hic)

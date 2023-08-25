@@ -40,14 +40,14 @@ Usage
 
 ::
 
-  usage: rnaseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
+  rnaseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
                  [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
                  [--no-json] [--report] [--clean]
                  [-l {debug,info,warning,error,critical}] [--sanity-check]
-                 [--container {wrapper, singularity} <IMAGE PATH>
+                 [--container {wrapper, singularity} <IMAGE PATH>]
                  [--genpipes_file GENPIPES_FILE]
                  [-d DESIGN] 
-                 [-t {cufflinks,stringtie}] [-r READSETS] [-v]
+                 [-t {stringtie (default), variants, cancer}] [-r READSETS] [-v]
 
 **Optional Arguments**
 

@@ -1,5 +1,1 @@
-::
-
-  -t {mugqic,mpileup,light, sv}, --type {mugqic,mpileup,light,sv}
-
-                             DNAseq High Coverage analysis type
+.. There is no -t option for this protocol

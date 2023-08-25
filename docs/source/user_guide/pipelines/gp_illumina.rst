@@ -64,7 +64,7 @@ Usage
                                   [--no-json] [--report] [--clean]
                                   [-l {debug,info,warning,error,critical}]
                                   [--sanity-check]
-                                  [--container {wrapper, singularity} <IMAGE PATH>
+                                  [--container {wrapper, singularity} <IMAGE PATH>]
                                   [--genpipes_file GENPIPES_FILE]
                                   [-d RUN_DIR] [--lane LANE_NUMBER]
                                   [-r READSETS] [-i CASAVA_SHEET_FILE]

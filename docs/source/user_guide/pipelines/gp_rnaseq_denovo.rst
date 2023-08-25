@@ -93,9 +93,9 @@ Usage
                                  [--no-json] [--report] [--clean]
                                  [-l {debug,info,warning,error,critical}]
                                  [--sanity-check]
-                                 [--container {wrapper, singularity} <IMAGE PATH>
+                                 [--container {wrapper, singularity} <IMAGE PATH>]
                                  [--genpipes_file GENPIPES_FILE]
-                                 [-d DESIGN] [-t {trinity,seq2fun}]
+                                 [-d DESIGN] [-t {trinity (default), seq2fun}]
                                  [-r READSETS] [-v]
 
 **Optional Arguments**

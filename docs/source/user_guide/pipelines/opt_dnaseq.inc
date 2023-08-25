@@ -1,5 +1,5 @@
 ::
 
-  -t {mugqic,mpileup,light, sv}, --type {mugqic,mpileup,light,sv}
+  -t {mugqic, mpileup, light, sv}, --type {mugqic, mpileup, light, sv}
 
-                            DNAseq analysis type
+                            DNAseq analysis type (default=mugqic)

@@ -1,6 +1,5 @@
 ::
 
-  -t {cufflinks,stringtie}, --type {cufflinks,stringtie}
+  -t {stringtie, variants, cancer}, --type {stringtie, variants, cancer}
 
-                            Type of RNA-seq assembly method (default stringtie,
-                            faster than cufflinks)
+                            Type of RNA-seq assembly method (default=stringtie)

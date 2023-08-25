@@ -68,14 +68,15 @@ Usage
   nanopore_covseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
             [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
             [--no-json] [--report] [--clean]
-            [-l {debug,info,warning,error,critical}] [--sanity-check]
-            [-t {default,basecalling}]
+            [-l {debug, info, warning, error, critical}] [--sanity-check]
+            [-t {default (default), basecalling}]
             [--genpipes_file GENPIPES_FILE]
             [--container {wrapper, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}]
             [-v]
 
 **Optional Arguments**
 
+.. include:: opt_nanopore_cov.inc
 .. include:: /common/gp_common_opt.inc
 .. include:: /common/gp_readset_opt.inc
 

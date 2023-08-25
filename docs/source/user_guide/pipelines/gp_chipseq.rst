@@ -40,7 +40,7 @@ ChIP Sequencing Pipeline
                                  [-l {debug,info,warning,error,critical}] [--sanity-check]
                                  [--container {wrapper, singularity} <IMAGE PATH>
                                  [--genpipes_file GENPIPES_FILE]
-                                 [-d DESIGN] [-t {chipseq, atacseq}] [-r READSETS] [-v]
+                                 [-d DESIGN] [-t {chipseq (default), atacseq}] [-r READSETS] [-v]
 
             .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 

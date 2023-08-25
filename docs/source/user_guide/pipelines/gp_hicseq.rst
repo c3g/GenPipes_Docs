@@ -73,9 +73,9 @@ Usage
                  [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
                  [--no-json] [--report] [--clean]
                  [-l {debug,info,warning,error,critical}] [--sanity-check]
-                 [--container {wrapper, singularity} <IMAGE PATH>
+                 [--container {wrapper, singularity} <IMAGE PATH>]
                  [--genpipes_file GENPIPES_FILE]
-                 -e {DpnII,HindIII,NcoI,MboI,Arima} [-t {hic,capture}]
+                 -e {DpnII,HindIII,NcoI,MboI,Arima} [-t {hic (default), capture}]
                  [-r READSETS] [-v]
 
 **Optional Arguments**
