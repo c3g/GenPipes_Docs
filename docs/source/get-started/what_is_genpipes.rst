@@ -80,8 +80,8 @@ Each Job object is submitted to the GenPipes workflow management system using a 
 * Batch scheduler creates a batch script that contains all the instructions to run all the jobs one after the other.
 * Daemon scheduler creates a log of the pipeline command in a `JSON`_ file.
 
-How GenPipes works?
---------------------
+How does GenPipes work?
+-----------------------
 
 GenPipes is a Python based object-oriented framework that is available to users as a command line tool. Figure below shows the general workflow of GenPipes. 
 

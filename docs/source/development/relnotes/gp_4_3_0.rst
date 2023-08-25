@@ -12,7 +12,7 @@ GenPipes 4.3.0 Release Notes
 What's new? 
 -----------
 
-* `MethylSeq <https://genpipes.readthedocs.io/en/latest/user_guide/pipelines/gp_wgs_methylseq.html>`_ Pipeline:  Two new protocols are newly added to MethylSequencing pipeline. These protocols are based on `Illumina Dragen Bio-IT Platform <https://www.illumina.com/products/by-type/informatics-products/dragen-bio-it-platform.html>`_. The new protocols are tested on Abacus (the McGill Genome Center HPC) and usable where a "Dragen" allocation is available.
+* `MethylSeq <https://genpipes.readthedocs.io/en/latest/user_guide/pipelines/gp_wgs_methylseq.html>`_ Pipeline:  Two new protocols are newly added to MethylSequencing pipeline. These protocols are based on `Illumina Dragen Bio-IT Platform <https://www.illumina.com/products/by-type/informatics-products/dragen-bio-it-platform.html>`_. The new protocols are tested on Abacus (the McGill Genome Centre HPC) and usable where a "Dragen" allocation is available.
 
   - `bismark` option uses the `Bismark <https://support.illumina.com/help/BaseSpace_App_MethylSeq_help/Content/Vault/Informatics/Sequencing_Analysis/Apps/swSEQ_mAPP_MethylSeq_Bismark.htm>`_ protocol (formerly the default protocol) to perform the whole analysis including the read alignment, de-duplication, and methylation calls.
   - `dragen` option uses the `Dragen <https://support.illumina.com/content/dam/illumina-support/help/Illumina_DRAGEN_Bio_IT_Platform_v3_7_1000000141465/Content/SW/Informatics/Dragen/MPipelineMeth_fDG.htm>`_ protocol to perform the whole analysis.
