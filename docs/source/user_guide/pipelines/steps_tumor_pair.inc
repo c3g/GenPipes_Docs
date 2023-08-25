@@ -25,6 +25,8 @@
       callsets
       intra
       translocations
+      Bruijn
+      intragenic
      
 **Step Details**
 
@@ -527,7 +529,7 @@ Creates a `PCGR Somatic Germline Report`_ where input is the filtered ensemble g
 
 **Linx Annotations Somatic**
 
-The `LINX`_ algorithm classifies somatic structural variation in tumors. It is an annotation, interpretation and visualisation tool for structural variants. The primary function is grouping together individual SV calls into distinct events and properly classify and annotating the event to understand both its mechanism and genomic impact.
+The `LINX`_ algorithm classifies somatic structural variation in tumors. It is an annotation, interpretation and visualization tool for structural variants. The primary function is grouping together individual SV calls into distinct events and properly classify and annotating the event to understand both its mechanism and genomic impact.
 
 LINX helps in the interpretation of structural variant and copy number data derived from short-read, whole-genome sequencing. It classifies raw structural variant calls into distinct events and predicts their effect on the local structure of the derivative chromosome and the functional impact on affected genes. Visualizations facilitate further investigation of complex rearrangements. LINX allows insights into a diverse range of structural variation events and can reliably detect pathogenic rearrangements, including gene fusions, immunoglobulin enhancer rearrangements, intragenic deletions, and duplications. 
 
@@ -541,7 +543,7 @@ Though `LINX`_ is designed primarily for somatic SV, it can also be run in a mor
 
 **Linx Plot**
 
-`LINX`_ Plot offers visualisation methods that provide insight into complex genomic rearrangements. It leverages the integrated structural variant and copy number calling to cluster individual structural variants into higher order events and chains them together to predict local derivative chromosome structure.
+`LINX`_ Plot offers visualization methods that provide insight into complex genomic rearrangements. It leverages the integrated structural variant and copy number calling to cluster individual structural variants into higher order events and chains them together to predict local derivative chromosome structure.
 
 .. include:: steps_dnaseq_common.inc
 

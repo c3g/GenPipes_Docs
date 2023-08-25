@@ -3,6 +3,8 @@
 .. spelling::
 
     Haplotype
+    Mpileup
+    GC
     FastQ
     config
     param
@@ -124,7 +126,7 @@ Outputs `flag statistics <https://lomereiter.github.io/sambamba/docs/sambamba-fl
 
 **Metrics DNA FastQC**
 
-This step performs qualityControl with `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_.
+This step performs quality control with `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`.
 
 .. _Picard Calculate HS Metrics:
 
@@ -184,7 +186,7 @@ This step involves GATK variant recalibrator. The purpose of the variant recalib
 
 **Haplotype caller decompose and normalize**
 
-Performs decompose/normalization for variant comparison at the haplotype level. Replay the variants from the VCF into the reference and determine whether variants match by whether the resulting haplotypes match.
+Performs decompose/normalization for variant comparison at the haplotype level. Replay the variants from the VCF into the reference and determine whether variants match by whether the resulting Haplotype match.
 
 .. _Haplotype caller flag mappability:
 
@@ -214,7 +216,7 @@ Additional SVN annotations applied to haplotype caller vcf. Provides extra infor
 
 **Haplotype caller Gemini annotation**
 
-Uses `Haplotype caller <https://gatk.broadinstitute.org/hc/en-us/articles/360042913231-HaplotypeCaller>`_ to call germline SNPs and indels via local re-assembly of haplotypes for exploring genetic variations using the `Gemini annotations`_. 
+Uses `Haplotype caller <https://gatk.broadinstitute.org/hc/en-us/articles/360042913231-HaplotypeCaller>`_ to call germline SNPs and indels via local re-assembly of Haplotype for exploring genetic variations using the `Gemini annotations`_. 
 
 .. _Haplotype caller metrics VCF stats:
 
@@ -232,7 +234,7 @@ Aggregate results from bioinformatics analyses across many samples into a single
 
 **Raw MPileup**
 
-Full pileup (optional). A raw mpileup file is created using samtools mpileup and compressed in gz format. One packaged mpileup file is created per sample/chromosome.
+Full pileup (optional). A raw Mpileup file is created using samtools mpileup and compressed in gz format. One packaged Mpileup file is created per sample/chromosome.
 
 .. _Compress Raw MPileup:
 
@@ -244,7 +246,7 @@ Merge mpileup files per sample/chromosome into one compressed gzip file per samp
 
 **SNP and indel BCF**
 
-Mpileup and Variant calling. Variants (SNPs and INDELs) are called using `SAMTools software package`_ mpileup. bcftools view is used to produce binary bcf files.
+Mpileup and Variant calling. Variants (SNPs and INDELs) are called using `SAMTools software package`_ Mpileup. bcftools view is used to produce binary bcf files.
 
 .. _Merge Filter BCF:
 
@@ -286,7 +288,7 @@ Additional SVN annotations applied to mpileup vcf. Provides extra information ab
 
 **MPileup Gemini annotation**
 
-Explores genetic variations in the VCF file generated after MPileup using `Gemini annotations`_.
+Explores genetic variations in the VCF file generated after Mpileup using `Gemini annotations`_.
 
 .. _MPileup Metrics VCF stats:
 

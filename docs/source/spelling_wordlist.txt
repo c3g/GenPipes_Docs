@@ -37,6 +37,7 @@ Dragen
 Drosophila
 Duk
 Elegans
+FastQ
 Fortran
 GSoD
 Galgal
@@ -68,6 +69,7 @@ Metagenomic
 Metagenomics
 Moab
 Montréal
+Mpileup
 Nanopolish
 Nanopore
 Nanuq
