@@ -12,6 +12,8 @@ This document lists some commonly faced issues related to GenPipes deployment an
 
 The objective here is to list some commonly encountered issues and their fixes so that new users can benefit and focus more on using GenPipes.  These are mostly run-time issues that a new user may face. If you are looking at troubleshooting GenPipes as part of feature development or contributing to GenPipes code, please refer to the :ref:`Developer Guide<docs_dev_guide>` and :ref:`Troubleshooting Guide<docs_troubleshooting_guide>`.
 
+Also see the latest discussions on `GenPipes Google Group <https://groups.google.com/g/genpipes>`_.
+
 **Contents**
 
 .. toctree::
@@ -22,6 +24,5 @@ The objective here is to list some commonly encountered issues and their fixes s
     trbs_runtime/rt_job_failure
     trbs_runtime/rap_id_nt_set
     trbs_runtime/missing_gen_ann
-    trbs_runtime/err_star_rnaseq
     trbs_runtime/new_pipeline_no_ex
     trbs_runtime/oom_star_rnasesq

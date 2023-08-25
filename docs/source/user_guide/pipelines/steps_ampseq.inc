@@ -25,19 +25,19 @@ The trim statistics per readset are merged in this step.
 
 **Flash Pass 1**
 
-TBD-GenPipes-Dev
+Perform first pass of `FLASH`_. FLASH is a fast computational tool to extend the length of short reads by overlapping paired-end reads from fragment libraries that are sufficiently short.
+
+.. _Flash Pass 2:
+
+**Flash Pass 2**
+
+Perform second pass of `FLASH`_ to find the correct overlap between paired-end reads and extend the reads by stitching them together.
 
 .. _Amplicon Length Parser:
 
 **Amplicon Length Parser**
 
 In this step, we look at `FLASH`_ output to set amplicon lengths input for `DADA2`_. As minimum eligible length, a given length needs to have at least 1% of the total number of amplicons.
-
-.. _Flash Pass 2:
-
-**Flash Pass 2**
-
-TBD-GenPipes-Dev
 
 .. _Merge Flash Stats:
 

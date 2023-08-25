@@ -52,7 +52,7 @@ Convert SAM/BAM files from the input readset file into FASTQ format if FASTQ fil
 
 **Sym Link FastQ**
 
-TBD-GenPipes-Dev
+Automated symbolic linking of FASTQ files.
 
 .. _Step Trimmomatic:
 
@@ -94,37 +94,37 @@ This step is used to recalibrate base quality scores of sequencing-by-synthesis 
 
 .. note::
 
-   The unmapped reads are extracted from the merged/sorted bam files. After the base recalibration step, the unmapped reads are re-injected into the fastq. This ensures that the unmapped reads are available for further analysis, if needed. Without this process, the base recalibration may eventually remove the unmapped reads.
+   The unmapped reads are extracted from the merged/sorted bam files. After the base recalibration step, the unmapped reads are re-injected into the FASTQ. This ensures that the unmapped reads are available for further analysis, if needed. Without this process, the base recalibration may eventually remove the unmapped reads.
 
 .. _Sym Link Final BAM:
 
 **Sym Link Final BAM**
 
-TBD-GenPipes-Dev
+Creates symbolic links of final BAM for delivery of data to the clients.
 
 .. _Metrics DNA Picard:
 
 **Metrics DNA Picard**
 
-TBD-GenPipes-Dev
+This step generates metrics with picard, including `CollectMultipleMetrics <https://gatk.broadinstitute.org/hc/en-us/articles/360037594031-CollectMultipleMetrics-Picard->`_, `CollectOxoGMetrics <https://gatk.broadinstitute.org/hc/en-us/articles/360037428231-CollectOxoGMetrics-Picard->`_, and `CollectGcBiasMetrics <https://gatk.broadinstitute.org/hc/en-us/articles/360036481572-CollectGcBiasMetrics-Picard->`_.
 
 .. _Metrics DNA Sample Quality Map:
 
 **Metrics DNA Sample Quality Map**
 
-TBD-GenPipes-Dev
+Generates metrics with `Qualimap BAM QC <http://qualimap.conesalab.org/doc_html/analysis.html#bamqc>`_. BAM QC reports information for the evaluation of the quality of the provided alignment data (for e.g., a BAM file). In short, it provides the basic statistics of the alignment  such as the number of reads, coverage, GC-content, etc., in a summarized form along with a number of useful graphs are produced.
 
 .. _Metrics DNA SAMBAM Flag Stats:
 
 **Metrics DNA SAMBAM Flag Stats**
 
-TBD-GenPipes-Dev
+Outputs `flag statistics <https://lomereiter.github.io/sambamba/docs/sambamba-flagstat.html>`_ from the BAM file.
 
 .. _Metrics DNA FastQC:
 
 **Metrics DNA FastQC**
 
-TBD-GenPipes-Dev
+This step performs qualityControl with `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_.
 
 .. _Picard Calculate HS Metrics:
 
@@ -184,7 +184,7 @@ This step involves GATK variant recalibrator. The purpose of the variant recalib
 
 **Haplotype caller decompose and normalize**
 
-TBD-GenPipes-Dev
+Performs decompose/normalization for variant comparison at the haplotype level. Replay the variants from the VCF into the reference and determine whether variants match by whether the resulting haplotypes match.
 
 .. _Haplotype caller flag mappability:
 
@@ -214,7 +214,7 @@ Additional SVN annotations applied to haplotype caller vcf. Provides extra infor
 
 **Haplotype caller Gemini annotation**
 
-TBD-GenPipes-Dev
+Uses `Haplotype caller <https://gatk.broadinstitute.org/hc/en-us/articles/360042913231-HaplotypeCaller>`_ to call germline SNPs and indels via local re-assembly of haplotypes for exploring genetic variations using the `Gemini annotations`_. 
 
 .. _Haplotype caller metrics VCF stats:
 
@@ -226,7 +226,7 @@ Metrics SNV applied to haplotype caller vcf. Multiple metrics associated to anno
 
 **Run MultiQC**
 
-TBD-GenPipes-Dev
+Aggregate results from bioinformatics analyses across many samples into a single report. `MultiQC`_ searches a given directory for analysis logs and compiles a HTML report. It's a general use tool, perfect for summarizing the output from numerous bioinformatics tools.
 
 .. _Raw MPileup:
 
@@ -256,7 +256,7 @@ bcftools is used to merge the raw binary variants files created in the snpAndInd
 
 **MPileup decompose and normalize**
 
-TBD-GenPipes-Dev
+Uses multi-way pileup that produces genotype likelihoods for decomposing and normalizing complex variants in VCF files.
 
 .. _MPileup Flag Mappability:
 
@@ -286,7 +286,7 @@ Additional SVN annotations applied to mpileup vcf. Provides extra information ab
 
 **MPileup Gemini annotation**
 
-TBD-GenPipes-Dev
+Explores genetic variations in the VCF file generated after MPileup using `Gemini annotations`_.
 
 .. _MPileup Metrics VCF stats:
 
@@ -464,3 +464,4 @@ In this step, ClusterCrosscheckMetrics function from GATK is used as a follow-up
 .. _CNV: https://www.genome.gov/genetics-glossary/Copy-Number-Variation
 .. _BreakSeq2: http://bioinform.github.io/breakseq2/
 .. _MetaSV: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4528635/
+.. _Gemini annotations: https://gemini.readthedocs.io

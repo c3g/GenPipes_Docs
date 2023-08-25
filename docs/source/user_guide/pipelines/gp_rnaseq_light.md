@@ -229,11 +229,11 @@ The trim statistics per readset are merged at this step.
 
 #### Kallisto
 
-Run Kallisto on fastq files for a fast estimate of abundance.
+Run Kallisto on FastQ files for a fast estimate of abundance.
 
 #### Kallisto Count Matrix
 
-TBD-GenPipes-Dev
+Use the output from Kallisto to create a transcript count matrix.
 
 #### GQ Seq Utils Exploratory
 
