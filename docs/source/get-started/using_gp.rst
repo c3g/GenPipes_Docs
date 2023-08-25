@@ -39,7 +39,13 @@ Here is how you can launch GenPipes. Following is the generic command to run Gen
    bash list-of-commands.txt
        
 
-where <pipeline-name> refers to one of the :ref:`available  GenPipes Pipelines<docs_available_pipelines>` and step-range-number-1-n refers to the specific steps in the pipeline that need to be executed. 
+where:
+
+- **<pipeline-name>** refers to one of the :ref:`available  GenPipes Pipelines<docs_available_pipelines>`
+- **-s** <step-range-number-1-n> refers to the specific steps in the pipeline that need to be executed
+- **-c** refers to the configuration file, multiple files can be specified, say one for cluster specific configuration and another that is pipeline specific configuration settings
+- **-r** readset file, an input file required by the pipeline
+- **-g** the commands for running the pipeline are output to this file.
 
 .. _gp_terminology:
 
