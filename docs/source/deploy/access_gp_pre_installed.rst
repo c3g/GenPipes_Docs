@@ -108,7 +108,7 @@ To load the GenPipes modules, paste the following lines of code and save the fil
 
 :: 
 
-   umask 0002
+   umask 0006
    
    ## GenPipes/MUGQIC genomes and modules
    export MUGQIC_INSTALL_HOME=/cvmfs/soft.mugqic/CentOS6
@@ -130,7 +130,7 @@ For MUGQIC analysts, add the following lines to your $HOME/.bash_profile:
 
 ::
 
-  umask 0002
+  umask 0006
   
   ## MUGQIC genomes and modules for MUGQIC analysts
   
