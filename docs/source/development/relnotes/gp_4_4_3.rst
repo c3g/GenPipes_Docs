@@ -7,6 +7,12 @@
      sed
      sambamba
      genpipes
+     minimap
+     SNP
+     gvcf
+     bfx
+     md
+
 
 GenPipes 4.4.3 Release Notes
 ============================
