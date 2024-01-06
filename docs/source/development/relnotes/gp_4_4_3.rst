@@ -1,0 +1,56 @@
+:orphan:
+
+.. _docs_gp_relnote_4_4_2:
+
+.. spelling::
+
+     sed
+     sambamba
+     genpipes
+
+GenPipes 4.4.3 Release Notes
+============================
+
+What's new? 
+-----------
+
+This is a bug-fix minor release with the following updates to the pipelines:
+
+* `CoVSeq Pipeline <https://bitbucket.org/mugqic/genpipes/src/4.4.3/pipelines/covseq/>`_` :
+      - Fixed a bug that was affecting the prepare_table/prepare_report steps when two similarly named samples were in the same run
+* `MethylSeq <https://bitbucket.org/mugqic/genpipes/src/4.4.2/pipelines/methylseq/>`_:
+      - Updated version of bis-SNP to 1.0.0
+      - Improved multiqc report
+* `Tumor Pair <https://bitbucket.org/mugqic/genpipes/src/4.4.2/pipelines/tumor_pair/>`_:
+      - Improved documentation
+      - Added md5 for GATK recalibration output BAM
+* `RNASeq Pipeline <https://bitbucket.org/mugqic/genpipes/src/4.4.2/pipelines/rnaseq/>`_:
+      - Fixed issue where star_fusion would not re-run properly
+      - Small fixes to dependencies to avoid unnecessary restarts
+* `RNASeq Light Pipeline <https://bitbucket.org/mugqic/genpipes/src/4.4.3/pipelines/rnaseq_light/>`_ :
+      - Updated version of Kallisto to 0.48.0
+* `Nanopore Pipeline <https://bitbucket.org/mugqic/genpipes/src/4.4.3/pipelines/nanopore/>`_ :
+      - Added BAM check to minimap2_align step to avoid false exit 0
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+ 
+* The latest release for GenPipes version 4.4.3 tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-4.4.3.tar.gz
+
+* The module mugqic/genpipes/4.4.3 is installed on Abacus (MGC), Béluga, Narval, Graham and Cedar Compute Canada clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes
+
+* For latest GenPipes documentation, please refer to: https://genpipes.readthedocs.io/
+
+Where is the detailed ChangeLog? 
+================================= 
+A ChangeLog (`CHANGELOG.md <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_) is available in the archive as well as in the repository.
+
+Since we use git, there are many ways to get the details in many formats. 
+One of our preferred ways is to use a script written by the author of the Ray assembler: Sébastien Boisvert, 
+which lists the commits by tag and author: 
+
+https://raw.github.com/sebhtml/ray/master/scripts/dump-ChangeLog.sh 
+
+Enjoy our pipelines on the many clusters where they are installed!
