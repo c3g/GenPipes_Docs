@@ -1,6 +1,6 @@
 :orphan:
 
-.. _docs_gp_relnote_4_4_2:
+.. _docs_gp_relnote_4_4_3:
 
 .. spelling::
 
@@ -18,13 +18,13 @@ This is a bug-fix minor release with the following updates to the pipelines:
 
 * `CoVSeq Pipeline <https://bitbucket.org/mugqic/genpipes/src/4.4.3/pipelines/covseq/>`_` :
       - Fixed a bug that was affecting the prepare_table/prepare_report steps when two similarly named samples were in the same run
-* `MethylSeq <https://bitbucket.org/mugqic/genpipes/src/4.4.2/pipelines/methylseq/>`_:
+* `MethylSeq <https://bitbucket.org/mugqic/genpipes/src/4.4.3/pipelines/methylseq/>`_:
       - Updated version of bis-SNP to 1.0.0
       - Improved multiqc report
-* `Tumor Pair <https://bitbucket.org/mugqic/genpipes/src/4.4.2/pipelines/tumor_pair/>`_:
+* `Tumor Pair <https://bitbucket.org/mugqic/genpipes/src/4.4.3/pipelines/tumor_pair/>`_:
       - Improved documentation
       - Added md5 for GATK recalibration output BAM
-* `RNASeq Pipeline <https://bitbucket.org/mugqic/genpipes/src/4.4.2/pipelines/rnaseq/>`_:
+* `RNASeq Pipeline <https://bitbucket.org/mugqic/genpipes/src/4.4.3/pipelines/rnaseq/>`_:
       - Fixed issue where star_fusion would not re-run properly
       - Small fixes to dependencies to avoid unnecessary restarts
 * `RNASeq Light Pipeline <https://bitbucket.org/mugqic/genpipes/src/4.4.3/pipelines/rnaseq_light/>`_ :
