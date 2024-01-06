@@ -12,4 +12,4 @@ GenPipes software is available under a LGPL open source license and is continuou
 
 The latest release version of GenPipes is |genpipes_version|. 
 
-For more details, see :ref:`GenPipes Release note<docs_gp_relnote_4_4_2>`. For older releases, see :ref:`Release Notes Archive<docs_release_notes>`.
+For more details, see :ref:`GenPipes Release note<docs_gp_relnote_4_4_5>`. For older releases, see :ref:`Release Notes Archive<docs_release_notes>`.

@@ -23,7 +23,7 @@ This is a bug-fix minor release with the following updates to the pipelines:
       - Updated version of Kallisto to 0.50.0
       - Renamed kallisto indexes to be more informative with regards to version used
 
-      .. warning:: "Update custom .ini file"
+      .. warning:: Update custom .ini file
 
             The indexes renaming on kallisto may prevent older versions of the GenPipes config file to not locate the proper index file. 
             
