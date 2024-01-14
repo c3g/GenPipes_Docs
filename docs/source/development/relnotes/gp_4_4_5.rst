@@ -16,14 +16,26 @@ GenPipes 4.4.5 Release Notes
 What's new? 
 -----------
 
-This is a bug-fix minor release with the following updates to the pipelines:
+This is a bug-fix minor release:
 
-* `Tumor Pair <https://bitbucket.org/mugqic/genpipes/src/4.4.5/pipelines/tumor_pair/>`_:
-      - Database updates
+* `Tumor Pair Pipeline <https://bitbucket.org/mugqic/genpipes/src/4.4.5/pipelines/tumor_pair/>`_:
+  -  Improved dependencies and symlink generation in `sambamba_merge` step
        
-* `ChipSeq <https://bitbucket.org/mugqic/genpipes/src/4.4.5/pipelines/chipseq/>`_:
-      - Step merge_and_call_individual_gvcf updates
-      - Consolidating GATK bfx with ini_section to make sure resources are well linked
+* `RNA Sequencing Pipeline (Light) <https://bitbucket.org/mugqic/genpipes/src/4.4.5/pipelines/rnaseq_light/>`_:
+  - Fixed an issue when using single-end reads: bootstraps were not being generated, causing the sleuth step to fail
+  - Improvements in kallisto speed by adding threads option (can be configured via ini)
+
+* `RNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/4.4.5/pipelines/rnaseq/>`_:
+  - Addition of sortmeRNA metrics
+  - Fixed an issue with using single-end reads: htseq-count metrics were generated with 'reverse' setting, causing incorrect read counts
+  - **htseq-count** 'stranded' option can now be set via the config file
+  - Updated htseq version
+
+* `Chip Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/chipseq/>`_:
+  - In the differential binding step, thresholds for tables and figures can now be configured independently
+
+* **Improved Throughput**
+  - Fixed a bug in the ordering of modules that caused unnecessary restarting of steps
       
 Quick! Where can I find it? I can't wait! 
 ------------------------------------------

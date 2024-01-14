@@ -102,7 +102,7 @@ You can download the test dataset for this pipeline :ref:`here<docs_testdatasets
 Pipeline Schema
 ---------------
 
-Figure below shows the schema of the Nanopore CoVSeQ ARTIC SARS-CoV2 sequencing protocol. You can refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore_covseq/>`_  
+Figure below shows the schema of the Nanopore CoVSeQ ARTIC SARS-CoV2 sequencing protocol. You can also refer to the latest `pipeline implementation <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore_covseq/>`_  
 
 .. figure:: /img/pipelines/nanopore_covseq_df.png
    :align: center
