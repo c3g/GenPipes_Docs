@@ -55,6 +55,9 @@
                             set, --job-scheduler, --force options and job up-to-
                             date status are ignored (default: false)
 
+                            Note: Do not use -g option with --clean, use '>' to redirect
+                            the output of the --clean command option
+
 ::
 
   -l {debug,info,warning,error,critical}, --log {debug,info,warning,error,critical}
@@ -76,7 +79,7 @@
 
 ::
 
-  -v, --version             show the version information and exita
+  -v, --version             show the version information and exit
 
 ::
 
@@ -88,4 +91,7 @@
                             stored in GENPIPES_FILE, if this option is specified
                             . Otherwise, the output will be redirected to stdout
                             . This file can be used to actually "run the 
-                            GenPipes Pipeline".
+                            GenPipes Pipeline"
+
+                            Note: Do not use -g option with -clean. Use '>' to redirect
+                            the output to a file when using -clean option.
