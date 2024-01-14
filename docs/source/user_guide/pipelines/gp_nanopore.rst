@@ -84,7 +84,9 @@ Use the following commands to execute Nanopore Sequencing Pipeline:
 
 .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
-You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`. Nanopore pipeline readset file structure and format details are available `here <https://bitbucket.org/mugqic/genpipes/src/master/README.md#markdown-header-nanopore-pipeline>`_.
+.. include::  /user_guide/pipelines/example_runs/nanopore-readset.inc
+
+You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`. 
 
 ----
 
