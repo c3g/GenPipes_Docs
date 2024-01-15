@@ -1,7 +1,6 @@
 .. _docs_steps_ampseq:
 
-Step Details
--------------
+**Step Details**
 
 Following are the various steps that are part of GenPipes Amplicon Sequencing genomic analysis pipeline:
 
