@@ -13,154 +13,147 @@
 CoV Sequencing Pipeline
 ========================
 
-CoV Sequencing Pipeline can be used to effectively amplify and detect SARS-CoV-2 RNA in samples such that it enables reliable results from even low copy numbers. It helps to assay clean characteristic target peaks of defined sizes, allowing for direct detection of the presence of viral genome from the Coronaviridae family.  Sequencing provides confirmation for the species as well as phylogenetic information for the specific strain discrimination.
+:bdg-primary:`Version` |genpipes_version|
 
-The design of this pipeline is directed against SARS-CoV-2 and other coronaviruses as well. By amplifying conserved regions of other coronaviruses in a sample, along with mutation tolerant panels, it can provide additional insights and pinpoint sequence variability, thus offering a powerful solution for more in-depth research and surveillance of the rapidly evolving virus.
+.. tab-set:: 
 
-CoVSeQ pipeline is designed as part of the `partnership for Québec SARS-CoV-2`_ sequencing. It is funded by the CanCOGeN initiative through Genome Canada and from the Ministere de la santé et des services sociaux du Québec. For more details, see `CoVSeQ website`_.
+      .. tab-item:: About
 
-.. contents:: :local:
+         .. card::
 
-----
+            CoV Sequencing Pipeline can be used to effectively amplify and detect SARS-CoV-2 RNA in samples such that it enables reliable results from even low copy numbers. It helps to assay clean characteristic target peaks of defined sizes, allowing for direct detection of the presence of viral genome from the Coronaviridae family.  S
+            
+            equencing provides confirmation for the species as well as phylogenetic information for the specific strain discrimination.
 
-Introduction
-------------
+            The design of this pipeline is directed against SARS-CoV-2 and other coronaviruses as well. By amplifying conserved regions of other coronaviruses in a sample, along with mutation tolerant panels, it can provide additional insights and pinpoint sequence variability, thus offering a powerful solution for more in-depth research and surveillance of the rapidly evolving virus.
 
-The ongoing COVID-19 pandemic demands surveillance of the SARS-CoV-2 variants and fast spreading mutants through rapid and near real-time sequencing of the viral genome.  This is critical for effective health policy decision making. Gene sequencing pipelines require to be focused on specific characteristics of the COVID genome such as spike protein. To that effect, SARS-CoV-2 sequencing has been standardized through initiatives such as the Advancing Real-Time Infection Control Network (ARTIC) international initiative in which Illumina or Oxford Nanopore sequencing is carried out prior to whole viral genome amplification by tiling PCR or metagenomic approaches. 
+            CoVSeQ pipeline is designed as part of the `partnership for Québec SARS-CoV-2`_ sequencing. It is funded by the CanCOGeN initiative through Genome Canada and from the Ministere de la santé et des services sociaux du Québec. For more details, see `CoVSeQ website`_.
 
-SARS-CoV-2 whole genome sequencing data can help researchers in the following ways:
+      .. tab-item:: Usage
 
-* characterize viral variants that occur within a given host
-* understand variant fixation in a given population
-* understand how the virus changes over time.
+         .. dropdown:: Command
 
-GenPipes offers CoVSeQ Pipeline, a bioinformatic workflow that incorporates Illumina and ONT sequence. This pipeline is intended to address both short as well as long reads and input data obtained from Illumina as well as ONT Nanopore instruments.
- 
-CoVSeQ pipeline helps in the genomic epidemiology of SARS-CoV-2 that output sequence alignment analysis and/or variants in various formats. It uses `Kraken2`_, `FreeBayes`_, `SnpEff`_ for genomic processing and `bcftools`_, `QUAST`_ for consensus. The latest version of the pipeline uses ncov-tools v1.8 for alignment and quality control. SAM Tools are used for sorting and indexing BAM files. It performs variant calling on every sorted BAM file, obtaining major frequency viral variants per genome in VCF format using the Freebayes variant calling program, as frequency-based pooled caller. Merged variants are annotated using SnpEff.  
+            .. code::
 
-CoVSeQ pipeline can be used for SARS-CoV-2 whole genome sequencing as per `ARTIC`_ protocol `V4`_ or `V4.1`_ by specifying appropriate .ini file as described below in usage and example sections. 
+               covseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
+                           [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
+                           [--no-json] [--report] [--clean]
+                           [-l {debug,info,warning,error,critical}] [--sanity-check]
+                           [--container {wrapper, singularity} <IMAGE PATH>]
+                           [--genpipes_file GENPIPES_FILE]
+                           [-r READSETS] [-v]
 
-----
+         .. dropdown:: Example Run
 
-Version
--------
+            Use the following commands to execute CoVSeq sequencing pipeline:
 
-|genpipes_version|
+            .. include::  /user_guide/pipelines/example_runs/covseq.inc
 
-For the latest implementation and usage details refer to DNA Sequencing implementation `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/covseq/README.md>`_ file.
+            .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
-----
+            .. include:: /user_guide/pipelines/notes/artic_version.inc
 
-Usage
------
 
-::
+            .. card:: Test Dataset
+               :link: docs_testdatasets
+               :link-type: ref
 
-  covseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
-            [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
-            [--no-json] [--report] [--clean]
-            [-l {debug,info,warning,error,critical}] [--sanity-check]
-            [--container {wrapper, singularity} <IMAGE PATH>]
-            [--genpipes_file GENPIPES_FILE]
-            [-r READSETS] [-v]
+               You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 
-**Optional Arguments**
+         .. dropdown:: Options
 
-.. include:: /common/gp_readset_opt.inc
-.. include:: /common/gp_common_opt.inc
+            .. include:: /common/gp_readset_opt.inc
+            .. include:: /common/gp_common_opt.inc
 
-----
+      .. tab-item:: Schema
+         :name: covschema
 
-Example Run
------------
 
-Use the following commands to execute CoVSeq sequencing pipeline:
+         .. dropdown:: CovSeq
 
-.. include::  /user_guide/pipelines/example_runs/covseq.inc
+            .. figure:: /img/pipelines/mmd/covseq.mmd.png
+               :align: center
+               :alt: covseq schema
+               :width: 100%
+               :figwidth: 95%
 
-.. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
+               Figure: Schema of CoVSeq Sequencing protocol
 
-.. include:: /user_guide/pipelines/notes/artic_version.inc
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: legend
+               :width: 100%
+               :figwidth: 75%
 
-You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
+      .. tab-item:: Steps
 
-----
+         +----+--------------------------------+
+         |    |  *SARS-CoV-2 Sequencing Steps* |
+         +====+================================+
+         | 1. | |host_reads_removal|           |
+         +----+--------------------------------+
+         | 2. | |kraken_analysis|              |
+         +----+--------------------------------+
+         | 3. | |cutadapt|                     |
+         +----+--------------------------------+
+         | 4. | |mapping_bwa_mem_sambamba|     |
+         +----+--------------------------------+
+         | 5. | |sambamba_merge_sam_files|     |
+         +----+--------------------------------+
+         | 6. | |sambamba_filtering|           |
+         +----+--------------------------------+
+         | 7. | |ivar_trim_primers|            |
+         +----+--------------------------------+
+         | 8. | |covseq_metrics|               |
+         +----+--------------------------------+
+         | 9. | |freebayes_calling|            |
+         +----+--------------------------------+
+         | 10.| |ivar_calling|                 |
+         +----+--------------------------------+
+         | 11.| |snpeff_annotate|              |
+         +----+--------------------------------+
+         | 12.| |ivar_create_consensus|        |
+         +----+--------------------------------+
+         | 13.| |bcftools_create_consensus|    |
+         +----+--------------------------------+
+         | 14.| |quast_consensus_metrics|      |
+         +----+--------------------------------+
+         | 15.| |rename_consensus_header_ivar| |
+         +----+--------------------------------+
+         | 16.| |rename_consensus_h_freebayes| |
+         +----+--------------------------------+
+         | 17.| |ncovtools_quickalign|         |
+         +----+--------------------------------+
+         | 18.| |prepare_table|                |
+         +----+--------------------------------+
+         | 19.| |prepare_report_ivar|          |
+         +----+--------------------------------+
+         | 20.| |prepare_report_freebayes|     |
+         +----+--------------------------------+
 
-Pipeline Schema
----------------
+         .. card::
 
-Figure below shows the schema of the CovSeq sequencing protocol. 
+            .. include:: steps_covseq.inc
 
-.. figure:: /img/pipelines/mmd/covseq.mmd.png
-   :align: center
-   :alt: covseq schema
-   :width: 100%
-   :figwidth: 95%
 
-   Figure: Schema of CoVSeq Sequencing protocol
+      .. tab-item:: Details
 
-.. figure:: /img/pipelines/mmd/legend.mmd.png
-   :align: center
-   :alt: dada2 ampseq
-   :width: 100%
-   :figwidth: 75%
+         .. card:: 
 
-----
+            The ongoing COVID-19 pandemic demands surveillance of the SARS-CoV-2 variants and fast spreading mutants through rapid and near real-time sequencing of the viral genome.  This is critical for effective health policy decision making. Gene sequencing pipelines require to be focused on specific characteristics of the COVID genome such as spike protein. To that effect, SARS-CoV-2 sequencing has been standardized through initiatives such as the Advancing Real-Time Infection Control Network (ARTIC) international initiative in which Illumina or Oxford Nanopore sequencing is carried out prior to whole viral genome amplification by tiling PCR or metagenomic approaches. 
 
-Pipeline Steps
---------------
+            SARS-CoV-2 whole genome sequencing data can help researchers in the following ways:
 
-The table below shows various steps that constitute the CoVSeq genomic analysis pipeline.
+            * characterize viral variants that occur within a given host
+            * understand variant fixation in a given population
+            * understand how the virus changes over time.
 
-+----+--------------------------------+
-|    |  *SARS-CoV-2 Sequencing Steps* |
-+====+================================+
-| 1. | |host_reads_removal|           |
-+----+--------------------------------+
-| 2. | |kraken_analysis|              |
-+----+--------------------------------+
-| 3. | |cutadapt|                     |
-+----+--------------------------------+
-| 4. | |mapping_bwa_mem_sambamba|     |
-+----+--------------------------------+
-| 5. | |sambamba_merge_sam_files|     |
-+----+--------------------------------+
-| 6. | |sambamba_filtering|           |
-+----+--------------------------------+
-| 7. | |ivar_trim_primers|            |
-+----+--------------------------------+
-| 8. | |covseq_metrics|               |
-+----+--------------------------------+
-| 9. | |freebayes_calling|            |
-+----+--------------------------------+
-| 10.| |ivar_calling|                 |
-+----+--------------------------------+
-| 11.| |snpeff_annotate|              |
-+----+--------------------------------+
-| 12.| |ivar_create_consensus|        |
-+----+--------------------------------+
-| 13.| |bcftools_create_consensus|    |
-+----+--------------------------------+
-| 14.| |quast_consensus_metrics|      |
-+----+--------------------------------+
-| 15.| |rename_consensus_header_ivar| |
-+----+--------------------------------+
-| 16.| |rename_consensus_h_freebayes| |
-+----+--------------------------------+
-| 17.| |ncovtools_quickalign|         |
-+----+--------------------------------+
-| 18.| |prepare_table|                |
-+----+--------------------------------+
-| 19.| |prepare_report_ivar|          |
-+----+--------------------------------+
-| 20.| |prepare_report_freebayes|     |
-+----+--------------------------------+
+            GenPipes offers CoVSeQ Pipeline, a bioinformatic workflow that incorporates Illumina and ONT sequence. This pipeline is intended to address both short as well as long reads and input data obtained from Illumina as well as ONT Nanopore instruments.
+            
+            CoVSeQ pipeline helps in the genomic epidemiology of SARS-CoV-2 that output sequence alignment analysis and/or variants in various formats. It uses `Kraken2`_, `FreeBayes`_, `SnpEff`_ for genomic processing and `bcftools`_, `QUAST`_ for consensus. The latest version of the pipeline uses ncov-tools v1.8 for alignment and quality control. SAM Tools are used for sorting and indexing BAM files. It performs variant calling on every sorted BAM file, obtaining major frequency viral variants per genome in VCF format using the Freebayes variant calling program, as frequency-based pooled caller. Merged variants are annotated using SnpEff.  
 
-----
+            CoVSeQ pipeline can be used for SARS-CoV-2 whole genome sequencing as per `ARTIC`_ protocol `V4`_ or `V4.1`_ by specifying appropriate .ini file as described below in usage and example sections. 
 
-.. include:: steps_covseq.inc
-
-----
 
 .. _More Information on CoVSeq Sequencing:
 
