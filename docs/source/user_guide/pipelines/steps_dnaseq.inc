@@ -39,8 +39,7 @@
     readgroups
     imiss
 
-Step Details
--------------
+**Step Details**
 
 Following are the various steps that are part of GenPipes DNA Sequencing genomic analysis pipeline:
 

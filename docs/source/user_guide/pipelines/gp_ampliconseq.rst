@@ -38,6 +38,8 @@ Amplicon Sequencing Pipeline
 
             Besides `QIIME Pipeline`_ GenPipes also supports the `DADA2`_ protocol, a relatively new processing workflow for recovering single-nucleotide resolved Amplicon Sequence Variants (ASVs) from amplicon data.
 
+            See :ref:`ampschema` tab for the pipeline workflow.
+
       .. tab-item:: Usage
 
          .. dropdown:: Command
