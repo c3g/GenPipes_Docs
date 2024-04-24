@@ -72,7 +72,7 @@ DNA Sequencing Pipeline
                :link: docs_testdatasets
                :link-type: ref
 
-               Use the `DNA sequencing test dataset <https://datahub-90-cw3.p.genap.ca/dnaseq.chr19.tar.gz>`_. You can also download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
+               Use the :ref:`DNA sequencing test dataset <docs_testdatasets>` for this pipeline.
 
          .. dropdown:: Options
 

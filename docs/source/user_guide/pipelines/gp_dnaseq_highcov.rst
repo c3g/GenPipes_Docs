@@ -17,34 +17,24 @@
 DNA Sequencing (High Coverage) Pipeline
 =======================================
 
-DNA Sequencing (High Coverage) is another GenPipes pipeline that is optimized for deep coverage samples. It is based on :ref:`DNA Sequencing Pipeline<docs_gp_dnaseq>`.
+:bdg-primary:`Version` |genpipes_version|
 
-.. contents:: :local:
+.. tab-set:: 
 
-----
+      .. tab-item:: About
 
-Introduction
-------------
+         .. card::
 
-The DnaSeq High Coverage Pipeline is based on the :ref:`DNA Sequencing Pipeline<docs_gp_dnaseq>` and follows the same initial pipeline steps. The difference begins at the Mark Duplicates step. Since this data is high coverage Mark Duplicates step is not run. Recalibration is not run either because typically, these datasets are targeted with amplicons or custom capture which render recalibration useless. Also variant calling is done only using frequency. Bayesian callers are not used because these typically don't fare well with the high coverage.
+            The DnaSeq High Coverage Pipeline is based on the :ref:`DNA Sequencing Pipeline<docs_gp_dnaseq>` and follows the same initial pipeline steps. The difference begins at the Mark Duplicates step. Since this data is high coverage Mark Duplicates step is not run. Recalibration is not run either because typically, these datasets are targeted with amplicons or custom capture which render recalibration useless. Also variant calling is done only using frequency. Bayesian callers are not used because these typically don't fare well with the high coverage.
 
-----
 
-Version
--------
+      .. tab-item:: Usage
 
-|genpipes_version|
+         .. dropdown:: Command
 
-For latest pipeline implementation details visit `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq_high_coverage/README.md>`_.
+            .. code::
 
-----
-
-Usage
------
-
-::
-
-  dnaseq_high_coverage.py [-h] [--help] [-c CONFIG [CONFIG ...]]
+               dnaseq_high_coverage.py [-h] [--help] [-c CONFIG [CONFIG ...]]
                                [-s STEPS] [-o OUTPUT_DIR]
                                [-j {pbs,batch,daemon,slurm}] [-f] [--no-json]
                                [--report] [--clean]
@@ -54,95 +44,92 @@ Usage
                                [--genpipes_file GENPIPES_FILE]
                                [-r READSETS] [-v]
 
-**Optional Arguments**
+         .. dropdown:: Example Run
 
-.. include:: opt_dnaseq_hc.inc
-.. include:: /common/gp_readset_opt.inc
-.. include:: /common/gp_common_opt.inc
+            Following instructions are meant to be run on C3G deployed GenPipes on Beluga server.  It uses human genome data available at Beluga server. Use the following command on Beluga server to run DNA Sequencing (high coverage) pipeline:
 
-----
- 
-Example Run
------------
+            .. include::  /user_guide/pipelines/example_runs/dnaseq_highcov.inc
 
-Following instructions are meant to be run on C3G deployed GenPipes on Beluga server.  It uses human genome data available at Beluga server. Use the following command on Beluga server to run DNA Sequencing (high coverage) pipeline:
+            .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
-.. include::  /user_guide/pipelines/example_runs/dnaseq_highcov.inc
+         .. dropdown:: Options
 
-.. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
+            .. include:: opt_dnaseq_hc.inc
+            .. include:: /common/gp_readset_opt.inc
+            .. include:: /common/gp_common_opt.inc
 
----- 
+      .. tab-item:: Schema
+         :name: dnahighcovschema  
 
-Pipeline Schema
----------------
+         Figure below shows the schema of the DNA Sequencing (High Coverage) sequencing protocol. 
 
-Figure below shows the schema of the DNA Sequencing (High Coverage) sequencing protocol. 
+         .. figure:: /img/pipelines/mmd/dnaseq.highcov.mmd.png
+            :align: center
+            :alt: schema
+            :width: 100%
+            :figwidth: 95%
 
-.. figure:: /img/pipelines/mmd/dnaseq.highcov.mmd.png
-   :align: center
-   :alt: schema
-   :width: 100%
-   :figwidth: 95%
+            Figure: Schema of DNA Sequencing (High Coverage) Sequencing protocol
 
-   Figure: Schema of DNA Sequencing (High Coverage) Sequencing protocol
+         .. figure:: /img/pipelines/mmd/legend.mmd.png
+            :align: center
+            :alt: legend
+            :width: 100%
+            :figwidth: 75%
 
-.. figure:: /img/pipelines/mmd/legend.mmd.png
-   :align: center
-   :alt: legend
-   :width: 100%
-   :figwidth: 75%
+      .. tab-item:: Steps
 
-----
+         The table below shows various steps that constitute the DNA Sequencing (High Coverage) genomic analysis pipelines.
 
-Pipeline Steps
---------------
+         +----+----------------------------------------------+
+         |    |  *DNA (High Coverage) sequencing Steps*      |
+         +====+==============================================+
+         | 1. | |picard_sam_to_fastq|                        |
+         +----+----------------------------------------------+
+         | 2. | |skewer_trimming|                            |
+         +----+----------------------------------------------+
+         | 3. | |bwa_mem_sambamba_sort_sam|                  |
+         +----+----------------------------------------------+
+         | 4. | |sambamba_merge|                             |
+         +----+----------------------------------------------+
+         | 5. | |gatk_indel_realigner|                       |
+         +----+----------------------------------------------+
+         | 6. | |sambamba_merge_realigned|                   |
+         +----+----------------------------------------------+
+         | 7. | |picard_fixmate|                             |
+         +----+----------------------------------------------+
+         | 8. | |metrics|                                    |
+         +----+----------------------------------------------+
+         | 9. | |picard_calculate_hs_metrics|                |
+         +----+----------------------------------------------+
+         | 10 | |gatk_callable_loci|                         |
+         +----+----------------------------------------------+
+         | 11.| |call_variants|                              |
+         +----+----------------------------------------------+
+         | 12.| |pre-process_vcf|                            |
+         +----+----------------------------------------------+
+         | 13.| |snp_effect|                                 |
+         +----+----------------------------------------------+
+         | 14.| |gemini_annotations|                         |
+         +----+----------------------------------------------+
+         | 15.| |cram_output|                                |
+         +----+----------------------------------------------+
 
-The table below shows various steps that constitute the DNA Sequencing (High Coverage) genomic analysis pipelines.
+         .. card::
 
-+----+----------------------------------------------+
-|    |  *DNA (High Coverage) sequencing Steps*      |
-+====+==============================================+
-| 1. | |picard_sam_to_fastq|                        |
-+----+----------------------------------------------+
-| 2. | |skewer_trimming|                            |
-+----+----------------------------------------------+
-| 3. | |bwa_mem_sambamba_sort_sam|                  |
-+----+----------------------------------------------+
-| 4. | |sambamba_merge|                             |
-+----+----------------------------------------------+
-| 5. | |gatk_indel_realigner|                       |
-+----+----------------------------------------------+
-| 6. | |sambamba_merge_realigned|                   |
-+----+----------------------------------------------+
-| 7. | |picard_fixmate|                             |
-+----+----------------------------------------------+
-| 8. | |metrics|                                    |
-+----+----------------------------------------------+
-| 9. | |picard_calculate_hs_metrics|                |
-+----+----------------------------------------------+
-| 10 | |gatk_callable_loci|                         |
-+----+----------------------------------------------+
-| 11.| |call_variants|                              |
-+----+----------------------------------------------+
-| 12.| |pre-process_vcf|                            |
-+----+----------------------------------------------+
-| 13.| |snp_effect|                                 |
-+----+----------------------------------------------+
-| 14.| |gemini_annotations|                         |
-+----+----------------------------------------------+
-| 15.| |cram_output|                                |
-+----+----------------------------------------------+
+            .. include:: steps_dnaseq_highcov.inc
 
-----
+      .. tab-item:: Details
 
-.. include:: steps_dnaseq_highcov.inc
+         .. card::
 
-----
+            DNA Sequencing (High Coverage) is another GenPipes pipeline that is optimized for deep coverage samples. It is based on :ref:`DNA Sequencing Pipeline<docs_gp_dnaseq>`.
 
 .. _More Information:
 
 More information
 -----------------
+
 For the latest implementation and usage details refer to DNA Sequencing (High Coverage) `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq_high_coverage/README.md>`_ file.
 
 * `Gemini Annotations Paper <https://www.ncbi.nlm.nih.gov/pubmed/23874191>`_

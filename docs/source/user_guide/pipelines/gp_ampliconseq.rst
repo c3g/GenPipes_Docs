@@ -67,7 +67,7 @@ Amplicon Sequencing Pipeline
                :link: docs_testdatasets
                :link-type: ref
 
-               Use the `amplicon sequencing test dataset <https://datahub-90-cw3.p.genap.ca/ampliconseq.tar.gz>`_. You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
+               You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 
          .. dropdown:: Options
 
