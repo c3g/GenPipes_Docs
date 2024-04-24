@@ -4,8 +4,7 @@
 
      unsynchronized
     
-Step Details
--------------
+**Step Details**
 
 Following are the various steps that are part of GenPipes DNA (High Coverage) Sequencing genomic analysis pipeline:
 

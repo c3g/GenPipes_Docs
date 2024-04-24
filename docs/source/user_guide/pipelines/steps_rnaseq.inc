@@ -18,8 +18,7 @@
       cufflinks
       stringtie
 
-Step Details
--------------
+**Step Details**
 
 .. _Picard SAM to FastQ:
 

@@ -6,8 +6,7 @@
      quast
      quickalign
 
-Step Details
--------------
+**Step Details**
 
 Following are the various steps that are part of GenPipes CoVSeq genomic analysis pipeline:
 

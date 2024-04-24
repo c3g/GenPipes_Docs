@@ -9,8 +9,7 @@
       kegg
       rds
 
-Step Details
--------------
+**Step Details**
 
 .. _Picard SAM to FastQ:
 
