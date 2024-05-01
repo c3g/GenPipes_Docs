@@ -7,8 +7,7 @@
      pairwiseß
      hifive
 
-Step Details
-------------
+**Step Details**
 
 Following are the various steps that are part of Hi-C genomic analysis pipelines:
 
