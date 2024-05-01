@@ -57,8 +57,7 @@ RNA Sequencing Pipeline
 
       .. tab-item:: Schema
          :name: rnaschema  
-
-
+         
          .. dropdown:: CuffLinks
 
             Figure below shows the schema of the RNA sequencing protocol (cufflinks). 
