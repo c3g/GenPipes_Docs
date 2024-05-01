@@ -9,15 +9,13 @@
      chromsizes
      bp
 
-Step Details
--------------
+**Step Details**
 
 Following are the various steps that are part of GenPipes epiQC pipeline:
 
 .. _BigWigInfo Processing:
 
-BigWigInfo Processing
-^^^^^^^^^^^^^^^^^^^^^
+**BigWigInfo Processing**
 
 This step takes BigWig file as input and runs the `BigWigInfo Tool <https://bioconda-recipes-demo.readthedocs.io/en/docs/recipes/ucsc-bigwiginfo/README.html>`_ to inspect signal tracks and identify obvious issues that may impact the quality of the ChIP-Seq data. BigWigInfo is capable of identifying various obvious issues such as missing chromosomes and insufficient track coverage. These are usually symptoms of improperly generated tracks.
 
@@ -29,8 +27,7 @@ If the user has specified BigWig files in the readset file under BIGIWIG column,
 
 .. _ChromImpute Processing:
 
-ChromImpute Processing
-^^^^^^^^^^^^^^^^^^^^^^
+**ChromImpute Processing**
 
 `ChromImpute`_ is a Java software for large-scale systematic epigenome imputation.  ChromImpute takes an existing compendium of signal tracks (`BedGraph Files`_)  and uses it for:
 
@@ -45,24 +42,17 @@ ChromImpute bases its predictions on features from signal tracks of other marks 
 
 ChromImpute processing step comprises of several sub-steps that are invoked internally in the pipeline. 
 
-.. contents:: ChromImpute Sub-steps 
-      :local:
-
-----
-
 Refer to the section below for the sub-step details:
 
 .. _BigWig to BED Graph:
 
-BigWig to BED Graph
-~~~~~~~~~~~~~~~~~~~
+**BigWig to BED Graph**
 
 In this sub-step of ChromImpute Processing, BigWig file is the input to the `BigWigtoBEDGraph Tool <https://bioconda-recipes-demo.readthedocs.io/en/docs/recipes/ucsc-bigwigtobedgraph/README.html>`_ for converting BigWig files to `BedGraph Files`_. These BedGraph files are used in other ChromImpute steps subsequently.
 
 .. _ChromImpute Preprocessing:
 
-ChromImpute Preprocessing
-~~~~~~~~~~~~~~~~~~~~~~~~~
+**ChromImpute Preprocessing**
 
 This sub-step of ChromImpute Processing is performed to create ChromImpute directories, chromosome sizes file, inputinfo file with IHEC and user samples. Finally, this step also links the converted IHEC `BedGraph Files`_ to user directory. In order to run the ChromImpute, it is required that the inputinfo and chromsizes file are located in the imputation directory. 
 
@@ -74,8 +64,7 @@ This sub-step of ChromImpute Processing is performed to create ChromImpute direc
 
 .. _ChromImpute Convert:
 
-ChromImpute Convert
-~~~~~~~~~~~~~~~~~~~
+**ChromImpute Convert**
 
 The ChromImpute convert sub-step is performed to convert each unique mark and sample combination signal tracks (`BedGraph Files`_) in the user dataset into binned (25 bp) signal resolution tracks. Since the stored, converted files are binned using 25bps, changing the resolution value specified in the epiQC pipeline .ini file is not recommended for ChromImpute analysis.
 
@@ -91,8 +80,7 @@ The ChromImpute convert sub-step takes as input files:
 
 .. _ChromImpute Compute Global Distance:
 
-ChromImpute Compute Global Distance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**ChromImpute Compute Global Distance**
 
 This sub-step is used to compute the global distance based on correlation for each mark in each sample with the same mark in all other samples in inputinfo file. It creates a file for each mark, in each sample containing a ranked list of the globally nearest samples.
 
@@ -105,8 +93,7 @@ This sub-step takes as input the following files:
 
 .. _ChromImpute Generate Train Data:
 
-ChromImpute Generate Train Data
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**ChromImpute Generate Train Data**
 
 This step is performed to generate a set of training data instances taking directory of converted data and global distances.
 
@@ -120,8 +107,7 @@ This step takes as input the following files:
 
 .. _ChromImpute Train:
 
-ChromImpute Train
-~~~~~~~~~~~~~~~~~
+**ChromImpute Train**
 
 This step is used to train regression trees based on the feature data produced by `ChromImpute Generate Train Data`_.
 
@@ -131,10 +117,9 @@ This step takes as input files:
 #. Chromosome sizes file
 #. inputinfo file
 
-.. _ ChromImpute Apply:
+.. _ChromImpute Apply:
 
-ChromImpute Apply
-~~~~~~~~~~~~~~~~~
+**ChromImpute Apply**
 
 This step is used to apply the predictors generated in the Train command to generate the imputed data. A job is created for each sample and mark given in the dataset.
 
@@ -149,8 +134,7 @@ This sub-step takes as input files:
 
 .. _ChromImpute Evaluation:
 
-ChromImpute Evaluation
-~~~~~~~~~~~~~~~~~~~~~~
+**ChromImpute Evaluation**
 
 The final sub-step of `ChromImpute Processing`_ involves comparing the agreement between an observed and imputed data set. A job is created for every sample-mark given in the dataset. percent1 percent2 Gives lower and upper percentages to use in evaluation. Default values for percent1 is 1% and percent2 is 5%
 
@@ -161,8 +145,7 @@ This step takes as input files:
 
 .. _Signal To Noise:
 
-Signal To Noise
-^^^^^^^^^^^^^^^
+**Signal To Noise**
 
 Binned signal resolution tracks from `ChromImpute Convert`_ step is used to determine the percentage of the whole file signal that was located in the top percent1 and percent2 of the bins. The default percentages are 5% and 10% and the resulted output is a tsv file.
 
@@ -170,8 +153,7 @@ This step takes converted signal tracks from `ChromImpute Convert`_ as input fil
 
 .. _epiGeEC Processing:
 
-epiGeEC Processing
-^^^^^^^^^^^^^^^^^^
+**epiGeEC Processing**
 
 This step is performed to run the `EpiGeEC pipeline <https://bitbucket.org/labjacquespe/epigeec/src/master/>`_.  EpiGeEC pipeline consists of three sub-steps:
 
@@ -181,51 +163,40 @@ This step is performed to run the `EpiGeEC pipeline <https://bitbucket.org/labja
 
 .. _epiQC Report:
 
-epiQC Report
-^^^^^^^^^^^^
+**epiQC Report**
 
 epiQC report comprises of five sub-steps including four independent steps to generate individual report files for each metric that is computed and one step to combine all of them to generate a final epiQC report file. A user can independently run each sub step but in order to generate final report, there is a dependency on the reports generated from `BigWigInfo Processing`_, `ChromImpute Processing`_  and `EpiGeEC Processing`_ steps.
 
-This final report is a TSV file with the decision of each signal track [i.e whether the sample has passed based on all the metrics involved in various reports or are there any alerts that the user need to be concerned about.]
+This final report is a TSV file with the decision of each signal track. (i.e whether the sample has passed based on all the metrics involved in various reports or are there any alerts that the user need to be concerned about.)
 
-.. contents:: epiQC Report Sub-steps
-     :local:
+.. _BigWigInfo Report:
 
-----
-
-.. BigWigInfo Report:
-
-BigWigInfo Report
-~~~~~~~~~~~~~~~~~
+**BigWigInfo Report**
 
 This step is performed to generate report on bigwiginfo result
 
-.. ChromImpute Report:
+.. _ChromImpute Report:
 
-ChromImpute Report
-~~~~~~~~~~~~~~~~~~~
+**ChromImpute Report**
 
 This step is performed to generate a report comparing ChromImpute
 imputed signal track and input signal track (in bedgraph format).
 
 .. _Signal to Noise Report:
 
-Signal to Noise Report
-~~~~~~~~~~~~~~~~~~~~~~
+**Signal to Noise Report**
 
 This step is performed to generate report on signal_to_noise result
 
 .. _epiGeEC Report:
 
-epiGeEC Report
-~~~~~~~~~~~~~~~
+**epiGeEC Report**
 
 This step is performed to generate a heatmap from EpiGeEC results
 
 .. _epiQC Final Report:
 
-epiQC Final Report
-~~~~~~~~~~~~~~~~~~
+**epiQC Final Report**
 
 Once all metrics have been obtained, they are gathered in a TSV formatted report and compared to predetermined thresholds. A column holding epiQC's verdict for a signal track is also included, using these thresholds evaluations. 
 

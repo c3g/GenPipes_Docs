@@ -50,7 +50,7 @@ ChIP Sequencing Pipeline
 
             .. include:: /user_guide/pipelines/example_runs/chipseq.inc
             
-            The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get MUGQICexitStatus:0 or Exit_status=0. If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the job_output folder.
+            The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get `MUGQICexitStatus:0` or `Exit_status=0`. If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the job_output folder.
 
             .. card:: Test Dataset
                :link: docs_testdatasets
