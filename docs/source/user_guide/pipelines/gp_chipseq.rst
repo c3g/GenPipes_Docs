@@ -28,6 +28,10 @@ ChIP Sequencing Pipeline
 
             See :ref:`chipschema` tab for the pipeline workflow.
 
+            .. note:: **Input requirements**
+
+                  The Chip Sequencing protocol expects an input for the **Differential Binding** step. If pipeline users want to run this protocol without an input, they should skip the differential binding step and run it themselves locally.
+
       .. tab-item:: Usage
 
          .. dropdown:: Command

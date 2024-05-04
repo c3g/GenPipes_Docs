@@ -145,7 +145,9 @@ The output of differential analysis containing differentially bound peaks are sa
 
 .. note:: **Limitation of Differential Binding**
 
-     Differential Binding analysis currently supports pair-wise (two groups) comparisons **only**. If you have a more complex experimental design, you may manually conduct the analysis.
+     1. Differential Binding analysis currently supports pair-wise (two groups) comparisons **only**. If you have a more complex experimental design, you may manually conduct the analysis.
+
+     2. The Chip Sequencing protocol expects an input for the differential binding step. If pipeline users want to run this protocol without an input, they should skip the  Differential Binding step and run it themselves locally.
 
 .. _IHEC Metrics:
 
