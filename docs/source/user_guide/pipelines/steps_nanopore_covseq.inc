@@ -8,8 +8,7 @@
       arrs
       nb 
 
-Step Details
--------------
+*8Step Details**
 
 Following are the various steps that are part of GenPipes Nanopore CoVSeQ genomic analysis pipeline:
 

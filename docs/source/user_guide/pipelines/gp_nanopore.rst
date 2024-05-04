@@ -17,124 +17,112 @@
 Nanopore Pipeline
 ==================
 
-Structural Variations (SV) are genomic alterations including insertions, deletions, duplications, inversions, and translocation. They account for approximately 1% of the differences among human genomes and play a significant role in phenotypic variation and disease susceptibility.
+:bdg-primary:`Version` |genpipes_version|
 
-Nanopore sequencing technology can generate long sequence reads and provides more accurate SV identification in terms of both sequencing and data analysis. For SV analysis, several new aligners and SV callers have been developed to leverage the long-read sequencing data. Assembly based approaches can also be used for SV identification. `Minimap2`_ aligner offers high speed and relatively balanced performance for calling both insertions as well as deletions.
+.. tab-set:: 
 
-The Nanopore sequencing technology commercialized by `Oxford Nanopore Technologies (ONT)`_.
+      .. tab-item:: About
 
-.. contents:: :local:
+         .. card::
 
-----
+            The Nanopore is used to analyze long reads produced by the `Oxford Nanopore Technologies (ONT)`_ sequencers. Currently, the pipeline uses `Minimap2`_ to align reads to the reference genome. Additionally, it produces a QC report that includes an interactive dashboard for each readset with data from the basecalling summary file as well as the alignment. A step aligning random reads to the `NCBI nucleotide`_ database and reporting the species of the highest hits is also done as QC.
 
-Introduction
-------------
+            Once the QC and alignments have been produced, Picard is used to merge readsets coming from the same sample. Finally, SVIM is used to detect Structural Variants (SV) including deletions, insertions and translocations. For a full summary of the types of SVs detected, please consult the following `site <https://github.com/eldariont/svim#background-on-structural-variants-and-long-reads>`_.
 
-The Nanopore is used to analyze long reads produced by the `Oxford Nanopore Technologies (ONT)`_ sequencers. Currently, the pipeline uses `Minimap2`_ to align reads to the reference genome. Additionally, it produces a QC report that includes an interactive dashboard for each readset with data from the basecalling summary file as well as the alignment. A step aligning random reads to the `NCBI nucleotide`_ database and reporting the species of the highest hits is also done as QC.
+            The SV calls produced by SVIM are saved as VCFs for each sample, which can then be used in downstream analyses. No filtering is performed on the SV calls.
 
-Once the QC and alignments have been produced, Picard is used to merge readsets coming from the same sample. Finally, SVIM is used to detect Structural Variants (SV) including deletions, insertions and translocations. For a full summary of the types of SVs detected, please consult the following `site <https://github.com/eldariont/svim#background-on-structural-variants-and-long-reads>`_.
+            This pipeline currently does not perform base calling and requires both FASTQ and a sequencing_summary file produced by a ONT supported basecaller (we recommend `Guppy`_). Additionally, the testing and development of the pipeline were focused on genomics applications, and functionality has not been tested for transcriptomic or epigenomic datasets. Beyond the QC dashboards for each readset, there is currently no implemented reporting step in this pipeline.
 
-The SV calls produced by SVIM are saved as VCFs for each sample, which can then be used in downstream analyses. No filtering is performed on the SV calls.
+            For more information on using ONT data for structural variant detection, as well as an alternative approach, please consult `Oxford Nanopore Technologies SV Pipeline GitHub repository <https://github.com/nanoporetech/pipeline-structural-variation>`_.
 
-This pipeline currently does not perform base calling and requires both FASTQ and a sequencing_summary file produced by a ONT supported basecaller (we recommend `Guppy`_). Additionally, the testing and development of the pipeline were focused on genomics applications, and functionality has not been tested for transcriptomic or epigenomic datasets. Beyond the QC dashboards for each readset, there is currently no implemented reporting step in this pipeline.
+            For information on the structure and contents of the Nanopore readset file, please consult `Nanopore Readsets details <https://bitbucket.org/mugqic/genpipes/src/master/#markdown-header-readset-file>`_.
 
-For more information on using ONT data for structural variant detection, as well as an alternative approach, please consult `Oxford Nanopore Technologies SV Pipeline GitHub repository <https://github.com/nanoporetech/pipeline-structural-variation>`_.
+      .. tab-item:: Usage
 
-For information on the structure and contents of the Nanopore readset file, please consult `Nanopore Readsets details <https://bitbucket.org/mugqic/genpipes/src/master/#markdown-header-readset-file>`_.
+         .. dropdown:: Command
 
-----
+            .. code::
 
-Version
--------
+               nanopore.py [-h] [--help] [-c CONFIG [CONFIG ...]]
+                  [-s STEPS] [-o OUTPUT_DIR]
+                  [-j {pbs,batch,daemon,slurm}] [-f]
+                  [--no-json] [--report] [--clean]
+                  [-l {debug,info,warning,error,critical}]
+                  [--sanity-check]
+                  [--container {wrapper, singularity} <IMAGE FILE>]
+                  [--genpipes_file GENPIPES_FILE]
+                  [-r READSETS] [-v]
 
-|genpipes_version|
+         .. dropdown:: Example Run
 
-For the latest implementation and usage details refer to Nanopore Sequencing implementation `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore/README.md>`_ file.
+            Use the following commands to execute Nanopore Sequencing Pipeline:
 
-----
+            .. include::  /user_guide/pipelines/example_runs/nanopore.inc
+            .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
+            .. include::  /user_guide/pipelines/example_runs/nanopore-readset.inc
 
-Usage
------
+            .. card:: Test Dataset
+               :link: docs_testdatasets
+               :link-type: ref
 
-::
+               You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 
-  nanopore.py [-h] [--help] [-c CONFIG [CONFIG ...]]
-              [-s STEPS] [-o OUTPUT_DIR]
-              [-j {pbs,batch,daemon,slurm}] [-f]
-              [--no-json] [--report] [--clean]
-              [-l {debug,info,warning,error,critical}]
-              [--sanity-check]
-              [--container {wrapper, singularity} <IMAGE FILE>]
-              [--genpipes_file GENPIPES_FILE]
-              [-r READSETS] [-v]
+         .. dropdown:: Options
 
-**Optional Arguments**
+            .. include:: /common/gp_readset_opt.inc
+            .. include:: /common/gp_common_opt.inc
 
-.. include:: /common/gp_readset_opt.inc
-.. include:: /common/gp_common_opt.inc
 
-----
+      .. tab-item:: Schema
+         :name: nanoschema        
 
-Example Run
------------
+         The following figure shows the schema for Nanopore sequencing pipeline:
 
-Use the following commands to execute Nanopore Sequencing Pipeline:
+          .. figure:: /img/pipelines/mmd/nanopore.mmd.png
+             :align: center
+             :alt: nanopore schema 
+             :width: 80%
+             :figwidth: 95%
 
-.. include::  /user_guide/pipelines/example_runs/nanopore.inc
+             Figure: Schema of Nanopore Sequencing protocol
 
-.. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
+          .. figure:: /img/pipelines/mmd/legend.mmd.png
+             :align: center
+             :alt: dada2 ampseq
+             :width: 100%
+             :figwidth: 75%
 
-.. include::  /user_guide/pipelines/example_runs/nanopore-readset.inc
+      .. tab-item:: Steps
 
-You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`. 
+         +----+-------------------------------------------+
+         |    |  *Nanopore Sequencing Steps*              |
+         +====+===========================================+
+         | 1. | |blastqc|                                 |
+         +----+-------------------------------------------+
+         | 2. | |minimap2_align|                          |
+         +----+-------------------------------------------+
+         | 3. | |pycoqc|                                  |
+         +----+-------------------------------------------+
+         | 4. | |picard_merge_sam_files|                  |
+         +----+-------------------------------------------+
+         | 5. | |svim|                                    |
+         +----+-------------------------------------------+
 
-----
+         .. card::
 
-Pipeline Schema
----------------- 
+            .. include:: steps_nanopore.inc
 
-The following figure shows the schema for Nanopore sequencing pipeline:
+      .. tab-item:: Details
 
-.. figure:: /img/pipelines/mmd/nanopore.mmd.png
-    :align: center
-    :alt: nanopore schema 
-    :width: 80%
-    :figwidth: 95%
+         .. card::
 
-    Figure: Schema of Nanopore Sequencing protocol
+            Structural Variations (SV) are genomic alterations including insertions, deletions, duplications, inversions, and translocation. They account for approximately 1% of the differences among human genomes and play a significant role in phenotypic variation and disease susceptibility.
 
-.. figure:: /img/pipelines/mmd/legend.mmd.png
-   :align: center
-   :alt: dada2 ampseq
-   :width: 100%
-   :figwidth: 75%
+            Nanopore sequencing technology can generate long sequence reads and provides more accurate SV identification in terms of both sequencing and data analysis. For SV analysis, several new aligners and SV callers have been developed to leverage the long-read sequencing data. Assembly based approaches can also be used for SV identification. `Minimap2`_ aligner offers high speed and relatively balanced performance for calling both insertions as well as deletions.
 
-----
+            The Nanopore sequencing technology commercialized by `Oxford Nanopore Technologies (ONT)`_.
 
-Pipeline Steps
---------------
-
-The table below shows various steps that are part of Nanopore Sequencing Pipeline:
-
-+----+-------------------------------------------+
-|    |  *Nanopore Sequencing Steps*              |
-+====+===========================================+
-| 1. | |blastqc|                                 |
-+----+-------------------------------------------+
-| 2. | |minimap2_align|                          |
-+----+-------------------------------------------+
-| 3. | |pycoqc|                                  |
-+----+-------------------------------------------+
-| 4. | |picard_merge_sam_files|                  |
-+----+-------------------------------------------+
-| 5. | |svim|                                    |
-+----+-------------------------------------------+
-
-----
-
-.. include:: steps_nanopore.inc
-
-----
+.. _More Information Nanopore:
 
 More Information 
 ----------------
