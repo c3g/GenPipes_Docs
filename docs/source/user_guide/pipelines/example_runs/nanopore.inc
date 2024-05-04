@@ -1,6 +1,6 @@
 ::
 
-  nanopore.py <Add options - info not available in README file -g nanopore_cmd.sh
+  nanopore.py -c nanopore.base.ini beluga.ini -r /cvmfs/soft.mugqic/root/testdata/nanopore/readset.nanopore.txt -o nanopore -g nanopore_cmd.sh
 
   bash nanopore_cmd.sh
 
