@@ -58,7 +58,7 @@ CoV Sequencing Pipeline
                :link: docs_testdatasets
                :link-type: ref
 
-               You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
+               .. include::  /resources/cov-seq-testdataset-note.inc
 
          .. dropdown:: Options
 

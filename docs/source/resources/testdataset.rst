@@ -28,8 +28,6 @@ In contrast to the test dataset, a :ref:`Readset File<docs_readset_file>` in the
 +-----------------------------------------------+------------------------------------------+
 | :ref:`ChIP Seq<docs_gp_chipseq>`              |   `Download ChIP Seq Dataset`_           |
 +-----------------------------------------------+------------------------------------------+
-| :ref:`CoV Seq<docs_gp_covseq>`                |   [Not available due to privacy]         |
-+-----------------------------------------------+------------------------------------------+
 | :ref:`DNA Seq<docs_gp_dnaseq>`                |   `Download DNA Seq Dataset`_            |
 +-----------------------------------------------+------------------------------------------+
 | :ref:`epiQC<docs_gp_epiqc>`                   |   `Download epiQC Dataset`_              |
@@ -46,6 +44,8 @@ In contrast to the test dataset, a :ref:`Readset File<docs_readset_file>` in the
 +-----------------------------------------------+------------------------------------------+
 | :ref:`TumorPair Seq<docs_gp_tumorpair>`       |   `Download TumorPair Seq Dataset`_      |
 +-----------------------------------------------+------------------------------------------+
+
+.. include::  /resources/cov-seq-testdataset-note.inc
 
 .. warning:: 
 
