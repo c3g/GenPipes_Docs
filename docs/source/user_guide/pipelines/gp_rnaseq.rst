@@ -79,10 +79,45 @@ RNA Sequencing Pipeline
 
             .. figure:: /img/pipelines/mmd/legend.mmd.png
                :align: center
-               :alt: dada2 ampseq
+               :alt: legend
                :width: 100%
                :figwidth: 75%
 
+         .. dropdown:: Variants
+
+            The following figure shows the schema of the RNA sequencing protocol (variants).
+
+            .. figure:: /img/pipelines/mmd/rnaseq.variants.mmd.png
+               :align: center
+               :alt: rnaseq schema variants
+               :width: 100%
+               :figwidth: 95%
+
+               Figure: Schema of RNA Sequencing pipeline (variants)
+
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: legend
+               :width: 100%
+               :figwidth: 75%
+
+         .. dropdown:: Cancer
+
+            The following figure shows the schema of the RNA sequencing protocol (variants).
+
+            .. figure:: /img/pipelines/mmd/rnaseq.cancer.mmd.png
+               :align: center
+               :alt: rnaseq schema cancer
+               :width: 100%
+               :figwidth: 95%
+
+               Figure: Schema of RNA Sequencing pipeline (cancer)
+
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: legend
+               :width: 100%
+               :figwidth: 75%
       .. tab-item:: Steps
 
          +----+-----------------------------+------------------------------------+-----------------------------------+
