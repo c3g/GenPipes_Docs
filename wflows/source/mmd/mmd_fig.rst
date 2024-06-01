@@ -125,12 +125,15 @@ Nanopore CovSeQ Pipeline
 RNA Sequencing Pipeline
 =======================
 
-.. mermaid:: /mmd/pipelines/rnaseq.cufflinks.mmd
-     :caption: RNA Sequencing (Cufflinks) Pipeline Schema
-
 .. mermaid:: /mmd/pipelines/rnaseq.stringtie.mmd
      :caption: RNA Sequencing (Stringtie) Pipeline Schema
 
+.. mermaid:: /mmd/pipelines/rnaseq.variants.mmd
+     :caption: RNA Sequencing (Variants) Pipeline Schema
+
+.. mermaid:: /mmd/pipelines/rnaseq.cancer.mmd
+     :caption: RNA Sequencing (Cancer) Pipeline Schema
+     
 ----
 
 RNA Sequencing DeNovo Assembly

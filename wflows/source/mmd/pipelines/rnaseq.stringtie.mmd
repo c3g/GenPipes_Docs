@@ -9,14 +9,14 @@
         Node1{{ 1. <br/> Picard <br/> SAM <br/> to <br/> FASTQ }}:::nodefill
         Node2{{ 2. <br/> Trimmomatic }}:::nodefill
         Node3{{ 3. <br/> Merge <br/> Trimmomatic <br/> Stats }}:::nodefill
-        Node4{{ 4. <br/> Star <br/> Processing }}:::nodefill
-        Node5{{ 5. <br/> Picard Merge <br/> SAM <br/> files }}:::nodefillblack
-        Node6{{ 6. <br/> Picard Sort <br/> SAM }}:::nodefill
-        Node7{{ 7. <br/> Picard Mark <br/> Duplicates }}:::nodefill
-        Node8{{ 8. <br/> Picard RNA <br/> Metrics }}:::nodefill
-        Node9{{ 9. <br/> Estimate <br/> Ribosomal <br/> RNA }}:::nodefill
-        Node10{{ 10. <br/> BAM <br/> Hard <br/> Clip }}:::nodefill
-        Node11{{ 11. <br/> RNA <br/> Seq <br/> Compress }}:::nodefill
+        Node4{{ 4. <br/> SortMerna }}:::nodefill
+        Node5{{ 5. <br/> Star <br/> Processing }}:::nodefill
+        Node6{{ 6. <br/> Picard Merge <br/> SAM <br/> files }}:::nodefillblack
+        Node7{{ 7. <br/> Picard Sort <br/> SAM }}:::nodefill
+        Node8{{ 8. <br/> Mark <br/> Duplicates }}:::nodefill
+        Node9{{ 9. <br/> Picard RNA <br/> Metrics }}:::nodefill
+        Node10{{ 10. <br/> Estimate <br/> Ribosomal <br/> RNA }}:::nodefill
+        Node11{{ 11. <br/> RNA <br/> Seq <br/> Compress C2}}:::nodefill
         Node12{{ 12. <br/> Wiggle }}:::nodefill
         Node13{{ 13. <br/> RAW <br/> Counts }}:::nodefill
         Node14{{ 14. <br/> RAW <br/> Counts Metrics }}:::nodefill
@@ -25,7 +25,8 @@
         Node17{{ 17. <br/> Stringtie <br/> Abund }}:::nodefill
         Node18{{ 18. <br/> Ballgown }}:::nodefill
         Node19{{ 19. <br/> Differential <br/> Expression }}:::nodefill
-        Node20{{ 20. <br/> Cram <br/> Output }}:::nodefill
+        Node20{{ 20. <br/> MultiQC }}:::nodefill
+        Node21{{ 21. <br/> Cram <br/> Output }}:::nodefill
 
         Input1[[fa:fa-file-archive-o .BAM]]
         Input2[[fa:fa-file-archive-o .FASTQ]]
@@ -38,30 +39,31 @@
         Input1 --> Node1 -.-> Node2
         Input2 --> Node2
 
-        Node2 -.-> Node3 & Node4
-        Node4 -.-> Node5 & Node6 & Node7 & Node9
-        Node5 -.-> Node6
-        Node6 -.-> Node13 & Node19
-        Node7 -.-> Node8 & Node10 & Node11 & Node12 & Node20
-        Node10 -.-> Node15 & Node17
-        Node12 -.-> Node14
-        Node13 -.-> Node14 & Node19
-        Node14 -.-> Node19
-        Node15 -.-> Node16 -.-> Node17 -.-> Node18 -.-> Node19
+        Node2 -.-> Node3 & Node4 & Node5
+        Node5 -.-> Node6 & Node7 & Node8 & Node10
+        Node6 -.-> Node7
+        Node8 -.-> Node14 & Node20
+        Node8 -.-> Node9 & Node11 & Node12 & Node13 & Node21
+        Node11 -.-> Node16 & Node18
+        Node13 -.-> Node15
+        Node14 -.-> Node15 & Node20
+        Node15 -.-> Node20
+        Node16 -.-> Node17 -.-> Node18 -.-> Node19 -.-> Node20
 
-        Node4 ---> StarOP
-        Node11 --> RnaOP
-        Node14 --> RcmOP
-        Node18 --> BallgownOP
+        Node4 --> Node20
+        Node5 --> StarOP
+        Node12 --> RnaOP
+        Node15 --> RcmOP
+        Node19 --> BallgownOP
 
         subgraph readSetSteps[" "]
           Node1
           Node2
           Node3
           Node4
+          Node5
         end
         subgraph sampleSetSteps[" "]
-          Node6
           Node7
           Node8
           Node9
@@ -76,6 +78,7 @@
           Node18
           Node19
           Node20
+          Node21
 
           StarOP
           RcmOP
