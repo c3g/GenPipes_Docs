@@ -148,7 +148,7 @@ Versions Available: 1.3.0
 Cufflinks
 `````````
 Cufflinks assembles transcripts, estimates their abundances, and tests for differential expression and regulation in RNA-Seq samples.
-Versions Available: 2.2.1
+Versions Available: 2.2.1 and deprecated from v4.6.0 onwards.
 
 duk
 ```
