@@ -1,5 +1,30 @@
-
- button.toggle-button.toggle-button-hidden:before {
+:root {
+    --sd-color-primary: #1c75bc; !important
+}
+    
+button.toggle-button.toggle-button-hidden:before {
     border: 2px solid green;
     padding-top: -10%;
+}
+
+.wy-grid-for-nav {
+    border-radius: 9px;
+}
+.wy-side-nav-search {
+    border: 5px solid black;
+    border-radius: 9px;
+}
+
+ .rst-content .admonition {
+    border-radius: 9px;
+}
+
+.rst-content .admonition-title {
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+
+.btn {
+    border-radius: 9px;
+    background-color: var(--sd-color-primary);
 }

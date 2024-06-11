@@ -118,21 +118,25 @@ html_last_updated_fmt = '\n %c'
 #html_last_updated_fmt = '%b %d, %Y at %H:%M'
 
 html_context = {
-#    'css_files': [
-#        '_static/theme_overrides.css',  # override wide tables in RTD theme
-#        ],
-#     'commit': os.getenv('TRAVIS_COMMIT', '')[:7],
-#     'commit': '3.1.4'
-     }
+#   'css_files': [
+#        'css/custom.css',  # override wide tables in RTD theme
+
+#   'commit': os.getenv('TRAVIS_COMMIT', '')[:7],
+#   'commit': '3.1.4'
+#    ],
+}
 
 html_theme_options = {
 	'display_version': True,
-#        'style_nav_header_background': '#1d75c8',
+    'style_nav_header_background': '#1c75bc', #RTD theme search side bar background color
 }
 
 html_css_files = [
     'css/custom.css',
 ]
+
+# This will totally overwrite all RTD style
+#html_style = 'css/custom.css'
 
 #linkcheck configuration settings
 
