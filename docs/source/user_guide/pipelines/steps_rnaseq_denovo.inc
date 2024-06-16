@@ -82,11 +82,11 @@ Identifies candidate coding regions within transcript sequences using `Transdeco
 
 Identifies protein domains using `HMMER Biosequence Analysis <http://hmmer.janelia.org/>`_
 
-.. _RNAmmer Method:
+.. _Infernal Transcriptome:
 
-**RNAmmer Method**
+**Infernal Transcriptome**
 
-Identify potential rRNA transcripts using `RNAmmer Transcriptome <http://www.cbs.dtu.dk/services/RNAmmer/>`_.
+Identify structural RNAs using cmscan function from [infernal](http://eddylab.org/infernal). This protocol is run in parallel, using chunks created by exonerate. 
 
 .. _BLAST Transdecoder UniProt:
 

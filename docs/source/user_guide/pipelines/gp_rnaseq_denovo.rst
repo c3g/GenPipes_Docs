@@ -114,7 +114,7 @@ De-Novo RNA Sequencing Pipeline
          +----+-------------------------------------------+                                  |
          | 11.| |hmmer|                                   |                                  |
          +----+-------------------------------------------+                                  |
-         | 12.| |rnammer_transcriptome|                   |                                  |
+         | 12.| |infernal_transcriptome|                  |                                  |
          +----+-------------------------------------------+                                  |
          | 13.| |blastp_transdecoder_uniprot|             |                                  |
          +----+-------------------------------------------+                                  |
@@ -213,7 +213,7 @@ You can find more information about RNA Sequencing *De Novo* Assembly Pipeline i
 .. |blastx_trinity_uniprot_merge| replace:: `BLASTX Trinity UniProt Merge`_
 .. |transdecoder_s| replace:: `TransDecoder Step`_
 .. |hmmer| replace:: `HMMER Biosequence Analysis Step`_
-.. |rnammer_transcriptome| replace:: `RNAmmer Method`_
+.. |infernal_transcriptome| replace:: `Infernal Transcriptome`_
 .. |blastp_transdecoder_uniprot| replace:: `BLAST Transdecoder UniProt`_
 .. |signalp| replace:: `SignalP Method`_
 .. |tmhmm| replace:: `TMHMM Method`_
