@@ -28,6 +28,11 @@ Amplicon Sequencing Pipeline
 
 :bdg-primary:`Version` |genpipes_version|
 
+
+.. danger::
+
+   Amplicon QIIME protocol will be deprecated from **GenPipes v5.x** onwards. 
+
 .. tab-set:: 
 
       .. tab-item:: About
@@ -77,7 +82,25 @@ Amplicon Sequencing Pipeline
             .. include:: /common/gp_common_opt.inc 
 
       .. tab-item:: Schema
-         :name: ampschema        
+         :name: ampschema    
+
+         .. dropdown:: DADA2
+
+            .. figure:: /img/pipelines/mmd/ampliconseq.dada2.mmd.png
+               :align: center
+               :alt: dada2 ampseq 
+               :width: 70%
+               :figwidth: 95%
+
+               Figure: Schema of DADA2 Amplicon Sequencing protocol
+
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: dada2 ampseq 
+               :width: 100%
+               :figwidth: 75%
+
+            `Click for a high resolution image of Amplicon Sequencing Pipeline (dada2) <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/mmd/png/ampliconseq.dada2.mmd.png>`_.  
 
          .. dropdown:: QIIME  
 
@@ -98,24 +121,6 @@ Amplicon Sequencing Pipeline
                :figwidth: 75%
 
             `Click for a high resolution image of Amplicon Sequencing Pipeline (qiime) <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/mmd/png/ampliconseq.qiime.mmd.png>`_.
-
-         .. dropdown:: DADA2
-
-            .. figure:: /img/pipelines/mmd/ampliconseq.dada2.mmd.png
-               :align: center
-               :alt: dada2 ampseq 
-               :width: 70%
-               :figwidth: 95%
-
-               Figure: Schema of DADA2 Amplicon Sequencing protocol
-
-            .. figure:: /img/pipelines/mmd/legend.mmd.png
-               :align: center
-               :alt: dada2 ampseq 
-               :width: 100%
-               :figwidth: 75%
-
-            `Click for a high resolution image of Amplicon Sequencing Pipeline (dada2) <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/mmd/png/ampliconseq.dada2.mmd.png>`_.
 
       .. tab-item:: Steps
 
