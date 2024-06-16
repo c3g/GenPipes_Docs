@@ -122,6 +122,43 @@ This step enables comparison of methylation profile across samples. It prepares 
 
 This step involves running of `MethylKit`_ to get DMCs & DMRs for different designed comparisons.
 
+.. _Dragen Align:
+
+**Dragen Align**
+
+Align reads with `Dragen <https://support-docs.illumina.com/SW/DRAGEN_v310/Content/SW/FrontPages/DRAGEN.htm>`_. Both hybrid and dragen protocols use this step to align reads. Dragen parameters can be changed using other options of the ini configuration.
+
+.. _Sort Dragen SAM:
+
+**Sort Dragen SAM**
+
+This step coordinates the sorting of the BAM file generated from Dragen protocol and creates an index.
+
+.. _Dragen Methylation Call:
+
+**Dragen Methylation Call**
+
+Calls methylation with Dragen using the second run of Dragen alignment.
+
+.. _Split Dragen Methylation Report:
+
+**Split Dragen Methylation Report**
+
+The Dragen methylation report contains all three methylation contexts. To create combined CSV CpGs should be extracted from the dragen methylation report.
+
+.. _Dragen BED Graph:
+
+**Dragen BED Graph**
+
+Creates BED graph file from combined strand CpG file.
+
+.. _Multi QC:
+
+**Multi QC** 
+
+A quality control report for all samples is generated.
+For more detailed information see `MultiQC documentation <http://multiqc.info/>`_.
+
 .. include:: steps_cram_op.inc 
 
 .. Following are the html links used in this text
