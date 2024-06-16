@@ -35,6 +35,10 @@ HiC Sequencing Pipeline
 
 :bdg-primary:`Version` |genpipes_version|
 
+.. danger::
+
+   HiC Sequencing Pipeline will be deprecated from **GenPipes v5.x** onwards. 
+
 .. tab-set:: 
 
       .. tab-item:: About

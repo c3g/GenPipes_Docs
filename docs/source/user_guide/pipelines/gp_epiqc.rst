@@ -16,6 +16,10 @@ EpiQC Pipeline
 
 :bdg-primary:`Version` |genpipes_version|
 
+.. danger::
+   
+   EpiQC Pipeline will be deprecated from **GenPipes v5.x** onwards. 
+
 .. tab-set:: 
       .. tab-item:: About
 
