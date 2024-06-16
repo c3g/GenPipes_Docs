@@ -156,6 +156,13 @@ Prepare ivar analysis report.
 
 Prepare `Freebayes`_ analysis report.
 
+.. _MultiQC Report:
+
+**MultiQC Report** 
+
+A quality control report for all samples is generated.
+For more detailed information see `MultiQC documentation <http://multiqc.info/>`_.
+
 .. Following are the links used as references above
 
 .. _iVar: https://andersen-lab.github.io/ivar/html/manualpage.html

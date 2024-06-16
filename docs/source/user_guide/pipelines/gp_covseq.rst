@@ -130,6 +130,8 @@ CoV Sequencing Pipeline
          +----+--------------------------------+
          | 20.| |prepare_report_freebayes|     |
          +----+--------------------------------+
+         | 21.| |multiqc_report|               |
+         +----+--------------------------------+
 
          .. card::
 
@@ -188,6 +190,7 @@ For the latest implementation and usage details refer to CoVSeq Pipeline impleme
 .. |prepare_table| replace:: `Prepare Table`_
 .. |prepare_report_ivar| replace:: `Prepare Report ivar`_
 .. |prepare_report_freebayes| replace:: `Prepare Report Freebayes`_
+.. |multiqc_report| replace:: `MultiQC Report`_
 
 .. The following are links and references used in this file
 
