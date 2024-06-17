@@ -21,6 +21,10 @@ Tumor Pair Sequencing Pipeline
 
 :bdg-primary:`Version` |genpipes_version|
 
+.. danger::
+
+   Tumor Pair Sequencing Pipeline will not be available as a separate standalone pipeline from **GenPipes v5.x** onwards. It will be merged with the DNA Sequencing pipeline.
+
 .. dropdown:: :material-outlined:`report;2em` Reporting System Changes
    :color: warning
 

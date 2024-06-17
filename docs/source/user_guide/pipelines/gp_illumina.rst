@@ -1,5 +1,7 @@
 :orphan:
 
+.. NOTE: THis pipeline is deprecated. Not used. Leaving it in code for posterity.
+
 .. _docs_gp_illumina_run_proc:
 
 .. spelling::
