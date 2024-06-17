@@ -20,8 +20,8 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'GenPipes'
-author = u'Shaloo Shalini (GSoD 2019-24) GenPipes' 
-show_authors = False
+author = u'shaloo' 
+show_authors = True
 #copyright =  author
 
 copyright = u'GenPipes (GSoD 2019-24)'
@@ -51,6 +51,7 @@ extensions = [ 'sphinxcontrib.spelling',
                'sphinx_tabs.tabs',
                'sphinx_togglebutton',
                'sphinx_design',
+               #'sphinx_last_updated_by_git',
 ]
 
 # Configure autosectionlabel extension
@@ -114,7 +115,8 @@ html_logo = 'img/genpipes_doc_img.png'
 
 html_static_path = ['_static']
 
-html_last_updated_fmt = '\n %c'
+html_last_updated_fmt = '\n %b %d, %Y at %H:%M'+' by '+author
+#html_last_updated_fmt = '\n %c'
 #html_last_updated_fmt = '%b %d, %Y at %H:%M'
 
 html_context = {
