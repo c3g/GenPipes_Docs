@@ -40,6 +40,8 @@ Methylation Sequencing Pipeline
                     [--genpipes_file GENPIPES_FILE]
                     [-t {bismark (default), dragen, hybrid}] [-r READSETS] [-v]
 
+             .. include:: opt_methylseq_dragen_warning.inc    
+
          .. dropdown:: Example Run
 
             Use the following commands to execute the methylation pipeline:
@@ -63,23 +65,63 @@ Methylation Sequencing Pipeline
             .. include:: /common/gp_common_opt.inc
 
       .. tab-item:: Schema
-         :name: methschema        
+         :name: methschema    
 
-         .. figure:: /img/pipelines/mmd/methylseq.mmd.png
-            :align: center
-            :alt: methylation_seq 
-            :width: 100%
-            :figwidth: 95%
+         .. dropdown:: Bismark
 
-            Figure: Schema of WGS or Methylation Sequencing pipeline
+            .. figure:: /img/pipelines/mmd/methylseq.mmd.png
+               :align: center
+               :alt: methylation_seq 
+               :width: 100%
+               :figwidth: 95%
 
-         .. figure:: /img/pipelines/mmd/legend.mmd.png
-            :align: center
-            :alt: legend
-            :width: 100%
-            :figwidth: 75%
+               Figure: Methylation Sequencing (Bismark)
+
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: legend
+               :width: 100%
+               :figwidth: 75%
+
+         .. dropdown:: Hybrid
+
+            .. figure:: /img/pipelines/mmd/methylseq.hybrid.mmd.png
+               :align: center
+               :alt: methylation_seq hybrid 
+               :width: 100%
+               :figwidth: 95%
+
+               Figure: Methylation Sequencing (Hybrid)
+
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: legend
+               :width: 100%
+               :figwidth: 75%           
+
+            .. include:: opt_methylseq_dragen_warning.inc    
+
+         .. dropdown:: Dragen
+
+            .. figure:: /img/pipelines/mmd/methylseq.dragen.mmd.png
+               :align: center
+               :alt: methylation_seq dragen 
+               :width: 100%
+               :figwidth: 95%
+
+               Figure: Methylation Sequencing (Dragen)
+
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: legend
+               :width: 100%
+               :figwidth: 75%           
+
+            .. include:: opt_methylseq_dragen_warning.inc 
 
       .. tab-item:: Steps
+
+         .. include:: opt_methylseq_dragen_warning.inc    
 
          +----+---------------------------------+----------------------------------+-----------------------------------+
          |    |  *Bismark*                      |            *Hybrid*              |              *Dragen*             |         
