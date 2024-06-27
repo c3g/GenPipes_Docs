@@ -101,6 +101,12 @@ Methyl Sequencing Pipeline
 .. mermaid:: /mmd/pipelines/methylseq.mmd
      :caption: MethylSeq Pipeline Schema
 
+.. mermaid:: /mmd/pipelines/methylseq.dragen.mmd
+     :caption: MethylSeq Pipeline Dragen Schema
+
+.. mermaid:: /mmd/pipelines/methylseq.hybrid.mmd
+     :caption: MethylSeq Pipeline Hybrid Schema
+
 ----
 
 Nanopore Pipeline
