@@ -211,7 +211,7 @@ RNA Sequencing Pipeline
 
             See :ref:`More Information` section below for details.
 
-.. _More Information on RNA Sequencing:
+.. _More Information:
 
 More information
 -----------------
