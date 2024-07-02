@@ -85,23 +85,23 @@ DNA Sequencing Pipeline
 
          .. dropdown:: MUGQIC
 
-         Figure below shows the schema of the DNA sequencing protocol - MUGQIC type. 
+            Figure below shows the schema of the DNA sequencing protocol - MUGQIC type. 
 
-            .. figure:: /img/pipelines/mmd/dnaseq.mugqic.mmd.png
-               :align: center
-               :alt: dnaseq1 schema
-               :width: 100%
-               :figwidth: 95%
+               .. figure:: /img/pipelines/mmd/dnaseq.mugqic.mmd.png
+                  :align: center
+                  :alt: dnaseq1 schema
+                  :width: 100%
+                  :figwidth: 95%
 
-               Figure: Schema of MUGQIC DNA Sequencing protocol
+                  Figure: Schema of MUGQIC DNA Sequencing protocol
 
-            .. figure:: /img/pipelines/mmd/legend.mmd.png
-               :align: center
-               :alt: dada2 ampseq
-               :width: 100%
-               :figwidth: 75%
+               .. figure:: /img/pipelines/mmd/legend.mmd.png
+                  :align: center
+                  :alt: dada2 ampseq
+                  :width: 100%
+                  :figwidth: 75%
 
-            `Click for a high resolution image of MUGQIC DNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/mmd/png/dnaseq.mugqic.mmd.png>`_.
+               `Click for a high resolution image of MUGQIC DNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/mmd/png/dnaseq.mugqic.mmd.png>`_.
 
          .. dropdown:: Mpileup
 
