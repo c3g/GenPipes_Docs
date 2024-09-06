@@ -1,7 +1,7 @@
 ::
 
-  chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.chipseq.txt -d design.chipseq.txt -s 1-20 -g chipseqScript.txt
+  chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.chipseq.txt -d design.chipseq.txt -s 1-20 -g chipseqScript.sh
 
-  bash chipseqScript.txt
+  bash chipseqScript.sh
 
 .. include:: /common/gp_cluster_ini.inc

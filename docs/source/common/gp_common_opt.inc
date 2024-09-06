@@ -34,11 +34,29 @@
   -f, --force               force creation of jobs even if up to date (default:
                             false)
 
+                            Take the mem input in the ini file and force to have a 
+                            minimum of mem_per_cpu by correcting the number of cpu 
+                            (default: None)
+
+::
+
+  --force_mem_per_cpu       FORCE_MEM_PER_CPU
+
+                            Take the mem input in the ini file and force to have a
+                            minimum of mem_per_cpu by correcting the number of cpu
+                            (default: None)
+
 ::
 
   --no-json                 do not create JSON file per analysed sample to track
                             the analysis status (default: false i.e. JSON file
                             will be created)
+
+::
+
+  --json-pt                 create JSON file for project_tracking database
+                            ingestion (default: false i.e. JSON file will NOT be
+                            created)
 
 ::
 
@@ -77,6 +95,12 @@
                             run pipeline inside a container providing a container
                             image path or accessible singularity hub path
 
+::
+
+  --wrap [WRAP]             path to the GenPipes cvmfs wrapper script (default:
+                            genpipes/ressources/container/bin/container_wrapper.sh,
+                            a convenience option for using GenPipes in a container)
+                      
 ::
 
   -v, --version             show the version information and exit

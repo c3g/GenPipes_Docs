@@ -1,5 +1,5 @@
 ::
 
-  -t {qiime,dada2}, --type {qiime,dada2}
+  -t {dada2}, --type {dada2}
 
                             AmpliconSeq analysis type (default=dada2)

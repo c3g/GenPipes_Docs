@@ -50,6 +50,7 @@ extensions = [ 'sphinxcontrib.spelling',
                'sphinx.ext.imgmath',
                'sphinx_tabs.tabs',
                'sphinx_togglebutton',
+               'sphinxemoji.sphinxemoji',
                'sphinx_design',
                #'sphinx_last_updated_by_git',
 ]

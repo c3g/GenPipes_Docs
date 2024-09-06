@@ -28,3 +28,9 @@ button.toggle-button.toggle-button-hidden:before {
     border-radius: 9px;
     background-color: var(--sd-color-primary);
 }
+
+/* Code decorations */
+
+pre, .rst-content pre.literal-block{
+    border: 2px solid white;
+}

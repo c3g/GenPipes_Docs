@@ -1,16 +1,25 @@
-.. warning::
+.. caution::
 
-     While issuing the pipeline run command, use ```-g GENPIPES_FILE``` option (see example above) instead of using the ``` > GENPIPES_FILE``` option supported by GenPipes so far, as shown below:
+     It is recommended that you use the ``-g GENPIPES_CMD.sh`` option instead of redirecting the output of the pipeline command to a file via ``> GENPIPES_CMD.sh``.
+
+     |:white_check_mark:|  
 
      ::
 
-       [genpipes_seq_pipeline].py -t mugqic -c $MUGQIC_PIPELINES_HOME/pipelines/[genpipes_seq_pipeline]/[genpipes_seq_pipeline].base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.[genpipes_seq_pipeline].txt -s 1-6 > [genpipes_seq_pipeline]_commands_mugqic.sh
-      
-       bash [genpipes_seq_pipeline]_commands_mugqic.sh
+       genpipes [pipeline.py] [options] -g genpipes_cmd.sh
 
-     ``` > scriptfile``` **should be considered deprecated and** ```-g scriptfile``` **option is recommended instead.**
+       bash genpipes_cmd.sh
 
-     Please note that redirecting commands to a script ```> genpipe_script.sh``` is still supported for now. **But going forward, this mechanism might be dropped in a future GenPipes release.** 
+     |:stop_sign:|  
+
+     :: 
+
+       genpipes [pipeline.py] [options] > genpipes_cmd.sh 
+
+       bash genpies_cmd.sh
+
+     The ``> scriptfile`` method is supported but **will be deprecated** in a future GenPipes release.
+       
 
 .. This is a comment - Issue #206 fix removing duplicate beluga tip
 .. ..include:: /common/gp_cluster_ini.inc

@@ -16,51 +16,14 @@ ChIP Sequencing Pipeline
 
 .. tab-set:: 
 
-      .. tab-item:: About
-
-         .. card::
-
-            Chromatin Immunoprecipitation (ChIP) sequencing technique is used for mapping DNA-protein interactions. It is a powerful method for identifying genome-wide DNA binding sites for transcription factors and other proteins. 
-            
-            The ChIP-Seq workflow is based on the `ENCODE Project`_ workflow. It aligns reads using the `Burrows-Wheeler Aligner`_. It creates tag directories using `Homer routines`_. Peaks are called using `Model based Analysis for Chip Sequencing (MACS2)`_ and annotated using Homer. Binding motifs are also identified using Homer. Metrics are calculated based on `IHEC requirements`_. 
-            
-            The ChIP-Seq pipeline can also be used for assay for transposase-accessible chromatin using sequencing `ATAC-Seq`_ samples. Use 'ATAC' protocol option to run the pipeline using ATAC-Seq.
-
-            See :ref:`chipschema` tab for the pipeline workflow.
-
-            .. note:: **Input requirements**
-
-                  The Chip Sequencing protocol expects an input for the **Differential Binding** step. If pipeline users want to run this protocol without an input, they should skip the differential binding step and run it themselves locally.
-
       .. tab-item:: Usage
 
          .. dropdown:: Command
+            :open:
 
-            .. code::
+            ::
 
-               chipseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
-                                 [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
-                                 [--no-json] [--report] [--clean]
-                                 [-l {debug,info,warning,error,critical}] [--sanity-check]
-                                 [--container {wrapper, singularity} <IMAGE PATH>
-                                 [--genpipes_file GENPIPES_FILE]
-                                 [-d DESIGN] [-t {chipseq (default), atacseq}] [-r READSETS] [-v]
-
-            .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
-
-         .. dropdown:: Example Run
-
-            Use the following commands to execute the Chipseq pipeline.
-
-            .. include:: /user_guide/pipelines/example_runs/chipseq.inc
-            
-            The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get `MUGQICexitStatus:0` or `Exit_status=0`. If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the job_output folder.
-
-            .. card:: Test Dataset
-               :link: docs_testdatasets
-               :link-type: ref
-
-               You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.            
+               genpipes chipseq.py [-t {chipseq (default), atacseq}] [--genpipes_file GENPIPES_FILE] [options]
 
          .. dropdown:: Options
 
@@ -68,6 +31,21 @@ ChIP Sequencing Pipeline
             .. include:: /common/gp_design_opt.inc
             .. include:: /common/gp_readset_opt.inc
             .. include:: /common/gp_common_opt.inc
+
+         .. dropdown:: Example
+            :open:
+
+            .. include:: /user_guide/pipelines/example_runs/chipseq.inc
+            
+            The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get `MUGQICexitStatus:0` or `Exit_status=0`. If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the job_output folder.
+
+            .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
+
+            .. card:: Test Dataset
+               :link: docs_testdatasets
+               :link-type: ref
+
+               You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.            
 
       .. tab-item:: Schema
          :name: chipschema
@@ -160,13 +138,36 @@ ChIP Sequencing Pipeline
 
             .. include:: steps_chipseq.inc
 
-      .. tab-item:: Details
+      .. tab-item:: About
 
          .. card::
 
-            ChIP-Seq experiments allows the isolation and sequencing of genomic DNA bound by a specific transcription factor, covalently modified histone, or other nuclear protein. The pipeline starts by trimming adapters and low quality bases and mapping the reads (single end or paired end ) to a reference genome using `Burrows-Wheeler Aligner`_ (BWA). Reads are filtered by mapping quality and duplicate reads are marked. Then, Homer quality control routines are used to provide information and feedback about the quality of the experiment. Peak calls is executed by MACS and annotation and motif discovery for narrow peaks are executed using Homer. Statistics of annotated peaks are produced for narrow peaks and a standard report is generated.
+            Chromatin Immunoprecipitation (ChIP) sequencing technique is used for mapping DNA-protein interactions. It is a powerful method for identifying genome-wide DNA binding sites for transcription factors and other proteins. 
+            
+            The ChIP-Seq workflow is based on the `ENCODE Project`_ workflow. The pipeline starts by trimming adapters and low quality bases and mapping the reads (single end or paired end ) to a reference genome using `Burrows-Wheeler Aligner`_ (BWA). Reads are filtered by mapping quality and duplicate reads are marked. It creates tag directories using `Homer routines`_. Peaks are called using `Model based Analysis for Chip Sequencing (MACS2)`_ and annotated using Homer. Binding motifs are also identified using Homer. Metrics are calculated based on `IHEC requirements`_. 
+            
+            The ChIP-Seq pipeline can also be used for assay for transposase-accessible chromatin using sequencing `ATAC-Seq`_ samples. Use 'ATAC' protocol option to run the pipeline using ATAC-Seq.
 
-            See `ChIP-Seq Guidelines`_, and  `MUGQIC_Bioinfo_Chip-Seq.pptx`_ for more information.
+            See :ref:`chipschema` tab for the pipeline workflow. Check the `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/chipseq/README.md>`_ file for implementation details.
+
+            .. note:: **Input requirements**
+
+                  The Chip Sequencing protocol expects an input for the **Differential Binding** step. If pipeline users want to run this protocol without an input, they should skip the differential binding step and run it themselves locally.
+               
+            .. figure:: /img/pipelines/ChIP-Seq-hl-diag.png
+               :align: center
+               :alt: ChIP-Seq-HL 
+
+               Figure:  Schematic representation of major methods used to detect functional elements in DNA (Source PLOS)
+
+            **References**
+
+            * `ChIP-Seq Guidelines`_
+            *  `MUGQIC_Bioinfo_Chip-Seq.pptx`_
+            * `ChIP-Seq and Beyond <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3591838/>`_ 
+            * `ChIP-Seq Technology and Workflow <https://www.sciencedirect.com/science/article/pii/S1046202320300591>`_
+            * `Schematic representation of major methods to detect functional elements in DNA <https://journals.plos.org/plosbiology/article/figure?id=10.1371/journal.pbio.1001046.g001>`_
+            * `ChIP Sequencing and ATAC Sequencing <https://bioinformatics-core-shared-training.github.io/cruk-autumn-school-2017/ChIP/Materials/Lectures/Lecture4_Introduction%20to%20ChIP-seq%20and%20ATAC-seq_SS.pdf>`_
 
 .. dropdown:: :material-outlined:`report;2em` Chip Sequencing Design File
    :color: warning
@@ -179,25 +180,6 @@ ChIP Sequencing Pipeline
    :color: info
 
    .. include:: /user_guide/pipelines/design_fileformat/chipseq_design.inc
-   
-More Information
-----------------
-
-For the latest implementation and usage details, see `ChIP-Seq Pipeline README`_. Here is some more information about ChIP sequencing pipeline that you may find interesting.
-
-* `ChIP-Seq and Beyond <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3591838/>`_. 
-
-* `ChIP-Seq Technology and Workflow <https://www.sciencedirect.com/science/article/pii/S1046202320300591>`_.
-
-* `Schematic representation of major methods to detect functional elements in DNA <https://journals.plos.org/plosbiology/article/figure?id=10.1371/journal.pbio.1001046.g001>`_.
-
-* `ChIP Sequencing and ATAC Sequencing <https://bioinformatics-core-shared-training.github.io/cruk-autumn-school-2017/ChIP/Materials/Lectures/Lecture4_Introduction%20to%20ChIP-seq%20and%20ATAC-seq_SS.pdf>`_
-
-.. figure:: /img/pipelines/ChIP-Seq-hl-diag.png
-   :align: center
-   :alt: ChIP-Seq-HL 
-
-   Figure:  Schematic representation of major methods used to detect functional elements in DNA (Source PLOS)
 
 .. The following are replacement texts used in this file
 
