@@ -26,11 +26,13 @@
           Node18{{ 18. <br/> Prepare <br/> Table }}:::nodefill
           Node19{{ 19. <br/> Prepare <br/> Report ivar }}:::nodefill
           Node20{{ 20. <br/> Prepare <br/> Report Freebayes }}:::nodefill
+          Node21{{ 21. <br/> MultiQC }}:::nodefill
           QuastOutput([fa:fa-sticky-note-o Report ])
           CovseqOutput([fa:fa-sticky-note-o Report ])
           KrakenOutput([fa:fa-sticky-note-o Report ])
           Outputivar([fa:fa-sticky-note-o Report ])
           Outputfb([fa:fa-sticky-note-o Report ])
+          MultiQCReport([fa:fa-sticky-note-o Report ])
 
           InputFASTQ --> Node1
           Node1 -.-> Node2 & Node3
@@ -49,9 +51,11 @@
           Node2 & Node6 & Node8 & Node14 -.-> Node18 -.-> Node19
           Node6 & Node7 & Node10 & Node15 -.-> Node19
           Node6 & Node7 & Node9 & Node16 & Node18 -.-> Node20
+          Node18 & Node19 & Node20 -.-> Node21
           Node14 --> QuastOutput
           Node19 --> Outputivar
           Node20 --> Outputfb
+          Node21 --> MultiQCReport
 
           subgraph readSetSteps[" "]
             Node1
