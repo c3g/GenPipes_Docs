@@ -36,14 +36,8 @@ In contrast to the test dataset, a :ref:`Readset File<docs_readset_file>` in the
 +-----------------------------------------------+------------------------------------------+
 | :ref:`Methyl Seq<docs_methylation>`           |   `Download Methyl Seq Dataset`_         |
 +-----------------------------------------------+------------------------------------------+
-| :ref:`PacBio Seq<docs_gp_dnaseq>`             |   `Download PacBio Seq Dataset`_         |
-+-----------------------------------------------+------------------------------------------+
 
 .. include::  /resources/cov-seq-testdataset-note.inc
-
-.. warning:: 
-
-     PacBio Sequencing Pipeline is no longer available in GenPipes Release 3.2.0 and beyond.
 
 ----------------------------
 Test Dataset Usage Examples
@@ -71,4 +65,3 @@ You can also download the latest test datasets from Computational Genomics websi
 .. _Download RNA Seq Dataset: https://datahub-90-cw3.p.genap.ca/rnaseq.chr19.tar.gz
 .. _Download RNA Seq Light Dataset: https://datahub-90-cw3.p.genap.ca/rnaseq_light.chr19.tar.gz
 .. _Download Methyl Seq Dataset: https://datahub-90-cw3.p.genap.ca/methylseq.chr19.tar.gz
-.. _Download PacBio Seq Dataset: https://datahub-90-cw3.p.genap.ca/pacbio.tar.gz

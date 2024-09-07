@@ -21,45 +21,24 @@ Nanopore Pipeline
 
 .. tab-set:: 
 
-      .. tab-item:: About
-
-         .. card::
-
-            The Nanopore is used to analyze long reads produced by the `Oxford Nanopore Technologies (ONT)`_ sequencers. Currently, the pipeline uses `Minimap2`_ to align reads to the reference genome. Additionally, it produces a QC report that includes an interactive dashboard for each readset with data from the basecalling summary file as well as the alignment. A step aligning random reads to the `NCBI nucleotide`_ database and reporting the species of the highest hits is also done as QC.
-
-            Once the QC and alignments have been produced, Picard is used to merge readsets coming from the same sample. Finally, SVIM is used to detect Structural Variants (SV) including deletions, insertions and translocations. For a full summary of the types of SVs detected, please consult the following `site <https://github.com/eldariont/svim#background-on-structural-variants-and-long-reads>`_.
-
-            The SV calls produced by SVIM are saved as VCFs for each sample, which can then be used in downstream analyses. No filtering is performed on the SV calls.
-
-            This pipeline currently does not perform base calling and requires both FASTQ and a sequencing_summary file produced by a ONT supported basecaller (we recommend `Guppy`_). Additionally, the testing and development of the pipeline were focused on genomics applications, and functionality has not been tested for transcriptomic or epigenomic datasets. Beyond the QC dashboards for each readset, there is currently no implemented reporting step in this pipeline.
-
-            For more information on using ONT data for structural variant detection, as well as an alternative approach, please consult `Oxford Nanopore Technologies SV Pipeline GitHub repository <https://github.com/nanoporetech/pipeline-structural-variation>`_.
-
-            For information on the structure and contents of the Nanopore readset file, please consult `Nanopore Readsets details <https://bitbucket.org/mugqic/genpipes/src/master/#markdown-header-readset-file>`_.
-
       .. tab-item:: Usage
 
          .. dropdown:: Command
+            :open:
 
             .. code::
 
-               nanopore.py [-h] [--help] [-c CONFIG [CONFIG ...]]
-                  [-s STEPS] [-o OUTPUT_DIR]
-                  [-j {pbs,batch,daemon,slurm}] [-f]
-                  [--no-json] [--report] [--clean]
-                  [-l {debug,info,warning,error,critical}]
-                  [--sanity-check]
-                  [--container {wrapper, singularity} <IMAGE FILE>]
-                  [--genpipes_file GENPIPES_FILE]
-                  [-r READSETS] [-v]
+               genpipes nanopore.py [options] [--genpipes_file GENPIPES_FILE]
 
-         .. dropdown:: Example Run
+         .. dropdown:: Options
 
-            Use the following commands to execute Nanopore Sequencing Pipeline:
+            .. include:: /common/gp_readset_opt.inc
+            .. include:: /common/gp_common_opt.inc
+
+         .. dropdown:: Example
 
             .. include::  /user_guide/pipelines/example_runs/nanopore.inc
             .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
-            .. include::  /user_guide/pipelines/example_runs/nanopore-readset.inc
 
             .. card:: Test Dataset
                :link: docs_testdatasets
@@ -67,14 +46,9 @@ Nanopore Pipeline
 
                You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 
-         .. dropdown:: Options
-
-            .. include:: /common/gp_readset_opt.inc
-            .. include:: /common/gp_common_opt.inc
-
 
       .. tab-item:: Schema
-         :name: nanoschema        
+         :name: nanoschema  
 
          The following figure shows the schema for Nanopore sequencing pipeline:
 
@@ -112,7 +86,7 @@ Nanopore Pipeline
 
             .. include:: steps_nanopore.inc
 
-      .. tab-item:: Details
+      .. tab-item:: About
 
          .. card::
 
@@ -120,16 +94,23 @@ Nanopore Pipeline
 
             Nanopore sequencing technology can generate long sequence reads and provides more accurate SV identification in terms of both sequencing and data analysis. For SV analysis, several new aligners and SV callers have been developed to leverage the long-read sequencing data. Assembly based approaches can also be used for SV identification. `Minimap2`_ aligner offers high speed and relatively balanced performance for calling both insertions as well as deletions.
 
-            The Nanopore sequencing technology commercialized by `Oxford Nanopore Technologies (ONT)`_.
+            The Nanopore is used to analyze long reads produced by the `Oxford Nanopore Technologies (ONT)`_ sequencers. Currently, the pipeline uses `Minimap2`_ to align reads to the reference genome. Additionally, it produces a QC report that includes an interactive dashboard for each readset with data from the basecalling summary file as well as the alignment. A step aligning random reads to the `NCBI nucleotide`_ database and reporting the species of the highest hits is also done as QC.
 
-.. _More Information Nanopore:
+            Once the QC and alignments have been produced, Picard is used to merge readsets coming from the same sample. Finally, SVIM is used to detect Structural Variants (SV) including deletions, insertions and translocations. For a full summary of the types of SVs detected, please consult the following `site <https://github.com/eldariont/svim#background-on-structural-variants-and-long-reads>`_.
 
-More Information 
-----------------
+            The SV calls produced by SVIM are saved as VCFs for each sample, which can then be used in downstream analyses. No filtering is performed on the SV calls.
 
-* `Evaluating nanopore sequencing data processing pipelines for structural variation identification <https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1858-1>`_.
-* `Minimap2`_: Pairwise alignment for nucleotide sequences.
-* `Basecalling using Guppy <https://timkahlke.github.io/LongRead_tutorials/BS_G.html>`_.
+            This pipeline currently does not perform base calling and requires both FASTQ and a sequencing_summary file produced by a ONT supported basecaller (we recommend `Guppy`_). Additionally, the testing and development of the pipeline were focused on genomics applications, and functionality has not been tested for transcriptomic or epigenomic datasets. Beyond the QC dashboards for each readset, there is currently no implemented reporting step in this pipeline.
+
+            For more information on using ONT data for structural variant detection, as well as an alternative approach, please consult `Oxford Nanopore Technologies SV Pipeline GitHub repository <https://github.com/nanoporetech/pipeline-structural-variation>`_.
+
+            **References**
+
+            * `Evaluating nanopore sequencing data processing pipelines for structural variation identification <https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1858-1>`_.
+            * `Minimap2`_: Pairwise alignment for nucleotide sequences.
+            * `Basecalling using Guppy <https://timkahlke.github.io/LongRead_tutorials/BS_G.html>`_.
+
+.. include::  /user_guide/pipelines/example_runs/nanopore-readset.inc
 
 .. Following are the replacement texts used in the content above
 

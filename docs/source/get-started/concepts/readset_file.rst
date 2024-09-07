@@ -21,7 +21,7 @@ Readset File format
 
 .. warning::
 
-     Readset file format may vary for different GenPipes Pipelines.  For example, ChIP-Seq, PacBio and Nanopore pipelines use a slightly different readset format as compared to DNA-Seq, RNA-Seq or Covseq pipelines.
+     Readset file format may vary for different GenPipes Pipelines.  For example, ChIP-Seq and Nanopore pipelines use a slightly different readset format as compared to DNA-Seq, RNA-Seq or Covseq pipelines.
 
 General Readset File Format
 ---------------------------
@@ -165,49 +165,6 @@ Example of ChIP-Seq Readset File
     The sample name of the treatment and control sample should be matched. 
 
     If there are multiple histone marks for the same sample, make sure that the sample name is the same for all.
-
-PacBio Assembly Readset File Format
--------------------------------------
-
-Use the following readset file format for the PacBio Assembly Pipeline. **Do NOT** use the general readset file format above for the PacBio Assembly.
-
-+------------------------------+-------------------------------------------------------------------------------------------+
-|   *Field*                    |   *Contents*                                                                              |
-+==============================+===========================================================================================+
-| **Sample:**                  | Sample must contain letters A-Z, numbers 0-9, hyphens (-) or underscores (_) only; BAM    |
-|                              | files will be merged into a file named after this value; mandatory.                       |
-|                              |                                                                                           | 
-+------------------------------+-------------------------------------------------------------------------------------------+
-|**Readset:**                  | A unique readset name with the same allowed characters as above; mandatory                |
-+------------------------------+-------------------------------------------------------------------------------------------+
-|**Smartcell:**                | Mandatory.                                                                                | 
-+------------------------------+-------------------------------------------------------------------------------------------+
-|**NbBasePairs:**              | Total number of base pairs for this readset; mandatory                                    |
-+------------------------------+-------------------------------------------------------------------------------------------+
-|**EstimatedGenomeSize:**      | Estimated Genome size in numbers of base pairs used to compute seeding read length cutoff;|
-|                              | mandatory                                                                                 | 
-+------------------------------+-------------------------------------------------------------------------------------------+
-|**BAS:**                      | Comma-separated list of relative or absolute paths to BAS files (old PacBio format);      |
-|                              | mandatory;  if BAX value is missing, ignored otherwise.                                   | 
-+------------------------------+-------------------------------------------------------------------------------------------+
-|**BAX:**                      | Comma-separated list of relative or absolute paths to BAX files; BAX file list is used    |
-|                              | first if both BAX/BAS lists are present; mandatory if BAS value is missing.               |
-+------------------------------+-------------------------------------------------------------------------------------------+
-
-Example of PacBio Assembly Readset File
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-::
-
-            Sample  Readset     Smartcell   NbBasePairs EstimatedGenomeSize BAS                     BAX
-
-            sampleA readset1    F_01_1      122169744   150000              path/to/readset1.bas.h5 path/to/readset1.1.bax.h5,path/to/readset1.2.bax.h5,path/to/readset1.3.bax.h5
-
-            sampleA readset2    F_01_2      105503472   150000              path/to/readset2.bas.h5 path/to/readset2.1.bax.h5,path/to/readset2.2.bax.h5,path/to/readset2.3.bax.h5
-
-            sampleB readset3    G_01_1      118603200   150000              path/to/readset3.bas.h5 path/to/readset3.1.bax.h5,path/to/readset3.2.bax.h5,path/to/readset3.3.bax.h5
-
-            sampleB readset4    G_01_2      104239488   150000              path/to/readset4.bas.h5 path/to/readset4.1.bax.h5,path/to/readset4.2.bax.h5,path/to/readset4.3.bax.h5
 
 Nanopore Pipeline Readset File Format
 -------------------------------------

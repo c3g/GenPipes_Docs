@@ -33,38 +33,29 @@ Nanopore CoVSeQ Pipeline
       .. tab-item:: Usage
 
          .. dropdown:: Command
+            :open:
 
             .. code::
 
-               nanopore_covseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
-                  [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
-                  [--no-json] [--report] [--clean]
-                  [-l {debug, info, warning, error, critical}] [--sanity-check]
-                  [-t {default (default), basecalling}]
-                  [--genpipes_file GENPIPES_FILE]
-                  [--container {wrapper, singularity} {<CONTAINER PATH>, <CONTAINER NAME>}]
-                  [-v]
+               genpipes nanopore_covseq.py [options] [--genpipes_file GENPIPES_FILE]
 
-         .. dropdown:: Example Run
+         .. dropdown:: Options
 
-            Use the following commands to execute Nanopore sequencing pipeline:
+            .. include:: opt_nanopore_cov.inc
+            .. include:: /common/gp_readset_opt.inc
+            .. include:: /common/gp_common_opt.inc
+
+         .. dropdown:: Example
 
             .. include::  /user_guide/pipelines/example_runs/nanopore_covseq.inc
-            .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
-            .. include:: /user_guide/pipelines/notes/artic_version.inc
             .. include::  /user_guide/pipelines/example_runs/nanopore-readset.inc
+            .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
             .. card:: Test Dataset
                :link: docs_testdatasets
                :link-type: ref
 
                You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
-
-         .. dropdown:: Options
-
-            .. include:: opt_nanopore_cov.inc
-            .. include:: /common/gp_common_opt.inc
-            .. include:: /common/gp_readset_opt.inc
 
       .. tab-item:: Schema
          :name: nanocovschema 
@@ -130,9 +121,9 @@ Nanopore CoVSeQ Pipeline
          | 12.|                                |  |prepare_report|              |
          +----+--------------------------------+--------------------------------+
 
-            .. card::
+         .. card::
 
-            .. include:: steps_nanopore_covseq.inc
+         .. include:: steps_nanopore_covseq.inc
 
       .. tab-item:: About
 
@@ -148,31 +139,15 @@ Nanopore CoVSeQ Pipeline
 
             Details of structure and contents of the `Nanopore readset file are available here <https://bitbucket.org/mugqic/genpipes/src/master/README.md#markdown-header-nanopore>`_.
 
+            See See :ref:`nanocovschema` tab for the pipeline workflow. For more details, refer to the `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore/README.md>`_ file.
 
-            For the latest implementation and usage details refer to Nanopore Sequencing implementation `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore/README.md>`_ file.
-            
-      .. tab-item:: Details
+            **References**
 
-         .. card::
+            * `nCoV-2019 novel coronavirus bioinformatics protocol`_
+            * `Phylogenetic Analysis of nCoV-2019 genome`_ using publicly shared genome sequences with datasets from NCBI or GISAID.
+            * `Tiling Amplicon sequencing and downstream bioinformatics analysis`_
 
-            GenPipes Nanopore CoVSeq pipeline is built using the `Nanopore ARTIC-Nanopolish protocol`_. This protocol has been widely adopted by research groups worldwide to assist in epidemiological investigations. This protocol is mainly focused around the use of portable Oxford Nanopore MinION sequencer. However, other aspects of the protocol related to primer scheme and sample amplification can be generalized to other sequencing platforms.
-
-            Direct amplification of the virus using tiled, multiplexed primers approach has been proven to have high sensitivity. It enables researchers to work directly from clinical samples compared to metagenomic projects.  It has been widely used to analyze viral genome data generated during outbreaks such as SARS-CoV-2 for information about relatedness to other viruses.
-
-            The GenPipes Nanopore CoVSeQ Sequencing Pipeline is based on nCoV-2019 novel coronavirus bioinformatics protocol (ARTIC V4.1) that takes the output from the sequencing protocol to consensus genome sequences. It includes basecalling, de-multiplexing, mapping, polishing and consensus generation.
-
-.. _More Information on Nanopore CoVSeQ Sequencing:
-
-More information
------------------
-
-For the latest implementation and usage details refer to Nanopore CoVSeq Pipeline implementation `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore_covseq/README.md>`_.
-
-* `nCoV-2019 novel coronavirus bioinformatics protocol`_
-
-* `Phylogenetic Analysis of nCoV-2019 genome`_ using publicly shared genome sequences with datasets from NCBI or GISAID.
-
-* `Tiling Amplicon sequencing and downstream bioinformatics analysis`_
+.. include:: /user_guide/pipelines/notes/artic_version.inc
 
 .. The following are replacement texts used in this file
 

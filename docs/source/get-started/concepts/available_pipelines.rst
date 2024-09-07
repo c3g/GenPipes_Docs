@@ -83,5 +83,4 @@ Available Pipelines
 .. _Capture Methyl WGS Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/methylseq/README.md
 .. _Cancer Analysis Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/tumor_pair/README.md
 .. _Meta Genomics Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/ampliconseq/README.md
-.. _PacBio Assembly Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/pacbio_assembly/README.md
 .. _SARS-COV-2 Sequencing: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/covseq/README.md
