@@ -9,7 +9,7 @@ imagesize>=0.7.1
 Pillow>=6.2.2
 recommonmark>=0.6.0
 sphinx-markdown-tables>=0.0.9
-sphinxemoji.sphinxemoji>=0.3.1
+sphinxemoji.sphinxemoji==0.3.1
 sphinx-git>=11.0.0
 docutils>=0.16.0
 # sphinx 4.3.1 needs docutils <0.18

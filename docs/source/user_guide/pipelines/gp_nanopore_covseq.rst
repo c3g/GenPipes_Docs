@@ -30,23 +30,6 @@ Nanopore CoVSeQ Pipeline
 
 .. tab-set:: 
 
-      .. tab-item:: About
-
-         .. card::
-
-            The Nanopore CoVSeQ pipeline is used to analyze long reads produced by the Oxford Nanopore Technologies (ONT) sequencers. 
-
-            The SOP for Nanopore data is based on the `ARTIC SARS-CoV2 protocol <https://artic.network/ncov-2019>`_, Version 4 / 4.1 (`V4.1 <https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019/V4.1>`_), using nanopolish. This protocol is closely followed in GenPipes Nanopore sequencing pipeline with majority of changes related to technical adaptation of the protocol to be able to run in a High Performance Computing (HPC) environment. In such environments, Conda is not advisable.
-
-            Key steps in this pipeline include `basecalling with Guppy`_, demultiplexing, read filtering and consensus sequencing. Basecalling with Guppy happens only if the ```-t basecalling``` option is selected.
-
-            If basecalling protocol option is selected through the -t command line option, the Nanopore CoVSeQ pipeline will do `basecalling with Guppy`_ (GPU) and demultiplexing. After basecalling, the pipeline performs de-hosting, for all the samples, followed by running the ARTIC-Nanopolish wrapper which performs alignment to the SARS-CoV2 reference (using `minimap2 <https://github.com/lh3/minimap2>`_), variant calling (using `Nanopolish software <https://github.com/jts/nanopolish>`_). The Nanopolish software performs signal-level analysis of Oxford Nanopore sequencing data. After Nanopolish processing, the pipeline performs consensus generation through artic_mask and bcftools consensus steps. Lastly, custom scripts and ncov_tools are run to report on quality metrics for Nanopore CoVSeQ GenPipes Sequencing Pipeline.
-
-            Details of structure and contents of the `Nanopore readset file are available here <https://bitbucket.org/mugqic/genpipes/src/master/README.md#markdown-header-nanopore>`_.
-
-
-            For the latest implementation and usage details refer to Nanopore Sequencing implementation `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore/README.md>`_ file.
-
       .. tab-item:: Usage
 
          .. dropdown:: Command
@@ -151,6 +134,23 @@ Nanopore CoVSeQ Pipeline
 
             .. include:: steps_nanopore_covseq.inc
 
+      .. tab-item:: About
+
+         .. card::
+
+            The Nanopore CoVSeQ pipeline is used to analyze long reads produced by the Oxford Nanopore Technologies (ONT) sequencers. 
+
+            The SOP for Nanopore data is based on the `ARTIC SARS-CoV2 protocol <https://artic.network/ncov-2019>`_, Version 4 / 4.1 (`V4.1 <https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019/V4.1>`_), using nanopolish. This protocol is closely followed in GenPipes Nanopore sequencing pipeline with majority of changes related to technical adaptation of the protocol to be able to run in a High Performance Computing (HPC) environment. In such environments, Conda is not advisable.
+
+            Key steps in this pipeline include `basecalling with Guppy`_, demultiplexing, read filtering and consensus sequencing. Basecalling with Guppy happens only if the ```-t basecalling``` option is selected.
+
+            If basecalling protocol option is selected through the -t command line option, the Nanopore CoVSeQ pipeline will do `basecalling with Guppy`_ (GPU) and demultiplexing. After basecalling, the pipeline performs de-hosting, for all the samples, followed by running the ARTIC-Nanopolish wrapper which performs alignment to the SARS-CoV2 reference (using `minimap2 <https://github.com/lh3/minimap2>`_), variant calling (using `Nanopolish software <https://github.com/jts/nanopolish>`_). The Nanopolish software performs signal-level analysis of Oxford Nanopore sequencing data. After Nanopolish processing, the pipeline performs consensus generation through artic_mask and bcftools consensus steps. Lastly, custom scripts and ncov_tools are run to report on quality metrics for Nanopore CoVSeQ GenPipes Sequencing Pipeline.
+
+            Details of structure and contents of the `Nanopore readset file are available here <https://bitbucket.org/mugqic/genpipes/src/master/README.md#markdown-header-nanopore>`_.
+
+
+            For the latest implementation and usage details refer to Nanopore Sequencing implementation `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore/README.md>`_ file.
+            
       .. tab-item:: Details
 
          .. card::
