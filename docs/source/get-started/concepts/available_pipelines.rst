@@ -41,11 +41,11 @@ Available Pipelines
    +------------------+------------------------------+----------+---------------------------------+
    | Hi-C Seq         |::                            | -t hic   | `Hi-C Seq Manual`_              |
    |                  |                              |          |                                 |
-   |                  |   hicseq.py                  |          |                                 |
+   |                  |   hicseq.py                  |          | (Deprecated from GenPipes v5.x) |
    +------------------+------------------------------+----------+---------------------------------+
    | Capture Hi-C     |::                            | -t       | `Hi-C Capture Manual`_          |
    |                  |                              | capture  |                                 |
-   |                  |   hicseq.py                  |          |                                 |
+   |                  |   hicseq.py                  |          | (Deprecated from GenPipes v5.x) |
    +------------------+------------------------------+----------+---------------------------------+
    | Whole Genome     |::                            | default  | `Methyl WGS Manual`_            | 
    | Methyl Seq       |                              |          |                                 |

@@ -22,15 +22,15 @@ Most HPC sites impose resource sharing constraints. One such constraint is limit
 
 GenPipes provides utilities such as ```chunk_genpipes.sh``` that can takes pipeline commands as input and chunks them so that each chunk comprises of jobs which are within the specified queue limits for a given HPC environment.
 
-For example, hicseq.py pipeline commands can be chunked as follows:
+For example, chipseq.py pipeline commands can be chunked as follows:
 
 ::
 
   M_FOLDER=path_to_folder
 
-  hicseq.py <options> --genpipes_file hicseq_script.sh
+  genpipes chipeq.py <options> --genpipes_file chipseq_script.sh
 
-  $MUGQIC_PIPELINES_HOME/utils/chunk_genpipes.sh hicseq_script.sh $M_FOLDER -n 15
+  $MUGQIC_PIPELINES_HOME/utils/chunk_genpipes.sh chipseq_script.sh $M_FOLDER -n 15
 
 Here, ```-n 15``` input specifies that the maximum number of jobs in a chunk is 15.  This is an optional parameter.  By default, the chunk size is 20.
 

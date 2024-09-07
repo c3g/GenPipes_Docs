@@ -29,7 +29,7 @@ Amplicon Sequencing Pipeline
 
             ::
 
-              genpipes ampliconseq.py [-t dada2] [--genpipes_file GENPIPES_FILE] [options]
+              genpipes ampliconseq.py [options] [--genpipes_file GENPIPES_FILE]
 
          .. dropdown:: Options
 
@@ -39,7 +39,6 @@ Amplicon Sequencing Pipeline
             .. include:: /common/gp_common_opt.inc 
 
          .. dropdown:: Example
-            :open:
 
             .. include::  /user_guide/pipelines/example_runs/ampliconseq.inc
 

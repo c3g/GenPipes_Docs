@@ -31,6 +31,9 @@ button.toggle-button.toggle-button-hidden:before {
 
 /* Code decorations */
 
-pre, .rst-content pre.literal-block{
+.rst-content .linenodiv pre, .rst-content div pre, .rst-content pre.literal-block {
+    border-radius: 5px;
     border: 2px solid white;
+    /*background: slategray;
+    color: white;*/
 }

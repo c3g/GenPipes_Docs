@@ -92,12 +92,11 @@ Usage:
 ------
 Now that your variables are set, you can launch any pipeline using:
 **<pipeline_name>.py**
-To check the help information for our hicseq (Hi-C analysis) and our chipseq pipelines, try:
+To check the help information for the `chipseq` pipeline pipeline, try:
 
 .. code-block:: bash
 
-    hicseq.py -h
-    chipseq.py -h
+    genpipes chipseq.py -h
 
 All our pipelines use the same framework and work in similar ways; each with its own output of course. We will focus on two pipelines to demonstrate how the framework works.
 
@@ -121,12 +120,6 @@ GenPipes pipelines are multi-step pipelines that run several tools, each with it
 Each pipeline has several configuration/ini files in:
 
 **$MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name>.*.ini**
-For hicseq, that would be:
-
-.. code-block:: bash
-
-    ls $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini
-
 
 For chipseq, that would be:
 
@@ -138,9 +131,9 @@ You will find a **<pipeline_name>.base.ini** as well as an ini file for particul
 
 .. code-block:: bash
 
-    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini …
+    chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini
 
-To change different parameters in the ini files, you can create your own ini file and overwrite the required parameters. For example, to change the number of threads for trimmomatic and hicup, I can create my own ini file: hicseq.test.ini
+To change different parameters in the ini files, you can create your own ini file and overwrite the required parameters. For example, to change the number of threads for trimmomatic and hicup, I can create my own ini file: chipseq.test.ini
 and in it I can include the parameters to be changed:
 
 .. code-block:: bash
@@ -157,17 +150,17 @@ then add my ini file after the other ini files:
 
 .. code-block:: bash
 
-    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.beluga.ini hicseq.test.ini...
+    genpipes chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini chipseq.test.ini [options]
 
 For different species, we have custom ini files stored in **$MUGQIC_PIPELINES_HOME/resources/genomes/config/**
 
 The genome default for our pipelines is human. To use other species, you can either create a custom .ini file or you can use the .ini files provided in **$MUGQIC_PIPELINES_HOME/resources/genomes/config/** if your species of interest is available.
 
-To run the hicseq pipeline on mouse mm9, for example, you can do the following:
+To run the chipseq pipeline on mouse mm9, for example, you can do the following:
 
 .. code-block:: bash
 
-    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.beluga.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/Mus_musculus.mm9.ini ...
+    genpipes chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/Mus_musculus.mm9.ini [options]
 
 Readset File:
 -------------
@@ -261,39 +254,37 @@ See example below for more details.
 Example run:
 ------------
 
-hicseq Test Dataset:
-''''''''''''''''''''
+chipseq Test Dataset:
+''''''''''''''''''''''
 
 Let’s now run the pipeline using a test dataset. We will use the first 2 million reads from HIC010 from Rao et al. 2014 (SRR1658581.sra). This is an in situ Hi-C experiment of GM12878 using MboI restriction enzyme.
 
-We will start by downloading the dataset from `here <https://datahub-90-cw3.p.genap.ca/hicseq.chr19.tar.gz>`__.
+We will start by downloading the dataset from `here <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`__.
 In the downloaded zip file, you will find the two fastq read files in folder “rawData” and will find the readset file (readsets.HiC010.tsv) that describes that dataset.
 
 We will run this analysis on Beluga server as follows:
 
 .. code-block:: bash
 
-    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.HiC010.tsv -s 1-15 -e MboI > hicseqScript_SRR1658581.txt
+    genpipes chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseq.tsv -s 1-15 -e MboI -g chipseqcmd.sh
 
 **-c** defines the ini configuration files
 **-r** defines the readset file
-**-s** defines the steps of the pipeline to execute. To check pipeline steps use **hicseq -h**
-**-e** defines the restriction enzyme used in the HiC library
+**-s** defines the steps of the pipeline to execute. To check pipeline steps use `genpipes chipseq -h`
 
-The pipelines do not run the commands directly; they output them as text commands. So we need to redirect them into a file using “>”. In this case, **hicseqScript_SRR1658581.txt** is the script that contains the analysis commands.
+The pipelines do not run the commands directly; they output them as text commands.  Use the `-g filname.sh` option to store these commands in a script file. Then run the script to execute the pipeline.
 
 This command works for servers using a SLURM scheduler like Cedar, Graham or Beluga. For the PBS scheduler, used by Abacus, you need to add the “-j pbs” option, as follows:
 
 .. code-block:: bash
 
-    hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/abacus.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -j pbs > hicseqScript_SRR1658581.txt
-
+    genpipes chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/abacus.ini -r readsets.chipseq.tsv -s 1-15 -j pbs -g chipseqcmd.sh
 
 To run it, use:
 
 .. code-block:: bash
 
-    bash hicseqScript_SRR1658581.txt
+    bash chipseqcmd.sh
 
 
 You will not see anything happen, but the commands will be sent to the server job queue. **So do not run this more than once per job.**
@@ -309,14 +300,11 @@ In case you ran it several times and launched too many commands you do not want,
 
     showq -u <userID> | tr "|" " "| awk '{print $1}' | xargs -n1 canceljob
 
-Congratulations! you just ran the hicseq pipeline.
+Congratulations! you just ran the `chipseq` pipeline.
+
 After the processing is complete, you can access quality control plots in the homer_tag_directory/HomerQcPlots. You can find the compartment data in the compartments folder, TADs in the TADs folder and significant interactions in the peaks folder.
 
 For more information about output formats please consult the webpage of the third party tool used.
-
-.. note::
-
-    The hicseq pipeline also analyzes capture hic data if the “-t capture” flag is used. For more information on the available steps in that pipeline use: **hicseq -h**
 
 Creating a Design File:
 -----------------------
@@ -351,8 +339,8 @@ You can add several contrasts per design file.
 
 To see how this works, lets run a ChIP-Seq experiment.
 
-chipseq Test Dataset:
----------------------
+Test Dataset: Chipseq:
+----------------------
 
 .. attention:: **Change in the Chipsequence Design File Format**
 

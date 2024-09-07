@@ -23,7 +23,7 @@ ChIP Sequencing Pipeline
 
             ::
 
-               genpipes chipseq.py [-t {chipseq (default), atacseq}] [--genpipes_file GENPIPES_FILE] [options]
+               genpipes chipseq.py [options] [--genpipes_file GENPIPES_FILE]
 
          .. dropdown:: Options
 
@@ -33,7 +33,6 @@ ChIP Sequencing Pipeline
             .. include:: /common/gp_common_opt.inc
 
          .. dropdown:: Example
-            :open:
 
             .. include:: /user_guide/pipelines/example_runs/chipseq.inc
             
@@ -149,10 +148,6 @@ ChIP Sequencing Pipeline
             The ChIP-Seq pipeline can also be used for assay for transposase-accessible chromatin using sequencing `ATAC-Seq`_ samples. Use 'ATAC' protocol option to run the pipeline using ATAC-Seq.
 
             See :ref:`chipschema` tab for the pipeline workflow. Check the `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/chipseq/README.md>`_ file for implementation details.
-
-            .. note:: **Input requirements**
-
-                  The Chip Sequencing protocol expects an input for the **Differential Binding** step. If pipeline users want to run this protocol without an input, they should skip the differential binding step and run it themselves locally.
                
             .. figure:: /img/pipelines/ChIP-Seq-hl-diag.png
                :align: center
@@ -169,6 +164,11 @@ ChIP Sequencing Pipeline
             * `Schematic representation of major methods to detect functional elements in DNA <https://journals.plos.org/plosbiology/article/figure?id=10.1371/journal.pbio.1001046.g001>`_
             * `ChIP Sequencing and ATAC Sequencing <https://bioinformatics-core-shared-training.github.io/cruk-autumn-school-2017/ChIP/Materials/Lectures/Lecture4_Introduction%20to%20ChIP-seq%20and%20ATAC-seq_SS.pdf>`_
 
+.. dropdown:: :material-outlined:`notifications;2em` Input requirements
+   :color: info
+
+      The Chip Sequencing protocol expects an input for the **Differential Binding** step. If pipeline users want to run this protocol without an input, they should skip the differential binding step and run it themselves locally.
+
 .. dropdown:: :material-outlined:`report;2em` Chip Sequencing Design File
    :color: warning
 
@@ -177,7 +177,7 @@ ChIP Sequencing Pipeline
 .. _ref_chipseq_design_ff:
 
 .. dropdown:: :material-outlined:`settings;2em` Chip Sequencing Design File Format
-   :color: info
+   :color: muted
 
    .. include:: /user_guide/pipelines/design_fileformat/chipseq_design.inc
 

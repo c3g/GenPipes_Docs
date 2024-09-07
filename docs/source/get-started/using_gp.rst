@@ -83,7 +83,7 @@ We will now run the pipeline using a test dataset. We will use the first 2 milli
 
 You need to first download the test dataset by visiting this link: 
 
-`Hi-C Sequencing Test Dataset <https://datahub-90-cw3.p.genap.ca/hicseq.chr19.tar.gz>`_
+`ChiP Sequencing Test Dataset <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.tar.gz>`_
 
 In the downloaded zip file, you will find the two fastq read files in folder “rawData” and will find the readset file (readsets.HiC010.tsv) that describes that dataset.
 
@@ -91,7 +91,7 @@ Please ensure you have access to "beluga" server in Compute Canada data centre. 
 
 ::
 
-  hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -g hicseqScript_SRR1658581.txt
+  genpipes chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseq.tsv -s 1-15 -e MboI -g chipseqscript.sh
 
 To understand what $MUGQIC_PIPELINES_HOME refers to, please see instructions on how to :ref:`access GenPipes on Compute Canada servers<docs_access_gp_pre_installed>`.
 
@@ -101,27 +101,25 @@ In the command above,
 
 -r defines the readset file
 
--s defines the steps of the pipeline to execute. To check pipeline steps use hicseq -h
-
--e defines the restriction enzyme used in the HiC library
+-s defines the steps of the pipeline to execute, use `genpipes chipseq -h` to check steps
 
 By default, on Compute Canada servers such as "Cedar", "Beluga" or "Graham", SLURM scheduler is used. On abacus server, you need to use PBS scheduler. For that you need to specify "-j pbs" option as shown below:
 
 ::
 
-  hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/abacus.ini -r readsets.HiC010.tsv -s 1-15 -e MboI -j pbs -g hicseqScript_SRR1658581.txt
+  genpipes chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chiseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/abacus.ini -r readsets.HiC010.tsv -s 1-15 -j pbs -g chipseqcmd.sh
 
 The above command generates a list of instructions that need to be executed to run Hi-C sequencing pipeline.  These instructions are stored in the file:
 
 ::
 
- hicseqScript_SRR1658581.txt
+  chipseqcmd.sh
 
 To execute these instructions, use:
 
 :: 
 
-  bash hicseqScript_SRR1658581.txt
+  bash chipseqcmd.sh
 
 .. warning::
 
@@ -156,7 +154,7 @@ For more information about output formats please consult the webpage of the thir
 
 ::
 
-  hicseq -h
+  genpipes chipseq -h
 
 Example Run with Design File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -215,18 +213,18 @@ The ```submit_genpipes``` script lets GenPipes users manage resource constraints
 
 The ```submit_genpipes``` script comes with a fail safe mechanism that will resubmit jobs that failed to be sent to the scheduler up to 10 times (default). 
 
-Example: Submitting hicseq.py jobs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Example: Submitting chipseq.py jobs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Here is an example of to use the ```submit_genpipes``` script with :ref:`HiC Sequencing Pipeline<docs_gp_hicseq>`:
+Here is an example of to use the ```submit_genpipes``` script with :ref:`Chip Sequencing Pipeline<docs_gp_chipseq>`:
 
 ::
 
   M_FOLDER=path_to_folder
 
-  hicseq.py <options> --genpipes_file hicseq_script.sh
+  genpipes chipseq.py <options> --genpipes_file chipseq_script.sh
 
-  $MUGQIC_PIPELINES_HOME/utils/chunk_genpipes.sh hicseq_script.sh $M_FOLDER
+  $MUGQIC_PIPELINES_HOME/utils/chunk_genpipes.sh chipseq_script.sh $M_FOLDER
 
   $MUGQIC_PIPELINES_HOME/utils/submit_genpipes  $M_FOLDER
 

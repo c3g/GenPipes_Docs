@@ -105,17 +105,6 @@
 
   -v, --version             show the version information and exit
 
-::
+.. include:: /common/gp_cmd_file_op.inc
 
-  -g GENPIPES_FILE, --genpipes_file GENPIPES_FILE
-
-                            Commands for running the pipeline are output to this
-                            file pathname. The data specified to pipeline command 
-                            line is processed and pipeline run commands are 
-                            stored in GENPIPES_FILE, if this option is specified
-                            . Otherwise, the output will be redirected to stdout
-                            . This file can be used to actually "run the 
-                            GenPipes Pipeline"
-
-                            Note: Do not use -g option with -clean. Use '>' to redirect
-                            the output to a file when using -clean option.
+.. include:: /user_guide/pipelines/notes/caution_redirect_output.inc

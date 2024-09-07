@@ -12,7 +12,7 @@ GenPipes 3.3.0 Release Notes
 What's new? 
 -----------
 
-* Two new steps were added in the :ref:`HiC Sequencing Pipeline<docs_gp_hicseq>`:
+* Two new steps were added in the `HiC Sequencing Pipeline <https://genpipes.readthedocs.io/en/genpipes-v4.6.0/user_guide/pipelines/gp_hicseq.html>`_:
 
   - *Reproducibility Scores*: R package `hicrep <https://bioconductor.org/packages/release/bioc/html/hicrep.html>`_ is used to calculate inter-chromosomal reproducibility scores.
   - *Quality Scores*: `QuASAR <https://www.biorxiv.org/node/62284.full>`_ (part of `hifive <https://github.com/bxlab/hifive>`_ suite), is used to calculate quality score per chromosome.

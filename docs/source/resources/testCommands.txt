@@ -1,41 +1,43 @@
+::
+
+    ampliconseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/ampliconseq/ampliconseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.ampliconseq.txt -s 1-32 > ampliconseqCommands.sh
+
+:: 
+
+    chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseq.txt -d design.chipseq.txt -s 1-19 > chipseqCommands.sh
 
 
-chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseq.txt -d design.chipseq.txt -s 1-19 > chipseqCommands.sh
+:: 
+    
+    rnaseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-25 > rnaseqCommands.sh
 
 
-rnaseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-25 > rnaseqCommands.sh
+::
+
+    dnaseq.py -t mugqic -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-29 > dnaseqCommands_mugqic.sh
 
 
-dnaseq.py -t mugqic -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-29 > dnaseqCommands_mugqic.sh
+    dnaseq.py -t mpileup -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-33 > dnaseqCommands_mpileup.sh
 
 
-dnaseq.py -t mpileup -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-33 > dnaseqCommands_mpileup.sh
+    dnaseq_high_coverage.py -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq_high_coverage/dnaseq_high_coverage.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-15 > dnaseq_high_coverageCommands.sh
 
 
-dnaseq_high_coverage.py -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq_high_coverage/dnaseq_high_coverage.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-15 > dnaseq_high_coverageCommands.sh
+::
+
+    rnaseq_light.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq_light/rnaseq_light.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-6 > rnaseqLightCommands.sh
 
 
-tumor_pair.py -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/tumor_pair/tumor_pair.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.tumorPair.txt -p pairs.csv -s 1-44 > tumor_pairCommands.sh
+    rnaseq_denovo_assembly.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq_denovo_assembly/rnaseq_denovo_assembly.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-23 > rnaseqDeNovoCommands.sh
 
 
-hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.hicseq.txt -s 1-16 -t hic -e MboI > hicseqCommands_hic.sh
+:: 
+
+    methylseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/methylseq/methylseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.methylseq.txt -s 1-14 > methylseq.sh
 
 
-hicseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/hicseq/hicseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini $TEST_DIR/testdata/hicseq/capture.ini -r readsets.HiC010.tsv -s 1-17 -t capture -e DpnII > hicseqCommands_capture.sh
+::
 
-
-rnaseq_light.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq_light/rnaseq_light.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-6 > rnaseqLightCommands.sh
-
-
-rnaseq_denovo_assembly.py -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq_denovo_assembly/rnaseq_denovo_assembly.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-23 > rnaseqDeNovoCommands.sh
-
-
-methylseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/methylseq/methylseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.methylseq.txt -s 1-14 > methylseq.sh
-
-
-pacbio_assembly.py -c $MUGQIC_PIPELINES_HOME/pipelines/pacbio_assembly/pacbio_assembly.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.pacbio.txt -s 1-12 > pacbioCommands.sh
-
-
-ampliconseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/ampliconseq/ampliconseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.ampliconseq.txt -s 1-32 > ampliconseqCommands.sh
+    pacbio_assembly.py -c $MUGQIC_PIPELINES_HOME/pipelines/pacbio_assembly/pacbio_assembly.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.pacbio.txt -s 1-12 > pacbioCommands.sh
 
 .. include:: /common/gp_cluster_ini.inc

@@ -24,7 +24,6 @@ Following genomics application pipelines are already implemented and validated t
 * *de-novo* RNA Sequencing
 * Deep Whole Genome Sequencing
 * Exome Sequencing
-* EpiQC Analysis
 * Hi-C / Capture Hi-C
 * Illumina raw data processing
 * Metagenomics

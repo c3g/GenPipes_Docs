@@ -73,11 +73,6 @@ DNA Methylation Pipeline
 
 The :ref:`Methylation Pipeline<docs_methylation>` helps to analyze data coming from bisulfite converted DNA assayed by various sequencing assays such as RRBS, CpG capture, whole genome sequencing or microarrays. Our analysis computes methylation levels and performs differential analysis between experimental conditions.
 
-HiC Pipeline
--------------
-
-The :ref:`HiC Pipeline<docs_gp_hicseq>` offers data analysis and provides interaction matrices at several resolutions, compartment analysis, topologically associating domain (TAD) predictions, as well as significant chromosomal interactions. Further analyses may include comparisons across samples/conditions and integration of various sample data (expression data, methylation, CTCF/histone binding sites) with Hi-C data.
-
 Amplicon Sequencing Pipeline
 -----------------------------
 
