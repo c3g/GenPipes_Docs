@@ -11,49 +11,16 @@ RNA Sequencing Pipeline
 
 :bdg-primary:`Version` |genpipes_version|
 
-.. tab-set:: 
-
-      .. tab-item:: About
-
-         .. card::
-
-            The standard MUGQIC RNA-Seq pipeline has three protocols:
-
-               * StringTie 
-               * Variants
-               * Cancer
-            
-            StringTie is the default protocol and applicable in most cases.
-
-            All three protocols are based on the use of the `STAR aligner <https://code.google.com/p/rna-star/>`_ to align reads to the reference genome. These alignments are used during downstream analysis (for example in stringtie protocol, to determine differential expression of genes and transcripts).
-            
+.. tab-set::             
 
       .. tab-item:: Usage
 
          .. dropdown:: Command
+            :open:
 
             .. code::
 
-                 rnaseq.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
-                 [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
-                 [--no-json] [--report] [--clean]
-                 [-l {debug,info,warning,error,critical}] [--sanity-check]
-                 [--container {wrapper, singularity} <IMAGE PATH>]
-                 [--genpipes_file GENPIPES_FILE]
-                 [-d DESIGN] 
-                 [-t {stringtie (default), variants, cancer}] [-r READSETS] [-v]
-
-         .. dropdown:: Example Run
-
-            .. include::  /user_guide/pipelines/example_runs/rnaseq.inc
-
-            .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
-
-            .. note::
-               
-               This set of commands is meant for running GenPipes on C3 data center. For more details, you can refer to GenPipes `RNA Sequencing Workshop 2018 presentation <https://www.computationalgenomics.ca/tutorial/c3g_analysis_workshop/C3GAW_RNASeq_Aug2018.zip>`_.
-
-            You can download `RNA Sequencing Pipeline test dataset <https://www.computationalgenomics.ca/tutorial/c3g_analysis_workshop/C3GAW_RNA_TestData_Aug2018.zip>`_ and use the following command to execute the RNA Sequencing genomics pipeline:
+                 genpipes rnaseq.py [options] [--genpipes_file GENPIPES_FILE]
 
          .. dropdown:: Options
 
@@ -61,6 +28,18 @@ RNA Sequencing Pipeline
             .. include:: /common/gp_design_opt.inc
             .. include:: /common/gp_readset_opt.inc
             .. include:: /common/gp_common_opt.inc
+
+         .. dropdown:: Example
+
+            .. include::  /user_guide/pipelines/example_runs/rnaseq.inc
+
+            .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
+
+            .. card:: Test Dataset
+               :link: docs_testdatasets
+               :link-type: ref
+
+               You can download the `test dataset <https://www.computationalgenomics.ca/tutorial/c3g_analysis_workshop/C3GAW_RNA_TestData_Aug2018.zip>`_ for this pipeline. For more details, you can refer to GenPipes `RNA Sequencing Workshop 2018 presentation <https://www.computationalgenomics.ca/tutorial/c3g_analysis_workshop/C3GAW_RNASeq_Aug2018.zip>`_.
 
       .. tab-item:: Schema
          :name: rnaschema
@@ -118,6 +97,7 @@ RNA Sequencing Pipeline
                :alt: legend
                :width: 100%
                :figwidth: 75%
+
       .. tab-item:: Steps
 
          +----+-----------------------------+------------------------------------+-----------------------------------+
@@ -182,43 +162,50 @@ RNA Sequencing Pipeline
          | 29.|                             |                                    | |multiqc|                         |
          +----+-----------------------------+------------------------------------+-----------------------------------+
          | 30.|                             |                                    | |cram_output|                     |
-         +-----------------------------------------------------------------------+-----------------------------------+                              
+         +-----------------------------------------------------------------------+-----------------------------------+
 
          .. card::
 
             .. include:: steps_rnaseq.inc
 
-      .. tab-item:: Details
+      .. tab-item:: About
 
          .. card::
 
-            **StringTie Protocol**
+            The standard MUGQIC RNA-Seq pipeline has three protocols:
+
+               * StringTie 
+               * Variants
+               * Cancer
             
-            The [StringTie](https://ccb.jhu.edu/software/stringtie/) suite is used for differential transcript expression (DTE) analysis, whereas [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) and [edgeR](http://bioconductor.org/packages/release/bioc/html/edgeR.html) are used for the differential gene expression (DGE) analysis.
+            StringTie is the default protocol and applicable in most cases.
 
-            StringTie protocol requires a design file which will be used to define the comparison groups
-            in the differential analyses. The design file format is described [here](https://genpipes.readthedocs.io/en/latest/get-started/concepts/design_file.html). In addition, [Ballgown](https://bioconductor.org/packages/release/bioc/html/ballgown.html) is used to calculate differential transcript and gene expression levels and test them for significant differences. It can also take a batch file (optional) which will be used to correct for batch effects in the differential analyses. The batch file format is described [here](https://bitbucket.org/mugqic/mugqic_pipelines/src#markdown-header-batch-file).
+            All three protocols are based on the use of the `STAR aligner <https://code.google.com/p/rna-star/>`_ to align reads to the reference genome. These alignments are used during downstream analysis (for example in stringtie protocol, to determine differential expression of genes and transcripts).
 
-            **Variants Protocol**
+            .. tab-set:: 
+               
+               .. tab-item:: StringTie
             
-            The variants protocol is used when variant detection, is the main goal of the analysis. GATK best practices workflow is used for variant calling. It also contains a step for annotating genes using the `gemini protocol <https://gemini.readthedocs.io/en/latest/>`_.
+                  The `StringTie suite <https://ccb.jhu.edu/software/stringtie/>`_ is used for differential transcript expression (DTE) analysis, whereas `DESeq2 package <https://bioconductor.org/packages/release/bioc/html/DESeq2.html>`_ and `edgeR package <http://bioconductor.org/packages/release/bioc/html/edgeR.html>`_ are used for the differential gene expression (DGE) analysis.
 
-            **Cancer Protocol**
+                  StringTie protocol requires a design file which will be used to define the comparison groups
+                  in the differential analyses. Refer to the `design file format  <https://genpipes.readthedocs.io/en/latest/get-started/concepts/design_file.html>`_. In addition, `Ballgown package <https://bioconductor.org/packages/release/bioc/html/ballgown.html>`_ is used to calculate differential transcript and gene expression levels and test them for significant differences. It can also take a batch file (optional) which will be used to correct for batch effects in the differential analyses. Note the `batch file format <https://bitbucket.org/mugqic/mugqic_pipelines/src#markdown-header-batch-file>`_.
+
+               .. tab-item:: Variants Protocol
             
-            The cancer protocol contains all the steps in the variants protocol but it is specifically designed for cancer data sets due to the complexity of cancer samples and additional analyses those projects often entail. The goal of the cancer protocol is comparing expression to known benchmarks. In addition to the steps in the variants protocol, it contains four specific steps. Three of them (run_star_fusion, run_arriba, run_annofuse) are related to detection and annotation of gene fusions. For that, [Star-fusion](https://github.com/STAR-Fusion/STAR-Fusion-Tutorial/wiki), [Arriba](https://arriba.readthedocs.io/en/latest/) and [anno-Fuse](https://rdrr.io/github/d3b-center/annoFuse/) are used. Furthermore, [RSeQC](http://rseqc.sourceforge.net/) provides RNA-seq quality control metrics to asses the quality of the data.
+                  The variants protocol is used when variant detection, is the main goal of the analysis. GATK best practices workflow is used for variant calling. It also contains a step for annotating genes using the `gemini protocol <https://gemini.readthedocs.io/en/latest/>`_.
 
-            Finally, a summary html report is automatically generated by the pipeline at the end of the analysis. This report contains description of the sequencing experiment as well as a detailed presentation of the pipeline steps and results. Various Quality Control (QC) summary statistics are included in the report and additional QC analysis is accessible for download directly through the report. The report includes also the main references of the software tools and methods used during the analysis, together with the full list of parameters that have been passed to the pipeline main script.
+               .. tab-item:: Cancer
+            
+                  The cancer protocol contains all the steps in the variants protocol but it is specifically designed for cancer data sets due to the complexity of cancer samples and additional analyses those projects often entail. The goal of the cancer protocol is comparing expression to known benchmarks. In addition to the steps in the variants protocol, it contains four specific steps. Three of them (run_star_fusion, run_arriba, run_annofuse) are related to detection and annotation of gene fusions. For that, `Star-fusion  package <https://github.com/STAR-Fusion/STAR-Fusion-Tutorial/wiki>`_, `Arriba package <https://arriba.readthedocs.io/en/latest/>`_ and `anno-Fuse package <https://rdrr.io/github/d3b-center/annoFuse/>`_ are used. Furthermore, `RSeQC package <http://rseqc.sourceforge.net/>`_ provides RNA-seq quality control metrics to asses the quality of the data.
 
-            See :ref:`More Information` section below for details.
+                  Finally, a summary html report is automatically generated by the pipeline at the end of the analysis. This report contains description of the sequencing experiment as well as a detailed presentation of the pipeline steps and results. Various Quality Control (QC) summary statistics are included in the report and additional QC analysis is accessible for download directly through the report. The report includes also the main references of the software tools and methods used during the analysis, together with the full list of parameters that have been passed to the pipeline main script.
 
-.. _More Information:
+                  See :ref:`rnaschema` tab for workflow. For the latest implementation and usage details refer to RNA Sequencing implementation `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq/README.md>`_ file.
 
-More information
------------------
+            **References**
 
-For the latest implementation and usage details refer to RNA Sequencing implementation `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq/README.md>`_ file.
-
-* `RNA Sequencing Workshop 2019 (Slides) <https://www.computationalgenomics.ca/analysis-workshop-2019-rnaseq-module/>`_
+            * `RNA Sequencing Workshop 2019 (Slides) <https://www.computationalgenomics.ca/analysis-workshop-2019-rnaseq-module/>`_
 
 ----
 

@@ -46,3 +46,9 @@ Exploratory analysis using the gqSeqUtils R package adapted for RnaSeqLight.
 **Sleuth Differential Expression**
 
 Performs differential gene expression analysis using `Sleuth`_.  Analysis are performed both at a transcript and gene level, using two different tests: LRT and WT. 
+
+.. _MultiQC:
+
+**MultiQC**
+
+Aggregate results from bioinformatics analyses across many samples into a single report. MultiQC searches a given directory for analysis logs and compiles a HTML report. It's a general use tool, perfect for summarizing the output from numerous bioinformatics tools. For details, refer to `MultiQC Info <https://multiqc.info>`_.

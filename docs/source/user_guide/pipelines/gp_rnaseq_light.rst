@@ -12,42 +12,37 @@ RNA Sequencing (Light) Pipeline
 
 .. tab-set:: 
 
-      .. tab-item:: About
-
-         .. card::
-
-            This is a lightweight RNA Sequencing Expression analysis pipeline based on `Kallisto technique`_. It is used for quick Quality Control (QC) in gene sequencing studies.
-
       .. tab-item:: Usage
 
          .. dropdown:: Command
+            :open:
 
             .. code::
 
-                 rnaseq_light.py [-h] [--help] [-c CONFIG [CONFIG ...]] [-s STEPS]
-                       [-o OUTPUT_DIR] [-j {pbs,batch,daemon,slurm}] [-f]
-                       [--no-json] [--report] [--clean]
-                       [-l {debug,info,warning,error,critical}] [-d DESIGN]
-                       [--sanity-check]
-                       [--container {wrapper, singularity} <IMAGE PATH>]
-                       [--genpipes_file GENPIPES_FILE] [-d DESIGN]
-                       [-r READSETS] [-v]
-
-         .. dropdown:: Example Run
-                 
-            You can download the test dataset for this pipeline :ref:`here <docs_testdatasets>` 
-
-            .. include::  /user_guide/pipelines/example_runs/rnaseq_light.inc
-
-            .. tip::
-
-                 Replace ``beluga.ini`` file name in the command above with the appropriate *clustername.ini* file located in the ``$MUGQIC_PIPELINES_HOME/pipelines/common_ini`` folder, depending upon the cluster where you are executing the pipeline.  For e.g., ``narval.ini``, ``cedar.ini``, ``graham.ini`` or ``narval.ini``.
+                 rnaseq_light.py [options]
+                       [--genpipes_file GENPIPES_FILE]
 
          .. dropdown:: Options
 
             .. include:: /common/gp_design_opt.inc
             .. include:: /common/gp_readset_opt.inc
             .. include:: /common/gp_common_opt.inc
+
+         .. dropdown:: Example
+                 
+            .. include::  /user_guide/pipelines/example_runs/rnaseq_light.inc
+
+            .. tip::
+
+                 Replace ``beluga.ini`` file name in the command above with the appropriate *clustername.ini* file located in the ``$MUGQIC_PIPELINES_HOME/pipelines/common_ini`` folder, depending upon the cluster where you are executing the pipeline.  For e.g., ``narval.ini``, ``cedar.ini``, ``graham.ini`` or ``narval.ini``.
+
+            .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
+
+            .. card:: Test Dataset
+               :link: docs_testdatasets
+               :link-type: ref
+
+               You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.  
 
       .. tab-item:: Schema
          :name: rnalightschema  
@@ -85,28 +80,31 @@ RNA Sequencing (Light) Pipeline
          +----+--------------------------------------+
          | 7. | |sleuth-differential-expression|     |
          +----+--------------------------------------+
+         | 8. | |multiqc|                            |
+         +----+--------------------------------------+
 
          .. card::
 
             .. include:: steps_rnaseqlight.inc
 
-      .. tab-item:: Details
+      .. tab-item:: About
 
          .. card::
+
+            This is a lightweight RNA Sequencing Expression analysis pipeline based on `Kallisto technique`_. It is used for quick Quality Control (QC) in gene sequencing studies.
 
             The central computational problem in RNA-seq remains the efficient and accurate assignment of short sequencing reads to the transcripts they originated from and using this information to infer gene expressions. Conventionally, read assignment is carried out by aligning sequencing reads to a reference genome, such that relative gene expressions can be inferred by the alignments at annotated gene loci. These alignment-based methods are conceptually simple, but the read-alignment step can be time-consuming and computationally intensive.
 
             Alignment-free RNA quantification tools have significantly increased the speed of RNA-seq analysis. The alignment-free pipelines are orders of magnitude faster than alignment-based pipelines, and they work by breaking sequencing reads into k-mers and then performing fast matches to pre-indexed transcript databases. To achieve fast transcript quantification without compromising quantification accuracy, different sophisticated algorithms were implemented in addition to k- mer counting, such as pseudo-alignments by `Kallisto technique`_ and quasi-mapping along with GC and sequence-bias corrections using `Salmon`_.
 
-            RNA Sequencing Light is a lightweight pipeline that performs quick QC and removes a major computation bottleneck in RNA Sequence analysis. Kallisto is two orders of magnitude faster than previous approaches and achieves similar accuracy. Kallisto pseudo-aligns reads to a reference, producing a list of transcripts that are compatible with each read while avoiding the alignment of individual bases. In the latest release of GenPipes, calls to `kallisto quant` are now aggregated by sample instead of by the readset for better performance. For details, see :ref:`More Information on RNA Light Sequencing` section below.
+            RNA Sequencing Light is a lightweight pipeline that performs quick QC and removes a major computation bottleneck in RNA Sequence analysis. Kallisto is two orders of magnitude faster than previous approaches and achieves similar accuracy. Kallisto pseudo-aligns reads to a reference, producing a list of transcripts that are compatible with each read while avoiding the alignment of individual bases. In the latest release of GenPipes, calls to `kallisto quant` are now aggregated by sample instead of by the readset for better performance.
 
-.. _More Information on RNA Light Sequencing:
+            See :ref:`rnalightschema` tab for pipeline workflow. Check the `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq_light/README.md>`_ file for implementation details.
 
-More Information
-----------------
+            **References**
 
-* Kallisto, a new `ultra-fast RNA Sequencing technique`_
-* Limitations of alignment-free tools in `RNA sequencing quantification`_
+            * Kallisto, a new `ultra-fast RNA Sequencing technique`_
+            * Limitations of alignment-free tools in `RNA sequencing quantification`_
 
 .. The following are replacement texts used in this file
 
@@ -117,6 +115,7 @@ More Information
 .. |kallisto-count-matrix| replace:: `Kallisto Count Matrix`_
 .. |gq-seq-utils-exploratory| replace:: `GQ Seq Utils Exploratory`_
 .. |sleuth-differential-expression| replace:: `Sleuth Differential Expression`_
+.. |multiqc| replace:: `MultiQC`_
 
 .. Following are the links used in the text above
 
