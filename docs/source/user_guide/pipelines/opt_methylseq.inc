@@ -4,4 +4,6 @@
 
                             Methylseq analysis type. (default=bismark)
                             
-.. include:: opt_methylseq_dragen_warning.inc
+.. warning::
+
+      .. include:: opt_methylseq_dragen_warning.inc

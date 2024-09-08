@@ -119,7 +119,7 @@ Create rawcount matrix, zip the wiggle tracks and create the saturation plots ba
 
 **Differential Expression**
 
-Performs differential gene expression analysis using `DESEQ package <https://bioconductor.riken.jp/packages/3.8/bioc/html/DESeq.html>`_ and `EDGER package <http://www.bioconductor.org/packages/release/bioc/html/edgeR.html>`_. Merge the results of the analysis in a single csv file.
+Performs differential gene expression analysis using `DESEQ package <https://bioconductor.riken.jp/packages/3.8/bioc/html/DESeq.html>`_ and `edgeR <http://www.bioconductor.org/packages/release/bioc/html/edgeR.html>`_. Merge the results of the analysis in a single csv file.
 
 .. _StringTie Step:
 
