@@ -121,11 +121,232 @@ Performs decompose/normalization for variant comparison at the haplotype level. 
 
 Mappability annotation applied to haplotype caller vcf. An in-house database identifies regions in which reads are confidently mapped to the reference genome.
 
+.. _Haplotype caller SNP ID annotation:
+
+**Haplotype caller SNP ID annotation**
+
+dbSNP annotation applied to haplotype caller vcf. The .vcf files are annotated for dbSNP using the software SnpSift (from the `SNPEff Suite`_).
+
+.. _Haplotype caller SNP Effect:
+
+**Haplotype caller SNP Effect**
+
+Variant effect annotation applied to haplotype caller vcf. The .vcf files are annotated for variant effects using the `SNPEff Suite`_ software. SnpEff annotates and predicts the effects of variants on genes (such as amino acid changes).
+
+.. _Haplotype caller dbNSFP annotation:
+
+**Haplotype caller dbNSFP annotation**
+
+Additional SVN annotations applied to haplotype caller vcf. Provides extra information about SVN by using numerous published databases. Applicable to human samples. Databases available include Biomart (adds GO annotations based on gene information) and dbNSFP (an integrated database of functional annotations from multiple sources for the comprehensive collection of human non-synonymous SNPs. It compiles prediction scores from four prediction algorithms (SIFT, Polyphen2, LRT and MutationTaster), three conservation scores (PhyloP, GERP++ and SiPhy) and other function annotations).
+
+.. _Haplotype caller Gemini annotation:
+
+**Haplotype caller Gemini annotation**
+
+Uses `Haplotype caller <https://gatk.broadinstitute.org/hc/en-us/articles/360042913231-HaplotypeCaller>`_ to call germline SNPs and indels via local re-assembly of Haplotype for exploring genetic variations using the `Gemini annotations`_. 
+
+.. _Metrics DNA Picard:
+
+**Metrics DNA Picard**
+
+This step generates metrics with picard, including `CollectMultipleMetrics <https://gatk.broadinstitute.org/hc/en-us/articles/360037594031-CollectMultipleMetrics-Picard->`_, `CollectOxoGMetrics <https://gatk.broadinstitute.org/hc/en-us/articles/360037428231-CollectOxoGMetrics-Picard->`_, `CollectGcBiasMetrics <https://gatk.broadinstitute.org/hc/en-us/articles/360036481572-CollectGcBiasMetrics-Picard->`_, `CollectWgsMetrics <https://gatk.broadinstitute.org/hc/en-us/articles/360037594031-CollectWgsMetrics-Picard->`_, `CollectHsMetrics <https://gatk.broadinstitute.org/hc/en-us/articles/360037594031-CollectHsMetrics-Picard->`_, `CollectInsertSizeMetrics <https://gatk.broadinstitute.org/hc/en-us/articles/360037594031-CollectInsertSizeMetrics-Picard->`_, `CollectSequencingArtifactMetrics <https://gatk.broadinstitute.org/hc/en-us/articles/360037594031-CollectSequencingArtifactMetrics-Picard->`_, `CollectQualityYieldMetrics <https://gatk.broadinstitute.org/hc/en-us/articles/360037594031-CollectQualityYieldMetrics-Picard->`_, `CollectQualityByCycle <https://gatk.broadinstitute.org/hc/en-us/articles/360037594031-CollectQualityByCycle-Picard->`_, and  `CollectBaseDistributionByCycle <https://gatk.broadinstitute.org/hc/en-us/articles/360037594031-CollectBaseDistributionByCycle-Picard->`_.
+
+.. _DNA Sample MosDepth Metrics:
+
+**DNA Sample MosDepth Metrics**
+
+Calculate depth stats for captured regions with `Mosdepth`_.
+
+.. _Picard Calculate HS Metrics:
+
+**Picard Calculate HS Metrics**
+
+Compute on target percent of hybridization based capture happens in this step.
+
+.. _Metrics Verify BAM ID:
+
+**Metrics Verify BAM ID**
+
+In this step, `VerifyBAMID <https://genome.sph.umich.edu/wiki/VerifyBamID>`_ software is used to verify whether the reads in particular file match previously known genotypes for an individual (or group of individuals), and checks whether the reads are contaminated as a mixture of two samples. 
+
+.. _Run MultiQC:
+
+**Run MultiQC**
+
+Aggregate results from bioinformatics analyses across many samples into a single report. `MultiQC`_ searches a given directory for analysis logs and compiles a HTML report. It's a general use tool, perfect for summarizing the output from numerous bioinformatics tools.
+
+.. _Sym Link FastQ:
+
+**Sym Link FastQ**
+
+Automated symbolic linking of FASTQ files.
+
+.. _Sym Link Final BAM:
+
+**Sym Link Final BAM**
+
+Creates symbolic links of final BAM for delivery of data to the clients.
+
+.. _Metrics VCFTools Missing Individual:
+
+**Metrics VCFTools Missing Individual**
+
+This step uses `VCFtools <https://vcftools.github.io/index.html>`_ and --missing_indv option to generate a file reporting the `missingness` factor in the analysis on a per-individual basis. It takes bgzipped .vcf file as input and creates .imiss flat file indicating missingness.
+
+.. _Metrics VCFTools Depth Individual:
+
+**Metrics VCFTools Depth Individual**
+
+This step uses `VCFtools <https://vcftools.github.io/index.html>`_ and --depth option to generate a file containing the mean depth per individual. It takes as input bgzipped .vcf file and creates a .idepth flat file.
+
+.. _Metrics GATK Sample Fingerprint:
+
+**Metrics GATK Sample Fingerprint**
+
+`CrosscheckFingerprints (Picard) <https://gatk.broadinstitute.org/hc/en-us/articles/360040098592-CrosscheckFingerprints-Picard->`_ functionality in GATK toolkit is used to cross-check readgroups, libraries, samples, or files to determine if all data in the set of input files appears to come from the same individual. In this step, sample SAM/BAM or VCF file is taken as input and a fingerprint file is generated using CrosscheckFingerprints (Picard) in GATK. It checks the sample identity of the sequence/genotype data in the provided file (SAM/BAM or VCF) against a set of known genotypes in the supplied genotype file (in VCF format).
+
+.. _Metrics GATK Cluster Fingerprint:
+
+**Metrics GATK Cluster Fingerprint**
+
+In this step, ClusterCrosscheckMetrics function from GATK is used as a follow-up step to running CrosscheckFingerprints created in the `Metrics GATK Sample Fingerprint`_ step earlier. There are cases where one would like to identify a few groups out of a collection of many possible groups (say to link a bam to it's correct sample in a multi-sample vcf. In this step, sample SAM/BAM or VCF file is taken as input and a fingerprint file is generated.
+
+.. _Delly2 Call Filter:
+
+**Delly2 Call Filter**
+
+This step uses normal and tumor final BAMs as input and generates a binary variant call format (BCF) file as output. It utilizes `Delly2`_, an integrated structural variant (SV) prediction method that can discover genotype and visualize deletions, tandem duplications, inversions and translocations at single-nucleotide resolution in short-read massively parallel sequencing data. It uses paired-ends, split-reads and read-depth to sensitively and accurately delineate genomic rearrangements throughout the genome. Structural variants can be annotated using `Delly-sansa`_ and visualized using `Delly-maze`_ or `Delly-suave`_.
+
+.. _Delly2 SV Annotation:
+
+**Delly2 SV Annotation**
+
+SV Annotation step utilizes the BCF file generated in previous `Delly2 Call Filter`_ step and performs genome annotation at various levels. At the nucleotid level it tries to identify the physical location of the SV dna sequences. Next, at the protein level the annotation process tries to determine the possible functions of the SV genes. Lastly, at the process-level annotation, it tries to identify the pathways and processes in which different SV genes interact, assembling an efficient functional annotation. For more details on annotation see `Genome Annotations`_. 
+
+.. _Germline Manta:
+
+**Germline Manta**
+
+Manta calls structural variants (SVs) and indels from mapped paired-end sequencing reads. It is optimized for analysis of germline variation in small sets of individuals and somatic variation in tumor/normal sample pairs. Manta discovers, assembles and scores large-scale SVs, medium-sized indels and large insertions within a single efficient workflow. Manta accepts input read mappings from BAM or CRAM files and reports all SV and indel inferences in VCF 4.1 format.
+
+.. _Manta SV Annotation:
+
+** Manta SV Annotation**
+
+This step uses the VCF file generated in previous step and performs SV annotations to compares types and breakpoints for candidate SVs from different callsets and enables fast comparison of SVs to genomic features such as genes and repetitive regions, as well as to previously established SV datasets.
+
+.. _Lumpy Paired SV:
+
+**Lumpy Paired SV**
+
+This step uses `Lumpy`_ for structural variant discovery in the given input file. The output is available in BAM format.
+
+Comprehensive discovery of structural variation (SV) from whole genome sequencing data requires multiple detection signals including read-pair, split-read, read-depth and prior knowledge. Owing to technical challenges, extant SV discovery algorithms either use one signal in isolation, or at best use two sequentially. Lumpy is a novel SV discovery framework that naturally integrates multiple SV signals jointly across multiple samples. It yields improved sensitivity, especially when SV signal is reduced owing to either low coverage data or low intra-sample variant allele frequency.
+
+.. _Lumpy SV Annotation:
+
+**Lumpy SV Annotation**
+
+This step performs LumPy SV Annotation for mapping and characterization of SVs.
+
+.. _Wham SV Call:
+
+**Wham SV Call**
+
+`Wham`_ (Whole-genome Alignment Metrics) provides a single, integrated framework for both structural variant calling and association testing, thereby bypassing many of the difficulties that currently frustrate attempts to employ SVs in association testing.  This step returns a VCF file.
+
+.. _Wham SV Annotation:
+
+**Wham SV Annotation**
+
+This step uses the VCF file generated in the previous step `Wham SV Call`_ and performs SV annotations. 
+
+.. _CNVkit Batch:
+
+**CNVkit Batch**
+
+A copy number variation (`CNV`_) is when the number of copies of a particular gene varies from one individual to the next. Copy-number variation (CNV) is a large category of structural variation, which includes insertions, deletions and duplications. For copy number variation analysis, GenPipes DNA Sequencing pipeline (-t sv option) uses CNVkit that allows for CNV calling on single samples (e.g., tumor samples). 
+
+CNVkit provides an advantageous way to run the entire pipeline using the batch option to run various stages in copy number calling pipeline such as:
+
+* Create target/anti-target bed files
+* Gather read depths for those regions
+* Compile a copy number reference
+* Correct biases in tumor samples while calculating copy ratios
+* Mark copy number segments
+
+.. _CNVkit SV Annotation:
+
+**CNVkit SV Annotation**
+
+This step performs CNVkit SV annotation.
+
+.. _Run BreakSeq2:
+
+**Run BreakSeq2**
+
+In this step, `BreakSeq2`_ is used to combine DNA double-strand breaks (DSBs) labeling with next generation sequencing (NGS) to map chromosome breaks with improved sensitivity and resolution. It is an ultra fast and accurate nucleotide-resolution analysis of structural variants.
+
+.. _Ensemble MetaSV:
+
+**Ensemble MetaSV**
+
+`MetaSV`_ uses highly effective ensemble approach for calling SVs. It is an integrated SV caller which leverages multiple orthogonal SV signals for high accuracy and resolution. MetaSV proceeds by merging SVs from multiple tools for all types of SVs. It also analyzes soft-clipped reads from alignment to detect insertions accurately since existing tools underestimate insertion SVs. Local assembly in combination with dynamic programming is used to improve breakpoint resolution. Paired-end and coverage information is used to predict SV genotypes.
+
+.. _MetaSV Annotation:
+
+**MetaSV Annotation**
+
+This step uses output from previous step and performs SV annotations.
+
+.. _SAMTools Merge Files:
+
+**SAMTools Merge Files**
+
+BAM readset files are merged into one file per sample. Merge is done using `SAMTools`_.
+This step takes as input files:
+
+* Aligned and sorted BAM output files from previous bwa_mem_picard_sort_sam step if available
+* Else, BAM files from the readset file
+
+.. _GATK Fixmate:
+
+**GATK Fixmate**
+
+Verify mate-pair information between mates and fix if needed. This ensures that all mate-pair information is in sync between each read and its mate pair. Fix is done using `Picard`_.
+
+.. _Germline Varscan2:
+
+**Germline Varscan2**
+
+This step uses `VarScan`_ caller for insertions and deletions.
+
+.. _Preprocess VCF:
+
+**Preprocess VCF**
+
+Preprocess VCF for loading into an annotation database - `Gemini <http://gemini.readthedocs.org/en/latest/index.html>`_. Processes include normalization and decomposition of MNPs by `Vt <http://genome.sph.umich.edu/wiki/Vt>`_ and VCF format modification for correct loading into Gemini.
+
+.. _SNP Effect:
+
+**SNP Effect**
+
+Variant effect annotation. The .vcf files are annotated for variant effects using the SnpEff software. SnpEff annotates and predicts the effects of variants on genes (such as amino acid changes). 
+
+Arguments: 
+
+*input_file (str)* 
+
+The input vcf file to annotate for variant effects. Default is allSamples.hc.vqsr.vt.mil.snpId.vcf.gz. 
+
+*output (str)*
+
+The output vcf file. Default is allSamples.hc.vqsr.vt.mil.snpId.snpeff.vcf. job_name (str): The name of the job. Default is snp_effect.hc.
 
 
 
 
-
+ 
 
 
 
@@ -134,11 +355,7 @@ Mappability annotation applied to haplotype caller vcf. An in-house database ide
 
 .. Comment To be edited out TBD
 
-.. _Sym Link FastQ:
 
-**Sym Link FastQ**
-
-Automated symbolic linking of FASTQ files.
 
 .. _Step Trimmomatic:
 
@@ -176,18 +393,6 @@ This step is used to recalibrate base quality scores of sequencing-by-synthesis 
 
    The unmapped reads are extracted from the merged/sorted bam files. After the base recalibration step, the unmapped reads are re-injected into the FASTQ. This ensures that the unmapped reads are available for further analysis, if needed. Without this process, the base recalibration may eventually remove the unmapped reads.
 
-.. _Sym Link Final BAM:
-
-**Sym Link Final BAM**
-
-Creates symbolic links of final BAM for delivery of data to the clients.
-
-.. _Metrics DNA Picard:
-
-**Metrics DNA Picard**
-
-This step generates metrics with picard, including `CollectMultipleMetrics <https://gatk.broadinstitute.org/hc/en-us/articles/360037594031-CollectMultipleMetrics-Picard->`_, `CollectOxoGMetrics <https://gatk.broadinstitute.org/hc/en-us/articles/360037428231-CollectOxoGMetrics-Picard->`_, and `CollectGcBiasMetrics <https://gatk.broadinstitute.org/hc/en-us/articles/360036481572-CollectGcBiasMetrics-Picard->`_.
-
 .. _Metrics DNA Sample Quality Map:
 
 **Metrics DNA Sample Quality Map**
@@ -205,12 +410,6 @@ Outputs `flag statistics <https://lomereiter.github.io/sambamba/docs/sambamba-fl
 **Metrics DNA FastQC**
 
 This step performs quality control with `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`.
-
-.. _Picard Calculate HS Metrics:
-
-**Picard Calculate HS Metrics**
-
-Compute on target percent of hybridization based capture happens in this step.
 
 .. _GATK Callable Loci:
 
@@ -230,42 +429,11 @@ Extracts allele frequencies of possible variants across the genome.
 
 Plots DepthRatio and B allele frequency of previously extracted alleles.
 
-
-.. _Haplotype caller SNP ID annotation:
-
-**Haplotype caller SNP ID annotation**
-
-dbSNP annotation applied to haplotype caller vcf. The .vcf files are annotated for dbSNP using the software SnpSift (from the `SNPEff Suite`_).
-
-.. _Haplotype caller SNP Effect:
-
-**Haplotype caller SNP Effect**
-
-Variant effect annotation applied to haplotype caller vcf. The .vcf files are annotated for variant effects using the `SNPEff Suite`_ software. SnpEff annotates and predicts the effects of variants on genes (such as amino acid changes).
-
-.. _Haplotype caller dbNSFP annotation:
-
-**Haplotype caller dbNSFP annotation**
-
-Additional SVN annotations applied to haplotype caller vcf. Provides extra information about SVN by using numerous published databases. Applicable to human samples. Databases available include Biomart (adds GO annotations based on gene information) and dbNSFP (an integrated database of functional annotations from multiple sources for the comprehensive collection of human non-synonymous SNPs. It compiles prediction scores from four prediction algorithms (SIFT, Polyphen2, LRT and MutationTaster), three conservation scores (PhyloP, GERP++ and SiPhy) and other function annotations).
-
-.. _Haplotype caller Gemini annotation:
-
-**Haplotype caller Gemini annotation**
-
-Uses `Haplotype caller <https://gatk.broadinstitute.org/hc/en-us/articles/360042913231-HaplotypeCaller>`_ to call germline SNPs and indels via local re-assembly of Haplotype for exploring genetic variations using the `Gemini annotations`_. 
-
 .. _Haplotype caller metrics VCF stats:
 
 **Haplotype caller metrics VCF stats**
 
 Metrics SNV applied to haplotype caller vcf. Multiple metrics associated to annotations and effect prediction are generated at this step: change rate by chromosome, changes by type, effects by impact, effects by functional class, counts by effect, counts by genomic region, SNV quality, coverage, InDel lengths, base changes, transition-transversion rates, summary of allele frequencies, codon changes, amino acid changes, changes per chromosome, change rates.
-
-.. _Run MultiQC:
-
-**Run MultiQC**
-
-Aggregate results from bioinformatics analyses across many samples into a single report. `MultiQC`_ searches a given directory for analysis logs and compiles a HTML report. It's a general use tool, perfect for summarizing the output from numerous bioinformatics tools.
 
 .. _Raw MPileup:
 
@@ -339,17 +507,6 @@ Metrics SNV applied to mpileup caller vcf. Multiple metrics associated to annota
 
 In this step duplicates are marked. Aligned reads per sample are duplicates if they have the same 5' alignment positions (for both mates in case of paired-end reads). All but the best pair (based on alignment score) will be marked as duplicates in the BAM file. Marking duplicates is done using `Picard`_.
 
-.. _Delly2 Call Filter:
-
-**Delly2 Call Filter**
-
-This step uses normal and tumor final BAMs as input and generates a binary variant call format (BCF) file as output. It utilizes `Delly2`_, an integrated structural variant (SV) prediction method that can discover genotype and visualize deletions, tandem duplications, inversions and translocations at single-nucleotide resolution in short-read massively parallel sequencing data. It uses paired-ends, split-reads and read-depth to sensitively and accurately delineate genomic rearrangements throughout the genome. Structural variants can be annotated using `Delly-sansa`_ and visualized using `Delly-maze`_ or `Delly-suave`_.
-
-.. _Delly2 SV Annotation:
-
-**Delly2 SV Annotation**
-
-SV Annotation step utilizes the BCF file generated in previous `Delly2 Call Filter`_ step and performs genome annotation at various levels. At the nucleotid level it tries to identify the physical location of the SV dna sequences. Next, at the protein level the annotation process tries to determine the possible functions of the SV genes. Lastly, at the process-level annotation, it tries to identify the pathways and processes in which different SV genes interact, assembling an efficient functional annotation. For more details on annotation see `Genome Annotations`_. 
 
 .. _Manta SV Calls:
 
@@ -358,76 +515,6 @@ SV Annotation step utilizes the BCF file generated in previous `Delly2 Call Filt
 `Manta`_ calls structural variants (SVs) and indels from mapped paired-end sequencing reads. It is optimized for analysis of germline variation in small sets of individuals and somatic variation in tumor/normal sample pairs.  Manta discovers, assembles and scores large-scale SVs, medium-sized indels and large insertions within a single efficient workflow.
 
 Manta accepts input read mappings from BAM or CRAM files and reports all SV and indel inferences in VCF 4.1 format
-
-.. _Manta SV Annotation:
-
-** Manta SV Annotation**
-
-This step uses the VCF file generated in previous step and performs SV annotations to compares types and breakpoints for candidate SVs from different callsets and enables fast comparison of SVs to genomic features such as genes and repetitive regions, as well as to previously established SV datasets.
-
-.. _Lumpy Paired SV:
-
-**Lumpy Paired SV**
-
-This step uses `Lumpy`_ for structural variant discovery in the given input file. The output is available in BAM format.
-
-Comprehensive discovery of structural variation (SV) from whole genome sequencing data requires multiple detection signals including read-pair, split-read, read-depth and prior knowledge. Owing to technical challenges, extant SV discovery algorithms either use one signal in isolation, or at best use two sequentially. Lumpy is a novel SV discovery framework that naturally integrates multiple SV signals jointly across multiple samples. It yields improved sensitivity, especially when SV signal is reduced owing to either low coverage data or low intra-sample variant allele frequency.
-
-.. _Lumpy SV Annotation:
-
-**Lumpy SV Annotation**
-
-This step performs LumPy SV Annotation for mapping and characterization of SVs.
-
-.. _Wham SV Call:
-
-**Wham SV Call**
-
-`Wham`_ (Whole-genome Alignment Metrics) provides a single, integrated framework for both structural variant calling and association testing, thereby bypassing many of the difficulties that currently frustrate attempts to employ SVs in association testing.  This step returns a VCF file.
-
-.. _Wham SV Annotation:
-
-**Wham SV Annotation**
-
-This step uses the VCF file generated in the previous step `Wham SV Call`_ and performs SV annotations. 
-
-.. _CNVkit Batch:
-
-**CNVkit Batch**
-
-A copy number variation (`CNV`_) is when the number of copies of a particular gene varies from one individual to the next. Copy-number variation (CNV) is a large category of structural variation, which includes insertions, deletions and duplications. For copy number variation analysis, GenPipes DNA Sequencing pipeline (-t sv option) uses CNVkit that allows for CNV calling on single samples (e.g., tumor samples). 
-
-CNVkit provides an advantageous way to run the entire pipeline using the batch option to run various stages in copy number calling pipeline such as:
-
-* Create target/anti-target bed files
-* Gather read depths for those regions
-* Compile a copy number reference
-* Correct biases in tumor samples while calculating copy ratios
-* Mark copy number segments
-
-.. _CNVkit SV Annotation:
-
-**CNVkit SV Annotation**
-
-This step performs CNVkit SV annotation.
-
-.. _Run BreakSeq2:
-
-**Run BreakSeq2**
-
-In this step, `BreakSeq2`_ is used to combine DNA double-strand breaks (DSBs) labeling with next generation sequencing (NGS) to map chromosome breaks with improved sensitivity and resolution. It is an ultra fast and accurate nucleotide-resolution analysis of structural variants.
-
-.. _Ensemble MetaSV:
-
-**Ensemble MetaSV**
-
-`MetaSV`_ uses highly effective ensemble approach for calling SVs. It is an integrated SV caller which leverages multiple orthogonal SV signals for high accuracy and resolution. MetaSV proceeds by merging SVs from multiple tools for all types of SVs. It also analyzes soft-clipped reads from alignment to detect insertions accurately since existing tools underestimate insertion SVs. Local assembly in combination with dynamic programming is used to improve breakpoint resolution. Paired-end and coverage information is used to predict SV genotypes.
-
-.. _MetaSV Annotation:
-
-**MetaSV Annotation**
-
-This step uses output from previous step and performs SV annotations.
 
 .. _Metrics:
 
@@ -453,36 +540,6 @@ A TDF (.tdf) coverage track is also generated at this step for easy visualizatio
 
 This step takes as input the file containing all vcfs in project output.
 
-.. _Metrics Verify BAM ID:
-
-**Metrics Verify BAM ID**
-
-In this step, `VerifyBAMID <https://genome.sph.umich.edu/wiki/VerifyBamID>`_ software is used to verify whether the reads in particular file match previously known genotypes for an individual (or group of individuals), and checks whether the reads are contaminated as a mixture of two samples. 
-
-.. _Metrics VCFTools Missing Individual:
-
-**Metrics VCFTools Missing Individual**
-
-This step uses `VCFtools <https://vcftools.github.io/index.html>`_ and --missing_indv option to generate a file reporting the `missingness` factor in the analysis on a per-individual basis. It takes bgzipped .vcf file as input and creates .imiss flat file indicating missingness.
-
-.. _Metrics VCFTools Depth Individual:
-
-**Metrics VCFTools Depth Individual**
-
-This step uses `VCFtools <https://vcftools.github.io/index.html>`_ and --depth option to generate a file containing the mean depth per individual. It takes as input bgzipped .vcf file and creates a .idepth flat file.
-
-.. _Metrics GATK Sample Fingerprint:
-
-**Metrics GATK Sample Fingerprint**
-
-`CrosscheckFingerprints (Picard) <https://gatk.broadinstitute.org/hc/en-us/articles/360040098592-CrosscheckFingerprints-Picard->`_ functionality in GATK toolkit is used to cross-check readgroups, libraries, samples, or files to determine if all data in the set of input files appears to come from the same individual. In this step, sample SAM/BAM or VCF file is taken as input and a fingerprint file is generated using CrosscheckFingerprints (Picard) in GATK. It checks the sample identity of the sequence/genotype data in the provided file (SAM/BAM or VCF) against a set of known genotypes in the supplied genotype file (in VCF format).
-
-.. _Metrics GATK Cluster Fingerprint:
-
-**Metrics GATK Cluster Fingerprint**
-
-In this step, ClusterCrosscheckMetrics function from GATK is used as a follow-up step to running CrosscheckFingerprints created in the `Metrics GATK Sample Fingerprint`_ step earlier. There are cases where one would like to identify a few groups out of a collection of many possible groups (say to link a bam to it's correct sample in a multi-sample vcf. In this step, sample SAM/BAM or VCF file is taken as input and a fingerprint file is generated.
-
 .. include:: steps_dnaseq_common.inc
 .. include:: steps_cram_op.inc
 
@@ -493,9 +550,9 @@ In this step, ClusterCrosscheckMetrics function from GATK is used as a follow-up
 .. _SAMTools: https://www.htslib.org/doc/samtools.html
 .. _GATK: https://gatk.broadinstitute.org/hc/en-us
 .. _GATK Variant Recalibrator: https://gatk.broadinstitute.org/hc/en-us/articles/360036510892-VariantRecalibrator
-
-
-
+.. _Mosdepth: https://github.com/brentp/mosdepth
+.. _Picard: http://broadinstitute.github.io/picard/
+.. _Varscan:  https://dkoboldt.github.io/varscan/
 
 
 

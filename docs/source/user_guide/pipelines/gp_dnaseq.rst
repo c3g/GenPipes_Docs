@@ -265,30 +265,52 @@ DNA Sequencing Pipeline
                   +----+------------------------------------+
                   | 4. | |gatk_mark_dup|                    |
                   +----+------------------------------------+
-                  | 4. | |set_interval_list|                |
+                  | 5. | |set_interval_list|                |
                   +----+------------------------------------+
-                  | 5. | |gatk_haplotype_caller|            |
+                  | 6. | |gatk_haplotype_caller|            |
                   +----+------------------------------------+
-                  | 6. | |merge_call_i_gvcf|                |
+                  | 7. | |merge_call_i_gvcf|                |
                   +----+------------------------------------+
-                  | 7. | |combine_gvcf|                     |
+                  | 8. | |combine_gvcf|                     |
                   +----+------------------------------------+
-                  | 8. | |merge_call_c_gvcf|                |
+                  | 9. | |merge_call_c_gvcf|                |
                   +----+------------------------------------+
-                  | 9. | |variant_recalib|                  |
+                  | 10. | |variant_recalib|                 |
                   +----+------------------------------------+
-                  | 10.| |hc_dec_norm|                      |
+                  | 11.| |hc_dec_norm|                      |
                   +----+------------------------------------+
-                  | 11.| |hc_flag_map|                      |
+                  | 12.| |hc_flag_map|                      |
                   +----+------------------------------------+
-
-
-
-
-
-
-
-
+                  | 13.| |hc_snp_ann|                       |
+                  +----+------------------------------------+
+                  | 14.| |hc_snp_eff|                       |
+                  +----+------------------------------------+
+                  | 15.| |hc_dbnsfp_ann|                    |
+                  +----+------------------------------------+
+                  | 16.| |hc_gemini_ann|                    |
+                  +----+------------------------------------+
+                  | 17.| |m_dna_picard|                     |
+                  +----+------------------------------------+
+                  | 18.| |m_dna_sample_mosdepth|            |     
+                  +----+------------------------------------+
+                  | 19.| |picard_calc_hs_m|                 |
+                  +----+------------------------------------+
+                  | 20.| |m_verify_bam_id|                  |
+                  +----+------------------------------------+
+                  | 21.| |run_multiqc|                      |
+                  +----+------------------------------------+
+                  | 22.| |sym_link_fastq|                   |
+                  +----+------------------------------------+
+                  | 23.| |sym_link_final_bam|               |
+                  +----+------------------------------------+
+                  | 24.| |m_vcftools_missing_i|             |
+                  +----+------------------------------------+
+                  | 25.| |m_vcftools_depth_i|               |
+                  +----+------------------------------------+
+                  | 26.| |m_gatk_sample_fp|                 |
+                  +----+------------------------------------+
+                  | 27.| |m_gatk_cluster_fp|                |       
+                  +----+------------------------------------+
 
                .. tab-item:: SV
 
@@ -296,6 +318,54 @@ DNA Sequencing Pipeline
                   |    | *Germline SNV*                     |
                   +====+====================================+
                   | 1. | |gatk_sam_to_fastq|                |
+                  +----+------------------------------------+
+                  | 2. | |trim_fastp|                       |
+                  +----+------------------------------------+
+                  | 3. | |bwa_mem2_samtools_sort|           |
+                  +----+------------------------------------+
+                  | 4. | |gatk_mark_dup|                    |
+                  +----+------------------------------------+
+                  | 5. | |sym_link_final_bam|               |
+                  +----+------------------------------------+
+                  | 6. | |set_interval_list|                |
+                  +----+------------------------------------+
+                  | 7. | |gatk_haplotype_caller|            |
+                  +----+------------------------------------+
+                  | 8. | |merge_call_c_gvcf|                |
+                  +----+------------------------------------+
+                  | 9. | |m_dna_picard|                     | 
+                  +----+------------------------------------+
+                  | 10.| |m_dna_sample_mosdepth|            |     
+                  +----+------------------------------------+
+                  | 11.| |picard_calc_hs_m|                 |
+                  +----+------------------------------------+
+                  | 12.| |run_multiqc|                      |
+                  +----+------------------------------------+
+                  | 13.| |delly_call_filter|                |
+                  +----+------------------------------------+
+                  | 14.| |delly_sv_annotation|              |
+                  +----+------------------------------------+
+                  | 15.| |germline_manta|                   |
+                  +----+------------------------------------+
+                  | 16.| |manta_sv_annotation|              |
+                  +----+------------------------------------+
+                  | 17.| |lumpy_paired_sv|                  |
+                  +----+------------------------------------+
+                  | 18.| |lumpy_sv_annotation|              |
+                  +----+------------------------------------+
+                  | 19.| |wham_sv_call|                     |
+                  +----+------------------------------------+
+                  | 20.| |wham_sv_annotation|               |
+                  +----+------------------------------------+
+                  | 21.| |cnvkit_batch|                     |
+                  +----+------------------------------------+
+                  | 22.| |cnvkit_sv_annotation|             |
+                  +----+------------------------------------+
+                  | 23.| |run_breakseq2|                    |
+                  +----+------------------------------------+
+                  | 24.| |ensemble_metasv|                  |
+                  +----+------------------------------------+
+                  | 25.| |metasv_sv_annotation|             |
                   +----+------------------------------------+
 
                .. tab-item:: High Coverage
@@ -305,6 +375,34 @@ DNA Sequencing Pipeline
                   +====+====================================+
                   | 1. | |gatk_sam_to_fastq|                |
                   +----+------------------------------------+
+                  | 2. | |trim_fastp|                       |
+                  +----+------------------------------------+
+                  | 3. | |bwa_mem2_samtools_sort|           |
+                  +----+------------------------------------+ 
+                  | 4. | |samtools_merge_files|             |                
+                  +----+------------------------------------+ 
+                  | 5. | |gatk_fixmate|                     |
+                  +----+------------------------------------+ 
+                  | 6. | |m_dna_picard|                     | 
+                  +----+------------------------------------+
+                  | 7. | |m_dna_sample_mosdepth|            |     
+                  +----+------------------------------------+
+                  | 8. | |picard_calc_hs_m|                 |
+                  +----+------------------------------------+ 
+                  | 9. | |m_verify_bam_id|                  |
+                  +----+------------------------------------+ 
+                  | 10.| |germline_varscan2|                |
+                  +----+------------------------------------+ 
+                  | 11.| |preprocess_vcf|                   |
+                  +----+------------------------------------+
+                  | 12.| |snp_effect|                       | 
+                  +----+------------------------------------+ 
+                  +----+------------------------------------+ 
+                  +----+------------------------------------+ 
+
+
+
+
 
          .. dropdown:: Somatic
 
@@ -396,13 +494,44 @@ DNA Sequencing Pipeline
 .. |variant_recalib| replace:: `Variant Recalibrator`_
 .. |hc_dec_norm| replace:: `Haplotype caller decompose and normalize`_
 .. |hc_flag_map| replace:: `Haplotype caller flag mappability`_
-
-
-
-
-
-
+.. |hc_snp_ann| replace:: `Haplotype caller SNP ID annotation`_
+.. |hc_snp_eff| replace:: `Haplotype caller SNP Effect`_
+.. |hc_dbnsfp_ann| replace:: `Haplotype caller dbNSFP annotation`_
+.. |hc_gemini_ann| replace:: `Haplotype caller Gemini annotation`_
+.. |m_dna_picard| replace:: `Metrics DNA Picard`_
+.. |m_dna_sample_mosdepth| replace:: `DNA Sample MosDepth Metrics`_:was
+.. |picard_calc_hs_m| replace:: `Picard Calculate HS Metrics`_
+.. |m_verify_bam_id| replace:: `Metrics Verify BAM ID`_
+.. |run_multiqc| replace:: `Run MultiQC`_
 .. |sym_link_fastq| replace:: `Sym Link FastQ`_
+.. |sym_link_final_bam| replace:: `Sym Link Final BAM`_
+.. |m_vcftools_missing_i| replace:: `Metrics VCFTools Missing Individual`_
+.. |m_vcftools_depth_i| replace:: `Metrics VCFTools Depth Individual`_
+.. |m_gatk_sample_fp| replace:: `Metrics GATK Sample Fingerprint`_
+.. |m_gatk_cluster_fp| replace:: `Metrics GATK Cluster Fingerprint`_
+.. |delly_call_filter| replace:: `Delly2 Call Filter`_
+.. |delly_sv_annotation| replace:: `Delly2 SV Annotation`_
+.. |germline_manta| replace:: `Germline Manta`_
+.. |manta_sv_annotation| replace:: `Manta SV Annotation`_
+.. |lumpy_paired_sv| replace:: `Lumpy Paired SV`_
+.. |lumpy_sv_annotation| replace:: `Lumpy SV Annotation`_
+.. |wham_sv_call| replace:: `Wham SV Call`_
+.. |wham_sv_annotation| replace:: `Wham SV Annotation`_
+.. |cnvkit_batch| replace:: `CNVkit Batch`_
+.. |cnvkit_sv_annotation| replace:: `CNVkit SV Annotation`_
+.. |run_breakseq2| replace:: `Run BreakSeq2`_
+.. |ensemble_metasv| replace:: `Ensemble MetaSV`_
+.. |metasv_sv_annotation| replace:: `MetaSV Annotation`_
+.. |samtools_merge_files| replace:: `SAMTools Merge Files`_
+.. |gatk_fixmate| replace:: `GATK Fixmate`_
+.. |germline_varscan2| replace:: `Germline Varscan2`_
+.. |preprocess_vcf| replace:: `PreProcess VCF`_
+.. |snp_effect| replace:: `SNP Effect`_
+
+
+
+
+.. |manta_sv_calls| replace:: `Manta SV Calls`_
 .. |trimmomatic| replace:: `Step Trimmomatic`_
 .. |merge_trimmomatic_stats| replace:: `Merge Trimmomatic Stats`_
 .. |skewer_trim| replace:: `Skewer Trimming`_
@@ -411,22 +540,14 @@ DNA Sequencing Pipeline
 .. |sambamba_merge_realigned| replace:: `SAMBAM Merge Realigned`_
 .. |fix_mate_by_coor| replace:: `Fix Mate by Coordinate`_
 .. |recalib| replace:: `Recalibration`_
-.. |sym_link_final_bam| replace:: `Sym Link Final BAM`_
-.. |m_dna_picard| replace:: `Metrics DNA Picard`_
 .. |m_dna_sample| replace:: `Metrics DNA Sample Quality Map`_
 .. |m_dna_sambamba| replace:: `Metrics DNA SAMBAM Flag Stats`_
 .. |m_dna_fastqc| replace:: `Metrics DNA FastQC`_
-.. |picard_calc_hs_m| replace:: `Picard Calculate HS Metrics`_
 .. |gatk_call_loci| replace:: `GATK Callable Loci`_
 .. |extract_com_snp| replace:: `Extract Common SNP Frequencies`_
 .. |baf_plot| replace:: `BAF Plot`_
 .. |gatk_hp_c| replace:: `GATK Haplotype Caller`_
-.. |hc_snp_ann| replace:: `Haplotype caller SNP ID annotation`_
-.. |hc_snp_eff| replace:: `Haplotype caller SNP Effect`_
-.. |hc_dbnsfp_ann| replace:: `Haplotype caller dbNSFP annotation`_
-.. |hc_gemini_ann| replace:: `Haplotype caller Gemini annotation`_
 .. |hc_met_vcf_stat| replace:: `Haplotype caller metrics VCF stats`_
-.. |run_multiqc| replace:: `Run MultiQC`_
 .. |rawmpileup| replace:: `Raw MPileup`_
 .. |rawmp_cat| replace:: `Compress Raw MPileup`_
 .. |snp_n_indel_bcf| replace:: `SNP and indel BCF`_
@@ -439,26 +560,9 @@ DNA Sequencing Pipeline
 .. |mp_gemini_ann| replace:: `MPileup Gemini annotation`_
 .. |mp_m_vcf_stat| replace:: `MPileup Metrics VCF stats`_
 .. |sambamba_mark_duplicates| replace:: `SAMBAM Mark Duplicates`_
-.. |delly_call_filter| replace:: `Delly2 Call Filter`_
-.. |delly_sv_annotation| replace:: `Delly2 SV Annotation`_
-.. |manta_sv_calls| replace:: `Manta SV Calls`_
-.. |manta_sv_annotation| replace:: `Manta SV Annotation`_
-.. |lumpy_paired_sv| replace:: `Lumpy Paired SV`_
-.. |lumpy_sv_annotation| replace:: `Lumpy SV Annotation`_
-.. |wham_sv_call| replace:: `Wham SV Call`_
-.. |wham_sv_annotation| replace:: `Wham SV Annotation`_
-.. |cnvkit_batch| replace:: `CNVkit Batch`_
-.. |cnvkit_sv_annotation| replace:: `CNVkit SV Annotation`_
-.. |run_breakseq2| replace:: `Run BreakSeq2`_
-.. |ensemble_metasv| replace:: `Ensemble MetaSV`_
-.. |metasv_sv_annotation| replace:: `MetaSV Annotation`_
 .. |metrics| replace:: `Metrics`_
 .. |m_ngscheckmate| replace:: `Metrics NGSCheckmate`_
-.. |m_verify_bam_id| replace:: `Metrics Verify BAM ID`_
-.. |m_vcftools_missing_i| replace:: `Metrics VCFTools Missing Individual`_
-.. |m_vcftools_depth_i| replace:: `Metrics VCFTools Depth Individual`_
-.. |m_gatk_sample_fp| replace:: `Metrics GATK Sample Fingerprint`_
-.. |m_gatk_cluster_fp| replace:: `Metrics GATK Cluster Fingerprint`_
+
 
 .. include::  repl_cram_op.inc
 

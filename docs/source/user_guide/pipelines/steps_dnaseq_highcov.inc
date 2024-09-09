@@ -31,12 +31,6 @@ Raw reads quality trimming and removing of Illumina adapters is performed using 
 
 The trim statistics per readset are merged at this step.
 
-.. _GATK Indel Realigner:
-
-**GATK Indel Realigner**
-
-Insertion and deletion realignment is performed on regions where multiple base mismatches are preferred over indels by the aligner since it can appear to be less costly by the algorithm. Such regions will introduce false positive variant calls which may be filtered out by realigning those regions properly. Realignment is done using `GATK Toolkit <https://gatk.broadinstitute.org/hc/en-us>`_. The reference genome is divided by a number regions given by the nb_jobs parameter.
-
 .. _Picard Fixmate:
 
 **Picard Fixmate**
