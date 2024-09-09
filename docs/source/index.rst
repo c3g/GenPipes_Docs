@@ -16,6 +16,7 @@ GenPipes |genpipes_version| Documentation
    C3G has created a distributed innovation node with broad expertise in bioinformatics. It offers bioinformatics analysis and HPC services for the life sciences research community. These services include customized and case-by-case analysis, along with an extensive suite of software solutions for the genomics community.  
 
 .. dropdown::  :material-outlined:`coronavirus;2em` Fighting COVID-19
+   :color: secondary
 
       GenPipes offers CoVSeq pipeline and Nanopore_CoVSeq pipeline to help researchers sequence and detect mutations quickly to prevent the spread of new strains. See :ref:`GenPipes CoVSeq Pipeline User Guide<docs_gp_covseq>`, :ref:`GenPipes Nanopore CoVSeq Pipeline User Guide<docs_gp_nanopore_cov>` for details.
 

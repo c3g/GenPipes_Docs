@@ -21,8 +21,8 @@ DNA Sequencing Pipeline
 
 :bdg-primary:`Version` |genpipes_version|
 
-.. dropdown:: :material-outlined:`notifications_active;2em` v5.0.0 update! 
-   :color: info
+.. dropdown:: :material-outlined:`notifications_active;2em` v5.0.0 Update! 
+   :color: success
    :open:
 
    Starting from **GenPipes v5.x** onwards, the DNA Sequencing Pipeline has been completely revamped. It is enhanced to include the functionality  that was earlier provided in **GenPipes v4.6.1** by the following standalone pipelines:

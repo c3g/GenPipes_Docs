@@ -14,8 +14,8 @@
       mysql
       FASTQ       
  
-DNA Sequencing (High Coverage) Pipeline
-=======================================
+DNA Sequencing (High Coverage) Pipeline (Merged)
+================================================
 
 .. danger::
 

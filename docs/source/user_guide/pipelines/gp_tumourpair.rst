@@ -16,8 +16,8 @@
       Kataegis
       Microsatellite
       
-Tumor Pair Sequencing Pipeline
-================================
+Tumor Pair Sequencing Pipeline (Merged)
+=======================================
 
 .. danger::
 

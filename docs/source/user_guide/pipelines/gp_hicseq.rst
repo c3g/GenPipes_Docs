@@ -6,8 +6,8 @@
    rmap
    picard
 
-HiC Sequencing Pipeline
-=======================
+HiC Sequencing Pipeline  (Deprecated)
+=====================================
 
 :bdg-primary:`Version` |genpipes_version|
 

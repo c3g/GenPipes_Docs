@@ -5,8 +5,8 @@
      heatmap
      epiQC
 
-EpiQC Pipeline
-===============
+EpiQC Pipeline (Deprecated)
+===========================
 
 :bdg-primary:`Version` |genpipes_version|
 
