@@ -23,7 +23,8 @@ ChIP Sequencing Pipeline
 
             ::
 
-               genpipes chipseq.py [options] [--genpipes_file GENPIPES_FILE]
+               genpipes chipseq.py [options] [--genpipes_file GENPIPES_FILE.sh]
+               bash GENPIPES_FILE.sh
 
          .. dropdown:: Options
 

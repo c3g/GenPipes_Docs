@@ -29,7 +29,8 @@ Amplicon Sequencing Pipeline
 
             ::
 
-              genpipes ampliconseq.py [options] [--genpipes_file GENPIPES_FILE]
+              genpipes ampliconseq.py [options] [--genpipes_file GENPIPES_FILE.sh]
+              bash GENPIPES_FILE.sh
 
          .. dropdown:: Options
 

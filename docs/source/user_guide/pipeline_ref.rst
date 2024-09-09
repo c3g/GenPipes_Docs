@@ -21,15 +21,20 @@ This guide contains usage manual and reference information for all available Gen
    pipelines/gp_chipseq
    pipelines/gp_covseq
    pipelines/gp_dnaseq
-   pipelines/gp_dnaseq_highcov
-   pipelines/gp_epiqc
-   pipelines/gp_hicseq
    pipelines/gp_wgs_methylseq
    pipelines/gp_nanopore
    pipelines/gp_nanopore_covseq
    pipelines/gp_rnaseq
    pipelines/gp_rnaseq_denovo
    pipelines/gp_rnaseq_light
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-pipeline-ref-deprecated
+
+   pipelines/gp_dnaseq_highcov
+   pipelines/gp_epiqc
+   pipelines/gp_hicseq
    pipelines/gp_tumourpair
 
 .. Issue #168 comment out for 4.0 Release

@@ -19,8 +19,8 @@
       Grabherr
       Yassour
 
-De-Novo RNA Sequencing Pipeline
-================================
+RNA Sequencing (De-Novo) Pipeline
+=================================
 
 :bdg-primary:`Version` |genpipes_version|
 

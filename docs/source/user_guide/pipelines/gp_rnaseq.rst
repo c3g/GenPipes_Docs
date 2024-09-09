@@ -20,7 +20,8 @@ RNA Sequencing Pipeline
 
             .. code::
 
-                 genpipes rnaseq.py [options] [--genpipes_file GENPIPES_FILE]
+                 genpipes rnaseq.py [options] [--genpipes_file GENPIPES_FILE.sh]
+                 bash GENPIPES_FILE.sh
 
          .. dropdown:: Options
 
