@@ -19,10 +19,4 @@ Also see the latest discussions on `GenPipes Google Group <https://groups.google
 .. toctree::
     :maxdepth: 1
 
-    trbs_runtime/fatal_err_star_rnaseq_option
-    trbs_runtime/err_qsub_cmd_nt_found
-    trbs_runtime/rt_job_failure
-    trbs_runtime/rap_id_nt_set
-    trbs_runtime/missing_gen_ann
-    trbs_runtime/new_pipeline_no_ex
-    trbs_runtime/oom_star_rnasesq
+    trbs_runtime/gp_user_trbs
