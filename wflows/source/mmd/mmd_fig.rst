@@ -46,25 +46,26 @@ CoVID Sequencing Pipeline
 DNA Sequencing Pipeline
 ========================
 
-.. mermaid:: /mmd/pipelines/dnaseq.mugqic.mmd
-     :caption: DNA Sequencing (MUGQIC) Pipeline
+.. mermaid:: /mmd/pipelines/dnaseq.germ.snv.mmd
+     :caption:  Germline SNV DNA Sequencing Pipeline
 
-.. mermaid:: /mmd/pipelines/dnaseq.mpileup.mmd
-     :caption: DNA Sequencing (Mpileup) Pipeline
+.. mermaid:: /mmd/pipelines/dnaseq.germ.sv.mmd
+     :caption: Germline SV DNA Sequencing Pipeline
 
-.. mermaid:: /mmd/pipelines/dnaseq.light.mmd
-     :caption: DNA Sequencing (LIGHT) Pipeline
+.. mermaid:: /mmd/pipelines/dnaseq.germ.highcov.mmd
+     :caption: Germline SV DNA Sequencing Pipeline
 
-.. mermaid:: /mmd/pipelines/dnaseq.sv.mmd
-     :caption: DNA Sequencing (SV) Pipeline
+.. mermaid:: /mmd/pipelines/dnaseq.som.tumor.mmd
+     :caption: Somatic Fastpass DNA Sequencing Pipeline
 
-----
+.. mermaid:: /mmd/pipelines/dnaseq.som.fastpass.mmd
+     :caption: Somatic Fastpass DNA Sequencing Pipeline
 
-DNA Sequencing (High Coverage) Pipeline
-========================================
+.. mermaid:: /mmd/pipelines/dnaseq.som.ensemble.mmd
+     :caption: Somatic Fastpass DNA Sequencing Pipeline
 
-.. mermaid:: /mmd/pipelines/dnaseq.highcov.mmd
-     :caption: DNA Sequencing High Coverage Pipeline
+.. mermaid:: /mmd/pipelines/dnaseq.som.sv.mmd
+     :caption: Somatic SV DNA Sequencing Pipeline
 
 ----
 
