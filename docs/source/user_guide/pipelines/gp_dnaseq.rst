@@ -275,7 +275,7 @@ DNA Sequencing Pipeline
                   +----+------------------------------------+
                   | 9. | |merge_call_c_gvcf|                |
                   +----+------------------------------------+
-                  | 10. | |variant_recalib|                 |
+                  | 10.| |variant_recalib|                  |
                   +----+------------------------------------+
                   | 11.| |hc_dec_norm|                      |
                   +----+------------------------------------+
@@ -371,7 +371,7 @@ DNA Sequencing Pipeline
                .. tab-item:: High Coverage
 
                   +----+------------------------------------+
-                  |    | *Germline SNV*                     |
+                  |    | *Germline High Coverage*           |
                   +====+====================================+
                   | 1. | |gatk_sam_to_fastq|                |
                   +----+------------------------------------+
@@ -397,12 +397,12 @@ DNA Sequencing Pipeline
                   +----+------------------------------------+
                   | 12.| |snp_effect|                       | 
                   +----+------------------------------------+ 
+                  | 13.| |hc_gemini_ann|                    |
                   +----+------------------------------------+ 
+                  | 14.| |run_multiqc|                      |
                   +----+------------------------------------+ 
-
-
-
-
+                  | 15.| |cram_output|                      |
+                  +----+------------------------------------+ 
 
          .. dropdown:: Somatic
 
@@ -411,34 +411,220 @@ DNA Sequencing Pipeline
                .. tab-item:: Tumor Only
                                                     
                   +----+------------------------------------+
-                  |    | *Germline SNV*                     |
+                  |    | *Somatic Tumor Only*               |
                   +====+====================================+
                   | 1. | |gatk_sam_to_fastq|                |
+                  +----+------------------------------------+
+                  | 2. | |trim_fastp|                       |
+                  +----+------------------------------------+
+                  | 3. | |bwa_mem2_samtools_sort|           |
+                  +----+------------------------------------+                  
+                  | 4. | |gatk_mark_dup|                    |
+                  +----+------------------------------------+
+                  | 5. | |sym_link_final_bam|               |
+                  +----+------------------------------------+
+                  | 6. | |m_dna_picard|                     |
+                  +----+------------------------------------+
+                  | 7. | |m_dna_sample_mosdepth|            |
+                  +----+------------------------------------+                  
+                  | 8. | |picard_calc_hs_m|                 |
+                  +----+------------------------------------+
+                  | 9. | |m_verify_bam_id|                  |
+                  +----+------------------------------------+
+                  | 10.| |run_multiqc|                      |
+                  +----+------------------------------------+
+                  | 11.| |set_interval_list|                |
+                  +----+------------------------------------+                  
+                  | 12.| |gatk_haplotype_caller|            |
+                  +----+------------------------------------+
+                  | 13.| |merge_call_i_gvcf|                |
+                  +----+------------------------------------+
+                  | 14.| |combine_gvcf|                     |
+                  +----+------------------------------------+
+                  | 15.| |merge_call_c_gvcf|                |
+                  +----+------------------------------------+                  
+                  | 16.| |variant_recalib|                  |
+                  +----+------------------------------------+
+                  | 17.| |hc_dec_norm|                      |
+                  +----+------------------------------------+
+                  | 18.| |cnvkit_batch|                     |
+                  +----+------------------------------------+
+                  | 19.| |split_tumor_only|                 |
+                  +----+------------------------------------+                  
+                  | 20.| |filter_tumor_only|                |
+                  +----+------------------------------------+
+                  | 21.| |report_cpsr|                      |
+                  +----+------------------------------------+
+                  | 22.| |report_pcgr|                      |
                   +----+------------------------------------+
 
                .. tab-item:: Fastpass
                                                     
                   +----+------------------------------------+
-                  |    | *Germline SNV*                     |
+                  |    | *Somatic Fastpass*                 |
                   +====+====================================+
                   | 1. | |gatk_sam_to_fastq|                |
+                  +----+------------------------------------+
+                  | 2. | |trim_fastp|                       |
+                  +----+------------------------------------+
+                  | 3. | |bwa_mem2_samtools_sort|           |
+                  +----+------------------------------------+
+                  | 4. | |gatk_mark_dup|                    |
+                  +----+------------------------------------+
+                  | 5. | |set_interval_list|                |
+                  +----+------------------------------------+
+                  | 6. | |sequenza|                         |
+                  +----+------------------------------------+
+                  | 7. | |rawmpileup|                       |
+                  +----+------------------------------------+
+                  | 8. | |paired_varscan2|                  |
+                  +----+------------------------------------+
+                  | 9. | |merge_varscan2|                   |
+                  +----+------------------------------------+
+                  | 10.| |preprocess_vcf|                   |
+                  +----+------------------------------------+
+                  | 11.| |cnvkit_batch|                     |
+                  +----+------------------------------------+
+                  | 12.| |filter_germline|                  |
+                  +----+------------------------------------+
+                  | 13.| |report_cpsr|                      |
+                  +----+------------------------------------+                  
+                  | 14.| |filter_somatic|                   |
+                  +----+------------------------------------+
+                  | 15.| |report_pcgr|                      |
+                  +----+------------------------------------+
+                  | 16.| |conpair_concordance_contamination||
+                  +----+------------------------------------+
+                  | 17.| |m_dna_picard|                     |
+                  +----+------------------------------------+
+                  | 18.| |m_dna_sample_mosdepth|            |
+                  +----+------------------------------------+
+                  | 19.| |run_multiqc|                      |
+                  +----+------------------------------------+
+                  | 20.| |sym_link_report|                  |
+                  +----+------------------------------------+
+                  | 21.| |sym_link_fastq_pair|              |
+                  +----+------------------------------------+
+                  | 22.| |sym_link_panel|                   |
+                  +----+------------------------------------+
+                  | 23.| |cram_output|                      |
                   +----+------------------------------------+
 
                .. tab-item:: Ensemble
                                                     
                   +----+------------------------------------+
-                  |    | *Germline SNV*                     |
+                  |    | *Somatic Ensemble*                 |
                   +====+====================================+
                   | 1. | |gatk_sam_to_fastq|                |
+                  +----+------------------------------------+
+                  | 2. | |trim_fastp|                       |
+                  +----+------------------------------------+
+                  | 3. | |bwa_mem2_samtools_sort|           |
+                  +----+------------------------------------+
+                  | 4. | |gatk_mark_dup|                    |
+                  +----+------------------------------------+
+                  | 5. | |set_interval_list|                |
+                  +----+------------------------------------+
+                  | 6. | |conpair_concordance_contamination||
+                  +----+------------------------------------+
+                  | 7. | |m_dna_picard|                     |
+                  +----+------------------------------------+
+                  | 8. | |m_dna_sample_mosdepth|            |
+                  +----+------------------------------------+
+                  | 9. | |sequenza|                         |
+                  +----+------------------------------------+
+                  | 10.| |manta_sv_calls|                   |
+                  +----+------------------------------------+
+                  | 11.| |strelka2_paired_somatic|          |
+                  +----+------------------------------------+
+                  | 12.| |strelka2_paired_germline|         |
+                  +----+------------------------------------+
+                  | 13.| |strelka2_paired_snpEff|           |
+                  +----+------------------------------------+
+                  | 14.| |purple|                           |
+                  +----+------------------------------------+
+                  | 15.| |rawmpileup|                       |
+                  +----+------------------------------------+
+                  | 16.| |paired_varscan2|                  |
+                  +----+------------------------------------+
+                  | 17.| |merge_varscan2|                   |
+                  +----+------------------------------------+
+                  | 18.| |paired_mutect2|                   |
+                  +----+------------------------------------+
+                  | 19.| |merge_mutect2|                    |
+                  +----+------------------------------------+
+                  | 20.| |vardict_paired|                   |
+                  +----+------------------------------------+
+                  | 21.| |merge_filter_paired_vardict|      |
+                  +----+------------------------------------+
+                  | 22.| |ensemble_somatic|                 |
+                  +----+------------------------------------+
+                  | 23.| |gatk_variant_annotator_somatic|   |
+                  +----+------------------------------------+
+                  | 24.| |merge_gatk_var_annotator_somatic| |
+                  +----+------------------------------------+
+                  | 25.| |ensemble_germline_loh|            |
+                  +----+------------------------------------+
+                  | 26.| |gatk_variant_annotator_germline|  |
+                  +----+------------------------------------+
+                  | 27.| |merge_gatk_var_anno_germline|     |
+                  +----+------------------------------------+
+                  | 28.| |cnvkit_batch|                     |
+                  +----+------------------------------------+
+                  | 29.| |filter_germline|                  |
+                  +----+------------------------------------+
+                  | 30.| |report_cpsr|                      |
+                  +----+------------------------------------+
+                  | 31.| |filter_somatic|                   |
+                  +----+------------------------------------+
+                  | 32.| |report_pcgr|                      |
+                  +----+------------------------------------+
+                  | 33.| |run_multiqc|                      |
+                  +----+------------------------------------+
+                  | 34.| |sym_link_fastq_pair|              |
+                  +----+------------------------------------+
+                  | 35.| |sym_link_final_bam|               |
+                  +----+------------------------------------+                  
+                  | 36.| |sym_link_report|                  |
+                  +----+------------------------------------+
+                  | 37.| |sym_link_ensemble|                |
+                  +----+------------------------------------+
+                  | 38.| |cram_output|                      |
                   +----+------------------------------------+
 
                .. tab-item:: SV
                                                     
                   +----+------------------------------------+
-                  |    | *Germline SNV*                     |
+                  |    | *Somatic SV*                       |
                   +====+====================================+
                   | 1. | |gatk_sam_to_fastq|                |
                   +----+------------------------------------+
+                  | 2. | |trim_fastp|                       |
+                  +----+------------------------------------+
+                  | 3. | |bwa_mem2_samtools_sort|           |
+                  +----+------------------------------------+
+                  | 4. | |gatk_mark_dup|                    |
+                  +----+------------------------------------+
+                  | 5. | |set_interval_list|                |
+                  +----+------------------------------------+
+                  | 6. | |manta_sv_calls|                   |
+                  +----+------------------------------------+
+                  | 7. | |strelka2_paired_somatic|          |
+                  +----+------------------------------------+
+                  | 8. | |gridss_paired_somatic|            |
+                  +----+------------------------------------+
+                  | 9. | |purple_sv|                        |
+                  +----+------------------------------------+
+                  | 10.| |linx_annotations_somatic|         |
+                  +----+------------------------------------+
+                  | 11.| |linx_annotations_somatic|         |
+                  +----+------------------------------------+
+                  | 12.| |linx_plot|                        |
+                  +----+------------------------------------+
+                  | 13.| |run_multiqc|                      |
+                  +----+------------------------------------+
+                  | 14.| |cram_output|                      |
+                  +----+------------------------------------+                 
 
          .. card::
 
@@ -457,8 +643,6 @@ DNA Sequencing Pipeline
             The `Genome in a Bottle dataset`_ was used to select steps and parameters minimizing the false-positive rate and maximizing the true-positive variants to achieve a sensitivity of 99.7%, precision of 99.1%, and F1 score of 99.4%. Finally, additional annotations are incorporated using `dbNSFP`_ and / or Gemini and QC metrics are collected at various stages and visualized using `MultiQC`_. 
 
             The standard MUGQIC DNA-Seq pipeline uses BWA to align reads to the reference genome. Treatment and filtering of mapped reads approaches as INDEL realignment, mark duplicate reads, recalibration and sort are executed using Picard and GATK. Samtools MPILEUP and bcftools are used to produce the standard SNP and indels variants file (VCF). Additional SVN annotations mostly applicable to human samples include mappability flags, dbSNP annotation and extra information about SVN by using published databases. The SNPeff tool is used to annotate variants using an integrated database of functional predictions from multiple algorithms (SIFT, Polyphen2, LRT and MutationTaster, PhyloP and GERP++, etc.) and to calculate the effects they produce on known genes. Refer to the list of `SnpEff effects`_. 
-
-            The DNA sequencing pipeline supports two trimmers: `Trimmomatic`_ and `Skewer Trimmer <https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-15-182>`_.
 
             GenPipes DNA sequencing pipeline offers the following protocol options:
 
@@ -497,7 +681,6 @@ DNA Sequencing Pipeline
 .. |hc_snp_ann| replace:: `Haplotype caller SNP ID annotation`_
 .. |hc_snp_eff| replace:: `Haplotype caller SNP Effect`_
 .. |hc_dbnsfp_ann| replace:: `Haplotype caller dbNSFP annotation`_
-.. |hc_gemini_ann| replace:: `Haplotype caller Gemini annotation`_
 .. |m_dna_picard| replace:: `Metrics DNA Picard`_
 .. |m_dna_sample_mosdepth| replace:: `DNA Sample MosDepth Metrics`_:was
 .. |picard_calc_hs_m| replace:: `Picard Calculate HS Metrics`_
@@ -527,42 +710,42 @@ DNA Sequencing Pipeline
 .. |germline_varscan2| replace:: `Germline Varscan2`_
 .. |preprocess_vcf| replace:: `PreProcess VCF`_
 .. |snp_effect| replace:: `SNP Effect`_
-
-
-
-
+.. |hc_gemini_ann| replace:: `Haplotype caller Gemini annotation`_
+.. |split_tumor_only| replace:: `Split Tumor Only`_
+.. |filter_tumor_only| replace:: `Filter Tumor Only`_
+.. |report_cpsr| replace:: `Report CPSR`_
+.. |report_pcgr| replace:: `Report PCGR`_
+.. |sequenza| replace:: `Sequenza Step`
+.. |rawmpileup| replace:: `Raw Mpileup`_
+.. |paired_varscan2| replace:: `Paired Var Scan 2`_
+.. |merge_varscan2| replace:: `Merge Var Scan 2`_
+.. |filter_germline| replace:: `Filter Germline`_
+.. |filter_somatic|  replace:: `Filter Somatic`_
+.. |conpair_concordance_contamination| replace:: `Conpair Concordance Contamination`_
+.. |sym_link_report| replace:: `Sym Link Report`_
+.. |sym_link_fastq_pair| replace:: `Sym Link FASTQ Pair`_
+.. |sym_link_panel| replace:: `Sym Link Panel`_
 .. |manta_sv_calls| replace:: `Manta SV Calls`_
-.. |trimmomatic| replace:: `Step Trimmomatic`_
-.. |merge_trimmomatic_stats| replace:: `Merge Trimmomatic Stats`_
-.. |skewer_trim| replace:: `Skewer Trimming`_
-.. |bwa_mem_sambamba_sort_sam| replace:: `BWA SAMbamba Sort SAM`_
-.. |sambamba_merge| replace:: `SAMBAM Merge SAM Files`_
-.. |sambamba_merge_realigned| replace:: `SAMBAM Merge Realigned`_
-.. |fix_mate_by_coor| replace:: `Fix Mate by Coordinate`_
-.. |recalib| replace:: `Recalibration`_
-.. |m_dna_sample| replace:: `Metrics DNA Sample Quality Map`_
-.. |m_dna_sambamba| replace:: `Metrics DNA SAMBAM Flag Stats`_
-.. |m_dna_fastqc| replace:: `Metrics DNA FastQC`_
-.. |gatk_call_loci| replace:: `GATK Callable Loci`_
-.. |extract_com_snp| replace:: `Extract Common SNP Frequencies`_
-.. |baf_plot| replace:: `BAF Plot`_
-.. |gatk_hp_c| replace:: `GATK Haplotype Caller`_
-.. |hc_met_vcf_stat| replace:: `Haplotype caller metrics VCF stats`_
-.. |rawmpileup| replace:: `Raw MPileup`_
-.. |rawmp_cat| replace:: `Compress Raw MPileup`_
-.. |snp_n_indel_bcf| replace:: `SNP and indel BCF`_
-.. |merge_filter_bcf| replace:: `Merge Filter BCF`_
-.. |mp_dcom_norm| replace:: `MPileup decompose and normalize`_
-.. |mp_flag_map| replace:: `MPileup Flag Mappability`_
-.. |mp_snp_id_ann| replace:: `Mpileup SNP ID annotation`_
-.. |mp_snp_eff| replace:: `MPileup SNP Effect`_
-.. |mp_dbnsfp_ann| replace:: `MPileup dbNSFP annotation`_
-.. |mp_gemini_ann| replace:: `MPileup Gemini annotation`_
-.. |mp_m_vcf_stat| replace:: `MPileup Metrics VCF stats`_
-.. |sambamba_mark_duplicates| replace:: `SAMBAM Mark Duplicates`_
-.. |metrics| replace:: `Metrics`_
-.. |m_ngscheckmate| replace:: `Metrics NGSCheckmate`_
-
+.. |strelka2_paired_somatic| replace:: `Strelka2 Paired Somatic`_
+.. |strelka2_paired_germline| replace:: `Strelka2 Paired Germline`_
+.. |strelka2_paired_snpEff| replace:: `Strelka2 Paired SnpEff`_
+.. |purple| replace:: `Purple Ploidy Estimator`_
+.. |purple_sv| replace:: `Purple SV`_
+.. |paired_mutect2| replace:: `Paired Mutect2`_
+.. |merge_mutect2| replace:: `Merge Mutect2`_
+.. |vardict_paired| replace:: `VarDict Paired`_
+.. |merge_filter_paired_vardict| replace:: `Merge Filter Paired VarDict`_
+.. |ensemble_somatic| replace:: `Ensemble Somatic`_
+.. |gatk_variant_annotator_somatic| replace:: `GATK Variant Annotator Somatic`_
+.. |merge_gatk_var_annotator_somatic| replace:: `Merge GATK Variant Annotator Somatic`_
+.. |ensemble_germline_loh| replace:: `Ensemble Germline Loh`_
+.. |gatk_variant_annotator_germline| replace:: `GATK Variant Annotator Germline`_
+.. |merge_gatk_var_anno_germline| replace:: `Merge GATK Variant Annotator Germline`_
+.. |sym_link_ensemble| replace:: `Sym Link Ensemble`_
+.. |gridss_paired_somatic| replace:: `GRIDSS Paired Somatic`_
+.. |linx_annotations_somatic| replace:: `Linx Annotations Somatic`_
+.. |linx_annotations_germline| replace:: `Linx Annotations Germline`_
+.. |linx_plot| replace:: `Linx Plot`_
 
 .. include::  repl_cram_op.inc
 
@@ -574,10 +757,29 @@ DNA Sequencing Pipeline
 .. _bwa-mem: https://www.ncbi.nlm.nih.gov/pubmed/19451168
 .. _SAMtools software package: http://samtools.sourceforge.net
 .. _Genome in a Bottle dataset: https://www.nist.gov/programs-projects/genome-bottle
-.. _dbNSFP: https://www.ncbi.nlm.nih.gov/pubmed/26555599 
 .. _MultiQC: https://multiqc.info
 .. _Mpileup: http://samtools.sourceforge.net/mpileup.shtml 
 .. _SnpEff effects: https://pcingola.github.io/SnpEff/se_introduction/
 .. _Sample DNA-Seq Report: http://gqinnovationcenter.com/services/bioinformatics/tools/dnaReport/index.html
 .. _long-read: https://www.nature.com/articles/s41576-020-0236-x 
 .. _Structural Variation: https://www.longdom.org/open-access/structural-variation-detection-from-next-generation-sequencing-2469-9853-S1-007.pdf
+.. _three reasons: https://software.broadinstitute.org/cancer/software/genepattern/modules/docs/ABSOLUTE/1
+.. _DREAM3 challenge: https://www.ncbi.nlm.nih.gov/pubmed/25984700
+.. _CEPH mixing: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2816205/
+.. _VarScan 2: https://github.com/dkoboldt/varscan/releases 
+.. _VarScan 2 Paper: https://www.ncbi.nlm.nih.gov/pubmed/22300766
+.. _BCFTools: http://www.htslib.org/doc/bcftools.html
+.. _VarDict: https://www.ncbi.nlm.nih.gov/pubmed/27060149
+.. _Delly: https://www.ncbi.nlm.nih.gov/pubmed/22962449
+.. _Lumpy: https://genomebiology.biomedcentral.com/articles/10.1186/gb-2014-15-6-r84
+.. _CNVKit Paper: https://www.ncbi.nlm.nih.gov/pubmed/27100738
+.. _SvABA Paper: https://www.ncbi.nlm.nih.gov/pubmed/29535149
+.. _MetaSV Paper: https://www.ncbi.nlm.nih.gov/pubmed/25861968
+.. _dbNSFP Paper: https://www.ncbi.nlm.nih.gov/pubmed/26555599
+.. _GATK MuTect2: https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_cancer_m2_MuTect2.php
+.. _Strelka2: https://github.com/Illumina/strelka
+.. _Purple: https://github.com/hartwigmedical/hmftools/blob/master/purple/README.md
+.. _Sequenza: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4269342/
+.. _Manta: https://github.com/Illumina/manta
+.. _Delly2: https://github.com/dellytools/delly
+.. _GRIDSS: https://github.com/PapenfussLab/gridss
