@@ -163,7 +163,7 @@ DNA Sequencing Pipeline
 
                   Figure below shows the schema of the DNA sequencing Somatic Tumor only protocol.
 
-                  .. figure:: /img/pipelines/mmd/dnaseq.sv.mmd.png
+                  .. figure:: /img/pipelines/mmd/dnaseq.som.tumor.mmd.png
                      :align: center
                      :alt: dnaseq4 schema 
                      :width: 100%
@@ -181,7 +181,7 @@ DNA Sequencing Pipeline
 
                   Figure below shows the schema of the DNA sequencing Somatic Fastpass protocol.
 
-                  .. figure:: /img/pipelines/mmd/dnaseq.sv.mmd.png
+                  .. figure:: /img/pipelines/mmd/dnaseq.som.fastpass.mmd.png
                      :align: center
                      :alt: dnaseq4 schema 
                      :width: 100%
@@ -199,7 +199,7 @@ DNA Sequencing Pipeline
 
                   Figure below shows the schema of the DNA sequencing Somatic Ensemble protocol.
 
-                  .. figure:: /img/pipelines/mmd/dnaseq.sv.mmd.png
+                  .. figure:: /img/pipelines/mmd/dnaseq.som.ensemble.mmd.png
                      :align: center
                      :alt: dnaseq4 schema 
                      :width: 100%
@@ -217,7 +217,7 @@ DNA Sequencing Pipeline
 
                   Figure below shows the schema of the DNA sequencing Somatic SV protocol.
 
-                  .. figure:: /img/pipelines/mmd/dnaseq.sv.mmd.png
+                  .. figure:: /img/pipelines/mmd/dnaseq.som.sv.mmd.png
                      :align: center
                      :alt: dnaseq4 schema 
                      :width: 100%
