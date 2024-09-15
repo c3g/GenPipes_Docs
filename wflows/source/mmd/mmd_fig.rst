@@ -53,7 +53,7 @@ DNA Sequencing Pipeline
      :caption: Germline SV DNA Sequencing Pipeline
 
 .. mermaid:: /mmd/pipelines/dnaseq.germ.highcov.mmd
-     :caption: Germline SV DNA Sequencing Pipeline
+     :caption: Germline High Coverage DNA Sequencing Pipeline
 
 .. mermaid:: /mmd/pipelines/dnaseq.som.tumor.mmd
      :caption: Somatic Fastpass DNA Sequencing Pipeline

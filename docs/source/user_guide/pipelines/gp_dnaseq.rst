@@ -123,7 +123,7 @@ DNA Sequencing Pipeline
 
                   Figure below shows the schema of the DNA sequencing Germline SV protocol.
 
-                  .. figure:: /img/pipelines/mmd/dnaseq.mpileup.mmd.png
+                  .. figure:: /img/pipelines/mmd/dnaseq.germ.sv.mmd.png
                      :align: center
                      :alt: dnaseq2 schema 
                      :width: 100%
@@ -141,7 +141,7 @@ DNA Sequencing Pipeline
 
                   Figure below shows the schema of the DNA sequencing Germline High Coverage protocol.
 
-                  .. figure:: /img/pipelines/mmd/dnaseq.light.mmd.png
+                  .. figure:: /img/pipelines/mmd/dnaseq.germ.highcov.mmd.png
                      :align: center
                      :alt: dnaseq3 schema 
                      :width: 100%
@@ -316,7 +316,7 @@ DNA Sequencing Pipeline
                   +----+------------------------------------+
                   | 7. | |gatk_haplotype_caller|            |
                   +----+------------------------------------+
-                  | 8. | |merge_call_c_gvcf|                |
+                  | 8. | |merge_call_i_gvcf|                |
                   +----+------------------------------------+
                   | 9. | |m_dna_picard|                     | 
                   +----+------------------------------------+
