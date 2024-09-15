@@ -6,64 +6,79 @@
         %% -t somatic_ensemble
 
         graph LR
-        Node1{{ 1. <br/> Picard<br/>SAM<br/>to FASTQ }}:::nodefill
-        Node2{{ 2. <br/> Skewer<br/>Trimming }}:::nodefill
-        Node3{{ 3. <br/> BWA<br/>SAMbamba<br/>sort<br/>SAM }}:::nodefill
-        Node4{{ 4. <br/> SAMbamba<br/>merge<br/>SAM<br/>files }}:::nodefillblack
-        Node5{{ 5. <br/> GATK<br/>indel<br/>re-aligner }}:::nodefill
-        Node6{{ 6. <br/> SAMBAM<br/>merge<br/>realigned }}:::nodefill
-        Node7{{ 7. <br/> Picard<br/>Mark<br/>Duplicates }}:::nodefill
-        Node8{{ 8. <br/> Recalibration }}:::nodefill
-        Node9{{ 9. <br/> Raw<br/>Mpileup }}:::nodefill
-        Node10{{ 10. <br/> Raw<br/>Mpileup<br/> cat}}:::nodefill
-        Node11{{ 11. <br/> SNP &<br/>indel<br/>BCF }}:::nodefill
-        Node12{{ 12. <br/> Merge<br/>filter<br/>BCF }}:::nodefill
-        Node13{{ 13. <br/> Mpileup<br/>decompose<br/> & normalize }}:::nodefill
-        Node14{{ 14. <br/> Mpileup<br/>flag<br/>mappability }}:::nodefill
-        Node15{{ 15. <br/> Mpileup<br/>SNP ID<br/>annotation }}:::nodefill
-        Node16{{ 16. <br/> Mpileup<br/>SNP effect  }}:::nodefill
-        Node17{{ 17. <br/> Mpileup<br/>dbnsfp<br/>annotation }}:::nodefill
-        Node18{{ 18. <br/> Mpileup<br/>Gemini<br/>Annotation }}:::nodefill
-        Node19{{ 19. <br/> Mpileup<br/>Metrics<br/>VCF<br/>stats }}:::nodefill
-        Node20{{ 20. <br/> Cram<br/>Output }}:::nodefill
-        Node21{{ 21. <br/> DNA<br/>Picard<br/>Metrics }}:::nodefill
-        Node22{{ 22. <br/> DNA<br/>Sample<br/>Qualimap }}:::nodefill
-        Node23{{ 23. <br/> DNA<br/>FASTQC }}:::nodefill
-        Node24{{ 24. <br/> Picard<br/>Calculate<br/>HS Metrics }}:::nodefill
-        Node25{{ 25. <br/> GATK<br/>Callable<br/>Loci }}:::nodefill
-        Node26{{ 26. <br/> Extract<br/>Common<br/>SNP<br/>Frequency }}:::nodefill
-        Node27{{ 27. <br/> BAF<br/>Plot }}:::nodefill
-        Node28{{ 28. <br/> Run<br/>MultiQC }}:::nodefill
-        Node29{{ 29. <br/> Symlink<br/>FASTQ }}:::nodefill
-        Node30{{ 30. <br/> Symlink<br/>final <br/>BAM}}:::nodefill
+        Node1{{ 1. <br/> GATK<br/>SAM<br/>to FASTQ }}:::nodefill
+        Node2{{ 2. <br/> Trim<br/>FastP }}:::nodefill
+        Node3{{ 3. <br/> BWA<br/>Mem2<br/>SAM Tools<br/>Sort }}:::nodefill
+        Node4{{ 4. <br/> GATK<br/>Mark<br/>Duplicates }}:::nodefillblack
+        Node5{{ 5. <br/> Set<br/>Interval List }}:::nodefill
+        Node6{{ 6. <br/> Conpair<br/>Concordance<br/>Contamination }}:::nodefill
+        Node7{{ 7. <br/> Metrics<br/>DNA<br/>Picard }}:::nodefill
+        Node8{{ 8. <br/> DNA Sample <br/> MosDepth Metrics }}:::nodefill
+        Node9{{ 9. <br/> Sequenza }}:::nodefill
+        Node10{{ 10. <br/> Manta SV <br/> Calls }}:::nodefill
+        Node11{{ 11. <br/> Strelka2 Paired <br/> Somatic }}:::nodefill
+        Node12{{ 12. <br/> Strelka2 Paired <br/> Germline }}:::nodefill
+        Node13{{ 13. <br/> Strelka2 Paired <br/> SNPEff }}:::nodefill
+        Node14{{ 14. <br/> Purple <br/> SV }}:::nodefill
+        Node15{{ 15. <br/> Raw MPileup }}:::nodefill
+        Node16{{ 16. <br/> Paired<br/>Varscan2 }}:::nodefill
+        Node17{{ 17. <br/> Merge<br/>Varscan2 }}:::nodefill
+        Node18{{ 18. <br/> Paired<br/>Mutect2 }}:::nodefill
+        Node19{{ 19. <br/> Merge<br/>Mutect2 }}:::nodefill
+        Node20{{ 20. <br/> Vardict<br/>Paired }}:::nodefill
+        Node21{{ 21. <br/> Merge<br/>Filtered<br/>Paired Vardict }}:::nodefill
+        Node22{{ 22. <br/> Ensemble<br/>Somatic }}:::nodefill
+        Node23{{ 23. <br/> GATK<br/>Variant<br/>Annotator<br/>Somatic }}:::nodefill
+        Node24{{ 24. <br/> Merge<br/>GATK<br/>Somatic }}:::nodefill
+        Node25{{ 25. <br/> Ensemble<br/>Germline<br/>Loh }}:::nodefill
+        Node26{{ 26. <br/> GATK<br/>Variant<br/>Annotator<br/>Germline }}:::nodefill
+        Node27{{ 27. <br/> Merge <br/>GATK<br/>Germline }}:::nodefill
+        Node28{{ 28. <br/> CNVKit<br/>Batch }}:::nodefill
+        Node29{{ 29. <br/> Filter<br/>Germline }}:::nodefill
+        Node30{{ 30. <br/> Report CPSR }}:::nodefill
+        Node31{{ 31. <br/> Filter<br/>Somatic }}:::nodefill
+        Node32{{ 32. <br/> Report PCGR }}:::nodefill
+        Node33{{ 33. <br/> Run<br/>MultiQC }}:::nodefill
+        Node34{{ 34. <br/> Sym Link<br/>FastQ Pair }}:::nodefill
+        Node35{{ 35. <br/> Sym Link<br/>Report }}:::nodefill
+        Node36{{ 36. <br/> Sym Link<br/>Final BAM  }}:::nodefill
+        Node37{{ 37. <br/> Sym Link<br/>Ensemble }}:::nodefill
+        Node38{{ 38. <br/> Cram<br/>Output  }}:::nodefill
 
         Input1[[fa:fa-file-archive-o .BAM]]
         Input2[[fa:fa-file-archive-o .FASTQ]]
 
-        RecalibOP([fa:fa-sticky-note-o Report ])
         MultiQCOP([fa:fa-sticky-note-o Report ])
         CramOP([fa:fa-sticky-note-o Report ])
 
-        Input1 --> Node1 -.-> Node2
+        Input1 --> Node1 
         Input2 --> Node2
 
-        Node2 -.-> Node3 -.-> Node4 -.-> Node5 -.-> Node6 -.-> Node7 -.-> Node8
-        Node7 -.-> Node9 & Node11 & Node23 & Node25 & Node26 & Node29 & Node30
-        Node8 -.-> Node20 & Node21 & Node22
-        Node9 -.-> Node10 -.-> Node11 -.-> Node12 -.-> Node13 -.-> Node14 -.-> Node15 -.-> Node16 -.-> Node17 -.-> Node18
-        Node17 -.-> Node19
-        Node21 & Node22 & Node23 -.-> Node28
-        Node26 -.-> Node27
+        Node1 -.-> Node2 -.-> Node3 -.-> Node4
+        Node1 -.-> Node34
+        Node4 -.-> Node5 & Node6 & Node7 & Node8 & Node9 & Node35 & Node38
+        Node4 & Node5 -.-> Node10 & Node15 & Node18 & Node20
+        Node4 & Node5 & Node10 -.-> Node11 -.-> Node14
+        Node4 & Node5 & Node11 -.-> Node12 -.-> Node13
+        Node15 -.-> Node16 -.-> Node17
+        Node18 -.-> Node19
+        Node20 -.-> Node21
+        Node14 & Node17 & Node19 & Node21 -.-> Node22
+        Node5 & Node22 -.-> Node23 -.-> Node24 -.-> Node31
+        Node12 & Node17 & Node21 -.-> Node25 -.-> Node30
+        Node5 & Node25 -.-> Node26 -.-> Node27 -.-> Node29
+        Node21 -.-> Node28
+        Node28 & Node30 & Node31 -.-> Node32
+        Node2 & Node4 & Node6 & Node7 & Node8 & Node14-.-> Node33 -.-> Node36
+        Node24 & Node27 -.-> Node37
 
-        Node8 --> RecalibOP
-        Node28 --> MultiQCOP
-        Node20 ---> CramOP
+        Node33 --> MultiQCOP
+        Node38 ---> CramOP
 
         subgraph readSetSteps[" "]
           Node1
           Node2
           Node3
-          MTSOutput
         end
         subgraph sampleSetSteps[" "]
           Node5
@@ -91,25 +106,15 @@
           Node27
           Node28
           Node29
-
-          subgraph combo2122[" "]
-            Node21
-            Node22
-          end
-          subgraph combo2324[" "]
-            Node23
-            Node24
-          end
-          subgraph combo2526[" "]
-            Node25
-            Node26
-          end
-          subgraph combo2930[" "]
-            Node29
-            Node30
-          end
-
-          RecalibOP
+          Node30
+          Node31
+          Node32
+          Node33
+          Node34
+          Node35
+          Node36
+          Node37
+          Node38          
           MultiQCOP
           CramOP
         end
@@ -118,10 +123,5 @@
         class readSetSteps greenRect
         classDef blueRect fill:#DEF6FC,stroke:white
         class sampleSetSteps blueRect
-        classDef transparentRect fill:#DEF6FC,stroke:gray
-        class combo2122 transparentRect
-        class combo2324 transparentRect
-        class combo2526 transparentRect
-        class combo2930 transparentRect
         classDef nodefill fill:#ffffff,stroke:gray,stroke-width:2px
         classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px
