@@ -105,7 +105,7 @@ DNA Sequencing Pipeline
 
                   Figure below shows the schema of the DNA sequencing Germline SNV protocol. 
 
-                  .. figure:: /img/pipelines/mmd/dnaseq.mugqic.mmd.png
+                  .. figure:: /img/pipelines/mmd/dnaseq.germ.snv.mmd.png
                      :align: center
                      :alt: dnaseq1 schema
                      :width: 100%
@@ -118,8 +118,6 @@ DNA Sequencing Pipeline
                      :alt: dada2 ampseq
                      :width: 100%
                      :figwidth: 75%
-
-                  `Click for a high resolution image of Germline SNV DNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/mmd/png/dnaseq.mugqic.mmd.png>`_.
 
                .. tab-item:: SV
 
@@ -139,8 +137,6 @@ DNA Sequencing Pipeline
                      :width: 100%
                      :figwidth: 75%
 
-                  `Click for a high resolution image of Germline SV DNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/mmd/png/dnaseq.mpileup.mmd.png>`_.
-
                .. tab-item:: High Coverage
 
                   Figure below shows the schema of the DNA sequencing Germline High Coverage protocol.
@@ -158,8 +154,6 @@ DNA Sequencing Pipeline
                      :alt: dada2 ampseq
                      :width: 100%
                      :figwidth: 75%
-
-                  `Click for a high resolution image of High Coverage DNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/mmd/png/dnaseq.light.mmd.png>`_.
 
          .. dropdown:: Somatic 
             
@@ -183,8 +177,6 @@ DNA Sequencing Pipeline
                      :width: 100%
                      :figwidth: 75%
 
-                  `Click for a high resolution image of Somatic Tumor Only DNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/mmd/png/dnaseq.sv.mmd.png>`_.
-
                .. tab-item:: Fastpass
 
                   Figure below shows the schema of the DNA sequencing Somatic Fastpass protocol.
@@ -202,8 +194,6 @@ DNA Sequencing Pipeline
                      :alt: dada2 ampseq
                      :width: 100%
                      :figwidth: 75%
-
-                  `Click for a high resolution image of Somatic Fastpass DNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/mmd/png/dnaseq.sv.mmd.png>`_.
 
                .. tab-item:: Ensemble
 
@@ -223,8 +213,6 @@ DNA Sequencing Pipeline
                      :width: 100%
                      :figwidth: 75%
 
-                  `Click for a high resolution image of Somatic Ensemble DNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/mmd/png/dnaseq.sv.mmd.png>`_.
-
                .. tab-item:: SV
 
                   Figure below shows the schema of the DNA sequencing Somatic SV protocol.
@@ -242,9 +230,6 @@ DNA Sequencing Pipeline
                      :alt: dada2 ampseq
                      :width: 100%
                      :figwidth: 75%
-
-                  `Click for a high resolution image of Somatic SV DNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/master/resources/workflows/mmd/png/dnaseq.sv.mmd.png>`_.
-
 
       .. tab-item:: Steps
 
@@ -682,7 +667,7 @@ DNA Sequencing Pipeline
 .. |hc_snp_eff| replace:: `Haplotype caller SNP Effect`_
 .. |hc_dbnsfp_ann| replace:: `Haplotype caller dbNSFP annotation`_
 .. |m_dna_picard| replace:: `Metrics DNA Picard`_
-.. |m_dna_sample_mosdepth| replace:: `DNA Sample MosDepth Metrics`_:was
+.. |m_dna_sample_mosdepth| replace:: `DNA Sample MosDepth Metrics`_
 .. |picard_calc_hs_m| replace:: `Picard Calculate HS Metrics`_
 .. |m_verify_bam_id| replace:: `Metrics Verify BAM ID`_
 .. |run_multiqc| replace:: `Run MultiQC`_
