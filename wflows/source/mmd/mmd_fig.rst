@@ -149,6 +149,9 @@ RNA Sequencing DeNovo Assembly
 .. mermaid:: /mmd/pipelines/rnaseq.denovo.mmd
      :caption: RNA Sequencing DeNovo Assembly Pipeline Schema
 
+.. mermaid:: /mmd/pipelines/rnaseq.denovo.seq2fun.mmd
+     :caption: RNA Sequencing Denovo Seq2Fun Pipeline Schema
+
 ----
 
 RNA Sequencing (Light) Pipeline

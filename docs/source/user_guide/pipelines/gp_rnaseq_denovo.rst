@@ -57,21 +57,41 @@ RNA Sequencing (De-Novo) Pipeline
       .. tab-item:: Schema
          :name: rnadenovoschema  
 
-         Figure below shows the schema of RNA Sequencing *De Novo* Assembly pipeline. 
+         .. dropdown:: De Novo
 
-         .. figure:: /img/pipelines/mmd/rnaseq.denovo.mmd.png 
-            :align: center
-            :alt: RNA Sequencing De Novo schema
-            :width: 100%
-            :figwidth: 95%
+            Figure below shows the schema of RNA Sequencing *De Novo* Assembly pipeline. 
 
-            Figure: Schema of De Novo assembly RNA Sequencing protocol
+            .. figure:: /img/pipelines/mmd/rnaseq.denovo.mmd.png 
+               :align: center
+               :alt: RNA Sequencing De Novo schema
+               :width: 100%
+               :figwidth: 95%
 
-         .. figure:: /img/pipelines/mmd/legend.mmd.png
-            :align: center
-            :alt: dada2 ampseq
-            :width: 100%
-            :figwidth: 75%
+               Figure: Schema of De Novo assembly RNA Sequencing protocol
+
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: dada2 ampseq
+               :width: 100%
+               :figwidth: 75%
+
+         .. dropdown:: Seq2Fun
+
+            Figure below shows the schema of RNA Sequencing *Seq2Fun* pipeline. 
+
+            .. figure:: /img/pipelines/mmd/rnaseq.denovo.seq2fun.mmd.png 
+               :align: center
+               :alt: RNA Sequencing De Novo Seq2Fun schema
+               :width: 100%
+               :figwidth: 95%
+
+               Figure: Schema of De Novo Seq2Fun RNA Sequencing protocol
+
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: dada2 ampseq
+               :width: 100%
+               :figwidth: 75%
 
       .. tab-item:: Steps
 

@@ -1,5 +1,5 @@
 sphinx-togglebutton==0.3.2
-sphinx>=4.3.0
+sphinx>=5.3.0
 sphinx-rtd-theme>=1.2.2
 pyenchant>=2.0.0
 sphinx-tabs==3.4.1
