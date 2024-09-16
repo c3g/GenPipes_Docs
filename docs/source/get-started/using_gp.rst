@@ -18,7 +18,7 @@ Topics covered in this document includes information regarding what is available
 
 GenPipes Executable
 --------------------
-GenPipes framework can be used to perform various genomic analysis corresponding to the available pipelines.  GenPipes is a command line tool. The underlying object-oriented framework is developed in Python. It simplifies the development of new features and its adaptation to new systems; new workflows can be created by implementing a Pipeline object that inherits features and steps from other existing Pipeline objects. 
+The GenPipes framework can be used to perform various genomic analyses corresponding to the available pipelines.  GenPipes is a command line tool. The underlying object-oriented framework is developed in Python. It simplifies the development of new features and its adaptation to new systems; new workflows can be created by implementing a Pipeline object that inherits features and steps from other existing Pipeline objects. 
 
 Similarly, deploying GenPipes on a new system may only require the development of the corresponding Scheduler object along with specific :ref:`configuration files<docs_config_ini_file>`. GenPipes’ command execution details have been implemented using a shared library system, which allows the modification of tasks by simply adjusting input parameters. This simplifies code maintenance and makes changes in software versions consistent across all pipelines.
 
@@ -35,7 +35,7 @@ Here is how you can launch GenPipes. Following is the generic command to run Gen
 
 .. code-block:: bash
 
-   <pipeline-name>.py -c config -r readset-file -s 1-n -g list-of-commands.txt
+   genpipes <pipeline-name> -c config -r readset-file -s 1-n -g list-of-commands.txt
    bash list-of-commands.txt
        
 
@@ -77,7 +77,7 @@ In addition to the :ref:`configuration files<docs_config_ini_file>` and the inpu
 Example Run
 ^^^^^^^^^^^^
 
-The following example shows how you can run Hi-C sequencing pipeline using GenPipes installed on Compute Canada data centres. Please ensure you have login access to GenPipes servers.  Refer to :ref:`checklist of pre-requisites for GenPipes<docs_pre_req_chklist>` before you run this example.
+The following example shows how you can run the ChIP Sequencing pipeline using GenPipes installed on Compute Canada data centres. Please ensure you have login access to GenPipes servers.  Refer to :ref:`checklist of pre-requisites for GenPipes<docs_pre_req_chklist>` before you run this example.
 
 We will now run the pipeline using a test dataset. We will use the first 2 million reads from HIC010 from Rao et al. 2014 (SRR1658581.sra). This is an in-situ Hi-C experiment of GM12878 using MboI restriction enzyme.
 
@@ -91,7 +91,7 @@ Please ensure you have access to "beluga" server in Compute Canada data centre. 
 
 ::
 
-  genpipes chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseq.tsv -s 1-15 -e MboI -g chipseqscript.sh
+  genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseq.tsv -s 1-15 -g chipseq_cmd.sh
 
 To understand what $MUGQIC_PIPELINES_HOME refers to, please see instructions on how to :ref:`access GenPipes on Compute Canada servers<docs_access_gp_pre_installed>`.
 
@@ -103,23 +103,23 @@ In the command above,
 
 -s defines the steps of the pipeline to execute, use `genpipes chipseq -h` to check steps
 
-By default, on Compute Canada servers such as "Cedar", "Beluga" or "Graham", SLURM scheduler is used. On abacus server, you need to use PBS scheduler. For that you need to specify "-j pbs" option as shown below:
+By default, on Compute Canada servers such as "Cedar", "Beluga" or "Graham", SLURM scheduler is used. On the abacus server, you need to use PBS scheduler. For that you need to specify "-j pbs" option as shown below:
 
 ::
 
-  genpipes chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chiseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/abacus.ini -r readsets.HiC010.tsv -s 1-15 -j pbs -g chipseqcmd.sh
+  genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chiseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/abacus.ini -r readsets.HiC010.tsv -s 1-15 -j pbs -g chipseq_cmd.sh
 
-The above command generates a list of instructions that need to be executed to run Hi-C sequencing pipeline.  These instructions are stored in the file:
+The above command generates a list of instructions that need to be executed to run the ChIP sequencing pipeline. These instructions are stored in the file:
 
 ::
 
-  chipseqcmd.sh
+  chipseq_cmd.sh
 
 To execute these instructions, use:
 
 :: 
 
-  bash chipseqcmd.sh
+  bash chipseq_cmd.sh
 
 .. warning::
 
@@ -129,12 +129,22 @@ To confirm that the commands have been submitted, wait a minute or two depending
 
 ::
 
-  showq -u <userID>
+  squeue -u <userID>
 
 where, <userID> is your login id for accessing Compute Canada infrastructure.
 
-In case you ran it several times and launched too many commands you do not want, you can use the following line of code to cancel ALL commands:
+On abacus, the equivalent command is:
+::
 
+  showq -u <userID>
+
+In case you ran the command to submit the jobs several times and launched too many commands you do not want, you can use the following line of code to cancel ALL commands:
+::
+
+  scancel -u <userID>
+
+
+Or on abacus:
 ::
 
   showq -u <userID> | tr "|" " "| awk '{print $1}' | xargs -n1 canceljob
@@ -142,15 +152,15 @@ In case you ran it several times and launched too many commands you do not want,
 .. note::
 
 	Congratulations!
-        You just successfully issued the Hi-C sequencing analysis pipeline commands!!!
+        You just successfully issued the ChIP sequencing analysis pipeline commands!!!
 
-After the processing is complete, you can access quality control plots in the homer_tag_directory/HomerQcPlots. You can find the compartment data in the compartments folder, TADs in the TADs folder and significant interactions in the peaks folder.
+After the processing is complete, you can access quality control plots in the report/ directory. You can find peak data in the peak_call/ directory and significant interactions in the differential_binding folder.
 
 For more information about output formats please consult the webpage of the third party tool used.
 
 .. note::
 
-         The Hi-C sequencing pipeline also analyzes capture hic data if the “-t capture” flag is used. For more information on the available steps in that pipeline use: 
+         The ChIP sequencing pipeline also analyzes ATAC-Seq data if the “-t atacseq” flag is used. For more information on the available steps in that pipeline use: 
 
 ::
 
@@ -193,7 +203,7 @@ Let us now run this ChIP-Sequencing analysis on *beluga* server at Compute Canad
 
 ::
 
-  chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 -g chipseqScript.txt
+  genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 -g chipseqScript.txt
   bash chipseqScript.txt
 
 The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get **MUGQICexitStatus:0** or **Exit_status=0.** If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the **job_output** folder.
@@ -213,20 +223,20 @@ The ```submit_genpipes``` script lets GenPipes users manage resource constraints
 
 The ```submit_genpipes``` script comes with a fail safe mechanism that will resubmit jobs that failed to be sent to the scheduler up to 10 times (default). 
 
-Example: Submitting chipseq.py jobs
+Example: Submitting ChipSeq jobs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Here is an example of to use the ```submit_genpipes``` script with :ref:`Chip Sequencing Pipeline<docs_gp_chipseq>`:
+Here is an example of how to use the ```submit_genpipes``` script with the :ref:`Chip Sequencing Pipeline<docs_gp_chipseq>`:
 
 ::
 
   M_FOLDER=path_to_folder
 
-  genpipes chipseq.py <options> --genpipes_file chipseq_script.sh
+  genpipes chipseq <options> --genpipes_file chipseq_script.sh
 
-  $MUGQIC_PIPELINES_HOME/utils/chunk_genpipes.sh chipseq_script.sh $M_FOLDER
+  chunk_genpipes.sh chipseq_script.sh $M_FOLDER
 
-  $MUGQIC_PIPELINES_HOME/utils/submit_genpipes  $M_FOLDER
+  submit_genpipes $M_FOLDER
 
 The ```chunk_genpipes.sh``` script is used to create job chunks of specified size that are submitted at a time. Please note that this script should be executed **only once** before using ```submit_genpipes``` to submit jobs.  
 
@@ -238,7 +248,7 @@ The ```chunk_genpipes.sh``` script is used to create job chunks of specified siz
 
      * ```submit_genpipes``` script has intelligent lock mechanism that *prevents invoking two simultaneous runs* of ```submit_genpipes``` in parallel, on the on the same job chunking folder or GenPipes pipeline run.
 
-Figure below demonstrates how ```submit_genpipes``` utility works. The pipeline command file output is fed into ```chunk_genpipes.sh``` script which creates the chunks folder as a one time activity. This chunk folder is monitored by the ```submit_genpipes``` script.
+The figure below demonstrates how the ```submit_genpipes``` utility works. The pipeline command file output is fed into ```chunk_genpipes.sh``` script which creates the chunks folder as a one time activity. This chunk folder is monitored by the ```submit_genpipes``` script.
 
 .. figure:: /img/submit_genpipes_utility.png
    :align: center

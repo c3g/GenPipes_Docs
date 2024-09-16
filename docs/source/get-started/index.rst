@@ -10,7 +10,7 @@ This guide shows you how to get started with running genomic analysis pipelines 
 
 If you wish to learn more about real life applications of GenPipes and its use cases refer to the :ref:`GenPipes Applications<docs_gp_usecases>` section in the left hand side navigation pane.
 
-This getting started guide comprises of the following topics to assist you in understanding and using GenPipes for solving complex bioinformatics research problems.
+This getting started guide consists of the following topics to assist you in understanding and using GenPipes for solving complex bioinformatics research problems.
 
 .. toctree::
    :maxdepth: 1

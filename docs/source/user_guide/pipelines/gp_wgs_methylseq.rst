@@ -23,7 +23,7 @@ Methylation Sequencing Pipeline
 
             .. code::
 
-               genpipes methylseq.py [options] [--genpipes_file GENPIPES_FILE.sh]
+               genpipes methylseq [options] [--genpipes_file GENPIPES_FILE.sh]
                bash GENPIPES_FILE.sh
 
          .. dropdown:: Options

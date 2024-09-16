@@ -13,31 +13,31 @@ Available Pipelines
    +==================+==============================+==========+=================================+
    | ChIP-Seq         |::                            |          | `ChIP-Seq Manual`_              |
    |                  |                              |          |                                 |
-   |                  |    chipseq.py                |          |                                 |
+   |                  |    chipseq                   |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
    | RNA-Seq          |::                            |          | `RNA-Seq Manual`_               |
    |                  |                              |          |                                 |
-   |                  |  rnaseq.py                   |          |                                 |
+   |                  |  rnaseq                      |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
    | De novo RNA-Seq  |::                            |          | `RNA-Seq De Novo Manual`_       |
    |                  |                              |          |                                 |
-   |                  |  rnaseq_denovo_assembly.py   |          |                                 |
+   |                  |  rnaseq_denovo_assembly      |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
    | Whole Genome Seq |::                            |  default | `Whole Genome Seq Manual`_      |
    |                  |                              |          |                                 |
-   |                  |   dnaseq.py                  |          |                                 |
+   |                  |   dnaseq                     |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
-   | Exome Seq        |::                            ||capture| | `Exome Seq Manual`_             |
+   | Exome Seq        |::                            ||capture| | `Whole Genome Seq Manual`_             |
    |                  |                              |          |                                 |
-   |                  |   dnaseq.py                  |          |                                 |
+   |                  |   dnaseq                     |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
-   | Deep Whole Genome|::                            | default  | `DNA High Coverage Seq Manual`_ |
+   | Deep Whole Genome|::                            ||ini_file|| `Whole Genome Seq Manual`_ |
    |                  |                              |          |                                 |
-   |                  |   dnaseq.py                  |          |                                 |
+   |                  |   dnaseq                     |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
-   | Deep Exome Seq   |::                            | |capture|| `Deep Exome Seq Manual`_        |
+   | Deep Exome Seq   |::                            | |capture|| `Whole Genome Seq Manual`_        |
    |                  |                              |          |                                 |
-   |                  |   dnaseq_high_coverage.py    |          |                                 |
+   |                  |   dnaseq                     |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
    | Hi-C Seq         |::                            | -t hic   | `Hi-C Seq Manual`_              |
    |                  |                              |          |                                 |
@@ -49,26 +49,28 @@ Available Pipelines
    +------------------+------------------------------+----------+---------------------------------+
    | Whole Genome     |::                            | default  | `Methyl WGS Manual`_            | 
    | Methyl Seq       |                              |          |                                 |
-   |                  |   methylseq.py               |          |                                 |
+   |                  |   methylseq                  |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
-   | Capture Methyl   |::                            ||capture| | `Capture Methyl WGS Manual`_    |
+   | Capture Methyl   |::                            ||capture| | `Methyl WGS Manual`_    |
    | Seq              |                              |          |                                 |  
-   |                  |   methylseq.py               |          |                                 |
+   |                  |   methylseq                  |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
-   | Cancer Analysis  |::                            |          | `Cancer Analysis Manual`_       |
+   | Cancer Analysis  |::                            ||somatic| | `Whole Genome Seq Manual`_       |
    |                  |                              |          |                                 |
-   |                  |   tumor_pair.py              |          |                                 |
+   |                  |   dnaseq                     |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
    | Meta Genomics    |::                            |          | `Meta Genomics Manual`_         |
    |                  |                              |          |                                 |
-   |                  |   ampliconseq.py             |          |                                 |
+   |                  |   ampliconseq                |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
    | SARS-CoV-2       |::                            |          | `SARS-COV-2 Sequencing`_        |
    |                  |                              |          |                                 |
-   |                  |   covseq.py                  |          |                                 |
+   |                  |   covseq                     |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
 
 .. |capture| replace:: capture :ref:`BED file<docs_bed_file>` in Readset file or init file 
+.. |ini_file| replace:: use relevant ini file and -t germline_high_cov
+.. |somatic| replace:: -t somatic_ensemble or -t somatic_sv or -t somatic_fastpass or -t somatic_tumor_only  
 
 .. _ChIP-Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/chipseq/README.md
 .. _RNA-Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq/README.md

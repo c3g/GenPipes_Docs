@@ -14,7 +14,7 @@ There are two kinds of target audience of GenPipes documentation:
 
    .. tab:: End-Users
 
-      Researchers and analysts working in bioinformatics and gene-sequencing computational processing. GenPipes strength lies in its simple interface that makes it very easy for students and researchers in need of sophisticated, yet easy to use bioinformatics workflow management tool with built-in pipelines for various genomic analyses.
+      Researchers and analysts working in bioinformatics and gene-sequencing computational processing. GenPipes' strength lies in its simple interface that makes it very easy for students and researchers in need of sophisticated, yet easy to use bioinformatics workflow management tool with built-in pipelines for various genomic analyses.
 
    .. tab:: Developers
 

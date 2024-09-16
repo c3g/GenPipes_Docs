@@ -37,7 +37,7 @@ Nanopore CoVSeQ Pipeline
 
             .. code::
 
-               genpipes nanopore_covseq.py [options] [--genpipes_file GENPIPES_FILE.sh]
+               genpipes nanopore_covseq [options] [--genpipes_file GENPIPES_FILE.sh]
                bash GENPIPES_FILE.sh
 
          .. dropdown:: Options

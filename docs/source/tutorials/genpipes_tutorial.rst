@@ -131,7 +131,7 @@ You will find a **<pipeline_name>.base.ini** as well as an ini file for particul
 
 .. code-block:: bash
 
-    chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini
+    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini
 
 To change different parameters in the ini files, you can create your own ini file and overwrite the required parameters. For example, to change the number of threads for trimmomatic and hicup, I can create my own ini file: chipseq.test.ini
 and in it I can include the parameters to be changed:
@@ -150,7 +150,7 @@ then add my ini file after the other ini files:
 
 .. code-block:: bash
 
-    genpipes chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini chipseq.test.ini [options]
+    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini chipseq.test.ini [options]
 
 For different species, we have custom ini files stored in **$MUGQIC_PIPELINES_HOME/resources/genomes/config/**
 
@@ -160,7 +160,7 @@ To run the chipseq pipeline on mouse mm9, for example, you can do the following:
 
 .. code-block:: bash
 
-    genpipes chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/Mus_musculus.mm9.ini [options]
+    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/Mus_musculus.mm9.ini [options]
 
 Readset File:
 -------------
@@ -278,7 +278,7 @@ This command works for servers using a SLURM scheduler like Cedar, Graham or Bel
 
 .. code-block:: bash
 
-    genpipes chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/abacus.ini -r readsets.chipseq.tsv -s 1-15 -j pbs -g chipseqcmd.sh
+    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/abacus.ini -r readsets.chipseq.tsv -s 1-15 -j pbs -g chipseqcmd.sh
 
 To run it, use:
 
@@ -394,7 +394,7 @@ We will run this analysis on Beluga server as follows:
 
 .. code-block:: bash
 
-    chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
+    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
     bash chipseqScript.txt
 
 The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get **MUGQICexitStatus:0** or **Exit_status=0**. If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the **job_output** folder.
@@ -409,7 +409,4 @@ Our pipelines are built around third party tools that the community uses in part
 For more information or help with particular pipelines, you can send us an email to:
 `info@computationalgenomics.ca <info@computationalgenomics.ca>`_
 
-Or drop by during our `Open Door <https://www.computationalgenomics.ca/open-door/>`_ slots.  We are located at:
-
-*740 Dr. Penfield avenue, room 4200
-Montréal, QC H3A 1A5*
+Or drop by during our `Open Door <https://www.computationalgenomics.ca/open-door/>`_ slots.

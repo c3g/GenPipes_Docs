@@ -33,7 +33,7 @@ For using GenPipes deployed locally on your servers, whether bare-metal or virtu
 
 **Software requirements**
 
-- Python  3.9.1
+- Python  3.11.1
 - :ref:`Modules that are required<accessing_sw_mod_genomes_local_dp>`
 - :ref:`Genomes that need to be referenced<ref_installing_genomes>`
 
@@ -58,12 +58,7 @@ Ensure that you can test run one of the GenPipes Pipeline.  Simply issue the hel
 
   - For Compute Canada data centre users:
 
-        *<pipeline_name>.py --help*
-
-
-  - For local installation 
-
-        *$MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name>.py --help*
+        *genpipes <pipeline_name> --help*
 
 * Ensure CVMFS is mounted
 

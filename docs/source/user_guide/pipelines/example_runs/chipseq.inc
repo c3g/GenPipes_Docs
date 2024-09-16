@@ -1,6 +1,6 @@
 ::
 
-  genpipes chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.chipseq.txt -d design.chipseq.txt -s 1-20 -g chipseqScript.sh
+  genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.chipseq.txt -d design.chipseq.txt -s 1-20 -g chipseqScript.sh
 
   bash chipseqScript.sh
 

@@ -39,7 +39,7 @@ DNA Sequencing Pipeline
 
             .. code::
 
-                 genpipes dnaseq.py [-options ] [--genpipes_file GENPIPES_FILE.sh]
+                 genpipes dnaseq [-options ] [--genpipes_file GENPIPES_FILE.sh]
                  bash GENPIPES_FILE.sh
 
          .. dropdown:: Options

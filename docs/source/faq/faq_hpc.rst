@@ -20,21 +20,24 @@ Most HPC sites impose resource sharing constraints. One such constraint is limit
 
 **Response**
 
-GenPipes provides utilities such as ```chunk_genpipes.sh``` that can takes pipeline commands as input and chunks them so that each chunk comprises of jobs which are within the specified queue limits for a given HPC environment.
+GenPipes provides utilities such as ```chunk_genpipes.sh``` that can take pipeline commands as input and chunks them so that each chunk consists of jobs which are within the specified queue limits for a given HPC environment.
 
-For example, chipseq.py pipeline commands can be chunked as follows:
+For example, the chipseq pipeline commands can be chunked as follows:
 
 ::
 
   M_FOLDER=path_to_folder
 
-  genpipes chipeq.py <options> --genpipes_file chipseq_script.sh
+  genpipes chipseq <options> --genpipes_file chipseq_script.sh
 
-  $MUGQIC_PIPELINES_HOME/utils/chunk_genpipes.sh chipseq_script.sh $M_FOLDER -n 15
+  chunk_genpipes.sh chipseq_script.sh $M_FOLDER -n 15
 
 Here, ```-n 15``` input specifies that the maximum number of jobs in a chunk is 15.  This is an optional parameter.  By default, the chunk size is 20.
 
 You can use the ```submit_genpipes``` GenPipes utility to submit jobs smartly to the scheduler and use scheduler ```watch``` command to monitor the status of these job `chunks`.
+::
+
+  submit_genpipes $M_FOLDER
 
 For details, refer to :ref:`Submitting GenPipes Pipeline runs<ref_submitting_gp>` and see genpipes/utils in the source tree.
 
@@ -47,7 +50,7 @@ For details, refer to :ref:`Submitting GenPipes Pipeline runs<ref_submitting_gp>
 In case of an error or job timeout, do I need to re-run the entire GenPipes Pipeline script over again or is there a smarter way to submit only the failed jobs?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-When there is an error or timeout with the scheduler, user can avoid canceling all GenPipes jobs and re-submit the entire pipeline script again.
+When there is an error or timeout with the scheduler, the user can avoid canceling all GenPipes jobs and re-submit the entire pipeline script again.
 
 **Response**
 
