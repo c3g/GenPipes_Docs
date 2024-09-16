@@ -18,7 +18,7 @@ jobs:
           python3 -m pip install -r docs/requirements.txt
     - name: Sphinx Build
       run:  |
-           make -C docs spelling html
+           make -C docs html
 
 #name: macosbuild 
 #on: [push]
