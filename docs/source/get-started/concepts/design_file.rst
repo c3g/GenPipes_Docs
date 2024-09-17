@@ -5,7 +5,7 @@
 Design File
 ===========
 
-Certain pipelines where samples are compared against other samples, like chipseq.py and rnaseq.py, require a design file that describes which samples are to be compared. 
+Certain pipelines where samples are compared against other samples, like ChipSeq and RNA-Seq, require a design file that describes which samples are to be compared. 
 
 .. note::
 

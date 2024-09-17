@@ -28,7 +28,7 @@ Nanopore Pipeline
 
             .. code::
 
-               genpipes nanopore.py [options] [--genpipes_file GENPIPES_FILE.sh]
+               genpipes nanopore [options] [--genpipes_file GENPIPES_FILE.sh]
                bash GENPIPES_FILE.sh
 
          .. dropdown:: Options

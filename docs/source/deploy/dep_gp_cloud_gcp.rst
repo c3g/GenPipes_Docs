@@ -89,13 +89,13 @@ Now that your GCP Slurm Cluster is up and running without any error or warning, 
 
 ::
 
-  <pipeline_name>.py –help
+  genpipes <pipeline_name> –help
 
 For example, to check the help information for GenPipes ChIP Sequencing pipelines, try:
 
 ::
 
-  chipseq.py -h
+  genpipes chipseq -h
 
 **GenPipes Test Run in the cloud**
 
@@ -127,7 +127,7 @@ Step 4: Create ChIP Sequencing pipeline execution command script as shown below:
 
   bash # You do not need this line if you did a logout login cycle
   # The next line generates the pipeline script
-  chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini \
+  genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini \
   $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.cedar.ini \
   quick_start.ini \
   -j slurm \

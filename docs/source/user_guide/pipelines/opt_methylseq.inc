@@ -1,6 +1,6 @@
 ::
 
-  -t {bismark, dragen, hybrid}, --type {bismark, gembs, dragen, hybrid}
+  -t {bismark, gembs, dragen, hybrid}, --type {bismark, gembs, dragen, hybrid}
 
                             Methylseq analysis type. (default=bismark)
                             

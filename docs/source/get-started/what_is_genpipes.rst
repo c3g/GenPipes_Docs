@@ -18,7 +18,7 @@ GenPipes is an open source, flexible, scalable Python-based framework that facil
 the development and deployment of multi-step computational workflows. These workflows
 are optimized for High-Performance Computing (HPC) clusters and the cloud.
 
-Following genomics application pipelines are already implemented and validated through GenPipes:
+The following genomics application pipelines are already implemented and validated through GenPipes:
 
 * ChIP-Seq
 * *de-novo* RNA Sequencing
@@ -45,7 +45,7 @@ GenPipes software is available under a LGPL open source `license <https://bitbuc
 Basic Concepts
 --------------
 
-GenPipes is a Python based object oriented workflow management system that comes pre-built with several genomic analysis pipelines. A  typical analysis workflow comprises of several complex actions that are interdependent and need to be managed in terms of input, output, process configuration and pipeline tuning.
+GenPipes is a Python based object oriented workflow management system that comes pre-built with several genomic analysis pipelines. A  typical analysis workflow comprises several complex actions that are interdependent and need to be managed in terms of input, output, process configuration and pipeline tuning.
 
 GenPipes refer to four kinds of objects that are used to manage different components of a typical analysis workflow. These are:
 

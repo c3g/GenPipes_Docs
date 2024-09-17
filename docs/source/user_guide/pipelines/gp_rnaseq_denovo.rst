@@ -33,7 +33,7 @@ RNA Sequencing (De-Novo) Pipeline
 
             .. code::
 
-                   genpipes rnaseq_denovo_assembly.py [options] [--genpipes_file GENPIPES_FILE]
+                   genpipes rnaseq_denovo_assembly [options] [--genpipes_file GENPIPES_FILE]
 
          .. dropdown:: Options
 

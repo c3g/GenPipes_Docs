@@ -19,7 +19,7 @@ RNA Sequencing (Light) Pipeline
 
             .. code::
 
-                 genpipes rnaseq_light.py [options] [--genpipes_file GENPIPES_FILE.sh]
+                 genpipes rnaseq_light [options] [--genpipes_file GENPIPES_FILE.sh]
                  bash GENPIPES_FILE.sh
 
          .. dropdown:: Options

@@ -6,7 +6,7 @@
 
      ::
 
-       genpipes [pipeline.py] [options] -g genpipes_cmd.sh
+       genpipes [pipeline] [options] -g genpipes_cmd.sh
 
        bash genpipes_cmd.sh
 
@@ -14,7 +14,7 @@
 
      :: 
 
-       genpipes [pipeline.py] [options] > genpipes_cmd.sh 
+       genpipes [pipeline] [options] > genpipes_cmd.sh 
 
        bash genpies_cmd.sh
 

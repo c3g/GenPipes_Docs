@@ -24,7 +24,7 @@ CoV Sequencing Pipeline
 
             .. code::
 
-               covseq.py [options] [--genpipes_file GENPIPES_FILE.sh]
+               genpipes covseq [options] [--genpipes_file GENPIPES_FILE.sh]
                bash GENPIPES_FILE.sh
 
          .. dropdown:: Options
