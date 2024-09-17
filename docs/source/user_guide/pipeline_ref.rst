@@ -9,6 +9,11 @@
 Pipelines Reference Guide
 =========================
 
+.. dropdown:: :material-outlined:`bolt;2em` GenPipes 5.0
+   :color: success
+
+   .. include:: /gp5_0.inc
+
 GenPipes implements :ref:`standardized genomics workflows<docs_available_pipelines>`, including  DNA-Seq, tumour analysis, RNA-Seq, de novo RNA-Seq, ChIP-Seq, SARS-CoV-2 genome sequencing, methylation sequencing, Hi-C, capture Hi-C, and metagenomics. All pipelines have been implemented following a robust design and development routine by following established best practices standard operating protocols. The pipelines accept a binary sequence alignment map `(BAM) <http://samtools.github.io/hts-specs/SAMv1.pdf>`_ or a `FASTQ <https://en.wikipedia.org/wiki/FASTQ_format>`_ file as input.
  
 This guide contains usage manual and reference information for all available GenPipes genomic analysis pipelines. Visit :ref:`GenPipes Real-life Applications and use cases<docs_gp_usecases>` to see how these pipelines can be deployed for complex next-generation genomic analysis in real life scenarios.
@@ -16,6 +21,7 @@ This guide contains usage manual and reference information for all available Gen
 .. toctree::
    :maxdepth: 1
    :name: toc-pipeline-ref
+   :caption: Active Pipelines
 
    pipelines/gp_ampliconseq
    pipelines/gp_chipseq
@@ -31,6 +37,7 @@ This guide contains usage manual and reference information for all available Gen
 .. toctree::
    :maxdepth: 1
    :name: toc-pipeline-ref-deprecated
+   :caption: Deprecated/Merged Pipelines
 
    pipelines/gp_dnaseq_highcov
    pipelines/gp_epiqc

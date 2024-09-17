@@ -102,6 +102,9 @@ Methyl Sequencing Pipeline
 .. mermaid:: /mmd/pipelines/methylseq.mmd
      :caption: MethylSeq Pipeline Schema
 
+.. mermaid:: /mmd/pipelines/methylseq.gembs.mmd
+     :caption: MethylSeq Pipeline GemBS Schema
+
 .. mermaid:: /mmd/pipelines/methylseq.dragen.mmd
      :caption: MethylSeq Pipeline Dragen Schema
 

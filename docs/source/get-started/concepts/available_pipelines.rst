@@ -19,12 +19,16 @@ Available Pipelines
    |                  |                              |          |                                 |
    |                  |  rnaseq.py                   |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
+   | RNA-Seq(Light)   |::                            |          | `RNA-Seq-Light-Manual`_         |
+   |                  |                              |          |                                 |
+   |                  |  rnaseq_light.py             |          |                                 |
+   +------------------+------------------------------+----------+---------------------------------+
    | De novo RNA-Seq  |::                            |          | `RNA-Seq De Novo Manual`_       |
    |                  |                              |          |                                 |
    |                  |  rnaseq_denovo_assembly.py   |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
-   | Whole Genome Seq |::                            |  default | `Whole Genome Seq Manual`_      |
-   |                  |                              |          |                                 |
+   | Whole Genome DNA |::                            |  default | `Whole Genome Seq Manual`_      |
+   | Seq              |                              |          |                                 |
    |                  |   dnaseq.py                  |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
    | Exome Seq        |::                            ||capture| | `Exome Seq Manual`_             |
@@ -37,7 +41,7 @@ Available Pipelines
    +------------------+------------------------------+----------+---------------------------------+
    | Deep Exome Seq   |::                            | |capture|| `Deep Exome Seq Manual`_        |
    |                  |                              |          |                                 |
-   |                  |   dnaseq_high_coverage.py    |          |                                 |
+   |                  |   dnaseq_high_coverage.py    |          |  (Merged in DNA Seq v5.x)       |
    +------------------+------------------------------+----------+---------------------------------+
    | Hi-C Seq         |::                            | -t hic   | `Hi-C Seq Manual`_              |
    |                  |                              |          |                                 |
@@ -57,7 +61,7 @@ Available Pipelines
    +------------------+------------------------------+----------+---------------------------------+
    | Cancer Analysis  |::                            |          | `Cancer Analysis Manual`_       |
    |                  |                              |          |                                 |
-   |                  |   tumor_pair.py              |          |                                 |
+   |                  |   tumor_pair.py              |          | (Merged in DNA Seq v5.x)        |
    +------------------+------------------------------+----------+---------------------------------+
    | Meta Genomics    |::                            |          | `Meta Genomics Manual`_         |
    |                  |                              |          |                                 |
@@ -72,15 +76,16 @@ Available Pipelines
 
 .. _ChIP-Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/chipseq/README.md
 .. _RNA-Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq/README.md
+.. _RNA-Seq-Light-Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq_light/README.md
 .. _RNA-Seq De Novo Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq_denovo_assembly/README.md
 .. _Whole Genome Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/README.md
 .. _Exome Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/README.md
-.. _DNA High Coverage Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq_high_coverage/README.md
-.. _Deep Exome Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq_high_coverage/README.md
-.. _Hi-C Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/hicseq/README.md
-.. _Hi-C Capture Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/hicseq/README.md
+.. _DNA High Coverage Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/README.md
+.. _Deep Exome Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/README.md
+.. _Hi-C Seq Manual: https://bitbucket.org/mugqic/genpipes/src/4.6.1/pipelines/hicseq//README.md
+.. _Hi-C Capture Manual: https://bitbucket.org/mugqic/genpipes/src/4.6.1/pipelines/hicseq/README.md
 .. _Methyl WGS Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/methylseq/README.md
 .. _Capture Methyl WGS Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/methylseq/README.md
-.. _Cancer Analysis Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/tumor_pair/README.md
+.. _Cancer Analysis Manual: https://bitbucket.org/mugqic/genpipes/src/4.6.1/pipelines/dna_seq/README.md
 .. _Meta Genomics Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/ampliconseq/README.md
 .. _SARS-COV-2 Sequencing: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/covseq/README.md

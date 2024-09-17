@@ -152,6 +152,42 @@ The Dragen methylation report contains all three methylation contexts. To create
 
 Creates BED graph file from combined strand CpG file.
 
+.. _GemBS Prepare:
+
+**GemBS Prepare**
+
+Prepare the metadata and configuration files for mapping using the `gemBS <https://github.com/heathsc/gemBS>`_ pipeline.
+
+.. _GemBS Map:
+
+**GemBS Map**
+
+Map reads to reference the genome with GemBS's `gem-mapper <https://github.com/smarco/gem3-mapper>`_.
+
+.. _GemBS Call:
+
+**GemBS Call**
+
+This step performs the methylation calling with bs_call as part of GemBS pipeline.
+
+.. _GemBS BCF to VCF:
+
+**GemBS BCF to VCF**
+
+Create the VCF of SNPs with BEDTools intersect, by intersecting gemBS .bcf file with SNP database.
+
+.. _GemBS Format CPG Report:
+
+**GemBS Format CPG Report**
+
+Reformat GemBS output to match `Bismark` and `Dragen` output to allow the following steps to be executed. 
+
+.. _GemBS Report:
+
+**GemBS Report**
+
+Create GemBS report.
+
 .. _Multi QC:
 
 **Multi QC** 
