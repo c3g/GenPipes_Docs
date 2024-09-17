@@ -160,7 +160,7 @@ For MUGQIC analysts, add the following lines to your $HOME/.bash_profile:
   fi
 
   module use $MUGQIC_INSTALL_HOME/modulefiles $MUGQIC_INSTALL_HOME_DEV/modulefiles
-  module load mugqic/python/3.9.1
+  module load mugqic/python/3.11.1
   module load mugqic/genpipes/<latest_version>
 
   export RAP_ID=<my-rap-id>

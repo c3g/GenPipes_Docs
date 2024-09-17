@@ -13,7 +13,7 @@ Available Pipelines
    +==================+==============================+==========+=================================+
    | ChIP-Seq         |::                            |          | `ChIP-Seq Manual`_              |
    |                  |                              |          |                                 |
-   |                  |    chipseq                   |          |                                 |
+   |                  |  chipseq                     |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
    | RNA-Seq          |::                            |          | `RNA-Seq Manual`_               |
    |                  |                              |          |                                 |
@@ -21,7 +21,7 @@ Available Pipelines
    +------------------+------------------------------+----------+---------------------------------+
    | RNA-Seq(Light)   |::                            |          | `RNA-Seq-Light-Manual`_         |
    |                  |                              |          |                                 |
-   |                  |  rnaseq_light.py             |          |                                 |
+   |                  |  rnaseq_light                |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
    | De novo RNA-Seq  |::                            |          | `RNA-Seq De Novo Manual`_       |
    |                  |                              |          |                                 |
@@ -45,11 +45,11 @@ Available Pipelines
    +------------------+------------------------------+----------+---------------------------------+
    | Hi-C Seq         |::                            | -t hic   | `Hi-C Seq Manual`_              |
    |                  |                              |          |                                 |
-   |                  |   hicseq.py                  |          | (Deprecated from GenPipes v5.x) |
+   |                  |   hicseq                     |          | (Deprecated from GenPipes v5.x) |
    +------------------+------------------------------+----------+---------------------------------+
    | Capture Hi-C     |::                            | -t       | `Hi-C Capture Manual`_          |
    |                  |                              | capture  |                                 |
-   |                  |   hicseq.py                  |          | (Deprecated from GenPipes v5.x) |
+   |                  |   hicseq                     |          | (Deprecated from GenPipes v5.x) |
    +------------------+------------------------------+----------+---------------------------------+
    | Whole Genome     |::                            | default  | `Methyl WGS Manual`_            | 
    | Methyl Seq       |                              |          |                                 |

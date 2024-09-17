@@ -388,7 +388,7 @@ Versions Available: 2.6.3
 Python
 ``````
 Programming language that lets you work quickly and integrate systems more effectively
-Versions Available: 2.7.8, 2.7.10_qiime, 2.7.11, 2.7.12, 2.7.13, 3.4.0, 3.5.2 3.9.1
+Versions Available: 2.7.8, 2.7.10_qiime, 2.7.11, 2.7.12, 2.7.13, 3.4.0, 3.5.2 3.9.1 3.11.1
 
 qualimap
 ````````

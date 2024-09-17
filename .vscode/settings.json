@@ -1,0 +1,13 @@
+{
+    "grammarly.selectors": [
+        {
+            "language": "restructuredtext",
+            "scheme": "file"
+        }
+    ],
+    "grammarly.files.include": [
+        "**/*.md",  
+        "**/*.rst",
+        "**/*.inc"
+    ]
+}
