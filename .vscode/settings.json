@@ -1,13 +1,20 @@
 {
     "grammarly.selectors": [
+
         {
             "language": "restructuredtext",
             "scheme": "file"
         }
     ],
     "grammarly.files.include": [
-        "**/*.md",  
+        "**/*.md",
         "**/*.rst",
-        "**/*.inc"
-    ]
+        "**/*.inc",
+        "**/*.txt"
+    ],
+    "grammarly.config.suggestionCategories.oxfordComma": "on",
+    "grammarly.config.suggestionCategories.passiveVoice": "on",
+    "grammarly.config.suggestionCategories.prepositionAtTheEndOfSentence": "on",
+    "grammarly.config.suggestionCategories.stylisticFragments": "on",
+    "grammarly.config.suggestionCategories.unnecessaryEllipses": "on"
 }

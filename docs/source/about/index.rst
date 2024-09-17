@@ -3,11 +3,11 @@
 About
 =====
 
-GenPipes is an open source Python-based Workflow Management System (WMS) for Next Generation Sequencing (NGS) genomics pipeline development. 
+GenPipes is an open-source Python-based tool for managing Next Generation Sequencing (NGS) genomics workflows. It comes with a set of high-quality analysis pipelines, optimized for high-performance computing (HPC) and cloud environments.
 
-As part of its implementation, GenPipes includes a set of high-quality, standardized analysis pipelines, designed for high-performance computing (HPC) resources and cloud environments.
+Since 2013, these pipelines have been tested, refined, and widely used. GenPipes simplifies complex genomics analysis, making it accessible not just for bioinformatics pros but also for students and researchers. It offers flexible, reliable tools for standard genomic studies and can be extended for advanced research.
 
-GenPipes pipelines have been tested, continuously improved through industry standard benchmarks, and used extensively since its first release in 2013. By combining both WMS and extensively validated end-to-end genomic analysis workflows, into a simple tool, GenPipes not only enables bioinformatics professionals but also students, researchers in need of bioinformatics tools to perform turnkey analyses for a wide range of bioinformatics applications in the genomics field. It also allows flexible and robust extensions for advanced genomics research.
+Perfect for anyone needing fast, proven bioinformatics solutions.
 
 You can learn more about GenPipes, its target audience, sponsors, how the project has evolved over the years and `license <https://bitbucket.org/mugqic/genpipes/src/master/COPYING.LESSER>`_ information in the following section.
 
