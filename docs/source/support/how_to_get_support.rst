@@ -10,7 +10,7 @@ GenPipes is sponsored by the `Canadian Centre for Computational Genomics`_ (C3G)
 .. _reporting_bugs:
 
 Reporting GenPipes Bugs
-----------------------
+-----------------------
 
 If you are facing any issues in using or deploying GenPipes, you can report bugs through the `GenPipes Support Email`_.
 

@@ -35,7 +35,7 @@ Available Pipelines
    |                  |                              |          |                                 |
    |                  |   dnaseq                     |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
-   | Deep Whole Genome|::                            ||ini_file|| `Whole Genome Seq Manual`_ |
+   | Deep Whole Genome|::                            ||ini_file|| `Whole Genome Seq Manual`_      |
    |                  |                              |          |                                 |
    |                  |   dnaseq                     |          |                                 |
    +------------------+------------------------------+----------+---------------------------------+
