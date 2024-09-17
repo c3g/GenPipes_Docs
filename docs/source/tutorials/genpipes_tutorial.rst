@@ -27,7 +27,7 @@ paste the following lines of code and save the file and Exit (Control + X):
     ## GenPipes/MUGQIC genomes and modules
     export MUGQIC_INSTALL_HOME=/cvmfs/soft.mugqic/CentOS6
     module use $MUGQIC_INSTALL_HOME/modulefiles
-    module load mugqic/python/11.1
+    module load mugqic/python/3.11.1
     module load mugqic/genpipes/<latest_version>
     export JOB_MAIL=<my.name@my.email.ca>
     export RAP_ID=<my-rap-id>
@@ -130,7 +130,7 @@ For chipseq, that would be:
 
 .. code-block:: bash
 
-    ls $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini
+    ls $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini
 
 You will find a **<pipeline_name>.base.ini** as well as an ini file for particular servers like Beluga (<pipeline_name>.beluga.ini). The base.ini file has all the parameters needed by the pipeline but is optimized for usage on our own server, Abacus. To use the pipeline on beluga server, you will need to use both base.ini and beluga.ini, as such:
 
@@ -157,15 +157,15 @@ then add my ini file after the other ini files:
 
     genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini chipseq.test.ini [options]
 
-For different species, we have custom ini files stored in **$MUGQIC_PIPELINES_HOME/resources/genomes/config/**
+For different species, we have custom ini files stored in **$MUGQIC_INSTALL_HOME/genomes/species/<species_of_interest>/**
 
-The genome default for our pipelines is human. To use other species, you can either create a custom .ini file or you can use the .ini files provided in **$MUGQIC_PIPELINES_HOME/resources/genomes/config/** if your species of interest is available.
+The genome default for our pipelines is human. To use other species, you can either create a custom .ini file or you can use the .ini files provided in **$MUGQIC_INSTALL_HOME/genomes/species/<species_of_interest>** if your species of interest is available.
 
 To run the chipseq pipeline on mouse mm9, for example, you can do the following:
 
 .. code-block:: bash
 
-    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/Mus_musculus.mm9.ini [options]
+    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini $MUGQIC_INSTALL_HOME/genomes/species/Mus_musculus.mm9/Mus_musculus.mm9.ini [options]
 
 Readset File:
 -------------
@@ -262,16 +262,14 @@ Example run:
 chipseq Test Dataset:
 ''''''''''''''''''''''
 
-Let’s now run the pipeline using a test dataset. We will use the first 2 million reads from HIC010 from Rao et al. 2014 (SRR1658581.sra). This is an in situ Hi-C experiment of GM12878 using MboI restriction enzyme.
-
 We will start by downloading the dataset from `here <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`__.
-In the downloaded zip file, you will find the two fastq read files in folder “rawData” and will find the readset file (readsets.HiC010.tsv) that describes that dataset.
+In the downloaded zip file, you will find the fastq read files in folder “rawData” and will find the readset file (readset.chipseq.txt) that describes that dataset.
 
 We will run this analysis on Beluga server as follows:
 
 .. code-block:: bash
 
-    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseq.tsv -s 1-15 -e MboI -g chipseqcmd.sh
+    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseq.txt -s 1-15 -g chipseqcmd.sh
 
 **-c** defines the ini configuration files
 **-r** defines the readset file
@@ -297,9 +295,23 @@ To confirm that the commands have been submitted, wait a minute or two depending
 
 .. code-block:: bash
 
+    squeue -u <userID>
+
+where <userID> is your login id for accessing Compute Canada infrastructure. 
+On abacus, the equivalent command is:
+
+.. code-block:: bash
+
     showq -u <userID>
 
-In case you ran it several times and launched too many commands you do not want, you can use the following line of code to cancel ALL commands:
+
+In case you ran the command to submit the jobs several times and launched too many commands you do not want, you can use the following line of code to cancel ALL commands:
+
+.. code-block:: bash
+
+    scancel -u <userID>
+
+Or on abacus:
 
 .. code-block:: bash
 
@@ -307,7 +319,7 @@ In case you ran it several times and launched too many commands you do not want,
 
 Congratulations! you just ran the `chipseq` pipeline.
 
-After the processing is complete, you can access quality control plots in the homer_tag_directory/HomerQcPlots. You can find the compartment data in the compartments folder, TADs in the TADs folder and significant interactions in the peaks folder.
+After the processing is complete, you can access quality control plots in the report/ directory and find peak data in the peak_call/ directory.
 
 For more information about output formats please consult the webpage of the third party tool used.
 
@@ -342,7 +354,11 @@ where Contrast_AB compares treatment sampleB to control sampleA, while Contrast_
 
 You can add several contrasts per design file.
 
-To see how this works, lets run a ChIP-Seq experiment.
+To see how this works, lets run an RNA-Seq experiment.
+
+*TBD ADD RNA-Seq section to tutorial.*
+
+The ChIP-Seq pipeline can also be run with a design file, but requires a specific design file format. 
 
 Test Dataset: Chipseq:
 ----------------------
@@ -353,9 +369,9 @@ Test Dataset: Chipseq:
 
 We will use a subset of the ENCODE data. Specifically, the reads that map to chr22 of the following samples `ENCFF361CSC <https://www.encodeproject.org/experiments/ENCSR828XQV/>`__ and `ENCFF837BCE <https://www.encodeproject.org/experiments/ENCSR236YGF/>`_. They represent a ChIP-Seq analysis dataset with the CTCF transcription factor and its control input.
 
-We will start by downloading the dataset from `here <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`_
+If you have not already done so in the tutorial above, we will start by downloading the dataset from `here <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`_
 
-In the downloaded zip file, you will find the two fastq read files in folder rawData and will find the readset file (readsets.chipseqTest.chr22.tsv) that describes that dataset. You will also find the design file 
+In the downloaded zip file, you will find the fastq read files in folder rawData and will find the readset file (readset.chipseq.txt) that describes that dataset. You will also find the design file 
 
 ::
    
