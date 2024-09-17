@@ -10,7 +10,7 @@ This is a major release of GenPipes.
 
     ::
     
-      user@cedar % <pipeline name>.py [options] -g genpipes_cmd.sh
+      user@cedar % <pipeline name> [options] -g genpipes_cmd.sh
       user@cedar % bash genpipes_cmd.sh
 
   - **New Format** 

@@ -112,7 +112,7 @@ For each pipeline, you can get help about its usage through the help command:
 
 ::
 
-  $MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name>.py --help
+  genpipes $MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name> --help
 
 Step 5: Running GenPipes Pipelines in a container
 --------------------------------------------------
@@ -125,7 +125,7 @@ This is how you can run GenPipes pipelines such as :ref:`DNA Sequencing Pipeline
 
 ::
 
-  dnaseq.py -c dnaseq.base.ini dnaseq.batch.ini -j batch -r your-readsets.tsv -d your-design.tsv -s 1-34 -t mugqic > run-in-container-dnaseq-script.sh
+  genpipes dnaseq -c dnaseq.base.ini dnaseq.batch.ini -j batch -r your-readsets.tsv -d your-design.tsv -s 1-34 -t mugqic -g run-in-container-dnaseq-script.sh
    
   bash run-in-container-dnaseq-script.sh
 

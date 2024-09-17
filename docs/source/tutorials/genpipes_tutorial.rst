@@ -90,13 +90,18 @@ For a list of available genomes, you can visit our :ref:`genome page <doc_cvmfs_
 
 Usage:
 ------
-Now that your variables are set, you can launch any pipeline using:
-**<pipeline_name>.py**
+Now that your variables are set, you can launch any pipeline using the `genpipes` command:
+
+::
+    
+    genpipes <pipeline_name> [options] -g genpipes_pipeline_cmd.sh
+    bash genpipes_pipeline_cmd.sh
+
 To check the help information for the `chipseq` pipeline pipeline, try:
 
 .. code-block:: bash
 
-    genpipes chipseq.py -h
+    genpipes chipseq -h
 
 All our pipelines use the same framework and work in similar ways; each with its own output of course. We will focus on two pipelines to demonstrate how the framework works.
 
@@ -228,7 +233,7 @@ If your data is not on nanuq, you will have to manually create the Readset file.
 Design File:
 ------------
 
-Certain pipelines where samples are compared against other samples, like chipseq.py and rnaseq.py, require a design file that describes which samples are to be compared. We will discuss this later during an example.
+Certain pipelines where samples are compared against other samples, like `chipseq` and `rnaseq`, require a design file that describes which samples are to be compared. We will discuss this later during an example.
 
 
 .. note::
@@ -266,7 +271,7 @@ We will run this analysis on Beluga server as follows:
 
 .. code-block:: bash
 
-    genpipes chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseq.tsv -s 1-15 -e MboI -g chipseqcmd.sh
+    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseq.tsv -s 1-15 -e MboI -g chipseqcmd.sh
 
 **-c** defines the ini configuration files
 **-r** defines the readset file

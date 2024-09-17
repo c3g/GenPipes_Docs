@@ -267,7 +267,7 @@ You are now all set to use GenPipes pipelines. For each pipeline, you can get he
 
 ::
 
-  $MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name>.py --help
+  genpipes $MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name> --help
 
 Running pipelines requires other inputs such as :ref:`Configuration File<docs_config_ini_file>`, :ref:`Readset File<docs_readset_file>` and :ref:`Design File<docs_design_file>`. For details on how to run individual pipelines you can see :ref:`Running GenPipes<docs_using_gp>` or :ref:`GenPipes User Guide<docs_user_guide>`.
 

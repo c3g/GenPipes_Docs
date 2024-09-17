@@ -27,7 +27,9 @@ When a pipeline is run successfully, by default, the output is saved to the same
 
 ::
 
-   rnaseq.py -o /PATH/TO/OUTPUT ... (other options)
+   genpipes rnaseq -o /PATH/TO/OUTPUT ... (other options) -g genpipes_cmd_list.sh
+   
+   bash genpipes_cmd_list.sh
 
 For most pipelines, GenPipes creates an html report with most of the results in the pipeline. To create the report, you need to rerun the same command you ran to create the GenPipes commands, but add --report to it.
 

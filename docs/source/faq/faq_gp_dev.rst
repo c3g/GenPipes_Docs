@@ -54,7 +54,9 @@ Now save the updated custom.ini file and mention it on the command line after th
 
 .. code::
 
-      hipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini custom.ini -r readset.chipseq.txt -d design.chipseq.txt -s 1-20 -g chipseqScript.txt
+      genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini custom.ini -r readset.chipseq.txt -d design.chipseq.txt -s 1-20 -g chipseqScript.sh
+
+      bash chipseqScript.sh
 
 Pytest command on CCDB server results in command not found error. Pytest install fails.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
