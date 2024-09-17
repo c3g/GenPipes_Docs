@@ -375,7 +375,7 @@ In the downloaded zip file, you will find the fastq read files in folder rawData
 
 ::
    
-	designfile_chipseq.chr22.txt
+	design.chipseq.txt
 
 that contains the contrast of interest.
 
@@ -399,13 +399,13 @@ Looking at the content of the Design file
 
 ::
 
-	designfile_chipseq.txt
+	design.chipseq.txt
 
 we see:
 
 ::
 
-	Sample CTCF_Input,N
+	Sample CTCF_Input
 	ENCFF361CSC_ctrl 1
 	ENCFF837BCE_ctcf 2
 
