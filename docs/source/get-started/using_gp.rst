@@ -79,19 +79,19 @@ Example Run
 
 The following example shows how you can run the ChIP Sequencing pipeline using GenPipes installed on Compute Canada data centres. Please ensure you have login access to GenPipes servers.  Refer to :ref:`checklist of pre-requisites for GenPipes<docs_pre_req_chklist>` before you run this example.
 
-We will now run the pipeline using a test dataset. We will use the first 2 million reads from HIC010 from Rao et al. 2014 (SRR1658581.sra). This is an in-situ Hi-C experiment of GM12878 using MboI restriction enzyme.
+We will now run the pipeline using a test dataset. 
 
 You need to first download the test dataset by visiting this link: 
 
-`ChiP Sequencing Test Dataset <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.tar.gz>`_
+`ChiP Sequencing Test Dataset <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`_
 
-In the downloaded zip file, you will find the two fastq read files in folder “rawData” and will find the readset file (readsets.HiC010.tsv) that describes that dataset.
+In the downloaded tar file, you will find the fastq read files in folder “rawData” and will find the readset file (readset.chipseq.txt) that describes that dataset.
 
 Please ensure you have access to "beluga" server in Compute Canada data centre. We will run this analysis on beluga as follows:
 
 ::
 
-  genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseq.tsv -s 1-15 -g chipseq_cmd.sh
+  genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.chipseq.txt -s 1-15 -g chipseq_cmd.sh
 
 To understand what $MUGQIC_PIPELINES_HOME refers to, please see instructions on how to :ref:`access GenPipes on Compute Canada servers<docs_access_gp_pre_installed>`.
 
@@ -107,7 +107,7 @@ By default, on Compute Canada servers such as "Cedar", "Beluga" or "Graham", SLU
 
 ::
 
-  genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chiseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/abacus.ini -r readsets.HiC010.tsv -s 1-15 -j pbs -g chipseq_cmd.sh
+  genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chiseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/abacus.ini -r readset.chipseq.txt -s 1-15 -j pbs -g chipseq_cmd.sh
 
 The above command generates a list of instructions that need to be executed to run the ChIP sequencing pipeline. These instructions are stored in the file:
 
@@ -154,7 +154,7 @@ Or on abacus:
 	Congratulations!
         You just successfully issued the ChIP sequencing analysis pipeline commands!!!
 
-After the processing is complete, you can access quality control plots in the report/ directory. You can find peak data in the peak_call/ directory and significant interactions in the differential_binding folder.
+After the processing is complete, you can access quality control plots in the report/ directory and you can find peak data in the peak_call/ directory.
 
 For more information about output formats please consult the webpage of the third party tool used.
 
@@ -169,42 +169,45 @@ For more information about output formats please consult the webpage of the thir
 Example Run with Design File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Certain pipelines that involve comparing and contrasting samples, need a :ref:`Design File<docs_design_file>`. The design file can contain more than one way to contrast and compare samples.  To see how this works with GenPipes pipelines, lets run a ChIP-Sequencing experiment.
+Certain pipelines that involve comparing and contrasting samples, need a :ref:`Design File<docs_design_file>`. The design file can contain more than one way to contrast and compare samples.  To see how this works with GenPipes pipelines, lets run a RNA-Sequencing experiment.
 
-**ChIP-Sequencing Test Dataset**
+**RNA-Sequencing Test Dataset**
 
-We will use a subset of the ENCODE data. Specifically, the reads that map to chr22 of the following samples `ENCFF361CSC <https://www.encodeproject.org/experiments/ENCSR828XQV/>`_ and `ENCFF837BCE <https://www.encodeproject.org/experiments/ENCSR236YGF/>`_. They represent a ChIP-Seq analysis dataset with the CTCF transcription factor and its control input.
+First, you need to download the test dataset from `here <https://datahub-90-cw3.p.genap.ca/rnaseq.chr19.tar.gz>`_.
 
-First, you need to download the test dataset from `here <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`_.
+In the downloaded tar file, you will find the fastq read files in folder rawData and will find the readset file (readset.rnaseq.txt) that describes that dataset. You will also find the design file (design.rnaseq.txt) that contains the contrast of interest.
 
-In the downloaded zip file, you will find the two fastq read files in folder rawData and will find the readset file (readsets.chipseqTest.chr22.tsv) that describes that dataset. You will also find the design file (designfile_chipseq.chr22.txt) that contains the contrast of interest.
-
-Following is the content of the Readset file (readsets.chipseqTest.tsv):
+Following is the content of the Readset file (readset.rnaseq.txt):
 
 ::
 
-  Sample Readset Library RunType Run Lane Adapter1 Adapter2 QualityOffset BED FASTQ1 FASTQ2 BAM
-  ENCFF361CSC_ctrl ENCFF361CSC_chr22 SINGLE_END 2965 1 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 33 rawData/ENCFF361CSC.chr22.fastq
-  ENCFF837BCE_ctcf ENCFF837BCE_chr22 SINGLE_END 2962 1 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 33 rawData/ENCFF837BCE.chr22.fastq
+  Sample	Readset	Library	RunType	Run	Lane	Adapter1	Adapter2	QualityOffset	BED	FASTQ1	FASTQ2	BAM
+  GM12878_Rep1	GM12878_Rep1	myLibrary	PAIRED_END	1	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		raw_data/rnaseq_GM12878_chr19_Rep1_R1.fastq.gz	raw_data/rnaseq_GM12878_chr19_Rep1_R2.fastq.gz	
+  GM12878_Rep2	GM12878_Rep2	myLibrary	PAIRED_END	1	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		raw_data/rnaseq_GM12878_chr19_Rep2_R1.fastq.gz	raw_data/rnaseq_GM12878_chr19_Rep2_R2.fastq.gz	
+  H1ESC_Rep1	H1ESC_Rep1	myLibrary2	PAIRED_END	1	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		raw_data/rnaseq_H1ESC_chr19_Rep1_R1.fastq.gz	raw_data/rnaseq_H1ESC_chr19_Rep1_R2.fastq.gz	
+  H1ESC_Rep2	H1ESC_Rep2	myLibrary2	PAIRED_END	1	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		raw_data/rnaseq_H1ESC_chr19_Rep2_R1.fastq.gz	raw_data/rnaseq_H1ESC_chr19_Rep2_R2.fastq.gz	
 
-This analysis contains 2 samples with a single readset each. They are both SINGLE_END runs and have a single fastq file in the “rawData” folder.
 
-Following is the content of the Design file (designfile_chipseq.txt):
+This analysis contains 4 samples with a single readset each. They are all PAIRED_END runs and have a pair of fastq files in the “rawData” folder.
 
-::
-
-  Sample CTCF_Input,N
-  ENCFF361CSC_ctrl 1
-  ENCFF837BCE_ctcf 2
-
-We see a single analysis CTCF_Input run as Narrow peaks (coded by “N”; you can use “B” for broad peak analysis). This analysis compares CTCF peaks in ENCFF837BCE_ctcf to its input control peaks identified from ENCFF361CSC_ctrl.
-
-Let us now run this ChIP-Sequencing analysis on *beluga* server at Compute Canada using the following command:
+Following is the content of the Design file (design.rnaseq.txt):
 
 ::
 
-  genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 -g chipseqScript.txt
-  bash chipseqScript.txt
+  Sample	H1ESC_GM12787
+  H1ESC_Rep1	1
+  H1ESC_Rep2	1
+  GM12878_Rep1	2
+  GM12878_Rep2	2
+
+We see a single analysis that compares two replicates of `H1ESC` to two replicates of group `GM12878`.
+
+Let us now run this RNA-Sequencing analysis on *beluga* server at Compute Canada using the following command:
+
+::
+
+  genpipes rnaseq -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -g rnaseqScript.txt
+  bash rnaseqScript.txt
 
 The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get **MUGQICexitStatus:0** or **Exit_status=0.** If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the **job_output** folder.
 
