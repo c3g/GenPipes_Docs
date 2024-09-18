@@ -263,7 +263,7 @@ chipseq Test Dataset:
 ''''''''''''''''''''''
 
 We will start by downloading the dataset from `here <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`__.
-In the downloaded zip file, you will find the fastq read files in folder “rawData” and will find the readset file (readset.chipseq.txt) that describes that dataset.
+In the downloaded tar file, you will find the fastq read files in folder “rawData” and will find the readset file (readset.chipseq.txt) that describes that dataset.
 
 We will run this analysis on Beluga server as follows:
 
@@ -356,22 +356,64 @@ You can add several contrasts per design file.
 
 To see how this works, lets run an RNA-Seq experiment.
 
-*TBD ADD RNA-Seq section to tutorial.*
+Start by downloading the data from `here <https://datahub-90-cw3.p.genap.ca/rnaseq.chr19.tar.gz>`_
 
-The ChIP-Seq pipeline can also be run with a design file, but requires a specific design file format. 
+In the downloaded tar file, you will find the fastq read files in the folder `rawData` and you will find the readset file (readset.rnaseq.txt) that describes the dataset. You will also find the design file
+::
+   
+	design.rnaseq.txt
+
+that contains the contrast of interest.
+
+Looking at the contents of the design file, we see:
+::
+
+	Sample	H1ESC_GM12787
+    H1ESC_Rep1	1
+    H1ESC_Rep2	1
+    GM12878_Rep1	2
+    GM12878_Rep2	2
+
+We will run this analysis on the Beluga cluster as follows:
+::
+
+	genpipes rnaseq -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -g rnaseq_commands.sh
+    bash rnaseq_commands.sh
+
+The commands will be sent to the job queue to be executed. You can check the progress of the jobs with
+::
+
+	squeue -u <userID>
+
+Once the queue is empty and all jobs have run, you can verify the exit status of each job with the GenPipes log_report tool:
+::
+
+	log_report.py --tsv log.out job_output/RnaSeq.stringtie.job_list.<TIMESTAMP>
+
+Take a look at the output with 
+::
+
+	less -S log.out
+
+and check that all jobs finished successfully. If you find that any jobs failed, look at the outputs in the `job_output` directory to identify the reason for the failure. 
+
+If everything ran successfully, you will find an interactive html report under `report/RnaSeq.stringtie.multiqc.html` and the results of the differential expression analysis under the folder `DGE`.
+ 
 
 Test Dataset: Chipseq:
 ----------------------
+
+The ChIP-Seq pipeline can also be run with a design file, but requires a specific design file format.
 
 .. attention:: **Change in the Chipsequence Design File Format**
 
     .. include:: /user_guide/pipelines/design_fileformat/chipseq_design.inc
 
-We will use a subset of the ENCODE data. Specifically, the reads that map to chr22 of the following samples `ENCFF361CSC <https://www.encodeproject.org/experiments/ENCSR828XQV/>`__ and `ENCFF837BCE <https://www.encodeproject.org/experiments/ENCSR236YGF/>`_. They represent a ChIP-Seq analysis dataset with the CTCF transcription factor and its control input.
+We will use a subset of the ENCODE data. They represent a ChIP-Seq analysis dataset with the chromatin mark `H3K27ac` and its control input.
 
 If you have not already done so in the tutorial above, we will start by downloading the dataset from `here <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`_
 
-In the downloaded zip file, you will find the fastq read files in folder rawData and will find the readset file (readset.chipseq.txt) that describes that dataset. You will also find the design file 
+In the downloaded tar file, you will find the fastq read files in folder rawData and will find the readset file (readset.chipseq.txt) that describes that dataset. You will also find the design file 
 
 ::
    
@@ -389,11 +431,17 @@ we see:
 
 ::
 
-	Sample Readset Library RunType Run Lane Adapter1 Adapter2 QualityOffset BED FASTQ1 FASTQ2 BAM
-	ENCFF361CSC_ctrl ENCFF361CSC_chr22 SINGLE_END 2965 1 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 33 rawData/ENCFF361CSC.chr22.fastq
-	ENCFF837BCE_ctcf ENCFF837BCE_chr22 SINGLE_END 2962 1 AGATCGGAAGAGCACACGTCTGAACTCCAGTCA AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 33 rawData/ENCFF837BCE.chr22.fastq
+	Sample	Readset	MarkName	MarkType	Library	RunType	Run	Lane	Adapter1	Adapter2	QualityOffset	BED	FASTQ1	FASTQ2	BAM
+    EW22	EW22_A787C17_input	input	I		SINGLE_END	2965	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		raw_data/EW22_A787C17_input_chr19.fastq.gz		
+    EW22	EW22_A787C20_H3K27ac	H3K27ac	N		SINGLE_END	2962	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		raw_data/EW22_A787C20_H3K27ac_chr19.fastq.gz		
+    EW3	EW3_1056C284_input	input	I		SINGLE_END	2963	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		raw_data/EW3_1056C284_input_chr19.fastq.gz		
+    EW3	EW3_A1056C287_H3K27ac	H3K27ac	N		SINGLE_END	2964	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		raw_data/EW3_A1056C287_H3K27ac_chr19.fastq.gz		
+    EW7	EW7_A485C51_input	input	I		SINGLE_END	2966	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		raw_data/EW7_A485C51_input_chr19.fastq.gz		
+    EW7	EW7_A490C39_H3K27ac	H3K27ac	N		SINGLE_END	2970	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		raw_data/EW7_A490C39_H3K27ac_chr19.fastq.gz		
+    TC71	TC71_A379C48_H3K27ac	H3K27ac	N		SINGLE_END	2980	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		raw_data/TC71_A379C48_H3K27ac_chr19.fastq.gz		
+    TC71	TC71_A379C51_input	input	I		SINGLE_END	2981	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		raw_data/TC71_A379C51_input_chr19.fastq.gz		
 
-This analysis contains 2 samples with a single readset each. They are both SINGLE_END runs and have a single fastq file in the “rawData” folder.
+This analysis contains 4 samples with a single readset each. They are all SINGLE_END runs and have a single fastq file in the “rawData” folder. Each sample has a treatment (`H3K27ac`) and a control (`input`). Note that the readset file format for the ChIP-Seq pipeline varies from other pipelines in that it requires the columns `MarkName` and `MarkType`.
 
 Looking at the content of the Design file
 
@@ -405,11 +453,13 @@ we see:
 
 ::
 
-	Sample CTCF_Input
-	ENCFF361CSC_ctrl 1
-	ENCFF837BCE_ctcf 2
+	Sample	MarkName	EW22_EW3_vs_EW7_TC71
+    EW22	H3K27ac	1
+    EW3	H3K27ac	1
+    EW7	H3K27ac	2
+    TC71	H3K27ac	2
 
-We see a single analysis CTCF_Input run as Narrow peaks (coded by “N”; you can use “B” for broad peak analysis). This analysis compares CTCF peaks in ENCFF837BCE_ctcf to its input control peaks identified from ENCFF361CSC_ctrl.
+We see a single analysis that compares samples EW22 and EW3 to samples EW7 and TC71. 
 
 We will run this analysis on Beluga server as follows:
 

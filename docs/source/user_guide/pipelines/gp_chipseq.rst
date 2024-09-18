@@ -170,7 +170,7 @@ ChIP Sequencing Pipeline
 
       The Chip Sequencing protocol expects an input for the **Differential Binding** step. If pipeline users want to run this protocol without an input, they should skip the differential binding step and run it themselves locally.
 
-.. dropdown:: :material-outlined:`report;2em` Chip Sequencing Design File
+.. dropdown:: :material-outlined:`report;2em` Chip Sequencing Readset File
    :color: warning
 
    Please make sure you use the special :ref:`ChIPSeq Pipeline Readset file format<ref_example_chipseq_readset_file>` and not the general readset file format.
