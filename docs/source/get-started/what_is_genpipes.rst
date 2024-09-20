@@ -20,23 +20,22 @@ are optimized for High-Performance Computing (HPC) clusters and the cloud.
 
 The following genomics application pipelines are already implemented and validated through GenPipes:
 
-* ChIP-Seq
+* Whole Genome Sequencing (WGS)
+* Whole Exome Sequencing (WES)
+* RNA Sequencing / Unmapped RNA Quality Control
+* SARS-CoV-2 genome sequencing
 * *de-novo* RNA Sequencing
 * Deep Whole Genome Sequencing
-* Exome Sequencing
-* Hi-C / Capture Hi-C
-* Illumina raw data processing
-* Metagenomics
 * Nanopore Analysis
-* Nanopore CoVSeQ Analysis using ARTIC Nanopolish protocol
-* SARS-CoV-2 genome sequencing
-* RNA Sequencing / Unmapped RNA Quality Control
+* Nanopore SARS-CoV2 sequencing using ARTIC Nanopolish protocol
 * Transcriptomics Assembly
 * Tumour Analysis
-* EpiQC Analysis
-* Whole Exome Sequencing (WES)
 * Whole Genome Bisulphate Sequencing (WGBS)/ Reduced Representation Bisulphate Sequencing (RRBS)
-* Whole Genome Sequencing (WGS)
+* ChIP-Seq
+* Illumina raw data processing
+* EpiQC Analysis
+* Metagenomics
+* Hi-C / Capture Hi-C
 
 GenPipes software is available under a LGPL open source `license <https://bitbucket.org/mugqic/genpipes/src/master/COPYING.LESSER>`_ and is continuously updated to follow recent advances in genomics and bioinformatics. The framework can be accessed through multiple deployment mechanisms. It has already been configured on several servers at C3G HPC computing facility. Its also supports Cloud deployment through GCP. Besides this,  a Docker image is also available to facilitate additional installations on local / individual machines for small dataset analysis.
 
@@ -109,7 +108,7 @@ Bioinformatics and the role of GenPipes
 ---------------------------------------
 There has been significant technological evolution in Next Generation Sequencing techniques from improvement in the processes themselves, better infrastructure and software availability as well as in terms of lowering of costs associated with NGS processing.  For a good primer on the topic, refer to :download:`Introduction to Next Generation Sequencing </ref/C3GAW_RNASeq_3_NGS_Intro.pdf>`.
 
-GenPipes plays a key role in data pipelining and processing of next generation sequencing data and cutting edge genomic analysis, as highlighted in the figure below:
+GenPipes plays a role in creating data analysis and processing pipelines for all kinds of high-throughput sequencing data and cutting edge genomic analysis, as highlighted in the figure below:
 
 .. image:: /img/genpipes-role-bioif.png
 

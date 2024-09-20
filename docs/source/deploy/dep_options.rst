@@ -6,7 +6,7 @@ Deployment Options
 
 There are multiple ways to access GenPipes and get started with genomic analysis using the pipelines therein. The figure below represents the three options available to bioinformatics researchers to access GenPipes.
 
-1. Remotely access GenPipes deployed at Compute Canada infrastructure
+1. Remotely access GenPipes deployed at Alliance infrastructure
 2. GenPipes deployment in the cloud - Google Cloud Platform (GCP)
 3. Local deployment 
 
@@ -26,12 +26,12 @@ Obtaining GenPipes sources
 --------------------------
 Refer to the latest `GenPipes sources <https://bitbucket.org/mugqic/genpipes/src/master/>`_ for instructions on downloading and setting up GenPipes.
 
-GenPipes on Compute Canada infrastructure
+GenPipes on Alliance infrastructure
 -----------------------------------------
 
-Researchers who have access to Compute Canada resources need not deploy GenPipes for genomic analysis. They can simply login and access Compute Canada servers that have pre-installed stable release of GenPipes.  For details refer to :ref:`Accessing GenPipes deployment on Compute Canada infrastructure<docs_access_gp_pre_installed>`. External users who do not have access to Compute Canada data centre resources can :ref:`apply for the same<docs_access_gp_pre_installed>`.
+Researchers who have access to `Digital Research Alliance of Canada` (formerly Compute Canada) resources need not deploy GenPipes for genomic analysis. They can simply login and access Alliance servers that have pre-installed stable release of GenPipes.  For details refer to :ref:`Accessing GenPipes deployment on Alliance infrastructure<docs_access_gp_pre_installed>`. External users who do not have access to Alliance resources can :ref:`apply for the same<docs_access_gp_pre_installed>`.
 
-Through a partnership with the `Compute Canada <https://www.computecanada.ca/>`_ consortium, the pipelines and third-party tools have also been configured on 6 different Compute Canada HPC centers. This allows any Canadian researcher to use GenPipes along with the needed computing resources by `simply applying to the consortium <https://www.computecanada.ca/research-portal/account-management/apply-for-an-account/>`_. To ensure consistency of pipeline versions and used dependencies (such as genome references and annotation files) and to avoid discrepancy between compute sites, pipeline set-up has been centralized to 1 location, which is then distributed on a real-time shared file system: the CERN (European Organization for Nuclear Research) Virtual Machine File System `CVM FS <https://iopscience.iop.org/article/10.1088/1742-6596/396/5/052013/pdf>`_.
+Through a partnership with the `Alliance <https://alliancecan.ca/en>`_ consortium, the pipelines and third-party tools have also been configured on 6 different Alliance HPC centers. This allows any Canadian researcher to use GenPipes along with the needed computing resources by `simply applying to the consortium <https://alliancecan.ca/en/membership/become-member>`_. To ensure consistency of pipeline versions and used dependencies (such as genome references and annotation files) and to avoid discrepancy between compute sites, pipeline set-up has been centralized to 1 location, which is then distributed on a real-time shared file system: the CERN (European Organization for Nuclear Research) Virtual Machine File System `CVM FS <https://iopscience.iop.org/article/10.1088/1742-6596/396/5/052013/pdf>`_.
 
 GenPipes deployment on GCP
 --------------------------
