@@ -73,7 +73,7 @@ Methylation Sequencing Pipeline
                :width: 100%
                :figwidth: 95%
 
-               Figure: Methylation Sequencing (Gembs)
+               Figure: Methylation Sequencing (GemBS)
 
             .. figure:: /img/pipelines/mmd/legend.mmd.png
                :align: center

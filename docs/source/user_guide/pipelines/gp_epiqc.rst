@@ -12,5 +12,5 @@ EpiQC Pipeline (Deprecated)
 
 .. warning::
 
-   EpiQC pipeline is **deprecated** from *GenPipes v5.x* onwards. 
+   EpiQC pipeline is **deprecated** from *GenPipes v5.x* onward. 
    To use this protocol, try `an older version of GenPipes <https://genpipes.readthedocs.io/en/genpipes-v4.6.0/user_guide/pipelines/gp_epiqc.html>`_.

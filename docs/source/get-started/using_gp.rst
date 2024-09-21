@@ -5,6 +5,8 @@
    userID
    txt
    genpipes
+   atacseq
+   ATAC-Seq
    
 Using GenPipes for genomic analysis
 ====================================

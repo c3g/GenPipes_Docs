@@ -12,6 +12,9 @@
      symlink
      sortmeRNA
      htseq
+     deliverables
+     md5sum
+     md
 
 GenPipes 4.5.0 Release Notes
 ============================
@@ -33,7 +36,7 @@ This is a medium release with bug-fixes:
   - Improved display of QualiMap output in `MultiQC` report 
        
 * `RNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/4.5.0/pipelines/rnaseq/>`_:
-  - Added md5sum for deliverables  
+  - Added `md5sum`` for the deliverables  
   - Updated `gtex` version
 
 * `Chip Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/4.5.0/pipelines/chipseq/>`_:
@@ -53,7 +56,7 @@ Quick! Where can I find it? I can't wait!
 Where is the detailed ChangeLog? 
 ================================= 
 
-A ChangeLog (`CHANGELOG.md <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_) is available in the archive as well as in the repository.
+The `GenPipes ChangeLog <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_ is available in the archive as well as in the repository.
 
 Since we use git, there are many ways to get the details in many formats. 
 One of our preferred ways is to use a script written by the author of the Ray assembler: Sébastien Boisvert, 

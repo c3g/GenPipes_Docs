@@ -3,6 +3,20 @@
 .. spelling::
 
     Haplotype
+    gzipped
+    intragenic
+    Bruijn
+    Somatics
+    Bcbio
+    homozygous
+    cellularity
+    hc
+    vqsr
+    snpId
+    snp
+    snpeff
+    allSamples
+    Preprocess
     Mpileup
     GC
     FastQ
@@ -38,6 +52,8 @@
     idepth
     readgroups
     imiss
+    CNV
+    CNVKit
 
 **Step Details**
 
@@ -53,7 +69,7 @@ Convert SAM/BAM files from the input readset file into FASTQ format if FASTQ fil
 
 **Trim FastP**
 
-`FastP`_: A tool designed to provide fast all-in-one preprocessing for FastQ files. This tool is developed in C++ with multithreading supported to afford high performance.
+`FastP`_: A tool designed to provide fast all-in-one preprocessing for FastQ files. This tool is developed in C++ with multi-threading supported to afford high performance.
 
 .. _BWA Mem2 SAMTools Sort:
 
@@ -425,7 +441,7 @@ Generates symbolic links for FASTQ Pair output files.
 
 **Sym Link Panel**
 
-This step create sym links of panel variants for generating reports and deliverable to the clients.
+This step create symbolic links of panel variants for generating reports and deliverable to the clients.
 
 .. _Sym Link Ensemble:
 

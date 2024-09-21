@@ -17,7 +17,7 @@ Amplicon Sequencing Pipeline
 
 .. warning::
 
-   Amplicon *QIIME* protocol is **deprecated** from *GenPipes v5.x* onwards. 
+   Amplicon *QIIME* protocol is **deprecated** from *GenPipes v5.x* onward. 
    To use this protocol, try `an older version of GenPipes <https://genpipes.readthedocs.io/en/genpipes-v4.6.0/user_guide/pipelines/gp_ampliconseq.html>`_.
 
 .. tab-set:: 

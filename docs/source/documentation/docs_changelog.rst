@@ -8,6 +8,12 @@ GenPipes Documentation Changelog
      onpr
      gh
      readthedocs
+     rst
+     shaloo
+     shalz
+     hotmail
+     noreply
+     github
 
 GenPipes documentation is continually being improved. 
 The current release corresponds to GenPipes version |genpipes_version|. 

@@ -2,7 +2,7 @@ This is a major release of GenPipes.
 
 **What has changed in 5.0?**
 
-* Genpipes 5.0 distribution is now based on Python packaging. Earlier it was Python module based.
+* GenPipes 5.0 distribution is now based on Python packaging. Earlier it was Python module based.
 * It supports Python v3.11.1 and above. 
 * To run GenPipes pipelines, the command syntax has changed.
 

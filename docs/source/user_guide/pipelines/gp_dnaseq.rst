@@ -3,6 +3,7 @@
 .. spelling:: 
  
      haplotype
+     snv
      Mpileup
      mpileup
      bcftools
@@ -15,6 +16,11 @@
      intra
      nucleotid
      tdf
+     Fastpass
+     fastpass
+     Nucleotide
+     cov
+     bp
 
 DNA Sequencing Pipeline
 ========================
@@ -25,7 +31,7 @@ DNA Sequencing Pipeline
    :color: success
    :open:
 
-   Starting from **GenPipes v5.x** onwards, the DNA Sequencing Pipeline has been completely revamped. It is enhanced to include the functionality  that was earlier provided in **GenPipes v4.6.1** by the following standalone pipelines:
+   Starting from **GenPipes v5.x** onward, the DNA Sequencing Pipeline has been completely revamped. It is enhanced to include the functionality  that was earlier provided in **GenPipes v4.6.1** by the following standalone pipelines:
    
    * `Tumor Pair Sequencing Pipeline <https://genpipes.readthedocs.io/en/genpipes-v4.6.1/user_guide/pipelines/gp_tumourpair.html>`_ **Deprecated**
    * `DNA Sequencing (High Coverage) Pipeline <https://genpipes.readthedocs.io/en/genpipes-v4.6.1/user_guide/pipelines/gp_dnaseq_highcov.html>`_. **Deprecated**
@@ -631,13 +637,13 @@ DNA Sequencing Pipeline
 
             GenPipes DNA sequencing pipeline offers the following protocol options:
 
-            #. Default, Germline Single Neucleotide Variant Analysis uses GATK HaplotypeCaller caller (-t germline_snv)
+            #. Default, Germline Single Nucleotide Variant Analysis uses GATK HaplotypeCaller caller (-t germline_snv)
             #. Germline Structural Variations for cancer predisposition analysis Another  (-t germline_sv) 
             #. Germline High Coverage for comprehensive variant detection (-t germline_high_cov)
             #. Somatic Tumor only analysis (-t somatic_tumor_only)
             #. Quick assessment using exome capture regions and the 1000bp flanking regions with Somatic FastPass (-t somatic_fastpass)
             #. Somatic Ensemble for detecting somatic mutations via the best combination of callers for both SNV and SV  (-t somatic_ensemble)
-            #. Somatic Structural Variant (SV) detectiom (-t somatic_sv)
+            #. Somatic Structural Variant (SV) detection (-t somatic_sv)
 
             See :ref:`dnaschema` tab for the pipeline workflow. For the latest implementation and usage details refer to DNA Sequencing implementation `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/README.md>`_ file.
 

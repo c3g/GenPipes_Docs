@@ -8,6 +8,7 @@
       Protists
       kegg
       rds
+      cmscan
 
 **Step Details**
 
@@ -86,7 +87,7 @@ Identifies protein domains using `HMMER Biosequence Analysis <http://hmmer.janel
 
 **Infernal Transcriptome**
 
-Identify structural RNAs using cmscan function from [infernal](http://eddylab.org/infernal). This protocol is run in parallel, using chunks created by exonerate. 
+Identify structural RNAs using `cmscan` function from [infernal](http://eddylab.org/infernal). This protocol is run in parallel, using chunks created by exonerate. 
 
 .. _BLAST Transdecoder UniProt:
 

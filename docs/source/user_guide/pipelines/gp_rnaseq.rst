@@ -5,6 +5,9 @@
      html
      goseq
      StringTie
+     stringtie
+     arriba
+     annofuse
 
 RNA Sequencing Pipeline
 ========================
@@ -55,7 +58,7 @@ RNA Sequencing Pipeline
                :width: 100%
                :figwidth: 95%
 
-               Figure: Schema of RNA Sequencing pipeline (Stringtie)
+               Figure: Schema of RNA Sequencing pipeline (StringTie)
 
             .. figure:: /img/pipelines/mmd/legend.mmd.png
                :align: center
@@ -102,7 +105,7 @@ RNA Sequencing Pipeline
       .. tab-item:: Steps
 
          +----+-----------------------------+------------------------------------+-----------------------------------+
-         |    |   *Stringtie*               |  *Variants*                        | *Cancer*                          |
+         |    |   *StringTie*               |  *Variants*                        | *Cancer*                          |
          +====+=============================+====================================+===================================+
          | 1. | |picard_sam_to_fastq|       |  |picard_sam_to_fastq|             | |picard_sam_to_fastq|             |
          +----+-----------------------------+------------------------------------+-----------------------------------+

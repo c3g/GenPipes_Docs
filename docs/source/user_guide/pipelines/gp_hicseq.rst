@@ -13,6 +13,6 @@ HiC Sequencing Pipeline  (Deprecated)
 
 .. warning::
 
-   HiC Sequencing pipeline is **deprecated** from *GenPipes v5.x* onwards. 
+   HiC Sequencing pipeline is **deprecated** from *GenPipes v5.x* onward. 
    
    To use this protocol, try `an older version of GenPipes <https://genpipes.readthedocs.io/en/genpipes-v4.6.0/user_guide/pipelines/gp_hicseq.html>`_.

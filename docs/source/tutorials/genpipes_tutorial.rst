@@ -1,5 +1,9 @@
 .. _doc_genpipes_tutorial:
 
+.. spelling::
+
+    userID
+
 GenPipes Tutorial 
 ==================
 

@@ -2,6 +2,15 @@
 
 .. _docs_available_pipelines:
 
+.. spelling::
+
+   SARS-COV-2
+   COV
+   fastpass
+   germline_high_cov
+   germline
+   cov
+
 Available Pipelines
 ===================
 

@@ -5,6 +5,7 @@
 .. spelling::
 
      genpipes
+     gzipping
 
 GenPipes 4.6.0 Release Notes
 ============================
@@ -38,7 +39,7 @@ Quick! Where can I find it? I can't wait!
  
 * The latest release for GenPipes version 4.6.0 tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-4.6.0.tar.gz
 
-* The module mugqic/genpipes/4.6.0 is installed on AAbacus (MGC), Béluga, Graham, Cedar and Narval Compute Canada clusters.
+* The module mugqic/genpipes/4.6.0 is installed on Abacus (MGC), Béluga, Graham, Cedar and Narval Compute Canada clusters.
 
 * The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes
 

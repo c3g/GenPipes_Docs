@@ -5,6 +5,10 @@
      bwa
      tdf
      chrM
+     Dragen
+     bs_call
+     bs
+     bcf
 
 **Step Details**
 
@@ -126,7 +130,7 @@ This step involves running of `MethylKit`_ to get DMCs & DMRs for different desi
 
 **Dragen Align**
 
-Align reads with `Dragen <https://support-docs.illumina.com/SW/DRAGEN_v310/Content/SW/FrontPages/DRAGEN.htm>`_. Both hybrid and dragen protocols use this step to align reads. Dragen parameters can be changed using other options of the ini configuration.
+Align reads with `Dragen <https://support-docs.illumina.com/SW/DRAGEN_v310/Content/SW/FrontPages/DRAGEN.htm>`_. Both hybrid and Dragen protocols use this step to align reads. Dragen parameters can be changed using other options of the ini configuration.
 
 .. _Sort Dragen SAM:
 
@@ -144,7 +148,7 @@ Calls methylation with Dragen using the second run of Dragen alignment.
 
 **Split Dragen Methylation Report**
 
-The Dragen methylation report contains all three methylation contexts. To create combined CSV CpGs should be extracted from the dragen methylation report.
+The Dragen methylation report contains all three methylation contexts. To create combined CSV CpGs should be extracted from the Dragen Methylation report.
 
 .. _Dragen BED Graph:
 
@@ -168,7 +172,7 @@ Map reads to reference the genome with GemBS's `gem-mapper <https://github.com/s
 
 **GemBS Call**
 
-This step performs the methylation calling with bs_call as part of GemBS pipeline.
+This step performs the methylation calling with `bs_call` as part of GemBS pipeline.
 
 .. _GemBS BCF to VCF:
 

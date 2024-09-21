@@ -42,6 +42,7 @@ Fortran
 GSoD
 Galgal
 Gallus
+GemBS
 GenPipes
 Génome
 Genomic
@@ -74,6 +75,7 @@ Nanopolish
 Nanopore
 Nanuq
 Narval
+Omics
 PGM
 Pacbio
 Pandoc
@@ -238,6 +240,7 @@ freemium
 gallus
 gatk
 gcc
+gemBS
 genomic
 genomics
 genotype
@@ -311,6 +314,7 @@ norvegicus
 novo
 nucleotides
 offline
+omics
 onboarding
 openjdk
 pacbio

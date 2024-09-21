@@ -1,5 +1,13 @@
 .. _docs_gp_user_troubleshooting_guide:
 
+.. spelling::
+
+    io_buffer
+    io
+    cluster_cpu
+    cpu
+    walltime
+
 GenPipes User: Troubleshooting Guide
 =====================================
 

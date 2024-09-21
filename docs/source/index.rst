@@ -13,7 +13,7 @@ GenPipes |genpipes_version| Documentation
 
    GenPipes is developed and financed by the `Canadian Centre for Computational Genomics <https://www.computationalgenomics.ca>`_ (C3G).
    
-   C3G is a core plaform affiliated with McGill University, with broad expertise in bioinformatics. It offers bioinformatics analysis and HPC services for the life sciences research community. Our services include bespoke pipeline development, service for a fee analyses, as well as an extensive suite of software solutions in the -omics fields. GenPipes is our open-source workflow and pipeline platform. For more information about our team and funding, please check our website.   
+   C3G is a core platform affiliated with McGill University, with broad expertise in bioinformatics. It offers bioinformatics analysis and HPC services for the life sciences research community. Our services include bespoke pipeline development, service for a fee analyses, as well as an extensive suite of software solutions in the -omics fields. GenPipes is our open-source workflow and pipeline platform. For more information about our team and funding, please check our website.   
 
 .. dropdown::  :material-outlined:`coronavirus;2em` Fighting COVID-19
    :color: secondary

@@ -2,6 +2,7 @@
 
 .. spelling:: 
 
+      RSeqC
       picard
       sam
       param
@@ -17,6 +18,17 @@
       cuffnorm 
       cufflinks
       stringtie
+      Transcriptome
+      archea
+      intronic
+      haplotypes
+      recalibrate
+      GEnome
+      MINIng
+      Arriba
+      intragenic
+      oncogenic
+
 
 **Step Details**
 
@@ -149,7 +161,7 @@ Assemble transcriptome and compute RNA-seq expression using `StringTie <https://
 
 **Sortmerna Step**
 
-This step calculates the ribosomal RNA per read based on known ribosomal sequences from archea, bacteria and eukaryotes. It uses `sortmeRNA <https://github.com/sortmerna/sortmerna>`_ protocol that takes trimmed fastqs and reports on each read, either paired-end or single end.
+This step calculates the ribosomal RNA per read based on known ribosomal sequences from archea, bacteria and eukaryotes. It uses `sortmeRNA <https://github.com/sortmerna/sortmerna>`_ protocol that takes trimmed FASTQs and reports on each read, either paired-end or single end.
 
 .. _Rnaseqc2:
 
@@ -225,7 +237,7 @@ Merges VCFs from `Haplotype caller <https://gatk.broadinstitute.org/hc/en-us/art
 
 **Run VCF Anno**
 
-`VCFAnno <https://github.com/brentp/vcfanno>`_ is used to annotate VCF files with preferred INFO fields from anu number of VCF or BED files.
+`VCFAnno <https://github.com/brentp/vcfanno>`_ is used to annotate VCF files with preferred INFO fields from any number of VCF or BED files.
 
 .. _Variant Filtration:
 
@@ -259,7 +271,7 @@ variation and genome annotations. See `latest Gemini documentation <https://gemi
 **Report CPSR**
 
 In this step a `cpsr <https://sigven.github.io/cpsr/>`_ germline report is created input: filtered ensemble germline vcf
-output: html report and addtional flat files.
+output: html report and additional flat files.
 
 .. _Report PCGR:
 
