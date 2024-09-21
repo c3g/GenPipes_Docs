@@ -263,6 +263,7 @@ chipseq Test Dataset:
 ''''''''''''''''''''''
 
 We will start by `downloading the dataset for ChIP-Seq <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`_.
+
 In the downloaded tar file, you will find the fastq read files in folder “rawData” and will find the readset file (readset.chipseq.txt) that describes that dataset.
 
 We will run this analysis on Beluga server as follows:
