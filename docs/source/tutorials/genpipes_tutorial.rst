@@ -262,7 +262,7 @@ Example run:
 chipseq Test Dataset:
 ''''''''''''''''''''''
 
-We will start by downloading  `chipseq test dataset <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`__.
+We will start by `downloading the dataset for ChIP-Seq <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`_.
 
 In the downloaded tar file, you will find the fastq read files in folder “rawData” and will find the readset file (readset.chipseq.txt) that describes that dataset.
 
@@ -357,7 +357,7 @@ You can add several contrasts per design file.
 
 To see how this works, lets run an RNA-Seq experiment.
 
-Start by downloading the `RNA sequencing pipeline test dataset <https://datahub-90-cw3.p.genap.ca/rnaseq.chr19.tar.gz>`_
+Start by `downloading the data for RNA-Seq  <https://datahub-90-cw3.p.genap.ca/rnaseq.chr19.tar.gz>`_.
 
 In the downloaded tar file, you will find the fastq read files in the folder `rawData` and you will find the readset file (readset.rnaseq.txt) that describes the dataset. You will also find the design file
 ::
@@ -412,7 +412,7 @@ The ChIP-Seq pipeline can also be run with a design file, but requires a specifi
 
 We will use a subset of the ENCODE data. They represent a ChIP-Seq analysis dataset with the chromatin mark `H3K27ac` and its control input.
 
-If you have not already done so in the tutorial above, we will start by downloading the `Chipseq pipeline test dataset <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`_.
+If you have not already done so in the tutorial above, we will start by `downloading the dataset for ChIP-Seq <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`_.
 
 In the downloaded tar file, you will find the fastq read files in folder rawData and will find the readset file (readset.chipseq.txt) that describes that dataset. You will also find the design file 
 

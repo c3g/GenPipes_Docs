@@ -7,7 +7,7 @@ This document lists compute resources that are available from C3G for GenPipes u
 
 .. toctree::
    :maxdepth:  1
-   :caption: CCDB Compute Resources
+   :caption: Digital Research Alliance Compute Resources
    :name: compute-resources
 
    ../c3gres/ccdb_account
