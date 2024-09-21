@@ -3,7 +3,9 @@
 Release Notes
 =============
 
-The first release of GenPipes into open source was made in :ref:`2013<doc_evolution>`. Since then, the number of GenPipes runs utilizing C3G HPC resources have grown significantly. With the release of version 2.0.0 in 2014, a community of users has run GenPipes to conduct approximately 3,000 analyses processing approximately 100,000 samples.
+The first release of GenPipes into open source was made in :ref:`2013<doc_evolution>`. 
+
+Since then, the number of GenPipes runs utilizing C3G HPC resources have grown significantly. Since the release of version 2.0.0 in 2014, the community of users has run GenPipes to conduct approximately 3,000 analyses processing approximately 100,000 samples (data as of Dec 2017). Since then, this number has grown multifold!
 
 The current release of GenPipes is |genpipes_version|. 
 

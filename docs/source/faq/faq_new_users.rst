@@ -33,7 +33,7 @@ Choose an appropriate option in the form, for example:
 
   external collaborator
 
-For the CCRI field, use the your sponsor's Compute Canada Role Identifier (CCRI) as input. 
+For the CCRI field, use the your sponsor's `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ (formerly Compute Canada) Role Identifier (CCRI) as input. 
 The CCRI has a structure similar to this: `abc-123-01`.
 
 
@@ -49,7 +49,11 @@ My account is activated. How do I learn more about Compute Canada Servers and re
 
 **Response**
 
-See `Compute Canada Documentation <https://docs.computecanada.ca/wiki/Compute_Canada_Documentation>`_.
+See `Digital Research Alliance Documentation <https://docs.alliancecan.ca/wiki/Technical_documentation>`_.
+
+.. caution::
+  
+   `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ was formerly known as Compute Canada.
 
 My account is activated but I cannot login into beluga-computecanada or any other node - Cedar, Niagra? What is wrong?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -58,7 +62,7 @@ My account is activated but I cannot login into beluga-computecanada or any othe
 
 Check out the current CCDB server status `here <https://status.computecanada.ca/>`_. Many a times, not being able to log in might just be due to system unavailability.
 
-Please note that if you try to log in 3 or more times consecutively with a wrong password, your account gets deactivated and your IP address might get blacklisted. You would need to write to `Compute Canada Support`_ to get that reversed. 
+Please note that if you try to log in 3 or more times consecutively with a wrong password, your account gets deactivated and your IP address might get blacklisted. You would need to write to `Digital Research Alliance Support`_ to get that reversed. 
 
 What is the best place to report GenPipes bugs?
 +++++++++++++++++++++++++++++++++++++++++++++++
@@ -112,6 +116,6 @@ Untrimmed read pairs refers to read pairs which did not require quality 3' trimm
 
 Typically when the fastqc are generated after sequencing the adapters are removed, but in some cases the adapter remains. You can use fastqc on the raw reads to visualize the proportion of these. Also if you are unsure check that the adapters you are using are inline with sequencer and libraries you are using.
 
-.. _new CCDB account: https://ccdb.computecanada.ca/account_application
+.. _new CCDB account: https://ccdb.alliancecan.ca/account_application
 .. _GenPipes deployed in a Docker Container: https://genpipes.readthedocs.io/en/latest/deploy/dep_gp_container.html
-.. _Compute Canada Support: mailto:support@computecanada.ca
+.. _Digital Research Alliance Support: mailto:support@alliancecan.ca
