@@ -3,7 +3,7 @@
 GenPipes Bioinformatics Modules
 ===============================
 
-C3G, in partnership with Compute Canada, offers and maintains a large set of bioinformatics resources for the community. Below is a list of software currently deployed on several HPC centres, including Beluga, Cedar and others. Several reference genomes are also available.
+C3G, in partnership with `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ (formerly Compute Canada), offers and maintains a large set of bioinformatics resources for the community. Below is a list of software currently deployed on several HPC centres, including Beluga, Cedar and others. Several reference genomes are also available.
 
 To access these modules, you need to add the following lines to your .bashrc file.
 

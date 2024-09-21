@@ -31,7 +31,7 @@ See :ref:`Download GenPipes<docs_download_gp_src>` section of :ref:`docs_dep_gp_
 Do I need to deploy GenPipes locally on a server or in the cloud to use it?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-You do not need to necessarily deploy GenPipes to use it.  You can use pre-installed GenPipes on Compute Canada servers. For that you need to have CCDB account. See :ref:`docs_access_gp_pre_installed` for details. If you wish to deploy GenPipes locally on your server (bare metal or virtual) or within a container, check out :ref:`GenPipes Deployment and Access Guide<docs_dep_options>` for various deployment options and how to setup and access GenPipes.
+You do not need to necessarily deploy GenPipes to use it.  You can use pre-installed GenPipes on Digital Research Alliance Canada servers. For that you need to have CCDB account. See :ref:`docs_access_gp_pre_installed` for details. If you wish to deploy GenPipes locally on your server (bare metal or virtual) or within a container, check out :ref:`GenPipes Deployment and Access Guide<docs_dep_options>` for various deployment options and how to setup and access GenPipes.
 
 GenPipes requires familiarity with Unix. As a Windows user, what do I need to setup to use GenPipes?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -21,7 +21,7 @@ The following table lists some of the skill sets, technologies and know-how that
 +--------------+-------------------------------------------------------------------------------------------------+
 | |check-img|  | `Cluster Computing`_, `Cloud environment`_ for genomics                                         |
 +--------------+-------------------------------------------------------------------------------------------------+
-| |check-img|  | Compute Canada HPC infrastructure `usage account`_ and familiarity                              |
+| |check-img|  | `DRAC`_ formerly Compute Canada HPC infrastructure `usage account`_ and familiarity             |
 +--------------+-------------------------------------------------------------------------------------------------+
 | |check-img|  | Use of shared, distributed File Systems such as `CVMFS`_                                        |
 +--------------+-------------------------------------------------------------------------------------------------+
@@ -46,4 +46,4 @@ Besides the skills and technologies listed above, you need powerful hardware and
 .. _CVMFS: https://cvmfs.readthedocs.io/en/latest/
 .. _PBS: https://www.openpbs.org 
 .. _Slurm: https://slurm.schedmd.com/tutorials.html
-
+.. _Drac: https://alliancecan.ca/en

@@ -81,5 +81,5 @@ A new developer trying to setup and run GenPipes tests found the following issue
 
 Once your account is activated, you can login in CCDB servers such as Beluga, Cedar, Niagra.  However, these are National Systems on a shared grid and users don't have permission to install or upgrade the software there.
 
-For more information on what software is installed on Compute Canada infrastructure, refer to `https://docs.computecanada.ca/wiki/Available_software <https://docs.computecanada.ca/wiki/Available_software>`_.
+For more information on what software is installed on Compute Canada infrastructure, refer to `https://docs.alliancecan.ca/wiki/Available_software <https://docs.alliancecan.ca/wiki/Available_software>`_.
 

@@ -15,7 +15,7 @@ The very basic ingredient is GenPipes itself. It needs to be flexible, scalable,
 * Clear, and
 * Comprehensive 
 
-This Writing Style guide is inspired by `Google Style Guide`_ which is adopted by several open source projects out there. Besides that, there are other references such as `API Documentation Guide`_, and `Best REST API Template`_. These are in use by many projects and many engineers, who collaborate globally to create world class software and documentation, used across verticals and industries.  As of writing this, GenPipes does not provide API interfaces yet.  It only provides executable that can be invoked to run various genomic pipelines.
+This Writing Style guide is inspired by `Google Style Guide`_ which is adopted by several open-source projects out there. Besides that, there are other references such as `API Documentation Guide`_, and `Best REST API Template`_. These are in use by many projects and many engineers, who collaborate globally to create world class software and documentation, used across verticals and industries.  As of writing this, GenPipes does not provide API interfaces yet.  It only provides executable that can be invoked to run various genomic pipelines.
 
 .. doc_style_intro:
 

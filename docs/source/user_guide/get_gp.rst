@@ -3,9 +3,9 @@
 Get GenPipes
 ------------
 
-Once you have made your :ref:`choice<docs_choose_gp_dep>` regarding GenPipes deployment option, if you chose to use C3G pre-built and deployed GenPipes setup on Compute Canada servers, you don't need to get and setup any build or code. It is already taken care of.  You simply need to start using your Compute Canada account and access the latest copy of GenPipes deployed therein.
+Once you have made your :ref:`choice<docs_choose_gp_dep>` regarding GenPipes deployment option, if you chose to use C3G pre-built and deployed GenPipes setup on `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) servers, you don't need to get and setup any build or code. It is already taken care of.  You simply need to start using your DRAC account and access the latest copy of GenPipes deployed therein.
 
-However, f you choose to deploy GenPipes on your own instead of using the  pre-installed setup managed by C3G using Compute Canada servers, you can use either of the options listed below.  You can either obtain a downloadable GenPipes Release Build or obtain a copy of GenPipes sources and build, deploy them yourself. 
+However, f you choose to deploy GenPipes on your own instead of using the  pre-installed setup managed by C3G using DRAC servers, you can use either of the options listed below.  You can either obtain a downloadable GenPipes Release Build or obtain a copy of GenPipes sources and build, deploy them yourself. 
 
 * Pre-built, packaged GenPipes via the `GenPipes Download Page`_
 

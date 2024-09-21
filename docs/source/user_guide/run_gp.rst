@@ -3,7 +3,7 @@
 Run GenPipes
 ------------
 
-Once you have :ref:`chosen<docs_choose_gp_dep>` your GenPipes use option and have access to the GenPipes executable through Compute Canada server access or on your local server, you need to setup and configure your GenPipes environment as per your deployment choice.  After you have configured it, you are ready to execute GenPipes.
+Once you have :ref:`chosen<docs_choose_gp_dep>` your GenPipes use option and have access to the GenPipes executable through `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ (formerly Compute Canada) server access or on your local server, you need to setup and configure your GenPipes environment as per your deployment choice.  After you have configured it, you are ready to execute GenPipes.
 
 First of all, test that it works, without actually running a pipeline, by using the  --help or -h option. For details, please refer to the Getting Started Guide :ref:`Run GenPipes section<docs_using_gp>`.
 

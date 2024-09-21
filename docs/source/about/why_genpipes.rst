@@ -34,7 +34,7 @@ Key Differentiators
 
 GenPipes is different from other analysis platforms, workbenches and workflow management systems (WMS) in terms of the following capabilities:
 
-1. **Flexibility:** Easy to modify and configure, multiple type of deployments available – local (containerized), cloud (GCP) and hosted on Compute Canada data centre, support for multiple job schedulers
+1. **Flexibility:** Easy to modify and configure, multiple type of deployments available – local (containerized), cloud (GCP) and hosted on `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ (formerly Compute Canada) data centre, support for multiple job schedulers
 2. **Scalability:** Optimized for large scale data analysis, simple to scale up or down in terms of processing and data access needs.
 3. **Built-in Pipelines:** Pre-built, tested on multiple computing infrastructures, robust industry standard benchmark driven and production quality genomic analysis pipelines for various bioinformatics analyses.
 

@@ -63,10 +63,10 @@ For example:
 
 This command shown above returns the status of each job. In addition to the detailed report, it also outputs a summary file that includes the number of jobs that completed successfully, those that failed, and those that are still active/inactive.
 
-Compute Canada Reports (Slurm Scheduler)
-+++++++++++++++++++++++++++++++++++++++++
+Analysis Reports (Slurm Scheduler)
++++++++++++++++++++++++++++++++++++
 
-Use the `log_report.py` script to generate the html report for Compute Canada Clusters running Slurm Scheduler:
+Use the `log_report.py` script to generate the html report for `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) Clusters running Slurm Scheduler:
 
 ::
 

@@ -12,10 +12,10 @@ We highly recommend that new users go through these checklists and address all t
 
 Ensure you have the GenPipes runtime environment setup appropriately.  It may vary depending upon your GenPipes deployment type. For details on various deployment type options, see :ref:`docs_dep_options`.  The instructions below list key checklist items for various deployment types.
 
-Compute Canada Deployment
-+++++++++++++++++++++++++
+DRAC Deployment
+++++++++++++++++
 
-:ref:`Get a Compute Canada account<docs_access_gp_pre_installed>` if not deploying GenPipes locally or in the cloud. You can use GenPipes deployed by C3G on CC datacenter servers.  Once you have the account, make sure you have your software environment setup for requisite GenPipes modules. 
+You can use GenPipes pre- deployed by C3G on DRAC datacenter servers. Get a `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) :ref:`DRAC account<docs_access_gp_pre_installed>`.  Once you have the account, make sure you have your software environment setup for the requisite GenPipes release. 
 
 For details see :ref:`setting_up_gp_environment_modules` section in the :ref:`docs_access_gp_pre_installed` documentation.
 
@@ -49,16 +49,18 @@ For using GenPipes deployed locally on your servers, whether bare-metal or virtu
 
 ----
 
-2. Validate Deployment
+1. Validate Deployment
 =======================
 
 Ensure that you can test run one of the GenPipes Pipeline.  Simply issue the help option instead of running any jobs.  This will confirm whether GenPipes can actually run and environment setup in terms of python modules is taken care of.
 
 * Check that GenPipes is deployed
 
-  - For Compute Canada data centre users:
+  - For `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) data centre users:
 
-        *genpipes <pipeline_name> --help*
+    ::
+      
+      genpipes <pipeline_name> --help
 
 * Ensure CVMFS is mounted
 

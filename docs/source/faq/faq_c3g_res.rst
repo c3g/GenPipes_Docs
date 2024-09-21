@@ -12,12 +12,12 @@ C3G Resource Usage
 Where can I find more details on CCDB servers, file system, usage guidelines?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-You can visit `Compute Canada Wiki <https://docs.computecanada.ca/wiki/Compute_Canada_Documentation>`_ to learn more about the list of Compute Canada Servers, systems and services available, How-to guides and usage policy.
+You can visit `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ (formerly Compute Canada) `Technical Documentation Wiki Site <https://docs.alliancecan.ca/wiki/Technical_documentation>`_ to learn more about the list of available servers, systems and services available, How-to guides and usage policy.
 
-Is there a list of software installed on Compute Canada servers?
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Is there a list of software installed on Digital Research Alliance servers?
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-See list of `available software <https://docs.computecanada.ca/wiki/Available_software>`_ and globally deployed modules on Compute Canada servers.
+See list of `available software <https://docs.alliancecan.ca/wiki/Available_software>`_ and globally deployed modules on `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ servers.
 
 What are modules and why do we need them for GenPipes?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -26,12 +26,12 @@ GenPipes is developed in Python. Modules in Python are a way to load software or
 
 The modules that come along with GenPipes allow you to use bioinformatics tools like Samtools, Homer, MACS2, without installing them yourself.
 
-For details on why we need modules for GenPipes and which ones are required, deployed and pre-installed on Compute Canada Servers, see :ref:`docs_gp_modules`.
+For details on why we need modules for GenPipes and which ones are required, deployed and pre-installed the Digital Research Alliance Canada Servers, see :ref:`docs_gp_modules`.
 
 What are GenPipes genomes? Where can I access them from?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-GenPipes pipelines are used for genomic analysis and they require reference genomes. C3G, in partnership with Compute Canada, maintains several genomes that are available on several HPC centres including Beluga, Cedar and others. In addition to the fasta sequence, many genomes include aligner indices and annotation files. 
+GenPipes pipelines are used for genomic analysis and they require reference genomes. C3G, in partnership with Digital Research Alliance Canada, maintains several genomes that are available on several HPC centres including Beluga, Cedar and others. In addition to the FASTA sequence, many genomes include aligner indices and annotation files. 
 
 To access these genomes, you need to add the following lines to your .bashrc file:
 

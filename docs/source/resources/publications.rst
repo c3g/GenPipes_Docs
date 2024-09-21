@@ -18,7 +18,7 @@ This document contains information on available current publications and other m
       *Please be aware that these videos were produced using older versions of GenPipes, their content might not reflect the way the current version of GenPipes is run. Please refer to the other documentation for the most up-to-date information.*
   
 
-      1. How to run C3G-GenPipes on Compute Canada cluster - see video below.
+      1. How to run C3G-GenPipes on `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada)cluster - see video below.
 
          |howtorun_c3g_gp|
          

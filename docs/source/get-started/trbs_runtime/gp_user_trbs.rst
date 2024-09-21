@@ -99,7 +99,7 @@ GenPipes User: Troubleshooting Guide
 
     **Fix**
 
-    Most of the GenPipes pipeline commands require you to supply input data in the form of readsets, design files and configuration.  If a specific genome that you need to provide to the pipeline is not available in the pre-installed GenPipes setup deployed on Compute Canada servers as listed in test `datasets <https://www.computationalgenomics.ca/test-dataset/>`_and available `genomes <https://genpipes.readthedocs.io/en/latest/c3gres/cvmfs_genomes.html>`_.
+    Most of the GenPipes pipeline commands require you to supply input data in the form of readsets, design files and configuration.  If a specific genome that you need to provide to the pipeline is not available in the pre-installed GenPipes setup deployed on `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) servers as listed in test `datasets <https://www.computationalgenomics.ca/test-dataset/>`_and available `genomes <https://genpipes.readthedocs.io/en/latest/c3gres/cvmfs_genomes.html>`_.
 
 .. dropdown:: :material-outlined:`help;2em` Why does the pipeline does not execute at all?
 
@@ -127,7 +127,7 @@ GenPipes User: Troubleshooting Guide
 
 .. dropdown:: :material-outlined:`help;2em` Error: RAP_ID not set
 
-    If you try to run GenPipes deployed by C3G on Compute Canada servers, the initial run shows error related to RAP_ID not set. Sometimes, this same issue manifests in the form of timing error as shown in figure below:
+    If you try to run GenPipes deployed by C3G on `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) servers, the initial run shows error related to RAP_ID not set. Sometimes, this same issue manifests in the form of timing error as shown in figure below:
 
     .. figure:: /img/error/rap_id_error.png
         :align: center
@@ -145,6 +145,6 @@ GenPipes User: Troubleshooting Guide
 
     **Fix**
 
-    The most common reason for this failure is not setting up the .bashrc with mugqic modules. See details on accessing GenPipes on Compute Canada servers - :ref:`setting_up_gp_environment_modules`. For other GenPipes :ref:`docs_dep_options`, make sure you have closely followed the :ref:`docs_pre_req_chklist` before actually issuing GenPipes pipeline run commands.
+    The most common reason for this failure is not setting up the .bashrc with mugqic modules. See details on accessing GenPipes on `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) servers - :ref:`setting_up_gp_environment_modules`. For other GenPipes :ref:`docs_dep_options`, make sure you have closely followed the :ref:`docs_pre_req_chklist` before actually issuing GenPipes pipeline run commands.
 
    

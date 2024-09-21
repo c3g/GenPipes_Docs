@@ -12,10 +12,10 @@ GenPipes bioinformatics pipelines developed at the Canadian Centre for Computati
 Setting up the environment
 --------------------------
 
-Abacus, Compute Canada users
-''''''''''''''''''''''''''''
+Abacus, DRAC users
+''''''''''''''''''''
 
-Software and scripts used by GenPipes are already installed on several Compute Canada servers including Beluga, Cedar and others. To access the tools, you will need to add the tool path to your **bash_profile**. The bash profile is a hidden file in your home directory that sets up your environment every time you log in.
+Software and scripts used by GenPipes are already installed on several `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) servers including Beluga, Cedar and others. To access the tools, you will need to add the tool path to your **bash_profile**. The bash profile is a hidden file in your home directory that sets up your environment every time you log in.
 
 You can also use your bashrc file. For more information on the differences between the .bash_profile and the .bashrc profile, consult `this page <http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html>`__.
 
@@ -49,7 +49,7 @@ To find out the latest GenPipes version use the output of:
 
 **JOB_MAIL** is the email to which the notifications are sent after each job. We advise you to create a separate email for jobs since you can receive hundreds of emails per pipeline. You can also de-activate the email sending option by removing the **“-M $JOB_MAIL”** option from the .ini files (discussed below).
 
-**RAP_ID** is the Resource Allocation Project ID from Compute Canada; It is usually in the format: rrg-lab-xy OR def-lab
+**RAP_ID** is the Resource Allocation Project ID from `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada); It is usually in the format: rrg-lab-xy OR def-lab
 
 When you make changes to your bash_profile, you will need to log out then log in again, or type in the following command:
 
@@ -249,8 +249,8 @@ Certain pipelines where samples are compared against other samples, like `chipse
     Readset file, the Design file is not required by every pipeline. To check whether the pipeline
     you are interested in requires a Design file and to understand the format of the file, read the specific help pages for your pipeline of interest.
 
-Running GenPipes on Compute Canada Servers: 
----------------------------------------------
+Running GenPipes on DRAC Servers: 
+---------------------------------
 
 Make sure you are logged into the server, say Beluga. The default scheduler is Slurm.
 
@@ -302,7 +302,7 @@ To confirm that the commands have been submitted, wait a minute or two depending
 
     squeue -u <userID>
 
-where <userID> is your login id for accessing Compute Canada infrastructure. 
+where <userID> is your login id for accessing `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) infrastructure. 
 On abacus, the equivalent command is:
 
 .. code-block:: bash

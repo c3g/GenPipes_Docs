@@ -84,6 +84,7 @@ GenPipes documentation is organized to address the needs of new users as well as
    :name: sec-devel
 
    development/release_notes
+   development/gp_release_instructions
    development/dev_guide
    development/troubleshooting_guide
 

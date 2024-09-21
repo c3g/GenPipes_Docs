@@ -89,7 +89,7 @@ You need to first download the test dataset by visiting this link:
 
 In the downloaded tar file, you will find the fastq read files in folder “rawData” and will find the readset file (readset.chipseq.txt) that describes that dataset.
 
-Please ensure you have access to "beluga" server in Compute Canada data centre. We will run this analysis on beluga as follows:
+Please ensure you have access to "beluga" server in `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) data centre. We will run this analysis on beluga as follows:
 
 ::
 
@@ -105,7 +105,7 @@ In the command above,
 
 -s defines the steps of the pipeline to execute, use `genpipes chipseq -h` to check steps
 
-By default, on Compute Canada servers such as "Cedar", "Beluga" or "Graham", SLURM scheduler is used. On the abacus server, you need to use PBS scheduler. For that you need to specify "-j pbs" option as shown below:
+By default, on `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) servers such as "Cedar", "Beluga" or "Graham", SLURM scheduler is used. On the abacus server, you need to use PBS scheduler. For that you need to specify "-j pbs" option as shown below:
 
 ::
 
@@ -133,7 +133,7 @@ To confirm that the commands have been submitted, wait a minute or two depending
 
   squeue -u <userID>
 
-where, <userID> is your login id for accessing Compute Canada infrastructure.
+where, <userID> is your login id for accessing the DRAC infrastructure.
 
 On abacus, the equivalent command is:
 ::
@@ -204,7 +204,7 @@ Following is the content of the Design file (design.rnaseq.txt):
 
 We see a single analysis that compares two replicates of `H1ESC` to two replicates of group `GM12878`.
 
-Let us now run this RNA-Sequencing analysis on *beluga* server at Compute Canada using the following command:
+Let us now run this RNA-Sequencing analysis on *beluga* server at `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) using the following command:
 
 ::
 

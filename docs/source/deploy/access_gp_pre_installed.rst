@@ -11,17 +11,17 @@
          cvmfs
          CentOS
 
-Accessing GenPipes on Compute Canada Servers
-============================================
+Accessing GenPipes on DRAC Servers
+===================================
 
-This document will provide information on how to get started with using GenPipes pre-installed on Compute Canada servers.
+This document will provide information on how to get started with using GenPipes pre-installed on `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) servers.
 
 .. _get_ccdb_account:
 
-Step 1: Get a Compute Canada Data Base (CCDB) account
-------------------------------------------------------
+Step 1: Get a DRAC Data Base (CCDB) account
+---------------------------------------------
 
-a. Go to the website: `https://ccdb.computecanada.ca/account_application <https://ccdb.computecanada.ca/account_application>`_
+a. Go to the website: `https://ccdb.alliancecan.ca/account_application <https://ccdb.alliancecan.ca/account_application>`_
 
 b. Agree with the policy and submit your acceptance 
 
@@ -29,12 +29,12 @@ c. Fill the form and submit it.
 
 .. note::
 
-        If you are a student or a post-doc (or any other kind of Sponsored User), to be eligible to apply to Compute Canada, the Principle Investigator (PI) of your laboratory must also have an account. You will need the Compute Canada Role Identifier (CCRI) of your sponsor/PI. The CCRI has the abc-123-01 form. It is free for Canadian academics to use the Compute Canada servers.
+        If you are a student or a post-doc (or any other kind of Sponsored User), to be eligible to apply to `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada), the Principle Investigator (PI) of your laboratory must also have an account. You will need the Compute Canada Role Identifier (CCRI) of your sponsor/PI. The CCRI has the abc-123-01 form. It is free for Canadian academics to use the DRAC servers.
 
         **It will take one or two days before your account request is processed.**
 
-Step 2: Connect to Compute Canada servers
------------------------------------------
+Step 2: Connect to DRAC servers
+--------------------------------
 
 **Unix / Linux / Mac or Windows (bash)**
 
@@ -48,7 +48,7 @@ a. Open a shell or terminal (bash preferably) and type the following command:
      
        Replace the server name `beluga` in the command above with the desired cluster name. 
 
-b. Enter your Compute Canada account password.
+b. Enter your `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ (formerly Compute Canada) account password.
 
 **Windows (PuTTY)**
 
@@ -71,11 +71,11 @@ d. Click **"Open"**
 A terminal will open and ask you to connect using your CC account credentials.
 
 Voila!!!
-You are all set to use GenPipes deployed on Compute Canada data centre.
+You are all set to use GenPipes deployed on `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ (formerly Compute Canada) data centre.
 
 .. note::
 
-         Canadian Centre for Computational Genomics (C3G), in partnership with Compute Canada, offers and maintains a large set of bioinformatics resources for the community. For a complete list of software currently deployed on several HPC centres, including Beluga, Cedar and others, refer to `Bioinformatics Resources <https://computationalgenomics.ca/cvmfs-genome/>`_ and `available software <https://docs.alliancecan.ca/wiki/Available_software>`_. Several reference genomes are also available. You can refer to the `available genomes <https://bitbucket.org/mugqic/genpipes/src/master/resources/genomes/>`_ and the environment setup to access these genomes.
+         Canadian Centre for Computational Genomics (C3G), in partnership with `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada)a, offers and maintains a large set of bioinformatics resources for the community. For a complete list of software currently deployed on several HPC centres, including Beluga, Cedar and others, refer to `Bioinformatics Resources <https://computationalgenomics.ca/cvmfs-genome/>`_ and `available software <https://docs.alliancecan.ca/wiki/Available_software>`_. Several reference genomes are also available. You can refer to the `available genomes <https://bitbucket.org/mugqic/genpipes/src/master/resources/genomes/>`_ and the environment setup to access these genomes.
 
 
 .. _setting_up_gp_environment_modules:
@@ -83,9 +83,9 @@ You are all set to use GenPipes deployed on Compute Canada data centre.
 Step 3: Setting up your user environment for GenPipes access
 ------------------------------------------------------------
 
-**For Abacus, Compute Canada Users only**
+**For Abacus, DRAC Users only**
 
-All of the software and scripts used by GenPipes are already installed on several Compute Canada servers including Beluga, Cedar and others. To access the tools, you will need to add the tool path to your bash_profile. The bash profile is a hidden file in your home directory that sets up your environment every time you log in. You can also use your bashrc file.
+All of the software and scripts used by GenPipes are already installed on several DRAC servers including Beluga, Cedar and others. To access the tools, you will need to add the tool path to your bash_profile. The bash profile is a hidden file in your home directory that sets up your environment every time you log in. You can also use your bashrc file.
 
 Genomes and modules used by the pipelines are already installed on a CVMFS partition mounted on all those clusters in /cvmfs/soft.mugqic/CentOS6
 
@@ -102,7 +102,7 @@ Genomes and modules used by the pipelines are already installed on a CVMFS parti
 
       GenPipes 5.0 release has been verified for Python 3.11.1 version. It no longer supports Python 2.7 version. 
 
-Next, you need to load the `software modules <https://docs.python.org/3/tutorial/modules.html>`_ in your shell environment that are required to run GenPipes. For a full list of modules available on Compute Canada servers see the `module page <https://docs.alliancecan.ca/wiki/Available_software>`_ and `genomics tools <https://computationalgenomics.ca/tools/>`_.
+Next, you need to load the `software modules <https://docs.python.org/3/tutorial/modules.html>`_ in your shell environment that are required to run GenPipes. For a full list of modules available on `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) servers see the `module page <https://docs.alliancecan.ca/wiki/Available_software>`_ and `genomics tools <https://computationalgenomics.ca/tools/>`_.
 
 To load the GenPipes modules, paste the following lines of code and save the file, then exit (Ctrl-X):
 
@@ -122,7 +122,7 @@ You will need to replace the text in "<>" with your account and GenPipes softwar
 
 **JOB_MAIL** is the environment variable that needs to be set to the email ID on which GenPipes job status notifications are sent corresponding to each job initiated by your account. It is advised that you create a separate email for jobs since you can receive hundreds of emails per pipeline. You can also de-activate the email sending option by removing the “-M $JOB_MAIL” option from the .ini files.
 
-**RAP_ID** is the Resource Allocation Project ID from Compute Canada. It is usually in the format: rrg-lab-xy OR def-lab.
+**RAP_ID** is the Resource Allocation Project ID from DRAC. It is usually in the format: rrg-lab-xy OR def-lab.
 
 **Environment settings for MUGQIC analysts**
 
@@ -199,9 +199,9 @@ This also gives you access to hundreds of bioinformatics tools pre-installed by 
 
   module avail mugqic/
 
-For a full list of all available software on Compute Canada servers, visit `module page <https://docs.alliancecan.ca/wiki/Available_software>`_.
+For a full list of all available software on DRAC servers, visit `module page <https://docs.alliancecan.ca/wiki/Available_software>`_.
 
-To load a tool available on Compute Canada servers, for example - samtools, use the following command:
+To load a tool available on DRAC servers, for example - samtools, use the following command:
 
 :: 
 

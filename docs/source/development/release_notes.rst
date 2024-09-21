@@ -63,7 +63,5 @@ Click on the GenPipes Release version tab below to view the release notes.
         * :ref:`GenPipes 2.0.2<docs_gp_relnote_2_0_1>` released on Jan 13, 2015 
         * :ref:`GenPipes 2.0.1<docs_gp_relnote_2_0_1>` released on Dec 17, 2014 
         * :ref:`GenPipes 2.0.0<docs_gp_relnote_2_0_0>` released on Dec 12, 2014 
- 
-For older GenPipes Release note information, refer to GenPipes `Release Notes Archives <https://bitbucket.org/mugqic/genpipes/src/master/README-release.txt>`_.
 
 .. include:: gp_changelog.inc
