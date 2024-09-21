@@ -3,7 +3,7 @@
 GenPipes Support
 ================
 
-GenPipes is released as open source software. For details about its license policy, see :ref:`GenPipes License <doc_license>`. The GenPipes developers offer continuous support through `GenPipes Google Forum`_. You can drop an email to the `GenPipes Help Desk`_ for any support issues. 
+GenPipes is released as open-source software. For details about its license policy, see :ref:`GenPipes License <doc_license>`. The GenPipes developers offer continuous support through `GenPipes Google Forum`_. You can drop an email to the `GenPipes Help Desk`_ for any support issues. 
 
 GenPipes is sponsored by the `Canadian Centre for Computational Genomics`_ (C3G). Besides the Google Forum and Help Desk, you can attend `C3G Open Door`_ Sessions. This facility is available only to local (McGill University, Montréal) bioinformaticians, students and researchers. You need to fill a form and RSVP in order to attend a session. For details visit `C3G Open Door`_ link.
 

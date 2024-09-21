@@ -37,7 +37,7 @@ The following genomics application pipelines are already implemented and validat
 * Metagenomics
 * Hi-C / Capture Hi-C
 
-GenPipes software is available under a LGPL open source `license <https://bitbucket.org/mugqic/genpipes/src/master/COPYING.LESSER>`_ and is continuously updated to follow recent advances in genomics and bioinformatics. The framework can be accessed through multiple deployment mechanisms. It has already been configured on several servers at C3G HPC computing facility. Its also supports Cloud deployment through GCP. Besides this,  a Docker image is also available to facilitate additional installations on local / individual machines for small dataset analysis.
+GenPipes software is available under a LGPL open-source `license <https://bitbucket.org/mugqic/genpipes/src/master/COPYING.LESSER>`_ and is continuously updated to follow recent advances in genomics and bioinformatics. The framework can be accessed through multiple deployment mechanisms. It has already been configured on several servers at C3G HPC computing facility. Its also supports Cloud deployment through GCP. Besides this,  a Docker image is also available to facilitate additional installations on local / individual machines for small dataset analysis.
 
 .. image:: /img/gp_components.png
 

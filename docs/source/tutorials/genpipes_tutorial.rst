@@ -15,7 +15,7 @@ Setting up the environment
 Abacus, DRAC users
 ''''''''''''''''''''
 
-Software and scripts used by GenPipes are already installed on several `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) servers including Beluga, Cedar and others. To access the tools, you will need to add the tool path to your **bash_profile**. The bash profile is a hidden file in your home directory that sets up your environment every time you log in.
+Software and scripts used by GenPipes are already installed on several `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly known as Compute Canada, servers including Beluga, Cedar and others. To access the tools, you will need to add the tool path to your **bash_profile**. The bash profile is a hidden file in your home directory that sets up your environment every time you log in.
 
 You can also use your bashrc file. For more information on the differences between the .bash_profile and the .bashrc profile, consult `this page <http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html>`__.
 

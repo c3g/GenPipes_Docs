@@ -8,7 +8,7 @@ This documentation is continuously written, corrected, edited, and revamped by
 members of the GenPipes community. It is edited via text files in the
 `reStructuredText <http://www.sphinx-doc.org/en/stable/rest.html>`_ markup
 language and then compiled into a static website/offline document using the
-open source `Sphinx <http://www.sphinx-doc.org>`_ and `ReadTheDocs
+open-source `Sphinx <http://www.sphinx-doc.org>`_ and `ReadTheDocs
 <https://readthedocs.org/>`_ tools.
 
 You may also want to refer to the :ref:`GenPipes New Documentation Architecture Map<docs_genpipes_archmap>` for more insights on how GenPipes documentation is organized.

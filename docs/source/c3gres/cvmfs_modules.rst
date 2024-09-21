@@ -47,7 +47,7 @@ List of Modules
 
 Anaconda
 ````````
-Anaconda is a freemium open source distribution of the Python and R programming languages for large-scale data processing, predictive analytics, and scientific computing, that aims to simplify package management and deployment.
+Anaconda is a freemium open-source distribution of the Python and R programming languages for large-scale data processing, predictive analytics, and scientific computing, that aims to simplify package management and deployment.
 Versions Available: 2-4.0.0
 
 ASCAT

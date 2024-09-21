@@ -5,7 +5,7 @@ Why GenPipes?
 
 Genomic sequencing has become an indispensable tool for modern bioinformatics researchers in their quest to understand biological processes. Next generation sequencing (NGS) is not only complex but is also compute and data intensive. It requires efficient handling of high performance computing infrastructure, managing scalability, flexibility and capability to handle massive amounts of genome reference data while managing intermediate results and inter-dependency between several serial and parallel analysis processes.
 
-GenPipes is a python based bioinformatics tool comprising of several pre-built pipelines that addresses genomic analysis needs for bioinformatics researchers. It is available for public use as open source software. GenPipes was developed at the Canadian Centre for Computational Genomics (C3G). It offers a wide array of genomic sequencing pipelines including RNA-Seq, ChIP-Seq, Whole Genome Sequencing (WGS), Exome sequencing, Bisulfite sequencing, Hi-C, capture Hi-C, metagenomics and SARS-CoV-2 genome sequencing pipeline. 
+GenPipes is a python based bioinformatics tool comprising of several pre-built pipelines that addresses genomic analysis needs for bioinformatics researchers. It is available for public use as open-source software. GenPipes was developed at the Canadian Centre for Computational Genomics (C3G). It offers a wide array of genomic sequencing pipelines including RNA-Seq, ChIP-Seq, Whole Genome Sequencing (WGS), Exome sequencing, Bisulfite sequencing, Hi-C, capture Hi-C, metagenomics and SARS-CoV-2 genome sequencing pipeline. 
 
 .. image:: /img/genpipes_hld.png
 

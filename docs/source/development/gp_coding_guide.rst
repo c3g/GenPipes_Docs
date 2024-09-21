@@ -12,7 +12,7 @@ GenPipes Coding Guidelines
 
 .. note::
 
-       The following document is based on basic information available in the GenPipes source file `coding standards.txt <https://bitbucket.org/mugqic/genpipes/src/master/README-GenAP_coding_standards.txt>`_.  In future, this may be updated to help open source community to contribute to GenPipes sources.
+       The following document is based on basic information available in the GenPipes source file `coding standards.txt <https://bitbucket.org/mugqic/genpipes/src/master/README-GenAP_coding_standards.txt>`_.  In future, this may be updated to help open-source community to contribute to GenPipes sources.
 
 .. contents:: :local:
 
