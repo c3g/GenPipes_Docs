@@ -14,7 +14,7 @@
 Accessing GenPipes on DRAC Servers
 ===================================
 
-This document will provide information on how to get started with using GenPipes pre-installed on `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) servers.
+This document explains how to get started with using GenPipes tht is pre-installed on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers.
 
 .. _get_ccdb_account:
 
@@ -29,7 +29,7 @@ c. Fill the form and submit it.
 
 .. note::
 
-        If you are a student or a post-doc (or any other kind of Sponsored User), to be eligible to apply to `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada), the Principle Investigator (PI) of your laboratory must also have an account. You will need the Compute Canada Role Identifier (CCRI) of your sponsor/PI. The CCRI has the abc-123-01 form. It is free for Canadian academics to use the DRAC servers.
+        If you are a student or a post-doc (or any other kind of Sponsored User), to be eligible to apply to `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, the Principle Investigator (PI) of your laboratory must also have an account. You will need the Compute Canada Role Identifier (CCRI) of your sponsor/PI. The CCRI has the abc-123-01 form. It is free for Canadian academics to use the DRAC servers.
 
         **It will take one or two days before your account request is processed.**
 
@@ -48,7 +48,7 @@ a. Open a shell or terminal (bash preferably) and type the following command:
      
        Replace the server name `beluga` in the command above with the desired cluster name. 
 
-b. Enter your `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ (formerly Compute Canada) account password.
+b. Enter your `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada, account password.
 
 **Windows (PuTTY)**
 
@@ -71,11 +71,12 @@ d. Click **"Open"**
 A terminal will open and ask you to connect using your CC account credentials.
 
 Voila!!!
-You are all set to use GenPipes deployed on `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ (formerly Compute Canada) data centre.
+
+You are all set to use GenPipes deployed on the `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada, data centre.
 
 .. note::
 
-         Canadian Centre for Computational Genomics (C3G), in partnership with `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada)a, offers and maintains a large set of bioinformatics resources for the community. For a complete list of software currently deployed on several HPC centres, including Beluga, Cedar and others, refer to `Bioinformatics Resources <https://computationalgenomics.ca/cvmfs-genome/>`_ and `available software <https://docs.alliancecan.ca/wiki/Available_software>`_. Several reference genomes are also available. You can refer to the `available genomes <https://bitbucket.org/mugqic/genpipes/src/master/resources/genomes/>`_ and the environment setup to access these genomes.
+         Canadian Centre for Computational Genomics (C3G), in partnership with `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, offers and maintains a large set of bioinformatics resources for the community. For a complete list of software currently deployed on several HPC centres, including Beluga, Cedar and others, refer to `Bioinformatics Resources <https://computationalgenomics.ca/cvmfs-genome/>`_ and `available software <https://docs.alliancecan.ca/wiki/Available_software>`_. Several reference genomes are also available. You can refer to the `available genomes <https://bitbucket.org/mugqic/genpipes/src/master/resources/genomes/>`_ and the environment setup to access these genomes.
 
 
 .. _setting_up_gp_environment_modules:
@@ -102,7 +103,7 @@ Genomes and modules used by the pipelines are already installed on a CVMFS parti
 
       GenPipes 5.0 release has been verified for Python 3.11.1 version. It no longer supports Python 2.7 version. 
 
-Next, you need to load the `software modules <https://docs.python.org/3/tutorial/modules.html>`_ in your shell environment that are required to run GenPipes. For a full list of modules available on `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) servers see the `module page <https://docs.alliancecan.ca/wiki/Available_software>`_ and `genomics tools <https://computationalgenomics.ca/tools/>`_.
+Next, you need to load the `software modules <https://docs.python.org/3/tutorial/modules.html>`_ in your shell environment that are required to run GenPipes. You can refer to the full list of modules available on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers at the `module page <https://docs.alliancecan.ca/wiki/Available_software>`_ and `genomics tools <https://computationalgenomics.ca/tools/>`_.
 
 To load the GenPipes modules, paste the following lines of code and save the file, then exit (Ctrl-X):
 

@@ -33,7 +33,8 @@ Choose an appropriate option in the form, for example:
 
   external collaborator
 
-For the CCRI field, use the your sponsor's `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ (formerly Compute Canada) Role Identifier (CCRI) as input. 
+For the CCRI field, use your sponsor's `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada,  Role Identifier (CCRI) as input. 
+
 The CCRI has a structure similar to this: `abc-123-01`.
 
 
@@ -53,7 +54,7 @@ See `Digital Research Alliance Documentation <https://docs.alliancecan.ca/wiki/T
 
 .. caution::
   
-   `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ was formerly known as Compute Canada.
+   `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ was formerly known as Compute Canada.
 
 My account is activated but I cannot login into beluga-computecanada or any other node - Cedar, Niagra? What is wrong?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

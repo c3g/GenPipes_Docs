@@ -18,25 +18,25 @@ This document contains information on available current publications and other m
       *Please be aware that these videos were produced using older versions of GenPipes, their content might not reflect the way the current version of GenPipes is run. Please refer to the other documentation for the most up-to-date information.*
   
 
-      1. How to run C3G-GenPipes on `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada)cluster - see video below.
+      3. Refer to the video below to learn how to run C3G-GenPipes on `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, cluster.
 
          |howtorun_c3g_gp|
          
-      2. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` generates metagenomics output. The `Metagenomics Figures video`_ shows how to build custom OTU figures and tables from C3G's metagenomics output.
+      4. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` generates metagenomics output. The `Metagenomics Figures video`_ shows how to build custom OTU figures and tables from C3G's metagenomics output.
 
          |metagenomics_video|
 
-      3. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` pipeline Trimmomatic16S Step generates 16S analysis data that can be examined and plotted as demonstrated in `16S analysis video`_.
+      5. :ref:`Amplicon Sequencing<docs_gp_ampliconseq>` pipeline Trimmomatic16S Step generates 16S analysis data that can be examined and plotted as demonstrated in `16S analysis video`_.
 
          |16S_analysis_video|
 
    .. tab:: Presentations
 
-      1. :download:`ChIP Sequencing Slides </ref/MUGQIC_Bioinfo_ChIP-Seq.pdf>`. 
+      6. :download:`ChIP Sequencing Slides </ref/MUGQIC_Bioinfo_ChIP-Seq.pdf>`. 
 
-      2. :download:`DNA Sequencing Slides </ref/MUGQIC_Bioinfo_DNA-Seq.pdf>`.
+      7. :download:`DNA Sequencing Slides </ref/MUGQIC_Bioinfo_DNA-Seq.pdf>`.
 
-      3. :download:`RNA Sequencing Slides </ref/MUGQIC_Bioinfo_RNA-Seq.pdf>`.
+      8. :download:`RNA Sequencing Slides </ref/MUGQIC_Bioinfo_RNA-Seq.pdf>`.
 
 .. _Metagenomics Figures video: https://www.youtube.com/watch?v=twdAteVJALk
 .. _16S analysis video: https://www.youtube.com/watch?v=BsrKUpzxY2s

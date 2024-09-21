@@ -12,7 +12,7 @@ C3G Resource Usage
 Where can I find more details on CCDB servers, file system, usage guidelines?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-You can visit `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ (formerly Compute Canada) `Technical Documentation Wiki Site <https://docs.alliancecan.ca/wiki/Technical_documentation>`_ to learn more about the list of available servers, systems and services available, How-to guides and usage policy.
+You can visit `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada, `Technical Documentation Wiki Site <https://docs.alliancecan.ca/wiki/Technical_documentation>`_ to learn more about the list of available servers, systems and services available, How-to guides and usage policy.
 
 Is there a list of software installed on Digital Research Alliance servers?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

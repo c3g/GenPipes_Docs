@@ -15,7 +15,7 @@ Ensure you have the GenPipes runtime environment setup appropriately.  It may va
 DRAC Deployment
 ++++++++++++++++
 
-You can use GenPipes pre- deployed by C3G on DRAC datacenter servers. Get a `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) :ref:`DRAC account<docs_access_gp_pre_installed>`.  Once you have the account, make sure you have your software environment setup for the requisite GenPipes release. 
+You can use GenPipes deployed by C3G on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, datacenter servers. Get a :ref:`DRAC account<docs_access_gp_pre_installed>`.  Once you have the account, make sure you have your software environment setup for the requisite GenPipes release. 
 
 For details see :ref:`setting_up_gp_environment_modules` section in the :ref:`docs_access_gp_pre_installed` documentation.
 
@@ -56,7 +56,7 @@ Ensure that you can test run one of the GenPipes Pipeline.  Simply issue the hel
 
 * Check that GenPipes is deployed
 
-  - For `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) data centre users:
+  - For the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, data centre users:
 
     ::
       

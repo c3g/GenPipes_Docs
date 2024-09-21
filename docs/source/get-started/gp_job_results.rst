@@ -66,7 +66,7 @@ This command shown above returns the status of each job. In addition to the deta
 Analysis Reports (Slurm Scheduler)
 +++++++++++++++++++++++++++++++++++
 
-Use the `log_report.py` script to generate the html report for `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ (formerly Compute Canada) Clusters running Slurm Scheduler:
+Use the `log_report.py` script to generate the html report for running Slurm Scheduler on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers:
 
 ::
 

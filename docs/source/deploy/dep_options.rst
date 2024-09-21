@@ -26,10 +26,10 @@ Obtaining GenPipes sources
 --------------------------
 Refer to the latest `GenPipes sources <https://bitbucket.org/mugqic/genpipes/src/master/>`_ for instructions on downloading and setting up GenPipes.
 
-GenPipes on Alliance infrastructure
------------------------------------------
+GenPipes on DRAC Infrastructure
+--------------------------------
 
-Researchers who have access to `Digital Research Alliance of Canada` (formerly Compute Canada) resources need not deploy GenPipes for genomic analysis. They can simply login and access Digital Research Alliance servers that have pre-installed stable release of GenPipes.  For details refer to :ref:`Accessing GenPipes deployment on Digital Research Alliance Canada infrastructure<docs_access_gp_pre_installed>`. External users who do not have access to Digital Research Alliance resources can :ref:`apply for the same<docs_access_gp_pre_installed>`.
+Researchers that have access to the `Digital Research Alliance of Canada (DRAC)`, formerly Compute Canada, servers need not deploy GenPipes for genomic analysis. They can simply login and access Digital Research Alliance servers that have pre-installed stable release of GenPipes.  For details see how to :ref:`access GenPipes deployment on Digital Research Alliance Canada infrastructure<docs_access_gp_pre_installed>`. External users who do not have access to DRAC resources can :ref:`apply for the same<docs_access_gp_pre_installed>`.
 
 Through a partnership with the `Digital Research Alliance Canada <https://alliancecan.ca/en>`_ consortium, the pipelines and third-party tools have also been configured on 6 different Alliance HPC centers. This allows any Canadian researcher to use GenPipes along with the needed computing resources by `simply applying to the consortium <https://alliancecan.ca/en/membership/become-member>`_. To ensure consistency of pipeline versions and used dependencies (such as genome references and annotation files) and to avoid discrepancy between compute sites, pipeline set-up has been centralized to 1 location, which is then distributed on a real-time shared file system: the CERN (European Organization for Nuclear Research) Virtual Machine File System `CVM FS <https://iopscience.iop.org/article/10.1088/1742-6596/396/5/052013/pdf>`_.
 

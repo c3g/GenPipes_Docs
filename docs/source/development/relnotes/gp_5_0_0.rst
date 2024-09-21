@@ -20,7 +20,7 @@ There are usage changes, some pipelines are merged into a single DNA sequencing 
   
 * GenPipes 5.x onward will only supports Python v3.11.1 and above. 
 
-* The syntax of running GenPipes deployed in the `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_ (formerly Compute Canada) servers such as beluga has **changed** as follows:
+* The command syntax to run GenPipes deployed in the `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada, servers such as beluga, has **changed** as follows:
 
   - **Old Format** 
 
