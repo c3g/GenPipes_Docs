@@ -130,7 +130,7 @@ CoV Sequencing Pipeline
             * understand variant fixation in a given population
             * understand how the virus changes over time.
 
-            GenPipes offers CoVSeQ Pipeline, a bioinformatic workflow that incorporates Illumina and ONT sequence. This pipeline is intended to address both short as well as long reads and input data obtained from Illumina as well as ONT Nanopore instruments.
+            GenPipes offers CoVSeQ Pipeline, a bioinformatics workflow that incorporates Illumina and ONT sequence. This pipeline is intended to address both short as well as long reads and input data obtained from Illumina as well as ONT Nanopore instruments.
             
             CoVSeQ pipeline helps in the genomic epidemiology of SARS-CoV-2 that output sequence alignment analysis and/or variants in various formats. It uses `Kraken2`_, `FreeBayes`_, `SnpEff`_ for genomic processing and `bcftools`_, `QUAST`_ for consensus. The latest version of the pipeline uses ncov-tools v1.8 for alignment and quality control. SAM Tools are used for sorting and indexing BAM files. It performs variant calling on every sorted BAM file, obtaining major frequency viral variants per genome in VCF format using the Freebayes variant calling program, as frequency-based pooled caller. Merged variants are annotated using SnpEff.  
 

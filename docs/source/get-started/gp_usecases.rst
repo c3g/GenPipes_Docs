@@ -20,7 +20,7 @@
 GenPipes Real-life Applications
 ===============================
 
-GenPipes offers several :ref:`genomic analysis pipelines<docs_pipeline_ref>` that can be used for various bioinformatic analyses.
+GenPipes offers several :ref:`genomic analysis pipelines<docs_pipeline_ref>` that can be used for various bioinformatics analyses.
 
 These can be utilized for performing a wide range of standardized and tailored analysis. Following is a brief summary that highlights potential use case for each of the GenPipes Pipelines.  
 

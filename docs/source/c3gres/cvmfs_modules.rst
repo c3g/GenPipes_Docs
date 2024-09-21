@@ -264,7 +264,7 @@ Versions Available: 2.1.3
 
 kentUtils
 `````````
-UCSC command-line bioinformatic utilities, implemented by Jim Kent
+UCSC command-line bioinformatics utilities, implemented by Jim Kent
 Versions Available: 302.1.0
 
 KmerGenie
@@ -524,7 +524,7 @@ Versions Available: 20131110, 2.0.1, 2.0.2
 
 UCSC tools
 ``````````
-UCSC genome browser 'kent' bioinformatic utilities
+UCSC genome browser 'kent' bioinformatics utilities
 Versions Available: 20140212, v326
 
 USEARCH
