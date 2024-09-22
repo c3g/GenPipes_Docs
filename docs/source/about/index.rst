@@ -3,6 +3,11 @@
 About
 =====
 
+.. dropdown:: :material-outlined:`bolt;2em` GenPipes 5.0
+   :color: success
+
+   .. include:: /gp5_0.inc
+
 GenPipes is an open-source Python-based tool for managing Next Generation Sequencing (NGS) genomics workflows. It comes with a set of high-quality analysis pipelines, optimized for high-performance computing (HPC) and cloud environments.
 
 Since 2013, these pipelines have been tested, refined, and widely used. GenPipes simplifies complex genomics analysis, making it accessible not just for bioinformatics pros but also for students and researchers. It offers flexible, reliable tools for standard genomic studies and can be extended for advanced research.

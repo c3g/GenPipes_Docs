@@ -14,7 +14,7 @@
 Accessing GenPipes on DRAC Servers
 ===================================
 
-This document explains how to get started with using GenPipes tht is pre-installed on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers.
+This document explains how to get started with using GenPipes installed on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers.
 
 .. _get_ccdb_account:
 
@@ -42,7 +42,7 @@ a. Open a shell or terminal (bash preferably) and type the following command:
 
 .. code:: 
 
-  ssh myaccount@beluga.computecanada.ca
+  ssh myaccount@beluga.alliancecan.ca
 
 .. tip::
      
@@ -60,7 +60,7 @@ c. Select **"SSH"** and fill the *"Host Name"* entry with the following:
 
 ::
 
-  beluga.computecanada.ca
+  beluga.alliancecan.ca
 
 .. tip::
      
@@ -149,12 +149,12 @@ For MUGQIC analysts, add the following lines to your $HOME/.bash_profile:
   
     export MUGQIC_INSTALL_HOME_DEV=/project/6007512/C3G/analyste_dev
   
-  elif [[ $HOST == cedar* || $DNSDOMAIN == cedar.computecanada.ca ]]; then
+  elif [[ $HOST == cedar* || $DNSDOMAIN == cedar.alliancecan.ca ]]; then
   
     export MUGQIC_INSTALL_HOME_DEV=/project/6007512/C3G/analyste_dev
   
   
-  elif [[ $HOST == beluga* || $DNSDOMAIN == beluga.computecanada.ca ]]; then
+  elif [[ $HOST == beluga* || $DNSDOMAIN == beluga.alliancecan.ca ]]; then
   
     export MUGQIC_INSTALL_HOME_DEV=/project/6007512/C3G/analyste_dev
   

@@ -7,6 +7,11 @@
 GenPipes Tutorial 
 ==================
 
+.. dropdown:: :material-outlined:`bolt;2em` GenPipes 5.0
+   :color: success
+
+   .. include:: /gp5_0.inc
+
 GenPipes bioinformatics pipelines developed at the Canadian Centre for Computational Genomics (C3G), as part of the GenAP project, are available for public use. They include a wide array of pipelines, including RNA-Seq, ChIP-Seq, WGS, exome sequencing, Bisulfite sequencing, Hi-C, capture Hi-C, Metagenomics and SARS-CoV-2 genome sequencing pipeline. This document explains how to use the pipelines using Hi-C analysis pipeline and the ChIP-Seq pipeline, as examples.
 
 Setting up the environment

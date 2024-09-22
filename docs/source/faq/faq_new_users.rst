@@ -2,7 +2,7 @@
 
 .. spelling::
 
-   computecanada
+   alliancecan
    Niagra
    GMail
    qsub
@@ -56,12 +56,12 @@ See `Digital Research Alliance Documentation <https://docs.alliancecan.ca/wiki/T
   
    `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ was formerly known as Compute Canada.
 
-My account is activated but I cannot login into beluga-computecanada or any other node - Cedar, Niagra? What is wrong?
+My account is activated but I cannot login into beluga server or any other node - Cedar, Niagra? What is wrong?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 **Response**
 
-Check out the current CCDB server status `here <https://status.computecanada.ca/>`_. Many a times, not being able to log in might just be due to system unavailability.
+Check out the current CCDB server status `here <https://status.alliancecan.ca/>`_. Many a times, not being able to log in might just be due to system unavailability.
 
 Please note that if you try to log in 3 or more times consecutively with a wrong password, your account gets deactivated and your IP address might get blacklisted. You would need to write to `Digital Research Alliance Support`_ to get that reversed. 
 

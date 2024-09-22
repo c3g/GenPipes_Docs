@@ -42,7 +42,7 @@ Besides the skills and technologies listed above, you need powerful hardware and
 .. _High Performance Computing (HPC) for genomics: https://people.eecs.berkeley.edu/~yelick/talks/data/GenomicsHPC-BERGenomicsPI18.pdf
 .. _Cluster Computing: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4655901/
 .. _Cloud environment: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6452449/
-.. _usage account: https://ccdb.computecanada.ca/account_application
+.. _usage account: https://ccdb.alliancecan.ca/account_application
 .. _CVMFS: https://cvmfs.readthedocs.io/en/latest/
 .. _PBS: https://www.openpbs.org 
 .. _Slurm: https://slurm.schedmd.com/tutorials.html
