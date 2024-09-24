@@ -17,7 +17,8 @@ For more details on other available options to deploy and access GenPipes you ma
 .. _docs_download_gp_src:
 
 Step 1: Download latest GenPipes sources and install with pip
-----------------------------------------
+----------------------------------------------------------------
+
 First of all, visit GenPipes `Download Page <https://bitbucket.org/mugqic/genpipes/downloads/>`_ and get a copy of the latest stable release software.  To fetch the most recent version of GenPipes, you may use the following command:
 
 ::
