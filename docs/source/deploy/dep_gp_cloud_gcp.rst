@@ -127,8 +127,8 @@ Step 4: Create ChIP Sequencing pipeline execution command script as shown below:
 
   bash # You do not need this line if you did a logout login cycle
   # The next line generates the pipeline script
-  genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini \
-  $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.cedar.ini \
+  genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \
+  $GNEPIPES_INIS/common_ini/chipseq.cedar.ini \
   quick_start.ini \
   -j slurm \
   -r readsets.chipseqTest.chr22.tsv \

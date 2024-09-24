@@ -1,6 +1,6 @@
 ::
 
-  genpipes dnaseq -t somatic_ensemble -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.cancer.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.somatic_ensemble.txt -p pairs.somatic_ensemble.csv -j slurm -s 1-15 -g dna_commands.sh
+  genpipes dnaseq -t somatic_ensemble -c $GENPIPES_INIS/dnaseq/dnaseq.base.ini $GENPIPES_INIS/dnaseq/dnaseq.cancer.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.somatic_ensemble.txt -p pairs.somatic_ensemble.csv -j slurm -s 1-15 -g dna_commands.sh
 
   bash dna_commands.sh
 

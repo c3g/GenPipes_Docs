@@ -93,9 +93,9 @@ Please ensure you have access to the "beluga" server in `Digital Research Allian
 
 ::
 
-  genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.chipseq.txt -s 1-15 -g chipseq_cmd.sh
+  genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.chipseq.txt -s 1-15 -g chipseq_cmd.sh
 
-To understand what $MUGQIC_PIPELINES_HOME refers to, please see instructions on how to :ref:`access GenPipes on Compute Canada servers<docs_access_gp_pre_installed>`.
+To understand what $GENPIPES_INIS refers to, please see instructions on how to :ref:`access GenPipes on Compute Canada servers<docs_access_gp_pre_installed>`.
 
 In the command above, 
 
@@ -109,7 +109,7 @@ By default, Slurm scheduler is used when using the GenPipes deployment on the `D
 
 ::
 
-  genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chiseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/abacus.ini -r readset.chipseq.txt -s 1-15 -j pbs -g chipseq_cmd.sh
+  genpipes chipseq -c $GENPIPES_INIS/chipseq/chiseq.base.ini $GENPIPES_INIS/common_ini/abacus.ini -r readset.chipseq.txt -s 1-15 -j pbs -g chipseq_cmd.sh
 
 The above command generates a list of instructions that need to be executed to run the ChIP sequencing pipeline. These instructions are stored in the file:
 
@@ -208,7 +208,7 @@ Let us now run this RNA-Sequencing analysis on the *beluga* server at `Digital R
 
 ::
 
-  genpipes rnaseq -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -g rnaseqScript.txt
+  genpipes rnaseq -c $GENPIPES_INIS/rnaseq/rnaseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -g rnaseqScript.txt
   bash rnaseqScript.txt
 
 The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get **MUGQICexitStatus:0** or **Exit_status=0.** If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the **job_output** folder.

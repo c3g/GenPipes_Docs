@@ -1,39 +1,39 @@
 ::
 
-    genpipes ampliconseq -c $MUGQIC_PIPELINES_HOME/pipelines/ampliconseq/ampliconseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.ampliconseq.txt -s 1-8 -g ampliconseqCommands.sh
+    genpipes ampliconseq -c $GENPIPES_INIS/ampliconseq/ampliconseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.ampliconseq.txt -s 1-8 -g ampliconseqCommands.sh
 
 :: 
 
-    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseq.txt -d design.chipseq.txt -s 1-19 -g chipseqCommands.sh
+    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readsets.chipseq.txt -d design.chipseq.txt -s 1-19 -g chipseqCommands.sh
 
 
 :: 
     
-    genpipes rnaseq -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-21 -g rnaseqCommands.sh
+    genpipes rnaseq -c $GENPIPES_INIS/rnaseq/rnaseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-21 -g rnaseqCommands.sh
 
 
 ::
 
-    genpipes dnaseq -t germline_snv -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-27 -g dnaseqCommands_mugqic.sh
+    genpipes dnaseq -t germline_snv -c $GENPIPES_INIS/dnaseq/dnaseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-27 -g dnaseqCommands_mugqic.sh
 
-    genpipes dnaseq -t germline_sv -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.sv.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-25 -g dnaseq_svCommands.sh
+    genpipes dnaseq -t germline_sv -c $GENPIPES_INIS/dnaseq/dnaseq.base.ini $GENPIPES_INIS/dnaseq/dnaseq.sv.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-25 -g dnaseq_svCommands.sh
 
-    genpipes dnaseq -t germline_high_cov -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.high_cov.ini  $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-15 -g dnaseq_high_coverageCommands.sh
+    genpipes dnaseq -t germline_high_cov -c $GENPIPES_INIS/dnaseq/dnaseq.base.ini $GENPIPES_INIS/dnaseq/dnaseq.high_cov.ini  $GENPIPES_INIS/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-15 -g dnaseq_high_coverageCommands.sh
 
-    genpipes dnaseq -t somatic_ensemble -c $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.cancer.ini  $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.somatic_ensemble.txt -s 1-38 -g dnaseq_somatic_ensembleCommands.sh
+    genpipes dnaseq -t somatic_ensemble -c $GENPIPES_INIS/dnaseq/dnaseq.base.ini $GENPIPES_INIS/dnaseq/dnaseq.cancer.ini  $GENPIPES_INIS/common_ini/beluga.ini -r readset.somatic_ensemble.txt -s 1-38 -g dnaseq_somatic_ensembleCommands.sh
 
 
 ::
 
-    genpipes rnaseq_light -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq_light/rnaseq_light.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-8 -g rnaseqLightCommands.sh
+    genpipes rnaseq_light -c $GENPIPES_INIS/rnaseq_light/rnaseq_light.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-8 -g rnaseqLightCommands.sh
 
 
-    genpipes rnaseq_denovo_assembly -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq_denovo_assembly/rnaseq_denovo_assembly.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-24 -g rnaseqDeNovoCommands.sh
+    genpipes rnaseq_denovo_assembly -c $GENPIPES_INIS/rnaseq_denovo_assembly/rnaseq_denovo_assembly.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-24 -g rnaseqDeNovoCommands.sh
 
 
 :: 
 
-    genpipes methylseq -c $MUGQIC_PIPELINES_HOME/pipelines/methylseq/methylseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.methylseq.txt -s 1-15,17-18 > methylseq.sh
+    genpipes methylseq -c $GENPIPES_INIS/methylseq/methylseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.methylseq.txt -s 1-15,17-18 > methylseq.sh
 
 
 .. include:: /common/gp_cluster_ini.inc

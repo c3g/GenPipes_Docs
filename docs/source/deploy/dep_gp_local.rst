@@ -16,22 +16,25 @@ For more details on other available options to deploy and access GenPipes you ma
 
 .. _docs_download_gp_src:
 
-Step 1: Download latest GenPipes sources
+Step 1: Download latest GenPipes sources and install with pip
 ----------------------------------------
 First of all, visit GenPipes `Download Page <https://bitbucket.org/mugqic/genpipes/downloads/>`_ and get a copy of the latest stable release software.  To fetch the most recent version of GenPipes, you may use the following command:
 
 ::
 
   git clone git@bitbucket.org:mugqic/genpipes.git
+  cd <bitbucket_repo>
+  pip install .
 
 Step 2: Setup environment variables
 -----------------------------------
 
-Add the following line in your your *$HOME/.bash_profile*: to set MUGQIC_PIPELINES_HOME to your local copy path. For example,
+Add the following lines in your your *$HOME/.bash_profile*: to set MUGQIC_PIPELINES_HOME to your local copy path. For example,
 
 ::
 
   export MUGQIC_PIPELINES_HOME=/path/to/your/local/genpipes
+  export GENPIPES_INIS=$MUGQIC_PIPELINES_HOME/genpipes/pipelines
 
 .. _accessing_sw_mod_genomes_local_dp:
 
@@ -267,7 +270,7 @@ You are now all set to use GenPipes pipelines. For each pipeline, you can get he
 
 ::
 
-  genpipes $MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name> --help
+  genpipes <pipeline_name> --help
 
 Running pipelines requires other inputs such as :ref:`Configuration File<docs_config_ini_file>`, :ref:`Readset File<docs_readset_file>` and :ref:`Design File<docs_design_file>`. For details on how to run individual pipelines you can see :ref:`Running GenPipes<docs_using_gp>` or :ref:`GenPipes User Guide<docs_user_guide>`.
 

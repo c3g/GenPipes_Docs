@@ -1,7 +1,7 @@
 ::
 
   genpipes ampliconseq \
-          -c $MUGQIC_PIPELINES_HOME/pipelines/ampliconseq/ampliconseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini \
+          -c $GENPIPES_INIS/ampliconseq/ampliconseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini \
           -r readset.ampliconseq.txt \
           -s 1-5 \
           -g ampliconseqCommands.sh 

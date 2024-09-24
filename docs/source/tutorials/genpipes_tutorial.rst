@@ -36,7 +36,6 @@ paste the following lines of code and save the file and Exit (Control + X):
     ## GenPipes/MUGQIC genomes and modules
     export MUGQIC_INSTALL_HOME=/cvmfs/soft.mugqic/CentOS6
     module use $MUGQIC_INSTALL_HOME/modulefiles
-    module load mugqic/python/3.11.1
     module load mugqic/genpipes/<latest_version>
     export JOB_MAIL=<my.name@my.email.ca>
     export RAP_ID=<my-rap-id>
@@ -133,19 +132,19 @@ GenPipes pipelines are multi-step pipelines that run several tools, each with it
 
 Each pipeline has several configuration/ini files in:
 
-**$MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name>.*.ini**
+**$GENPIPES_INIS/<pipeline_name>/<pipeline_name>.*.ini**
 
 For chipseq, that would be:
 
 .. code-block:: bash
 
-    ls $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini
+    ls $GENPIPES_INIS/chipseq/chipseq.base.ini
 
 You will find a **<pipeline_name>.base.ini** as well as an ini file for particular servers like Beluga (<pipeline_name>.beluga.ini). The base.ini file has all the parameters needed by the pipeline but is optimized for usage on our own server, Abacus. To use the pipeline on beluga server, you will need to use both base.ini and beluga.ini, as such:
 
 .. code-block:: bash
 
-    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini
+    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini
 
 To change different parameters in the ini files, you can create your own ini file and overwrite the required parameters. For example, to change the number of threads for trimmomatic and hicup, I can create my own ini file: chipseq.test.ini
 and in it I can include the parameters to be changed:
@@ -164,7 +163,7 @@ then add my ini file after the other ini files:
 
 .. code-block:: bash
 
-    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini chipseq.test.ini [options]
+    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/chipseq/chipseq.beluga.ini chipseq.test.ini [options]
 
 For different species, we have custom ini files stored in **$MUGQIC_INSTALL_HOME/genomes/species/<species_of_interest>/**
 
@@ -174,7 +173,7 @@ To run the chipseq pipeline on mouse mm9, for example, you can do the following:
 
 .. code-block:: bash
 
-    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini $MUGQIC_INSTALL_HOME/genomes/species/Mus_musculus.mm9/Mus_musculus.mm9.ini [options]
+    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/chipseq/chipseq.beluga.ini $MUGQIC_INSTALL_HOME/genomes/species/Mus_musculus.mm9/Mus_musculus.mm9.ini [options]
 
 Readset File:
 -------------
@@ -232,11 +231,11 @@ Readsets refer to replicates that belong to a particular sample. If a sample was
 Creating a Readset File:
 ------------------------
 
-If you have access to Abacus, we provide a script **$MUGQIC_PIPELINES_HOME/utils/nanuq2mugqic_pipelines.py** that can access your Nanuq data, creates symlinks to the data on Abacus and creates the Readset file for you.
+If you have access to Abacus, we provide a script **nanuq2mugqic_pipelines.py** that can access your Nanuq data, creates symlinks to the data on Abacus and creates the Readset file for you.
 
-If your data is on nanuq but you do not have access to Abacus, there is a helper script **$MUGQIC_PIPELINES_HOME/utils/csvToreadset.R** that takes a csv file downloadable from nanuq and creates the Readset file. However, you will have to download the data from Nanuq yourself.
+If your data is on nanuq but you do not have access to Abacus, there is a helper script **csvToreadset.R** that takes a csv file downloadable from nanuq and creates the Readset file. However, you will have to download the data from Nanuq yourself.
 
-If your data is not on nanuq, you will have to manually create the Readset file. You can use a template and enter your samples manually. Remember that it is a tab separated file. There is a helper **$MUGQIC_PIPELINES_HOME/utils/mugqicValidator.py** script that can validate the integrity of your readset file.
+If your data is not on nanuq, you will have to manually create the Readset file. You can use a template and enter your samples manually. Remember that it is a tab separated file. There is a helper **mugqicValidator.py** script that can validate the integrity of your readset file.
 
 
 Design File:
@@ -279,7 +278,7 @@ We will run this analysis on Beluga server as follows:
 
 .. code-block:: bash
 
-    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseq.txt -s 1-15 -g chipseqcmd.sh
+    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readsets.chipseq.txt -s 1-15 -g chipseqcmd.sh
 
 **-c** defines the ini configuration files
 **-r** defines the readset file
@@ -291,7 +290,7 @@ This command works for servers using a SLURM scheduler like Cedar, Graham or Bel
 
 .. code-block:: bash
 
-    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/abacus.ini -r readsets.chipseq.tsv -s 1-15 -j pbs -g chipseqcmd.sh
+    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/abacus.ini -r readsets.chipseq.tsv -s 1-15 -j pbs -g chipseqcmd.sh
 
 To run it, use:
 
@@ -387,7 +386,7 @@ Looking at the contents of the design file, we see:
 We will run this analysis on the Beluga cluster as follows:
 ::
 
-	genpipes rnaseq -c $MUGQIC_PIPELINES_HOME/pipelines/rnaseq/rnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -g rnaseq_commands.sh
+	genpipes rnaseq -c $GENPIPES_INIS/rnaseq/rnaseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -g rnaseq_commands.sh
     bash rnaseq_commands.sh
 
 The commands will be sent to the job queue to be executed. You can check the progress of the jobs with
@@ -475,7 +474,7 @@ We will run this analysis on Beluga server as follows:
 
 .. code-block:: bash
 
-    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
+    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
     bash chipseqScript.txt
 
 The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get **MUGQICexitStatus:0** or **Exit_status=0**. If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the **job_output** folder.

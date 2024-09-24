@@ -219,17 +219,17 @@ Readsets refer to replicates that belong to a particular sample. If a sample was
 Creating a Readset File
 =======================
 
-If you have access to Abacus, we provide a script ``$MUGQIC_PIPELINES_HOME/utils/nanuq2mugqic_pipelines.py`` that can access your Nanuq data, creates symlinks to the data on Abacus and creates the Readset file for you.
+If you have access to Abacus, we provide a script ``nanuq2mugqic_pipelines.py`` that can access your Nanuq data, creates symlinks to the data on Abacus and creates the Readset file for you.
 
-If your data is on nanuq but you do not have access to Abacus, there is a helper script ``$MUGQIC_PIPELINES_HOME/utils/csvToreadset.R`` that takes a csv file downloadable from nanuq and creates the Readset file. However, you will have to download the data from Nanuq yourself.
+If your data is on nanuq but you do not have access to Abacus, there is a helper script ``csvToreadset.R`` that takes a csv file downloadable from nanuq and creates the Readset file. However, you will have to download the data from Nanuq yourself.
 
-If your data is not on nanuq, you will have to manually create the Readset file. You can use a template and enter your samples manually. Remember that it is a tab separated file. There is a helper ``$MUGQIC_PIPELINES_HOME/utils/mugqicValidator.py`` script that can validate the integrity of your readset file.
+If your data is not on nanuq, you will have to manually create the Readset file. You can use a template and enter your samples manually. Remember that it is a tab separated file. There is a helper ``mugqicValidator.py`` script that can validate the integrity of your readset file.
 
 .. note::
 
      **For abacus users with Nanuq readsets**
 
-     If your readsets belong to a `Nanuq <http://gqinnovationcenter.com/services/nanuq.aspx>`_ project, use ``$MUGQIC_PIPELINES_HOME/utils/nanuq2mugqic_pipelines.py`` script to automatically create a Readset File and symlinks to your readsets on abacus.
+     If your readsets belong to a `Nanuq <http://gqinnovationcenter.com/services/nanuq.aspx>`_ project, use ``nanuq2mugqic_pipelines.py`` script to automatically create a Readset File and symlinks to your readsets on abacus.
 
 .. Add a note from Francois via Paul S regarding Sample definition
 

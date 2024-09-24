@@ -52,20 +52,20 @@ Each pipeline has several configuration files in:
 ::
 
     #!bash
-    $MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name>.*.ini
+    $GENPIPES_INIS/<pipeline_name>/<pipeline_name>.*.ini
 
 A default configuration file (``.base.ini`` extension) is set for running on abacus cluster using Homo sapiens reference genome and must always be passed first to the ``--config`` option.
 
 You can also add a list of other configuration files to ``--config``. Files are read in the list order and each parameter value is overwritten if redefined in the next file.
 
-This is useful to customize settings for a specific cluster or genome. Each pipeline has a special configuration file for beluga and cedar clusters (``.beluga.ini`` and ``.cedar.ini`` extensions respectively) in the same directory. And various genome settings are available in ``$MUGQIC_PIPELINES_HOME/resources/genomes/config/``.
+This is useful to customize settings for a specific cluster or genome. Each pipeline has a special configuration file for beluga and cedar clusters (``.beluga.ini`` and ``.cedar.ini`` extensions respectively) in the same directory. And various genome settings are available in ``$MUGQIC_INSTALL_HOME/genomes/species/``.
 
 For example, to run the DNA-Seq pipeline on beluga cluster with Mus musculus reference genome:
 
 ::
 
     #!bash
-    genpipes $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq --config $MUGQIC_PIPELINES_HOME/pipelines/dnaseq/dnaseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/common_ini/beluga.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/Mus_musculus.GRCm38.ini [other options] -g genpipes_command_list.sh
+    genpipes $GENPIPES_INIS/dnaseq/dnaseq --config $GENPIPES_INIS/dnaseq/dnaseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini $MUGQIC_INSTALL_HOME/genomes/species/Mus_musculus.GRCm38//Mus_musculus.GRCm38.ini [other options] -g genpipes_command_list.sh
     bash genpipes_command_list.sh
 
 
