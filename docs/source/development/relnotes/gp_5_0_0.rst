@@ -36,7 +36,7 @@ There are usage changes, some pipelines are merged into a single DNA sequencing 
       user@beluga % genpipes <pipeline name> [options] -g genpipes_cmd.sh
       user@beluga % bash genpipes_cmd.sh
 
-* When using **GenPipes deployed on the Digital Research Alliance Canada servers such as beluga**, you will notice that all the documentation references to MUGQIC are removed. A new variable ‘GENPIPES_INIS’ is introduced for streamlining access to the config files used in the `genpipes` commands.
+* When using **GenPipes deployed on the Digital Research Alliance Canada servers such as beluga**, a new variable ‘GENPIPES_INIS’ is introduced for streamlining access to the config files in the `genpipes` commands. In the future, 'MUGQIC_PIPELINES_HOME' will be deprecated.
 
   - **Before** 
 
@@ -52,7 +52,7 @@ There are usage changes, some pipelines are merged into a single DNA sequencing 
 
   .. note::
 
-        Please note that the old variable, 'MUGQIC' will still be accessible and is still in use for instructions on how to deploy GenPipes locally, in the cloud, or in a container.
+        Please note that the old variable, 'MUGQIC_PIPELINES_HOME' will still be accessible and is still in use for instructions on how to deploy GenPipes locally, in the cloud, or in a container.
 
 * `DNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/5.0.0/pipelines/dnaseq/>`_
    - This pipeline has been enhanced and now supports seven protocols. The DNA sequencing High Coverage and Tumor Pair pipelines are merged into DNA sequencing pipeline. 
