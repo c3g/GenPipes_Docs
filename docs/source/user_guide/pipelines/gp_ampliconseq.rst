@@ -17,8 +17,8 @@ Amplicon Sequencing Pipeline
 
 .. warning::
 
-   Amplicon *QIIME* protocol is **deprecated** from *GenPipes v5.x* onward. 
-   To use this protocol, try `an older version of GenPipes <https://genpipes.readthedocs.io/en/genpipes-v4.6.0/user_guide/pipelines/gp_ampliconseq.html>`_.
+   Amplicon supports only `dada2` protocol by default. The Amplicon *QIIME* protocol is **deprecated** from *GenPipes v5.x* onward.  
+   To use `QIIME`` protocol, try `an older version of GenPipes <https://genpipes.readthedocs.io/en/genpipes-v4.6.0/user_guide/pipelines/gp_ampliconseq.html>`_.
 
 .. tab-set:: 
 
@@ -34,7 +34,6 @@ Amplicon Sequencing Pipeline
 
          .. dropdown:: Options
 
-            .. include:: opt_ampliconseq.inc
             .. include:: /common/gp_design_opt.inc 
             .. include:: /common/gp_readset_opt.inc 
             .. include:: /common/gp_common_opt.inc 
@@ -124,6 +123,10 @@ Amplicon Sequencing Pipeline
 
             * `Trimmomatic - flexible trimming <https://academic.oup.com/bioinformatics/article/30/15/2114/2390096>`_.
 
+.. dropdown:: :material-outlined:`report;2em` Amplicon Sequencing Readset File
+   :color: warning
+
+   Please make sure you use the special :ref:`Amplicon Readset file format<ref_example_ampliconseq_readset_file>` and not the general readset file format.
 .. The following are html links used in this text
 
 .. _DADA2 Pipeline: https://benjjneb.github.io/dada2/tutorial.html

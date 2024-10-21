@@ -1,0 +1,108 @@
+:orphan:
+
+.. _docs_gp_relnote_5_0_1:
+
+.. spelling::
+
+     genpipes
+
+GenPipes 5.0.1 Release Notes
+============================
+
+What's new? 
+-----------
+
+This is a major release of GenPipes!
+There are usage changes, some pipelines are merged into a single DNA sequencing pipeline, others have been deprecated. Refer to the details below:
+
+* GenPipes 5.x distribution is now based on Python packaging and can be installed using `pip`. Earlier versions were distributed in the form of Python modules.
+  
+* GenPipes 5.x onward will only supports Python v3.11.1 and above. 
+  
+* The command syntax to run GenPipes deployed in the `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada, servers such as beluga, has **changed**. Pipelines are now invoked with `genpipes <pipeline> -h` instead of `<pipeline>.py -h`. See example below:
+
+  - **Old Format** 
+
+    ::
+    
+      user@beluga % <pipeline name>.py [options] -g genpipes_cmd.sh
+      user@beluga % bash genpipes_cmd.sh
+
+  - **New Format** 
+  
+    ::
+
+      user@beluga % genpipes <pipeline name> [options] -g genpipes_cmd.sh
+      user@beluga % bash genpipes_cmd.sh
+
+* When using **GenPipes deployed on the Digital Research Alliance Canada servers such as beluga**, a new variable ‘GENPIPES_INIS’ is introduced for streamlining access to the config files in the `genpipes` commands. In the future, 'MUGQIC_PIPELINES_HOME' will be deprecated.
+
+  - **Old Variable** 
+
+    ::
+
+      $MUGQIC_PIPELINES_HOME/pipelines/<pipeline>/<pipeline>.base.ini
+
+  - **New Variable** 
+  
+    ::
+
+      $GENPIPES_INIS/<pipeline>/<pipeline>.base.ini
+  
+
+  .. note::
+
+        Please note that the old variable, 'MUGQIC_PIPELINES_HOME' will still be accessible and is still in use for instructions on how to deploy GenPipes locally, in the cloud, or in a container.
+
+* Genome build GRCh38 (human) is now the default reference genome for all pipelines, but other versions or species can be selected via config files, as before.
+
+* Markdown style reports have been deprecated for all pipelines in v5.0.1 and have been replaced entirely with MultiQC reports.
+
+* The following are deprecated.  Please use GenPipes v4.6.1 to run these pipelines/protocols.
+  
+  - `EpiQC sequencing Pipeline <https://genpipes.readthedocs.io/en/genpipes-v4.6.1/user_guide/pipelines/gp_epiqc.html>`_
+  - `Hi-C sequencing Pipeline <https://genpipes.readthedocs.io/en/genpipes-v4.6.1/user_guide/pipelines/gp_hicseq.html>`_
+  - AmpliconSeq `QIIME sequencing <https://genpipes.readthedocs.io/en/genpipes-v4.6.1/user_guide/pipelines/gp_ampliconseq.html>`_ protocol. (Other protocols are supported)
+
+* TumorPair and DNASeq-High Coverage
+     - These pipelines have been merged into the DNASeq pipeline, where they are available as protocols. 
+
+* `DNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/5.0.1/pipelines/dnaseq/>`_
+   - The DNA sequencing High Coverage and Tumor Pair pipelines are merged into DNA sequencing pipeline.
+   - Enhanced to support seven protocols. 
+   - Use -t option to select one of the supported protocols: `germline_snv, germline_sv, germline_high_cov, somatic_tumor_only, somatic_fastpass, somatic_ensemble, somatic_sv`
+
+* `Amplicon sequencing Pipeline <https://genpipes.readthedocs.io/en/genpipes-v4.6.1/user_guide/pipelines/gp_ampliconseq.html>`_ 
+     - The dada2 protocol is now the default and is the only available protocol for this pipeline.
+     - MultiQC reporting has been added.
+
+* :ref:`RNA Sequencing Pipeline (De Novo)<docs_gp_rnaseq_denovo>`
+     - The trinity protocol has been updated to support Trinity v2.15.1
+     - rnammer has been replaced with infernal, in accordance with changes made in Trinotate v4.0.2
+     - MultiQC reporting has been added.
+
+* :ref:`Methylseq pipeline<docs_methylation>`
+     - A new protocol option is now available to use the gemBS aligner instead of Bismark for mapping and methylation calling process.
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+ 
+* The latest release for GenPipes version 5.0.1 tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-5.0.1.tar.gz
+
+* The package mugqic/genpipes/5.0.1 is installed on Abacus (MGC), Béluga, Graham, Cedar and Narval Compute Canada clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes
+
+* For latest GenPipes documentation, please refer to: https://genpipes.readthedocs.io/
+
+Where is the detailed ChangeLog? 
+================================= 
+
+A ChangeLog (`CHANGELOG.md <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_) is available in the archive as well as in the repository.
+
+Since we use git, there are many ways to get the details in many formats.
+
+One of our preferred ways is to use `a script <https://raw.github.com/sebhtml/ray/master/scripts/dump-ChangeLog.sh>`_ written by the author of the Ray assembler: Sébastien Boisvert, which lists the commits by tag and author. 
+
+Enjoy our pipelines installed on the many Compute Canada clusters!
+We look forward to your feedback!

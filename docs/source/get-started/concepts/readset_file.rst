@@ -31,7 +31,6 @@ The general readset file format is meant for the following pipelines **only**. R
 #. DNA-Seq high Coverage,
 #. RNA-Seq,
 #. RNA-Seq De Novo Assembly,
-#. Amplicon-Seq,
 #. Tumor Pair,
 #. Methyl-Seq,
 #. CovSeq
@@ -93,6 +92,41 @@ Example of Readset File
             sampleB readset3    lib0002 PAIRED_END  run200  5       AGATCGGAAGAGCACACGTCTGAACTCCAGTCA   AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT   33              path/to/file.bed    path/to/readset3.paired1.fastq.gz   path/to/readset3.paired2.fastq.gz   path/to/readset3.bam
 
             sampleB readset4    lib0002 PAIRED_END  run200  6       AGATCGGAAGAGCACACGTCTGAACTCCAGTCA   AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT   33              path/to/file.bed    path/to/readset4.paired1.fastq.gz   path/to/readset4.paired2.fastq.gz   path/to/readset4.bam
+
+.. _ref_example_ampliconseq_readset_file:
+
+Amplicon Readset File Format
+------------------------------------
+
+The ampliconseq pipeline requires a slightly different readset file than the general readset format listed above. Amplicon sequnecing pipeline readset file should have two additional columns called `primer1` and `primer2` refering to the primers that are used.  The sequence written in the columns "primer1" and "primer2" should be the adapter sequence followed by the primer sequence.
+
+.. _ref_amplicon_readset_format:
+
++-------------------+---------------------+----------------------------------------+--------------------------------------------------+
+| Adapter1          |     Adapter2        |   primer1                              |primer2                                           |
++===================+=====================+========================================+==================================================+
+|<adapter1_sequence>|  <adapter2_sequence>|   <adapter1_sequence><primer1_sequence>|   <adapter2_sequence><primer2_sequence>          |
++-------------------+---------------------+----------------------------------------+--------------------------------------------------+
+
+For example, consider 515f and 806r:
+
++--------+---------+---------+------------+------+------+------------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------------------+--------------+---------------------------------------------------------+---------------------------------------------------------+-----------+-------+   
+| Sample | Readset | Library |   RunType  | Run  | Lane | Adapter1                           | Adapter2                          | primer1                                              |  primer2                                              |QualityOffset |    BED                                                  | FASTQ1                                                  |   FASTQ2  | BAM   |
++========+=========+=========+============+======+======+====================================+===================================+======================================================+=======================================================+==============+=========================================================+==================================================+======+===========+=======+
+| 1340   | 1340    |1340     | PAIRED_END | 0123 | L001 | AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC | AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT | AGATCGGAAGAGCACACGTCTGAACTCCAGTCACGTGYCAGCMGCCGCGGTAA| AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTGGACTACHVGGGTWTCTAAT | 33           | raw_reads/Sample_1340/1340_S119_L001_R1_001.fastq.gz    |  raw_reads/Sample_1340/1340_S119_L001_R2_001.fastq.gz   |           |       |
++--------+---------+---------+------------+------+------+------------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------------------+--------------+---------------------------------------------------------+---------------------------------------------------------+-----------+-------+   
+| 1341   | 1341    |1341     | PAIRED_END | 0123 | L001 | AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC | AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT | AGATCGGAAGAGCACACGTCTGAACTCCAGTCACGTGYCAGCMGCCGCGGTAA| AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTGGACTACHVGGGTWTCTAAT | 33           | raw_reads/Sample_1341/1341_S120_L001_R1_001.fastq.gz    |  raw_reads/Sample_1341/1341_S120_L001_R2_001.fastq.gz   |           |       |
++--------+---------+---------+------------+------+------+------------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------------------+--------------+---------------------------------------------------------+---------------------------------------------------------+-----------+-------+   
+
+In case multiple Amplicon primers are used in the readset, they should all be listed in the same format() column, separated by semicolons. 
+
+For example:
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| primer1                                                                                                                                                              |
++======================================================================================================================================================================+
+|ACACTGACGACATGGTTCTACACCTACGGGNGGCWGCAG;ACACTGACGACATGGTTCTACATCCTACGGGNGGCWGCAG;ACACTGACGACATGGTTCTACAACCCTACGGGNGGCWGCAG;ACACTGACGACATGGTTCTACACTACCTACGGGNGGCWGCAG |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _ref_example_chipseq_readset_file:
 
