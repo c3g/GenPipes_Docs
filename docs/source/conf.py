@@ -52,8 +52,12 @@ extensions = [ 'sphinxcontrib.spelling',
                'sphinx_togglebutton',
                'sphinxemoji.sphinxemoji',
                'sphinx_design',
+               'sphinxcontrib.googleanalytics',
                #'sphinx_last_updated_by_git',
 ]
+# Google Analytics Settings
+googleanalytics_id = 'G-6GH9ZZT8G3'
+#googleanalytics_enable = True
 
 # Configure autosectionlabel extension
 autosectionlabel_prefix_document = True
