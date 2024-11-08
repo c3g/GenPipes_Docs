@@ -2,7 +2,7 @@
 
 .. _docs_available_pipelines:
 
-.. spelling::
+.. spelling:word-list::
 
    SARS-COV-2
    COV

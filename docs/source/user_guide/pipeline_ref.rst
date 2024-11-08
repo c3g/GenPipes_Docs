@@ -1,7 +1,7 @@
 .. _docs_pipeline_ref:
 
 
-.. spelling::
+.. spelling:word-list::
 
     tumour
     Biosciences

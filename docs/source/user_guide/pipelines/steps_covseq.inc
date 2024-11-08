@@ -1,6 +1,6 @@
 .. _docs_steps_covseq:
 
-.. spelling::
+.. spelling:word-list::
 
      metagenomic
      quast

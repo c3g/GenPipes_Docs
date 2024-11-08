@@ -2,7 +2,7 @@
 
 .. _docs_gp_relnote_4_6_0:
 
-.. spelling::
+.. spelling:word-list::
 
      genpipes
      gzipping

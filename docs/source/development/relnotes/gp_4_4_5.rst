@@ -2,7 +2,7 @@
 
 .. _docs_gp_relnote_4_4_5:
 
-.. spelling::
+.. spelling:word-list::
 
      sed
      sambamba

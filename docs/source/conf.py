@@ -134,7 +134,8 @@ html_context = {
 }
 
 html_theme_options = {
-	'display_version': True,
+	'version_selector': True,
+    #'display_version': True,
     'style_nav_header_background': '#1c75bc', #RTD theme search side bar background color
 }
 

@@ -1,7 +1,7 @@
 .. _docs_dep_gp_local:
 
 
-.. spelling::
+.. spelling:word-list::
 
    modulefiles
    Ensembl

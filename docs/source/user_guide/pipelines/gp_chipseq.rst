@@ -1,6 +1,6 @@
 .. _docs_gp_chipseq:
 
-.. spelling::
+.. spelling:word-list::
 
    transposase
    Immunoprecipitation

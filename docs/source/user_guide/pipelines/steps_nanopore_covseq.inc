@@ -1,6 +1,6 @@
 .. _docs_steps_nanopore_covseq:
 
-.. spelling::
+.. spelling:word-list::
 
       dna
       cfg

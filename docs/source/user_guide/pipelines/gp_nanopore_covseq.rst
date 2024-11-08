@@ -1,6 +1,6 @@
 .. _docs_gp_nanopore_cov:
 
-.. spelling::
+.. spelling:word-list::
 
    artic
    Conda

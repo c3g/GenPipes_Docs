@@ -1,6 +1,6 @@
 .. _docs_troubleshooting_rt_issues:
 
-.. spelling::
+.. spelling:word-list::
 
     qsub
     Runtime

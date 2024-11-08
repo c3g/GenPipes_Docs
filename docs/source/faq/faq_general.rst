@@ -1,6 +1,6 @@
 .. _docs_faq_general:
 
-.. spelling::
+.. spelling:word-list::
 
    Cygwin
 

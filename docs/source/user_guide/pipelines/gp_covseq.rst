@@ -1,6 +1,6 @@
 .. _docs_gp_covseq:
 
-.. spelling::
+.. spelling:word-list::
 
      des
      du

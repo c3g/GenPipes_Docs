@@ -1,6 +1,6 @@
 .. _docs_steps_rnaseq:
 
-.. spelling:: 
+.. spelling:word-list:: 
 
       RSeqC
       picard

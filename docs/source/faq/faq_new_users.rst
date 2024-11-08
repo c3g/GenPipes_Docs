@@ -1,6 +1,6 @@
 .. _docs_faq_new_users:
 
-.. spelling::
+.. spelling:word-list::
 
    alliancecan
    Niagra

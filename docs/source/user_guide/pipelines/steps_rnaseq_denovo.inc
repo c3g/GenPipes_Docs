@@ -1,6 +1,6 @@
 .. _docs_steps_rnaseq_denovo:
   
-.. spelling::
+.. spelling:word-list::
 
       picard 
       blastx

@@ -1,6 +1,6 @@
 .. _docs_faq_hpc:
 
-.. spelling::
+.. spelling:word-list::
 
      genpipes
 

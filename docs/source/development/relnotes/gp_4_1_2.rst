@@ -2,7 +2,7 @@
 
 .. _docs_gp_relnote_4_1_2:
 
-.. spelling::
+.. spelling:word-list::
 
      nanopore
      covseq

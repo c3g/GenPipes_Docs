@@ -1,7 +1,7 @@
 .. _docs_dep_gp_cloud:
 
 
-.. spelling::
+.. spelling:word-list::
 
    slurm
    yaml

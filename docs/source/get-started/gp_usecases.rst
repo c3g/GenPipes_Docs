@@ -1,6 +1,6 @@
 .. _docs_gp_usecases:
 
-.. spelling::
+.. spelling:word-list::
 
     miRNA
     miRNAs
