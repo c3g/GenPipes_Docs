@@ -14,6 +14,7 @@ GenPipes Documentation Changelog
      hotmail
      noreply
      github
+     PYthon
 
 GenPipes documentation is continually being improved. 
 The current release corresponds to GenPipes version |genpipes_version|. 

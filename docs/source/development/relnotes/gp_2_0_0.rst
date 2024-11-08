@@ -2,7 +2,7 @@
 
 .. _docs_gp_relnote_2_0_0:
 
-.. spelling::
+.. spelling:word-list::
 
     timestamp
 
