@@ -1,6 +1,6 @@
 .. _docs_using_gp:
 
-.. spelling::
+.. spelling:word-list::
 
    userID
    txt

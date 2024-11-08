@@ -1,6 +1,6 @@
 .. _docs_faq_gp_dev:
 
-.. spelling::
+.. spelling:word-list::
 
     Pytest
     Niagra

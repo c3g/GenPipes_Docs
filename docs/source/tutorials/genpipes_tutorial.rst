@@ -1,6 +1,6 @@
 .. _doc_genpipes_tutorial:
 
-.. spelling::
+.. spelling:word-list::
 
     userID
 

@@ -1,6 +1,6 @@
 .. _docs_step_methylseq:
 
-.. spelling::
+.. spelling:word-list::
 
      bwa
      tdf

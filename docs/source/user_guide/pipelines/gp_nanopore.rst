@@ -1,6 +1,6 @@
 .. _docs_gp_nanopore:
 
-.. spelling::
+.. spelling:word-list::
 
      Nanopore
      phenotypic

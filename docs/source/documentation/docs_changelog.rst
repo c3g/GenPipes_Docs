@@ -3,7 +3,7 @@
 GenPipes Documentation Changelog
 ================================
 
-.. spelling::
+.. spelling:word-list::
 
      onpr
      gh

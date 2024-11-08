@@ -1,6 +1,6 @@
 .. _docs_steps_dnaseq_highcov:
 
-.. spelling::
+.. spelling:word-list::
 
      unsynchronized
     

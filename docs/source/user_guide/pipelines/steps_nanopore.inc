@@ -1,6 +1,6 @@
 .. _docs_steps_nanopore:
 
-.. spelling::
+.. spelling:word-list::
 
      basecalled
 

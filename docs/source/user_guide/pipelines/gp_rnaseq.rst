@@ -1,6 +1,6 @@
 .. _docs_gp_rnaseq:
 
-.. spelling::
+.. spelling:word-list::
 
      html
      goseq

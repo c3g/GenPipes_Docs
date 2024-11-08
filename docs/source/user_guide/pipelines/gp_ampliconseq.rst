@@ -1,6 +1,6 @@
 .. _docs_gp_ampliconseq:
 
-.. spelling:: 
+.. spelling:word-list:: 
 
       Amplicon
       Amplicons

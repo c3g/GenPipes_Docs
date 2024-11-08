@@ -1,6 +1,6 @@
 .. _docs_citation:
 
-.. spelling::
+.. spelling:word-list::
 
        Neuro
        Colorectal

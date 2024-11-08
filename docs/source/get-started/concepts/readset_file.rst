@@ -2,7 +2,7 @@
 
 .. _docs_readset_file:
 
-.. spelling::
+.. spelling:word-list::
 
      flowcell
 

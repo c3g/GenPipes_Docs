@@ -1,6 +1,6 @@
 .. _docs_gp_job_results:
 
-.. spelling::
+.. spelling:word-list::
 
         walltime
 

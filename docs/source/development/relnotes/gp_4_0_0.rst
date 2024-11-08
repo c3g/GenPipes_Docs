@@ -2,7 +2,7 @@
 
 .. _docs_gp_relnote_4_0_0:
 
-.. spelling::
+.. spelling:word-list::
 
      genpipes
      epiQC

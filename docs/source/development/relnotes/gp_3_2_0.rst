@@ -2,7 +2,7 @@
 
 .. _docs_gp_relnote_3_2_0:
 
-.. spelling::
+.. spelling:word-list::
 
    imiss
    genpipes

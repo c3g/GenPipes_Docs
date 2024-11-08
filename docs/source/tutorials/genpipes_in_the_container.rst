@@ -1,6 +1,6 @@
 .. _docs_genpipes_container_tutorial:
 
-.. spelling::
+.. spelling:word-list::
 
        qsub
        sbatch

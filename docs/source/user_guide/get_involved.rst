@@ -1,6 +1,6 @@
 .. _docs_get_involved:
 
-.. spelling::
+.. spelling:word-list::
 
      metagenomics
 

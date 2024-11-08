@@ -2,7 +2,7 @@
 
 .. _docs_gp_relnote_3_6_2:
 
-.. spelling::
+.. spelling:word-list::
 
      genpipes
      insilico

@@ -1,6 +1,6 @@
 .. _docs_tumor_pair_steps:
 
-.. spelling::
+.. spelling:word-list::
 
       Somatics
       gzipped

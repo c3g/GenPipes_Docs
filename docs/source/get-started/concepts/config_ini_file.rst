@@ -5,7 +5,7 @@
 Configuration File
 ==================
 
-.. spelling::
+.. spelling:word-list::
    
    extention
    ini
