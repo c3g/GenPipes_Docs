@@ -17,7 +17,7 @@ build:
     - dialog
     - apt-utils
   tools:
-    python: "3.13"
+    python: "3.12"
   jobs:
     post_system_dependencies:
       - bash ./scripts/post_system_dependencies.sh
