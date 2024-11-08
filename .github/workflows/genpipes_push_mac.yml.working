@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+
+name: macosbuild 
+on: [push]
+jobs:
+  macos_build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: 3.13.0
+    - name: Install Dependencies
+      run: |
+          brew update
+          brew upgrade
+          brew install enchant
+          python -m pip install --upgrade pip
+          pip install -r docs/requirements.txt
+    - name: Sphinx build
+      run: |
+          val=`ls -alth`
+          echo This is current dir contents $val
+          make -C docs/ clean html 

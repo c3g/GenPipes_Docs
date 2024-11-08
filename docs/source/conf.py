@@ -41,7 +41,7 @@ release = u' '+vstr1
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [ 'sphinxcontrib.spelling',
+extensions = [ #'sphinxcontrib.spelling',
                'recommonmark',
                'sphinx_markdown_tables',
                'sphinx_git',
@@ -135,7 +135,6 @@ html_context = {
 
 html_theme_options = {
 	'version_selector': True,
-    #'display_version': True,
     'style_nav_header_background': '#1c75bc', #RTD theme search side bar background color
 }
 

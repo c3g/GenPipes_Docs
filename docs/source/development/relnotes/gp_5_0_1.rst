@@ -5,6 +5,7 @@
 .. spelling:word-list::
 
      genpipes
+     rnammer
 
 GenPipes 5.0.1 Release Notes
 ============================
@@ -78,7 +79,7 @@ There are usage changes, some pipelines are merged into a single DNA sequencing 
 
 * :ref:`RNA Sequencing Pipeline (De Novo)<docs_gp_rnaseq_denovo>`
      - The trinity protocol has been updated to support Trinity v2.15.1
-     - rnammer has been replaced with infernal, in accordance with changes made in Trinotate v4.0.2
+     - `rnammer` has been replaced with infernal, in accordance with changes made in Trinotate v4.0.2
      - MultiQC reporting has been added.
 
 * :ref:`Methylseq pipeline<docs_methylation>`
