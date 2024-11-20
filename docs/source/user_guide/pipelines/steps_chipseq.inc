@@ -1,6 +1,6 @@
 .. _docs_steps_chipseq:
 
-.. spelling::
+.. spelling:word-list::
 
      config
      param

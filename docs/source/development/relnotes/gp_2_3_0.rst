@@ -2,7 +2,7 @@
 
 .. _docs_gp_relnote_2_3_0:
 
-.. spelling::
+.. spelling:word-list::
 
     smrtanalysis
     htseq

@@ -1,6 +1,6 @@
 .. _docs_gp_epiqc:
 
-.. spelling::
+.. spelling:word-list::
 
      heatmap
      epiQC

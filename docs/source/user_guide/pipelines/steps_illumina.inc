@@ -1,6 +1,6 @@
 .. _docs_steps_illumina:
   
-.. spelling::
+.. spelling:word-list::
 
       md
       subsample

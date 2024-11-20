@@ -1,6 +1,6 @@
 .. _docs_gp_hicseq:
 
-.. spelling:: 
+.. spelling:word-list:: 
 
    epigenome
    rmap

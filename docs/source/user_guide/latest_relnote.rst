@@ -1,6 +1,6 @@
 .. _docs_latest_relnote:
 
-.. spelling::
+.. spelling:word-list::
 
     immunoprecipitation
     Biosciences

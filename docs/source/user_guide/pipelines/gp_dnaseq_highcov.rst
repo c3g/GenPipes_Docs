@@ -1,6 +1,6 @@
 .. _docs_gp_dnaseq_highcov:
 
-.. spelling:: 
+.. spelling:word-list:: 
 
       amplicons
       config

@@ -1,6 +1,6 @@
 .. _docs_what_is_genpipes:
 
-.. spelling::
+.. spelling:word-list::
 
     pipelining
   

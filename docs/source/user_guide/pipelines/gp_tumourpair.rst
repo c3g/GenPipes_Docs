@@ -1,6 +1,6 @@
 .. _docs_gp_tumorpair:
 
-.. spelling::
+.. spelling:word-list::
 
       ploidy
       sv

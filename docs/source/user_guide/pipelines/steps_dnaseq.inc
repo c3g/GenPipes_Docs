@@ -1,6 +1,6 @@
 .. _docs_steps_dnaseq:
 
-.. spelling::
+.. spelling:word-list::
 
     Haplotype
     gzipped

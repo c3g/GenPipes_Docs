@@ -1,6 +1,6 @@
 .. _docs_gp_user_troubleshooting_guide:
 
-.. spelling::
+.. spelling:word-list::
 
     io_buffer
     io

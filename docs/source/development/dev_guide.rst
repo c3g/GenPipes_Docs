@@ -1,6 +1,6 @@
 .. _docs_dev_guide:
 
-.. spelling::
+.. spelling:word-list::
       dev
 
 Developer Guide

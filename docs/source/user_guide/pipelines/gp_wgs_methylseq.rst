@@ -1,6 +1,6 @@
 .. _docs_methylation:
 
-.. spelling::
+.. spelling:word-list::
 
      epigenetic
      methylome

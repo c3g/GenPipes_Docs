@@ -1,6 +1,6 @@
 .. _docs_gp_rnaseq_denovo:
 
-.. spelling::
+.. spelling:word-list::
 
       contigs
       transcriptome

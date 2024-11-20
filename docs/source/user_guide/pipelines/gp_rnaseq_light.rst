@@ -1,6 +1,6 @@
 .. _docs_gp_rnaseqlight:
 
-.. spelling::
+.. spelling:word-list::
 
      html
      Kallisto

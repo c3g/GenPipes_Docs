@@ -1,6 +1,6 @@
 .. _docs_dep_gp_container:
 
-.. spelling::
+.. spelling:word-list::
 
         supercomputing
 	dropdown

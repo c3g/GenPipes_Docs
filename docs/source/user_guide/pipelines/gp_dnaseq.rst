@@ -1,6 +1,6 @@
 .. _docs_gp_dnaseq:
 
-.. spelling:: 
+.. spelling:word-list:: 
  
      haplotype
      snv

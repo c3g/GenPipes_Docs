@@ -2,7 +2,7 @@
 
 .. _docs_gp_relnote_4_4_1:
 
-.. spelling::
+.. spelling:word-list::
 
      mkdir
      sambamba

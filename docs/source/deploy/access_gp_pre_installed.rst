@@ -1,7 +1,7 @@
 .. _docs_access_gp_pre_installed:
 
 
-.. spelling::
+.. spelling:word-list::
 
          abc
          123

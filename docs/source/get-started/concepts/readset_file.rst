@@ -2,9 +2,10 @@
 
 .. _docs_readset_file:
 
-.. spelling::
+.. spelling:word-list::
 
      flowcell
+     gz
 
 Readset File
 ============
@@ -98,7 +99,7 @@ Example of Readset File
 Amplicon Readset File Format
 ------------------------------------
 
-The ampliconseq pipeline requires a slightly different readset file than the general readset format listed above. Amplicon sequnecing pipeline readset file should have two additional columns called `primer1` and `primer2` refering to the primers that are used.  The sequence written in the columns "primer1" and "primer2" should be the adapter sequence followed by the primer sequence.
+The ampliconseq pipeline requires a slightly different readset file than the general readset format listed above. Amplicon sequencing pipeline readset file should have two additional columns called `primer1` and `primer2` referring to the primers that are used.  The sequence written in the columns "primer1" and "primer2" should be the adapter sequence followed by the primer sequence.
 
 .. _ref_amplicon_readset_format:
 

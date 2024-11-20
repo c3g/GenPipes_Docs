@@ -2,7 +2,7 @@
 
 .. _docs_gp_coding_guide:
 
-.. spelling::
+.. spelling:word-list::
 
        bfx
        dnaseq

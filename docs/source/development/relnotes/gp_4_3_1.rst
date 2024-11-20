@@ -2,7 +2,7 @@
 
 .. _docs_gp_relnote_4_3_1:
 
-.. spelling::
+.. spelling:word-list::
 
      genpipes
 
