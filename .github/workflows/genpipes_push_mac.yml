@@ -17,9 +17,10 @@ jobs:
           brew install enchant
           brew list enchant
           ls $(brew --prefix enchant)
-          export PYENCHANT_LIBRARY_PATH=$(brew --prefix enchant)/lib/libenchant-2.8.2.dylib
+          export PYENCHANT_LIBRARY_PATH=$(brew --prefix enchant)/lib/libenchant-2.2.dylib
+          export DYLD_LIBRARY_PATH=/opt/homebrew/lib/:$(brew --prefix enchant)/lib/
           python -m pip install --upgrade pip
-          pip install pyenchant
+          pip install enchant
           pip install -r docs/requirements.txt
     - name: Sphinx build
       run: |

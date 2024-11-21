@@ -18,4 +18,4 @@ jobs:
           python3 -m pip install -r docs/requirements.txt
     - name: Sphinx Build
       run:  |
-           make -C docs html
+           make -C docs html spelling
