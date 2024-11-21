@@ -41,7 +41,7 @@ release = u' '+vstr1
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [ #'sphinxcontrib.spelling',
+extensions = [ 'sphinxcontrib.spelling',
                'recommonmark',
                'sphinx_markdown_tables',
                'sphinx_git',
