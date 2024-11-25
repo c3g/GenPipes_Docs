@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+
+name: macosbuild 
+on: [push]
+jobs:
+  macos_build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13.0"
+      - name: Install Dependencies
+        run: |
+            brew update
+            brew upgrade
+      - name: Install Enchant
+        run: brew install enchant
+      - name: Sphinx Build
+        run: |
+            echo "Enchant Installation:"
+            ls  $(brew --prefix enchant)/lib
+            python3 -m pip install --upgrade pip
+            python3 -m pip install -r docs/requirements.txt
+            echo "Installation Done!"
+            echo "PYENCHANT_LIBRARY_PATH=$(brew --prefix enchant)/lib" >> $GITHUB_ENV
+            echo "${{env.PYENCHANT_LIBRARY_PATH}}"
+            make -C docs/ clean spelling html

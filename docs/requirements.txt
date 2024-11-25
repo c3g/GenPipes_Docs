@@ -14,11 +14,15 @@ recommonmark>=0.7.1
 sphinx-git>=11.0.0
 sphinx-markdown-tables==0.0.15
 sphinx-rtd-theme==3.0.1
-sphinx-tabs>=3.3.1
+sphinxcontrib-spelling>=4.3.0
+sphinx-tabs==3.4.7
 sphinx-togglebutton==0.3.2
 sphinx-version-warning==1.1.2
 sphinx_design==0.6.1
+sphinxcontrib-mermaid==1.0.0
 sphinxcontrib-googleanalytics==0.4
 sphinxcontrib-serializinghtml==2.0.0
-sphinxcontrib-spelling>=4.3.0
 sphinxemoji==0.3.1
+sphinxcontrib-spelling==8.0.0
+wheel==0.44.0
+urllib3==2.2.3
