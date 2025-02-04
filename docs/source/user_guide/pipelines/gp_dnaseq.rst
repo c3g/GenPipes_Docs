@@ -54,6 +54,27 @@ DNA Sequencing Pipeline
             .. include:: /common/gp_readset_opt.inc
             .. include:: /common/gp_common_opt.inc
 
+
+            .. dropdown:: :material-outlined:`report;2em` -p option
+               :color: warning
+
+               The -p option is mandatory for running the following protocols:
+               
+               * `somatic_fastpass`
+               * `somatic_ensemble`
+               * `somatic_sv`
+
+               Use the following format to specify the pairs file with the -p option:
+
+               <patient_name>,<normal_sample_name>,<tumor_sample_name>
+
+               For example:
+
+               ::
+                  
+                  tumorPair_CEPHmixture_chr19,tumorPair_CEPHmixture_chr19_normal,tumorPair_CEPHmixture_chr19_tumor
+
+
          .. dropdown:: Example
 
             .. dropdown:: Germline
@@ -654,25 +675,6 @@ DNA Sequencing Pipeline
             * `dbNSFP: a lightweight database of human nonsynonymous SNPs and their functional predictions <https://www.ncbi.nlm.nih.gov/pubmed/21520341>`_
             * `DNA-Seq Pipeline <https://bitbucket.org/mugqic/genpipes/downloads/MUGQIC_Bioinfo_DNA-Seq.pptx>`_
             * `Manta - Rapid Detection of Structural Variants <https://pubmed.ncbi.nlm.nih.gov/26647377/>`_, `Using Manta for filtering and annotations <https://pmbio.org/module-05-somatic/0005/03/02/Somatic_SV_FilteringAnnotationReview/>`_.
-
-.. dropdown:: :material-outlined:`report;2em` -p option
-   :color: warning
-
-   The -p option is mandatory for running the following protocols:
-   
-   * `somatic_fastpass`
-   * `somatic_ensemble`
-   * `somatic_sv``
-
-   Use the following format to specify the pairs file with the -p option:
-
-   <patient_name>,<normal_sample_name>,<tumor_sample_name>
-
-   For example:
-
-   ::
-      
-      tumorPair_CEPHmixture_chr19,tumorPair_CEPHmixture_chr19_normal,tumorPair_CEPHmixture_chr19_tumor
 
 .. The following are replacement texts used in this file
 
