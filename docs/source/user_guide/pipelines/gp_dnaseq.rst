@@ -54,26 +54,7 @@ DNA Sequencing Pipeline
             .. include:: /common/gp_readset_opt.inc
             .. include:: /common/gp_common_opt.inc
 
-
-            .. dropdown:: :material-outlined:`report;2em` -p option
-               :color: warning
-
-               The -p option is mandatory for running the following protocols:
-               
-               * `somatic_fastpass`
-               * `somatic_ensemble`
-               * `somatic_sv`
-
-               Use the following format to specify the pairs file with the -p option:
-
-               <patient_name>,<normal_sample_name>,<tumor_sample_name>
-
-               For example:
-
-               ::
-                  
-                  tumorPair_CEPHmixture_chr19,tumorPair_CEPHmixture_chr19_normal,tumorPair_CEPHmixture_chr19_tumor
-
+            .. include:: /user_guide/pipelines/notes/caution_pair_file_format.inc
 
          .. dropdown:: Example
 
