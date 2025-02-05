@@ -1,0 +1,51 @@
+:orphan:
+
+.. _docs_gp_relnote_5_1_0:
+
+.. spelling:word-list::
+
+     genpipes
+     rnammer
+
+GenPipes 5.1.0 Release Notes
+============================
+
+What's new? 
+-----------
+
+This is a bug-fix medium release for an issue introduced in the previous release: 
+
+* `DNA Sequencing Pipeline <https://bitbucket.org/mugqic/genpipes/src/5.1.0/pipelines/dnaseq/>`_
+  
+  - Fixed an error in the `cnvkit_batch`` step (*somatic protocols*) that occurred when more than one sample pair was included in the readset file.
+  - Fixed an issue with missing dependencies that occurred in paired somatic protocols when using the same normal sample with multiple tumor samples. This error was introduced in the GenPipes release v.5.0 earlier.
+  - Improved documentation for using the pair file in somatic protocols. **Note that -p option is mandatory for somatic protocols.** For details, click `Options <https://bitbucket.org/mugqic/genpipes/src/5.1.0/pipelines/dnaseq>`_ tab and scroll down to see -p option file format example.
+  - Improved error messages when using paired protocols to ensure that users know that the patient/pair name used has to be unique.
+
+* Batch mode
+
+  -  Added a proper line break in the `genpipes` file header when using batch mode.
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+ 
+* The latest release for GenPipes version 5.1.0 tarball is in: https://bitbucket.org/mugqic/genpipes/downloads/genpipes-5.1.0.tar.gz
+
+* GenPipes is now distributed as a package via `pypi`: [https://pypi.org/project/c3g-genpipes/](https://pypi.org/project/c3g-genpipes/)
+
+* The module genpipes/5.1.0 is installed on the Abacus (MGC), Béluga, Graham, Cedar and Narval Alliance clusters.
+
+* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes
+
+* For latest GenPipes documentation, please refer to: https://genpipes.readthedocs.io/
+
+Where is the detailed ChangeLog? 
+================================= 
+
+A ChangeLog (`CHANGELOG.md <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_) is available in the archive as well as in the repository.
+
+Since we use git, there are many ways to get the details in many formats.
+
+One of our preferred ways is to use `a script <https://raw.github.com/sebhtml/ray/master/scripts/dump-ChangeLog.sh>`_ written by the author of the Ray assembler: Sébastien Boisvert, which lists the commits by tag and author. 
+
+We look forward to your feedback!
