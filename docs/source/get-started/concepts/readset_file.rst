@@ -97,7 +97,7 @@ Example of Readset File
 .. _ref_example_ampliconseq_readset_file:
 
 Amplicon Readset File Format
-------------------------------------
+-----------------------------
 
 The ampliconseq pipeline requires a slightly different readset file than the general readset format listed above. Amplicon sequencing pipeline readset file should have two additional columns called `primer1` and `primer2` referring to the primers that are used.  The sequence written in the columns "primer1" and "primer2" should be the adapter sequence followed by the primer sequence.
 
@@ -193,18 +193,21 @@ Example of ChIP-Seq Readset File
 
             sampleB readset4 Input    I        lib0002 PAIRED_END  run200  5       AGATCGGAAGAGCACACGTCTGAACTCCAGTCA   AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT   33              path/to/file.bed       path/to/readset3.paired1.fastq.gz   path/to/readset3.paired2.fastq.gz   path/to/readset3.bam
 
-
-
 .. note::
 
     The sample name of the treatment and control sample should be matched. 
 
     If there are multiple histone marks for the same sample, make sure that the sample name is the same for all.
 
-Nanopore Pipeline Readset File Format
--------------------------------------
+Long Read Readset File Format
+-------------------------------
 
-Use the following readset file format for the Nanopore Pipeline. **Do NOT** use the general readset file format above for the Nanopore Pipeline.
+Use the long read readset file format for the following pipelines:
+
+* Long Read DNA Sequencing Pipeline
+* Nanopore Pipeline
+
+**Do NOT** use the general readset file format for these pipelines.
 
 +------------------------------+-------------------------------------------------------------------------------------------+
 |   *Field*                    |   *Contents*                                                                              |
@@ -230,21 +233,24 @@ Use the following readset file format for the Nanopore Pipeline. **Do NOT** use 
 +------------------------------+-------------------------------------------------------------------------------------------+
 |**FAST5:**                    | The path to the **directory** containing the raw fast5 files, before basecalling.         |
 +------------------------------+-------------------------------------------------------------------------------------------+
+|**BAM:**  (Optional)          | The relative or absolute path to BAM file which will be converted into FASTQ files if they|
+|                              | are not available; mandatory if FASTQ1 value is missing, ignored otherwise.               |
++------------------------------+-------------------------------------------------------------------------------------------+
 
-Example of Nanopore Readset File
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Example of Long Read Readset File
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
-            Sample  Readset     Run                 Flowcell    Library    Summary                                 FASTQ                         FAST5
+     Sample  Readset     Run                 Flowcell    Library    Summary                                 FASTQ                         FAST5                           BAM (Optional)
 
-            sampleA readset1    PAE00001_abcd123    FLO-PRO002  SQK-LSK109 path/to/readset1_sequencing_summary.txt path/to/readset1/fastq_pass   path/to/readset1/fast5_pass 
+     sampleA readset1    PAE00001_abcd123    FLO-PRO002  SQK-LSK109 path/to/readset1_sequencing_summary.txt path/to/readset1/fastq_pass   path/to/readset1/fast5_pass   path/to/sampleA/readset1/BAM/file
 
-            sampleA readset2    PAE00002_abcd456    FLO-PRO002  SQK-LSK109 path/to/readset2_sequencing_summary.txt path/to/readset2/fastq_pass   path/to/readset2/fast5_pass 
+     sampleA readset2    PAE00002_abcd456    FLO-PRO002  SQK-LSK109 path/to/readset2_sequencing_summary.txt path/to/readset2/fastq_pass   path/to/readset2/fast5_pass   path/to/sampleA/readset2/BAM/file
 
-            sampleA readset3    PAE00003_abcd789    FLO-PRO002  SQK-LSK109 path/to/readset3_sequencing_summary.txt path/to/readset3/fastq_pass   path/to/readset3/fast5_pass 
+     sampleA readset3    PAE00003_abcd789    FLO-PRO002  SQK-LSK109 path/to/readset3_sequencing_summary.txt path/to/readset3/fastq_pass   path/to/readset3/fast5_pass   path/to/sampleA/readset3/BAM/file
 
-            sampleA readset4    PAE00004_abcd246    FLO-PRO002  SQK-LSK109 path/to/readset4_sequencing_summary.txt path/to/readset4/fastq_pass   path/to/readset4/fast5_pass
+     sampleA readset4    PAE00004_abcd246    FLO-PRO002  SQK-LSK109 path/to/readset4_sequencing_summary.txt path/to/readset4/fastq_pass   path/to/readset4/fast5_pass   path/to/sampleA/readset4/BAM/file
 
 Difference between a Genome Sample File and Readset file
 ========================================================
