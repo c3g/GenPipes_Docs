@@ -27,8 +27,8 @@ This guide contains usage manual and reference information for all available Gen
    pipelines/gp_chipseq
    pipelines/gp_covseq
    pipelines/gp_dnaseq
+   pipelines/gp_longread_dnaseq
    pipelines/gp_wgs_methylseq
-   pipelines/gp_nanopore
    pipelines/gp_nanopore_covseq
    pipelines/gp_rnaseq
    pipelines/gp_rnaseq_denovo

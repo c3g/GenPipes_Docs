@@ -1,4 +1,4 @@
-.. _docs_steps_nanopore:
+.. _docs_steps_longread_dnaseq:
 
 .. spelling:word-list::
 
@@ -40,6 +40,62 @@ BAM readset files are merged into one file per sample in this step. Using aligne
 
 In this step, Structural Variant Identification using Mapped Long Reads (`SVIM methodology`_), is used to perform structural variant (SV) analysis on each sample.
 
+.. _Metrics Nanoplot:
+
+**Metrics Nanoplot**
+
+This step collects QC metrics on unaligned BAM or FastQ files with `Nanoplot`_.
+
+.. _pbmm2 Align:
+
+**pbmm2 Align**
+
+Uses `pbmm2`_ to align fastq files or the raw hifi BAM to the reference. Sorted output can be used directly for polishing using GenomicConsensus, if BAM has been used as input to pbmm2.
+
+.. _Metrics Mosdepth:
+
+**Metrics Mosdepth**
+
+.. _Set Deepvariant Regions:
+
+**Set Deepvariant Regions**
+
+.. _Deepvariant:
+
+**Deepvariant**
+
+.. _Merge Filter Deepvariant:
+
+**Merge Filter Deepvariant**
+
+.. _HiFi CNV:
+
+**HiFi CNV**
+
+.. _Target Genotyping:
+
+**Target Genotyping**
+
+.. _SawFish:
+
+**SawFish**
+
+.. _Annotate SV:
+
+**Annotate SV**
+
+.. _Hi Phase:
+
+**Hi Phase**
+
+.. _Report CPSR:
+
+**Report CPSR**
+
+.. _MultiQC:
+
+**MultiQC**
+
 .. References
 
 .. _Blast-QC utility: https://environmentalmicrobiome.biomedcentral.com/articles/10.1186/s40793-020-00361-y
@@ -48,3 +104,4 @@ In this step, Structural Variant Identification using Mapped Long Reads (`SVIM m
 .. _pycoQC software: https://github.com/a-slide/pycoQC
 .. _Picard: http://broadinstitute.github.io/picard/
 .. _SVIM methodology:  https://pubmed.ncbi.nlm.nih.gov/30668829/
+.. _Nanoplot: https://github.com/wdecoster/NanoPlot

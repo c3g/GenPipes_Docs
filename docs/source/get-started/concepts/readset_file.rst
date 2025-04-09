@@ -199,6 +199,8 @@ Example of ChIP-Seq Readset File
 
     If there are multiple histone marks for the same sample, make sure that the sample name is the same for all.
 
+.. _ref_example_longread_dnaseq_readset_file:
+
 Long Read Readset File Format
 -------------------------------
 
