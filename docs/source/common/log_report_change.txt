@@ -1,0 +1,1 @@
+In the latest GenPipes release v6.x, generating reports has changed. Earlier, there were two different scripts for generating reports when using PBS or Slurm scheduler. With version 6.x it is now a single command for both schedulers.

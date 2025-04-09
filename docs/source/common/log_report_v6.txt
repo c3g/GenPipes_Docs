@@ -1,0 +1,11 @@
+Use the following command to generate the tab-delimited report:
+
+::
+
+    genpipes tools log_report --tsv log.out job_output/{PIPELINE}_job_list_{DATE}T{TIME}
+
+For example:
+
+::
+
+    genpipes tools log_report --tsv log.out job_output/DnaSwq_job_list_2018-06-26T12.54.27

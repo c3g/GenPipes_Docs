@@ -49,34 +49,67 @@ where, PIPELINE corresponds to the pipeline name and YEAR-MM-DDTHH.MM.SS to the 
 Abacus Reports (PBS Scheduler)
 ++++++++++++++++++++++++++++++
 
-Use the `log_report.pl` script to generate the tab-delimited report for Abacus as shown in the command below:
+.. include:: /common/log_report_change.txt
 
-::
+.. tab-set:: 
 
-  log_report.pl job_output/{PIPELINE}_job_list_{DATE}T{TIME}
+      .. tab-item:: Version 6.x
 
-For example:
+          .. include:: /common/log_report_v6.txt
 
-::
+      .. tab-item:: Version 5.x, 4.x, 3.x
 
-  log_report.pl job_output/RnaSeq_job_list_2018-06-26T12.54.27
+          Use the `log_report.pl` script to generate the tab-delimited report for Abacus:
 
-This command shown above returns the status of each job. In addition to the detailed report, it also outputs a summary file that includes the number of jobs that completed successfully, those that failed, and those that are still active/inactive.
+          ::
+
+            log_report.pl job_output/{PIPELINE}_job_list_{DATE}T{TIME}
+
+          For example:
+
+          ::
+
+            log_report.pl job_output/RnaSeq_job_list_2018-06-26T12.54.27
+
+.. note:: 
+
+   The `log_report` command returns the status of each job. In addition to the detailed report, it also outputs a summary file that includes the number of jobs that completed successfully, those that failed, and those that are still active/inactive.
+
+.. tip:: 
+  
+    You can save the reports as .csv or .tsv files and open them in Excel on your laptop.  For each job, there is an exit code that indicates job status.  
+
 
 Analysis Reports (Slurm Scheduler)
 +++++++++++++++++++++++++++++++++++
 
-Use the `log_report.py` script to generate the html report for running Slurm Scheduler on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers:
+.. include:: /common/log_report_change.txt
 
-::
+.. tab-set:: 
 
- log_report.py job_output/{PIPELINE}_job_list_{DATE}T{TIME} --tsv log.out 
+      .. tab-item:: Version 6.x
+
+          .. include:: /common/log_report_v6.txt
+
+      .. tab-item:: Version 5.x, 4.x, 3.x
+
+          Use the `log_report.py` script to generate the html report for running Slurm Scheduler on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers:
+
+          ::
+
+            log_report.py job_output/{PIPELINE}_job_list_{DATE}T{TIME} --tsv log.out 
  
-.. note::
-  
-     By default, unlike the `log_report.pl` script, the script `log_report.py` does not provide detailed output.  Use the --tsv option to get a detailed output.
+          .. warning::
+            
+              By default, unlike the `log_report.pl` script, the script `log_report.py` does not provide detailed output.  Use the --tsv option to get a detailed output.
 
-You can save the reports as .csv or .tsv files and open them in Excel on your laptop.  For each job, there is an exit code that indicates job status.  
+.. note:: 
+
+   The `log_report` command returns the status of each job. In addition to the detailed report, it also outputs a summary file that includes the number of jobs that completed successfully, those that failed, and those that are still active/inactive.
+
+.. tip:: 
+  
+    You can save the reports as .csv or .tsv files and open them in Excel on your laptop.  For each job, there is an exit code that indicates job status.  
 
 Exit Codes
 ++++++++++
