@@ -8,4 +8,4 @@ For example:
 
 ::
 
-    genpipes tools log_report --tsv log.out job_output/DnaSwq_job_list_2018-06-26T12.54.27
+    genpipes tools log_report --tsv log.out job_output/DnaSeq_job_list_2018-06-26T12.54.27
