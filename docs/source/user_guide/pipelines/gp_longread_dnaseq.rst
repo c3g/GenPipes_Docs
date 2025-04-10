@@ -66,7 +66,7 @@ Long Read DNA Sequencing Pipeline
 
             .. dropdown:: Revio
 
-               .. include::  /user_guide/pipelines/example_runs/dnaseq_som_tum_only.inc
+               .. include::  /user_guide/pipelines/example_runs/longread_dnaseq.inc
                .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
                .. card:: Test Dataset
@@ -210,19 +210,16 @@ Long Read DNA Sequencing Pipeline
 .. |metrics_nanoplot| replace:: `Metrics Nanoplot`_
 .. |pbmm2_align| replace:: `pbmm2 Align`_
 .. |metrics_mosdepth| replace:: `Metrics Mosdepth`_
-.. |set_deepvariant_regions| replace:: `Set Deepvariant Regions`_
+.. |set_deepvariant_regions| replace:: `Set DeepVariant Regions`_
 .. |deepvariant| replace:: `Deepvariant`_
 .. |merge_filter_deepvariant| replace:: `Merge Filter Deepvariant`_
 .. |hificnv| replace:: `HiFi CNV`_
 .. |trgt_genotyping| replace:: `Target Genotyping`_
-.. |sawfish| replace:: `SawFish`_
+.. |sawfish| replace:: `Sawfish`_
 .. |annotSV| replace:: `Annotate SV`_
 .. |hiphase| replace:: `Hi Phase`_
 .. |report_cpsr| replace:: `Report CPSR`_
 .. |multiqc| replace:: `MultiQC`_
-
-
-
 
 .. include::  repl_cram_op.inc
 

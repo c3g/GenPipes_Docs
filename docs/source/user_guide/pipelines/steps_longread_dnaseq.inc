@@ -2,7 +2,15 @@
 
 .. spelling:word-list::
 
+     Nanopore
+     NCBI
      basecalled
+     PycoQC
+     Nanoplot
+     pbmm2
+     Mosdepth
+     DeepVariant
+
 
 **Step Details**
 
@@ -20,7 +28,7 @@ In this step, `Blast-QC utility`_ is used for sequence alignment and identificat
 
 `Minimap2 Align Program`_ is a fast, general purpose sequencing alignment program that maps DNA and long mRNA sequences against a large reference database.  It can be used for Nanopore sequencing for mapping 1kb genomic reads at an error rate of 15% (e.g., PacBio or Oxford Nanopore genomic reads), among other uses.
 
-In this step,  minimap2 to align the Fastq reads that passed the minimum QC threshold to the provided reference genome. By default, it aligns to the human genome reference (GRCh38) with Minimap2.
+In this step,  minimap2 to align the FastQ reads that passed the minimum QC threshold to the provided reference genome. By default, it aligns to the human genome reference (GRCh38) with Minimap2.
 
 .. _pycoQC:
 
@@ -56,45 +64,67 @@ Uses `pbmm2`_ to align fastq files or the raw hifi BAM to the reference. Sorted 
 
 **Metrics Mosdepth**
 
-.. _Set Deepvariant Regions:
+Calculate depth stats with `mosdepth`_.
 
-**Set Deepvariant Regions**
+.. _Set DeepVariant Regions:
 
-.. _Deepvariant:
+**Set DeepVariant Regions**
 
-**Deepvariant**
+Create an interval list with `ScatterIntervalsByNs from GATK`_. Used for creating a broken-up interval list that can be used for scattering a variant-calling pipeline in a way that will not cause problems at the edges of the intervals. By using large enough N blocks (so that the tools will not be able to anchor on both sides) we can be assured that the results of scattering and gathering the variants with the resulting interval list will be the same as calling with one large region.
 
-.. _Merge Filter Deepvariant:
+.. _DeepVariant:
 
-**Merge Filter Deepvariant**
+**DeepVariant**
+
+Germline variant calling with `DeepVariant`_.
+
+.. _Merge Filter DeepVariant:
+
+**Merge Filter DeepVariant**
+
+Merge `DeepVariant`_ outputs from the previous step, if applicable, and filter vcf.
 
 .. _HiFi CNV:
 
 **HiFi CNV**
 
+Call copy number variation and visualise results with `HiFiCNV`_.
+
 .. _Target Genotyping:
 
 **Target Genotyping**
 
-.. _SawFish:
+Call tandem repeats for pathogenic and full repeats with `trgt`_ for `targeted genotyping`_.
 
-**SawFish**
+.. _Sawfish:
+
+**Sawfish**
+
+Call structural variants from mapped HiFi sequencing reads with `Sawfish SV Caller`_.
 
 .. _Annotate SV:
 
 **Annotate SV**
 
+Annotate and rank structural variants with `AnnotSV`_.
+
 .. _Hi Phase:
 
 **Hi Phase**
+
+Phase variant calls with `HiPhase`_.
 
 .. _Report CPSR:
 
 **Report CPSR**
 
+Creates a `CPSR`_ germline report. It takes annotated/filter VCF as the input and outputs an html report along with additional flat files.
+
 .. _MultiQC:
 
 **MultiQC**
+
+The `MultiQC aggregator`_ collates results from bioinformatics analyses across many samples into a single report. It searches for a given directory for analysis logs and compiles a HTML report. This is a tool for general usage, perfect for summarising the output from numerous bioinformatics tools.
 
 .. References
 
@@ -105,3 +135,14 @@ Uses `pbmm2`_ to align fastq files or the raw hifi BAM to the reference. Sorted 
 .. _Picard: http://broadinstitute.github.io/picard/
 .. _SVIM methodology:  https://pubmed.ncbi.nlm.nih.gov/30668829/
 .. _Nanoplot: https://github.com/wdecoster/NanoPlot
+.. _mosdepth: https://github.com/brentp/mosdepth
+.. _ScatterIntervalsByNs from GATK: https://gatk.broadinstitute.org/hc/en-us/articles/360041416072-ScatterIntervalsByNs-Picard
+.. _DeepVariant: https://github.com/google/deepvariant
+.. _HiFiCNV: https://github.com/PacificBiosciences/HiFiCNV
+.. _targeted genotyping: https://sapac.illumina.com/techniques/popular-applications/genotyping/targeted-genotyping.html
+.. _trgt: https://github.com/PacificBiosciences/trgt
+.. _Sawfish SV Caller: https://github.com/PacificBiosciences/sawfish
+.. _AnnotSV: https://github.com/lgmgeo/AnnotSV
+.. _HiPhase: https://github.com/PacificBiosciences/HiPhase
+.. _CPSR: https://sigven.github.io/cpsr/
+.. _MultiQC aggregator: https://multiqc.info/
