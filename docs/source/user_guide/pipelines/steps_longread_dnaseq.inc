@@ -10,6 +10,7 @@
      pbmm2
      Mosdepth
      DeepVariant
+     Germline
 
 
 **Step Details**
@@ -72,9 +73,9 @@ Calculate depth stats with `mosdepth`_.
 
 Create an interval list with `ScatterIntervalsByNs from GATK`_. Used for creating a broken-up interval list that can be used for scattering a variant-calling pipeline in a way that will not cause problems at the edges of the intervals. By using large enough N blocks (so that the tools will not be able to anchor on both sides) we can be assured that the results of scattering and gathering the variants with the resulting interval list will be the same as calling with one large region.
 
-.. _DeepVariant:
+.. _DeepVariant Germline VC:
 
-**DeepVariant**
+**DeepVariant Germline VC**
 
 Germline variant calling with `DeepVariant`_.
 

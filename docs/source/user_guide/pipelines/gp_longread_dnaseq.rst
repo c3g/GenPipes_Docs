@@ -25,7 +25,7 @@ Long Read DNA Sequencing Pipeline
 
    The **GenPipes v6.x** release introduces the new Long Read DNA Sequencing Pipeline. It supports two protocols, Nanopore and Revio. 
 
-.. _ref_docs_gp_nanopore::
+.. _ref_docs_gp_nanopore:
 
    .. note::
       
@@ -49,13 +49,11 @@ Long Read DNA Sequencing Pipeline
             .. include:: /common/gp_readset_opt.inc
             .. include:: /common/gp_common_opt.inc
 
-            .. include:: /user_guide/pipelines/notes/caution_pair_file_format.inc
-
          .. dropdown:: Example
 
             .. dropdown:: Nanopore
 
-               .. include::  /user_guide/pipelines/example_runs/nanopore.inc
+               .. include::  /user_guide/pipelines/example_runs/lr_nanopore.inc
                .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
                .. card:: Test Dataset
@@ -66,7 +64,7 @@ Long Read DNA Sequencing Pipeline
 
             .. dropdown:: Revio
 
-               .. include::  /user_guide/pipelines/example_runs/longread_dnaseq.inc
+               .. include::  /user_guide/pipelines/example_runs/lr_revio.inc
                .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
                .. card:: Test Dataset
@@ -129,7 +127,7 @@ Long Read DNA Sequencing Pipeline
          +----+------------------------------------+-------------------------------+
          | 5. | |svim|                             | |set_deepvariant_regions|     |
          +----+------------------------------------+-------------------------------+
-         | 6. |                                    | |deepvariant|                 |
+         | 6. |                                    | |deepvariant_vc|              |
          +----+                                    +-------------------------------+
          | 7. |                                    | |merge_filter_deepvariant|    |
          +----+                                    +-------------------------------+
@@ -163,8 +161,7 @@ Long Read DNA Sequencing Pipeline
             
             Both protocols require a :ref:`readset file as input <docs_readset_file>`. The :ref:`readset file for the Long Read DNA Seq pipeline<ref_example_longread_dnaseq_readset_file>` has a specific structure and format containing the sample metadata and paths to input data (FASTQ, FAST5 or BAM).
 
-            Nanopore
-            --------
+            **Nanopore**
 
             The Nanopore protocol of the pipeline uses minimap2 to align reads to the reference genome. Additionally, it produces a QC report that includes an interactive dashboard with data from the basecalling summary file as well as the alignment. A step aligning random reads to the NCBI nt database and reporting the species of the highest hits is also done as QC.
 
@@ -184,8 +181,7 @@ Long Read DNA Sequencing Pipeline
             For more information on using ONT data for structural variant detection, as well as an alternative
             approach, please consult [this GitHub repository](https://github.com/nanoporetech/pipeline-structural-variation).
 
-            Revio
-            -----
+            **Revio**
 
             The Revio protocol uses `pbmm2`_ to align reads to the reference genome, followed by variant calling with DeepVariant
             and structural variant calling with HiFiCNV, TRGT, and Sawfish. Variants are annotated with AnnotSV and phased
@@ -211,7 +207,7 @@ Long Read DNA Sequencing Pipeline
 .. |pbmm2_align| replace:: `pbmm2 Align`_
 .. |metrics_mosdepth| replace:: `Metrics Mosdepth`_
 .. |set_deepvariant_regions| replace:: `Set DeepVariant Regions`_
-.. |deepvariant| replace:: `Deepvariant`_
+.. |deepvariant_vc| replace:: `DeepVariant Germline VC`_
 .. |merge_filter_deepvariant| replace:: `Merge Filter Deepvariant`_
 .. |hificnv| replace:: `HiFi CNV`_
 .. |trgt_genotyping| replace:: `Target Genotyping`_
