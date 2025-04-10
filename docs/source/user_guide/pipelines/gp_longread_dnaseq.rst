@@ -54,24 +54,18 @@ Long Read DNA Sequencing Pipeline
             .. dropdown:: Nanopore
 
                .. include::  /user_guide/pipelines/example_runs/lr_nanopore.inc
-               .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
-
-               .. card:: Test Dataset
-                  :link: docs_testdatasets
-                  :link-type: ref
-
-                  You can download the test dataset for this pipeline :ref:`here<docs_testdatasets>`.
 
             .. dropdown:: Revio
 
                .. include::  /user_guide/pipelines/example_runs/lr_revio.inc
-               .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
-               .. card:: Test Dataset
-                  :link: docs_testdatasets
-                  :link-type: ref
+            .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
-                  Use the :ref:`Long Read DNA sequencing test dataset <docs_testdatasets>` for this pipeline.
+            .. card:: Test Dataset
+               :link: docs_testdatasets
+               :link-type: ref
+
+               Use the :ref:`Long Read DNA sequencing test dataset <docs_testdatasets>` for this pipeline.
 
       .. tab-item:: Schema
          :name: lrdnaschema  
@@ -142,6 +136,8 @@ Long Read DNA Sequencing Pipeline
          | 12.|                                    | |hiphase|                     |
          +----+                                    +-------------------------------+
          | 13.|                                    | |report_cpsr|                 |
+         +----+                                    +-------------------------------+
+         | 14.|                                    | |multiqc|                     |
          +----+------------------------------------+-------------------------------+
   
          .. card::
@@ -167,8 +163,9 @@ Long Read DNA Sequencing Pipeline
 
             Once the QC and alignments have been produced, Picard is used to merge readsets coming from the same
             sample. Finally, SVIM is used to detect Structural Variants (SV) including deletions, insertions and
-            translocations. For a full summary of the types of SVs detected, please consult the following [site](
-            https://github.com/eldariont/svim#background-on-structural-variants-and-long-reads).
+            translocations. 
+            
+            For a full summary of the types of SVs detected, refer to this `site <https://github.com/eldariont/svim#background-on-structural-variants-and-long-reads>`_.
 
             The SV calls produced by SVIM are saved as VCFs for each sample, which can then be used in downstream
             analyses. No filtering is performed on the SV calls.
@@ -179,7 +176,7 @@ Long Read DNA Sequencing Pipeline
             for transcriptomics or epigenomics datasets.
 
             For more information on using ONT data for structural variant detection, as well as an alternative
-            approach, please consult [this GitHub repository](https://github.com/nanoporetech/pipeline-structural-variation).
+            approach, refer to `Structural Variant Pipeline GitHub repository <https://github.com/nanoporetech/pipeline-structural-variation>`_.
 
             **Revio**
 
@@ -216,8 +213,6 @@ Long Read DNA Sequencing Pipeline
 .. |hiphase| replace:: `Hi Phase`_
 .. |report_cpsr| replace:: `Report CPSR`_
 .. |multiqc| replace:: `MultiQC`_
-
-.. include::  repl_cram_op.inc
 
 .. The following are html links used in this text
 
