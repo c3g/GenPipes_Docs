@@ -33,8 +33,7 @@ The general readset file format is meant for the following pipelines **only**. R
 #. RNA-Seq,
 #. RNA-Seq De Novo Assembly,
 #. Tumor Pair,
-#. Methyl-Seq,
-#. CovSeq
+#. Methyl-Seq
 
 For the pipelines listed above, the readset file is a tab-separated file that contains the information in the table below:
 
@@ -207,7 +206,7 @@ Long Read Readset File Format
 Use the long read readset file format for the following pipelines:
 
 * Long Read DNA Sequencing Pipeline
-* Nanopore Pipeline
+* Nanopore Covseq Pipeline
 
 **Do NOT** use the general readset file format for these pipelines.
 
