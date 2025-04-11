@@ -9,7 +9,7 @@
 Pipelines Reference Guide
 =========================
 
-.. dropdown:: :material-outlined:`bolt;2em` GenPipes 5.0
+.. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x Onwards
    :color: success
 
    .. include:: /gp5_0.inc
