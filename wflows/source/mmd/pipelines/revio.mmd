@@ -1,0 +1,60 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
+
+        %% GenPipes Schema for revio.py
+        %% Ref: https://github.com/c3g/GenPipes/tree/main/genpipes/pipelines/longread_dnaseq
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+
+        graph LR
+          Node1{{ 1.<br/> Metrics Nanoplot }}:::nodefill
+          Node2{{ 2.<br/> pbmm2 <br/> Align }}:::nodefill
+          Node3{{ 3.<br/> Picard Merge <br/> SAM Files }}:::nodefillblack
+          Node4{{ 4.<br/> Metrics <br/> mosdepth }}:::nodefill
+          Node5{{ 5.<br/> Set Deepvariant <br/> Regions }}:::nodefill
+          Node6{{ 6.<br/> DeepVariant }}:::nodefill
+          Node7{{ 7.<br/> Merge Filter DeepVariant }}:::nodefill
+          Node8{{ 8.<br/> HiFi CNV }}:::nodefill
+          Node9{{ 9.<br/> Target Genotyping }}:::nodefill
+          Node10{{ 10.<br/> Sawfish }}:::nodefill
+          Node11{{ 11.<br/> Annotate SV }}:::nodefill
+          Node12{{ 12.<br/> HiPhase }}:::nodefill
+          Node13{{ 13.<br/> Report CPSR }}:::nodefill
+          Node14{{ 14.<br/> MultiQC }}:::nodefill
+          Output([fa:fa-sticky-note-o Report ])
+
+          Input1[[fa:fa-file-archive-o .BAM]] --> Node1 -.-> Node2
+          Input2[[fa:fa-file-archive-o .FASTQ]] --> Node2
+          Node2 -.-> Node3 -.-> Node4 & Node5 & Node6 & Node8 & Node9 & Node10 & Node12
+          Node6 -.-> Node7 -.-> Node12
+          Node7 -.-> Node8 & Node11
+          Node8 -.-> Node11
+          Node9 & Node10 -.-> Node12 -.-> Node13
+          Node1 & Node4 -.-> Node14
+
+          Output([fa:fa-sticky-note-o Report ])
+          Node14 ---> Output
+
+          subgraph readSetSteps[" "]
+            Node1
+            Node2
+          end
+          subgraph sampleSetSteps[" "]
+            Node3          
+            Node4          
+            Node5
+            Node6          
+            Node7          
+            Node8          
+            Node9          
+            Node10          
+            Node11         
+            Node12          
+            Node13         
+            Node14         
+            Output
+          end
+          classDef greenRect fill:#E4FBF4,stroke:white
+          class readSetSteps greenRect
+          classDef blueRect fill:#DEF6FC,stroke:white
+          class sampleSetSteps blueRect
+          classDef nodefill fill:#ffffff,stroke:gray,stroke-width:2px
+          classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px
