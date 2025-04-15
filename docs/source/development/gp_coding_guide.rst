@@ -12,7 +12,7 @@ GenPipes Coding Guidelines
 
 .. note::
 
-       The following document is based on basic information available in the GenPipes source file `coding standards.txt <https://bitbucket.org/mugqic/genpipes/src/master/README-GenAP_coding_standards.txt>`_.  In future, this may be updated to help open-source community to contribute to GenPipes sources.
+       The following document is based on basic information available in the GenPipes source file `coding standards.txt <https://github.com/c3g/GenPipes/blob/main/README-GenAP_coding_standards.txt>`_.  In future, this may be updated to help open-source community to contribute to GenPipes sources.
 
 .. contents:: :local:
 
@@ -53,7 +53,7 @@ All software calls should be done using the module system. Modules should be spe
 Pipeline Development
 ---------------------
 
-Bitbucket tickets are usually created for each pipeline development, where benchmarking parameters and other decisions made can be logged for later reference.
+GitHub issues are usually created for each pipeline development, where benchmarking parameters and other decisions made can be logged for later reference.
 Code is always developed on a branch, i.e. try as much as possible to not edit the master branch directly. Once code is ready to be merged, a pull request is created. After being reviewed by at least two developers on the team (if possible, developers have to be uninvolved in the reviewed project), and after all the reviewer comments and inquiries have been addressed and accepted, the development branch can then be merged to master.
 
 Transferability

@@ -46,7 +46,10 @@ To explore the available genomes, you can type:
 
   ls $MUGQIC_INSTALL_HOME/genomes/species/
 
-For a list of available genomes, visit `Bioinformatics resources - genomes <https://www.computationalgenomics.ca/cvmfs-genomes/>`_ and see `sources here <https://bitbucket.org/mugqic/genpipes/src/master/resources/genomes/>`_.
+C3G, in partnership with Compute Canada, maintains several genomes that are available on several HPC centres. For a list of available genomes, visit `Bioinformatics resources - genomes <https://computationalgenomics.ca/cvmfs-genome/>`_. In addition to the fasta sequence, many genomes include aligner indices and annotation files.
+
+See `genome files here <https://github.com/c3g/GenPipes/tree/main/resources/genomes/>`_.
+
 
 What is meant by test dataset? Where can I find available test datasets?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

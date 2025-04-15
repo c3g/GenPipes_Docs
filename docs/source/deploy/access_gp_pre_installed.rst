@@ -76,7 +76,7 @@ You are all set to use GenPipes deployed on the `Digital Research Alliance of Ca
 
 .. note::
 
-         Canadian Centre for Computational Genomics (C3G), in partnership with `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, offers and maintains a large set of bioinformatics resources for the community. For a complete list of software currently deployed on several HPC centres, including Beluga, Cedar and others, refer to `Bioinformatics Resources <https://computationalgenomics.ca/cvmfs-genome/>`_ and `available software <https://docs.alliancecan.ca/wiki/Available_software>`_. Several reference genomes are also available. You can refer to the `available genomes <https://bitbucket.org/mugqic/genpipes/src/master/resources/genomes/>`_ and the environment setup to access these genomes.
+         Canadian Centre for Computational Genomics (C3G), in partnership with `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, offers and maintains a large set of bioinformatics resources for the community. For a complete list of software currently deployed on several HPC centres, including Beluga, Cedar and others, refer to `Bioinformatics Resources <https://computationalgenomics.ca/cvmfs-genome/>`_ and `available software <https://docs.alliancecan.ca/wiki/Available_software>`_. Several reference genomes are also available. You can refer to the `available genomes <https://github.com/c3g/GenPipes/tree/main/resources/genomes/>`_ and the environment setup to access these genomes.
 
 
 .. _setting_up_gp_environment_modules:

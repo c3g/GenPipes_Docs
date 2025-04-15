@@ -47,17 +47,11 @@ Quick! Where can I find it? I can't wait!
 
 * The module genpipes/6.0.0 is installed on the Abacus (MGC), Béluga, Graham, Cedar and Narval Alliance clusters.
 
-* The source code is in bitbucket: https://bitbucket.org/mugqic/genpipes
+* The source code is in GitHub: hhttps://github.com/c3g/GenPipes
 
 * For latest GenPipes documentation, please refer to: https://genpipes.readthedocs.io/
 
 Where is the detailed ChangeLog? 
 ================================= 
 
-A ChangeLog (`CHANGELOG.md <https://bitbucket.org/mugqic/genpipes/src/master/CHANGELOG.md>`_) is available in the archive as well as in the repository.
-
-Since we use git, there are many ways to get the details in many formats.
-
-One of our preferred ways is to use `a script <https://raw.github.com/sebhtml/ray/master/scripts/dump-ChangeLog.sh>`_ written by the author of the Ray assembler: Sébastien Boisvert, which lists the commits by tag and author. 
-
-We look forward to your feedback!
+.. include:: ../gp_changelog.inc
