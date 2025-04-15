@@ -27,11 +27,11 @@ DNA Sequencing Pipeline
 
 :bdg-primary:`Version` |genpipes_version|
 
-.. dropdown:: :material-outlined:`notifications_active;2em` v5.0.0 Update! 
+.. dropdown:: :material-outlined:`notifications_active;2em` DNA Sequencing Pipeline Revamp! 
    :color: success
    :open:
 
-   Starting from **GenPipes v5.x** onward, the DNA Sequencing Pipeline has been completely revamped. It is enhanced to include the functionality  that was earlier provided in **GenPipes v4.6.1** by the following standalone pipelines:
+   Starting from **GenPipes v5.x** onward, the DNA Sequencing Pipeline has been completely revamped. It is enhanced to include the functionality that was earlier provided in **GenPipes v4.6.1** by the following standalone pipelines:
    
    * `Tumor Pair Sequencing Pipeline <https://genpipes.readthedocs.io/en/genpipes-v4.6.1/user_guide/pipelines/gp_tumourpair.html>`_ **Deprecated**
    * `DNA Sequencing (High Coverage) Pipeline <https://genpipes.readthedocs.io/en/genpipes-v4.6.1/user_guide/pipelines/gp_dnaseq_highcov.html>`_. **Deprecated**
