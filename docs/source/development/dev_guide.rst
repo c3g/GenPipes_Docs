@@ -8,7 +8,7 @@ Developer Guide
 
 This guide provides information for developers who are interested in contributing to GenPipes sources.
 
-#. Refer to GenPipes sources in BitBucket https://bitbucket.org/mugqic/genpipes/src
+#. Refer to GenPipes sources in `GitHub <https://github.com/c3g/GenPipes>`_
 
 #. Use a local dev branch in order to make your changes / modifications / enhancements and issue a Pull Request from your local dev branch to GenPipes dev branch.
 
