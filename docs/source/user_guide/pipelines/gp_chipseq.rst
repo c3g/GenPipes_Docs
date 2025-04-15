@@ -109,29 +109,31 @@ ChIP Sequencing Pipeline
          +----+---------------------------+--------------------------------------+
          | 11.| |qc_metrics|              | |qc_metrics|                         |
          +----+---------------------------+--------------------------------------+
-         | 12.| |homer_make_ucsc_file|    | |homer_make_ucsc_file|               |
+         | 12.| |homer_make_ucsc_file|    | |deeptools_qc|                       |     
          +----+---------------------------+--------------------------------------+
-         | 13.| |macs2_callpeak|          | |macs2_atacseq_callpeak|             |    
+         | 13.| |macs2_callpeak|          | |homer_make_ucsc_file|               |
          +----+---------------------------+--------------------------------------+
-         | 14.| |homer_annotate_peaks|    | |homer_annotate_peaks|               |
+         | 14.| |homer_annotate_peaks|    | |macs2_atacseq_callpeak|             |    
          +----+---------------------------+--------------------------------------+
-         | 15.| |homer_find_motifs_genome|| |homer_find_motifs_genome|           |
+         | 15.| |annotation_graphs|       | |homer_annotate_peaks|               |
          +----+---------------------------+--------------------------------------+
-         | 16.| |annotation_graphs|       | |annotation_graphs|                  |
+         | 16.| |annotation_graphs|       | |homer_find_motifs_genome|           |
          +----+---------------------------+--------------------------------------+
-         | 17.| |run_spp|                 | |run_spp|                            |
+         | 17.| |run_spp|                 | |annotation_graphs|                  |
          +----+---------------------------+--------------------------------------+
-         | 18.| |differential_binding|    | |differential_binding|               |
+         | 18.| |differential_binding|    | |run_spp|                            |
          +----+---------------------------+--------------------------------------+
-         | 19.| |ihec_metrics|            | |ihec_metrics|                       |
+         | 19.| |ihec_metrics|            | |differential_binding|               |
          +----+---------------------------+--------------------------------------+
-         | 20.| |multiqc_report|          | |multiqc_report|                     |
+         | 20.| |multiqc_report|          | |ihec_metrics|                       |
          +----+---------------------------+--------------------------------------+
-         | 21.| |cram_output|             | |cram_output|                        |
+         | 21.| |cram_output|             | |multiqc_report|                     |
          +----+---------------------------+--------------------------------------+
-         | 22.| |gatk_haplotype_caller|   | |gatk_haplotype_caller|              |
+         | 22.| |gatk_haplotype_caller|   | |cram_output|                        |
          +----+---------------------------+--------------------------------------+
-         | 23.| |merge_and_call_ind_gvcf| | |merge_and_call_ind_gvcf|            |
+         | 23.| |merge_and_call_ind_gvcf| | |gatk_haplotype_caller|              |
+         +----+---------------------------+--------------------------------------+
+         | 24.|                           | |merge_and_call_ind_gvcf|            |
          +----+---------------------------+--------------------------------------+
 
         .. card::
@@ -191,6 +193,7 @@ ChIP Sequencing Pipeline
 .. |metrics| replace:: `Metrics`_
 .. |homer_make_tag_directory| replace:: `Homer Make Tag Directory`_
 .. |qc_metrics| replace:: `QC Metrics`_
+.. |deeptools_qc| replace:: `Deeptools QC`_ 
 .. |homer_make_ucsc_file| replace:: `Homer Make UCSC file`_
 .. |macs2_callpeak| replace:: `MACS2 call peak`_
 .. |macs2_atacseq_callpeak| replace:: `MACS2 ATAC-seq call peak`_
