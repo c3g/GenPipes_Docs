@@ -101,7 +101,7 @@ Genomes and modules used by the pipelines are already installed on a CVMFS parti
 
 .. note::
 
-      GenPipes 5.0 release has been verified for Python 3.11.1 version. It no longer supports Python 2.7 version. 
+      GenPipes 5.x release onwards has been verified for Python version 3.11.1 or higher. It no longer supports Python 2.7 version. 
 
 Next, you need to load the `software modules <https://docs.python.org/3/tutorial/modules.html>`_ in your shell environment that are required to run GenPipes. You can refer to the full list of modules available on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers at the `module page <https://docs.alliancecan.ca/wiki/Available_software>`_ and `genomics tools <https://computationalgenomics.ca/tools/>`_.
 

@@ -19,17 +19,17 @@ Long Read DNA Sequencing Pipeline
 
 :bdg-primary:`Version` |genpipes_version|
 
-.. dropdown:: :material-outlined:`notifications_active;2em` v6.0.0 Update! 
+.. dropdown:: :material-outlined:`notifications_active;2em` New! 
    :color: success
    :open:
 
    The **GenPipes v6.x** release introduces the new Long Read DNA Sequencing Pipeline. It supports two protocols, Nanopore and Revio. 
 
-.. _ref_docs_gp_nanopore:
+   .. _ref_docs_gp_nanopore:
 
    .. note::
-      
-      The Nanopore protocol offers the same sequencing pipeline that was earlier available as the Nanopore sequencing pipeline in the previous GenPipes releases (v5.x or older).
+         
+         The Nanopore protocol offers the same sequencing pipeline that was earlier available as the Nanopore sequencing pipeline in the previous GenPipes releases (v5.x or older).
 
 .. tab-set:: 
 
@@ -74,7 +74,7 @@ Long Read DNA Sequencing Pipeline
             
             The following figure shows the schema for Nanopore sequencing pipeline:
 
-            .. figure:: /img/pipelines/mmd/nanopore.mmd.png
+            .. figure:: /img/pipelines/mmd/longread_nanopore.mmd.png
                :align: center
                :alt: nanopore schema 
                :width: 80%
@@ -92,7 +92,7 @@ Long Read DNA Sequencing Pipeline
             
             The following figure shows the schema for Revio Long Read DNA Sequencing Protocol:
 
-            .. figure:: /img/pipelines/mmd/nanopore.mmd.png
+            .. figure:: /img/pipelines/mmd/longread_revio.mmd.png
                :align: center
                :alt: nanopore schema 
                :width: 80%

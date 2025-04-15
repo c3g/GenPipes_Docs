@@ -17,20 +17,21 @@
           Node10{{ 10.<br/> Sawfish }}:::nodefill
           Node11{{ 11.<br/> Annotate SV }}:::nodefill
           Node12{{ 12.<br/> HiPhase }}:::nodefill
-          Node13{{ 13.<br/> Report CPSR }}:::nodefill
+          Node13{{ 13.<br/> CPSR }}:::nodefill
           Node14{{ 14.<br/> MultiQC }}:::nodefill
           Output([fa:fa-sticky-note-o Report ])
+          CPSROutput([fa:fa-sticky-note-o Report ])
 
-          Input1[[fa:fa-file-archive-o .BAM]] --> Node1 -.-> Node2
-          Input2[[fa:fa-file-archive-o .FASTQ]] --> Node2
-          Node2 -.-> Node3 -.-> Node4 & Node5 & Node6 & Node8 & Node9 & Node10 & Node12
+          Input1[[fa:fa-file-archive-o .BAM or .FASTQ]] --> Node1 & Node2
+          Node1 -.-> Node2 -.-> Node3 -.-> Node4 & Node5 & Node6 & Node8 & Node9 & Node10 & Node12
+          Node5 -.-> Node6
           Node6 -.-> Node7 -.-> Node12
           Node7 -.-> Node8 & Node11
-          Node8 -.-> Node11
+          Node8 & Node10 -.-> Node11
           Node9 & Node10 -.-> Node12 -.-> Node13
           Node1 & Node4 -.-> Node14
-
-          Output([fa:fa-sticky-note-o Report ])
+          Node13 -.-> CPSROutput
+          Node1 & Node4 -.-> Node14
           Node14 ---> Output
 
           subgraph readSetSteps[" "]
@@ -51,6 +52,7 @@
             Node13         
             Node14         
             Output
+            CPSROutput([fa:fa-sticky-note-o Report ])
           end
           classDef greenRect fill:#E4FBF4,stroke:white
           class readSetSteps greenRect

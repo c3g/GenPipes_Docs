@@ -1,10 +1,12 @@
-*GenPipes v4.x or prior release users must carefully read the usage changes listed below.*
+.. caution::
+
+    *Users of GenPipes v4.x or prior releases must carefully read the usage changes listed below.*
 
 **What has Changed?**
 
-1. Starting v5.0 onwards, the GenPipes distribution is based on Python packaging instead of the earlier Python modules.
-2.  GenPipes now supports *only* Python **v3.11.1** and above. 
-3. To run any GenPipes pipelines, follow the new command syntax:
+1. Effective v5.0 onwards, the GenPipes distribution is based on Python packaging and not on Python modules as before. Also Python 2.7 users must upgrade to Python v3.11.1 or higher to use v5.x GenPipes pipelines.
+2. The latest GenPipes v6.0 supports *only* Python **v3.12.0** and above. 
+3. To run any GenPipes pipelines, follow the new command syntax *(effective GenPipes v5.x onwards)*:
 
   - **Old Format** 
 

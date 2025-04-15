@@ -234,8 +234,9 @@ Use the long read readset file format for the following pipelines:
 +------------------------------+-------------------------------------------------------------------------------------------+
 |**FAST5:**                    | The path to the **directory** containing the raw fast5 files, before basecalling.         |
 +------------------------------+-------------------------------------------------------------------------------------------+
-|**BAM:**  (Optional)          | The relative or absolute path to BAM file which will be converted into FASTQ files if they|
-|                              | are not available; mandatory if FASTQ1 value is missing, ignored otherwise.               |
+|**BAM:**  (For Revio)         | BAM column is required for Revio protocol in case the FASTQ, FAST5 are not available. The |
+|                              | relative/absolute path to BAM file that will be converted into FASTQ files if they are not|
+|                              | available.                                                                                |
 +------------------------------+-------------------------------------------------------------------------------------------+
 
 Example of Long Read Readset File
