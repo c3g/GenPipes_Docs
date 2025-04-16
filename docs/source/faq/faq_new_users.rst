@@ -70,7 +70,16 @@ What is the best place to report GenPipes bugs?
 
 **Response**
 
-The preferred way to report GenPipes bugs is on our Bitbucket issue page : https://bitbucket.org/mugqic/genpipes/issues.
+.. tab-set:: 
+
+      .. tab-item:: GenPipes v6.x
+
+         The preferred way to report GenPipes bugs is on our GitHub issue page : https://github.com/c3g/GenPipes/issues.
+
+
+      .. tab-item:: GenPipes v5.x
+
+         The preferred way to report GenPipes bugs is on our Bitbucket issue page : https://bitbucket.org/mugqic/genpipes/issues.
 
 You can always reach us by email at mailto:pipelines@computationalgenomics.ca or use `Google Group for GenPipes <https://groups.google.com/forum/#!forum/GenPipes>`_ for any requests.
 

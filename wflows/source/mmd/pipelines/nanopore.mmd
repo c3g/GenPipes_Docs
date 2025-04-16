@@ -1,15 +1,15 @@
 %%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
 
-        %% GenPipes Schema for nanopore.py
-        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore/
+        %% GenPipes Schema for longread_dnaseq.py
+        %% Ref: https://github.com/c3g/GenPipes/tree/main/genpipes/pipelines/longread_dnaseq
         %% Author Shaloo Shalini <shalz@hotmail.com>
 
         graph LR
-          Node1{{ 1. <br/> BlastQC }}:::nodefill
-          Node2{{ 2. <br/> Minimap2 <br/> Align }}:::nodefill
-          Node3{{ 3. <br/> PycoQC }}:::nodefill
-          Node4{{ 4. <br/> Picard Merge <br/> SAM Files }}:::nodefillblack
-          Node5{{ 5. <br/> SVIM }}:::nodefill
+          Node1{{ 1.<br/> BlastQC }}:::nodefill
+          Node2{{ 2.<br/> Minimap2 <br/> Align }}:::nodefill
+          Node3{{ 3.<br/> PycoQC }}:::nodefill
+          Node4{{ 4.<br/> Picard Merge <br/> SAM Files }}:::nodefillblack
+          Node5{{ 5.<br/> SVIM }}:::nodefill
           Output([fa:fa-sticky-note-o Report ])
 
           Input1[[fa:fa-file-archive-o .BAM]] --> Node1 -.-> Node2

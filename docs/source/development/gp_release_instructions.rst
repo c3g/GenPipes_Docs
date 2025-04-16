@@ -7,4 +7,4 @@ Release Instructions
 
 If you are looking for release notes, see :ref:`here<docs_release_notes>`. 
 
-To learn how to generate a GenPipes release, see `Release Instructions <https://bitbucket.org/mugqic/genpipes/src/master/README-release.txt>`_.
+To learn how to generate a GenPipes release, see `Release Instructions <https://github.com/c3g/GenPipes/blob/main/README-release.txt>`_.

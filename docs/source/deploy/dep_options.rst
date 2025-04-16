@@ -24,7 +24,7 @@ The infographic below represents various mechanisms that can be used to access G
 
 Obtaining GenPipes sources
 --------------------------
-Refer to the latest `GenPipes sources <https://bitbucket.org/mugqic/genpipes/src/master/>`_ for instructions on downloading and setting up GenPipes.
+Refer to the latest `GenPipes sources <https://github.com/c3g/GenPipes/t>`_ for instructions on downloading and setting up GenPipes.
 
 GenPipes on DRAC Infrastructure
 --------------------------------
@@ -40,8 +40,8 @@ If you need to run large scale genomic analysis that requires resource scaling, 
 Local deployment
 -----------------
 
-If you wish to deploy GenPipes locally using your own compute and storage infrastructure, you can refer to the BitBucket repository listed earlier. You could either deploy it on your local server / workstation or try GenPipes in a container option.
+If you wish to deploy GenPipes locally using your own compute and storage infrastructure, you can refer to the `GenPipes GitHub repository <https://github.com/c3g/GenPipes/t>`_. You could either deploy it on your local server / workstation or try GenPipes in a container option.
 
-GenPipes can be installed from scratch on any Linux cluster supporting Python 3.11.1 or higher by following the instructions in the `README.md file <https://bitbucket.org/mugqic/genpipes/src/master/README.md>`_. GenPipes can also be deployed via containers approach. A Docker image of GenPipes is available which simplifies the set-up process and can be used on a range of platforms, including cloud platforms. This allows system-wide installations, as well as local user installations via the Docker image without needing special permissions.
+GenPipes can be installed from scratch on any Linux cluster supporting Python version 3.11.1 or higher by following the instructions in the `README.md file <https://github.com/c3g/GenPipes/blob/main/README.md>`_. GenPipes can also be deployed via containers approach. A Docker image of GenPipes is available which simplifies the set-up process and can be used on a range of platforms, including cloud platforms. This allows system-wide installations, as well as local user installations via the Docker image without needing special permissions.
 
 Local deployment option can be used for small scale genomic analyses using genome datasets available locally. The GenPipes in a container option is a self-contained image that offers GenPipes software, common reference genomes and all that is needed to run the pre-built analysis pipelines.  Bioinformatics researchers who are not familiar with container technology may require assistance from System Administrators in deploying a local copy of GenPipes software.  For details refer to GenPipes installation guide section for container deployment :ref:`GenPipes in a container<docs_dep_gp_container>`.

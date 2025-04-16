@@ -79,6 +79,14 @@ The Homer Tag directories, used to check for quality metrics, are computed at th
 
 Sequencing quality metrics as tag count, tag auto-correlation, sequence bias and GC bias are generated.
 
+.. _Deeptools QC:
+
+**Deeptools QC**
+
+`Fingerplot <https://deeptools.readthedocs.io/en/develop/content/tools/plotFingerprint.html>`_ quality control answers the question “Did my ChIP work?” for ChIP-seq sample analysis. The tool processes indexed BAM files, creating a profile of cumulative read coverage. Reads in a specified window (bin) are counted, sorted, and plotted as a cumulative sum. 
+
+The Correlation Matrix tool analyzes and visualizes sample correlations using multiBamSummary or multiBigwigSummary output. It supports Pearson or Spearman methods to calculate correlation coefficients.
+
 .. _Homer Make UCSC file:
 
 **Homer Make UCSC files**

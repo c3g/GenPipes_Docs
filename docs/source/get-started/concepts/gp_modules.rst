@@ -31,7 +31,7 @@ To see what modules are available with pre-installed GenPipes, you can run the f
   
   module avail mugqic/
 
-Or, you can visit `Bioinformatics Resources <https://www.computationalgenomics.ca/cvmfs-modules/>`_ site for a list of available GenPipes modules or see `sources here <https://bitbucket.org/mugqic/genpipes/src/master/resources/modules/>`_.
+Or, you can visit `Bioinformatics Resources <https://computationalgenomics.ca/cvmfs-genome/>`_ site for a list of available GenPipes modules or see `sources here <https://bitbucket.org/mugqic/genpipes/src/master/resources/modules/>`_.
 
 .. _gp_why_modules:
 

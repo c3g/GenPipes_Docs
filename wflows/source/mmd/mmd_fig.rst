@@ -113,11 +113,19 @@ Methyl Sequencing Pipeline
 
 ----
 
+Long Read DNS Sequencing Pipeline
+=================================
+
 Nanopore Pipeline
-=================
+-------------------
 
 .. mermaid:: /mmd/pipelines/nanopore.mmd
-     :caption: Nanopore Pipeline Schema
+     :caption: Long Read DNA Sequencing Nanopore Schema
+
+Revio Pipeline
+
+.. mermaid:: /mmd/pipelines/revio.mmd
+     :caption: Long Read DNA Sequencing Revio Schema
 
 ----
 

@@ -28,7 +28,7 @@ In contrast to the test dataset, a :ref:`Readset File<docs_readset_file>` in the
 +-----------------------------------------------+------------------------------------------+
 | :ref:`DNA Seq<docs_gp_dnaseq>`                |   `Download DNA Seq Dataset`_            |
 +-----------------------------------------------+------------------------------------------+
-| :ref:`Nanopore<docs_gp_nanopore>`             |   `Download Nanopore Dataset`_           |
+| :ref:`Long Read DNA <docs_gp_longread_dnaseq>`|   `Download Long Read DNA Seq Dataset`_  |
 +-----------------------------------------------+------------------------------------------+
 | :ref:`Nanopore Covseq<docs_gp_nanopore_cov>`  |   `Download Nanopore Covseq Dataset`_    |
 +-----------------------------------------------+------------------------------------------+
@@ -49,7 +49,7 @@ For various GenPipes pipelines, you can refer to usage examples and commands for
 Bioinformatics resources
 ------------------------
 
-If you are looking for Bioinformatics resources such as available genomes with FASTA sequence, aligner indices and annotation files listed on `Bioinformatics resources <https://computationalgenomics.ca/cvmfs-genome/>`_ C3G website page, you can download those from the public repositories using scripts provided in `GenPipes Repository <https://bitbucket.org/mugqic/genpipes/src/master/resources/genomes/>`_.
+If you are looking for Bioinformatics resources such as available genomes with FASTA sequence, aligner indices and annotation files listed on `Bioinformatics resources <https://computationalgenomics.ca/cvmfs-genome/>`_ C3G website page, you can download those from the public repositories using scripts provided in `GenPipes Repository <https://github.com/c3g/GenPipes/tree/main/resources/genomes/>`_.
 
 You can also download the latest test datasets from Computational Genomics website `download page <https://datahub-90-cw3.p.genap.ca>`_.
 
@@ -60,7 +60,7 @@ You can also download the latest test datasets from Computational Genomics websi
 .. oldchipseq file commented out https://datahub-90-cw3.p.genap.ca/chipseq.chr19.tar.gz
 .. _Download CoV Seq Dataset: https://datahub-90-cw3.p.genap.ca/covseq.chr19.tar.gz
 .. _Download DNA Seq Dataset: https://datahub-90-cw3.p.genap.ca/dnaseq.chr19.tar.gz
-.. _Download Nanopore Dataset: https://datahub-90-cw3.p.genap.ca/nanopore.tar.gz
+.. _Download Long Read DNA Seq Dataset: https://datahub-90-cw3.p.genap.ca/nanopore.tar.gz
 .. _Download Nanopore Covseq Dataset: https://datahub-90-cw3.p.genap.ca/nanopore_covseq.tar.gz
 .. _Download RNA Seq Dataset: https://datahub-90-cw3.p.genap.ca/rnaseq.chr19.tar.gz
 .. _Download RNA Seq Light Dataset: https://datahub-90-cw3.p.genap.ca/rnaseq_light.chr19.tar.gz

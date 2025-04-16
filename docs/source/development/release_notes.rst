@@ -11,6 +11,9 @@ The current release of GenPipes is |genpipes_version|.
 
 .. tabs::
 
+   .. tab:: v6.x
+        * :ref:`GenPipes 6.0.0<docs_gp_relnote_6_0_0>` released on April 15, 2025
+
    .. tab:: v5.x
         * :ref:`GenPipes 5.1.0<docs_gp_relnote_5_1_0>` released on Feb 4, 2025
         * :ref:`GenPipes 5.0.3<docs_gp_relnote_5_0_3>` released on Dec 10, 2024
@@ -63,5 +66,8 @@ The current release of GenPipes is |genpipes_version|.
         * :ref:`GenPipes 2.0.2<docs_gp_relnote_2_0_1>` released on Jan 13, 2015 
         * :ref:`GenPipes 2.0.1<docs_gp_relnote_2_0_1>` released on Dec 17, 2014 
         * :ref:`GenPipes 2.0.0<docs_gp_relnote_2_0_0>` released on Dec 12, 2014 
+
+GenPipes ChangeLog
+------------------
 
 .. include:: gp_changelog.inc
