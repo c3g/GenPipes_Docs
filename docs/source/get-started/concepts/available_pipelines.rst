@@ -85,18 +85,20 @@ Available Pipelines
 .. |ini_file| replace:: use relevant ini file and -t germline_high_cov
 .. |somatic| replace:: -t somatic_ensemble or -t somatic_sv or -t somatic_fastpass or -t somatic_tumor_only  
 
-.. _ChIP-Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/chipseq/README.md
-.. _RNA-Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq/README.md
-.. _RNA-Seq-Light-Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq_light/README.md
-.. _RNA-Seq De Novo Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq_denovo_assembly/README.md
-.. _Whole Genome Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/README.md
-.. _Exome Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/README.md
-.. _DNA High Coverage Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/README.md
-.. _Deep Exome Seq Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/dnaseq/README.md
+   https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/chipseq/README.md
+
+.. _ChIP-Seq Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/chipseq/README.md
+.. _RNA-Seq Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/rnaseq/README.md
+.. _RNA-Seq-Light-Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/rnaseq_light/README.md
+.. _RNA-Seq De Novo Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/rnaseq_denovo_assembly/README.md
+.. _Whole Genome Seq Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dnaseq/README.md
+.. _Exome Seq Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dnaseq/README.md
+.. _DNA High Coverage Seq Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dnaseq/README.md
+.. _Deep Exome Seq Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dnaseq/README.md
 .. _Hi-C Seq Manual: https://bitbucket.org/mugqic/genpipes/src/4.6.1/pipelines/hicseq//README.md
 .. _Hi-C Capture Manual: https://bitbucket.org/mugqic/genpipes/src/4.6.1/pipelines/hicseq/README.md
-.. _Methyl WGS Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/methylseq/README.md
-.. _Capture Methyl WGS Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/methylseq/README.md
-.. _Cancer Analysis Manual: https://bitbucket.org/mugqic/genpipes/src/4.6.1/pipelines/dna_seq/README.md
-.. _Meta Genomics Manual: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/ampliconseq/README.md
-.. _SARS-COV-2 Sequencing: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/covseq/README.md
+.. _Methyl WGS Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/methylseq/README.md
+.. _Capture Methyl WGS Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/methylseq/README.md
+.. _Cancer Analysis Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dna_seq/README.md
+.. _Meta Genomics Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/ampliconseq/README.md
+.. _SARS-COV-2 Sequencing: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/covseq/README.md

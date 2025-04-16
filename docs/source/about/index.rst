@@ -14,7 +14,7 @@ Since 2013, these pipelines have been tested, refined, and widely used. GenPipes
 
 Perfect for anyone needing fast, proven bioinformatics solutions.
 
-You can learn more about GenPipes, its target audience, sponsors, how the project has evolved over the years and `license <https://bitbucket.org/mugqic/genpipes/src/master/COPYING.LESSER>`_ information in the following section.
+You can learn more about GenPipes, its target audience, sponsors, how the project has evolved over the years and `license <https://github.com/c3g/GenPipes/blob/main/COPYING.LESSER>`_ information in the following section.
 
 .. toctree::
    :maxdepth: 1

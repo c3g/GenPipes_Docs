@@ -115,11 +115,21 @@ GenPipes User: Troubleshooting Guide
 
     **Fix**
 
-    try to change the STAR parameters in your ini files to something like in the .ini files of the master branch:
+    Try to change the STAR parameters in your ini files to something like in the .ini files of the branch specific to the release:
 
-    ::
+    .. tab-set::
 
-        https://bitbucket.org/mugqic/mugqic_pipelines/src/master
+        .. tab-item:: v6.x
+
+            ::
+
+                https://github.com/c3g/GenPipes/tree/main/genpipes/pipelines/common_ini
+        
+        .. tab-item:: v5.x or prior
+
+            ::
+
+                https://bitbucket.org/mugqic/mugqic_pipelines/src/master
 
     The problem should be solved by setting io_buffer to a higher value like 1G or 4G. The command you show indicates you are using 8M.
 
