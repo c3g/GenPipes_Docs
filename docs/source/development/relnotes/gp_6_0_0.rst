@@ -43,7 +43,7 @@ Quick! Where can I find it? I can't wait!
  
 * The latest release for GenPipes version 6.0.0 tarball is in: https://github.com/c3g/GenPipes/releases/download/6.0.0/c3g_genpipes-6.0.0.tar.gz
 
-* GenPipes is now distributed as a package via `pypi`: [GenPipes v6.0 Package](https://pypi.org/project/c3g-genpipes/).
+* GenPipes is now distributed as a package via `pypi` `GenPipes v6.0 Package <https://pypi.org/project/c3g-genpipes/>`_.
 
 * The genpipes/6.0.0 package is installed on the Abacus (MGC), Béluga, Graham, Cedar and Narval Alliance clusters.
 
