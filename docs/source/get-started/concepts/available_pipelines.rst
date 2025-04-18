@@ -85,8 +85,6 @@ Available Pipelines
 .. |ini_file| replace:: use relevant ini file and -t germline_high_cov
 .. |somatic| replace:: -t somatic_ensemble or -t somatic_sv or -t somatic_fastpass or -t somatic_tumor_only  
 
-   https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/chipseq/README.md
-
 .. _ChIP-Seq Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/chipseq/README.md
 .. _RNA-Seq Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/rnaseq/README.md
 .. _RNA-Seq-Light-Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/rnaseq_light/README.md

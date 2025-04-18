@@ -26,7 +26,7 @@ GenPipes is developed in Python. Modules in Python are a way to load software or
 
 The modules that come along with GenPipes allow you to use bioinformatics tools like Samtools, Homer, MACS2, without installing them yourself.
 
-For details on why we need modules for GenPipes and which ones are required, deployed and pre-installed the Digital Research Alliance Canada Servers, see :ref:`docs_gp_modules`.
+For details on why we need modules for GenPipes and which ones are required, deployed and pre-installed the Digital Research Alliance Canada Servers, see :ref:`doc_cvmfs_modules`.
 
 What are GenPipes genomes? Where can I access them from?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
