@@ -56,7 +56,7 @@ Add the following lines in your your *$HOME/.bash_profile*: to set MUGQIC_PIPELI
 Step 3: Accessing software modules and genomes needed for GenPipe
 -----------------------------------------------------------------
 
-GenPipes was formerly known as MUGQIC Pipelines. Genomic analysis executed using these pipelines requires :ref:`genomes<doc_cvmfs_genomes>`_and :ref:`software modules <doc_cvmfs_modules>`. You need to load the software modules in your shell environment. To do so, set the environment variable **MUGQIC_INSTALL_HOME** to the directory where you want to install those resources in your **$HOME/.bash_profile** as follows:
+GenPipes was formerly known as MUGQIC Pipelines. Genomic analysis executed using these pipelines requires :ref:`genomes<doc_cvmfs_genomes>` and :ref:`software modules<doc_cvmfs_modules>`. You need to load the software modules in your shell environment. To do so, set the environment variable **MUGQIC_INSTALL_HOME** to the directory where you want to install those resources in your **$HOME/.bash_profile** as follows:
 
 ::
 
