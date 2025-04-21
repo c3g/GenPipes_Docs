@@ -48,7 +48,7 @@ For example,
 Use of modules
 ---------------
 
-All software calls should be done using the module system. Modules should be specified within the .ini file(s). Preferably use the mugqic modules which deployed on the `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly known as Compute Canada, HPC clusters. This ensures stability of the analysis and reproducibility of the results. If using a non-mugqic module, ensure that the module is available on all the cluster. Avoid system modules which are not be transferable across different platforms.
+All software calls should be done using the module system. Modules should be specified within the .ini file(s). Preferably use the :ref:`bioinformatic modules<doc_cvmfs_modules>` which deployed on the `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly known as Compute Canada, HPC clusters. This ensures stability of the analysis and reproducibility of the results. If using a non-mugqic module, ensure that the module is available on all the cluster. Avoid system modules which are not be transferable across different platforms.
 
 Pipeline Development
 ---------------------
