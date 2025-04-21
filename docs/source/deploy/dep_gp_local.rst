@@ -10,22 +10,36 @@
 Deploying GenPipes locally in your server 
 ==========================================
 
-This document covers details on how to deploy GenPipes locally on a bare metal or virtual server. If you wish to install GenPipes locally in a container, please refer to :ref:`GenPipes in a container<docs_dep_gp_container>` section of deployment guide.
+This document explains how to deploy GenPipes locally on a bare metal or virtual server. See :ref:`GenPipes in a container<docs_dep_gp_container>` section to install GenPipes locally in a container.
 
-For more details on other available options to deploy and access GenPipes you may refer to :ref:`GenPipes Deployment Options Page<docs_dep_options>`.
+Check out :ref:`GenPipes Deployment Options Page<docs_dep_options>` for other available options to use GenPipes.
 
 .. _docs_download_gp_src:
 
 Step 1: Download latest GenPipes sources and install with pip
 ----------------------------------------------------------------
 
-First of all, visit GenPipes `Download Page <https://bitbucket.org/mugqic/genpipes/downloads/>`_ and get a copy of the latest stable release software.  To fetch the most recent version of GenPipes, you may use the following command:
+First of all, visit GenPipes the `Download Page <https://github.com/c3g/GenPipes/releases/download/>`_ and get a copy of the latest stable release software.  
 
-::
+Note that the repo was earlier hosted on Bitbucket until v5.1.0 of GenPipes.
 
-  git clone git@bitbucket.org:mugqic/genpipes.git
-  cd <bitbucket_repo>
-  pip install .
+.. tab-set:: 
+  
+   .. tab-item:: v6.0 
+
+      ::
+
+        git clone https://github.com/c3g/GenPipes.git
+        cd GenPipes
+        pip install .
+
+   .. tab-item:: v5.x
+
+      ::
+
+        git clone git@bitbucket.org:mugqic/genpipes.git
+        cd <bitbucket_repo>
+        pip install .
 
 Step 2: Setup environment variables
 -----------------------------------
@@ -42,13 +56,13 @@ Add the following lines in your your *$HOME/.bash_profile*: to set MUGQIC_PIPELI
 Step 3: Accessing software modules and genomes needed for GenPipe
 -----------------------------------------------------------------
 
-GenPipes was formerly known as MUGQIC Pipelines. Genomic analysis executed using these pipelines requires `genomes <https://www.computationalgenomics.ca/cvmfs-genomes/>`_ and `software modules <https://docs.python.org/3/tutorial/modules.html>`_. You need to load the software modules in your shell environment. To do so, set the environment variable **MUGQIC_INSTALL_HOME** to the directory where you want to install those resources in your **$HOME/.bash_profile** as follows:
+GenPipes was formerly known as MUGQIC Pipelines. Genomic analysis executed using these pipelines requires :ref:`genomes<doc_cvmfs_genomes>`_and :ref:`software modules <doc_cvmfs_modules>`. You need to load the software modules in your shell environment. To do so, set the environment variable **MUGQIC_INSTALL_HOME** to the directory where you want to install those resources in your **$HOME/.bash_profile** as follows:
 
 ::
 
   ## MUGQIC genomes and modules
 
-  export MUGQIC_INSTALL_HOME=/path/to/your/local/mugqic_resources
+  export MUGQIC_INSTALL_HOME=/path/to/your/local/genpipes/resources
   module use $MUGQIC_INSTALL_HOME/modulefiles
 
 **Installing available modules**
@@ -281,7 +295,7 @@ Running pipelines requires other inputs such as :ref:`Configuration File<docs_co
 
 .. note::
 
-   You may also want to check the latest GenPipes deployment and setup instructions listed in `GenPipes README.md file <https://bitbucket.org/mugqic/genpipes/src/master/README.md>`_.
+   You may also want to check the latest GenPipes deployment and setup instructions listed in `GenPipes README.md file <https://github.com/c3g/GenPipes/blob/main/README.md>`_.
 
 .. _Ensemble Genomes: http://ensemblgenomes.org
 .. _UCSC: http://genome.ucsc.edu/
