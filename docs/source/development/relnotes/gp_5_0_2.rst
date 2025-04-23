@@ -6,6 +6,7 @@
 
      genpipes
      rnammer
+     gtf
 
 GenPipes 5.0.2 Release Notes
 ============================

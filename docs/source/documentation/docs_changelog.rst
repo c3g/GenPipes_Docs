@@ -15,6 +15,15 @@ GenPipes Documentation Changelog
      noreply
      github
      PYthon
+     yml
+     ubuntu
+     longread
+     linux
+     qc 
+     dr
+     deeptools 
+     setupwheel
+     
 
 GenPipes documentation is continually being improved. 
 The current release corresponds to GenPipes version |genpipes_version|. 

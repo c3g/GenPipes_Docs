@@ -163,7 +163,6 @@ ChIP Sequencing Pipeline
             * `ChIP-Seq Guidelines`_
             *  `MUGQIC_Bioinfo_Chip-Seq.pptx`_
             * `ChIP-Seq and Beyond <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3591838/>`_ 
-            * `ChIP-Seq Technology and Workflow <https://www.sciencedirect.com/science/article/pii/S1046202320300591>`_
             * `Schematic representation of major methods to detect functional elements in DNA <https://journals.plos.org/plosbiology/article/figure?id=10.1371/journal.pbio.1001046.g001>`_
             * `ChIP Sequencing and ATAC Sequencing <https://bioinformatics-core-shared-training.github.io/cruk-autumn-school-2017/ChIP/Materials/Lectures/Lecture4_Introduction%20to%20ChIP-seq%20and%20ATAC-seq_SS.pdf>`_
 
@@ -218,7 +217,7 @@ ChIP Sequencing Pipeline
 
 .. _ENCODE Project: https://www.genome.gov/Funded-Programs-Projects/ENCODE-Project-ENCyclopedia-Of-DNA-Elements
 .. _Burrows-Wheeler Aligner: http://bio-bwa.sourceforge.net
-.. _Homer routines: https://www.researchgate.net/publication/44640585_Simple_Combinations_of_Lineage-Determining_Factors_Prime_cis-Regulatory_Elements_Required_for_Macrophage_and_B-Cell_Identities
+.. _Homer routines: http://homer.ucsd.edu/homer/ngs/
 .. _Model based Analysis for Chip Sequencing (MACS2): https://genomebiology.biomedcentral.com/articles/10.1186/gb-2008-9-9-r137
 .. _IHEC requirements: https://github.com/IHEC/ihec-assay-standards
 .. _ATAC-Seq: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4374986/

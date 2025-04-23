@@ -10,6 +10,8 @@
      mfold
      intron
      introns
+     multiBamSummary
+     multiBigwigSummary
 
 **Step Details**
 
@@ -161,7 +163,7 @@ The output of differential analysis containing differentially bound peaks are sa
 
 **IHEC Metrics**
 
-This step generates IHEC's `standard metrics <http://ihec-epigenomes.org/research/reference-epigenome-standards/>`_.
+This step generates IHEC's `standard metrics <https://ihec-epigenomes.org/research/reference-epigenome-standards/>`_.
 
 .. _MultiQC Report:
 

@@ -26,7 +26,7 @@ GenPipes is developed in Python. Modules in Python are a way to load software or
 
 The modules that come along with GenPipes allow you to use bioinformatics tools like Samtools, Homer, MACS2, without installing them yourself.
 
-For details on why we need modules for GenPipes and which ones are required, deployed and pre-installed the Digital Research Alliance Canada Servers, see :ref:`doc_cvmfs_modules`.
+For details on why we need modules for GenPipes and which ones are required, deployed and pre-installed the Digital Research Alliance Canada Servers, see :ref:`the list of available modules<doc_cvmfs_modules>`.
 
 What are GenPipes genomes? Where can I access them from?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -56,6 +56,4 @@ What is meant by test dataset? Where can I find available test datasets?
 
 GenPipes pipelines can be run using your sequencing instruments generated, measured, sampled read datasets in respective formats as required by individual pipelines or test datasets.  Refer to :ref:`GenPipes Test Datasets<docs_testdatasets>` for various available test datasets that can be used to run various GenPipes pipelines, in case you don't have your own dataset to be processed.
 
-----
-
-~      
+----   

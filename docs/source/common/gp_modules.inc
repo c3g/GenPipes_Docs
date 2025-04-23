@@ -1,4 +1,4 @@
-The `Canadian Centre for Computational Genomics <https://www.computationalgenomics.ca>`_ (C3G) in partnership with the `Alliance Canada <https://docs.alliancecan.ca/wiki/Technical_documentation>`_, allows researchers to access hundreds of bioinformatics `tools and modules <https://docs.alliancecan.ca/wiki/Available_software#List_of_globally-installed_modules/>`_ pre-installed on several HPC centres including Beluga, Niagara, Cedar and Graham. 
+The `Canadian Centre for Computational Genomics <https://www.computationalgenomics.ca>`_ (C3G) in partnership with the `Alliance Canada <https://docs.alliancecan.ca/wiki/Technical_documentation>`_, allows researchers to access hundreds of bioinformatics :ref:`tools and modules<doc_cvmfs_modules>` pre-installed on several HPC centres including Beluga, Niagara, Cedar and Graham. 
 
 .. _gp_avl_modules:
 
