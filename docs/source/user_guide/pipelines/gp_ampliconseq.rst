@@ -117,7 +117,7 @@ Amplicon Sequencing Pipeline
 
             * `Amplicon sequencing techniques <https://sapac.illumina.com/techniques/sequencing/dna-sequencing/targeted-resequencing/amplicon-sequencing.html>`_
 
-            * `Amplicon Sequencing Primer <http://apc.ucc.ie/pdf_old/Amplicon%20Sequencing.pdf>`_
+            * `Amplicon Sequencing Primer <https://eurofinsgenomics.eu/en/next-generation-sequencing/amplicon-sequencing/>`_
 
             * `High-throughput amplicon sequencing <https://www.biorxiv.org/content/10.1101/392332v2>`_.
 

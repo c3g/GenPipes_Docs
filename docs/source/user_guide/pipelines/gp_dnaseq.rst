@@ -652,7 +652,7 @@ DNA Sequencing Pipeline
             **References**
 
             * `Three-stage quality control strategies for DNA sequencing <https://academic.oup.com/bib/article/15/6/879/180439>`_
-            * `NGS Mapping, errors and quality control <http://bioinformatics.org.au/ws14/wp-content/uploads/ws14/sites/5/2014/07/Felicity-Newell_presentation.pdf>`_
+            * `NGS Mapping, errors and quality control <https://libstore.ugent.be/fulltxt/RUG01/002/839/552/RUG01-002839552_2020_0001_AC.pdf>`_
             * `dbNSFP: a lightweight database of human nonsynonymous SNPs and their functional predictions <https://www.ncbi.nlm.nih.gov/pubmed/21520341>`_
             * `DNA-Seq Pipeline <https://bitbucket.org/mugqic/genpipes/downloads/MUGQIC_Bioinfo_DNA-Seq.pptx>`_
             * `Manta - Rapid Detection of Structural Variants <https://pubmed.ncbi.nlm.nih.gov/26647377/>`_, `Using Manta for filtering and annotations <https://pmbio.org/module-05-somatic/0005/03/02/Somatic_SV_FilteringAnnotationReview/>`_.

@@ -181,7 +181,7 @@ RNA Sequencing (De-Novo) Pipeline
 
                   .. tab-item:: Trinity Protocol (Default)
 
-                     By default, the standard MUGQIC RNA-Seq *De Novo* Assembly pipeline uses the `Trinity <http://trinityrnaseq.sourceforge.net/>`_ software suite to reconstruct transcriptomes from RNA-Seq data without using any reference genome or transcriptome. 
+                     By default, the standard MUGQIC RNA-Seq *De Novo* Assembly pipeline uses the `Trinity <https://github.com/trinityrnaseq/trinityrnaseq/wiki>`_ software suite to reconstruct transcriptomes from RNA-Seq data without using any reference genome or transcriptome. 
 
                      De-Novo RNASeq pipeline using the Trinity protocol is adapted from the `Trinity-Trinotate`_ `suggested workflow`_. It reconstructs transcripts from short reads, predicts proteins, and annotates, leveraging several databases. Quantification is computed using `RSEM Tool`_, and differential expression is tested in a manner identical to the RNA-seq pipeline. We observed that the default parameters of the Trinity suite are very conservative, which could result in the loss of low-expressed but biologically relevant transcripts. To provide the most complete set of transcripts, the pipeline was designed with lower stringency during the assembly step in order to produce every possible transcript and not miss low-expressed messenger RNA. A stringent filtration step is included afterward in order to provide a set of transcripts that make sense biologically.
 
@@ -211,7 +211,7 @@ RNA Sequencing (De-Novo) Pipeline
 
                      Additionally differential KO analysis is performed using `DESeq2 method <https://pubmed.ncbi.nlm.nih.gov/25516281/>`_ and `edgeR <http://bioinformatics.oxfordjournals.org/content/26/1/139/>`_ R Bioconductor packages. on KO count files and result tables will be generated. Moreover, a pathway analysis using differential analysis is performed using `fgsea <https://www.biorxiv.org/content/10.1101/060012v3>`_.
 
-                     For further information regarding Seq2Fun visit: `https://www.seq2fun.ca/motivation.xhtml <https://www.seq2fun.ca/motivation.xhtml>`_
+                     For further information regarding Seq2Fun visit: `<https://www.seq2fun.ca>`_
 
             See :ref:`rnadenovoschema` tab for the pipeline workflow. Check the `README.md <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq_denono_assembly/README.md>`_ file for implementation details.
 

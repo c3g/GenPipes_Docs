@@ -341,7 +341,7 @@ This step uses `VarScan`_ caller for insertions and deletions.
 
 **Preprocess VCF**
 
-Preprocess VCF for loading into an annotation database - `Gemini <http://gemini.readthedocs.org/en/latest/index.html>`_. Processes include normalization and decomposition of MNPs by `Vt <http://genome.sph.umich.edu/wiki/Vt>`_ and VCF format modification for correct loading into Gemini.
+Preprocess VCF for loading into an annotation database - `Gemini`_. Processes include normalization and decomposition of MNPs by `Vt`_ and VCF format modification for correct loading into Gemini.
 
 .. _SNP Effect:
 

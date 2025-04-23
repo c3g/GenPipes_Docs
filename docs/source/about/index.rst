@@ -3,7 +3,7 @@
 About
 =====
 
-.. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x Onwards
+.. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x onward
    :color: success
 
    .. include:: /gp5_0.inc

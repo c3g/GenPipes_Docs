@@ -167,7 +167,7 @@ This step calculates the ribosomal RNA per read based on known ribosomal sequenc
 
 **Rnaseqc2**
 
-Computes a series of quality control metrics using `RNA-SeQC <https://data.broadinstitute.org/cancer/cga/tools/rnaseqc/RNA-SeQC_Help_v1.1.2.pdf>`_.
+Computes a series of quality control metrics using `RNA-SeQC <https://software.broadinstitute.org/cancer/cga/sites/default/files/data/tools/rnaseqc/RNA-SeQC_Help_v1.1.2.pdf>`_.
 
 .. _Skewer Trimming:
 
