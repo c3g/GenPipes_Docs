@@ -121,7 +121,7 @@ Amplicon Sequencing Pipeline
 
             * `High-throughput amplicon sequencing <https://www.biorxiv.org/content/10.1101/392332v2>`_.
 
-            * `Trimmomatic - flexible trimming <https://academic.oup.com/bioinformatics/article/30/15/2114/2390096>`_.
+            * `Trimmomatic - flexible trimming <https://academic.oup.com/bioinformatics/article-pdf/30/15/2114/48924714/bioinformatics_30_15_2114.pdf>`_.
 
 .. dropdown:: :material-outlined:`report;2em` Amplicon Sequencing Readset File
    :color: warning

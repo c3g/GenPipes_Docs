@@ -15,7 +15,7 @@ GenPipes is an open-source, next generation sequencing analysis framework writte
    
    New users can quickly get started by referring to the :ref:`Quick Start Guide<docs_quickstart_gp>`. The seasoned users can directly jump into the :ref:`Pipeline Reference Guide<docs_pipeline_ref>`. 
 
-The latest GenPipes Version is |genpipes_version|. Refer to the :ref:`release notes<docs_latest_relnote>` for more information regarding what is new, which pipelines were updated and what issues are fixed in this release.
+The latest GenPipes Version is |genpipes_version|. Refer to the :ref:`release notes<docs_release_notes>` for more information regarding what is new, which pipelines were updated and what issues are fixed in this release.
 
 To contribute, see :ref:`Getting involved<docs_get_involved>`.
 
@@ -30,7 +30,6 @@ To contribute, see :ref:`Getting involved<docs_get_involved>`.
    :name: toc-user-guide
    :caption: Guides 
 
-   latest_relnote
    quickstart_gp
    pipeline_ref
    get_involved

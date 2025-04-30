@@ -598,7 +598,7 @@ Though `LINX`_ is designed primarily for somatic SV, it can also be run in a mor
 .. _Delly-sansa: https://github.com/dellytools/sansa
 .. _Delly-maze: https://github.com/dellytools/maze
 .. _Delly-suave: https://github.com/dellytools/suave
-.. _Genome Annotations: https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/genome-annotation
+.. _Genome Annotations: https://www.ncbi.nlm.nih.gov/books/NBK20253/
 .. _Manta: https://github.com/Illumina/manta
 .. _Lumpy: https://genomebiology.biomedcentral.com/articles/10.1186/gb-2014-15-6-r84
 .. _Wham: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004572
@@ -623,7 +623,7 @@ Though `LINX`_ is designed primarily for somatic SV, it can also be run in a mor
 .. _GERP++: https://bio.tools/gerp
 .. _PhyloP: https://ionreporter.thermofisher.com/ionreporter/help/GUID-03D1F68A-E646-4B49-AD59-AF2F51874BD2.html
 .. _SamBamba: http://lomereiter.github.io/sambamba/index.html
-.. _Vt: http://genome.sph.umich.edu/wiki/Vt
+.. _Vt: https://genome.sph.umich.edu/wiki/Vt
 .. _Gemini: http://gemini.readthedocs.org/en/latest/index.html
 .. _DREAM3 results: https://github.com/dkoboldt/varscan/releases
 .. _GATK MuTect2 Overview: https://gatk.broadinstitute.org/hc/en-us/articles/360037593851-Mutect2 
@@ -641,7 +641,7 @@ Though `LINX`_ is designed primarily for somatic SV, it can also be run in a mor
 .. _SvABA tool: https://github.com/walaj/svaba/blob/master/README.md
 .. _SvABA: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5880247/
 .. _MetaSV: http://bioinform.github.io/metasv/
-.. _MetaSV Tool: https://academic.oup.com/bioinformatics/article/31/16/2741/321286
+.. _MetaSV Tool: https://github.com/bioinform/metasv
 .. _logR Signal: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6778654/
 .. _Biomart: https://m.ensembl.org/info/data/biomart/index.html
 .. _LINX: https://github.com/hartwigmedical/hmftools/blob/master/linx/README.md

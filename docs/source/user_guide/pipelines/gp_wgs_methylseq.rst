@@ -320,7 +320,7 @@ Methylation Sequencing Pipeline
             **References**
 
             * `DNA Methylation Detection: Bisulphite genomic sequencing analysis <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3233226/>`_.
-            * `Strategies for analyzing bisulfite sequencing data <https://www.sciencedirect.com/science/article/pii/S0168165617315936>`_.
+            * `Strategies for analyzing bisulfite sequencing data <https://pubmed.ncbi.nlm.nih.gov/28822795/>`_.
             * `Analysis and Visualization Tool for Targeted Amplicon Bisulfite Sequencing on Ion Torrent Sequencers <https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0160227>`_.
             * Cytosine and Guanine - `CpGs`_.
 

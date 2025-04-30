@@ -651,7 +651,7 @@ DNA Sequencing Pipeline
 
             **References**
 
-            * `Three-stage quality control strategies for DNA sequencing <https://academic.oup.com/bib/article/15/6/879/180439>`_
+            * `Three-stage quality control strategies for DNA sequencing <https://pmc.ncbi.nlm.nih.gov/articles/PMC4492405/>`_
             * `NGS Mapping, errors and quality control <https://libstore.ugent.be/fulltxt/RUG01/002/839/552/RUG01-002839552_2020_0001_AC.pdf>`_
             * `dbNSFP: a lightweight database of human nonsynonymous SNPs and their functional predictions <https://www.ncbi.nlm.nih.gov/pubmed/21520341>`_
             * `DNA-Seq Pipeline <https://bitbucket.org/mugqic/genpipes/downloads/MUGQIC_Bioinfo_DNA-Seq.pptx>`_

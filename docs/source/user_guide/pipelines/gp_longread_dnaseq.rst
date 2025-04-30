@@ -219,7 +219,7 @@ Long Read DNA Sequencing Pipeline
 
 .. _Oxford Nanopore Technologies (ONT): https://nanoporetech.com/platform/technology 
 .. _Minimap2 aligner: https://github.com/lh3/minimap2
-.. _Minimap2: https://academic.oup.com/bioinformatics/article/34/18/3094/4994778
+.. _Minimap2: https://academic.oup.com/bioinformatics/article-pdf/34/18/3094/48919122/bioinformatics_34_18_3094.pdf
 .. _NCBI nucleotide: https://www.ncbi.nlm.nih.gov/nucleotide/
 .. _Guppy: https://bio.tools/guppy
 .. _pbmm2: https://github.com/PacificBiosciences/pbmm2

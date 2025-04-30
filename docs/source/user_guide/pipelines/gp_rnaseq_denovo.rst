@@ -209,7 +209,7 @@ RNA Sequencing (De-Novo) Pipeline
 
                      The Seq2fun protocol starts with merging FASTQ files with multiple readsets. Then Seq2fun use the FASTQ files to generate KO abundance table and several other files (such as `seq2fun output files <https://www.seq2fun.ca/manual.xhtml#sect4>`_) that can be used to perform downstream analysis on `NetworkAnalyst <https://www.networkanalyst.ca/NetworkAnalyst/uploads/TableUploadView.xhtml>`_. A HTML report for seq2fun analysis is generated.
 
-                     Additionally differential KO analysis is performed using `DESeq2 method <https://pubmed.ncbi.nlm.nih.gov/25516281/>`_ and `edgeR <http://bioinformatics.oxfordjournals.org/content/26/1/139/>`_ R Bioconductor packages. on KO count files and result tables will be generated. Moreover, a pathway analysis using differential analysis is performed using `fgsea <https://www.biorxiv.org/content/10.1101/060012v3>`_.
+                     Additionally differential KO analysis is performed using `DESeq2 method <https://pubmed.ncbi.nlm.nih.gov/25516281/>`_ and `edgeR`_ R Bioconductor packages. on KO count files and result tables will be generated. Moreover, a pathway analysis using differential analysis is performed using `fgsea <https://www.biorxiv.org/content/10.1101/060012v3>`_.
 
                      For further information regarding Seq2Fun visit: `<https://www.seq2fun.ca>`_
 
@@ -219,7 +219,7 @@ RNA Sequencing (De-Novo) Pipeline
 
             * Grabherr MG, Haas BJ, Yassour M, et al. Full-length transcriptome assembly from RNA-Seq data without a reference genome - `Trinity-Trinotate`_.
             * Chin CS, Alexander DH, Marks P, et al. Non-hybrid, finished microbial genome assemblies from long-read SMRT sequencing data - `suggested workflow`_.
-            * Trinity RNA sequencing utilities `Workshop Slides <http://biohpc.cornell.edu/lab/doc/Trinity_workshop.pdf>`_.
+            * Trinity RNA sequencing utilities `Workshop Slides <https://biohpc.cornell.edu/lab/doc/Trinity_workshop.pdf>`_.
 
 ----
 
@@ -257,8 +257,8 @@ RNA Sequencing (De-Novo) Pipeline
 .. The following are the html links referred to in this text.
 
 .. _transcriptome studies: https://en.wikipedia.org/wiki/Transcriptome
-.. _Trinity-Trinotate: https://www.ncbi.nlm.nih.gov/pubmed/21572440
+.. _Trinity-Trinotate: https://pmc.ncbi.nlm.nih.gov/articles/PMC3571712/
 .. _suggested workflow: https://www.ncbi.nlm.nih.gov/pubmed/23644548
 .. _RSEM Tool: https://github.com/deweylab/RSEM
 .. _DESeq2: https://bioconductor.org/packages/release/bioc/html/DESeq2.html
-.. _edgeR: http://bioinformatics.oxfordjournals.org/content/26/1/139/
+.. _edgeR: https://bioconductor.org/packages/release/bioc/html/edgeR.html
