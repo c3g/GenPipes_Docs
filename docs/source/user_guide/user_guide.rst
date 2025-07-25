@@ -32,5 +32,6 @@ To contribute, see :ref:`Getting involved<docs_get_involved>`.
 
    latest_relnote
    quickstart_gp
+   gp_wizard
    pipeline_ref
    get_involved
