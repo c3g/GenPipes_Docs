@@ -48,6 +48,11 @@ Wait for the terminal broadcast this can take up to 10 minutes. Once you have re
 without seeing the warning, you can go to the next step. You can run the GenPipes :ref:`tutorial <doc_genpipes_tutorial>` from
 that location.
 
+.. note::
+   **Have you tried the GenPipes Wizard?**
+      We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
+
+
 Let’s use ChIPSeq as an example:
 
 **1- Make a folder for the test:**

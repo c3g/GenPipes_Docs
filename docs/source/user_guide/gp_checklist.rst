@@ -5,6 +5,10 @@ GenPipes Check List
 
 Before you begin using GenPipes for the first time, it would be useful to quickly go over the basic requirements of using GenPipes.  This checklist is created to help you get started with GenPipes quickly and get your bearings correct before you embark upon genomic analysis with GenPipes.
 
+.. note::
+   **Have you tried the GenPipes Wizard?**
+      We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
+
 .. |check-img| image:: /img/checkmark.png
    :scale: 5%
    :align: top

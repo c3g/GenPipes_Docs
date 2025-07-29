@@ -13,7 +13,9 @@ There are multiple ways to access GenPipes and get started with genomic analysis
    * Bare metal or virtual server
    * GenPipes in a container
 
-----
+.. note::
+   **Do you need help choosing which deployment option to use?**
+      We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
 
 Accessing GenPipes
 -------------------
