@@ -34,7 +34,11 @@ This guide aims at helping you get started with GenPipes quickly (under 15 minut
 
 * **Objective:** *Choose GenPipes deployment*
 
-   Should I deploy GenPipes on my local resources or use a pre-installed copy of GenPipes deployed on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_,formerly Compute Canada, servers? **Refer** to :ref:`Choose GenPipes deployment option<docs_choose_gp_dep>` section in Quick Start Guide Table of Contents above.
+   Should I deploy GenPipes on my local resources or use a pre-installed copy of GenPipes deployed on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_,formerly Compute Canada, servers? **Refer** to :ref:`Choose GenPipes deployment option<docs_choose_gp_dep>` section in Quick Start Guide Table of Contents above or try out our new tool, the :ref:`GenPipes Wizard <docs_gp_wizard>` , for help on choosing a deployment option.
+
+* **Objective:** *Choose GenPipes Pipeline and Protocol*
+
+   What pipeline and what protocol should I use for my analysis? Use the :ref:`GenPipes Wizard <docs_gp_wizard>`. This tool can help guide you through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
 
 * **Objective:** *Get Latest GenPipes*
 
