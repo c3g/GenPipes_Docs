@@ -22,4 +22,6 @@ There are two kinds of target audience of GenPipes documentation:
 
 Our key focus in GenPipes documentation efforts is to ensure that onboarding GenPipes is intuitive and easy for beginners and also for seasoned users such that they can quickly figure out where to look if they need information on a specific feature or GenPipes capability.
 
-For beginner users, we have developed a :ref:`GenPipes Wizard <docs_gp_wizard>` that can help users with selecting the appropriate deployment method, pipeline, and protocol, and constructing the full command to run GenPipes. 
+.. note::
+   **Have you tried the GenPipes Wizard?**
+      We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.

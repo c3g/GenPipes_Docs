@@ -142,11 +142,14 @@ Currently, the Wizard supports generating commands with the following options:
 Troubleshooting
 ---------------
 
-**Q:** What if I selected the wrong option by mistake?  
+**Q:** What if I selected the wrong option by mistake?                             
+
 **A:** You can go back at any point during the wizard:  
    - For selection-type questions, choose the **"back"** option from the list.  
    - For input-type questions, type ``back`` and press Enter.
 
+
 **Q:** How do I cancel or exit the wizard?  
+
 **A:** Press **Ctrl+C** at any time to exit the wizard.  
    Please note that your progress will **not** be saved.
