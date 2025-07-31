@@ -3,7 +3,7 @@
 GenPipes Wizard
 ===============
 
-The GenPipes Wizard is an interactive command-line tool designed to guide users—especially beginners—through selecting the appropriate deployment method, pipeline, and protocol, and constructing the full command to run GenPipes. The Wizard works by asking a series of step-by-step questions.
+The GenPipes Wizard is an interactive command-line tool designed to guide users, especially beginners, through selecting the appropriate deployment method, pipeline, and protocol, and constructing the full command to run GenPipes. The Wizard works by asking a series of step-by-step questions.
 
 How to Use the Wizard
 ---------------------
@@ -16,7 +16,7 @@ To launch the GenPipes Wizard, run:
 
    genpipes tools wizard
 
-This will launch an interactive prompt where you can get help choosing a deployment option, pipeline and/or protocol and generate a ready-to-run GenPipes command.
+This will launch an interactive prompt where you can get help choosing a deployment option, pipeline and protocol and generate a ready-to-run GenPipes command.
 
 Example Run
 -----------
