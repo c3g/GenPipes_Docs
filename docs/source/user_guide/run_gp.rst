@@ -2,6 +2,10 @@
 
 Run GenPipes
 ------------
+.. note::
+   **Have you tried the GenPipes Wizard?**
+      We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
+
 
 After :ref:`selecting a GenPipes deployment option<docs_choose_gp_dep>` you must setup and configure your GenPipes environment as per your deployment choice. After you have configured it, you are ready to execute GenPipes.
 
