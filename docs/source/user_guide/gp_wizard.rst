@@ -16,7 +16,7 @@ To launch the GenPipes Wizard, run:
 
    genpipes tools wizard
 
-This will launch an interactive prompt where you can get help choosing a pipeline and/or protocol and generate a ready-to-run GenPipes command.
+This will launch an interactive prompt where you can get help choosing a deployment option, pipeline and/or protocol and generate a ready-to-run GenPipes command.
 
 Example Run
 -----------
