@@ -109,31 +109,31 @@ ChIP Sequencing Pipeline
          +----+---------------------------+--------------------------------------+
          | 11.| |qc_metrics|              | |qc_metrics|                         |
          +----+---------------------------+--------------------------------------+
-         | 12.| |homer_make_ucsc_file|    | |deeptools_qc|                       |     
+         | 12.| |deeptools_qc|            | |homer_make_ucsc_file|               |     
          +----+---------------------------+--------------------------------------+
-         | 13.| |macs2_callpeak|          | |homer_make_ucsc_file|               |
+         | 13.| |homer_make_ucsc_file|    | |macs2_atacseq_callpeak|             |
          +----+---------------------------+--------------------------------------+
-         | 14.| |homer_annotate_peaks|    | |macs2_atacseq_callpeak|             |    
+         | 14.| |macs2_callpeak|          | |homer_annotate_peaks|               |    
          +----+---------------------------+--------------------------------------+
-         | 15.| |annotation_graphs|       | |homer_annotate_peaks|               |
+         | 15.| |homer_annotate_peaks|    | |homer_find_motifs_genome|           |
          +----+---------------------------+--------------------------------------+
-         | 16.| |annotation_graphs|       | |homer_find_motifs_genome|           |
+         | 16.| |homer_find_motifs_genome|| |annotation_graphs|                  |
          +----+---------------------------+--------------------------------------+
-         | 17.| |run_spp|                 | |annotation_graphs|                  |
+         | 17.| |annotation_graphs|       | |run_spp|                            |
          +----+---------------------------+--------------------------------------+
-         | 18.| |differential_binding|    | |run_spp|                            |
+         | 18.| |run_spp|                 | |differential_binding|               |
          +----+---------------------------+--------------------------------------+
-         | 19.| |ihec_metrics|            | |differential_binding|               |
+         | 19.| |differential_binding|    | |ihec_metrics|                       |
          +----+---------------------------+--------------------------------------+
-         | 20.| |multiqc_report|          | |ihec_metrics|                       |
+         | 20.| |ihec_metrics|            | |multiqc_report|                     |
          +----+---------------------------+--------------------------------------+
-         | 21.| |cram_output|             | |multiqc_report|                     |
+         | 21.| |multiqc_report|          | |cram_output|                        |
          +----+---------------------------+--------------------------------------+
-         | 22.| |gatk_haplotype_caller|   | |cram_output|                        |
+         | 22.| |cram_output|             | |gatk_haplotype_caller|              |
          +----+---------------------------+--------------------------------------+
-         | 23.| |merge_and_call_ind_gvcf| | |gatk_haplotype_caller|              |
+         | 23.| |gatk_haplotype_caller|   | |merge_and_call_ind_gvcf|            |
          +----+---------------------------+--------------------------------------+
-         | 24.|                           | |merge_and_call_ind_gvcf|            |
+         | 24.| |merge_and_call_ind_gvcf| |                                      |
          +----+---------------------------+--------------------------------------+
 
         .. card::
