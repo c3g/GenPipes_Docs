@@ -1,4 +1,4 @@
-.. spelling:wordlist::
+.. spelling::word-list::
 
    cd
    dna

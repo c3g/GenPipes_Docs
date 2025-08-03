@@ -6,27 +6,27 @@
 
         graph LR
           InputFASTQ[[fa:fa-file-archive-o .FASTQ]]
-          Node1{{ 1. <br/> Host <br/> read removal }}:::nodefill
-          Node2{{ 2. <br/> Kraken <br/> Analysis }}:::nodefill
-          Node3{{ 3. <br/> Cutadapt }}:::nodefill
-          Node4{{ 4. <br/> Mapping BWA <br/> mem SAMbamba }}:::nodefill
-          Node5{{ 5. <br/> SAMbamba merge <br/> SAM files }}:::nodefillblack
-          Node6{{ 6. <br/> SAMbamba Filtering }}:::nodefill
-          Node7{{ 7. <br/> Ivar trim <br/> primer }}:::nodefill
-          Node8{{ 8. <br/> Covseq Metrics }}:::nodefill
-          Node9{{ 9. <br/> Freebayes Calling }}:::nodefill
-          Node10{{ 10. <br/> Ivar Calling }}:::nodefill
-          Node11{{ 11. <br/> SnpEff <br/> Annotation }}:::nodefill
-          Node12{{ 12. <br/> Ivar create <br/> consensus }}:::nodefill
-          Node13{{ 13. <br/> Bcftools create <br/> consensus }}:::nodefill
-          Node14{{ 14. <br/> Quast <br/> consensus }}:::nodefill
-          Node15{{ 15. <br/> Rename <br/> consensus header <br/> ivar }}:::nodefill
-          Node16{{ 16. <br/> Rename <br/> consensus header <br/> freebayes }}:::nodefill
-          Node17{{ 17. <br/> ncovtools <br/> Quickalign }}:::nodefill
-          Node18{{ 18. <br/> Prepare <br/> Table }}:::nodefill
-          Node19{{ 19. <br/> Prepare <br/> Report ivar }}:::nodefill
-          Node20{{ 20. <br/> Prepare <br/> Report Freebayes }}:::nodefill
-          Node21{{ 21. <br/> MultiQC }}:::nodefill
+          Node1{{ 1.<br/> Host <br/> read removal }}:::nodefill
+          Node2{{ 2.<br/> Kraken <br/> Analysis }}:::nodefill
+          Node3{{ 3.<br/> Cutadapt }}:::nodefill
+          Node4{{ 4.<br/> Mapping BWA <br/> mem SAMbamba }}:::nodefill
+          Node5{{ 5.<br/> SAMbamba merge <br/> SAM files }}:::nodefillblack
+          Node6{{ 6.<br/> SAMbamba Filtering }}:::nodefill
+          Node7{{ 7.<br/> Ivar trim <br/> primer }}:::nodefill
+          Node8{{ 8.<br/> Covseq Metrics }}:::nodefill
+          Node9{{ 9.<br/> Freebayes Calling }}:::nodefill
+          Node10{{ 10.<br/> Ivar Calling }}:::nodefill
+          Node11{{ 11.<br/> SnpEff <br/> Annotation }}:::nodefill
+          Node12{{ 12.<br/> Ivar create <br/> consensus }}:::nodefill
+          Node13{{ 13.<br/> Bcftools create <br/> consensus }}:::nodefill
+          Node14{{ 14.<br/> Quast <br/> consensus }}:::nodefill
+          Node15{{ 15.<br/> Rename <br/> consensus header <br/> ivar }}:::nodefill
+          Node16{{ 16.<br/> Rename <br/> consensus header <br/> freebayes }}:::nodefill
+          Node17{{ 17.<br/> ncovtools <br/> Quickalign }}:::nodefill
+          Node18{{ 18.<br/> Prepare <br/> Table }}:::nodefill
+          Node19{{ 19.<br/> Prepare <br/> Report ivar }}:::nodefill
+          Node20{{ 20.<br/> Prepare <br/> Report Freebayes }}:::nodefill
+          Node21{{ 21.<br/> MultiQC }}:::nodefill
           QuastOutput([fa:fa-sticky-note-o Report ])
           CovseqOutput([fa:fa-sticky-note-o Report ])
           KrakenOutput([fa:fa-sticky-note-o Report ])
@@ -81,10 +81,12 @@
             Node18
             Node19
             Node20
+            Node21
             QuastOutput
             CovseqOutput
             Outputivar
             Outputfb
+            MultiQCReport
           end
 
           classDef greenRect fill:#E4FBF4,stroke:white

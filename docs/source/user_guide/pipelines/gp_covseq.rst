@@ -29,6 +29,7 @@ CoV Sequencing Pipeline
 
          .. dropdown:: Options
 
+            .. include:: /common/gp_design_opt.inc 
             .. include:: /common/gp_readset_opt.inc
             .. include:: /common/gp_common_opt.inc
 
