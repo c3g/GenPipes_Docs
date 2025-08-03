@@ -20,7 +20,7 @@ This is a major release of GenPipes:
 * GenPipes Source tree
    - Source tree has migrated from `Bitbucket <https://bitbucket.org/mugqic/genpipes/src/master/genpipes/>`_ to `GitHub <https://github.com/c3g/GenPipes>`_.
 * :ref:`ChIPSeq<docs_gp_chipseq>`
-   - The Chipseq pipeline `atac` protocol has a new step, Deeptools QC, that generates two new metrics: Fingerplot QC and Correlation Matrix. These new metrics are now included in the MultiQC report.
+   - The Chipseq pipeline `chipseq` protocol has a new step, Deeptools QC, that generates two new metrics: Fingerplot QC and Correlation Matrix. These new metrics are now included in the MultiQC report.
 * A new :ref:`LongRead DNASeq pipeline<docs_gp_longread_dnaseq>`, is now available to analyze long-read sequences.
    - Supports two protocols, Revio (PacBio Revio) and Nanopore (ONT Nanopore)
    - Nanopore protocol of long read dnaseq is equivalent in functionality to the Nanopore pipeline that was available as a standalone pipeline in the previous versions
