@@ -50,8 +50,9 @@ DNA Sequencing Pipeline
 
          .. dropdown:: Options
 
+            .. include:: /common/gp_design_opt.inc 
+            .. include:: /common/gp_readset_opt.inc 
             .. include:: opt_dnaseq.inc
-            .. include:: /common/gp_readset_opt.inc
             .. include:: /common/gp_common_opt.inc
 
             .. include:: /user_guide/pipelines/notes/caution_pair_file_format.inc
@@ -466,7 +467,7 @@ DNA Sequencing Pipeline
                   +----+------------------------------------+
                   | 5. | |set_interval_list|                |
                   +----+------------------------------------+
-                  | 6. | |sequenza|                         |
+                  | 6. | |sequenza_step|                    |
                   +----+------------------------------------+
                   | 7. | |rawmpileup|                       |
                   +----+------------------------------------+
@@ -524,7 +525,7 @@ DNA Sequencing Pipeline
                   +----+------------------------------------+
                   | 8. | |m_dna_sample_mosdepth|            |
                   +----+------------------------------------+
-                  | 9. | |sequenza|                         |
+                  | 9. | |sequenza_step|                    |
                   +----+------------------------------------+
                   | 10.| |manta_sv_calls|                   |
                   +----+------------------------------------+
@@ -572,17 +573,19 @@ DNA Sequencing Pipeline
                   +----+------------------------------------+
                   | 32.| |report_pcgr|                      |
                   +----+------------------------------------+
-                  | 33.| |run_multiqc|                      |
+                  | 33.| |report_djerba|                    |
                   +----+------------------------------------+
-                  | 34.| |sym_link_fastq_pair|              |
+                  | 34.| |run_multiqc|                      |
                   +----+------------------------------------+
-                  | 35.| |sym_link_final_bam|               |
+                  | 35.| |sym_link_fastq_pair|              |
+                  +----+------------------------------------+
+                  | 36.| |sym_link_final_bam|               |
                   +----+------------------------------------+                  
-                  | 36.| |sym_link_report|                  |
+                  | 37.| |sym_link_report|                  |
                   +----+------------------------------------+
-                  | 37.| |sym_link_ensemble|                |
+                  | 38.| |sym_link_ensemble|                |
                   +----+------------------------------------+
-                  | 38.| |cram_output|                      |
+                  | 39.| |cram_output|                      |
                   +----+------------------------------------+
 
                .. tab-item:: SV
@@ -708,7 +711,8 @@ DNA Sequencing Pipeline
 .. |filter_tumor_only| replace:: `Filter Tumor Only`_
 .. |report_cpsr| replace:: `Report CPSR`_
 .. |report_pcgr| replace:: `Report PCGR`_
-.. |sequenza| replace:: `Sequenza Step`
+.. |report_djerba| replace:: `Report Djerba`_
+.. |sequenza_step| replace:: `Sequenza Step`_
 .. |rawmpileup| replace:: `Raw Mpileup`_
 .. |paired_varscan2| replace:: `Paired Var Scan 2`_
 .. |merge_varscan2| replace:: `Merge Var Scan 2`_

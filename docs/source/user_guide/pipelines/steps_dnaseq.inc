@@ -191,6 +191,12 @@ In this step, `VerifyBAMID <https://genome.sph.umich.edu/wiki/VerifyBamID>`_ sof
 
 Aggregate results from bioinformatics analyses across many samples into a single report. `MultiQC`_ searches a given directory for analysis logs and compiles a HTML report. It's a general use tool, perfect for summarizing the output from numerous bioinformatics tools.
 
+.. _Report_Djerba:
+
+**Report Djerba**
+
+This step generates the `Djerba <https://github.com/oicr-gsi/djerba>` report for the analysis.
+
 .. _Sym Link FastQ:
 
 **Sym Link FastQ**
