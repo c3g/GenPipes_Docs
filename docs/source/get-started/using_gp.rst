@@ -105,7 +105,7 @@ In the command above,
 
 -s defines the steps of the pipeline to execute, use `genpipes chipseq -h` to check steps
 
-By default, Slurm scheduler is used when using the GenPipes deployment on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers such as "Cedar", "Beluga" or "Graham". On the abacus server, you need to use PBS scheduler. For that you need to specify "-j pbs" option as shown below:
+By default, Slurm scheduler is used when using the GenPipes deployment on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers such as |key_ccdb_server_name|, |other_ccdb_server_names|. On the abacus server, you need to use PBS scheduler. For that you need to specify "-j pbs" option as shown below:
 
 ::
 

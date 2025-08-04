@@ -56,8 +56,8 @@ See `Digital Research Alliance Documentation <https://docs.alliancecan.ca/wiki/T
   
    `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ was formerly known as Compute Canada.
 
-My account is activated but I cannot login into beluga server or any other node - Cedar, Niagra? What is wrong?
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+My account is activated but I cannot login into |key_ccdb_server_name| server or any other node such as |other_ccdb_server_names|? What is wrong?
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 **Response**
 

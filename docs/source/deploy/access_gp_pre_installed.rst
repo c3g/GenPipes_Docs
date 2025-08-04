@@ -76,7 +76,7 @@ You are all set to use GenPipes deployed on the `Digital Research Alliance of Ca
 
 .. note::
 
-         Canadian Centre for Computational Genomics (C3G), in partnership with `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, offers and maintains a large set of bioinformatics resources for the community. For a complete list of software currently deployed on several HPC centres, including Beluga, Cedar and others, refer to `Bioinformatics Resources <https://computationalgenomics.ca/cvmfs-genome/>`_ and `available software <https://docs.alliancecan.ca/wiki/Available_software>`_. Several reference genomes are also available. You can refer to the `available genomes <https://github.com/c3g/GenPipes/tree/main/resources/genomes/>`_ and the environment setup to access these genomes.
+         Canadian Centre for Computational Genomics (C3G), in partnership with `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, offers and maintains a large set of bioinformatics resources for the community. For a complete list of software currently deployed on several HPC centres, including |key_ccdb_server_name|, |other_ccdb_server_names| , refer to `Bioinformatics Resources <https://computationalgenomics.ca/cvmfs-genome/>`_ and `available software <https://docs.alliancecan.ca/wiki/Available_software>`_. Several reference genomes are also available. You can refer to the `available genomes <https://github.com/c3g/GenPipes/tree/main/resources/genomes/>`_ and the environment setup to access these genomes.
 
 
 .. _setting_up_gp_environment_modules:
@@ -86,7 +86,7 @@ Step 3: Setting up your user environment for GenPipes access
 
 **For Abacus, DRAC Users only**
 
-All of the software and scripts used by GenPipes are already installed on several DRAC servers including Beluga, Cedar and others. To access the tools, you will need to add the tool path to your bash_profile. The bash profile is a hidden file in your home directory that sets up your environment every time you log in. You can also use your bashrc file.
+All of the software and scripts used by GenPipes are already installed on several DRAC servers including |key_ccdb_server_name|, |other_ccdb_server_names|. To access the tools, you will need to add the tool path to your bash_profile. The bash profile is a hidden file in your home directory that sets up your environment every time you log in. You can also use your bashrc file.
 
 Genomes and modules used by the pipelines are already installed on a CVMFS partition mounted on all those clusters in /cvmfs/soft.mugqic/CentOS6
 

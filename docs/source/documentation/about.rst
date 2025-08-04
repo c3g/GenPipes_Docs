@@ -21,10 +21,11 @@ For any documentation feedback, queries or any issues, please refer to `GenPipes
 
    <span style="background-color: #FFFF00">
    documentation
+   </br>
+   </br>
    </span>
 
-
-Thank you for your valuable inputs.
+*Thank you for your valuable inputs.*
 
 .. _ref_docs_contrib_guidelines:
 
