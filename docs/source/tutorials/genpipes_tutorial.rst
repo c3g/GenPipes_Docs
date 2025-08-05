@@ -403,7 +403,7 @@ We will run this analysis on the |key_ccdb_server_name| cluster as follows:
 	genpipes rnaseq -c $GENPIPES_INIS/rnaseq/rnaseq.base.ini \\
         $GENPIPES_INIS/common_ini/|key_ccdb_server_cmd_name|.ini \\
         -r readset.rnaseq.txt -d design.rnaseq.txt -g rnaseq_commands.sh
-        
+
     bash rnaseq_commands.sh
 
 The commands will be sent to the job queue to be executed. You can check the progress of the jobs with

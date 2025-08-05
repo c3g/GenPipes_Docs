@@ -52,9 +52,9 @@ The content above are the default settings, you can change them as shown below. 
 
 Now save the updated custom.ini file and mention it on the command line after the cluster ini file when you run GenPipes. The order of the custom ini file is important to override default parameters. Therefore, please make sure to add your custom.ini file at the end of all the other ini files. 
 
-.. code::
+.. parsed-literal::
 
-      genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini custom.ini -r readset.chipseq.txt -d design.chipseq.txt -s 1-20 -g chipseqScript.sh
+      genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/\ |key_ccdb_server_name|\.ini custom.ini -r readset.chipseq.txt -d design.chipseq.txt -s 1-20 -g chipseqScript.sh
 
       bash chipseqScript.sh
 
@@ -65,7 +65,7 @@ A new developer trying to setup and run GenPipes tests found the following issue
 
 ::
 
-  I am trying to run some python test cases using "pytest" on beluga cluster. 
+  I am trying to run some python test cases using "pytest" on |key_ccdb_server_name|cluster. 
   I am running into "pytest command not found " error. 
 
 .. image:: /img/faq/pytest-err1.png

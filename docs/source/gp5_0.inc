@@ -10,19 +10,19 @@
 
   - **Old Format** 
 
-    ::
+    .. parsed-literal::
     
-      user@beluga % <pipeline name>.py [options] -g genpipes_cmd.sh
-      user@beluga % bash genpipes_cmd.sh
+        user@\ |key_ccdb_server_cmd_name|\ % <pipeline name>.py [options] -g genpipes_cmd.sh
+        user@\ |key_ccdb_server_cmd_name|\ % bash genpipes_cmd.sh
 
   - **New Format** 
   
-    ::
+    .. parsed-literal::
 
-      user@beluga % genpipes <pipeline name> [options] -g genpipes_cmd.sh
-      user@beluga % bash genpipes_cmd.sh
+        user@\ |key_ccdb_server_cmd_name|\ % genpipes <pipeline name> [options] -g genpipes_cmd.sh
+        user@\ |key_ccdb_server_cmd_name|\ % bash genpipes_cmd.sh
 
-4. When using **GenPipes deployed on the Digital Research Alliance Canada servers such as beluga**, a new variable ‘GENPIPES_INIS’ is introduced for streamlining access to the config files in the `genpipes` commands. In the future, 'MUGQIC_PIPELINES_HOME' will be deprecated.
+4. When using **GenPipes deployed on the Digital Research Alliance Canada servers** such as |key_ccdb_server_name|, a new variable ‘GENPIPES_INIS’ is introduced for streamlining access to the config files in the `genpipes` commands. In the future, 'MUGQIC_PIPELINES_HOME' will be deprecated.
 
   - **Before** 
 

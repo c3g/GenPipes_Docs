@@ -40,13 +40,13 @@ Step 2: Connect to DRAC servers
 
 a. Open a shell or terminal (bash preferably) and type the following command:
 
-.. code:: 
+.. parsed-literal:: 
 
-  ssh myaccount@beluga.alliancecan.ca
+     ssh myaccount@\ |key_ccdb_server_cmd_name|\.alliancecan.ca
 
 .. tip::
      
-       Replace the server name `beluga` in the command above with the desired cluster name. 
+       Replace the server name |key_ccdb_server_cmd_name| in the command above with the desired cluster name. 
 
 b. Enter your `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada, account password.
 
@@ -58,13 +58,13 @@ b. Select **"Session"** on the left hand side panel
 
 c. Select **"SSH"** and fill the *"Host Name"* entry with the following:
 
-::
+.. parsed-literal::
 
-  beluga.alliancecan.ca
+    \ |key_ccdb_server_cmd_name|\.alliancecan.ca
 
 .. tip::
      
-       Replace the server name `beluga` in the command above with the desired cluster name. 
+       Replace the server name |key_ccdb_server_cmd_name| in the command above with the desired cluster name. 
 
 d. Click **"Open"**
 
@@ -128,43 +128,43 @@ You will need to replace the text in "<>" with your account and GenPipes softwar
 
 For MUGQIC analysts, add the following lines to your $HOME/.bash_profile:
 
-::
+.. parsed-literal::
 
-  umask 0006
-  
-  ## MUGQIC genomes and modules for MUGQIC analysts
-  
-  HOST=`hostname`;
-  
-  DNSDOMAIN=`dnsdomainname`;
-  
-  export MUGQIC_INSTALL_HOME=/cvmfs/soft.mugqic/CentOS6
-  
-  if [[ $HOST == abacus* || $DNSDOMAIN == ferrier.genome.mcgill.ca ]]; then
-  
-    export MUGQIC_INSTALL_HOME_DEV=/lb/project/mugqic/analyste_dev
-  
-  elif [[ $HOST == ip* || $DNSDOMAIN == m  ]]; then
-  
-    export MUGQIC_INSTALL_HOME_DEV=/project/6007512/C3G/analyste_dev
-  
-  elif [[ $HOST == cedar* || $DNSDOMAIN == cedar.alliancecan.ca ]]; then
-  
-    export MUGQIC_INSTALL_HOME_DEV=/project/6007512/C3G/analyste_dev
-  
-  
-  elif [[ $HOST == beluga* || $DNSDOMAIN == beluga.alliancecan.ca ]]; then
-  
-    export MUGQIC_INSTALL_HOME_DEV=/project/6007512/C3G/analyste_dev
-  
-  fi
+    umask 0006
+      
+      ## MUGQIC genomes and modules for MUGQIC analysts
+      
+      HOST=`hostname`;
+      
+      DNSDOMAIN=`dnsdomainname`;
+      
+      export MUGQIC_INSTALL_HOME=/cvmfs/soft.mugqic/CentOS6
+      
+      if [[ $HOST == abacus* || $DNSDOMAIN == ferrier.genome.mcgill.ca ]]; then
+      
+        export MUGQIC_INSTALL_HOME_DEV=/lb/project/mugqic/analyste_dev
+      
+      elif [[ $HOST == ip* || $DNSDOMAIN == m  ]]; then
+      
+        export MUGQIC_INSTALL_HOME_DEV=/project/6007512/C3G/analyste_dev
+      
+      elif [[ $HOST == fir* || $DNSDOMAIN == fir.alliancecan.ca ]]; then
+      
+        export MUGQIC_INSTALL_HOME_DEV=/project/6007512/C3G/analyste_dev
+      
+      
+      elif [[ $HOST == \ |key_ccdb_server_cmd_name|\* || $DNSDOMAIN == \ |key_ccdb_server_cmd_name|\.alliancecan.ca ]]; then
+      
+        export MUGQIC_INSTALL_HOME_DEV=/project/6007512/C3G/analyste_dev
+      
+      fi
 
-  module use $MUGQIC_INSTALL_HOME/modulefiles $MUGQIC_INSTALL_HOME_DEV/modulefiles
-  module load mugqic/genpipes/<latest_version>
+      module use $MUGQIC_INSTALL_HOME/modulefiles $MUGQIC_INSTALL_HOME_DEV/modulefiles
+      module load mugqic/genpipes/<latest_version>
+    
+      export RAP_ID=<my-rap-id>
 
-  export RAP_ID=<my-rap-id>
-
-Also, set JOB_MAIL in your $HOME/.bash_profile to receive PBS/SLURM job logs:
+    Also, set JOB_MAIL in your $HOME/.bash_profile to receive PBS/SLURM job logs:
 
 ::
 

@@ -1,7 +1,3 @@
-::
-
-  genpipes dnaseq -t somatic_ensemble  -c $GENPIPES_INIS/dnaseq/dnaseq.base.ini $GENPIPES_INIS/dnaseq/dnaseq.cancer.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.somatic_ensemble.txt -p pairs.somatic_ensemble.csv -j slurm -s 1-15 -g dna_commands.sh
-
-  bash dna_commands.sh
+.. include:: /common/commands/dnaseq_so_ensemble.inc
 
 .. include:: /common/gp_cluster_ini.inc
