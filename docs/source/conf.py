@@ -24,7 +24,7 @@ author = u'shaloo'
 show_authors = True
 #copyright =  author
 
-copyright = u'GenPipes (GSoD 2019-24)'
+copyright = u'GenPipes (GSoD 2019-25)'
 
 # The full version, including alpha/beta/rc tags
 
