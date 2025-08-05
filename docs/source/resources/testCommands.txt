@@ -1,39 +1,79 @@
-::
+``ampliconseq``
 
-    genpipes ampliconseq -c $GENPIPES_INIS/ampliconseq/ampliconseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.ampliconseq.txt -s 1-8 -g ampliconseqCommands.sh
+.. include:: /common/commands/ampliconseq.inc
 
-:: 
+``chipseq``
 
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readsets.chipseq.txt -d design.chipseq.txt -s 1-19 -g chipseqCommands.sh
+.. include:: /common/commands/chipseq.inc
 
+``covseq``
 
-:: 
-    
-    genpipes rnaseq -c $GENPIPES_INIS/rnaseq/rnaseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-21 -g rnaseqCommands.sh
+.. include:: /common/commands/covseq.inc
 
+``nanopore covseq``
 
-::
+.. include:: /common/commands/nanopore_covseq.inc
 
-    genpipes dnaseq -t germline_snv -c $GENPIPES_INIS/dnaseq/dnaseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-27 -g dnaseqCommands_mugqic.sh
+``rnaseq``
 
-    genpipes dnaseq -t germline_sv -c $GENPIPES_INIS/dnaseq/dnaseq.base.ini $GENPIPES_INIS/dnaseq/dnaseq.sv.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-25 -g dnaseq_svCommands.sh
+.. include:: /common/commands/rnaseq.inc
 
-    genpipes dnaseq -t germline_high_cov -c $GENPIPES_INIS/dnaseq/dnaseq.base.ini $GENPIPES_INIS/dnaseq/dnaseq.high_cov.ini  $GENPIPES_INIS/common_ini/beluga.ini -r readset.dnaseq.txt -s 1-15 -g dnaseq_high_coverageCommands.sh
+``dnaseq``
 
-    genpipes dnaseq -t somatic_ensemble -c $GENPIPES_INIS/dnaseq/dnaseq.base.ini $GENPIPES_INIS/dnaseq/dnaseq.cancer.ini  $GENPIPES_INIS/common_ini/beluga.ini -r readset.somatic_ensemble.txt -s 1-38 -g dnaseq_somatic_ensembleCommands.sh
+.. tab-set:: 
 
+    .. tab-item:: Germline HighCov
 
-::
+        .. include:: /common/commands/dnaseq_germ_hc.inc
 
-    genpipes rnaseq_light -c $GENPIPES_INIS/rnaseq_light/rnaseq_light.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-8 -g rnaseqLightCommands.sh
+    .. tab-item:: Germline SNV
 
+        .. include:: /common/commands/dnaseq_germ_snv.inc
 
-    genpipes rnaseq_denovo_assembly -c $GENPIPES_INIS/rnaseq_denovo_assembly/rnaseq_denovo_assembly.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -s 1-24 -g rnaseqDeNovoCommands.sh
+    .. tab-item:: GermlineSV
 
+        .. include:: /common/commands/dnaseq_germ_sv.inc
 
-:: 
+.. tab-set:: 
 
-    genpipes methylseq -c $GENPIPES_INIS/methylseq/methylseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.methylseq.txt -s 1-15,17-18 > methylseq.sh
+    .. tab-item:: Somatic Ensemble 
 
+        .. include:: /common/commands/dnaseq_so_ensemble.inc
+
+    .. tab-item:: Somatic Fastpass
+
+        .. include:: /common/commands/dnaseq_so_fastpass.inc
+
+    .. tab-item:: Somatic SV 
+
+        .. include:: /common/commands/dnaseq_so_sv.inc
+
+    .. tab-item:: Somatic Tumor
+
+        .. include:: /common/commands/dnaseq_so_tumor.inc
+
+``rnaseq_light``
+
+.. include:: /common/commands/rnaseq_light.inc
+
+``rnaseq_denovo_assembly``
+
+.. include:: /common/commands/rnaseq_denovo.inc
+
+``methylseq``
+
+.. include:: /common/commands/methylseq.inc
+
+``longread``
+
+.. tab-set:: 
+
+    .. tab-item:: Nanopore
+
+        .. include:: /common/commands/lr_dna_nanopore.inc
+
+    .. tab-item:: Revio
+
+        .. include:: /common/commands/lr_dna_revio.inc
 
 .. include:: /common/gp_cluster_ini.inc
