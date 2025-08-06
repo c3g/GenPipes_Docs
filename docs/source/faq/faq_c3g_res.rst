@@ -31,7 +31,7 @@ For details on why we need modules for GenPipes and which ones are required, dep
 What are GenPipes genomes? Where can I access them from?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-GenPipes pipelines are used for genomic analysis and they require reference genomes. C3G, in partnership with Digital Research Alliance Canada, maintains several genomes that are available on several HPC centres including Beluga, Cedar and others. In addition to the FASTA sequence, many genomes include aligner indices and annotation files. 
+GenPipes pipelines are used for genomic analysis and they require reference genomes. C3G, in partnership with Digital Research Alliance Canada, maintains several genomes that are available on several HPC centres including |key_ccdb_server_name|, |other_ccdb_server_names|. In addition to the FASTA sequence, many genomes include aligner indices and annotation files. 
 
 To access these genomes, you need to add the following lines to your .bashrc file:
 

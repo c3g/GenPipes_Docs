@@ -123,17 +123,17 @@ Step 3: GenPipes ChIP Sequencing pipeline needs a configuration file to setup th
 
 Step 4: Create ChIP Sequencing pipeline execution command script as shown below:
 
-::
+.. parsed-literal::
 
-  bash # You do not need this line if you did a logout login cycle
-  # The next line generates the pipeline script
-  genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \
-  $GNEPIPES_INIS/common_ini/chipseq.cedar.ini \
-  quick_start.ini \
-  -j slurm \
-  -r readsets.chipseqTest.chr22.tsv \
-  -d designfile_chipseq.chr22.txt \
-  -s 1-18 > chipseqScript.sh
+    bash # You do not need this line if you did a logout login cycle
+    # The next line generates the pipeline script
+    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \
+    $GNEPIPES_INIS/common_ini/chipseq.\ |key_ccdb_server_cmd_name|\.ini \
+    quick_start.ini \
+    -j slurm \
+    -r readsets.chipseqTest.chr22.tsv \
+    -d designfile_chipseq.chr22.txt \
+    -s 1-18 > chipseqScript.sh
 
 Step 5:  Now you can execute ChIP Sequencing pipeline using the following command:
 

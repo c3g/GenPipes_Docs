@@ -74,12 +74,12 @@ Let’s use ChIPSeq as an example:
 
 **4- Create chipseq pipeline script:**
 
-.. code-block:: bash
+.. parsed-literal::
 
     bash # You do not need this line if you did a logout login cycle
     # The next line generates the pipeline script
     genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini \
-    $MUGQIC_PIPELINES_HOME/pipelines/common_ini/cedar.ini \
+    $MUGQIC_PIPELINES_HOME/pipelines/common_ini/\ |key_ccdb_server_cmd_name|\.ini \
     quick_start.ini \
     -j slurm \
     -r readsets.chipseqTest.chr22.tsv \

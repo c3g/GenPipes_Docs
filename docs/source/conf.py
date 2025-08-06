@@ -96,6 +96,13 @@ rst_epilog = """
 """ % { "product_version": product_version ,
 }
 
+rst_prolog = """
+.. |key_ccdb_server_name| replace:: Beluga
+.. |key_ccdb_server_cmd_name| replace:: beluga
+.. |key_ccdb_server_ini_name| replace:: ``beluga.ini``
+.. |other_ccdb_server_names| replace:: Graham, Cedar, Niagara, and Narval
+"""
+
 master_doc = 'index'
 
 # -- Options for HTML output -------------------------------------------------

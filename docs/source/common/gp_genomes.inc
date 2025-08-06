@@ -1,6 +1,6 @@
 .. _doc_gp_avl_genomes:
 
-C3G, in partnership with the `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada, maintains `several genomes <https://computationalgenomics.ca/cvmfs-genome/>`_. These genomes are available on multiple servers such as Beluga, Niagara, Cedar and Graham. 
+C3G, in partnership with the `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada, maintains `several genomes <https://computationalgenomics.ca/cvmfs-genome/>`_. These genomes are available on multiple servers such as |key_ccdb_server_name|, |other_ccdb_server_names|. 
 
 In addition to the FASTA sequence, many genomes include aligner indices and annotation files.
 

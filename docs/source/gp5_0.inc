@@ -8,21 +8,9 @@
 2. The latest GenPipes v6.0 supports *only* Python **v3.12.0** and above. 
 3. To run any GenPipes pipelines, follow the new command syntax *(effective GenPipes v5.x onward)*:
 
-  - **Old Format** 
-
-    ::
-    
-      user@beluga % <pipeline name>.py [options] -g genpipes_cmd.sh
-      user@beluga % bash genpipes_cmd.sh
-
-  - **New Format** 
-  
-    ::
-
-      user@beluga % genpipes <pipeline name> [options] -g genpipes_cmd.sh
-      user@beluga % bash genpipes_cmd.sh
-
-4. When using **GenPipes deployed on the Digital Research Alliance Canada servers such as beluga**, a new variable ‘GENPIPES_INIS’ is introduced for streamlining access to the config files in the `genpipes` commands. In the future, 'MUGQIC_PIPELINES_HOME' will be deprecated.
+   .. include:: /common/commands/change_format_5.inc
+   
+4. When using **GenPipes deployed on the Digital Research Alliance Canada servers** such as |key_ccdb_server_name|, a new variable ‘GENPIPES_INIS’ is introduced for streamlining access to the config files in the `genpipes` commands. In the future, 'MUGQIC_PIPELINES_HOME' will be deprecated.
 
   - **Before** 
 

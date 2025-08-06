@@ -25,7 +25,11 @@ The objective of this document is to make contributing to GenPipes as easy and t
 Tracking GenPipes Issues and Feature Requests
 ----------------------------------------------
 
-GenPipes uses `Bitbucket <https://bitbucket.org/mugqic/genpipes/src/master/>`_ to host its source code, track issues and feature requests, as well as pull requests.
+Earlier, GenPipes used `Bitbucket <https://bitbucket.org/mugqic/genpipes/src/master/>`_.
+
+Now `GenPipes has moved to GitHub <https://github.com/c3g/GenPipes>`_ as the preferred source code repository. 
+
+Starting version 6.0.0, GitHub is used for hosting the latest source code, tracking issues and feature requests, as well as for issuing pull requests for contributions.
 
 Pull requests are the best way to propose changes to the code base. Please ensure that you follow the following process as GenPipes is complex and requires careful validation of any updates.  Also, you may need computational resources as GenPipes is demanding in terms of compute resources.
 
@@ -39,7 +43,7 @@ Pull requests are the best way to propose changes to the code base. Please ensur
 License
 --------
 
-GenPipes is available under the LGPL `license <https://bitbucket.org/mugqic/genpipes/src/master/COPYING.LESSER>`_. Any contributions you make will be under the LGPLv3 license.
+GenPipes is available under the LGPL `license <https://github.com/c3g/GenPipes/blob/main/COPYING.LESSER>`_. Any contributions you make will be under the LGPLv3 license.
 
 Reporting a bug or issue
 -------------------------
