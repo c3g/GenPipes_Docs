@@ -3,4 +3,4 @@
 Pipeline Usage Examples
 ========================
 
-.. include::  ../resources/testCommands.txt
+.. include::  ../resources/testCommands.inc

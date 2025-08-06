@@ -20,4 +20,4 @@ However, if you choose to deploy GenPipes on your own instead of using the pre-i
   - For details on GenPipes build process, see :ref:`GenPipes Developer Guide<docs_dev_guide>`. Once you generate the build, you can follow the same instructions as for using a downloadable release to setup and configure GenPipes.
 
 .. _GenPipes Download Page: https://bitbucket.org/mugqic/genpipes/downloads/
-.. _GenPipes Source Code: https://bitbucket.org/mugqic/genpipes/src/master/
+.. _GenPipes Source Code: https://github.com/c3g/GenPipes

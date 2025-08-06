@@ -50,9 +50,9 @@ DNA Sequencing Pipeline
 
          .. dropdown:: Options
 
+            .. include:: opt_dnaseq.inc
             .. include:: /common/gp_design_opt.inc 
             .. include:: /common/gp_readset_opt.inc 
-            .. include:: opt_dnaseq.inc
             .. include:: /common/gp_common_opt.inc
 
             .. include:: /user_guide/pipelines/notes/caution_pair_file_format.inc

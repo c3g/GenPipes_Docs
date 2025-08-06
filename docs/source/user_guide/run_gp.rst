@@ -3,11 +3,22 @@
 Run GenPipes
 ------------
 
+.. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x onward
+   :color: success
+
+   .. include:: /gp5_0.inc
+
 After :ref:`selecting a GenPipes deployment option<docs_choose_gp_dep>` you must setup and configure your GenPipes environment as per your deployment choice. After you have configured it, you are ready to execute GenPipes.
 
-First of all, test that it works, without actually running a pipeline, by using the  --help or -h option. For details, please refer to the Getting Started Guide :ref:`Run GenPipes section<docs_using_gp>`.
+First, test that GenPipes is correctly deployed and it works, without actually running a pipeline. Use :code:`genpipes <pipeline_cmd>` with the  :code:`--help` or ``-h`` option. 
 
-Each of the available GenPipes Pipeline has its own unique execution command.  You can find details for each in the :ref:`Pipeline Reference Guide<docs_pipeline_ref>`. It also has sections demonstrating *example runs* for each pipeline.
+For details, please refer to the Getting Started Guide :ref:`Run GenPipes section<docs_using_gp>`.
+
+Earlier, you could run GenPipes by invoking individual <pipeline_cmd>. With the release of version 5.0.0 onwards, there is a new format to run GenPipes pipelines.
+
+.. include:: /common/commands/change_format_5.inc
+    
+See :ref:`Pipeline Reference Guide<docs_pipeline_ref>` for details on how to run a specific pipeline in the *example* section. 
 
 New users may benefit from the :ref:`GenPipes Tutorial<doc_list_tutorials>` section of this documentation that provides step by step instructions on how to execute a few sample GenPipes pipelines.  There is also a tutorial available for :ref:`running GenPipes in the cloud using Google Compute Platform<genpipes_in_the_cloud>`.
 

@@ -29,6 +29,7 @@ The process followed for GenPipes RTD documentation is as follows:
      2. The resolution of the image and size of larger workflows is too small in auto generated diagrams.
 
      Hence the process above is used as an alternative until we find other better ways to integrate mermaid workflow code into RTD docs.
+     
 .. toctree::
    :maxdepth: 2
    :caption: Mermaid Diagrams
