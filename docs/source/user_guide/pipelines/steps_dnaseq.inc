@@ -55,10 +55,6 @@
     CNV
     CNVKit
 
-**Step Details**
-
-Following are the various steps that are part of GenPipes DNA Sequencing genomic analysis pipeline:
-
 .. _GATK SAM to FastQ:
 
 **GATK SAM to FastQ**

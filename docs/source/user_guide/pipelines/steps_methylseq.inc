@@ -10,7 +10,6 @@
      bs
      bcf
 
-**Step Details**
 
 .. _Picard SAM to FastQ:
 

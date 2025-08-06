@@ -6,10 +6,6 @@
      quast
      quickalign
 
-**Step Details**
-
-Following are the various steps that are part of GenPipes CoVSeq genomic analysis pipeline:
-
 .. _Host Reads Removal:
 
 **Host Reads Removal**

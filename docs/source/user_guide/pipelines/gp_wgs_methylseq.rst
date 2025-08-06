@@ -97,7 +97,9 @@ Methylation Sequencing Pipeline
                :width: 100%
                :figwidth: 75%           
 
-            .. include:: opt_methylseq_dragen_warning.inc    
+            .. warning::
+               
+               .. include:: opt_methylseq_dragen_warning.inc    
 
          .. dropdown:: Dragen
 
@@ -113,19 +115,21 @@ Methylation Sequencing Pipeline
                :align: center
                :alt: legend
                :width: 100%
-               :figwidth: 75%           
+               :figwidth: 75%    
 
-            .. include:: opt_methylseq_dragen_warning.inc 
+            .. warning::       
+
+               .. include:: opt_methylseq_dragen_warning.inc 
 
       .. tab-item:: Steps
 
-         .. include:: opt_methylseq_dragen_warning.inc    
+         .. warning::
+            
+            .. include:: opt_methylseq_dragen_warning.inc    
 
          .. dropdown:: Bismark
             
             +----+---------------------------------+
-            |    |  *Bismark*                      |
-            +====+=================================+
             | 1. | |picard_sam_to_fastq|           |
             +----+---------------------------------+
             | 2. | |trimmomatic|                   |
@@ -166,8 +170,6 @@ Methylation Sequencing Pipeline
          .. dropdown:: Gembs
 
             +----+---------------------------------+
-            |    |  *Gembs*                        |
-            +====+=================================+
             | 1. | |picard_sam_to_fastq|           |
             +----+---------------------------------+
             | 2. | |trimmomatic|                   |
@@ -212,8 +214,6 @@ Methylation Sequencing Pipeline
          .. dropdown:: Hybrid
 
             +----+----------------------------------+
-            |    |            *Hybrid*              |         
-            +====+==================================+
             | 1. | |picard_sam_to_fastq|            |           
             +----+----------------------------------+
             | 2. | |trimmomatic|                    |      
@@ -254,8 +254,6 @@ Methylation Sequencing Pipeline
          .. dropdown:: Dragen
 
             +----+-----------------------------------+
-            |    |              *Dragen*             |         
-            +====+===================================+
             | 1. | |picard_sam_to_fastq|             |           
             +----+-----------------------------------+
             | 2. | |trimmomatic|                     |      
@@ -327,7 +325,9 @@ Methylation Sequencing Pipeline
 .. dropdown:: :material-outlined:`notifications;2em` Additional Requirements for `dragen` and `hybrid`
    :color: warning
 
-      .. include:: opt_methylseq_dragen_warning.inc    
+      .. warning::
+         
+         .. include:: opt_methylseq_dragen_warning.inc    
 
 .. The following are html links used in this text
 

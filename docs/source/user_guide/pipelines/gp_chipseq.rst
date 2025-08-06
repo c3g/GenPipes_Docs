@@ -84,57 +84,115 @@ ChIP Sequencing Pipeline
 
       .. tab-item:: Steps
 
-         +----+---------------------------+--------------------------------------+
-         |    | ChIP Sequencing Steps     |    ChIP Sequencing (atacseq)         |
-         +====+===========================+======================================+
-         | 1. | |picard_sam_to_fastq|     | |picard_sam_to_fastq|                |
-         +----+---------------------------+--------------------------------------+
-         | 2. | |trimmomatic|             | |trimmomatic|                        |
-         +----+---------------------------+--------------------------------------+
-         | 3. | |merge_trimmomatic_stats| | |merge_trimmomatic_stats|            |
-         +----+---------------------------+--------------------------------------+
-         | 4. | |mapping_bwamem_sambamba| | |mapping_bwamem_sambamba|            |
-         +----+---------------------------+--------------------------------------+
-         | 5. | |sambamba_merge_bam|      | |sambamba_merge_bam|                 |
-         +----+---------------------------+--------------------------------------+
-         | 6. | |sambamba_mark_dup|       | |sambamba_mark_dup|                  | 
-         +----+---------------------------+--------------------------------------+
-         | 7. | |sambamba_view_filter|    | |sambamba_view_filter|               |
-         +----+---------------------------+--------------------------------------+
-         | 8. | |bedtools_black_filter|   | |bedtools_black_filter|              |
-         +----+---------------------------+--------------------------------------+
-         | 9. | |metrics|                 | |metrics|                            |
-         +----+---------------------------+--------------------------------------+
-         | 10.| |homer_make_tag_directory|| |homer_make_tag_directory|           |
-         +----+---------------------------+--------------------------------------+
-         | 11.| |qc_metrics|              | |qc_metrics|                         |
-         +----+---------------------------+--------------------------------------+
-         | 12.| |deeptools_qc|            | |homer_make_ucsc_file|               |     
-         +----+---------------------------+--------------------------------------+
-         | 13.| |homer_make_ucsc_file|    | |macs2_atacseq_callpeak|             |
-         +----+---------------------------+--------------------------------------+
-         | 14.| |macs2_callpeak|          | |homer_annotate_peaks|               |    
-         +----+---------------------------+--------------------------------------+
-         | 15.| |homer_annotate_peaks|    | |homer_find_motifs_genome|           |
-         +----+---------------------------+--------------------------------------+
-         | 16.| |homer_find_motifs_genome|| |annotation_graphs|                  |
-         +----+---------------------------+--------------------------------------+
-         | 17.| |annotation_graphs|       | |run_spp|                            |
-         +----+---------------------------+--------------------------------------+
-         | 18.| |run_spp|                 | |differential_binding|               |
-         +----+---------------------------+--------------------------------------+
-         | 19.| |differential_binding|    | |ihec_metrics|                       |
-         +----+---------------------------+--------------------------------------+
-         | 20.| |ihec_metrics|            | |multiqc_report|                     |
-         +----+---------------------------+--------------------------------------+
-         | 21.| |multiqc_report|          | |cram_output|                        |
-         +----+---------------------------+--------------------------------------+
-         | 22.| |cram_output|             | |gatk_haplotype_caller|              |
-         +----+---------------------------+--------------------------------------+
-         | 23.| |gatk_haplotype_caller|   | |merge_and_call_ind_gvcf|            |
-         +----+---------------------------+--------------------------------------+
-         | 24.| |merge_and_call_ind_gvcf| |                                      |
-         +----+---------------------------+--------------------------------------+
+         .. dropdown:: ChIP-Seq
+
+            .. list-table:: 
+               :widths: auto
+               :class: table-responsive
+
+               * - 1.
+                 - |picard_sam_to_fastq| 
+               * - 2.
+                 - |trimmomatic| 
+               * - 3.
+                 - |merge_trimmomatic_stats| 
+               * - 4.
+                 - |mapping_bwamem_sambamba|
+               * - 5.
+                 - |sambamba_merge_bam| 
+               * - 6.
+                 - |sambamba_mark_dup| 
+               * - 7.
+                 - |sambamba_view_filter|              
+               * - 8.
+                 - |bedtools_black_filter|
+               * - 9.
+                 - |metrics| 
+               * - 10.
+                 - |homer_make_tag_directory|
+               * - 11.
+                 - |qc_metrics|
+               * - 12.
+                 - |deeptools_qc| 
+               * - 13.
+                 - |homer_make_ucsc_file|
+               * - 14.
+                 - |macs2_callpeak| 
+               * - 15.
+                 - |homer_annotate_peaks|
+               * - 16.
+                 - |homer_find_motifs_genome|              
+               * - 17.
+                 - |annotation_graphs|
+               * - 18.
+                 - |run_spp|
+               * - 19.
+                 - |differential_binding|
+               * - 20.
+                 - |ihec_metrics|
+               * - 21.
+                 - |multiqc_report|
+               * - 22.
+                 - |cram_output|
+               * - 23.
+                 - |gatk_haplotype_caller|
+               * - 24.
+                 - |merge_and_call_ind_gvcf|
+
+
+         .. dropdown:: ATAC-Seq
+
+            .. list-table:: 
+               :widths: auto
+               :class: table-responsive
+
+
+               * - 1.
+                 - |picard_sam_to_fastq| 
+               * - 2.
+                 - |trimmomatic| 
+               * - 3.
+                 - |merge_trimmomatic_stats| 
+               * - 4.
+                 - |mapping_bwamem_sambamba|
+               * - 5.
+                 - |sambamba_merge_bam| 
+               * - 6.
+                 - |sambamba_mark_dup| 
+               * - 7.
+                 - |sambamba_view_filter|              
+               * - 8.
+                 - |bedtools_black_filter|
+               * - 9.
+                 - |metrics| 
+               * - 10.
+                 - |homer_make_tag_directory|
+               * - 11.
+                 - |qc_metrics|
+               * - 12.
+                 - |homer_make_ucsc_file| 
+               * - 13.
+                 - |macs2_atacseq_callpeak| 
+               * - 14.
+                 - homer_annotate_peaks| 
+               * - 15.
+                 - |homer_find_motifs_genome| 
+               * - 16.
+                 - |annotation_graphs|               
+               * - 17.
+                 - |run_spp|
+               * - 18.
+                 - |differential_binding| 
+               * - 19.
+                 - |ihec_metrics|  
+               * - 20.
+                 - |multiqc_report| 
+               * - 21.
+                 - |cram_output|  
+               * - 22.
+                 -  |gatk_haplotype_caller|  
+               * - 23.
+                 - |merge_and_call_ind_gvcf| 
 
         .. card::
 

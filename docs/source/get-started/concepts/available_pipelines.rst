@@ -22,67 +22,50 @@ Available Pipelines
    * - Genomic Analysis
      - `genpipes <pipeline_cmd>`
      - Flag
-   * - `ChIP Seq`_
-     - ``chipseq``
+   * - ChIP Sequencing
+     - :ref:`chipseq <docs_gp_chipseq>`
      -  
-   * - `RNA Seq`_
-     - ``rnaseq``
+   * - RNA Sequencing
+     - :ref:`rnaseq <docs_gp_rnaseq>`
      - 
-   * - `RNA Seq Light`_
-     - ``rnaseq_light``
+   * - RNA Sequencing Light
+     - :ref:`rnaseq_light <docs_gp_rnaseqlight>`
      -  
-   * - `De novo RNA-Seq`_
-     - ``naseq_denovo_assembly``
+   * - Denovo RNA Sequencing
+     - :ref:`rnaseq_denovo_assembly <docs_gp_rnaseq_denovo>`
      -  
-   * - `Whole Genome Seq`_
-     - ``dnaseq``
+   * - Whole Genome Sequencing
+     - :ref:`dnaseq <docs_gp_dnaseq>`
      - :code:`default`
-   * - `Exome Seq <Whole Genome Seq>`_
-     - ``dnaseq``
+   * - Exome Sequencing
+     - :ref:`dnaseq <docs_gp_dnaseq>`
      - |capture|
-   * - `Deep Whole Genome <Whole Genome Seq>`_
-     - ``dnaseq``
+   * - Deep Whole Genome
+     - :ref:`dnaseq <docs_gp_dnaseq>`
      - |ini_file|
-   * - `Deep Exome Seq <Whole Genome Seq>`_
-     - ``dnaseq``
+   * - Deep Exome Sequencing
+     - :ref:`dnaseq <docs_gp_dnaseq>`
      - |capture|
-   * - `Whole Genome Methyl Seq <Methyl WGS>`_
-     - ``methylseq``
+   * - Whole Genome Methyl Sequencing
+     - :ref:`methylseq <docs_methylation>`
      - :code:`default`
-   * - `Capture Methyl Seq <Methyl WGS>`_
-     - ``methylseq``
+   * - Capture Methyl Sequencing
+     - :ref:`methylseq <docs_methylation>`
      - |capture| 
-   * - `Cancer Analysis <Whole Genome Seq>`_
-     - ``dnaseq``
+   * - Cancer Analysis
+     - :ref:`dnaseq <docs_gp_dnaseq>`
      - |somatic|
-   * - `Whole Chromosome Telomere Assembly <Longread DNA Seq>`_
-     - ``longread_dnaseq``
+   * - Whole Chromosome Telomere Assembly
+     - :ref:`longread_dnaseq <docs_gp_longread_dnaseq>`
      - |lr_flags|
-   * - `Meta Genomics`_
-     - ``ampliconseq``
+   * - Meta Genomics
+     - :ref:`ampliconseq  <docs_gp_ampliconseq>`
      - 
-   * - `SARS-COV-2 <SARS-COV-2 Sequencing>`_
-     - ``covseq``
+   * - SARS-COV-2 Analysis
+     - :ref:`covseq <docs_gp_covseq>`
      -  
 
-.. Substitution strings and links
-
-.. |capture| replace:: capture :ref:`BED file<docs_bed_file>` in Readset file or init file 
-.. |ini_file| replace:: use relevant ini file and -t germline_high_cov
-.. |somatic| replace:: -t somatic_ensemble or -t somatic_sv or -t somatic_fastpass or -t somatic_tumor_only 
-.. |lr_flags| replace:: -t nanopore or -t revio 
-
-.. _ChIP Seq: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/chipseq/README.md
-.. _RNA Seq: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/rnaseq/README.md
-.. _RNA Seq Light: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/rnaseq_light/README.md
-.. _De novo RNA-Seq: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/rnaseq_denovo_assembly/README.md
-.. _Whole Genome Seq: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dnaseq/README.md
-.. _Exome Seq: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dnaseq/README.md
-.. _DNA High Coverage Seq: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dnaseq/README.md
-.. _Deep Exome Seq: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dnaseq/README.md
-.. _Methyl WGS: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/methylseq/README.md
-.. _Capture Methyl WGS: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/methylseq/README.md
-.. _Cancer Analysis: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dnaseq/README.md
-.. _Meta Genomics: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/ampliconseq/README.md
-.. _SARS-COV-2 Sequencing: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/covseq/README.md
-.. _Longread DNA Seq: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/longread_dnaseq/README.md
+.. |capture| replace:: capture :ref:`BED file<docs_bed_file>` in Readset file or ``ini`` file 
+.. |ini_file| replace:: use relevant ``ini`` file and ``-t germline_high_cov``
+.. |somatic| replace:: ``-t somatic_ensemble`` or ``-t somatic_sv`` or ``-t somatic_fastpass`` or ``-t somatic_tumor_only`` 
+.. |lr_flags| replace:: ``-t nanopore`` or ``-t revio`` 

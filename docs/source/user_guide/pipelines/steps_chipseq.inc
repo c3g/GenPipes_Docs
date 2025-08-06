@@ -13,10 +13,6 @@
      multiBamSummary
      multiBigwigSummary
 
-**Step Details**
-
-Following are the various steps that are part of the ChIP Sequencing Pipeline:
-
 .. _Picard Sam to Fastq:
 
 **Picard Sam to Fastq**

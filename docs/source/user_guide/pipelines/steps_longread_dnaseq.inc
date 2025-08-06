@@ -12,11 +12,6 @@
      DeepVariant
      Germline
 
-
-**Step Details**
-
-Following are the various steps that are part of GenPipes Nanopore genomic analysis pipeline:
-
 .. _BlastQC:
 
 **BlastQC**

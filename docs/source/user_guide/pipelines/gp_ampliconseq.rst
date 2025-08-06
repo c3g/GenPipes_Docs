@@ -53,7 +53,7 @@ Amplicon Sequencing Pipeline
       .. tab-item:: Schema
          :name: ampschema    
 
-         .. dropdown:: DADA2
+         .. dropdown:: ``dada2``
             :open:
 
             .. figure:: /img/pipelines/mmd/ampliconseq.dada2.mmd.png
@@ -73,25 +73,29 @@ Amplicon Sequencing Pipeline
 
       .. tab-item:: Steps
 
-         +----+--------------------------------+
-         |    |   *DADA2*                      |
-         +====+================================+
-         | 1. | |trimmomatic16S|               |
-         +----+--------------------------------+
-         | 2. | |merge_trimmomatic_stats16S|   |
-         +----+--------------------------------+
-         | 3. | |flash_pass1|                  |
-         +----+--------------------------------+
-         | 4. | |ampliconLengthParser|         |
-         +----+--------------------------------+
-         | 5. | |flash_pass2|                  |
-         +----+--------------------------------+
-         | 6. | |merge_flash_stats|            |
-         +----+--------------------------------+
-         | 7. | |asva|                         |
-         +----+--------------------------------+
-         | 8. | |run_multiqc|                  | 
-         +----+--------------------------------+
+         .. dropdown:: DADA2
+            :open:
+
+            .. list-table:: 
+               :widths: auto
+               :class: table-responsive
+
+               * - 1.
+                 - |trimmomatic16S| 
+               * - 2.
+                 - |merge_trimmomatic_stats16S| 
+               * - 3.
+                 - |flash_pass1|  
+               * - 4.
+                 - |ampliconLengthParser|    
+               * - 5.
+                 - |flash_pass2|   
+               * - 6.
+                 - |merge_flash_stats|     
+               * - 7.
+                 - |asva|    
+               * - 8.
+                 - |run_multiqc| 
 
          .. card::
 

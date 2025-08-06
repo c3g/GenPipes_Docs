@@ -10,8 +10,6 @@
       rds
       cmscan
 
-**Step Details**
-
 .. _Picard SAM to FastQ:
 
 **Picard SAM to FastQ**
