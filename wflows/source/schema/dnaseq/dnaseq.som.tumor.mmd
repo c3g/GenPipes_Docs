@@ -6,28 +6,28 @@
         %% -t somatic_tumor_only
 
         graph LR
-        Node1{{ 1. <br/> GATK<br/>SAM<br/>to FASTQ }}:::nodefill
-        Node2{{ 2. <br/> Trim<br/>FastP }}:::nodefill
-        Node3{{ 3. <br/> BWA<br/>Mem2<br/>SAM Tools<br/>Sort }}:::nodefill
-        Node4{{ 4. <br/> GATK<br/>Mark<br/>Duplicates }}:::nodefillblack
-        Node5{{5. <br/> Sym Link<br/>Final BAM  }}:::nodefill
-        Node6{{ 6. <br/> Metrics<br/>DNA<br/>Picard }}:::nodefill
-        Node7{{ 7. <br/> DNA Sample <br/> MosDepth Metrics }}:::nodefill
-        Node8{{ 8. <br/> Picard Calculate<br/>HS Metrics }}:::nodefill
-        Node9{{ 9. <br/> Metrics<br/>Verify<br/>BAM ID }}:::nodefill
-        Node10{{ 10. <br/> Run<br/>MultiQC }}:::nodefill
-        Node11{{ 11. <br/> Set<br/>Interval List }}:::nodefill
-        Node12{{ 12. <br/> GATK<br/>Haplotype<br/>Caller  }}:::nodefill
-        Node13{{ 13. <br/> Merge<br/>& call<br/>individual<be/>GVCF }}:::nodefill
-        Node14{{ 14. <br/> Combine<br/> GVCF}}:::nodefill
-        Node15{{ 15. Merge & Call<br/> Combined<br/>GVCF }}:::nodefill
-        Node16{{ 16. <br/> Variant<br/>Recalibrator }}:::nodefill
-        Node17{{ 17. <br/> Haplotype Caller<br/>Decompose &<br/>Normalize }}:::nodefill
-        Node18{{ 18. <br/> CNVKit Batch }}:::nodefill
-        Node19{{ 19. <br/> Split <br/>Tumor Only }}:::nodefill
-        Node20{{ 20. <br/> Filter <br/> Tumor Only }}:::nodefill
-        Node21{{ 21. <br/> Report CPSR }}:::nodefill
-        Node22{{ 22. <br/> Report PCGR }}:::nodefill
+        Node1{{ 1.<br/> GATK<br/>SAM<br/>to FASTQ }}:::nodefill
+        Node2{{ 2.<br/> Trim<br/>FastP }}:::nodefill
+        Node3{{ 3.<br/> BWA<br/>Mem2<br/>SAM Tools<br/>Sort }}:::nodefill
+        Node4{{ 4.<br/> GATK<br/>Mark<br/>Duplicates }}:::nodefillblack
+        Node5{{ 5.<br/> Sym Link<br/>Final BAM  }}:::nodefill
+        Node6{{ 6.<br/> Metrics<br/>DNA<br/>Picard }}:::nodefill
+        Node7{{ 7.<br/> DNA Sample <br/> MosDepth Metrics }}:::nodefill
+        Node8{{ 8.<br/> Picard Calculate<br/>HS Metrics }}:::nodefill
+        Node9{{ 9.<br/> Metrics<br/>Verify<br/>BAM ID }}:::nodefill
+        Node10{{ 10.<br/> Run<br/>MultiQC }}:::nodefill
+        Node11{{ 11.<br/> Set<br/>Interval List }}:::nodefill
+        Node12{{ 12.<br/> GATK<br/>Haplotype<br/>Caller  }}:::nodefill
+        Node13{{ 13.<br/> Merge<br/>& call<br/>individual<be/>GVCF }}:::nodefill
+        Node14{{ 14.<br/> Combine<br/> GVCF}}:::nodefill
+        Node15{{ 15.<br/> Merge & Call<br/> Combined<br/>GVCF }}:::nodefill
+        Node16{{ 16.<br/> Variant<br/>Recalibrator }}:::nodefill
+        Node17{{ 17.<br/> Haplotype Caller<br/>Decompose &<br/>Normalize }}:::nodefill
+        Node18{{ 18.<br/> CNVKit Batch }}:::nodefill
+        Node19{{ 19.<br/> Split <br/>Tumor Only }}:::nodefill
+        Node20{{ 20.<br/> Filter <br/> Tumor Only }}:::nodefill
+        Node21{{ 21.<br/> Report CPSR }}:::nodefill
+        Node22{{ 22.<br/> Report PCGR }}:::nodefill
 
         Input1[[fa:fa-file-archive-o .BAM]]
         Input2[[fa:fa-file-archive-o .FASTQ]]

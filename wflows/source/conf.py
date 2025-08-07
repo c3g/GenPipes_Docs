@@ -35,6 +35,7 @@ extensions = [
 ]
 
 #mermaid_params = ['--theme', 'forest', '--width', '600', '--backgroundColor', 'transparent']
+mermaid_params = [ '--height', '600', '--backgroundColor', 'transparent']
 # The resolution is not great
 #mermaid_output_format = 'png'
 # The generated svg is not readable 
@@ -68,4 +69,13 @@ html_show_sourcelink = False
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-#html_static_path = ['_static']
+html_static_path = ['_static']
+
+#html_context = {
+   #'css_files': [
+        #'css/custom.css',  # override wide tables in RTD theme
+
+#   'commit': os.getenv('TRAVIS_COMMIT', '')[:7],
+#   'commit': '3.1.4'
+#    ],
+#}

@@ -6,33 +6,33 @@
         %% -t germline_snv
 
         graph LR
-        Node1{{ 1. <br/> GATK<br/>SAM<br/>to FASTQ }}:::nodefill
-        Node2{{ 2. <br/> Trim<br/>FastP }}:::nodefill
-        Node3{{ 3. <br/> BWA<br/>Mem2<br/>SAM Tools<br/>Sort }}:::nodefill
-        Node4{{ 4. <br/> GATK<br/>Mark<br/>Duplicates }}:::nodefillblack
-        Node5{{ 5. <br/> Set<br/>Interval List }}:::nodefill
-        Node6{{ 6. <br/> GATK<br/>Haplotype<br/>Caller  }}:::nodefill
-        Node7{{ 7. <br/> Merge<br/>& call<br/>individual<be/>GVCF }}:::nodefill
-        Node8{{ 8. <br/> Combine<br/> GVCF}}:::nodefill
-        Node9{{ 9. Merge & Call<br/> Combined<br/>GVCF }}:::nodefill
-        Node10{{ 10. <br/> Variant<br/>Recalibrator }}:::nodefill
-        Node11{{ 11. <br/> Haplotype Caller<br/>Decompose &<br/>Normalize }}:::nodefill
-        Node12{{ 12. <br/> Haplotype Caller<br/>Flag<br/>Mappability }}:::nodefill
-        Node13{{ 13. <br/> Haplotype Caller <br/> SNP ID <br/> Annotation }}:::nodefill
-        Node14{{ 14. <br/> Haplotype<br/>Caller<br/>SNPEffect }}:::nodefill
-        Node15{{ 15. <br/> Haplotype caller <br/> dbNSFP <br/> Annotation  }}:::nodefill
-        Node16{{ 16. <br/> Haplotype caller <br/> Gemini <br/> Annotation }}:::nodefill
-        Node17{{ 17. <br/> Metrics<br/>DNA<br/>Picard }}:::nodefill
-        Node18{{ 18. <br/> DNA Sample <br/> MosDepth Metrics }}:::nodefill
-        Node19{{ 19. <br/> Picard Calculate<br/>HS Metrics }}:::nodefill
-        Node20{{ 20. <br/> Metrics<br/>Verify<br/>BAM ID }}:::nodefill
-        Node21{{ 21. <br/> Run<br/>MultiQC }}:::nodefill
-        Node22{{ 22. <br/> Sym Link<br/>FastQ }}:::nodefill
-        Node23{{ 23. <br/> Sym Link<br/>Final BAM  }}:::nodefill
-        Node24{{ 24. <br/> Metrics VCFTools <br/>Missing Individual  }}:::nodefill
-        Node25{{ 25. <br/> Metrics VCFTools <br/>Depth Individual }}:::nodefill
-        Node26{{ 26. <br/> Metrics GATK <br/>Sample Fingerprint  }}:::nodefill
-        Node27{{ 27. <br/> Metrics GATK <br/>Cluster Fingerprint  }}:::nodefill
+        Node1{{ 1.<br/> GATK<br/>SAM<br/>to FASTQ }}:::nodefill
+        Node2{{ 2.<br/> Trim<br/>FastP }}:::nodefill
+        Node3{{ 3.<br/> BWA<br/>Mem2<br/>SAM Tools<br/>Sort }}:::nodefill
+        Node4{{ 4.<br/> GATK<br/>Mark<br/>Duplicates }}:::nodefillblack
+        Node5{{ 5.<br/> Set<br/>Interval List }}:::nodefill
+        Node6{{ 6.<br/> GATK<br/>Haplotype<br/>Caller  }}:::nodefill
+        Node7{{ 7.<br/> Merge<br/>& call<br/>individual<be/>GVCF }}:::nodefill
+        Node8{{ 8.<br/> Combine<br/> GVCF}}:::nodefill
+        Node9{{ 9.Merge & Call<br/> Combined<br/>GVCF }}:::nodefill
+        Node10{{ 10.<br/> Variant<br/>Recalibrator }}:::nodefill
+        Node11{{ 11.<br/> Haplotype Caller<br/>Decompose &<br/>Normalize }}:::nodefill
+        Node12{{ 12.<br/> Haplotype Caller<br/>Flag<br/>Mappability }}:::nodefill
+        Node13{{ 13.<br/> Haplotype Caller <br/> SNP ID <br/> Annotation }}:::nodefill
+        Node14{{ 14.<br/> Haplotype<br/>Caller<br/>SNPEffect }}:::nodefill
+        Node15{{ 15.<br/> Haplotype caller <br/> dbNSFP <br/> Annotation  }}:::nodefill
+        Node16{{ 16.<br/> Haplotype caller <br/> Gemini <br/> Annotation }}:::nodefill
+        Node17{{ 17.<br/> Metrics<br/>DNA<br/>Picard }}:::nodefill
+        Node18{{ 18.<br/> DNA Sample <br/> MosDepth Metrics }}:::nodefill
+        Node19{{ 19.<br/> Picard Calculate<br/>HS Metrics }}:::nodefill
+        Node20{{ 20.<br/> Metrics<br/>Verify<br/>BAM ID }}:::nodefill
+        Node21{{ 21.<br/> Run<br/>MultiQC }}:::nodefill
+        Node22{{ 22.<br/> Sym Link<br/>FastQ }}:::nodefill
+        Node23{{ 23.<br/> Sym Link<br/>Final BAM  }}:::nodefill
+        Node24{{ 24.<br/> Metrics VCFTools <br/>Missing Individual  }}:::nodefill
+        Node25{{ 25.<br/> Metrics VCFTools <br/>Depth Individual }}:::nodefill
+        Node26{{ 26.<br/> Metrics GATK <br/>Sample Fingerprint  }}:::nodefill
+        Node27{{ 27.<br/> Metrics GATK <br/>Cluster Fingerprint  }}:::nodefill
 
         Input1[[fa:fa-file-archive-o .BAM]]
         Input2[[fa:fa-file-archive-o .FASTQ]]
