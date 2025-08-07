@@ -99,37 +99,59 @@ Nanopore CoVSeQ Pipeline
    
       .. tab-item:: Steps
 
-         +----+--------------------------------+--------------------------------+
-         |    |  *Default Nanopore CoVSeQ*     | *Basecalling Nanopore CoVSeQ*  |
-         +====+================================+================================+
-         | 1. | |host_reads_removal|           |  |guppy_basecall|              |
-         +----+--------------------------------+--------------------------------+
-         | 2. | |kraken_analysis|              |  |guppy_demultiplex|           |
-         +----+--------------------------------+--------------------------------+
-         | 3. | |artic_nanopolish|             |  |pycoqc|                      |
-         +----+--------------------------------+--------------------------------+
-         | 4. | |wub_metrics|                  |  |host_reads_removal|          |
-         +----+--------------------------------+--------------------------------+
-         | 5. | |covseq_metrics|               |  |kraken_analysis|             |
-         +----+--------------------------------+--------------------------------+
-         | 6. | |snpeff_annotate|              |  |artic_nanopolish|            |
-         +----+--------------------------------+--------------------------------+
-         | 7. | |quast_consensus_metrics|      |  |wub_metrics|                 |
-         +----+--------------------------------+--------------------------------+
-         | 8. | |rename_consensus_header|      |  |covseq_metrics|              |
-         +----+--------------------------------+--------------------------------+
-         | 9. | |prepare_report|               |  |snpeff_annotate|             |
-         +----+--------------------------------+--------------------------------+
-         | 10.|                                |  |quast_consensus_metrics|     |
-         +----+--------------------------------+--------------------------------+
-         | 11.|                                |  |rename_consensus_header|     |
-         +----+--------------------------------+--------------------------------+
-         | 12.|                                |  |prepare_report|              |
-         +----+--------------------------------+--------------------------------+
+         .. dropdown:: Default
+
+            +----+--------------------------------+
+            | 1. | |host_reads_removal|           |
+            +----+--------------------------------+
+            | 2. | |kraken_analysis|              |
+            +----+--------------------------------+
+            | 3. | |artic_nanopolish|             |
+            +----+--------------------------------+
+            | 4. | |wub_metrics|                  |
+            +----+--------------------------------+
+            | 5. | |covseq_metrics|               |
+            +----+--------------------------------+
+            | 6. | |snpeff_annotate|              |
+            +----+--------------------------------+
+            | 7. | |quast_consensus_metrics|      |
+            +----+--------------------------------+
+            | 8. | |rename_consensus_header|      |
+            +----+--------------------------------+
+            | 9. | |prepare_report|               |
+            +----+--------------------------------+
+
+         .. dropdown:: Basecalling
+
+            +----+--------------------------------+
+            | 1. |  |guppy_basecall|              |
+            +----+--------------------------------+
+            | 2. |  |guppy_demultiplex|           |
+            +----+--------------------------------+
+            | 3. |  |pycoqc|                      |
+            +----+--------------------------------+
+            | 4. |  |host_reads_removal|          |
+            +----+--------------------------------+
+            | 5. |  |kraken_analysis|             |
+            +----+--------------------------------+
+            | 6. |  |artic_nanopolish|            |
+            +----+--------------------------------+
+            | 7. |  |wub_metrics|                 |
+            +----+--------------------------------+
+            | 8. |  |covseq_metrics|              |
+            +----+--------------------------------+
+            | 9. |  |snpeff_annotate|             |
+            +----+--------------------------------+
+            | 10.|  |quast_consensus_metrics|     |
+            +----+--------------------------------+
+            | 11.|  |rename_consensus_header|     |
+            +----+--------------------------------+
+            | 12.|  |prepare_report|              |
+            +----+--------------------------------+
 
          .. card::
 
-         .. include:: steps_nanopore_covseq.inc
+            .. include:: steps_nanopore_covseq.inc
 
       .. tab-item:: About
 
@@ -143,7 +165,7 @@ Nanopore CoVSeQ Pipeline
 
             If basecalling protocol option is selected through the -t command line option, the Nanopore CoVSeQ pipeline will do `basecalling with Guppy`_ (GPU) and demultiplexing. After basecalling, the pipeline performs de-hosting, for all the samples, followed by running the ARTIC-Nanopolish wrapper which performs alignment to the SARS-CoV2 reference (using `minimap2 <https://github.com/lh3/minimap2>`_), variant calling (using `Nanopolish software <https://github.com/jts/nanopolish>`_). The Nanopolish software performs signal-level analysis of Oxford Nanopore sequencing data. After Nanopolish processing, the pipeline performs consensus generation through artic_mask and bcftools consensus steps. Lastly, custom scripts and ncov_tools are run to report on quality metrics for Nanopore CoVSeQ GenPipes Sequencing Pipeline.
 
-            Details of structure and contents of the `Nanopore readset file are available here <https://bitbucket.org/mugqic/genpipes/src/master/README.md#markdown-header-nanopore>`_.
+            Details of structure and contents of the `Nanopore readset file are available here <https://github.com/c3g/GenPipes/blob/main/README.md#longread-dna-seq-nanopore-cov-seq>`_.
 
             See See :ref:`nanocovschema` tab for the pipeline workflow. For more details, refer to the `README file <https://bitbucket.org/mugqic/genpipes/src/master/pipelines/nanopore/README.md>`_ file.
 

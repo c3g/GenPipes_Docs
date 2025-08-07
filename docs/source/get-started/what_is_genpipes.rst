@@ -24,18 +24,17 @@ The following genomics application pipelines are already implemented and validat
 * Whole Exome Sequencing (WES)
 * RNA Sequencing / Unmapped RNA Quality Control
 * SARS-CoV-2 genome sequencing
-* *de-novo* RNA Sequencing
+* *De-novo* RNA Sequencing
 * Deep Whole Genome Sequencing
-* Nanopore Analysis
+* Longread DNA Sequencing Nanopore and Revio Analysis
 * Nanopore SARS-CoV2 sequencing using ARTIC Nanopolish protocol
 * Transcriptomics Assembly
-* Tumour Analysis
+* DNA Sequencing for Tumour Analysis
 * Whole Genome Bisulphate Sequencing (WGBS)/ Reduced Representation Bisulphate Sequencing (RRBS)
 * ChIP-Seq
 * Illumina raw data processing
 * EpiQC Analysis
 * Metagenomics
-* Hi-C / Capture Hi-C
 
 GenPipes software is available under a LGPL open-source `license <https://github.com/c3g/GenPipes/blob/main/COPYING.LESSER>`_ and is continuously updated to follow recent advances in genomics and bioinformatics. The framework can be accessed through multiple deployment mechanisms. It has already been configured on several servers at C3G HPC computing facility. Its also supports Cloud deployment through GCP. Besides this,  a Docker image is also available to facilitate additional installations on local / individual machines for small dataset analysis.
 

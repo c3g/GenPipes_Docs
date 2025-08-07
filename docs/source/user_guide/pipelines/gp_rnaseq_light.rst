@@ -36,10 +36,6 @@ RNA Sequencing (Light) Pipeline
                  
             .. include::  /user_guide/pipelines/example_runs/rnaseq_light.inc
 
-            .. tip::
-
-                 Replace ``beluga.ini`` file name in the command above with the appropriate *clustername.ini* file located in the ``$GENPIPES_INIS/pipelines/common_ini`` folder, depending upon the cluster where you are executing the pipeline.  For e.g., ``narval.ini``, ``cedar.ini``, ``graham.ini`` or ``narval.ini``.
-
             .. include:: /user_guide/pipelines/notes/scriptfile_deprecation.inc
 
             .. card:: Test Dataset
@@ -67,25 +63,26 @@ RNA Sequencing (Light) Pipeline
 
       .. tab-item:: Steps
 
-         +----+--------------------------------------+
-         |    | *RNA Sequence Light Steps*           |
-         +====+======================================+
-         | 1. | |picard-sam-to-fastq|                |
-         +----+--------------------------------------+
-         | 2. | |trimmomatic|                        |
-         +----+--------------------------------------+
-         | 3. | |merge-trimmomatic-stats|            |
-         +----+--------------------------------------+
-         | 4. | |kallisto|                           |
-         +----+--------------------------------------+
-         | 5. | |kallisto-count-matrix|              |
-         +----+--------------------------------------+
-         | 6. | |gq-seq-utils-exploratory|           |
-         +----+--------------------------------------+
-         | 7. | |sleuth-differential-expression|     |
-         +----+--------------------------------------+
-         | 8. | |multiqc|                            |
-         +----+--------------------------------------+
+         .. dropdown:: RNA Seq (Light)
+            :open:
+
+            +----+--------------------------------------+
+            | 1. | |picard-sam-to-fastq|                |
+            +----+--------------------------------------+
+            | 2. | |trimmomatic|                        |
+            +----+--------------------------------------+
+            | 3. | |merge-trimmomatic-stats|            |
+            +----+--------------------------------------+
+            | 4. | |kallisto|                           |
+            +----+--------------------------------------+
+            | 5. | |kallisto-count-matrix|              |
+            +----+--------------------------------------+
+            | 6. | |gq-seq-utils-exploratory|           |
+            +----+--------------------------------------+
+            | 7. | |sleuth-differential-expression|     |
+            +----+--------------------------------------+
+            | 8. | |multiqc|                            |
+            +----+--------------------------------------+
 
          .. card::
 

@@ -49,6 +49,10 @@ For using GenPipes deployed locally on your servers, whether bare-metal or virtu
 
 ----
 
+.. note:: 
+
+      For the complete list of software dependencies, click on :ref:`'Available Modules'<doc_cvmfs_modules>`.
+
 1. Validate Deployment
 =======================
 

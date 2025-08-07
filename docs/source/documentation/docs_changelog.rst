@@ -15,6 +15,15 @@ GenPipes Documentation Changelog
      noreply
      github
      PYthon
+     yml
+     ubuntu
+     longread
+     linux
+     qc 
+     dr
+     deeptools 
+     setupwheel
+     
 
 GenPipes documentation is continually being improved. 
 The current release corresponds to GenPipes version |genpipes_version|. 
@@ -23,7 +32,7 @@ This is the latest GenPipes RTD documentation.
 
 What's new?
 -----------
-* The location of cluster specific ini files such as ``beluga.ini``, ``cedar.ini`` has changed to ``$MUGQIC_PIPELINES_HOME/pipelines/common_ini`` folder from release v4.2.0
+* The location of cluster specific ini files such as |key_ccdb_server_ini_name| has changed to ``$MUGQIC_PIPELINES_HOME/pipelines/common_ini`` folder from release v4.2.0
 * New improved documentation framework at RTD to address both new and existing GenPipes users.
 * Newer infographics oriented as opposed to text only information. Use of rich media in the future to make it more interesting and helpful for new users to find GenPipes information and learn about GenPipes and its usage.
 

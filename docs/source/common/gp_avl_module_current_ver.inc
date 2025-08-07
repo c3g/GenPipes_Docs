@@ -1,3 +1,35 @@
+.. spelling::word-list::
+
+   cd
+   dna
+   graphlan
+   devel
+   covid
+   globus
+   cli
+   gtex
+   edc
+   gpu
+   hmmcopy
+   bfc 
+   miniconda 
+   minimap
+   mirdeep
+   rjme 
+   olink 
+   ngs 
+   oncokb 
+   popoolation
+   prinseq
+   Strelka
+   edca
+   wgs
+   Hclust
+   hcp
+   ubuntu 
+   
+
+
 +------------------------------+----------------------------------+
 | Module Name                  | Version(s)                       |
 +==============================+==================================+

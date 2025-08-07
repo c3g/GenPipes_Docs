@@ -12,11 +12,6 @@
      DeepVariant
      Germline
 
-
-**Step Details**
-
-Following are the various steps that are part of GenPipes Nanopore genomic analysis pipeline:
-
 .. _BlastQC:
 
 **BlastQC**
@@ -59,7 +54,7 @@ This step collects QC metrics on unaligned BAM or FastQ files with `Nanoplot`_.
 
 **pbmm2 Align**
 
-Uses `pbmm2`_ to align fastq files or the raw hifi BAM to the reference. Sorted output can be used directly for polishing using GenomicConsensus, if BAM has been used as input to pbmm2.
+Uses `pbmm2`_ to align fastq files or the raw HiFi BAM to the reference. Sorted output can be used directly for polishing using GenomicConsensus, if BAM has been used as input to pbmm2.
 
 .. _Metrics Mosdepth:
 
@@ -89,7 +84,7 @@ Merge `DeepVariant`_ outputs from the previous step, if applicable, and filter v
 
 **HiFi CNV**
 
-Call copy number variation and visualise results with `HiFiCNV`_.
+Call copy number variation and visualize results with `HiFiCNV`_.
 
 .. _Target Genotyping:
 
@@ -125,7 +120,7 @@ Creates a `CPSR`_ germline report. It takes annotated/filter VCF as the input an
 
 **MultiQC**
 
-The `MultiQC aggregator`_ collates results from bioinformatics analyses across many samples into a single report. It searches for a given directory for analysis logs and compiles a HTML report. This is a tool for general usage, perfect for summarising the output from numerous bioinformatics tools.
+The `MultiQC aggregator`_ collates results from bioinformatics analyses across many samples into a single report. It searches for a given directory for analysis logs and compiles a HTML report. This is a tool for general usage, perfect for summarizing the output from numerous bioinformatics tools.
 
 .. References
 

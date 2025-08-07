@@ -13,6 +13,7 @@
      minimap
      transcriptomic
      epigenomic
+     nt
 
 Long Read DNA Sequencing Pipeline
 ==================================
@@ -51,6 +52,7 @@ Long Read DNA Sequencing Pipeline
          .. dropdown:: Options
 
             .. include:: opt_longread_dnaseq.inc
+            .. include:: /common/gp_design_opt.inc 
             .. include:: /common/gp_readset_opt.inc
             .. include:: /common/gp_common_opt.inc
 
@@ -113,37 +115,53 @@ Long Read DNA Sequencing Pipeline
 
       .. tab-item:: Steps
 
-         +----+------------------------------------+-------------------------------+
-         |    | Nanopore                           | Revio                         |
-         +====+====================================+===============================+
-         | 1. | |blastqc|                          | |metrics_nanoplot|            |
-         +----+------------------------------------+-------------------------------+
-         | 2. | |minimap2_align|                   | |pbmm2_align|                 |
-         +----+------------------------------------+-------------------------------+
-         | 3. | |pycoqc|                           | |picard_merge_sam_files|      |
-         +----+------------------------------------+-------------------------------+
-         | 4. | |picard_merge_sam_files|           | |metrics_mosdepth|            |
-         +----+------------------------------------+-------------------------------+
-         | 5. | |svim|                             | |set_deepvariant_regions|     |
-         +----+------------------------------------+-------------------------------+
-         | 6. |                                    | |deepvariant_vc|              |
-         +----+                                    +-------------------------------+
-         | 7. |                                    | |merge_filter_deepvariant|    |
-         +----+                                    +-------------------------------+
-         | 8. |                                    | |hificnv|                     |
-         +----+                                    +-------------------------------+
-         | 9. |                                    | |trgt_genotyping|             |
-         +----+                                    +-------------------------------+
-         | 10.|                                    | |sawfish|                     |
-         +----+                                    +-------------------------------+
-         | 11.|                                    | |annotSV|                     |
-         +----+                                    +-------------------------------+
-         | 12.|                                    | |hiphase|                     |
-         +----+                                    +-------------------------------+
-         | 13.|                                    | |report_cpsr|                 |
-         +----+                                    +-------------------------------+
-         | 14.|                                    | |multiqc|                     |
-         +----+------------------------------------+-------------------------------+
+         .. dropdown:: Nanopore
+
+            +----+------------------------------------+
+            |    | Nanopore                           | 
+            +====+====================================+
+            | 1. | |blastqc|                          | 
+            +----+------------------------------------+
+            | 2. | |minimap2_align|                   |
+            +----+------------------------------------+
+            | 3. | |pycoqc|                           |
+            +----+------------------------------------+
+            | 4. | |picard_merge_sam_files|           |
+            +----+------------------------------------+
+            | 5. | |svim|                             |
+            +----+------------------------------------+
+
+         .. dropdown:: Revio
+           
+            +----+-------------------------------+
+            | 1. | |metrics_nanoplot|            |
+            +----+-------------------------------+
+            | 2. | |pbmm2_align|                 |
+            +----+-------------------------------+
+            | 3. | |picard_merge_sam_files|      |
+            +----+-------------------------------+
+            | 4. | |metrics_mosdepth|            |
+            +----+-------------------------------+
+            | 5. | |set_deepvariant_regions|     |
+            +----+-------------------------------+
+            | 6. | |deepvariant_vc|              |
+            +----+-------------------------------+
+            | 7. | |merge_filter_deepvariant|    |
+            +----+-------------------------------+
+            | 8. | |hificnv|                     |
+            +----+-------------------------------+
+            | 9. | |trgt_genotyping|             |
+            +----+-------------------------------+
+            | 10.| |sawfish|                     |
+            +----+-------------------------------+
+            | 11.| |annotSV|                     |
+            +----+-------------------------------+
+            | 12.| |hiphase|                     |
+            +----+-------------------------------+
+            | 13.| |report_cpsr|                 |
+            +----+-------------------------------+
+            | 14.| |multiqc|                     |
+            +----+-------------------------------+
   
          .. card::
 
@@ -155,7 +173,7 @@ Long Read DNA Sequencing Pipeline
 
             Over the past decade, `long-read`, single-molecule DNA sequencing technologies have emerged as powerful players in genomics. With the ability to generate reads tens to thousands of kilobases in length with an accuracy approaching that of short-read sequencing technologies, these platforms have proven their ability to resolve some of the most challenging regions of the human genome, detect previously inaccessible structural variants, and generate some of the first telomere-to-telomere assemblies of whole chromosomes.
                         
-            The LongRead Pipeline is used to analyse long reads produced by the Oxford Nanopore Technologies (ONT) and PacBio Revio sequencers. It supports the following protocols:
+            The LongRead Pipeline is used to analyze long reads produced by the Oxford Nanopore Technologies (ONT) and PacBio Revio sequencers. It supports the following protocols:
             
             * Nanopore
             * Revio
@@ -221,9 +239,9 @@ Long Read DNA Sequencing Pipeline
 
 .. The following are html links used in this text
 
-.. _Oxford Nanopore Technologies (ONT): https://academic.oup.com/clinchem/article/61/1/25/5611478 
+.. _Oxford Nanopore Technologies (ONT): https://nanoporetech.com/platform/technology 
 .. _Minimap2 aligner: https://github.com/lh3/minimap2
-.. _Minimap2: https://academic.oup.com/bioinformatics/article/34/18/3094/4994778
+.. _Minimap2: https://academic.oup.com/bioinformatics/article-pdf/34/18/3094/48919122/bioinformatics_34_18_3094.pdf
 .. _NCBI nucleotide: https://www.ncbi.nlm.nih.gov/nucleotide/
 .. _Guppy: https://bio.tools/guppy
 .. _pbmm2: https://github.com/PacificBiosciences/pbmm2

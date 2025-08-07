@@ -56,7 +56,7 @@ Amplicon Sequencing Pipeline
       .. tab-item:: Schema
          :name: ampschema    
 
-         .. dropdown:: DADA2
+         .. dropdown:: ``dada2``
             :open:
 
             .. figure:: /img/pipelines/mmd/ampliconseq.dada2.mmd.png
@@ -76,25 +76,29 @@ Amplicon Sequencing Pipeline
 
       .. tab-item:: Steps
 
-         +----+--------------------------------+
-         |    |   *DADA2*                      |
-         +====+================================+
-         | 1. | |trimmomatic16S|               |
-         +----+--------------------------------+
-         | 2. | |merge_trimmomatic_stats16S|   |
-         +----+--------------------------------+
-         | 3. | |flash_pass1|                  |
-         +----+--------------------------------+
-         | 4. | |ampliconLengthParser|         |
-         +----+--------------------------------+
-         | 5. | |flash_pass2|                  |
-         +----+--------------------------------+
-         | 6. | |merge_flash_stats|            |
-         +----+--------------------------------+
-         | 7. | |asva|                         |
-         +----+--------------------------------+
-         | 8. | |run_multiqc|                  | 
-         +----+--------------------------------+
+         .. dropdown:: DADA2
+            :open:
+
+            .. list-table:: 
+               :widths: auto
+               :class: table-responsive
+
+               * - 1.
+                 - |trimmomatic16S| 
+               * - 2.
+                 - |merge_trimmomatic_stats16S| 
+               * - 3.
+                 - |flash_pass1|  
+               * - 4.
+                 - |ampliconLengthParser|    
+               * - 5.
+                 - |flash_pass2|   
+               * - 6.
+                 - |merge_flash_stats|     
+               * - 7.
+                 - |asva|    
+               * - 8.
+                 - |run_multiqc| 
 
          .. card::
 
@@ -120,11 +124,11 @@ Amplicon Sequencing Pipeline
 
             * `Amplicon sequencing techniques <https://sapac.illumina.com/techniques/sequencing/dna-sequencing/targeted-resequencing/amplicon-sequencing.html>`_
 
-            * `Amplicon Sequencing Primer <http://apc.ucc.ie/pdf_old/Amplicon%20Sequencing.pdf>`_
+            * `Amplicon Sequencing Primer <https://eurofinsgenomics.eu/en/next-generation-sequencing/amplicon-sequencing/>`_
 
             * `High-throughput amplicon sequencing <https://www.biorxiv.org/content/10.1101/392332v2>`_.
 
-            * `Trimmomatic - flexible trimming <https://academic.oup.com/bioinformatics/article/30/15/2114/2390096>`_.
+            * `Trimmomatic - flexible trimming <https://academic.oup.com/bioinformatics/article-pdf/30/15/2114/48924714/bioinformatics_30_15_2114.pdf>`_.
 
 .. dropdown:: :material-outlined:`report;2em` Amplicon Sequencing Readset File
    :color: warning

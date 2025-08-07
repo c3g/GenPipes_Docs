@@ -24,7 +24,7 @@ author = u'shaloo'
 show_authors = True
 #copyright =  author
 
-copyright = u'GenPipes (GSoD 2019-24)'
+copyright = u'GenPipes (GSoD 2019-25)'
 
 # The full version, including alpha/beta/rc tags
 
@@ -95,6 +95,13 @@ rst_epilog = """
 .. |genpipes_version| replace:: %(product_version)s
 """ % { "product_version": product_version ,
 }
+
+rst_prolog = """
+.. |key_ccdb_server_name| replace:: Beluga
+.. |key_ccdb_server_cmd_name| replace:: beluga
+.. |key_ccdb_server_ini_name| replace:: ``beluga.ini``
+.. |other_ccdb_server_names| replace:: Graham, Cedar, Niagara, and Narval
+"""
 
 master_doc = 'index'
 

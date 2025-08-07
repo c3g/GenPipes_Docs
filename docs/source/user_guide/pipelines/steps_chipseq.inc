@@ -10,10 +10,8 @@
      mfold
      intron
      introns
-
-**Step Details**
-
-Following are the various steps that are part of the ChIP Sequencing Pipeline:
+     multiBamSummary
+     multiBigwigSummary
 
 .. _Picard Sam to Fastq:
 
@@ -161,7 +159,7 @@ The output of differential analysis containing differentially bound peaks are sa
 
 **IHEC Metrics**
 
-This step generates IHEC's `standard metrics <http://ihec-epigenomes.org/research/reference-epigenome-standards/>`_.
+This step generates IHEC's `standard metrics <https://ihec-epigenomes.org/research/reference-epigenome-standards/>`_.
 
 .. _MultiQC Report:
 

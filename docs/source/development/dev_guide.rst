@@ -14,7 +14,7 @@ This guide provides information for developers who are interested in contributin
 
 #. Your PR will be reviewed by GenPipes Dev team reviewers. If the changes are acceptable, those will be merged into the GenPipes/dev branch.
 
-#. For any further queries regarding contributing to GenPipes, refer to `README.md`_ fil.e 
+#. For any further queries regarding contributing to GenPipes, refer to `README.md`_ file. 
 
 #. You may also wish to refer to the :ref:`GenPipes Coding Guidelines<docs_gp_coding_guide>`.
 

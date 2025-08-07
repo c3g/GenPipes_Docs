@@ -14,89 +14,58 @@
 Available Pipelines
 ===================
 
-.. table::
-   :widths: 5, 10, 2, 20
+.. list-table:: 
+   :header-rows: 1
+   :widths: auto
+   :class: table-responsive
 
-   +------------------+------------------------------+----------+---------------------------------+
-   | Genomic Analysis |       Pipeline               |   Flag   |        More Information         |
-   +==================+==============================+==========+=================================+
-   | ChIP-Seq         |::                            |          | `ChIP-Seq Manual`_              |
-   |                  |                              |          |                                 |
-   |                  |  chipseq                     |          |                                 |
-   +------------------+------------------------------+----------+---------------------------------+
-   | RNA-Seq          |::                            |          | `RNA-Seq Manual`_               |
-   |                  |                              |          |                                 |
-   |                  |  rnaseq                      |          |                                 |
-   +------------------+------------------------------+----------+---------------------------------+
-   | RNA-Seq(Light)   |::                            |          | `RNA-Seq-Light-Manual`_         |
-   |                  |                              |          |                                 |
-   |                  |  rnaseq_light                |          |                                 |
-   +------------------+------------------------------+----------+---------------------------------+
-   | De novo RNA-Seq  |::                            |          | `RNA-Seq De Novo Manual`_       |
-   |                  |                              |          |                                 |
-   |                  |  rnaseq_denovo_assembly      |          |                                 |
-   +------------------+------------------------------+----------+---------------------------------+
-   | Whole Genome Seq |::                            |  default | `Whole Genome Seq Manual`_      |
-   |                  |                              |          |                                 |
-   |                  |   dnaseq                     |          |                                 |
-   +------------------+------------------------------+----------+---------------------------------+
-   | Exome Seq        |::                            ||capture| | `Whole Genome Seq Manual`_      |
-   |                  |                              |          |                                 |
-   |                  |   dnaseq                     |          |                                 |
-   +------------------+------------------------------+----------+---------------------------------+
-   | Deep Whole Genome|::                            ||ini_file|| `Whole Genome Seq Manual`_      |
-   |                  |                              |          |                                 |
-   |                  |   dnaseq                     |          |                                 |
-   +------------------+------------------------------+----------+---------------------------------+
-   | Deep Exome Seq   |::                            | |capture|| `Whole Genome Seq Manual`_      |
-   |                  |                              |          |                                 |
-   |                  |   dnaseq                     |          |                                 |
-   +------------------+------------------------------+----------+---------------------------------+
-   | Hi-C Seq         |::                            | -t hic   | `Hi-C Seq Manual`_              |
-   |                  |                              |          |                                 |
-   |                  |   hicseq                     |          | (Deprecated from GenPipes v5.x) |
-   +------------------+------------------------------+----------+---------------------------------+
-   | Capture Hi-C     |::                            | -t       | `Hi-C Capture Manual`_          |
-   |                  |                              | capture  |                                 |
-   |                  |   hicseq                     |          | (Deprecated from GenPipes v5.x) |
-   +------------------+------------------------------+----------+---------------------------------+
-   | Whole Genome     |::                            | default  | `Methyl WGS Manual`_            | 
-   | Methyl Seq       |                              |          |                                 |
-   |                  |   methylseq                  |          |                                 |
-   +------------------+------------------------------+----------+---------------------------------+
-   | Capture Methyl   |::                            ||capture| | `Methyl WGS Manual`_            |
-   | Seq              |                              |          |                                 |  
-   |                  |   methylseq                  |          |                                 |
-   +------------------+------------------------------+----------+---------------------------------+
-   | Cancer Analysis  |::                            ||somatic| | `Whole Genome Seq Manual`_      |
-   |                  |                              |          |                                 |
-   |                  |   dnaseq                     |          |                                 |
-   +------------------+------------------------------+----------+---------------------------------+
-   | Meta Genomics    |::                            |          | `Meta Genomics Manual`_         |
-   |                  |                              |          |                                 |
-   |                  |   ampliconseq                |          |                                 |
-   +------------------+------------------------------+----------+---------------------------------+
-   | SARS-CoV-2       |::                            |          | `SARS-COV-2 Sequencing`_        |
-   |                  |                              |          |                                 |
-   |                  |   covseq                     |          |                                 |
-   +------------------+------------------------------+----------+---------------------------------+
+   * - Genomic Analysis
+     - `genpipes <pipeline_cmd>`
+     - Flag
+   * - ChIP Sequencing
+     - :ref:`chipseq <docs_gp_chipseq>`
+     -  
+   * - RNA Sequencing
+     - :ref:`rnaseq <docs_gp_rnaseq>`
+     - 
+   * - RNA Sequencing Light
+     - :ref:`rnaseq_light <docs_gp_rnaseqlight>`
+     -  
+   * - Denovo RNA Sequencing
+     - :ref:`rnaseq_denovo_assembly <docs_gp_rnaseq_denovo>`
+     -  
+   * - Whole Genome Sequencing
+     - :ref:`dnaseq <docs_gp_dnaseq>`
+     - :code:`default`
+   * - Exome Sequencing
+     - :ref:`dnaseq <docs_gp_dnaseq>`
+     - |capture|
+   * - Deep Whole Genome
+     - :ref:`dnaseq <docs_gp_dnaseq>`
+     - |ini_file|
+   * - Deep Exome Sequencing
+     - :ref:`dnaseq <docs_gp_dnaseq>`
+     - |capture|
+   * - Whole Genome Methyl Sequencing
+     - :ref:`methylseq <docs_methylation>`
+     - :code:`default`
+   * - Capture Methyl Sequencing
+     - :ref:`methylseq <docs_methylation>`
+     - |capture| 
+   * - Cancer Analysis
+     - :ref:`dnaseq <docs_gp_dnaseq>`
+     - |somatic|
+   * - Whole Chromosome Telomere Assembly
+     - :ref:`longread_dnaseq <docs_gp_longread_dnaseq>`
+     - |lr_flags|
+   * - Meta Genomics
+     - :ref:`ampliconseq  <docs_gp_ampliconseq>`
+     - 
+   * - SARS-COV-2 Analysis
+     - :ref:`covseq <docs_gp_covseq>`
+     -  
 
-.. |capture| replace:: capture :ref:`BED file<docs_bed_file>` in Readset file or init file 
-.. |ini_file| replace:: use relevant ini file and -t germline_high_cov
-.. |somatic| replace:: -t somatic_ensemble or -t somatic_sv or -t somatic_fastpass or -t somatic_tumor_only  
-
-.. _ChIP-Seq Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/chipseq/README.md
-.. _RNA-Seq Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/rnaseq/README.md
-.. _RNA-Seq-Light-Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/rnaseq_light/README.md
-.. _RNA-Seq De Novo Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/rnaseq_denovo_assembly/README.md
-.. _Whole Genome Seq Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dnaseq/README.md
-.. _Exome Seq Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dnaseq/README.md
-.. _DNA High Coverage Seq Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dnaseq/README.md
-.. _Deep Exome Seq Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dnaseq/README.md
-.. _Hi-C Seq Manual: https://bitbucket.org/mugqic/genpipes/src/4.6.1/pipelines/hicseq//README.md
-.. _Hi-C Capture Manual: https://bitbucket.org/mugqic/genpipes/src/4.6.1/pipelines/hicseq/README.md
-.. _Methyl WGS Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/methylseq/README.md
-.. _Capture Methyl WGS Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/methylseq/README.md
-.. _Cancer Analysis Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/dna_seq/README.md
-.. _Meta Genomics Manual: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/ampliconseq/README.md
-.. _SARS-COV-2 Sequencing: https://github.com/c3g/GenPipes/blob/main/genpipes/pipelines/covseq/README.md
+.. |capture| replace:: capture :ref:`BED file<docs_bed_file>` in Readset file or ``ini`` file 
+.. |ini_file| replace:: use relevant ``ini`` file and ``-t germline_high_cov``
+.. |somatic| replace:: ``-t somatic_ensemble`` or ``-t somatic_sv`` or ``-t somatic_fastpass`` or ``-t somatic_tumor_only`` 
+.. |lr_flags| replace:: ``-t nanopore`` or ``-t revio`` 

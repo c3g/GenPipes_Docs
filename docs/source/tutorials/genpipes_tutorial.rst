@@ -11,7 +11,7 @@ GenPipes Tutorial
       We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
 
 
-.. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x Onwards
+.. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x onward
    :color: success
 
    .. include:: /gp5_0.inc
@@ -24,7 +24,7 @@ Setting up the environment
 Abacus, DRAC users
 ''''''''''''''''''''
 
-Software and scripts used by GenPipes are already installed on several `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers including Beluga, Cedar and others. To access the tools, you will need to add the tool path to your **bash_profile**. The bash profile is a hidden file in your home directory that sets up your environment every time you log in.
+Software and scripts used by GenPipes are already installed on several `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers including |key_ccdb_server_name|, |other_ccdb_server_names|. To access the tools, you will need to add the tool path to your **bash_profile**. The bash profile is a hidden file in your home directory that sets up your environment every time you log in.
 
 You can also use your bashrc file. For more information on the differences between the .bash_profile and the .bashrc profile, consult `this page <http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html>`__.
 
@@ -144,11 +144,16 @@ For chipseq, that would be:
 
     ls $GENPIPES_INIS/chipseq/chipseq.base.ini
 
-You will find a **<pipeline_name>.base.ini** as well as an ini file for particular servers like Beluga (<pipeline_name>.beluga.ini). The base.ini file has all the parameters needed by the pipeline but is optimized for usage on our own server, Abacus. To use the pipeline on beluga server, you will need to use both base.ini and beluga.ini, as such:
+You will find a **<pipeline_name>.base.ini** and a server specific .ini file for CCDB server where the pipeline is run.
 
-.. code-block:: bash
+For example, in case of |key_ccdb_server_name| server, it will be <pipeline_name>.\ |key_ccdb_server_cmd_name|\.ini.
+    
+The base.ini file has all the parameters needed by the pipeline but is optimized for usage on our own server, Abacus. To use the pipeline on |key_ccdb_server_name| server, you will need to use both base.ini and |key_ccdb_server_cmd_name|.ini, as such:
 
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini
+.. parsed-literal::
+
+    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+        $GENPIPES_INIS/common_ini/\ |key_ccdb_server_cmd_name|\.ini
 
 To change different parameters in the ini files, you can create your own ini file and overwrite the required parameters. For example, to change the number of threads for trimmomatic and hicup, I can create my own ini file: chipseq.test.ini
 and in it I can include the parameters to be changed:
@@ -165,9 +170,11 @@ and in it I can include the parameters to be changed:
 
 then add my ini file after the other ini files:
 
-.. code-block:: bash
+.. parsed-literal::
 
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/chipseq/chipseq.beluga.ini chipseq.test.ini [options]
+    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+        $GENPIPES_INIS/chipseq/chipseq.\ |key_ccdb_server_cmd_name|\.ini \\
+        chipseq.test.ini [options]
 
 For different species, we have custom ini files stored in **$MUGQIC_INSTALL_HOME/genomes/species/<species_of_interest>/**
 
@@ -175,9 +182,11 @@ The genome default for our pipelines is human. To use other species, you can eit
 
 To run the chipseq pipeline on mouse mm9, for example, you can do the following:
 
-.. code-block:: bash
+.. parsed-literal::
 
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/chipseq/chipseq.beluga.ini $MUGQIC_INSTALL_HOME/genomes/species/Mus_musculus.mm9/Mus_musculus.mm9.ini [options]
+    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+        $GENPIPES_INIS/chipseq/chipseq.\ |key_ccdb_server_cmd_name|\.ini \\
+        $MUGQIC_INSTALL_HOME/genomes/species/Mus_musculus.mm9/Mus_musculus.mm9.ini [options]
 
 Readset File:
 -------------
@@ -260,11 +269,11 @@ Certain pipelines where samples are compared against other samples, like `chipse
 Running GenPipes on DRAC Servers: 
 ---------------------------------
 
-Make sure you are logged into the server, say Beluga. The default scheduler is Slurm.
+Make sure you are logged into the server, say |key_ccdb_server_name|. The default scheduler is Slurm.
 
 .. note::
 
-     The Abacus server, unlike Beluga, Cedar, Narval servers, uses the PBS scheduler. To use GenPipes on Abacus, don’t forget to add the **“-j pbs”** option (default is -j Slurm).
+     The Abacus server, unlike |key_ccdb_server_name|, |other_ccdb_server_names| servers, uses the PBS scheduler. To use GenPipes on Abacus, don’t forget to add the **“-j pbs”** option (default is -j Slurm).
 
 See example below for more details.
 
@@ -278,11 +287,13 @@ We will start by `downloading the dataset for ChIP-Seq <https://datahub-90-cw3.p
 
 In the downloaded tar file, you will find the fastq read files in folder “rawData” and will find the readset file (readset.chipseq.txt) that describes that dataset.
 
-We will run this analysis on Beluga server as follows:
+We will run this analysis on |key_ccdb_server_name| server as follows:
 
-.. code-block:: bash
+.. parsed-literal::
 
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readsets.chipseq.txt -s 1-15 -g chipseqcmd.sh
+    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+        $GENPIPES_INIS/common_ini/|key_ccdb_server_cmd_name|.ini \\
+        -r readsets.chipseq.txt -s 1-15 -g chipseqcmd.sh
 
 **-c** defines the ini configuration files
 **-r** defines the readset file
@@ -290,11 +301,13 @@ We will run this analysis on Beluga server as follows:
 
 The pipelines do not run the commands directly; they output them as text commands.  Use the `-g filname.sh` option to store these commands in a script file. Then run the script to execute the pipeline.
 
-This command works for servers using a SLURM scheduler like Cedar, Graham or Beluga. For the PBS scheduler, used by Abacus, you need to add the “-j pbs” option, as follows:
+This command works for servers using a SLURM scheduler like |key_ccdb_server_name|, |other_ccdb_server_names|. For the PBS scheduler, used by Abacus, you need to add the “-j pbs” option, as follows:
 
 .. code-block:: bash
 
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/abacus.ini -r readsets.chipseq.tsv -s 1-15 -j pbs -g chipseqcmd.sh
+    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+        $GENPIPES_INIS/common_ini/abacus.ini \\
+        -r readsets.chipseq.tsv -s 1-15 -j pbs -g chipseqcmd.sh
 
 To run it, use:
 
@@ -387,10 +400,14 @@ Looking at the contents of the design file, we see:
     GM12878_Rep1	2
     GM12878_Rep2	2
 
-We will run this analysis on the Beluga cluster as follows:
-::
+We will run this analysis on the |key_ccdb_server_name| cluster as follows:
 
-	genpipes rnaseq -c $GENPIPES_INIS/rnaseq/rnaseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -g rnaseq_commands.sh
+.. parsed-literal::
+
+	genpipes rnaseq -c $GENPIPES_INIS/rnaseq/rnaseq.base.ini \\
+        $GENPIPES_INIS/common_ini/|key_ccdb_server_cmd_name|.ini \\
+        -r readset.rnaseq.txt -d design.rnaseq.txt -g rnaseq_commands.sh
+
     bash rnaseq_commands.sh
 
 The commands will be sent to the job queue to be executed. You can check the progress of the jobs with
@@ -474,11 +491,15 @@ we see:
 
 We see a single analysis that compares samples EW22 and EW3 to samples EW7 and TC71. 
 
-We will run this analysis on Beluga server as follows:
+We will run this analysis on |key_ccdb_server_name| server as follows:
 
-.. code-block:: bash
+.. parsed-literal::
 
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readsets.chipseqTest.chr22.tsv -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
+    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+        $GENPIPES_INIS/common_ini/|key_ccdb_server_cmd_name|.ini \\
+        -r readsets.chipseqTest.chr22.tsv \\
+        -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
+
     bash chipseqScript.txt
 
 The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get **MUGQICexitStatus:0** or **Exit_status=0**. If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the **job_output** folder.

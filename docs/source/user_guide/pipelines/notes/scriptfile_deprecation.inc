@@ -21,5 +21,5 @@
      The ``> scriptfile`` method is supported but **will be deprecated** in a future GenPipes release.
        
 
-.. This is a comment - Issue #206 fix removing duplicate beluga tip
+.. This is a comment - Issue #206 fix removing duplicate tip
 .. ..include:: /common/gp_cluster_ini.inc

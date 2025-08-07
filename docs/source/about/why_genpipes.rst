@@ -43,7 +43,7 @@ Comparing GenPipes with other NGS Solutions
 
 GenPipes’ strength lies in its robust WMS that comes with one of the most diverse selection of analysis pipelines that have been thoroughly tested. The pipelines in the framework cover a wide range of sequencing applications. The pipelines are end-to-end workflows running complete bioinformatics analyses. While many available pipelines conclude with a bam file or run limited post-bam analysis steps, the pipelines included in GenPipes are extensive, often having as many as 40 different steps that cover a wide range of post-bam processing.
 
-For a tabular comparison of available solutions for NGS `see here <https://academic.oup.com/view-large/136711836>`_.
+For a tabular comparison of available solutions for NGS `see here <https://onlinelibrary.wiley.com/doi/10.1155/2012/251364>`_.
 
 GenPipes is compatible with HPC computing, as well as cloud computing, and includes a workflow manager that can be adapted to new systems. GenPipes also provides job status tracking through JSON files that can then be displayed on a web portal (an official portal for GenPipes will be released soon). GenPipes’ available pipelines facilitate bioinformatics processing, while the framework makes it flexible for modifications and new implementations.
 

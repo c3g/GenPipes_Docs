@@ -101,7 +101,9 @@ Methylation Sequencing Pipeline
                :width: 100%
                :figwidth: 75%           
 
-            .. include:: opt_methylseq_dragen_warning.inc    
+            .. warning::
+               
+               .. include:: opt_methylseq_dragen_warning.inc    
 
          .. dropdown:: Dragen
 
@@ -117,19 +119,21 @@ Methylation Sequencing Pipeline
                :align: center
                :alt: legend
                :width: 100%
-               :figwidth: 75%           
+               :figwidth: 75%    
 
-            .. include:: opt_methylseq_dragen_warning.inc 
+            .. warning::       
+
+               .. include:: opt_methylseq_dragen_warning.inc 
 
       .. tab-item:: Steps
 
-         .. include:: opt_methylseq_dragen_warning.inc    
+         .. warning::
+            
+            .. include:: opt_methylseq_dragen_warning.inc    
 
          .. dropdown:: Bismark
             
             +----+---------------------------------+
-            |    |  *Bismark*                      |
-            +====+=================================+
             | 1. | |picard_sam_to_fastq|           |
             +----+---------------------------------+
             | 2. | |trimmomatic|                   |
@@ -170,8 +174,6 @@ Methylation Sequencing Pipeline
          .. dropdown:: Gembs
 
             +----+---------------------------------+
-            |    |  *Gembs*                        |
-            +====+=================================+
             | 1. | |picard_sam_to_fastq|           |
             +----+---------------------------------+
             | 2. | |trimmomatic|                   |
@@ -190,11 +192,11 @@ Methylation Sequencing Pipeline
             +----+---------------------------------+
             | 9. | |gembs_bcf_to_vcf|              |
             +----+---------------------------------+
-            | 10. | |gembs_format_cpg_report|      |
+            | 10.| |gembs_format_cpg_report|       |
             +----+---------------------------------+
             | 11.| |methylation_profile|           |
             +----+---------------------------------+
-            | 12. | |dragen_bedgraph|              |
+            | 12.| |dragen_bedgraph|               |
             +----+---------------------------------+
             | 13.| |wiggle_tracks|                 |
             +----+---------------------------------+
@@ -216,8 +218,6 @@ Methylation Sequencing Pipeline
          .. dropdown:: Hybrid
 
             +----+----------------------------------+
-            |    |            *Hybrid*              |         
-            +====+==================================+
             | 1. | |picard_sam_to_fastq|            |           
             +----+----------------------------------+
             | 2. | |trimmomatic|                    |      
@@ -258,8 +258,6 @@ Methylation Sequencing Pipeline
          .. dropdown:: Dragen
 
             +----+-----------------------------------+
-            |    |              *Dragen*             |         
-            +====+===================================+
             | 1. | |picard_sam_to_fastq|             |           
             +----+-----------------------------------+
             | 2. | |trimmomatic|                     |      
@@ -324,14 +322,16 @@ Methylation Sequencing Pipeline
             **References**
 
             * `DNA Methylation Detection: Bisulphite genomic sequencing analysis <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3233226/>`_.
-            * `Strategies for analyzing bisulfite sequencing data <https://www.sciencedirect.com/science/article/pii/S0168165617315936>`_.
+            * `Strategies for analyzing bisulfite sequencing data <https://pubmed.ncbi.nlm.nih.gov/28822795/>`_.
             * `Analysis and Visualization Tool for Targeted Amplicon Bisulfite Sequencing on Ion Torrent Sequencers <https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0160227>`_.
             * Cytosine and Guanine - `CpGs`_.
 
 .. dropdown:: :material-outlined:`notifications;2em` Additional Requirements for `dragen` and `hybrid`
    :color: warning
 
-      .. include:: opt_methylseq_dragen_warning.inc    
+      .. warning::
+         
+         .. include:: opt_methylseq_dragen_warning.inc    
 
 .. The following are html links used in this text
 

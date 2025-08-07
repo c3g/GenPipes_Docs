@@ -88,57 +88,115 @@ ChIP Sequencing Pipeline
 
       .. tab-item:: Steps
 
-         +----+---------------------------+--------------------------------------+
-         |    | ChIP Sequencing Steps     |    ChIP Sequencing (atacseq)         |
-         +====+===========================+======================================+
-         | 1. | |picard_sam_to_fastq|     | |picard_sam_to_fastq|                |
-         +----+---------------------------+--------------------------------------+
-         | 2. | |trimmomatic|             | |trimmomatic|                        |
-         +----+---------------------------+--------------------------------------+
-         | 3. | |merge_trimmomatic_stats| | |merge_trimmomatic_stats|            |
-         +----+---------------------------+--------------------------------------+
-         | 4. | |mapping_bwamem_sambamba| | |mapping_bwamem_sambamba|            |
-         +----+---------------------------+--------------------------------------+
-         | 5. | |sambamba_merge_bam|      | |sambamba_merge_bam|                 |
-         +----+---------------------------+--------------------------------------+
-         | 6. | |sambamba_mark_dup|       | |sambamba_mark_dup|                  | 
-         +----+---------------------------+--------------------------------------+
-         | 7. | |sambamba_view_filter|    | |sambamba_view_filter|               |
-         +----+---------------------------+--------------------------------------+
-         | 8. | |bedtools_black_filter|   | |bedtools_black_filter|              |
-         +----+---------------------------+--------------------------------------+
-         | 9. | |metrics|                 | |metrics|                            |
-         +----+---------------------------+--------------------------------------+
-         | 10.| |homer_make_tag_directory|| |homer_make_tag_directory|           |
-         +----+---------------------------+--------------------------------------+
-         | 11.| |qc_metrics|              | |qc_metrics|                         |
-         +----+---------------------------+--------------------------------------+
-         | 12.| |homer_make_ucsc_file|    | |deeptools_qc|                       |     
-         +----+---------------------------+--------------------------------------+
-         | 13.| |macs2_callpeak|          | |homer_make_ucsc_file|               |
-         +----+---------------------------+--------------------------------------+
-         | 14.| |homer_annotate_peaks|    | |macs2_atacseq_callpeak|             |    
-         +----+---------------------------+--------------------------------------+
-         | 15.| |annotation_graphs|       | |homer_annotate_peaks|               |
-         +----+---------------------------+--------------------------------------+
-         | 16.| |annotation_graphs|       | |homer_find_motifs_genome|           |
-         +----+---------------------------+--------------------------------------+
-         | 17.| |run_spp|                 | |annotation_graphs|                  |
-         +----+---------------------------+--------------------------------------+
-         | 18.| |differential_binding|    | |run_spp|                            |
-         +----+---------------------------+--------------------------------------+
-         | 19.| |ihec_metrics|            | |differential_binding|               |
-         +----+---------------------------+--------------------------------------+
-         | 20.| |multiqc_report|          | |ihec_metrics|                       |
-         +----+---------------------------+--------------------------------------+
-         | 21.| |cram_output|             | |multiqc_report|                     |
-         +----+---------------------------+--------------------------------------+
-         | 22.| |gatk_haplotype_caller|   | |cram_output|                        |
-         +----+---------------------------+--------------------------------------+
-         | 23.| |merge_and_call_ind_gvcf| | |gatk_haplotype_caller|              |
-         +----+---------------------------+--------------------------------------+
-         | 24.|                           | |merge_and_call_ind_gvcf|            |
-         +----+---------------------------+--------------------------------------+
+         .. dropdown:: ChIP-Seq
+
+            .. list-table:: 
+               :widths: auto
+               :class: table-responsive
+
+               * - 1.
+                 - |picard_sam_to_fastq| 
+               * - 2.
+                 - |trimmomatic| 
+               * - 3.
+                 - |merge_trimmomatic_stats| 
+               * - 4.
+                 - |mapping_bwamem_sambamba|
+               * - 5.
+                 - |sambamba_merge_bam| 
+               * - 6.
+                 - |sambamba_mark_dup| 
+               * - 7.
+                 - |sambamba_view_filter|              
+               * - 8.
+                 - |bedtools_black_filter|
+               * - 9.
+                 - |metrics| 
+               * - 10.
+                 - |homer_make_tag_directory|
+               * - 11.
+                 - |qc_metrics|
+               * - 12.
+                 - |deeptools_qc| 
+               * - 13.
+                 - |homer_make_ucsc_file|
+               * - 14.
+                 - |macs2_callpeak| 
+               * - 15.
+                 - |homer_annotate_peaks|
+               * - 16.
+                 - |homer_find_motifs_genome|              
+               * - 17.
+                 - |annotation_graphs|
+               * - 18.
+                 - |run_spp|
+               * - 19.
+                 - |differential_binding|
+               * - 20.
+                 - |ihec_metrics|
+               * - 21.
+                 - |multiqc_report|
+               * - 22.
+                 - |cram_output|
+               * - 23.
+                 - |gatk_haplotype_caller|
+               * - 24.
+                 - |merge_and_call_ind_gvcf|
+
+
+         .. dropdown:: ATAC-Seq
+
+            .. list-table:: 
+               :widths: auto
+               :class: table-responsive
+
+
+               * - 1.
+                 - |picard_sam_to_fastq| 
+               * - 2.
+                 - |trimmomatic| 
+               * - 3.
+                 - |merge_trimmomatic_stats| 
+               * - 4.
+                 - |mapping_bwamem_sambamba|
+               * - 5.
+                 - |sambamba_merge_bam| 
+               * - 6.
+                 - |sambamba_mark_dup| 
+               * - 7.
+                 - |sambamba_view_filter|              
+               * - 8.
+                 - |bedtools_black_filter|
+               * - 9.
+                 - |metrics| 
+               * - 10.
+                 - |homer_make_tag_directory|
+               * - 11.
+                 - |qc_metrics|
+               * - 12.
+                 - |homer_make_ucsc_file| 
+               * - 13.
+                 - |macs2_atacseq_callpeak| 
+               * - 14.
+                 - homer_annotate_peaks| 
+               * - 15.
+                 - |homer_find_motifs_genome| 
+               * - 16.
+                 - |annotation_graphs|               
+               * - 17.
+                 - |run_spp|
+               * - 18.
+                 - |differential_binding| 
+               * - 19.
+                 - |ihec_metrics|  
+               * - 20.
+                 - |multiqc_report| 
+               * - 21.
+                 - |cram_output|  
+               * - 22.
+                 -  |gatk_haplotype_caller|  
+               * - 23.
+                 - |merge_and_call_ind_gvcf| 
 
         .. card::
 
@@ -167,7 +225,6 @@ ChIP Sequencing Pipeline
             * `ChIP-Seq Guidelines`_
             *  `MUGQIC_Bioinfo_Chip-Seq.pptx`_
             * `ChIP-Seq and Beyond <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3591838/>`_ 
-            * `ChIP-Seq Technology and Workflow <https://www.sciencedirect.com/science/article/pii/S1046202320300591>`_
             * `Schematic representation of major methods to detect functional elements in DNA <https://journals.plos.org/plosbiology/article/figure?id=10.1371/journal.pbio.1001046.g001>`_
             * `ChIP Sequencing and ATAC Sequencing <https://bioinformatics-core-shared-training.github.io/cruk-autumn-school-2017/ChIP/Materials/Lectures/Lecture4_Introduction%20to%20ChIP-seq%20and%20ATAC-seq_SS.pdf>`_
 
@@ -222,7 +279,7 @@ ChIP Sequencing Pipeline
 
 .. _ENCODE Project: https://www.genome.gov/Funded-Programs-Projects/ENCODE-Project-ENCyclopedia-Of-DNA-Elements
 .. _Burrows-Wheeler Aligner: http://bio-bwa.sourceforge.net
-.. _Homer routines: https://www.researchgate.net/publication/44640585_Simple_Combinations_of_Lineage-Determining_Factors_Prime_cis-Regulatory_Elements_Required_for_Macrophage_and_B-Cell_Identities
+.. _Homer routines: http://homer.ucsd.edu/homer/ngs/
 .. _Model based Analysis for Chip Sequencing (MACS2): https://genomebiology.biomedcentral.com/articles/10.1186/gb-2008-9-9-r137
 .. _IHEC requirements: https://github.com/IHEC/ihec-assay-standards
 .. _ATAC-Seq: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4374986/

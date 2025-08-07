@@ -55,7 +55,8 @@ DNA Sequencing Pipeline
          .. dropdown:: Options
 
             .. include:: opt_dnaseq.inc
-            .. include:: /common/gp_readset_opt.inc
+            .. include:: /common/gp_design_opt.inc 
+            .. include:: /common/gp_readset_opt.inc 
             .. include:: /common/gp_common_opt.inc
 
             .. include:: /user_guide/pipelines/notes/caution_pair_file_format.inc
@@ -252,8 +253,6 @@ DNA Sequencing Pipeline
                .. tab-item:: SNV
 
                   +----+------------------------------------+
-                  |    | *Germline SNV*                     |
-                  +====+====================================+
                   | 1. | |gatk_sam_to_fastq|                |
                   +----+------------------------------------+
                   | 2. | |trim_fastp|                       |
@@ -312,8 +311,6 @@ DNA Sequencing Pipeline
                .. tab-item:: SV
 
                   +----+------------------------------------+
-                  |    | *Germline SV*                      |
-                  +====+====================================+
                   | 1. | |gatk_sam_to_fastq|                |
                   +----+------------------------------------+
                   | 2. | |trim_fastp|                       |
@@ -368,8 +365,6 @@ DNA Sequencing Pipeline
                .. tab-item:: High Coverage
 
                   +----+------------------------------------+
-                  |    | *Germline High Coverage*           |
-                  +====+====================================+
                   | 1. | |gatk_sam_to_fastq|                |
                   +----+------------------------------------+
                   | 2. | |trim_fastp|                       |
@@ -408,8 +403,6 @@ DNA Sequencing Pipeline
                .. tab-item:: Tumor Only
                                                     
                   +----+------------------------------------+
-                  |    | *Somatic Tumor Only*               |
-                  +====+====================================+
                   | 1. | |gatk_sam_to_fastq|                |
                   +----+------------------------------------+
                   | 2. | |trim_fastp|                       |
@@ -458,8 +451,6 @@ DNA Sequencing Pipeline
                .. tab-item:: Fastpass
                                                     
                   +----+------------------------------------+
-                  |    | *Somatic Fastpass*                 |
-                  +====+====================================+
                   | 1. | |gatk_sam_to_fastq|                |
                   +----+------------------------------------+
                   | 2. | |trim_fastp|                       |
@@ -470,7 +461,7 @@ DNA Sequencing Pipeline
                   +----+------------------------------------+
                   | 5. | |set_interval_list|                |
                   +----+------------------------------------+
-                  | 6. | |sequenza|                         |
+                  | 6. | |sequenza_step|                    |
                   +----+------------------------------------+
                   | 7. | |rawmpileup|                       |
                   +----+------------------------------------+
@@ -510,8 +501,6 @@ DNA Sequencing Pipeline
                .. tab-item:: Ensemble
                                                     
                   +----+------------------------------------+
-                  |    | *Somatic Ensemble*                 |
-                  +====+====================================+
                   | 1. | |gatk_sam_to_fastq|                |
                   +----+------------------------------------+
                   | 2. | |trim_fastp|                       |
@@ -528,7 +517,7 @@ DNA Sequencing Pipeline
                   +----+------------------------------------+
                   | 8. | |m_dna_sample_mosdepth|            |
                   +----+------------------------------------+
-                  | 9. | |sequenza|                         |
+                  | 9. | |sequenza_step|                    |
                   +----+------------------------------------+
                   | 10.| |manta_sv_calls|                   |
                   +----+------------------------------------+
@@ -576,24 +565,24 @@ DNA Sequencing Pipeline
                   +----+------------------------------------+
                   | 32.| |report_pcgr|                      |
                   +----+------------------------------------+
-                  | 33.| |run_multiqc|                      |
+                  | 33.| |report_djerba|                    |
                   +----+------------------------------------+
-                  | 34.| |sym_link_fastq_pair|              |
+                  | 34.| |run_multiqc|                      |
                   +----+------------------------------------+
-                  | 35.| |sym_link_final_bam|               |
+                  | 35.| |sym_link_fastq_pair|              |
+                  +----+------------------------------------+
+                  | 36.| |sym_link_final_bam|               |
                   +----+------------------------------------+                  
-                  | 36.| |sym_link_report|                  |
+                  | 37.| |sym_link_report|                  |
                   +----+------------------------------------+
-                  | 37.| |sym_link_ensemble|                |
+                  | 38.| |sym_link_ensemble|                |
                   +----+------------------------------------+
-                  | 38.| |cram_output|                      |
+                  | 39.| |cram_output|                      |
                   +----+------------------------------------+
 
                .. tab-item:: SV
                                                     
                   +----+------------------------------------+
-                  |    | *Somatic SV*                       |
-                  +====+====================================+
                   | 1. | |gatk_sam_to_fastq|                |
                   +----+------------------------------------+
                   | 2. | |trim_fastp|                       |
@@ -655,8 +644,8 @@ DNA Sequencing Pipeline
 
             **References**
 
-            * `Three-stage quality control strategies for DNA sequencing <https://academic.oup.com/bib/article/15/6/879/180439>`_
-            * `NGS Mapping, errors and quality control <http://bioinformatics.org.au/ws14/wp-content/uploads/ws14/sites/5/2014/07/Felicity-Newell_presentation.pdf>`_
+            * `Three-stage quality control strategies for DNA sequencing <https://pmc.ncbi.nlm.nih.gov/articles/PMC4492405/>`_
+            * `NGS Mapping, errors and quality control <https://libstore.ugent.be/fulltxt/RUG01/002/839/552/RUG01-002839552_2020_0001_AC.pdf>`_
             * `dbNSFP: a lightweight database of human nonsynonymous SNPs and their functional predictions <https://www.ncbi.nlm.nih.gov/pubmed/21520341>`_
             * `DNA-Seq Pipeline <https://bitbucket.org/mugqic/genpipes/downloads/MUGQIC_Bioinfo_DNA-Seq.pptx>`_
             * `Manta - Rapid Detection of Structural Variants <https://pubmed.ncbi.nlm.nih.gov/26647377/>`_, `Using Manta for filtering and annotations <https://pmbio.org/module-05-somatic/0005/03/02/Somatic_SV_FilteringAnnotationReview/>`_.
@@ -712,7 +701,8 @@ DNA Sequencing Pipeline
 .. |filter_tumor_only| replace:: `Filter Tumor Only`_
 .. |report_cpsr| replace:: `Report CPSR`_
 .. |report_pcgr| replace:: `Report PCGR`_
-.. |sequenza| replace:: `Sequenza Step`
+.. |report_djerba| replace:: `Report Djerba`_
+.. |sequenza_step| replace:: `Sequenza Step`_
 .. |rawmpileup| replace:: `Raw Mpileup`_
 .. |paired_varscan2| replace:: `Paired Var Scan 2`_
 .. |merge_varscan2| replace:: `Merge Var Scan 2`_

@@ -46,11 +46,12 @@
                             minimum of mem_per_cpu by correcting the number of cpu
                             (default: None)
 
-::
+.. commenting out this option deprecated #306
+.. ::
 
-  --no-json                 do not create JSON file per analysed sample to track
-                            the analysis status (default: false i.e. JSON file
-                            will be created)
+..  --no-json                 do not create JSON file per analysed sample to track
+..                            the analysis status (default: false i.e. JSON file
+..                            will be created)
 
 ::
 

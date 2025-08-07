@@ -22,7 +22,7 @@ Readset File format
 
 .. warning::
 
-     Readset file format may vary for different GenPipes Pipelines.  For example, ChIP-Seq and Nanopore pipelines use a slightly different readset format as compared to DNA-Seq, RNA-Seq or Covseq pipelines.
+     Readset file format may vary for different GenPipes Pipelines.  For example, ``chipseq`` and  ``nanopore_covseq`` pipelines use a slightly different readset format as compared to ``dnaseq``, ``rnaseq`` or ``covseq`` pipelines.
 
 General Readset File Format
 ---------------------------

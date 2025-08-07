@@ -94,11 +94,11 @@ You need to first download the test dataset by visiting this link:
 
 In the downloaded tar file, you will find the fastq read files in folder “rawData” and will find the readset file (readset.chipseq.txt) that describes that dataset.
 
-Please ensure you have access to the "beluga" server in `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, data centre. We will run this analysis on beluga as follows:
+Please ensure you have access to the "\ |key_ccdb_server_name|\" server in `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, data centre. We will run this analysis on |key_ccdb_server_name| as follows:
 
 ::
 
-  genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.chipseq.txt -s 1-15 -g chipseq_cmd.sh
+  genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/\ |key_ccdb_server_cmd_name|\.ini -r readset.chipseq.txt -s 1-15 -g chipseq_cmd.sh
 
 To understand what $GENPIPES_INIS refers to, please see instructions on how to :ref:`access GenPipes on Compute Canada servers<docs_access_gp_pre_installed>`.
 
@@ -110,7 +110,7 @@ In the command above,
 
 -s defines the steps of the pipeline to execute, use `genpipes chipseq -h` to check steps
 
-By default, Slurm scheduler is used when using the GenPipes deployment on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers such as "Cedar", "Beluga" or "Graham". On the abacus server, you need to use PBS scheduler. For that you need to specify "-j pbs" option as shown below:
+By default, Slurm scheduler is used when using the GenPipes deployment on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers such as |key_ccdb_server_name|, |other_ccdb_server_names|. On the abacus server, you need to use PBS scheduler. For that you need to specify "-j pbs" option as shown below:
 
 ::
 
@@ -209,11 +209,11 @@ Following is the content of the Design file (design.rnaseq.txt):
 
 We see a single analysis that compares two replicates of `H1ESC` to two replicates of group `GM12878`.
 
-Let us now run this RNA-Sequencing analysis on the *beluga* server at `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada. Use the following command:
+Let us now run this RNA-Sequencing analysis on the |key_ccdb_server_name| server at `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada. Use the following command:
 
 ::
 
-  genpipes rnaseq -c $GENPIPES_INIS/rnaseq/rnaseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini -r readset.rnaseq.txt -d design.rnaseq.txt -g rnaseqScript.txt
+  genpipes rnaseq -c $GENPIPES_INIS/rnaseq/rnaseq.base.ini $GENPIPES_INIS/common_ini/\ |key_ccdb_server_cmd_name|\.ini -r readset.rnaseq.txt -d design.rnaseq.txt -g rnaseqScript.txt
   bash rnaseqScript.txt
 
 The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you should get **MUGQICexitStatus:0** or **Exit_status=0.** If that is not the case, then an error has occurred after which the pipeline usually aborts. To examine the errors, check the content of the **job_output** folder.

@@ -45,7 +45,7 @@ GenPipes User: Troubleshooting Guide
 
     Check the kind of GenPipes deployment you are working with.  If it is a local deployment, on a bare metal server or a virtual server or in a container, you need to make sure you do not specify -j pbs or -j slurm option but -j daemon or -j batch mode.
 
-    In case you are using Moab or Torque scheduler, ensure that you use -j pbs option in the pipeline command. If you are using mp2b or cedar server, then you need to specify -j slurm as the scheduler option and use the correct configuration file (mp2b.ini or cedar.ini) depending upon which server you are using to run your pipeline jobs.
+    In case you are using Moab or Torque scheduler, ensure that you use -j pbs option in the pipeline command. If you are using mp2b or |key_ccdb_server_name| server, then you need to specify -j slurm as the scheduler option and use the correct configuration file (``mp2b.ini`` or key_ccdb_server_ini_name) depending upon which server you are using to run your pipeline jobs.
 
 .. dropdown:: :material-outlined:`help;2em` Fatal Limit Error: Star RNA Sequencing
 

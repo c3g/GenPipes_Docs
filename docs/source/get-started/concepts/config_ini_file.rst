@@ -58,14 +58,19 @@ A default configuration file (``.base.ini`` extension) is set for running on aba
 
 You can also add a list of other configuration files to ``--config``. Files are read in the list order and each parameter value is overwritten if redefined in the next file.
 
-This is useful to customize settings for a specific cluster or genome. Each pipeline has a special configuration file for beluga and cedar clusters (``.beluga.ini`` and ``.cedar.ini`` extensions respectively) in the same directory. And various genome settings are available in ``$MUGQIC_INSTALL_HOME/genomes/species/``.
+This is useful to customize settings for a specific server cluster deployment or when using a specific genome. Each pipeline has a special configuration file for clusters in the same directory. For example, |key_ccdb_server_ini_name|. And various genome settings are available in ``$MUGQIC_INSTALL_HOME/genomes/species/``.
 
-For example, to run the DNA-Seq pipeline on beluga cluster with Mus musculus reference genome:
+For example, to run the DNA-Seq pipeline on |key_ccdb_server_cmd_name| cluster with Mus musculus reference genome:
 
-::
+.. parsed-literal::
 
     #!bash
-    genpipes $GENPIPES_INIS/dnaseq/dnaseq --config $GENPIPES_INIS/dnaseq/dnaseq.base.ini $GENPIPES_INIS/common_ini/beluga.ini $MUGQIC_INSTALL_HOME/genomes/species/Mus_musculus.GRCm38//Mus_musculus.GRCm38.ini [other options] -g genpipes_command_list.sh
+    genpipes $GENPIPES_INIS/dnaseq/dnaseq \\
+        --config $GENPIPES_INIS/dnaseq/dnaseq.base.ini \\
+        $GENPIPES_INIS/common_ini/\ |key_ccdb_server_cmd_name|\.ini \\
+        $MUGQIC_INSTALL_HOME/genomes/species/Mus_musculus.GRCm38//Mus_musculus.GRCm38.ini [other options] \\
+        -g genpipes_command_list.sh
+
     bash genpipes_command_list.sh
 
 

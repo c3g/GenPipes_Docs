@@ -3,31 +3,33 @@
         %% GenPipes Schema for chipseq.py
         %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/chipseq/
         %% Author Shaloo Shalini <shalz@hotmail.com>
+        %% -t atac
 
-                graph LR
-        Node1{{ 1. <br/> Picard SAM <br/>to FASTQ }}:::nodefill
-        Node2{{ 2. <br/> Trimmomatic }}:::nodefillblack
-        Node3{{ 3. <br/> Merge <br/> Trimmomatic<br/> Stats }}:::nodefill
-        Node4{{ 4. <br/> Mapping <br/> BWA <br/> sambamba }}:::nodefill
-        Node5{{ 5. <br/> SAMbamba <br/> Merge <br/> BAM Files }}:::nodefillblack
-        Node6{{ 6. <br/> SAMbamba <br/> Mark<br/> Duplicates }}:::nodefill
-        Node7{{ 7. <br/> SAMbamba <br/> View<br/> Filter }}:::nodefill
-        Node8{{ 8. <br/> Bedtools <br/>Blacklist Filter }}:::nodefill
-        Node9{{ 9. <br/> Metrics }}:::nodefill
-        Node10{{ 10. <br/> Homer <br/>Make <br/>Tag <br/>Directory }}:::nodefill
-        Node11{{ 11. <br/> QC <br/> Metrics }}:::nodefill
-        Node12{{ 12. <br/> Homer <br/>Make <br/>UCSC file }}:::nodefill
-        Node13{{ 13. <br/> MACS2 <br/> call-peaks }}:::nodefill
-        Node14{{ 14. <br/> Homer annotatepeaks }}:::nodefill
-        Node15{{ 15. <br/> Homer <br/>find <br/> motif <br/>genomes }}:::nodefill
-        Node16{{ 16. <br/> Annotation<br/> Graphs }}:::nodefill
-        Node17{{ 17. <br/> Run SPP }}:::nodefill
-        Node18{{ 18. <br/> Differential <br/>Binding }}:::nodefill
-        Node19{{ 19. <br/> IHEC<br/> Metrics }}:::nodefill
-        Node20{{ 20. <br/> MultiQC <br/> Report }}:::nodefill
-        Node21{{ 21. <br/> Cram Output }}:::nodefill
-        Node22{{ 22. <br/> Gatk<br/> Haplotype Caller }}:::nodefill
-        Node23{{ 23. <br/> Merge &<br/>Call GVCF }}:::nodefill
+        graph LR
+        Node1{{ 1 <br/> Picard SAM <br/>to FASTQ }}:::nodefill
+        Node2{{ 2.<br/> Trimmomatic }}:::nodefillblack
+        Node3{{ 3.<br/> Merge <br/> Trimmomatic<br/> Stats }}:::nodefill
+        Node4{{ 4.<br/> Mapping <br/> BWA <br/> sambamba }}:::nodefill
+        Node5{{ 5.<br/> SAMbamba <br/> Merge <br/> BAM Files }}:::nodefillblack
+        Node6{{ 6.<br/> SAMbamba <br/> Mark<br/> Duplicates }}:::nodefill
+        Node7{{ 7.<br/> SAMbamba <br/> View<br/> Filter }}:::nodefill
+        Node8{{ 8.<br/> Bedtools <br/>Blacklist Filter }}:::nodefill
+        Node9{{ 9.<br/> Metrics }}:::nodefill
+        Node10{{ 10.<br/> Homer <br/>Make <br/>Tag <br/>Directory }}:::nodefill
+        Node11{{ 11.<br/> QC <br/> Metrics }}:::nodefill
+        Node12{{ 12.<br/> Deeptools <br/> QC }}:::nodefill
+        Node13{{ 13.<br/> Homer <br/>Make <br/>UCSC file }}:::nodefill
+        Node14{{ 14.<br/> MACS2 <br/> ATAC-Seq<br/> call-peaks }}:::nodefill
+        Node15{{ 15.<br/> Homer annotatepeaks }}:::nodefill
+        Node16{{ 16.<br/> Homer <br/>find <br/> motif <br/>genomes }}:::nodefill
+        Node17{{ 17.<br/> Annotation<br/> Graphs }}:::nodefill
+        Node18{{ 18.<br/> Run SPP }}:::nodefill
+        Node19{{ 19.<br/> Differential <br/>Binding }}:::nodefill
+        Node20{{ 20.<br/> IHEC<br/> Metrics }}:::nodefill
+        Node21{{ 21.<br/> MultiQC <br/> Report }}:::nodefill
+        Node22{{ 22.<br/> Cram Output }}:::nodefill
+        Node23{{ 23.<br/> Gatk<br/> Haplotype Caller }}:::nodefill
+        Node24{{ 24.<br/> Merge &<br/>Call GVCF }}:::nodefill
 
         Input1[[fa:fa-file-archive-o .BAM]]
         Input2[[fa:fa-file-archive-o .FASTQ]]
@@ -39,7 +41,7 @@
         AGOutput([fa:fa-sticky-note-o Report ])
         IHECOutput([fa:fa-sticky-note-o Report ])
         CramOutput([fa:fa-sticky-note-o Report ])
-        GVCF([fa:fa-sticky-note-o Report ])
+        GVCF([fa:fa-sticky-note-o GVCF ])
 
         Input1 --> Node1 -.-> Node2
         Input2 --> Node2
@@ -47,24 +49,25 @@
         Node2 -.-> Node3 & Node4
         Node4 -.-> Node5 -.-> Node6
         Node6 -.-> Node7 & Node9 & Node19
-        Node7 -.-> Node8 & Node21
-        Node8 -.-> Node9 & Node10 & Node13 & Node17 & Node18 & Node22
-        Node9 -.-> Node20
-        Node10 -.-> Node11 & Node12 & Node20
-        Node13 -.-> Node14 & Node15 & Node18 & Node19 & Node22
-        Node14 -.-> Node16
-        Node22 -.-> Node23
-
+        Node7 -.-> Node8 & Node12
+        Node8 -.-> Node9 & Node10 & Node14 & Node18 & Node19 & Node23
+        Node9 -.-> Node21
+        Node10 -.-> Node11 & Node13 & Node21
+        Node12 -.-> Node21
+        Node14 -.-> Node15 & Node16 & Node19 & Node20 & Node21 & Node23
+        Node7 & Node14 -.-> Node22
+        Node15 -.-> Node17
+        Node23 -.-> Node24
 
         Node3 --> MTSOutput
         Node9 --> MetOutput
         Node11 --> QCMOutput
-        Node12 --> HMUFOutput
-        Node16 --> AGOutput
-        Node19 --> IHECOutput
-        Node20 --> MQCOutput
-        Node21 --> CramOutput
-        Node21 --> GVCF
+        Node13 --> HMUFOutput
+        Node17 --> AGOutput
+        Node20 --> IHECOutput
+        Node21 --> MQCOutput
+        Node22 --> CramOutput
+        Node22 --> GVCF
 
         subgraph readSetSteps[" "]
           Node1
@@ -92,6 +95,7 @@
           Node21
           Node22
           Node23
+          Node24
           MTSOutput
           MetOutput
           QCMOutput

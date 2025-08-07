@@ -1,4 +1,4 @@
-**Step Details**
+.. _docs_steps_rnaseq_light:
 
 .. _Picard SAM to FASTQ:
 
