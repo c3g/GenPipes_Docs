@@ -6,13 +6,13 @@
 ``default``
 ============
 
-.. mermaid:: ./nanopore_covseq_default.mmd
+.. mermaid:: ./nanopore_covseq.default.mmd
     :caption: Nanopore CoVSeQ (Default) Pipeline Schema
     :align: center
 
 ``basecalling``
 ================
 
-.. mermaid:: ./nanopore_covseq_basecall.mmd
+.. mermaid:: ./nanopore_covseq.basecall.mmd
     :caption: Nanopore CoVSeQ (Basecalling) Pipeline Schema
     :align: center

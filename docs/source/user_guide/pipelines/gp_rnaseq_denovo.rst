@@ -61,7 +61,7 @@ RNA Sequencing (De-Novo) Pipeline
 
             Figure below shows the schema of RNA Sequencing *De Novo* Assembly pipeline. 
 
-            .. figure:: /img/pipelines/mmd/rnaseq.denovo.mmd.png 
+            .. figure:: /img/pipelines/mmd/rnaseq_denovo_assembly.trinity.mmd.png 
                :align: center
                :alt: RNA Sequencing De Novo schema
                :width: 100%
@@ -79,7 +79,7 @@ RNA Sequencing (De-Novo) Pipeline
 
             Figure below shows the schema of RNA Sequencing *Seq2Fun* pipeline. 
 
-            .. figure:: /img/pipelines/mmd/rnaseq.denovo.seq2fun.mmd.png 
+            .. figure:: /img/pipelines/mmd/rnaseq_denovo_assembly.seq2fun.mmd.png 
                :align: center
                :alt: RNA Sequencing De Novo Seq2Fun schema
                :width: 100%

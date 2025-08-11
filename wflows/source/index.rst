@@ -41,9 +41,12 @@ Click the link below to view html generated workflows.
    
    The process followed for GenPipes Mermaid Schema diagram generation is as follows:
 
-   * Pipeline schema workflow diagrams are coded in this project under source/mmd/pipelines folder
-   * Building this project renders them to high quality html diagrams
-   * You need to save these as screenshots/png (preferably on a mac for better resolution) and then update them in GenPipes RTD docs folder under GenPipes/docs/source/img/pipelines/mmd section.  These diagrams in png format are then referred to by the GenPipes RTD html docs.
+   * Pipeline schema workflow diagrams are coded in this project under source/schema/<pipeline_cmd> folder
+   * To generate .png files for schema as part of the sphinx build process, you need to have mermaid-cli and node installed. ``brew install node; brew install mermaid-cli``
+   * Refer to makefile ``mermaid`` target for details
+   * As part of the build process, html is generated using mermaid code for schema. Also, the <BUILDDIR>/html/mmd folder contains .png files for each pipeline schema. These should be
+   verified and then copied to the docs/source/img/pipelines/mmd folder. The GenPipes documentation code refers to the schema diagram png files.
+   * Building the wflows sphinx project renders these schema diagrams to high quality mermaid png and html usable images/diagrams
    * Note: This process need to be followed only if pipeline steps change, otherwise the existing previous copy of png in GenPipes RTD sources will be used to generate RTD docs.
 
    .. note::  Issues with Auto embedding mermaid-sphinx in RTD directly

@@ -6,13 +6,13 @@
 ``nanopore``
 =============
 
-.. mermaid:: ./nanopore.mmd
+.. mermaid:: ./longread_dnaseq.nanopore.mmd
     :caption: Long Read DNA Sequencing Nanopore Schema
     :align: center
 
 ``revio``
 =========
 
-.. mermaid:: ./revio.mmd
+.. mermaid:: ./longread_dnaseq.revio.mmd
     :caption: Long Read DNA Sequencing Revio Schema
     :align: center
