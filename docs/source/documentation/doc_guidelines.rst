@@ -2,8 +2,8 @@
 
 .. _doc_gp_writing_guidelines:
 
-GenPipes Writing Style Guide
-=============================
+Style Guide
+============
 
 How do we make it really easy and simple for GenPipes users to adopt GenPipes?
 

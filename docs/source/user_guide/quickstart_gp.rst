@@ -1,7 +1,7 @@
 .. _docs_quickstart_gp:
 
-GenPipes Quick Start Guide
-===========================
+Quick Start
+============
 
 **Table of Contents**
 

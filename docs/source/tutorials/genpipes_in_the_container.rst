@@ -5,8 +5,8 @@
        qsub
        sbatch
 
-Running GenPipes in a local Containerized Infrastructure
-=========================================================
+Tutorial: Using Local Containerized Deployment
+===============================================
 
 .. note::
 

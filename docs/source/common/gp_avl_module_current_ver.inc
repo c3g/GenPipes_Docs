@@ -1,32 +1,37 @@
 .. spelling::word-list::
 
-   cd
-   dna
-   graphlan
-   devel
-   covid
-   globus
-   cli
-   gtex
-   edc
-   gpu
-   hmmcopy
    bfc 
-   miniconda 
-   minimap
-   mirdeep
-   rjme 
-   olink 
-   ngs 
-   oncokb 
-   popoolation
-   prinseq
-   Strelka
+   cd
+   cli
+   covid
+   devel
+   dna
+   edc
    edca
-   wgs
+   globus
+   gpu
+   graphlan
+   gtex
    Hclust
    hcp
-   ubuntu 
+   hmmcopy
+   miniconda
+   miniconda
+   minimap
+   mirdeep
+   ngs
+   ngs
+   olink
+   olink
+   oncokb
+   oncokb
+   popoolation
+   prinseq
+   rjme
+   rjme
+   Strelka
+   ubuntu
+   wgs 
    
 
 

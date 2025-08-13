@@ -7,8 +7,8 @@
    Ensembl
    GRCh
 
-Deploying GenPipes locally in your server 
-==========================================
+Local Deployment
+=================
 
 This document explains how to deploy GenPipes locally on a bare metal or virtual server. See :ref:`GenPipes in a container<docs_dep_gp_container>` section to install GenPipes locally in a container.
 

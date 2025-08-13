@@ -1,7 +1,7 @@
 .. _docs_workshops:
 
-GenPipes Workshops 
-======================
+Workshops 
+===========
 
 This document contains GenPipes training resources from recent workshops. Canadian Centre for Computational Genomics (C3G) facilitates, organizes and collaborates with establishments to assist interested folks in acquisition of knowledge in bioinformatics analysis.  Visit `the website <https://www.mcgill.ca/search/workshop+genpipes?search_origin=sbms>`_ for latest information on upcoming workshops.
 

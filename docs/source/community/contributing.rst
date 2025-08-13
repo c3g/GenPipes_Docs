@@ -1,7 +1,7 @@
 .. _docs_contributing:
 
-Contributing to GenPipes
-========================
+Contributions
+==============
 
 The GenPipes project team welcomes contributions from the community!
 

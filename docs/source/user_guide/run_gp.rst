@@ -12,9 +12,9 @@ After :ref:`selecting a GenPipes deployment option<docs_choose_gp_dep>` you must
 
 First, test that GenPipes is correctly deployed and it works, without actually running a pipeline. Use :code:`genpipes <pipeline_cmd>` with the  :code:`--help` or ``-h`` option. 
 
-For details, please refer to the Getting Started Guide :ref:`Run GenPipes section<docs_using_gp>`.
+For details, please refer to the GenPipes User Guide :ref:`User Guide section<docs_user_guide>`.
 
-Earlier, you could run GenPipes by invoking individual <pipeline_cmd>. With the release of version 5.0.0 onwards, there is a new format to run GenPipes pipelines.
+Earlier, you could run GenPipes by invoking individual ``<pipeline_cmd>``. With the release of version 5.0.0 onward, there is a new format to run GenPipes pipelines.
 
 .. include:: /common/commands/change_format_5.inc
     

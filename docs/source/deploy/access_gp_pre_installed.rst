@@ -11,10 +11,10 @@
          cvmfs
          CentOS
 
-Accessing GenPipes on DRAC Servers
-===================================
+DRAC Deployment
+===============
 
-This document explains how to get started with using GenPipes installed on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers.
+This document explains how you can access GenPipes deployed on `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers and start using it for genomic analysis.
 
 .. _get_ccdb_account:
 

@@ -1,7 +1,7 @@
 .. .. codeauthor:: Shaloo Shalini <shaloo_shalini@yahoo.com>
 
-GenPipes |genpipes_version| Documentation 
-==========================================
+GenPipes v\ |genpipes_version|\  Documentation
+==============================================
 
 .. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x onward
    :color: success
@@ -20,8 +20,8 @@ GenPipes |genpipes_version| Documentation
 
       GenPipes offers the CoVSeq pipeline (for short-read sequencing, e.g. Illumina) and Nanopore_CoVSeq pipeline (for long-read sequencing) to help researchers analyze viral sequences and detect mutations quickly, with the goal of preventing the spread of new strains. See :ref:`GenPipes CoVSeq Pipeline User Guide<docs_gp_covseq>`, :ref:`GenPipes Nanopore CoVSeq Pipeline User Guide<docs_gp_nanopore_cov>` for details.
 
-Welcome onboard GenPipes!
--------------------------
+Welcome
+--------
 
 GenPipes is a flexible Python-based framework that facilitates the development and deployment of multi-step genomic workflows, optimized for High-Performance Computing (HPC) clusters and the cloud. It offers 10 open-source, validated and scalable :ref:`pipelines<docs_pipeline_ref>` for various :ref:`genomics applications<docs_gp_usecases>`.
 
@@ -44,11 +44,11 @@ GenPipes documentation is organized to address the needs of new users as well as
 
 .. toctree::
    :maxdepth: 1
-   :caption: Getting started
+   :caption: Get Started
    :name: sec-learn
 
-   get-started/index
    deploy/how_to_deploy_genpipes
+   get-started/index
    user_guide/user_guide
    tutorials/list_tutorials
 
@@ -64,8 +64,8 @@ GenPipes documentation is organized to address the needs of new users as well as
    :caption: Community
    :name: sec-community
 
-   community/contributing
    community/channels
+   community/contributing
 
 .. toctree::
    :maxdepth: 1

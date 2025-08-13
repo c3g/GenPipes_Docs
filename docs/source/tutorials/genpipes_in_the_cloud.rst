@@ -1,7 +1,7 @@
 .. _genpipes_in_the_cloud:
 
-Running GenPipes on Google Cloud Platform (GCP)
-===============================================
+Tutorial: Using Google Cloud Platform (GCP) Deployment
+=======================================================
 Quickstart
 ----------
 

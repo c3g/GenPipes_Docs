@@ -1,6 +1,6 @@
 .. _doc_cvmfs_modules:
 
-GenPipes Bioinformatics Modules
-===============================
+Bioinformatics Modules
+=======================
 
 .. include:: /common/gp_modules.inc

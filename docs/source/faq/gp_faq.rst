@@ -1,7 +1,7 @@
 .. _docs_faq:
 
-Frequently asked questions
-==========================
+FAQ 
+====
 
 Queries related to GenPipes and its usage are categorized broadly as follows:
 

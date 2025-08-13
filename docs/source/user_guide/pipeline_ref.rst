@@ -1,13 +1,12 @@
 .. _docs_pipeline_ref:
 
-
 .. spelling:word-list::
 
     tumour
     Biosciences
 
-Pipelines Reference Guide
-=========================
+Pipelines Reference 
+===================
 
 .. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x onward
    :color: success

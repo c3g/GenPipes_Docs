@@ -1,6 +1,6 @@
 .. _doc_cvmfs_genomes:
 
-GenPipes Genome resources
-=========================
+Genome resources
+================
 
 .. include:: /common/gp_genomes.inc

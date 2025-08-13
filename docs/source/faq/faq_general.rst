@@ -47,7 +47,7 @@ Also, if you plan to run genomics pipelines, you need a genomics data viewer suc
 Where do I find tips on troubleshooting GenPipes runtime and usage issues?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-See :ref:`Troubleshooting GenPipes Usage issues<docs_troubleshooting_rt_issues>` section of GenPipes Getting Started Guide for details.
+See :ref:`Troubleshooting GenPipes Usage issues<docs_troubleshooting_rt_issues>` section of GenPipes Get Started Guide for details.
 
 For new developers, are there any GenPipes development and troubleshooting tips?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

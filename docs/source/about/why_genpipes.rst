@@ -50,4 +50,4 @@ GenPipes is compatible with HPC computing, as well as cloud computing, and inclu
 GenPipes developers offer continuous support through a Google forum page and a help desk email address (pipelines@computationalgenomics.ca). Since the release of version 2.0.0 in 2014, a community of users has run GenPipes to conduct approximately 3,000 analyses processing ∼100,000 samples.
 
 
-To learn more about what GenPipes is and how it works, refer to the :ref:`Getting Started Guide<docs_getting_started_index>`.
+To learn more about what GenPipes is and how it works, refer to the :ref:`Get Started Guide<docs_getting_started_index>`.
