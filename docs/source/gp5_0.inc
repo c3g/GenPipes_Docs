@@ -1,15 +1,21 @@
-.. caution::
+.. admonition:: Are you using GenPipes v4.x or prior?
+   :class: danger
 
-    *Users of GenPipes v4.x or prior releases must carefully read the usage changes listed below.*
+   *You must carefully read the usage changes listed below.*
 
 **What has Changed?**
 
-1. Effective v5.0 onward, the GenPipes distribution is based on Python packaging and not on Python modules as before. Also Python 2.7 users must upgrade to Python v3.11.1 or higher to use v5.x GenPipes pipelines.
-2. The latest GenPipes v6.0 supports *only* Python **v3.12.0** and above. 
-3. To run any GenPipes pipelines, follow the new command syntax *(effective GenPipes v5.x onward)*:
+1. Effective v5.0 onward, the GenPipes distribution is based on Python packaging. It **no longer uses Python modules**. 
 
-   .. include:: /common/commands/change_format_5.inc
-   
+2. GenPipes v5.x: 
+
+   - If you were using Python **v2.7**, you **must upgrade to Python v3.11.1**.
+   - To run any GenPipes pipelines, use the **new command syntax:**
+
+     .. include:: /common/commands/change_format_5.inc
+
+3. GenPipes v6.0 onward, the pipelines support *only* Python **v3.12.0** and above. 
+
 4. When using **GenPipes deployed on the Digital Research Alliance Canada servers** such as |key_ccdb_server_name|, a new variable ‘GENPIPES_INIS’ is introduced for streamlining access to the config files in the `genpipes` commands. In the future, 'MUGQIC_PIPELINES_HOME' will be deprecated.
 
   - **Before** 

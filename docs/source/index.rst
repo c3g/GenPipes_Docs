@@ -11,21 +11,30 @@ GenPipes v\ |genpipes_version|\  Documentation
 .. dropdown:: :material-outlined:`handshake;2em` Sponsors
    :color: info
 
-   GenPipes is developed and financed by the `Canadian Centre for Computational Genomics <https://www.computationalgenomics.ca>`_ (C3G).
+   GenPipes is an open-source genomics workflow and next generation gene sequencing pipeline platform. It is developed and financed by the `Canadian Centre for Computational Genomics <https://www.computationalgenomics.ca>`_ (C3G).
+
+   C3G, a core platform affiliated with `McGill University <https://www.mcgill.ca>`_, provides bioinformatics analysis and HPC services for life sciences research. 
+
+   These services include:
    
-   C3G is a core platform affiliated with McGill University, with broad expertise in bioinformatics. It offers bioinformatics analysis and HPC services for the life sciences research community. Our services include bespoke pipeline development, service for a fee analyses, as well as an extensive suite of software solutions in the -omics fields. GenPipes is our open-source workflow and pipeline platform. For more information about our team and funding, please check our website.   
+   * Bespoke pipeline development
+   * Fee-based analyses
+   * Other suite of software solutions genomics  
 
 .. dropdown::  :material-outlined:`coronavirus;2em` Fighting COVID-19
    :color: secondary
 
-      GenPipes offers the CoVSeq pipeline (for short-read sequencing, e.g. Illumina) and Nanopore_CoVSeq pipeline (for long-read sequencing) to help researchers analyze viral sequences and detect mutations quickly, with the goal of preventing the spread of new strains. See :ref:`GenPipes CoVSeq Pipeline User Guide<docs_gp_covseq>`, :ref:`GenPipes Nanopore CoVSeq Pipeline User Guide<docs_gp_nanopore_cov>` for details.
+   GenPipes offers two pipelines: :ref:`CoVSeq<docs_gp_covseq>` for short-read sequencing (e.g., Illumina) and :ref:`Nanopore_CoVSeq<docs_gp_nanopore_cov>` for long-read sequencing. These pipelines help researchers analyze viral sequences and detect mutations quickly, preventing the spread of new strains.
 
 Welcome
 --------
 
-GenPipes is a flexible Python-based framework that facilitates the development and deployment of multi-step genomic workflows, optimized for High-Performance Computing (HPC) clusters and the cloud. It offers 10 open-source, validated and scalable :ref:`pipelines<docs_pipeline_ref>` for various :ref:`genomics applications<docs_gp_usecases>`.
+GenPipes is a flexible Python-based framework to facilitates the development and deployment of multi-step genomic workflows, optimized for High-Performance Computing (HPC) clusters and the cloud. It offers open-source, validated and scalable :ref:`gene sequencing pipelines<docs_pipeline_ref>` for various :ref:`genomics applications<docs_gp_usecases>`.
 
-GenPipes documentation is organized to address the needs of new users as well as seasoned users and contributors. Refer to the :ref:`Documentation Map<docs_genpipes_archmap>` for details on how GenPipes documentation is organized.
+Audience
++++++++++
+
+This documentation is meant for new genomics users as well as seasoned ones. We welcome all :ref:`contributions<docs_contributing>` to pipelines and its documentation from the open source community. To learn more about how this documentation is organized, see :ref:`Documentation Map<docs_genpipes_archmap>`.
 
 ----
 

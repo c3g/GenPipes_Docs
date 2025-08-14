@@ -3,6 +3,7 @@
 .. spelling:word-list::
 
     pipelining
+    acyclic
   
 Introduction
 =============

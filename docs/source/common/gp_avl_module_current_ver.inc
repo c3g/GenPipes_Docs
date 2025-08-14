@@ -1,40 +1,5 @@
 .. spelling::word-list::
 
-   bfc 
-   cd
-   cli
-   covid
-   devel
-   dna
-   edc
-   edca
-   globus
-   gpu
-   graphlan
-   gtex
-   Hclust
-   hcp
-   hmmcopy
-   miniconda
-   miniconda
-   minimap
-   mirdeep
-   ngs
-   ngs
-   olink
-   olink
-   oncokb
-   oncokb
-   popoolation
-   prinseq
-   rjme
-   rjme
-   Strelka
-   ubuntu
-   wgs 
-   
-
-
 +------------------------------+----------------------------------+
 | Module Name                  | Version(s)                       |
 +==============================+==================================+
