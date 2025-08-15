@@ -14,31 +14,42 @@
 DRAC Deployment
 ===============
 
-In this guide you will learn how to access GenPipes deployed on the servers hosted by the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, *formerly Compute Canada (CCDB)*.
+In this guide you will learn how to access GenPipes deployed on the servers hosted by the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, *formerly Compute Canada (CCDB)*. Once you have access to these servers you can begin using GenPipes for genomic analysis.
+
 
 .. _get_ccdb_account:
 
 .. contents:: :local:
 
-Once you have access to these servers you can begin using GenPipes for genomic analysis.
-
 1. Register for DRAC account
 -----------------------------
 
-a. Go to the website: `Click Register <https://ccdb.alliancecan.ca/security/login>`_
+a. Go to the DRAC website and `Register <https://ccdb.alliancecan.ca/security/login>`_ to create a new account.
 
-b. Agree with the policy and submit your acceptance 
+b. Agree with the policy and submit your acceptance. 
 
-c. Fill the form and submit it.
+c. Fill in the required fields of the form and submit it.
 
 .. admonition:: Students / Post-Doc / Other Sponsored Users
    :class: note
 
-   To be eligible for accessing resources offered by the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, the Principle Investigator (PI) of your laboratory must also have an account. 
+   To be eligible for accessing the resources offered by the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, the Principle Investigator (PI) of your laboratory must also have an account. 
    
    You will need the Compute Canada Role Identifier (CCRI) of your sponsor/PI. The CCRI has the form ``abc-123-01``. Canadian academics have free access to DRAC resources. 
    
    **It may take a couple of days to process your account registration request.**
+
+.. admonition:: DRAC account
+   :class: warning
+
+   The latest DRAC server access requires multi-factor authentication (MFA). Also, once your account is enabled, you may be required to request access to specific servers that deploy GenPipes.
+
+   Visit https://ccdb.alliancecan.ca/me/access_systems for details.
+
+   * Verify that your access is enabled (green checkmark) for each HPC and cloud system you plan to use.
+   * Verify that your access is disabled for each HPC and cloud system you don’t plan to use.
+
+   For questions and concerns about the DRAC servers, please email support@tech.alliancecan.ca to reach the alliance tech support.
 
 2. Connect to DRAC Servers
 ---------------------------
@@ -54,9 +65,6 @@ c. Fill the form and submit it.
 
           ssh myaccount@\ |key_ccdb_server_cmd_name|\.alliancecan.ca
 
-      .. tip::
-          
-            Replace the server name |key_ccdb_server_cmd_name| in the command above with the desired cluster name. 
 
       b. Enter your `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada, account password.
 
@@ -72,13 +80,14 @@ c. Fill the form and submit it.
 
           \ |key_ccdb_server_cmd_name|\.alliancecan.ca
 
-      .. tip::
-          
-            Replace the server name |key_ccdb_server_cmd_name| in the command above with the desired cluster name. 
-
       d. Click **"Open"**
 
       A terminal will open and ask you to connect using your CC account credentials.
+
+.. admonition:: DRAC server |key_ccdb_server_cmd_name|
+   :class: note
+          
+   Replace the server name, \ |key_ccdb_server_cmd_name|\, in the command above with the desired cluster name. 
 
 *Voila!!!*
 
@@ -89,7 +98,7 @@ Once connected, you are all set to use GenPipes deployed on the `Digital Researc
 
          Canadian Centre for Computational Genomics (C3G), in partnership with `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, offers and maintains a large set of bioinformatics resources for the community. 
          
-         For a complete list of software currently deployed on several HPC centres, including |key_ccdb_server_name|, |other_ccdb_server_names| , refer to `Bioinformatics Resources <https://computationalgenomics.ca/cvmfs-genome/>`_ and `available software <https://docs.alliancecan.ca/wiki/Available_software>`_. 
+         For a complete list of software currently deployed on several HPC centres, including |key_ccdb_server_name|, \ |other_ccdb_server_names|\, refer to `Bioinformatics Resources <https://computationalgenomics.ca/cvmfs-genome/>`_ and `available software <https://docs.alliancecan.ca/wiki/Available_software>`_. 
          
          Several `reference genomes <https://github.com/c3g/GenPipes/tree/main/resources/genomes/>`_ are also available. Make sure you have the environment setup to access these genomes.
 
@@ -103,9 +112,13 @@ Once connected, you are all set to use GenPipes deployed on the `Digital Researc
    
    .. tab:: Abacus, DRAC Users 
 
-      All of the software and scripts used by GenPipes are already installed on several DRAC servers including |key_ccdb_server_name|, |other_ccdb_server_names|. To access the tools, you will need to add the tool path to your bash_profile. The bash profile is a hidden file in your home directory that sets up your environment every time you log in. You can also use your bashrc file.
+      All of the software and scripts used by GenPipes are already installed on several DRAC servers including |key_ccdb_server_name|, |other_ccdb_server_names|. 
+      
+      To access these tools on the DRAC servers, add the tool path to your bash_profile. 
+      
+      The ``.bash_profile`` is a hidden file in your home directory that sets up your environment every time you log in. You can also use your ``.bashrc`` file.
 
-      Genomes and modules used by the pipelines are already installed on a CVMFS partition mounted on all those clusters in /cvmfs/soft.mugqic/CentOS6
+      Genomes and modules used by the pipelines are pre-installed on a CVMFS partition mounted on all the DRAC server clusters in the path ``/cvmfs/soft.mugqic/CentOS6``.
 
       .. admonition:: ``.bashrc`` vs. ``.bash_profile``
          :class: important
@@ -117,9 +130,7 @@ Once connected, you are all set to use GenPipes deployed on the `Digital Researc
          ## open bash_profile
          nano $HOME/.bash_profile
 
-      Next, you need to load the `software modules <https://docs.python.org/3/tutorial/modules.html>`_ in your shell environment that are required to run GenPipes. You can refer to the full list of modules available on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers at the :ref:`module page<doc_cvmfs_modules>`.
-
-      To load the GenPipes modules, paste the following lines of code and save the file, then exit (Ctrl-X):
+      Next, you need to load the `software modules <https://docs.python.org/3/tutorial/modules.html>`_ in your shell environment that are required to run GenPipes. To load the GenPipes modules, paste the following lines of code and save the file, then exit (Ctrl-X):
 
       .. code:: 
 
@@ -132,11 +143,16 @@ Once connected, you are all set to use GenPipes deployed on the `Digital Researc
          export JOB_MAIL=<my.name@my.email.ca>
          export RAP_ID=<my-rap-id>
 
-      You will need to replace the text in "<>" with your account and GenPipes software version specific information.
+      You can refer to the full list of modules available on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers at the :ref:`module page<doc_cvmfs_modules>`.
 
-      **JOB_MAIL** is the environment variable that needs to be set to the email ID on which GenPipes job status notifications are sent corresponding to each job initiated by your account. It is advised that you create a separate email for jobs since you can receive hundreds of emails per pipeline. You can also de-activate the email sending option by removing the “-M $JOB_MAIL” option from the .ini files.
+      .. admonition:: JOB_MAIL and RAP_ID
+         :class: note
+         
+         You will need to replace the text in "<>" with your DRAC account specific information.
 
-      **RAP_ID** is the Resource Allocation Project ID from DRAC. It is usually in the format: rrg-lab-xy OR def-lab.
+         **JOB_MAIL** is the environment variable that needs to be set to the email ID on which GenPipes job status notifications are sent corresponding to each job initiated by your account. It is advised that you create a separate email for jobs since you can receive hundreds of emails per pipeline. You can also de-activate the email sending option by removing the “-M $JOB_MAIL” option from the .ini files.
+
+         **RAP_ID** is the Resource Allocation Project ID from DRAC. It is usually in the format: rrg-lab-xy OR def-lab.
 
    .. tab:: MUGQIC Analysts
 
