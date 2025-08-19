@@ -15,7 +15,16 @@ GenPipes is an open-source, next generation sequencing analysis framework writte
    
    **New users** can get started by referring to the :ref:`Get Started Guide<docs_quickstart_gp>`. The **seasoned users** can directly jump into the :ref:`Pipeline Reference Guide<docs_pipeline_ref>`. 
 
+<<<<<<< HEAD
+.. note::
+   **Have you tried the GenPipes Wizard?**
+      We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
+
+
+The latest GenPipes Version is |genpipes_version|. Refer to the :ref:`release notes<docs_latest_relnote>` for more information regarding what is new, which pipelines were updated and what issues are fixed in this release.
+=======
 The latest GenPipes Version is |genpipes_version|. Refer to the :ref:`release notes<docs_release_notes>` for more information regarding what is new, which pipelines were updated and what issues are fixed in this release.
+>>>>>>> origin/master
 
 To contribute, see :ref:`Getting involved<docs_get_involved>`.
 
@@ -31,5 +40,6 @@ To contribute, see :ref:`Getting involved<docs_get_involved>`.
    :caption: Guides 
 
    quickstart_gp
+   gp_wizard
    pipeline_ref
    get_involved
