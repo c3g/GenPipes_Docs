@@ -1,0 +1,5 @@
+@import 'theme.css'; 
+
+img.align-center, figure.align-center, .figure.align-center, object.align-center{
+    width: 1000px
+}

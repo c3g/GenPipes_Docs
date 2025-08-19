@@ -8,8 +8,8 @@
    atacseq
    ATAC-Seq
    
-Using GenPipes for genomic analysis
-====================================
+Genomic Analysis with GenPipes
+===============================
 
 This document describes the GenPipes execution environment and how to use various genomic analysis pipelines.  It assumes you already have access to GenPipes through one of the available :ref:`GenPipes Deployment Options<docs_dep_options>`.
 

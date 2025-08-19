@@ -3,6 +3,10 @@
 docs/build/
 wflows/build/
 
+# Mermaid node related files
+
+wflows/node_modules/
+
 #IDE related files
 
 ### Eclipse ###

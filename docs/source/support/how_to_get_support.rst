@@ -1,7 +1,7 @@
 .. _docs_how_to_get_support:
 
-GenPipes Support
-================
+Need Help?
+==========
 
 GenPipes is released as open-source software. For details about its license policy, see :ref:`GenPipes License <doc_license>`. The GenPipes developers offer continuous support through `GenPipes Google Forum`_. You can drop an email to the `GenPipes Help Desk`_ for any support issues. 
 
@@ -9,10 +9,10 @@ GenPipes is sponsored by the `Canadian Centre for Computational Genomics`_ (C3G)
 
 .. _reporting_bugs:
 
-Reporting GenPipes Bugs
------------------------
+Reporting Bugs
+---------------
 
-If you are facing any issues in using or deploying GenPipes, you can report bugs through the `GenPipes Support Email`_.
+If you are facing any issues in deploying or using GenPipes, please report bugs via `GenPipes Support Email`_.
 
 .. note::
 

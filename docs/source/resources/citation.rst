@@ -5,8 +5,8 @@
        Neuro
        Colorectal
 
-Citing and Citations
-====================
+Citations
+=========
 
 This section gives instructions on how to cite GenPipes Publications and lists examples of citing articles.
 

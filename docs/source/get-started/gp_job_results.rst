@@ -4,8 +4,8 @@
 
         walltime
 
-Viewing and Analyzing GenPipes Results
-=======================================
+Analyzing GenPipes Results
+===========================
 
 This document contains generic insights related to viewing and analyzing results obtained after running GenPipes Pipelines.  It assumes that you are familiar with :ref:`GenPipes Basics<docs_what_is_genpipes>` and have used one of the pipelines already as demonstrated in :ref:`Using GenPipes<docs_using_gp>`.
 

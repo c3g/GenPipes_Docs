@@ -10,8 +10,8 @@
         zshrc
         macFUSE
 
-Deploying GenPipes in a container
-=================================
+Container Deployment
+=====================
 
 This document covers details on how to deploy GenPipes locally on your infrastructure using the container mechanism. For more details on other available options to deploy and access GenPipes you may refer to :ref:`GenPipes Deployment Options Page<docs_dep_options>`.
 

@@ -6,8 +6,8 @@
     Niagra
     walltime
 
-GenPipes Developers
--------------------
+Developers
+------------
 
 .. contents::
   :local:

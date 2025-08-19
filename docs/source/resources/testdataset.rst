@@ -1,7 +1,7 @@
 .. _docs_testdatasets:
 
-GenPipes Test Datasets
-======================
+Test Datasets
+==============
 
 You can execute various GenPipes Pipelines using the following types of data:
 

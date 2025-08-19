@@ -6,8 +6,9 @@
    slurm
    yaml
 
-Deploying GenPipes in the cloud
-=================================
+Cloud Deployment
+=================
+
 This document describes how to deploy GenPipes in the cloud. Following are the supported cloud providers where you can deploy and run GenPipes:
 
 .. contents:: :local:

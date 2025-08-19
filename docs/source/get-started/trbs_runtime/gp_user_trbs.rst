@@ -7,6 +7,7 @@
     cluster_cpu
     cpu
     walltime
+    ccdb
 
 GenPipes User: Troubleshooting Guide
 =====================================

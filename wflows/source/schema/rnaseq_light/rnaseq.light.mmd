@@ -1,0 +1,43 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#404040'}}}%%
+
+        %% GenPipes Schema for rnaseq_light.py
+        %% Ref: https://bitbucket.org/mugqic/genpipes/src/master/pipelines/rnaseq_light/
+        %% Author Shaloo Shalini <shalz@hotmail.com>
+
+        graph LR
+          Node1{{ 1.<br/> Picard SAM <br/>to FASTQ }}:::nodefill
+          Node2{{ 2.<br/> Trimmomatic }}:::nodefill
+          Node3{{ 3.<br/> Merge <br/> Trimmomatic Stats }}:::nodefillblack
+          Node4{{ 4.<br/> Kallisto }}:::nodefill
+          Node5{{ 5.<br/> Kallisto <br/> Count Metrics }}:::nodefill
+          Node6{{ 6.<br/> GQ Seq Utils <br/> Exploratory }}:::nodefill
+          Node7{{ 7.<br/> Sleuth Differential <br/> Expression }}:::nodefill
+          Input1[[fa:fa-file-archive-o .BAM]]
+          Input2[[fa:fa-file-archive-o .FASTQ]]
+          Output([fa:fa-sticky-note-o Report ])
+
+          Input1 --> Node1
+          Input2 --> Node2
+          Node1 -.-> Node2
+          Node2 -.-> Node3 & Node4
+          %%Node3 -.-> Node4
+          Node4 -.-> Node5
+          Node5 -.-> Node6 & Node7
+          Node7 ---> Output
+          subgraph readSetSteps[" "]
+            Node1
+            Node2
+          end
+          subgraph sampleSetSteps[" "]
+            Node4
+            Node5
+            Node6
+            Node7
+            Output
+          end
+          classDef greenRect fill:#E4FBF4,stroke:white
+          class readSetSteps greenRect
+          classDef blueRect fill:#DEF6FC,stroke:white
+          class sampleSetSteps blueRect
+          classDef nodefill fill:#ffffff,stroke:gray,stroke-width:2px
+          classDef nodefillblack fill:black,stroke:black,color:white,stroke-width:2px

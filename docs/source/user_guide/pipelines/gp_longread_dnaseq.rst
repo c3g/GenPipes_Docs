@@ -81,7 +81,7 @@ Long Read DNA Sequencing Pipeline
             
             The following figure shows the schema for Nanopore sequencing pipeline:
 
-            .. figure:: /img/pipelines/mmd/longread_nanopore.mmd.png
+            .. figure:: /img/pipelines/mmd/longread_dnaseq.nanopore.mmd.png
                :align: center
                :alt: nanopore schema 
                :width: 80%
@@ -99,7 +99,7 @@ Long Read DNA Sequencing Pipeline
             
             The following figure shows the schema for Revio Long Read DNA Sequencing Protocol:
 
-            .. figure:: /img/pipelines/mmd/longread_revio.mmd.png
+            .. figure:: /img/pipelines/mmd/longread_dnaseq.revio.mmd.png
                :align: center
                :alt: nanopore schema 
                :width: 80%

@@ -17,8 +17,8 @@
     Coronavirus
     biobank
 
-GenPipes Real-life Applications
-===============================
+Use Cases
+==========
 
 GenPipes offers several :ref:`genomic analysis pipelines<docs_pipeline_ref>` that can be used for various bioinformatics analyses.
 
@@ -30,10 +30,10 @@ C3G has extensive experience analyzing data from various sequencing applications
 
 Following is a summary of real-life application use case for each of the GenPipes Pipelines:
 
-COVID-19 genome sequencing to detect mutations
-----------------------------------------------
+Detecting COVID-19 Mutations
+-----------------------------
 
-GenPipes :ref:`CoVSeQ Pipeline<docs_gp_covseq>` has been used as part of `CoVSeQ <https://covseq.ca>`_ project.  CoVSeQ deals with real-time tracking of Quebec SARS-CoV-2 evolution. 
+GenPipes :ref:`CoVSeQ Pipeline<docs_gp_covseq>` has been used as part of `CoVSeQ <https://covseq.ca>`_ project for genome sequencing to detect COVID-19 gene mutations.  CoVSeQ deals with real-time tracking of Quebec SARS-CoV-2 evolution. 
 
 CoVSeQ is a partnership between the `Institut National de Santé Publique du Québec (INSPQ) <https://www.inspq.qc.ca/>`_ and the `McGill Genome Centre <http://www.mcgillgenomecentre.org/>`_ to sequence the viral genome of Quebec patients with COVID-19 disease. The viral samples are taken from a Quebec viral biobank, termed the CoVBanQ, which is hosted in the `Laboratoire de Santé; Publique du Québec (LSPQ) <https://www.inspq.qc.ca/lspq>`_.
 
@@ -48,8 +48,8 @@ RNA Sequencing
 
 The :ref:`RNA Sequencing Pipeline<docs_gp_rnaseq>` helps to quantify transcripts and genes using a reference genome and test for differential expression across experimental conditions. It is also possible to call single nucleotide variants (SNVs), detect fusion gene events and assess alternative splicing events.
 
-De Novo RNA Sequencing
------------------------
+Denovo RNA Sequencing
+----------------------
 
 The :ref:`De Novo RNA Sequencing Pipeline<docs_gp_rnaseq_denovo>` assembles reads to transcripts in the absence of a reference genome, annotates transcripts and tests for differential expression. This is well suited to organisms that are not yet characterized.
 
@@ -58,23 +58,23 @@ miRNA Sequencing
 
 This pipeline can be used to quantify known miRNAs, discovers novel ones using a reference genome and performs differential expression analysis. Additional analysis may include pathway testing, target candidates analysis or miRNA editing.
 
-SARS-CoV-2 Genome Sequencing Pipeline
---------------------------------------
+SARS-CoV-2 Genome Sequencing
+-----------------------------
 
 The :ref:`SARS-CoV-2 genome Sequencing Pipeline<docs_gp_covseq>` is designed for COVID-19 Coronavirus research and surveillance, enabling complete genome sequencing of the new SARS-CoV-2 virus responsible for the COVID-19 pandemic. 
 
-SARS-CoV-2 Nanopore CoVSeQ Pipeline
------------------------------------
+SARS-CoV-2 Nanopore CoVSeQ
+---------------------------
 
 The :ref:`SARS-CoV-2 Nanopore CoVSeQ Pipeline<docs_gp_nanopore_cov>` is designed to implement `ARTIC SARS-CoV2 protocol <https://artic.network/ncov-2019>`_, Version 4 / 4.1 (`V4.1 <https://github.com/artic-network/artic-ncov2019/tree/master/primer_schemes/nCoV-2019/V4.1>`_), using Nanopolish. This protocol is closely followed in GenPipes Nanopore sequencing pipeline with majority of changes related to technical adaptation of the protocol to be able to run in a High Performance Computing (HPC) environment.
 
-DNA Methylation Pipeline
--------------------------
+DNA Methylation 
+----------------
 
 The :ref:`Methylation Pipeline<docs_methylation>` helps to analyze data coming from bisulfite converted DNA assayed by various sequencing assays such as RRBS, CpG capture, whole genome sequencing or microarrays. Our analysis computes methylation levels and performs differential analysis between experimental conditions.
 
-Amplicon Sequencing Pipeline
------------------------------
+Amplicon Sequencing 
+--------------------
 
 The :ref:`Amplicon Sequencing Pipeline<docs_gp_ampliconseq>` can process Illumina, PacBio pyrotags amplicons from the 16S, 18S or ITS amplicons. OTUs are picked and diversity is analyzed within and between communities. Further analyses include differential abundance testing or metagenome functional content prediction.
 
@@ -83,8 +83,8 @@ DNA Sequencing
 
 The :ref:`DNA Sequencing Pipeline<docs_gp_dnaseq>` offers state of the art DNA-seq analyses detects and annotates variants in whole exomes, whole genomes or high coverage amplicons. The analysis can also be pushed further by assisting with variant prioritization, or perform advanced cancer related analysis.
 
-ChIP Sequencing Pipeline
-------------------------
+ChIP Sequencing 
+----------------
 
 The :ref:`ChIP Sequencing Pipeline<docs_gp_chipseq>` helps in analyzing DNA fragments from immunoprecipitated chromatin by calling alignment peaks on the genome, annotating the said peaks and performing additional analyses such as motif enrichment and discovery. Designed experiments can be analyzed by testing for differential binding between experimental conditions.
 

@@ -1,7 +1,7 @@
 .. _docs_publications:
 
-GenPipes Publications
-======================
+Publications
+=============
 
 This document contains information on available current publications and other media such as scientific papers, citations, videos etc. that can help new GenPipes users build a better understanding of GenPipes and how it works.
 

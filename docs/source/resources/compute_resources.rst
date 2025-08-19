@@ -1,7 +1,7 @@
 .. _docs_compute_resources:
 
-Compute Resources for GenPipes
-==============================
+C3G Resources
+==============
 
 This document lists compute resources that are available from C3G for GenPipes users. 
 
