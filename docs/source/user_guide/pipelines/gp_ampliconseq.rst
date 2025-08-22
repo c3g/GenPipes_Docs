@@ -14,7 +14,6 @@ Amplicon Sequencing Pipeline
 
 :bdg-primary:`Version` |genpipes_version|
 
-
 .. warning::
 
    Amplicon supports only `dada2` protocol by default. The Amplicon *QIIME* protocol is **deprecated** from *GenPipes v5.x* onward.  

@@ -13,8 +13,6 @@ There are multiple ways to get started with genomic analysis using GenPipes. The
    * Bare metal or virtual server
    * GenPipes in a container
 
-----
-
 .. image:: /img/accessing_gp.png
 
 .. dropdown:: GenPipes Source code

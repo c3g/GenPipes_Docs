@@ -15,7 +15,8 @@
 DRAC Deployment
 ===============
 
-In this guide you will learn how to access GenPipes deployed on the servers hosted by the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, *formerly Compute Canada (CCDB)*.
+In this guide you will learn how to access GenPipes deployed on the servers hosted by the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, *formerly Compute Canada (CCDB)*. Once you have access to these servers you can begin using GenPipes for genomic analysis.
+
 
 .. _get_ccdb_account:
 
@@ -28,9 +29,9 @@ Once you have access to these servers you can begin using GenPipes for genomic a
 
 a. Go to the DRAC website. Click `Register <https://ccdb.alliancecan.ca/security/login>`_ to initiate a new account.
 
-b. Agree with the policy and submit your acceptance 
+b. Agree with the policy and submit your acceptance. 
 
-c. Fill the form and submit it.
+c. Fill in the required fields of the form and submit it.
 
 .. admonition:: Students / Post-Doc / Other Sponsored Users
    :class: note
@@ -69,9 +70,6 @@ c. Fill the form and submit it.
 
           ssh myaccount@\ |key_ccdb_server_cmd_name|\.alliancecan.ca
 
-      .. tip::
-          
-            Replace the server name |key_ccdb_server_cmd_name| in the command above with the desired cluster name. 
 
       b. Enter your DRAC account password. Follow the latest instructions on using MFA for DRAC server access. See https://ccdb.alliancecan.ca/me/access_systems for details.
 
@@ -87,10 +85,6 @@ c. Fill the form and submit it.
 
           \ |key_ccdb_server_cmd_name|\.alliancecan.ca
 
-      .. tip::
-          
-            Replace the server name |key_ccdb_server_cmd_name| in the command above with the desired cluster name. 
-
       d. Click **"Open"**
 
          A terminal will open and ask you to connect using your CC account credentials. Follow the latest instructions on using MFA for DRAC server access. See https://ccdb.alliancecan.ca/me/access_systems for details.
@@ -99,6 +93,11 @@ c. Fill the form and submit it.
    :class: note
           
    Replace the server name, \ |key_ccdb_server_cmd_name|\, in the command above with the one you are connected to. 
+
+.. admonition:: DRAC server |key_ccdb_server_cmd_name|
+   :class: note
+          
+   Replace the server name, \ |key_ccdb_server_cmd_name|\, in the command above with the desired cluster name. 
 
 *Voila!!!*
 
@@ -112,7 +111,6 @@ Once connected to the DRAC server, you are all set to use GenPipes.
          For a complete list of software currently deployed DRAC servers (\ |key_ccdb_server_name|, \ |other_ccdb_server_names|\) see `Bioinformatics Resources <https://computationalgenomics.ca/cvmfs-genome/>`_ and `Available Software <https://docs.alliancecan.ca/wiki/Available_software>`_. 
          
          You can refer to several `reference genomes <https://github.com/c3g/GenPipes/tree/main/resources/genomes/>`_ as well. Make sure you have the environment setup.
-
 
 .. _setting_up_gp_environment_modules:
 
