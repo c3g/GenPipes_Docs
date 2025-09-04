@@ -97,10 +97,10 @@ rst_epilog = """
 }
 
 rst_prolog = """
-.. |key_ccdb_server_name| replace:: Rorqual
-.. |key_ccdb_server_cmd_name| replace:: rorqual
-.. |key_ccdb_server_ini_name| replace:: ``rorqual.ini``
-.. |other_ccdb_server_names| replace:: Nibi, Fir and Narval
+.. |key_ccdb_server_name| replace:: Narval
+.. |key_ccdb_server_cmd_name| replace:: narval
+.. |key_ccdb_server_ini_name| replace:: ``narval.ini``
+.. |other_ccdb_server_names| replace:: Nibi, Fir, and Rorqual
 """
 
 master_doc = 'index'
