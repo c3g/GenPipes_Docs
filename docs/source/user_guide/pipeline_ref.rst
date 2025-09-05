@@ -8,6 +8,11 @@
 Pipelines Reference 
 ===================
 
+.. dropdown:: :material-outlined:`dangerous;2em` Alliance Canada Server Availability
+   :color: danger
+
+   .. include:: /server_narval.inc
+
 .. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x onward
    :color: success
 
