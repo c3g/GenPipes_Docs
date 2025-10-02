@@ -1,5 +1,9 @@
 .. _docs_gp_wizard:
 
+.. spelling:word-list::
+
+     cpu
+
 GenPipes Wizard
 ===============
 

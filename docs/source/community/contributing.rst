@@ -1,32 +1,13 @@
 .. _docs_contributing:
 
-Contributions
-==============
+Contribution
+=============
 
-The GenPipes project team welcomes contributions from the community!
+The GenPipes team at C3G welcomes all contributions from the open source community!
 
-We are thrilled to receive your inputs and try to process them as fast as we can.
+You can contribute to GenPipes through pipeline usage, source code enhancements or documentation feedback and fixes.
 
-There are multiple ways in which you, as a user of GenPipes can contribute.
+#. *GenPipes Usage:* Share your GenPipes usage feedback be it pipeline usage, new feature request or if you find anything amiss at runtime.
+#. *Documentation Usage:* Let us know if you are not able to find what you are looking for in GenPipes documentation or if some information is missing.
 
-#. GenPipes User feedback and inputs related to usage, documentation or issues, if any.
-#. GenPipes Developer inputs in the form of code fixes and new feature requests, forks and code evolutions
-#. Technical Writer contributions in the form of improvisations, new content etc.
- 
-GenPipes Usage related Contributions
-------------------------------------
-
-For all GenPipes usage related feedback and contributions, please visit :ref:`Get involved with GenPipes<docs_get_involved>`.
-
-GenPipes Developer Contributions
---------------------------------
-
-Please refer to the :ref:`GenPipes Developers Guide<docs_dev_guide>` for guidelines on how to submit code, make feature requests and change requests into GenPipes sources.
-
-
-Technical Writer Contributions
-------------------------------
-
-If you are a technical writer and would like to submit your contributions for GenPipes documentation, please refer to the guidelines regarding :ref:`contributing to GenPipes documentation<ref_docs_contrib_guidelines>`.
-
-Thank you for your inputs!
+You can submit your feedback and inputs through GitHub issues. If you are a genomics developer or Sphinx documentation developer, share your pipeline and docs code fixes, enhancements through forks and GitHub pull requests. We have separate GitHub repositories that contain the pipeline and docs source code. See details on how to :ref:`get involved with GenPipes<docs_get_involved>`.

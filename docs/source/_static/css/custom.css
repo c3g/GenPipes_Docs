@@ -1,5 +1,6 @@
 :root {
     --sd-color-primary: #1c75bc; !important
+    --sd-color-shadow: var(--sd-color-white);
 }
     
 button.toggle-button.toggle-button-hidden:before {
@@ -36,4 +37,18 @@ button.toggle-button.toggle-button-hidden:before {
     border: 2px solid white;
     /*background: slategray;
     color: white;*/
+}
+
+/* Grid and Card Layout overrides */
+
+.sd-border-1 {
+    border: 0px solid !important;
+}
+
+.sd-card {
+    border: 0px solid !important;
+}
+
+.sd-shadow-sm {
+    box-shadow: 0 0 0 var(--sd-color-shadow) !important;
 }

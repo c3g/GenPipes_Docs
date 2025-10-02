@@ -5,23 +5,20 @@ Target Audience
 
 GenPipes is primarily geared towards Next Generation Sequencing analysis. 
 
-There are two kinds of target audience of GenPipes documentation:
-
-1. End-Users
-2. Developers
+There are two kinds of GenPipes users:
 
 .. tabs::
 
-   .. tab:: End-Users
+   .. tab:: 1. End-Users
 
-      Researchers and analysts working in bioinformatics and gene-sequencing computational processing. GenPipes' strength lies in its simple interface that makes it very easy for students and researchers in need of sophisticated, yet easy to use bioinformatics workflow management tool with built-in pipelines for various genomic analyses.
+      End users refers to researchers and analysts working in bioinformatics and gene-sequencing computational processing.  For such users, GenPipes' strength lies in its simple interface that makes it very easy for students and researchers in need of sophisticated, yet easy to use bioinformatics workflow management tool with built-in pipelines for various genomic analyses.
 
-   .. tab:: Developers
+   .. tab:: 2. Developers
 
-      Software experts and implementers who would like to improve and enhance the GenPipes framework.
-
-Our key focus in GenPipes documentation efforts is to ensure that onboarding GenPipes is intuitive and easy for beginners and also for seasoned users such that they can quickly figure out where to look if they need information on a specific feature or GenPipes capability.
+      Developers refers to bioinformatics analysts that use the GenPipes pipelines for various genomic analysis. It also refers to developers and software experts who would like to improve and enhance the GenPipes platform through optimizations and code contributions.
 
 .. note::
-   **Have you tried the GenPipes Wizard?**
-      We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
+   **GenPipes Wizard**
+      Try the new :ref:`GenPipes Wizard <docs_gp_wizard>`. Use the wizards to guide selection of an appropriate deployment method, pipeline, and protocol. It can also construct the full command to run GenPipes.
+
+Our key focus through GenPipes documentation efforts is to ensure that onboarding GenPipes is intuitive and easy for beginners and also for the seasoned users. Our documentation information architecture helps users quickly figure out how to use GenPipes and start with genomic analysis.

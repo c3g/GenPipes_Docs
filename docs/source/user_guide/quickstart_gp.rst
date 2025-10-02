@@ -40,6 +40,10 @@ This guide aims at helping you get started with GenPipes quickly (under 15 minut
 
    What pipeline and what protocol should I use for my analysis? Use the :ref:`GenPipes Wizard <docs_gp_wizard>`. This tool can help guide you through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
 
+* **Objective:** *Choose GenPipes Pipeline and Protocol*
+
+   What pipeline and what protocol should I use for my analysis? Select the pipeline and refer to the Pipeline Reference Guide for pipeline command options and protocols.
+
 * **Objective:** *Get Latest GenPipes*
 
    How to obtain the latest copy of GenPipes (sources, pre-packaged build, documentation etc.)?  **Refer** to :ref:`Get GenPipes<docs_get_gp>` section in the Table of Contents above.

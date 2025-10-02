@@ -452,6 +452,7 @@ Nanopolish
 Nanopore
 nanuq
 Nanuq
+narval
 Narval
 ncov
 ncov-random-scripts
