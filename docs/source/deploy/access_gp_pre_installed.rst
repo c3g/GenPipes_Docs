@@ -247,9 +247,6 @@ Check your access to the bioinformatics tools pre-installed for GenPipes usage w
 Check Tools Availability
 +++++++++++++++++++++++++
 
-Check Tools Availability
-+++++++++++++++++++++++++
-
 To load a tool available on DRAC servers, for example - samtools, use the following command:
 
 :: 
@@ -276,7 +273,7 @@ All genome-related files, including indices for different aligners and annotatio
 
 For a complete list of all available reference genomes, visit `genome page <https://computationalgenomics.ca/cvmfs-genome/>`_.
 
-4. Run ``genpipes`` Command
+1. Run ``genpipes`` Command
 -----------------------------
 
 That's all. You are now set up to run GenPipes pipelines for genomic analysis. 

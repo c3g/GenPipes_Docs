@@ -12,9 +12,7 @@ If you wish to learn more about real life applications of GenPipes and its use c
 
 This guide consists of the following topics to assist you in understanding and using GenPipes for solving complex bioinformatics research problems.
 
-.. note::
-   **Have you tried the GenPipes Wizard?**
-      We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
+.. include:: /common/new_gp_wizard.txt
 
 .. toctree::
    :maxdepth: 1

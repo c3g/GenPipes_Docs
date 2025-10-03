@@ -13,15 +13,11 @@ Genomic Analysis with GenPipes
 
 This document describes the GenPipes execution environment and how to use various genomic analysis pipelines.  It assumes you already have access to GenPipes through one of the available :ref:`GenPipes Deployment Options<docs_dep_options>`.
 
-.. note::
-   **Have you tried the GenPipes Wizard?**
-      We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
-
-
 Topics covered in this document includes information regarding what is available in a typical GenPipes deployment and how to access it. Besides that it covers details on required software and environment configurations, various kinds of inputs required to run genomic analysis such as command options, configuration details, readset file and design file. There are example runs highlighting how to issue the pipeline commands with requisite inputs and pipeline specific configurations.
 
 .. contents:: :local:
 
+.. include:: /common/new_gp_wizard.txt
 
 GenPipes Executable
 --------------------

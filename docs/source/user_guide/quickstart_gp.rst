@@ -18,9 +18,7 @@ Quick Start
 
 ----
 
-.. note::
-   **Have you tried the GenPipes Wizard?**
-      We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
+.. include:: /common/new_gp_wizard.txt
 
 This guide aims at helping you get started with GenPipes quickly (under 15 minutes!) and locate the information you require to meet any of the objectives listed below:
 

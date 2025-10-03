@@ -11,9 +11,7 @@ Queries related to GenPipes and its usage are categorized broadly as follows:
 - :ref:`C3G Resources<docs_faq_c3g_res>`
 - :ref:`GenPipes HPC Jobs<docs_faq_hpc>`
 
-.. note::
-   **Have you tried the GenPipes Wizard?**
-      We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
+.. include:: /common/new_gp_wizard.txt
 
 ----
 

@@ -4,8 +4,14 @@
 
      cpu
 
-GenPipes Wizard
-===============
+
+.. comment
+   .. raw:: html
+
+     <span class="my-custom-banner">New</span>
+   
+GenPipes Wizard :bdg-warning:`New`
+===================================
 
 The GenPipes Wizard is an interactive command-line tool designed to guide users, especially beginners, through selecting the appropriate deployment method, pipeline, and protocol, and constructing the full command to run GenPipes. The Wizard works by asking a series of step-by-step questions.
 

@@ -4,17 +4,12 @@
 
     userID
 
-<<<<<<< HEAD
-GenPipes Tutorial 
-==================
 .. note::
-   **Have you tried the GenPipes Wizard?**
-      We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
+   **GenPipes Wizard**
+      Try the new :ref:`GenPipes Wizard <docs_gp_wizard>`. Use the wizards to guide selection of an appropriate deployment method, pipeline, and protocol. It can also construct the full command to run GenPipes.
 
-=======
 Tutorial: Using C3G Deployment 
 ================================
->>>>>>> origin/master
 
 .. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x onward
    :color: success

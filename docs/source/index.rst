@@ -10,11 +10,13 @@ GenPipes v\ |genpipes_version|\  Documentation
 
     .. grid-item-card:: 
 
-        It offers open-source, validated and scalable :ref:`gene sequencing pipelines<docs_pipeline_ref>` for various :ref:`genomics applications<docs_gp_usecases>`. 
+        GenPipes offers open-source, validated and scalable :ref:`gene sequencing pipelines<docs_pipeline_ref>` for various :ref:`genomics applications<docs_gp_usecases>`. 
 
-        This documentation is meant for new genomics users as well as seasoned ones. We welcome all :ref:`contributions<docs_contributing>` to pipelines and its documentation from the open source community. 
+        This documentation is meant for **new genomics users** as well as the **seasoned ones**. 
         
-        To learn more about how this documentation is organized, see :ref:`Documentation Map<docs_genpipes_archmap>`.      
+        We welcome all community :ref:`contributions<docs_contributing>` to GenPipes including this documentation. 
+        
+        See :ref:`Documentation Map<docs_genpipes_archmap>` for more information on how this documentation is organized.      
         
     .. grid-item-card:: 
 
@@ -45,6 +47,11 @@ GenPipes v\ |genpipes_version|\  Documentation
             :color: secondary
 
             GenPipes offers two pipelines: :ref:`CoVSeq<docs_gp_covseq>` for short-read sequencing (e.g., Illumina) and :ref:`Nanopore_CoVSeq<docs_gp_nanopore_cov>` for long-read sequencing. These pipelines help researchers analyze viral sequences and detect mutations quickly, preventing the spread of new strains.
+
+        .. dropdown::  :material-outlined:`fiber_new;2em` GenPipes Wizard
+            :color: warning
+
+            Use the :ref:`GenPipes Wizard <docs_gp_wizard>` to quickly run genomic analysis, discover the appropriate deployment method, pipeline, protocol options.
 
 .. grid:: 3
 
@@ -79,6 +86,7 @@ GenPipes v\ |genpipes_version|\  Documentation
             :name: sec-support
 
             support/how_to_get_support
+            user_guide/gp_wizard
 
 .. grid:: 3
 

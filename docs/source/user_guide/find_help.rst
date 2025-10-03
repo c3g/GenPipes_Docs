@@ -2,10 +2,8 @@
 
 Getting Help on GenPipes
 ========================
-.. note::
-   **Have you tried the GenPipes Wizard?**
-      We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
 
+.. include:: /common/new_gp_wizard.txt
 
 If you need help on GenPipes, you can refer to `Support <https://genpipes.readthedocs.io/en/latest/tutorials/list_tutorials.html>`_ section in the left hand navigation pane.
 

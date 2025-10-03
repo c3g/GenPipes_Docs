@@ -55,6 +55,11 @@ extensions = [ 'sphinxcontrib.spelling',
                'sphinxcontrib.googleanalytics',
                #'sphinx_last_updated_by_git',
 ]
+
+# Sphinx Emoji Style
+
+sphinxemoji_style = 'twemoji'
+
 # Google Analytics Settings
 googleanalytics_id = 'G-6GH9ZZT8G3'
 #googleanalytics_enable = True
