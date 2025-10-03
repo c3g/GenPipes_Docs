@@ -119,14 +119,36 @@ Long Read DNA Sequencing Pipeline
             +====+====================================+
             | 1. | |blastqc|                          | 
             +----+------------------------------------+
-            | 2. | |minimap2_align|                   |
+            | 2. | |metrics_nanoplot|                 | 
             +----+------------------------------------+
-            | 3. | |pycoqc|                           |
+            | 3. | |minimap2_align|                   |
             +----+------------------------------------+
-            | 4. | |picard_merge_sam_files|           |
+            | 4. | |pycoqc|                           |
             +----+------------------------------------+
-            | 5. | |svim|                             |
+            | 5. | |samtools_merge_bam_files|         | 
             +----+------------------------------------+
+            | 6. | |metrics_nanoplot_aligned|         | 
+            +----+------------------------------------+
+            | 7. | |metrics_mosdepth|                 | 
+            +----+------------------------------------+
+            | 8. | |set_variant_calling_regions|      | 
+            +----+------------------------------------+
+            | 9. | |clair3|                           | 
+            +----+------------------------------------+
+            | 10.| |merge_filter_clair3|              | 
+            +----+------------------------------------+
+            | 11.| |whatshap|                         | 
+            +----+------------------------------------+
+            | 12.| |qdnaseq|                          | 
+            +----+------------------------------------+
+            | 13.| |dysgu|                            | 
+            +----+------------------------------------+
+            | 14.| |svim|                             |
+            +----+------------------------------------+
+            | 15.| |multiqc|                          | 
+            +----+------------------------------------+ 
+            | 16.| |modkit|                           | 
+            +----+------------------------------------+            
 
          .. dropdown:: Revio
            
@@ -221,6 +243,7 @@ Long Read DNA Sequencing Pipeline
 .. |picard_merge_sam_files| replace:: `Picard Merge SAM Files`_
 .. |svim| replace:: `Structural Variant Identification using Mapped Long Reads`_
 .. |metrics_nanoplot| replace:: `Metrics Nanoplot`_
+.. |metrics_nanoplot_aligned| replace:: `Metrics Nanoplot Aligned`_
 .. |pbmm2_align| replace:: `pbmm2 Align`_
 .. |metrics_mosdepth| replace:: `Metrics Mosdepth`_
 .. |set_deepvariant_regions| replace:: `Set DeepVariant Regions`_
@@ -233,6 +256,14 @@ Long Read DNA Sequencing Pipeline
 .. |hiphase| replace:: `Hi Phase`_
 .. |report_cpsr| replace:: `Report CPSR`_
 .. |multiqc| replace:: `MultiQC`_
+.. |samtools_merge_bam_files| replace:: `SAMTools Merge BAM Files`_
+.. |set_variant_calling_regions| replace:: `Set Variant Calling Regions`_
+.. |clair3| replace:: `Clair3 Step`_
+.. |merge_filter_clair3| replace:: `Merge Filter Clair3`_
+.. |whatshap|  replace:: `Whatshap Step`_
+.. |qdnaseq| replace:: `QDNAseq Step`_
+.. |dysgu| replace:: `Dysgu Step`_
+.. |modkit| replace:: `Modkit Step`_
 
 .. The following are html links used in this text
 
