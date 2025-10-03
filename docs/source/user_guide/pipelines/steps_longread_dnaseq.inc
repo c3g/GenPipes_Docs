@@ -170,6 +170,24 @@ In this step methylation analysis is done for the Nanopore data.
 
 Creates a `CPSR`_ germline report. It takes annotated/filter VCF as the input and outputs an html report along with additional flat files.
 
+.. _Report PCGR:
+
+**Report PCGR**
+
+Creates a `PCGR somatic <https://sigven.github.io/pcgr/>`_ plus a `CPSR germline report <https://sigven.github.io/cpsr/>`_ with input as the filtered somatic VCF. The output is a html report and additional flat files.
+
+.. _Report Djerba:
+
+**Report Djerba**
+
+Creates a clinical report using `Djerba and metadata along with workflow output <https://github.com/oicr-gsi/djerba>`_.
+
+.. _Savana Step:
+
+**Savana Step**
+
+Call somatic structural variants and copy number aberrations with `Savana <https://github.com/cortes-ciriano-lab/savana>`_.
+
 .. _MultiQC:
 
 **MultiQC**

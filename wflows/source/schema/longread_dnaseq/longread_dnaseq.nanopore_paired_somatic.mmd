@@ -8,44 +8,40 @@
           Node1{{ 1.<br/> BlastQC }}:::nodefill
           Node2{{ 2.<br/> Metrics Nanoplot}}:::nodefill
           Node3{{ 3.<br/> Minimap2 <br/> Align }}:::nodefill
-          Node4{{ 4.<br/> PycoQC }}:::nodefill
-          Node5{{ 5.<br/> SAMtools Merge <br/> BAM Files }}:::nodefillblack
-          Node6{{ 6.<br/> Metrics <br/> Nanoplot Aligned }}:::nodefill
-          Node7{{ 7.<br/> Metrics <br/> Mosdepth }}:::nodefill
-          Node8{{ 8.<br/> Set <br/> Variant Calling <br/> Regions }}:::nodefill
-          Node9{{ 9.<br/> Clair3 }}:::nodefill
-          Node10{{ 10.<br/> Merge Filter <br/> Clair3 }}:::nodefill
-          Node11{{ 11.<br/> Whatshap }}:::nodefill
-          Node12{{ 12.<br/> QDNAseq }}:::nodefill
-          Node13{{ 13.<br/> Dysgu }}:::nodefill
-          Node14{{ 14.<br/> SVIM }}:::nodefill
-          Node15{{ 15.<br/> MultiQC }}:::nodefill
-          Node16{{ 16.<br/> Modkit }}:::nodefill
+          Node4{{ 4.<br/> SAMtools Merge <br/> BAM Files }}:::nodefillblack
+          Node5{{ 5.<br/> Metrics <br/> Nanoplot Aligned }}:::nodefill
+          Node6{{ 6.<br/> Metrics <br/> Mosdepth }}:::nodefill
+          Node7{{ 7.<br/> Set <br/> Variant Calling <br/> Regions }}:::nodefill
+          Node8{{ 8.<br/> Clair3 }}:::nodefill
+          Node9{{ 9.<br/> Merge Filter <br/> Clair3 }}:::nodefill
+          Node10{{ 10.<br/> Savana }}:::nodefill
+          Node11{{ 11.<br/> Report CPSR }}:::nodefill
+          Node12{{ 12.<br/> Report PCGR }}:::nodefill
+          Node13{{ 13.<br/> Report Djerba }}:::nodefill
+          Node14{{ 14.<br/> MultiQC }}:::nodefill
           Output([fa:fa-sticky-note-o Report ])
 
           Input1[[fa:fa-file-archive-o .BAM]] --> Node1 -.-> Node2
           Input2[[fa:fa-file-archive-o .FASTQ]] --> Node2
           Node2 -.-> Node3
-          Node3 -.-> Node4
-          Node2 -.-> Node4
-          Node4 -.-> Node5
-          Node5 -.-> Node6 & Node7 & Node8 & Node9
-          Node9 -.-> Node10
+          Node3 -.-> Node4 -.-> Node5 & Node6 -.-> Node7 
+          Node4 -.-> Node7 -.-> Node8 -.-> Node9
+          Node4 & Node9 -.-> Node10
           Node10 -.-> Node11
-          Node11 -.-> Node12
-          Node12 -.-> Node13
-          Node13 -.-> Node14
-          Node14 -.-> Node15 & Node16
+          Node10 & Node11 -.-> Node12
+          Node12-.-> Node13
+          Node5 & Node6 & Node13 -.-> Node14
+
           Output([fa:fa-sticky-note-o Report ])
-          Node16 ---> Output
+          Node14 ---> Output
           subgraph readSetSteps[" "]
             Node1
             Node2
             Node3
-            Node4
           end
-          Node5
+          Node4
           subgraph sampleSetSteps[" "]
+            Node5
             Node6
             Node7
             Node8
@@ -55,8 +51,6 @@
             Node12
             Node13
             Node14
-            Node15
-            Node16
             Output
           end
           classDef greenRect fill:#E4FBF4,stroke:white

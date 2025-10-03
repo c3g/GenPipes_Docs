@@ -22,7 +22,7 @@ Long Read DNA Sequencing Pipeline
 
 .. include:: /common/new_gp_wizard.txt
 
-.. dropdown:: :material-outlined:`notifications_active;2em` New! 
+.. dropdown:: :material-outlined:`notifications_active;2em` New Pipeline Alert! 
    :color: success
    :open:
 
@@ -92,6 +92,24 @@ Long Read DNA Sequencing Pipeline
                :width: 100%
                :figwidth: 75%
 
+         .. dropdown:: Nanopore Paired Somatic
+            
+            The following figure shows the schema for Nanopore Paired Somatic sequencing pipeline:
+
+            .. figure:: /img/pipelines/mmd/longread_dnaseq.nanopore_paired_somatic.mmd.png
+               :align: center
+               :alt: nanopore schema 
+               :width: 80%
+               :figwidth: 95%
+
+               Figure: Schema of Long Read DNA Sequencing Nanopore Paired Somatic Protocol
+
+            .. figure:: /img/pipelines/mmd/legend.mmd.png
+               :align: center
+               :alt: lrnanoporesomatic ampseq
+               :width: 100%
+               :figwidth: 75%
+
          .. dropdown:: Revio 
             
             The following figure shows the schema for Revio Long Read DNA Sequencing Protocol:
@@ -148,7 +166,41 @@ Long Read DNA Sequencing Pipeline
             | 15.| |multiqc|                          | 
             +----+------------------------------------+ 
             | 16.| |modkit|                           | 
-            +----+------------------------------------+            
+            +----+------------------------------------+    
+
+         .. dropdown:: Nanopore Paired Somatic
+
+            +----+------------------------------------+
+            |    | Nanopore                           | 
+            +====+====================================+
+            | 1. | |blastqc|                          | 
+            +----+------------------------------------+
+            | 2. | |metrics_nanoplot|                 | 
+            +----+------------------------------------+
+            | 3. | |minimap2_align|                   |
+            +----+------------------------------------+
+            | 4. | |samtools_merge_bam_files|         | 
+            +----+------------------------------------+
+            | 5. | |metrics_nanoplot_aligned|         | 
+            +----+------------------------------------+
+            | 6. | |metrics_mosdepth|                 | 
+            +----+------------------------------------+
+            | 7. | |set_variant_calling_regions|      | 
+            +----+------------------------------------+
+            | 8. | |clair3|                           | 
+            +----+------------------------------------+
+            | 9. | |merge_filter_clair3|              | 
+            +----+------------------------------------+
+            | 10.| |savana|                           | 
+            +----+------------------------------------+
+            | 11.| |report_cpsr|                      | 
+            +----+------------------------------------+
+            | 12.| |report_pcgr|                      | 
+            +----+------------------------------------+
+            | 13.| |report_djerba|                    |
+            +----+------------------------------------+      
+            | 14.| |multiqc|                          |
+            +----+------------------------------------+
 
          .. dropdown:: Revio
            
@@ -264,6 +316,9 @@ Long Read DNA Sequencing Pipeline
 .. |qdnaseq| replace:: `QDNAseq Step`_
 .. |dysgu| replace:: `Dysgu Step`_
 .. |modkit| replace:: `Modkit Step`_
+.. |report_pcgr| replace:: `Report PCGR`_
+.. |report_djerba| replace:: `Report Djerba`_
+.. |savana| replace:: `Savana Step`_
 
 .. The following are html links used in this text
 
