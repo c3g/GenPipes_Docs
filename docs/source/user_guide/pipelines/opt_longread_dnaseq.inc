@@ -1,7 +1,7 @@
 ::
 
-  -t {nanopore, revio},
+  -t {nanopore, nanopore_paired_somatic, revio},
  
-  --type {nanopore, revio}
+  --type {nanopore, nanopore_paired_somatic, revio}
 
                             Long Read DNA sequencing analysis type (default=nanopore)
