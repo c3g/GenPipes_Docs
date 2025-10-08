@@ -3,10 +3,10 @@
 User Guide
 ==========
 
-.. dropdown:: :material-outlined:`dangerous;2em` Alliance Canada Server Availability
+.. dropdown:: :material-outlined:`dangerous;2em` DRAC Server Access
    :color: danger
 
-   .. include:: /server_narval.inc
+   .. include:: /server_access.inc
 
 .. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x onward
    :color: success

@@ -20,10 +20,10 @@ GenPipes v\ |genpipes_version|\  Documentation
         
     .. grid-item-card:: 
 
-        .. dropdown:: :material-outlined:`dangerous;2em` DRAC Server Availability
-            :color: danger
+        .. dropdown:: :material-outlined:`lock;2em` DRAC Server Access
+            :color: primary
 
-            .. include:: /server_narval.inc 
+            .. include:: /server_access.inc 
 
         .. dropdown:: :material-outlined:`bolt;2em` Usage Changes (from v5.x)
             :color: success

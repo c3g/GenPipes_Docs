@@ -59,6 +59,12 @@ Long Read DNA Sequencing Pipeline
 
             .. dropdown:: Nanopore Paired Somatic
 
+               .. admonition:: Pair File
+                  :color: .. warning:: 
+                  
+                  The long-read DNA sequencing pipeline nanopore paired somatic protocol requires a pair file as input using the -p option.
+                  
+
                .. include::  /user_guide/pipelines/example_runs/lr_nanopore_paired_somatic.inc
 
             .. dropdown:: Revio
