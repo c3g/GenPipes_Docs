@@ -22,15 +22,14 @@
           Output([fa:fa-sticky-note-o Report ])
 
           Input1[[fa:fa-file-archive-o .BAM]] --> Node1 -.-> Node2
-          Input2[[fa:fa-file-archive-o .FASTQ]] --> Node2
-          Node2 -.-> Node3
-          Node3 -.-> Node4 -.-> Node5 & Node6 -.-> Node7 
-          Node4 -.-> Node7 -.-> Node8 -.-> Node9
-          Node4 & Node9 -.-> Node10
-          Node10 -.-> Node11
+          Input2[[fa:fa-file-archive-o .FASTQ]] --> Node2 -.-> Node3
+
+          Node3 -.-> Node4 -.-> Node5 & Node6 & Node8
+          Node6 -.-> Node7 -.-> Node8 -.-> Node9
+          Node4 & Node9 -.-> Node10 -.-> Node11
           Node10 & Node11 -.-> Node12
           Node12-.-> Node13
-          Node5 & Node6 & Node13 -.-> Node14
+          Node2 & Node5 & Node6 & Node13 -.-> Node14
 
           Output([fa:fa-sticky-note-o Report ])
           Node14 ---> Output

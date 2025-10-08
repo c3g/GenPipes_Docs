@@ -25,17 +25,11 @@
 
           Input1[[fa:fa-file-archive-o .BAM]] --> Node1 -.-> Node2
           Input2[[fa:fa-file-archive-o .FASTQ]] --> Node2
-          Node2 -.-> Node3
-          Node3 -.-> Node4
-          Node2 -.-> Node4
-          Node4 -.-> Node5
-          Node5 -.-> Node6 & Node7 & Node8 & Node9
-          Node9 -.-> Node10
-          Node10 -.-> Node11
-          Node11 -.-> Node12
-          Node12 -.-> Node13
-          Node13 -.-> Node14
-          Node14 -.-> Node15 & Node16
+          Node2 -.-> Node3 -.-> Node5
+          Node5 -.-> Node6 & Node7 & Node8 & Node9 & Node11 & Node12 & Node14 & Node16
+          Node8 -.-> Node9 -.-> Node10 -.-> Node11 -.-> Node13
+          Node2 & Node6 & Node7 -.-> Node15
+
           Output([fa:fa-sticky-note-o Report ])
           Node16 ---> Output
           subgraph readSetSteps[" "]
