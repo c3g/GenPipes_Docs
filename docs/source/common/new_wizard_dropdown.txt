@@ -1,0 +1,4 @@
+.. dropdown::  :material-outlined:`fiber_new;2em` GenPipes Wizard
+    :color: warning
+
+    Introducing the :ref:`GenPipes Wizard <docs_gp_wizard>`, our latest tool that helps beginners dive right into genomic analysis using GenPipes. This intuitive wizard walks new users through picking the best deployment option, pipeline, and protocol, while automatically assembling the complete command for running GenPipes

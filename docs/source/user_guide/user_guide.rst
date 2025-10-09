@@ -13,6 +13,8 @@ User Guide
 
    .. include:: /gp5_0.inc
 
+.. include:: /common/new_wizard_dropdown.txt
+
 GenPipes is an open-source, next generation sequencing analysis framework written in Python. Developed at the `Canadian Centre for Computational Genomics (C3G) <https://www.computationalgenomics.ca/>`_, GenPipes facilitates writing and execution of multi-step genomics processing pipelines on HPC clusters. It offers several validated bioinformatics pipelines to analyze many kinds of -omics data, including DNA (including tumor-pair), RNA, SARS-CoV2, Ch-IP, Methylation and Hi-C sequencing, to name a few.
 
 The latest GenPipes Version is |genpipes_version|. Refer to the :ref:`release notes<docs_release_notes>` for more information regarding what is new, which pipelines were updated and what issues are fixed in this release.

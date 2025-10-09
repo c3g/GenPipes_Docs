@@ -3,8 +3,6 @@
 Run GenPipes
 ------------
 
-.. include:: /common/new_gp_wizard.txt
-
 .. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x onward
    :color: success
 

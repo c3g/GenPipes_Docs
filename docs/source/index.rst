@@ -4,7 +4,7 @@ GenPipes v\ |genpipes_version|\  Documentation
 ==============================================
 
 
-   **GenPipes** is a flexible *Python-based framework* to facilitates the development and deployment of multi-step *genomic workflows*, optimized for *High-Performance Computing (HPC) clusters* and the *cloud.* 
+   **GenPipes** is a flexible *Python-based* framework that facilitates the development and deployment of multi-step *genomic workflows*. It is optimized for *High-Performance Computing (HPC) clusters* and the *cloud.* 
 
 .. grid:: 2
 
@@ -48,10 +48,7 @@ GenPipes v\ |genpipes_version|\  Documentation
 
             GenPipes offers two pipelines: :ref:`CoVSeq<docs_gp_covseq>` for short-read sequencing (e.g., Illumina) and :ref:`Nanopore_CoVSeq<docs_gp_nanopore_cov>` for long-read sequencing. These pipelines help researchers analyze viral sequences and detect mutations quickly, preventing the spread of new strains.
 
-        .. dropdown::  :material-outlined:`fiber_new;2em` GenPipes Wizard
-            :color: warning
-
-            Use the :ref:`GenPipes Wizard <docs_gp_wizard>` to quickly run genomic analysis, discover the appropriate deployment method, pipeline, protocol options.
+        .. include:: /common/new_wizard_dropdown.txt
 
 .. grid:: 3
 

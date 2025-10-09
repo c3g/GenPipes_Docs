@@ -8,6 +8,7 @@ About
 
    .. include:: /gp5_0.inc
 
+.. include:: /common/new_wizard_dropdown.txt
 
 GenPipes is an open-source (`LGPL <https://github.com/c3g/GenPipes/blob/main/COPYING.LESSER>`_) Python-based *next generation sequencing (NGS)* platform for managing genomics workflows. 
 

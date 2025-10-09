@@ -3,11 +3,9 @@
 Deploying GenPipes
 ===================
 
-This document lists various ways by which GenPipes can be accessed and installed by users. Check out various :ref:`available deployment options<docs_dep_options>`, if you wish to install and setup GenPipes on your infrastructure.  If you wish to use pre-installed GenPipes deployed on Compute Canada infrastructure, refer to :ref:`Accessing GenPipes on Digital Research Alliance Canada servers<docs_access_gp_pre_installed>`. 
+.. include:: /common/new_wizard_dropdown.txt
 
-.. note::
-   **Do you need help choosing which deployment option to use?**
-      We've developed a helpful tool: the :ref:`GenPipes Wizard <docs_gp_wizard>`. It guides users through selecting the appropriate deployment method, pipeline, and protocol, and helps construct the full command to run GenPipes.
+This document lists various ways by which GenPipes can be accessed and installed by users. Check out various :ref:`available deployment options<docs_dep_options>`, if you wish to install and setup GenPipes on your infrastructure.  If you wish to use pre-installed GenPipes deployed on Compute Canada infrastructure, refer to :ref:`Accessing GenPipes on Digital Research Alliance Canada servers<docs_access_gp_pre_installed>`. 
 
 .. toctree::
    :maxdepth: 1

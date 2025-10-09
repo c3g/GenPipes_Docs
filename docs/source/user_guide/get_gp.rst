@@ -3,8 +3,6 @@
 Get GenPipes
 ------------
 
-.. include:: /common/new_gp_wizard.txt
-
 You can choose one of the :ref:`available GenPipes deployment options<docs_choose_gp_dep>`. 
 
 If you choose to use GenPipes deployed on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers, then you don't need to get and setup any build or code. Just start using your DRAC account and access GenPipes deployed on DRAC servers.

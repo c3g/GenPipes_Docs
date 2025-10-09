@@ -123,7 +123,7 @@ Currently, the Wizard supports generating commands with the following options:
 
 **-o**: Output directory
 
-**-g**: Commands for running the pipeline are output to this file pathname. The data specified to pipeline command line is processed and pipeline run commands are stored in GENPIPES_FILE
+**-g**: Commands for running the pipeline are output to this file path name. The data specified to pipeline command line is processed and pipeline run commands are stored in GENPIPES_FILE
 
 .. note::
 

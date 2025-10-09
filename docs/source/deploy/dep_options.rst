@@ -13,9 +13,10 @@ There are multiple ways to get started with genomic analysis using GenPipes. The
    * Bare metal or virtual server
    * GenPipes in a container
 
-.. note::
-   **GenPipes Wizard**
-      Try the new :ref:`GenPipes Wizard <docs_gp_wizard>`. Use the wizards to guide selection of an appropriate deployment method, pipeline, and protocol. It can also construct the full command to run GenPipes.
+.. admonition:: **Do you need help choosing which deployment option to use?**
+    :class: tip
+
+      Our latest tool, :ref:`GenPipes Wizard <docs_gp_wizard>`, helps beginners dive right into genomic analysis using GenPipes. This intuitive wizard walks new users through picking the best deployment option, pipeline, and protocol, while automatically assembling the complete command for running GenPipes.
 
 Accessing GenPipes
 -------------------

@@ -11,6 +11,11 @@
      Mosdepth
      DeepVariant
      Germline
+     haplo
+     clair3
+     clair
+     
+
 
 .. _BlastQC:
 
@@ -44,7 +49,7 @@ In this step, `pycoQC Software`_ is used  produce an interactive quality report 
 
 **Whatshap**
 
-Create a haplotagged file using `Whatshap <https://whatshap.readthedocs.io/en/latest/>`_.
+Create a haplo-tagged file using `Whatshap <https://whatshap.readthedocs.io/en/latest/>`_.
 
 .. _QDNAseq Step:
 

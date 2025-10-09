@@ -14,6 +14,7 @@
      transcriptomic
      epigenomic
      nt
+     nanopore
 
 Long Read DNA Sequencing Pipeline
 ==================================
@@ -60,7 +61,7 @@ Long Read DNA Sequencing Pipeline
             .. dropdown:: Nanopore Paired Somatic
 
                .. admonition:: Pair File
-                  :color: .. warning:: 
+                  :class: warning 
                   
                   The long-read DNA sequencing pipeline nanopore paired somatic protocol requires a pair file as input using the -p option.
                   

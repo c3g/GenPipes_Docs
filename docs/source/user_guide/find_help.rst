@@ -3,8 +3,6 @@
 Getting Help on GenPipes
 ========================
 
-.. include:: /common/new_gp_wizard.txt
-
 If you need help on GenPipes, you can refer to `Support <https://genpipes.readthedocs.io/en/latest/tutorials/list_tutorials.html>`_ section in the left hand navigation pane.
 
 Alternatively, it is recommended that you check out various `Channels <https://genpipes.readthedocs.io/en/latest/community/channels.html>`_. It is quite possible that the issue you are facing is already being discussed and resolved there with some workaround.
