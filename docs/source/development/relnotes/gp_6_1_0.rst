@@ -1,0 +1,47 @@
+:orphan:
+
+.. _docs_gp_relnote_6_1_0:
+
+.. spelling:word-list::
+
+
+GenPipes 6.1.0 Release Notes
+============================
+
+What's new? 
+-----------
+
+This is a medium release of GenPipes: 
+
+* General
+     - A new tool called the :ref:`GenPipes Wizard <docs_gp_wizard>` is now available. Perfect for those new to GenPipes, the wizard is an interactive tool that helps users to choose the appropriate pipeline for their data and even builds the correct GenPipes command. Try it out by running the command: ``genpipes tools wizard``
+
+     - The cluster-specific configuration files for newly deployed servers of *Digital Research Alliance of Canada (DRAC)*, namely, |key_ccdb_server_name|, |other_ccdb_server_names|, have been updated to reflect the newly available clusters.
+* :ref:`AmpliconSeq Pipeline <docs_gp_ampliconseq>`
+     - Fixed a small bug that improperly set trimming parameters in some cases
+* :ref:`ChIPSeq Pipeline <docs_gp_chipseq>`
+     - Metrics changes made in v5.1.0 that were accidentally rolled back in v6.0.0 have been added back to the Chipseq protocol
+* :ref:`LongRead DNASeq Pipeline <docs_gp_longread_dnaseq>`
+     - A new protocol for analyzing matched tumor-normal samples called ``nanopore_paired_somatic`` is now available
+     - The Nanopore protocol of this pipeline has been updated substantially with additional variant calling, structural variant calling, and phased results
+* :ref:`RNASeq <docs_gp_rnaseq>`
+     - Outputs for variant calling steps are now organized in their own directory, instead of being added to the alignment directory as before
+
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+ 
+* The latest release for GenPipes version 6.1.0 tarball is in: https://github.com/c3g/GenPipes/releases/download/6.1.0/c3g_genpipes-6.1.0.tar.gz
+
+* GenPipes is now distributed as a package via `pypi` `GenPipes v6.1.0 Package <https://pypi.org/project/c3g-genpipes/>`_.
+
+* The genpipes/6.1.0 package is installed on the Abacus (MGC), Rorqual, Nibi, Fir and Narval Alliance clusters.
+
+* The source code is in GitHub: https://github.com/c3g/GenPipes
+
+* For latest GenPipes documentation, please refer to: https://genpipes.readthedocs.io/
+
+Where is the detailed ChangeLog? 
+================================= 
+
+.. include:: ../gp_changelog.inc
