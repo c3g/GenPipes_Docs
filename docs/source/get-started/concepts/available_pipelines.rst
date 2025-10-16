@@ -68,4 +68,4 @@ Available Pipelines
 .. |capture| replace:: capture :ref:`BED file<docs_bed_file>` in Readset file or ``ini`` file 
 .. |ini_file| replace:: use relevant ``ini`` file and ``-t germline_high_cov``
 .. |somatic| replace:: ``-t somatic_ensemble`` or ``-t somatic_sv`` or ``-t somatic_fastpass`` or ``-t somatic_tumor_only`` 
-.. |lr_flags| replace:: ``-t nanopore`` or ``-t revio`` 
+.. |lr_flags| replace:: ``-t nanopore`` or ``-t paired_somatic`` or ``-t revio``
