@@ -55,7 +55,7 @@ Available Pipelines
    * - Cancer Analysis
      - :ref:`dnaseq <docs_gp_dnaseq>`
      - |somatic|
-   * - Whole Chromosome Telomere Assembly
+   * - Long-Reads Whole Genome Sequencing
      - :ref:`longread_dnaseq <docs_gp_longread_dnaseq>`
      - |lr_flags|
    * - Meta Genomics
