@@ -20,26 +20,29 @@ Available Pipelines
    :class: table-responsive
 
    * - Genomic Analysis
-     - `genpipes <pipeline_cmd>`
+     - ``genpipes <command_name>``
      - Protocol Options
    * - ChIP Sequencing
      - :ref:`chipseq <docs_gp_chipseq>`
-     -  
+     -  *None*
    * - RNA Sequencing
      - :ref:`rnaseq <docs_gp_rnaseq>`
-     - 
+     - | ``-t chipseq (default)`` or
+       | ``-t atacseq``
    * - | RNA Sequencing 
        | Light
      - :ref:`rnaseq_light <docs_gp_rnaseqlight>`
-     -  
+     -  *None*
    * - | Denovo RNA 
        | Sequencing
      - :ref:`rnaseq_denovo_assembly <docs_gp_rnaseq_denovo>`
-     -  
+     - | ``-t trinity (default)`` or
+       | ``-t seq2fun``
    * - | Whole Genome 
        | Sequencing
      - :ref:`dnaseq <docs_gp_dnaseq>`
-     - :code:`default`
+     - | :code:`-t germline_snv` (default) or
+       | ``-t germline_sv``
    * - Exome Sequencing
      - :ref:`dnaseq <docs_gp_dnaseq>`
      - |capture|
@@ -55,7 +58,10 @@ Available Pipelines
    * - | Whole Genome 
        | Methyl Sequencing
      - :ref:`methylseq <docs_methylation>`
-     - :code:`default`
+     - | :code:`bismark` (default) or
+       | ``-t gembs`` or
+       | ``-t hybrid`` or
+       | ``-t dragen`` or
    * - | Capture Methyl 
        | Sequencing
      - :ref:`methylseq <docs_methylation>`
@@ -77,11 +83,11 @@ Available Pipelines
        | also requires -p *pair_file_name*)
    * - Meta Genomics
      - :ref:`ampliconseq  <docs_gp_ampliconseq>`
-     - 
+     -  *None*
    * - | SARS-COV-2
        | Analysis
      - :ref:`covseq <docs_gp_covseq>`
-     -  
+     -  *None* 
 
 .. |capture| replace:: capture :ref:`BED file<docs_bed_file>` in Readset file or ``ini`` file 
 .. |ini_file| replace:: use relevant ``ini`` file
