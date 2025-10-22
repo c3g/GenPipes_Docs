@@ -20,14 +20,14 @@ GenPipes offers several validated bioinformatics pipelines to analyze many kinds
 
         .. include:: /common/new_wizard_dropdown.txt  
 
-The latest GenPipes Version is |genpipes_version|.
+The latest GenPipes Version is |genpipes_version|
 
 - **New users**:
     Check out :ref:`GenPipes Tutorials<doc_list_tutorials>`, use the :ref:`Quick Start<docs_quickstart_gp>` Guide or try the new :ref:`GenPipes Wizard tool<docs_gp_wizard>` to get started. 
 - **Seasoned users**: 
     Refer to the latest GenPipes :ref:`release notes<docs_release_notes>`. For usage, latest pipelines, and supported protocol options, see :ref:`Pipeline Reference Guide<docs_pipeline_ref>`. 
     
-    .. dropdown:: :material-outlined:`bolt;2em` Changes v5.x onward
+    .. dropdown:: :material-outlined:`bolt;2em` Usage changes v5.x onward
         :color: success
 
         .. include:: /gp5_0.inc
