@@ -16,6 +16,8 @@ ChIP Sequencing Pipeline
 
 .. include:: /common/new_gp_wizard.txt
 
+.. include:: /mouse_mm10_warning.inc
+
 .. tab-set:: 
 
       .. tab-item:: Usage

@@ -58,4 +58,6 @@
 
           - Genome build GRCh38 (human) is now the default reference genome for all pipelines, but other versions or species can be selected via config files, as before.
 
+            .. include:: /mouse_mm10_warning.inc
+
           - Markdown style reports have been deprecated for all pipelines starting v5.0 onward and replaced entirely with MultiQC reports.

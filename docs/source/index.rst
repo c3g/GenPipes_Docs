@@ -6,6 +6,11 @@ GenPipes v\ |genpipes_version|\  Documentation
 
    **GenPipes** is a flexible *Python-based* framework that facilitates the development and deployment of multi-step *genomic workflows*. It is optimized for *High-Performance Computing (HPC) clusters* and the *cloud.* 
 
+   .. dropdown:: :material-outlined:`bolt;2em` Usage Changes (from v5.x)
+    :color: success
+
+    .. include:: gp5_0.inc
+
 .. grid:: 2
 
     .. grid-item-card:: 
@@ -14,21 +19,16 @@ GenPipes v\ |genpipes_version|\  Documentation
 
         This documentation is meant for **new genomics users** as well as the **seasoned ones**. 
         
-        We welcome all community :ref:`contributions<docs_contributing>` to GenPipes including this documentation. 
-        
-        See :ref:`Documentation Map<docs_genpipes_archmap>` for more information on how this documentation is organized.      
-        
+        We welcome all community :ref:`contributions<docs_contributing>` to GenPipes
+        functionality and this documentation. To understand the documentation structure,
+        see :ref:`Site Map<docs_genpipes_archmap>`.
+                
     .. grid-item-card:: 
 
         .. dropdown:: :material-outlined:`lock;2em` DRAC Server Access
             :color: primary
 
             .. include:: /server_access.inc 
-
-        .. dropdown:: :material-outlined:`bolt;2em` Usage Changes (from v5.x)
-            :color: success
-
-            .. include:: gp5_0.inc
 
         .. dropdown:: :material-outlined:`handshake;2em` Sponsors
             :color: info
@@ -49,9 +49,10 @@ GenPipes v\ |genpipes_version|\  Documentation
             GenPipes offers two pipelines: :ref:`CoVSeq<docs_gp_covseq>` for short-read sequencing (e.g., Illumina) and :ref:`Nanopore_CoVSeq<docs_gp_nanopore_cov>` for long-read sequencing. These pipelines help researchers analyze viral sequences and detect mutations quickly, preventing the spread of new strains.
 
         .. include:: /common/new_wizard_dropdown.txt
+          
+----
 
 .. grid:: 3
-
     .. grid-item-card:: 
 
         .. toctree::
@@ -139,7 +140,6 @@ GenPipes v\ |genpipes_version|\  Documentation
             documentation/docs_changelog
 
     .. grid-item-card:: 
-
 
 .. Indices and tables
 .. ------------------
