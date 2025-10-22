@@ -49,10 +49,9 @@ GenPipes v\ |genpipes_version|\  Documentation
             GenPipes offers two pipelines: :ref:`CoVSeq<docs_gp_covseq>` for short-read sequencing (e.g., Illumina) and :ref:`Nanopore_CoVSeq<docs_gp_nanopore_cov>` for long-read sequencing. These pipelines help researchers analyze viral sequences and detect mutations quickly, preventing the spread of new strains.
 
         .. include:: /common/new_wizard_dropdown.txt
-          
-----
 
 .. grid:: 3
+    
     .. grid-item-card:: 
 
         .. toctree::
