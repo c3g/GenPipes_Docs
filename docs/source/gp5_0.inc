@@ -1,54 +1,61 @@
-.. admonition:: Are you using GenPipes v4.x or prior?
-   :class: danger
+.. admonition:: Using v4.x?
+    :class: danger
 
-   *You must carefully read the usage changes listed below.*
+    You are recommended to:
 
+      * Review the changes in v5.x and v6.x (*See tabs*)
+      * Migrate to using the latest GenPipes v6.x
+        
 **What has Changed?**
 
-1. Effective v5.0 onward, the GenPipes distribution is based on Python packaging. It **no longer uses Python modules**. 
+.. tab-set:: 
 
-2. GenPipes v5.x: 
+      .. tab-item:: **v6.x**
 
-   - If you were using Python **v2.7**, you **must upgrade to Python v3.11.1**.
-   - To run any GenPipes pipelines, use the **new command syntax:**
+         Following changes are effective from GenPipes release v6.x onward: 
 
-     .. include:: /common/commands/change_format_5.inc
+          - Requires **Python v3.12.0** or higher. 
+          - A new environment variable ‘GENPIPES_INIS’ is introduced for streamlining access to the config files in the `genpipes` commands. In the future, 'MUGQIC_PIPELINES_HOME' will be deprecated. This is applicable when using **GenPipes deployed on the DRAC servers** such as |key_ccdb_server_name|. 
 
-3. GenPipes v6.0 onward, the pipelines support *only* Python **v3.12.0** and above. 
+              - **Before** 
 
-4. When using **GenPipes deployed on the Digital Research Alliance Canada servers** such as |key_ccdb_server_name|, a new variable ‘GENPIPES_INIS’ is introduced for streamlining access to the config files in the `genpipes` commands. In the future, 'MUGQIC_PIPELINES_HOME' will be deprecated.
+                :: 
+                
+                  $MUGQIC_PIPELINES_HOME/pipelines/<pipeline>/<pipeline>.base.ini
 
-  - **Before** 
+              - **Now** 
 
-    :: 
-    
-      $MUGQIC_PIPELINES_HOME/pipelines/<pipeline>/<pipeline>.base.ini
+                :: 
+                  
+                  $GENPIPES_INIS/<pipeline>/<pipeline>.base.ini 
 
-  - **Now** 
+            .. admonition:: Note
+                :class: note
 
-    :: 
-      
-      $GENPIPES_INIS/<pipeline>/<pipeline>.base.ini 
+                  Please note that the old variable, 'MUGQIC_PIPELINES_HOME' will still be accessible and is still in use for instructions on how to deploy GenPipes locally, in the cloud, or in a container.
 
-  .. note::
+          - A new :ref:`Long Read DNA Sequencing pipeline<docs_gp_longread_dnaseq>` is now available in v6.0 that supports three protocols:
 
-        Please note that the old variable, 'MUGQIC_PIPELINES_HOME' will still be accessible and is still in use for instructions on how to deploy GenPipes locally, in the cloud, or in a container.
+              * Nanopore
+              * Nanopore Paired Somatic
+              * Revio 
 
-5. A new :ref:`Long Read DNA Sequencing pipeline<docs_gp_longread_dnaseq>` is now available in v6.0 that supports two protocols:
+      .. tab-item:: **v5.x**
 
-   * Nanopore
-   * Revio 
+         Following changes are effective from GenPipes release v5.x onward: 
 
-6. The `Nanopore pipeline <https://genpipes.readthedocs.io/en/genpipes-v5.1.0/user_guide/pipelines/gp_nanopore.html>`_ available in v5.0 and earlier releases is no longer supported. The same functionality is now available as one of the supported protocols in the new :ref:`Long Read DNA Sequencing pipeline<docs_gp_longread_dnaseq>`.
+          - Starting with v5.0, GenPipes uses **Python packaging** and *no longer relies on Python modules*. 
+          - If you were using Python **v2.7**, you **must upgrade to Python v3.11.1**.
+          - To run any GenPipes pipelines, use the **new command syntax:**
 
-7. The :ref:`RNA Sequencing (De Novo)<docs_gp_rnaseq_denovo>` pipeline has been updated in v5.0 release.
+            .. include:: /common/commands/change_format_5.inc
 
-8. The :ref:`EpiQC pipeline<docs_gp_epiqc>`, :ref:`HiC-Seq pipeline<docs_gp_hicseq>`, and :ref:`AmpliconSeq qiime protocol<docs_gp_ampliconseq>` have been deprecated starting v5.0 onward.
+          - :ref:`RNA Sequencing (De Novo)<docs_gp_rnaseq_denovo>` pipeline has been updated in v5.0 release.
+          - :ref:`EpiQC pipeline<docs_gp_epiqc>`, :ref:`HiC-Seq pipeline<docs_gp_hicseq>`, and :ref:`AmpliconSeq qiime   protocol<docs_gp_ampliconseq>` have been deprecated starting v5.0 onward.
+          - The DNA-Seq high coverage pipeline and the TumorPair pipeline have been merged into a single workflow :ref:`DNA-Seq<docs_gp_dnaseq>`.
 
-9. The DNA-Seq high coverage pipeline and the TumorPair pipeline have been merged into a single workflow :ref:`DNA-Seq<docs_gp_dnaseq>`.
+          - The :ref:`Methylseq pipeline<docs_methylation>` has a new protocol option using the gemBS aligner in addition to Bismark.
 
-10. The :ref:`Methylseq pipeline<docs_methylation>` has a new protocol option using the gemBS aligner in addition to Bismark.
+          - Genome build GRCh38 (human) is now the default reference genome for all pipelines, but other versions or species can be selected via config files, as before.
 
-11. Genome build GRCh38 (human) is now the default reference genome for all pipelines, but other versions or species can be selected via config files, as before.
-
-12. Markdown style reports have been deprecated for all pipelines starting v5.0 onward and replaced entirely with MultiQC reports.
+          - Markdown style reports have been deprecated for all pipelines starting v5.0 onward and replaced entirely with MultiQC reports.
