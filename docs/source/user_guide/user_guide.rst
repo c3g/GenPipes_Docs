@@ -3,7 +3,11 @@
 User Guides
 ============
 
-GenPipes offers several validated bioinformatics pipelines to analyze many kinds of -omics data, including DNA, Long-read DNA, RNA, SARS-CoV2, Ch-IP, Amplicon, Nanopore, and Methylation sequencing. 
+.. grid:: 1
+
+    .. grid-item-card:: 
+
+        GenPipes offers several validated bioinformatics pipelines to analyze many kinds of -omics data, including DNA, Long-read DNA, RNA, SARS-CoV2, Ch-IP, Amplicon, Nanopore, and Methylation sequencing. 
 
 .. grid:: 2
 
@@ -14,29 +18,29 @@ GenPipes offers several validated bioinformatics pipelines to analyze many kinds
     .. grid-item-card:: 
 
         .. dropdown:: :material-outlined:`dangerous;2em` DRAC Server Access
-            :color: danger
+            :color: primary
 
             .. include:: /server_access.inc
 
         .. include:: /common/new_wizard_dropdown.txt  
 
-The latest GenPipes Version is |genpipes_version|
+.. grid:: 1
 
-- **New users**:
-    Check out :ref:`GenPipes Tutorials<doc_list_tutorials>`, use the :ref:`Quick Start<docs_quickstart_gp>` Guide or try the new :ref:`GenPipes Wizard tool<docs_gp_wizard>` to get started. 
-- **Seasoned users**: 
-    Refer to the latest GenPipes :ref:`release notes<docs_release_notes>`. For usage, latest pipelines, and supported protocol options, see :ref:`Pipeline Reference Guide<docs_pipeline_ref>`. 
-    
-    .. dropdown:: :material-outlined:`bolt;2em` Usage changes v5.x onward
-        :color: success
+    .. grid-item-card:: 
+        
+        The latest GenPipes Version is |genpipes_version|
 
-        .. include:: /gp5_0.inc
+        - **New users**:
+            Check out :ref:`GenPipes Tutorials<doc_list_tutorials>`, use the :ref:`Quick Start<docs_quickstart_gp>` Guide or try the new :ref:`GenPipes Wizard tool<docs_gp_wizard>` to get started. 
+        - **Seasoned users**: 
+            Refer to the latest GenPipes :ref:`release notes<docs_release_notes>`. For usage, latest pipelines, and supported protocol options, see :ref:`Pipeline Reference Guide<docs_pipeline_ref>`. 
+            
+            .. dropdown:: :material-outlined:`bolt;2em` Usage changes v5.x onward
+                :color: success
 
-*Happy genomic analysis with GenPipes!*
+                .. include:: /gp5_0.inc
 
-.. admonition:: Get Started
-   :class: note
-   
+        *Happy genomic analysis with GenPipes!* 
    
 ----
 
@@ -50,6 +54,7 @@ The latest GenPipes Version is |genpipes_version|
             :name: sec-qs
 
             quickstart_gp
+            gp_checklist
 
     .. grid-item-card:: 
 
@@ -58,33 +63,16 @@ The latest GenPipes Version is |genpipes_version|
             :caption: Wizard 
             :name: sec-wz
 
-            gp_wizard
+            gp_wizard      
 
-.. grid:: 2
+.. grid:: 1
 
     .. grid-item-card:: 
 
         .. toctree::
             :maxdepth: 2
             :caption: Pipeline Reference 
-            :name: sec-wz
+            :name: sec-pipe-ref
 
             pipeline_ref
 
-    .. grid-item-card:: 
-
-        .. toctree::
-            :maxdepth: 2
-            :caption: Contributing 
-            :name: sec-wz
-
-            get_involved     
-
-        .. toctree::
-            :maxdepth: 2
-            :caption: Resources
-            :name: sec-resources
-
-            ../resources/compute_resources 
-            ../resources/citation 
-            ../resources/publications 

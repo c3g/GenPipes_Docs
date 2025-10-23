@@ -3,7 +3,7 @@
 Quick Start
 ============
 
-Use this guide, follow the steps to get started with GenPipes. 
+Follow these steps to get started with GenPipes. 
 
 .. note:: 
 
@@ -11,11 +11,6 @@ Use this guide, follow the steps to get started with GenPipes.
     
     If you are new to GenPipes, we recommend trying the GenPipes Wizard tool. It offers step by step instructions on how to select an appropriate deployment type, select a pipeline, construct the pipeline command and run genomic analysis.
 
-
-
------
-Steps
------
 
 * :bdg-dark-line:`Step 1: Identify prerequisites`
 
@@ -29,16 +24,16 @@ Steps
 
    Explore :ref:`GenPipes deployment options<docs_dep_options>` and select an appropriate one applicable to your use case.
    
-   * GenPipes deployed on the Digital Research Alliance of Canada,  :ref:`DRAC servers<docs_access_gp_pre_installed>`, formerly Compute Canada, `CCDB servers <https://alliancecan.ca/en>`_ (*requires log in and* `server access  <https://ccdb.alliancecan.ca/me/access_systems>`_)
-   * :ref:`GenPipes installed locally<docs_dep_gp_local>` on a server, virtual machine, or container   :bdg-info:`*`
+   * GenPipes deployed on the Digital Research Alliance of Canada,  :ref:`DRAC servers<docs_access_gp_pre_installed>`, formerly Compute Canada, `CCDB servers <https://alliancecan.ca/en>`_ (*This option requires log in and* `server access  <https://ccdb.alliancecan.ca/me/access_systems>`_. No local software download or deployment required.)
+   * GenPipes installed locally on a :ref:`server, virtual machine<docs_dep_gp_local>`, or :ref:`container<docs_dep_gp_container>`   :bdg-info:`*`
    * :ref:`GenPipes deployed in the cloud<docs_dep_gp_cloud>`  :bdg-info:`*`
-  
-.. role:: raw-html(raw)
-      :format: html
 
-      </br></br>
+   .. admonition:: GenPipes Package for Local Deployment
+      
+      *Options marked* :bdg-info:`*` *require you to use one of these options for local deployment:*
 
-*Options marked* :bdg-info:`*` *require you to download* :ref:`GenPipes software packages<docs_get_gp>`, *or build them locally for deployment.*
+      * Download the pre-built, packaged GenPipes via the `GenPipes Download Page`_
+      * Get the `GenPipes Source Code`_, use the :ref:`GenPipes Developer Guide<docs_dev_guide>` and build, deploy it locally.
 
 * :bdg-dark-line:`Step 4: Review pipeline options`
 
@@ -46,18 +41,12 @@ Steps
 
 * :bdg-dark-line:`Step 5: Run GenPipes`
 
-   Once you have the pipeline command ready with required protocol options,  :ref:`run GenPipes<docs_run_gp>` and :ref:`analyze the results<docs_gp_job_results>`. Check out the :ref:`GenPipes Tutorials<doc_list_tutorials>` for details.
+   Once you have the pipeline command ready with required protocol options, :ref:`run GenPipes<docs_using_gp>` and :ref:`analyze the results<docs_gp_job_results>`. Check out the :ref:`GenPipes Tutorials<doc_list_tutorials>` for details.   
 
----------------
-Help & Support
----------------
+.. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x onward
+   :color: success
 
-For any queries regarding usage, see :ref:`Getting Help on GenPipes<docs_find_help>`. If you run into any usage issues, check out the :ref:`GenPipes FAQ<docs_faq>` or browse :ref:`GenPipes Channels<docs_channels>` for more insights. 
+   .. include:: /gp5_0.inc 
 
--------------
-Get Involved 
--------------
-
-We encourage you to get involved with GenPipes. :ref:`Learn more...<docs_get_involved>`
-
-----
+.. _GenPipes Download Page: https://bitbucket.org/mugqic/genpipes/downloads/
+.. _GenPipes Source Code: https://github.com/c3g/GenPipes

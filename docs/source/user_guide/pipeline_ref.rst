@@ -9,7 +9,7 @@ Pipelines Reference Guide
 =========================
 
 .. dropdown:: :material-outlined:`dangerous;2em` DRAC Server Access
-   :color: danger
+   :color: primary
 
    .. include:: /server_access.inc
 

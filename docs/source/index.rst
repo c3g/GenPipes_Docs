@@ -3,25 +3,31 @@
 GenPipes v\ |genpipes_version|\  Documentation
 ==============================================
 
-
-   **GenPipes** is a flexible *Python-based* framework that facilitates the development and deployment of multi-step *genomic workflows*. It is optimized for *High-Performance Computing (HPC) clusters* and the *cloud.* 
-
-   .. dropdown:: :material-outlined:`bolt;2em` Usage Changes (from v5.x)
-    :color: success
-
-    .. include:: gp5_0.inc
-
-.. grid:: 2
+.. grid:: 1
 
     .. grid-item-card:: 
 
-        GenPipes offers open-source, validated and scalable :ref:`gene sequencing pipelines<docs_pipeline_ref>` for various :ref:`genomics applications<docs_gp_usecases>`. 
+        **GenPipes** is a flexible, *Python-based*, open-source framework optimized
+        for genomic analysis using *High-Performance Computing (HPC) cluster* 
+        and *cloud* environments. It supports the development and deployment of multi-step, scalable,
+        validated *genomic workflows*. Various :ref:`genomics applications<docs_gp_usecases>` utilize
+        its :ref:`gene sequencing pipelines<docs_pipeline_ref>`.
 
-        This documentation is meant for **new genomics users** as well as the **seasoned ones**. 
+        .. dropdown:: :material-outlined:`bolt;2em` Usage Changes (from v5.x)
+            :color: success
+
+            .. include:: gp5_0.inc
+
+.. grid:: 2
+
+    .. grid-item-card::  
+
+        This documentation serves both *new* and *experienced* genomics users.
         
-        We welcome all community :ref:`contributions<docs_contributing>` to GenPipes
-        functionality and this documentation. To understand the documentation structure,
-        see :ref:`Site Map<docs_genpipes_archmap>`.
+        We welcome community :ref:`contributions<docs_contributing>` to GenPipes and its
+        documentation. To understand its structure, refer to the :ref:`Site Map<docs_genpipes_archmap>`.
+
+
                 
     .. grid-item-card:: 
 
@@ -70,7 +76,6 @@ GenPipes v\ |genpipes_version|\  Documentation
             :caption: Get Started
             :name: sec-learn
 
-            user_guide/quickstart_gp
             deploy/how_to_deploy_genpipes
             get-started/index
             user_guide/user_guide
@@ -83,8 +88,9 @@ GenPipes v\ |genpipes_version|\  Documentation
             :caption: Reference
             :name: sec-ref
 
-            user_guide/pipeline_ref
             development/release_notes
+            resources/testdataset
+            resources/compute_resources
 
 .. grid:: 3
 
@@ -108,8 +114,6 @@ GenPipes v\ |genpipes_version|\  Documentation
             resources/citation
             resources/publications
             resources/workshops
-            resources/testdataset
-            resources/compute_resources
 
     .. grid-item-card:: 
 

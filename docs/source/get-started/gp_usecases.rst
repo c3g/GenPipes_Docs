@@ -22,14 +22,11 @@ Use Cases
 
 GenPipes offers several :ref:`genomic analysis pipelines<docs_pipeline_ref>` that can be used for various bioinformatics analyses. These pipelines can be utilized for performing a wide range of standardized and tailored genomic analysis.
 
-C3G sponsors the development and maintenance of GenPipes. It has extensive experience in analyzing data from various sequencing applications with state of the art computation methods. C3G offers various `services <https://www.computationalgenomics.ca/services/>`_ to next-generation sequencing researchers who wish to use these pipelines for advanced genomic analysis. 
+Listed below are key real-life applications of genomic analysis performed with GenPipes:
 
-For a customized and case-by-case analysis service, `submit your request today <https://computationalgenomics.ca/contact-us/>`_.
-
-Real-life Applications
------------------------
-
-Following are some of the real-life applications of genomic analyses through GenPipes:
+.. contents:: 
+    :local:
+    :depth: 2
 
 Detecting COVID-19 Mutations
 -------------------------------

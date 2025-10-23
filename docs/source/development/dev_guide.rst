@@ -12,17 +12,21 @@ GenPipes is an open-source (`LGPL <https://github.com/c3g/GenPipes/blob/main/COP
 Prerequisites
 -------------
 
+Following are the key prerequisites for developing and using GenPipes:
+
 * Python 3.11.x or higher 
 * Command line Linux tooling
 * Familiar with HPC, Cloud, deploying and using Python packages
-* Schedulers: Slurm, PBSPro, others
+* Schedulers: Slurm, PBS
 * GitHub CI/CD processes
 * Bioinformatics gene sequencing pipelines and protocols, design and readset file formats, result analysis tools
+
+See :ref:`GenPipes Checklist<docs_checklist>` for details.
 
 Get Started
 -----------
 
-#. Learn about how to :ref:`get involved<docs_get_involved>` with GenPipes and the process of making contributions to the project.
+#. Learn about how to :ref:`get involved<docs_contributing>` with GenPipes and the process of making contributions to the project.
 
 #. Refer to the latest :ref:`Release Notes<docs_release_notes>` to familiarize yourself with the latest GenPipes pipeline processes and protocol options.
 
@@ -34,7 +38,7 @@ Get Started
 
 #. Use a local dev branch in order to make your changes / modifications / enhancements. Validate your changes and issue a Pull Request from your fork's local dev branch to GenPipes dev branch.
 
-#. Submit your PR along with the associated issue number (use -m "Fix: #[issue-num] when committing changes to your branch) for review by the GenPipes Dev team. If the changes are tested, working and acceptable, those will be merged into the GenPipes/dev branch.
+#. Submit your PR along with the associated issue number (use -m "Fix: #[issue-number] when committing changes to your branch) for review by the GenPipes Dev team. If the changes are tested, working and acceptable, those will be merged into the GenPipes/dev branch.
 
 #. For any further queries regarding contributing to GenPipes, refer to `README.md`_ file. 
 

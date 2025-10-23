@@ -3,20 +3,13 @@
 About
 =====
 
-.. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x onward
-   :color: success
+GenPipes is an open-source (`LGPL <https://github.com/c3g/GenPipes/blob/main/COPYING.LESSER>`_), Python-based platform for managing next-generation sequencing (NGS) workflows. It serves bioinformatics professionals, students, and researchers. 
 
-   .. include:: /gp5_0.inc
+Use GenPipes pipelines for high-quality genomic analysis optimized for high-performance computing (HPC) and cloud environments. In use since 2013, these pipelines suit anyone needing a fast, proven genomic analysis solution. They have been refined, tested, and widely adopted over time.
 
-.. include:: /common/new_wizard_dropdown.txt
+The latest release is v\ |genpipes_version|\. Refer to the :ref:`Release Notes<docs_release_notes>` for details on changes in previous releases.
 
-GenPipes is an open-source (`LGPL <https://github.com/c3g/GenPipes/blob/main/COPYING.LESSER>`_) Python-based *next generation sequencing (NGS)* platform for managing genomics workflows. 
 
-It is available for use by the bioinformatics professionals, students and researchers. GenPipes consists of high-quality genomic analysis pipelines, optimized for high-performance computing (HPC) and cloud environments. 
-
-These pipelines have been in use since 2013 and perfect for anyone requiring fast, proven genomics analysis solution. Over the years, they have been refined, tested and widely adopted for genomic analysis.
-
-The latest release is v\ |genpipes_version|\. See :ref:`Release Notes<docs_release_notes>` for details about what has changed over the past releases.
 
 .. toctree::
    :maxdepth: 1
