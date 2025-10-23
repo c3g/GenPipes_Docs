@@ -2,9 +2,24 @@
 
 .. _docs_gp_release_instructions:
 
-Release Instructions
-====================
+Release Process
+================
 
-If you are looking for release notes, see :ref:`here<docs_release_notes>`. 
+GenPipes team makes three types of releases using the following nomenclature:
 
-To learn how to generate a GenPipes release, see `Release Instructions <https://github.com/c3g/GenPipes/blob/main/README-release.txt>`_.
+Major: version [major number].0.0
+Minor: version [major number].[minor].0
+Patch: version [major number].[minor].[patch]
+
+Refer to our :ref:`Release Notes Archive<docs_release_notes>` for details.
+
+Source
+-------
+
+Earlier, until release version 5.x, GenPipes used Bitbucket as the source code repository. Starting version 6.x,
+GenPipes sources are managed via GitHub.
+
+Generating Builds
+------------------
+
+Follow the `Release Instructions <https://github.com/c3g/GenPipes/blob/main/README-release.txt>`_ to .

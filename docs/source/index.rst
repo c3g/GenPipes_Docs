@@ -70,10 +70,23 @@ GenPipes v\ |genpipes_version|\  Documentation
             :caption: Get Started
             :name: sec-learn
 
+            user_guide/quickstart_gp
             deploy/how_to_deploy_genpipes
             get-started/index
             user_guide/user_guide
             tutorials/list_tutorials
+
+    .. grid-item-card:: 
+
+         .. toctree::
+            :maxdepth: 1
+            :caption: Reference
+            :name: sec-ref
+
+            user_guide/pipeline_ref
+            development/release_notes
+
+.. grid:: 3
 
     .. grid-item-card:: 
 
@@ -84,18 +97,6 @@ GenPipes v\ |genpipes_version|\  Documentation
 
             support/how_to_get_support
             user_guide/gp_wizard
-
-.. grid:: 3
-
-    .. grid-item-card:: 
-
-         .. toctree::
-            :maxdepth: 1
-            :caption: Community
-            :name: sec-community
-
-            community/channels
-            community/contributing
 
     .. grid-item-card:: 
 
@@ -114,18 +115,23 @@ GenPipes v\ |genpipes_version|\  Documentation
 
          .. toctree::
             :maxdepth: 1
-            :caption: Development
-            :name: sec-devel
+            :caption: Community
+            :name: sec-community
 
-            development/release_notes
-            development/gp_release_instructions
-            development/dev_guide
-            development/troubleshooting_guide
+            community/channels
+            community/contributing
 
 .. grid:: 3
 
     .. grid-item-card:: 
 
+         .. toctree::
+            :maxdepth: 1
+            :caption: Development
+            :name: sec-devel
+
+            development/dev_guide
+            development/gp_release_instructions
 
     .. grid-item-card:: 
 
