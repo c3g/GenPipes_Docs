@@ -186,6 +186,6 @@ This command closes the Slurm Login node shell. You are now back on your cloud s
 
 **Further information**
 
-If you run into any issues, please refer to :ref:`Troubleshooting runtime issues<docs_troubleshooting_rt_issues>` section of this documentation and visit :ref:`GenPipes Support<docs_how_to_get_support>` page.
+If you run into any issues, please refer to :ref:`Troubleshooting runtime issues<docs_gp_user_troubleshooting_guide>` section of this documentation and visit :ref:`GenPipes Support<docs_how_to_get_support>` page.
 
 For advanced GCP cloud setup scenarios and for the latest updates on deploying GenPipes in the cloud, details regarding Slurm stand alone cluster setup, or multi-cluster federation setup or to burst out of on-premise cluster to GCP while running GenPipes, refer to the `README.md file <https://bitbucket.org/mugqic/cloud_deplyoment/src/master/gcp/README.md>`_.

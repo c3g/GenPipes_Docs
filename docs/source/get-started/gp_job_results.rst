@@ -4,137 +4,144 @@
 
         walltime
 
-Analyzing GenPipes Results
-===========================
+Analyzing Results
+==================
 
-This document contains generic insights related to viewing and analyzing results obtained after running GenPipes Pipelines.  It assumes that you are familiar with :ref:`GenPipes Basics<docs_what_is_genpipes>` and have used one of the pipelines already as demonstrated in :ref:`Using GenPipes<docs_using_gp>`.
+This document guides you in analyzing :ref:`GenPipes pipelines<docs_pipeline_ref>` results.
+It assumes you understand :ref:`GenPipes basics<docs_what_is_genpipes>` and have used a
+pipeline (see :ref:`Using GenPipes<docs_using_gp>`).
 
 .. contents:: :local:
 
 ----
 
-Overview
---------
-
-If you are a new user of GenPipes and have successfully run it for the first time, you are likely to wonder, what is next?  How can you determine whether all the jobs that were part of one of the :ref:`GenPipes Pipelines<docs_pipeline_ref>` were executed successfully? Where are the results located once the pipelines are run and what is the best way to view and analyze GenPipes results in general. 
-
-You can find answers to such questions here.
-
-GenPipes Results
+Viewing Results
 -----------------
 
-When a pipeline is run successfully, by default, the output is saved to the same location the pipeline was launched in the first place. This behavior can be changed by modifying the output directory when launching the pipeline using -o or --output-dir, for example:
+By default, pipeline output is saved in the launch directory. You can specify a different
+output directory using ``-o`` or ``--output-dir`` flags when launching the pipeline.
 
-::
+.. code::
 
-   genpipes rnaseq -o /PATH/TO/OUTPUT ... (other options) -g genpipes_cmd_list.sh
+    genpipes rnaseq -o /PATH/TO/OUTPUT ... (other options) -g genpipes_cmd_list.sh
    
-   bash genpipes_cmd_list.sh
+    bash genpipes_cmd_list.sh
 
-For most pipelines, GenPipes creates an html report with most of the results in the pipeline. To create the report, you need to rerun the same command you ran to create the GenPipes commands, but add --report to it.
+To generate the report after a successful run, rerun the pipeline command with the ``--report`` flag.
 
-Refer to the 'job_output' directory. In that directory, you can find subdirectories that roughly correspond to each step in the pipeline, inside those are the log files. At the top, of the directory, there is a file that is named with the following convention:
+Job Output
++++++++++++
 
-::
+Most pipelines produce reports in HTML format. These are located in the ``job_output``
+For each pipeline step, the logs are stored in a corresponding subdirectory.
 
-  job_output/PIPELINE_job_list_YEAR-MM-DDTHH.MM.SS
+You can identify the top-level log file for the pipeline by its name. It
+follows the following naming convention:
 
-where, PIPELINE corresponds to the pipeline name and YEAR-MM-DDTHH.MM.SS to the date and time the pipeline was launched. This job list file in the job_output folder that can help you determine the status of each job and sub-jobs as well.
+``job_output/[PIPELINE]_job_list_[YEAR-MM-DDTHH.MM.SS]``
 
-.. note::
+where, 
 
-       This job_list file can be used to check the status of only those jobs that are scheduled using PBS and Slurm schedulers.  Also, this feature is not supported when you run :ref:`GenPipes in a container<docs_dep_gp_container>`.
+- *[PIPELINE]:* Name of the pipeline
+- *[YEAR-MM-DDTHH.MM.SS]:* The date and time of pipeline launch
 
+This top-level ``job_list`` output file contains the status of each pipeline job run and the sub-jobs.
 
-Abacus Reports (PBS Scheduler)
-++++++++++++++++++++++++++++++
+.. warning::
 
-.. include:: /common/log_report_change.txt
+    This job_list file is available only when you run the pipelines deployed on
+    DRAC servers for these job schedulers:
+    
+    * PBS
+    * Slurm
+    
+    This feature is **not supported** if you run the GenPipes pipeline in a :ref:`container<docs_dep_gp_container>`.
 
-.. tab-set:: 
-
-      .. tab-item:: Version 6.x
-
-          .. include:: /common/log_report_v6.txt
-
-      .. tab-item:: Version 5.x, 4.x, 3.x
-
-          Use the `log_report.pl` script to generate the tab-delimited report for Abacus:
-
-          ::
-
-            log_report.pl job_output/{PIPELINE}_job_list_{DATE}T{TIME}
-
-          For example:
-
-          ::
-
-            log_report.pl job_output/RnaSeq_job_list_2018-06-26T12.54.27
-
-.. note:: 
-
-   The `log_report` command returns the status of each job. In addition to the detailed report, it also outputs a summary file that includes the number of jobs that completed successfully, those that failed, and those that are still active/inactive.
-
-.. tip:: 
-  
-    You can save the reports as .csv or .tsv files and open them in Excel on your laptop.  For each job, there is an exit code that indicates job status.  
-
-
-Analysis Reports (Slurm Scheduler)
-+++++++++++++++++++++++++++++++++++
+Reports
+++++++++
 
 .. include:: /common/log_report_change.txt
 
 .. tab-set:: 
 
-      .. tab-item:: Version 6.x
+    .. tab-item:: Version 6.x
 
-          .. include:: /common/log_report_v6.txt
+        .. include:: /common/log_report_v6.txt
 
-      .. tab-item:: Version 5.x, 4.x, 3.x
+    .. tab-item:: Version 5.x, 4.x, 3.x
 
-          Use the `log_report.py` script to generate the html report for running Slurm Scheduler on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers:
+        .. tab-set::                 
 
-          ::
+            .. tab-item:: PBS
 
-            log_report.py job_output/{PIPELINE}_job_list_{DATE}T{TIME} --tsv log.out 
- 
-          .. warning::
+                Use the ``log_report.pl`` script to generate the tab-delimited report for Abacus:
+
+                ::
+
+                    log_report.pl job_output/{PIPELINE}_job_list_{DATE}T{TIME}
+
+                **Example**
+
+                ::
+
+                    log_report.pl job_output/RnaSeq_job_list_2025-09-22T10.05.27 --tsv log.out
+
+            .. tab-item:: Slurm
+
+                  Use the ``log_report.py`` script to generate the html report for running Slurm Scheduler on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers:
+
+                  ::
+
+                    log_report.py job_output/{PIPELINE}_job_list_{DATE}T{TIME} --tsv log.out 
+
+                  **Example**
+
+                  ::
+
+                    log_report.py job_output/DnaSeq_job_list_2025-10-26T12.54.27 --tsv log.out
+
+        .. warning::
+                    
+            By default, the script ``log_report.py`` provides less detailed output that the new ``log_report.pl`` script in
+            version 6.x. 
             
-              By default, unlike the `log_report.pl` script, the script `log_report.py` does not provide detailed output.  Use the --tsv option to get a detailed output.
+            Use the --tsv option for detailed output with ``log_report.py``.
 
-.. note:: 
-
-   The `log_report` command returns the status of each job. In addition to the detailed report, it also outputs a summary file that includes the number of jobs that completed successfully, those that failed, and those that are still active/inactive.
-
-.. tip:: 
-  
-    You can save the reports as .csv or .tsv files and open them in Excel on your laptop.  For each job, there is an exit code that indicates job status.  
 
 Exit Codes
 ++++++++++
 
-Following are some of the common job exit codes:
+The exit code indicates status for each pipeline job run.
 
-* 0 - Exit code of 0 means that the pipeline ran without any issues
-* 271 - This exit code typically means that there was insufficient RAM allocated and hence the job did not run successfully.
-* -11 - Exit code -11 indicates that the job was prematurely killed as it exceeded the allocated walltime - basically insufficient compute resources were assigned for the job.
+For example,
+
+* **0:** Pipeline run was successful without any issues
+* **271:** Insufficient RAM allocated to the job causing job failure
+* **-11:** Job was prematurely killed as it exceeded the allocated 'wall-time`` due to insufficient compute resources allocation
 
 .. note::
 
-      For every GenPipes Pipeline run, output is created in the default or specified location. However, please note that what is actually written in the output location varies significantly between each pipeline.  Refer to GenPipes User Guide, :ref:`Pipelines Reference<docs_pipeline_ref>` section for details regarding the processing performed by different pipelines.
+      For every GenPipes Pipeline run, output is created in the default or specified location. 
+      
+      However, please note that what is actually written in the output location may vary significantly across different pipelines.
+      See :ref:`Pipelines Reference<docs_pipeline_ref>` for specifics.
 
-GenPipes Errors & Log Files
-----------------------------
+Error Logs
+++++++++++
 
-When launched, GenPipes creates a job_output folder where it stores the logs and errors from all the jobs. If errors occur, you need to look into the job_output folder for the log of the step that failed to see what it last printed before it shut down. This usually helps to understand what potentially happened. When a job finishes successfully, it will create a file with the extension .done.
+When a pipeline job is launched, GenPipes creates a ``job_output`` folder. All the logs and errors for the run are stored in this output
+folder. Logs corresponding to each pipeline step are stored in a corresponding sub directory. If an error occurs, check the ``job_output`` folder for the specific log of the failed step and see what what printed last before it shut down. This usually helps to understand and pinpoint the real cause. 
 
-GenPipes Logs are stored in the job_output folder under the appropriate folder for each step. For more details see :download:`GenPipes Error Logs </ref/C3GAW_practical_7_GenpipeProgress.pdf>`.
+When a job finishes successfully, it will create a file with the extension ``.done``.
 
-Visualization and Analysis
---------------------------
+See :download:`GenPipes Error Logs </ref/C3GAW_practical_7_GenpipeProgress.pdf>` for details.
 
-GenPipes output results vary a lot depending upon each specific pipeline and the way it is configured to run. Also, the way results are analyzed is also dependent on the final objective of the analysis. For example, in case of visualizations, the results have to be imported to R or Python or some alternative visualization package. 
+Visualizing Output
+--------------------
+
+GenPipes output results vary a lot depending upon each specific pipeline and the way it is configured to run. Also, the way results are analyzed is also dependent on the final objective of the analysis. 
+
+For example, in case of visualizations, the results have to be imported to R or Python or some alternative visualization package. 
 
 Tools such as Integrative Genomics Viewer (`IGV`_ - Integrative Genomics Viewer), `Genome Browser Gateway <https://genome.ucsc.edu/cgi-bin/hgGateway>`_ and several others are utilized for visualization of results. **These tools vary from pipeline to pipeline.** 
 
@@ -160,19 +167,20 @@ Figure below shows how the data is displayed once the alignment files are opened
 
    Figure: Data Alignment visualizer using IGV Tool
 
-GenPipes Relaunch
------------------
+Relaunching Pipeline Run
+-------------------------
 
-If GenPipes fails, for any reason, you can recreate the commands and relaunch them.
-When recreating the commands, GenPipes can detect jobs that have completed successfully and will not rerun them.  That being said, unless you understand why a job failed and fix it, relaunched jobs might fail with the same error.
+If a GenPipes pipeline run fails for any reason, you can recreate the commands and relaunch the pipeline run.
 
-GenPipes Clean
---------------
+When recreating the commands, GenPipes can detect job steps that have completed successfully and will not rerun those specific steps.  That being said, unless you understand why a job failed in the first instance and fix it, relaunched jobs might fail with the same error.
 
-GenPipes stores some temporary files that are useful to shorten potential reruns. To delete all these files, you can run the GenPipes command with --clean. This will delete a lot of files that were marked by GenPipe developers as “removable”. If you are interested in temporary files, avoid the –clean command.
+Deleting Temporary Files
+-------------------------
 
-Tracking GenPipes Environment Parameters for quoting in Publications
----------------------------------------------------------------------
+GenPipes stores some temporary files that are useful to shorten potential the reruns. To delete all these files, you can run the GenPipes command with ``--clean`` flag. This will delete a lot of files that were marked by GenPipe developers as “removable”. If you are interested in referring to these temporary files later, avoid the –clean command.
+
+Tracking Run Parameters for Publications
+-----------------------------------------
 
 In order to keep track of all parameters used, GenPipes creates a final .config.trace.ini file each time it is run. It is a good idea to keep a copy of that file in order to keep track of software versions used when publishing your paper or publication.
 

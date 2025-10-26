@@ -9,8 +9,8 @@
     walltime
     ccdb
 
-GenPipes User: Troubleshooting Guide
-=====================================
+Troubleshooting Guide
+======================
 
 .. dropdown:: :material-outlined:`help;2em` No jobs are submitted after running `genpipes` command. Why?
 
@@ -104,7 +104,7 @@ GenPipes User: Troubleshooting Guide
 
 .. dropdown:: :material-outlined:`help;2em` Why does the pipeline does not execute at all?
 
-    First time users may issue the pipeline command and assume it will generate jobs on worker nodes automatically.  However, after multiple runs, no execution happens if the pipeline command is executed.  For example see Han's issue in `GenPipes Google Group <https://groups.google.com/forum/#!msg/genpipes/4jxFWDC_Otw/K0ULgt7-AQAJ;context-place=forum/genpipes>`_.
+    First time users may issue the pipeline command and assume it will generate jobs on worker nodes automatically.  However, after multiple runs, no execution happens if the pipeline command is executed.  For example see `Han's issue <https://groups.google.com/forum/#!msg/genpipes/4jxFWDC_Otw/K0ULgt7-AQAJ;context-place=forum/genpipes>`_ in the GenPipes Google Group.
 
     **Fix**
 
@@ -160,4 +160,5 @@ GenPipes User: Troubleshooting Guide
     
     For other types of GenPipes deployments, :ref:`docs_dep_options`, make sure you have closely followed the :ref:`docs_pre_req_chklist` before actually issuing GenPipes pipeline run commands.
 
-   
+
+:bdg-primary:`Check:` `GenPipes Google Group <https://groups.google.com/g/genpipes>`_ for discussion on the latest release.

@@ -1,11 +1,11 @@
-Use the following command to generate the tab-delimited report:
+Use the following command to generate the tab-delimited report for either PBS ro Slurm jobs:
 
 ::
 
-    genpipes tools log_report --tsv log.out job_output/{PIPELINE}_job_list_{DATE}T{TIME}
+    genpipes tools log_report job_output/{PIPELINE}_job_list_{DATE}T{TIME}
 
-For example:
+**Example**
 
 ::
 
-    genpipes tools log_report --tsv log.out job_output/DnaSeq_job_list_2018-06-26T12.54.27
+    genpipes tools log_report job_output/DnaSeq_job_list_2018-06-26T12.54.27

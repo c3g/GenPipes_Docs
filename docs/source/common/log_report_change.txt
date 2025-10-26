@@ -1,1 +1,13 @@
-In the latest GenPipes release v6.x, generating reports has changed. Earlier, there were two different scripts for generating reports when using PBS or Slurm scheduler. With version 6.x it is now a single command for both schedulers.
+In the latest GenPipes release v6.x, generating reports **has changed**. 
+
+Earlier, there were two different scripts for generating reports when using PBS or Slurm scheduler. 
+With version 6.x it is now a single command for both schedulers, ``log_report``.
+
+The `log_report` command returns the status of each job. In addition to the detailed report,
+it also outputs a summary file with the information about:
+ 
+* jobs that completed successfully
+* jobs that failed
+* jobs that are still active/inactive. 
+ 
+You can save the reports as .csv or .tsv files and open them in Excel on your laptop.  

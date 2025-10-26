@@ -1,1 +1,1 @@
-:bdg-warning:`New` :ref:`GenPipes Wizard<docs_gp_wizard>`
+:bdg-warning:`New` :ref:`Try GenPipes Wizard<docs_gp_wizard>`
