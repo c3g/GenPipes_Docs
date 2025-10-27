@@ -273,7 +273,7 @@ All genome-related files, including indices for different aligners and annotatio
 
 For a complete list of all available reference genomes, visit `genome page <https://computationalgenomics.ca/cvmfs-genome/>`_.
 
-1. Run ``genpipes`` Command
+4. Run ``genpipes`` Command
 -----------------------------
 
 That's all. You are now set up to run GenPipes pipelines for genomic analysis. 

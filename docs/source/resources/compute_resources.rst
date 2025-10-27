@@ -7,14 +7,14 @@ This document lists compute resources that are available from C3G for GenPipes u
 
 .. toctree::
    :maxdepth:  1
-   :caption: Digital Research Alliance Compute Resources
+   :caption: DRAC Servers
    :name: compute-resources
 
    ../c3gres/ccdb_account
 
 .. toctree::
    :maxdepth: 1
-   :caption: C3G Bioinformatics Resources
+   :caption: Bioinformatics Software
    :name: bioinformatic-resources
 
 

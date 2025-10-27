@@ -7,16 +7,29 @@ GenPipes v\ |genpipes_version|\  Documentation
 
     .. grid-item-card:: 
 
+        .. dropdown:: :material-outlined:`bolt;2em` Usage Changes (from v5.x)
+            :color: success
+
+            .. include:: gp5_0.inc
+                
         **GenPipes** is a flexible, *Python-based*, open-source framework optimized
         for genomic analysis using *High-Performance Computing (HPC) cluster* 
         and *cloud* environments. It supports the development and deployment of multi-step, scalable,
         validated *genomic workflows*. Various :ref:`genomics applications<docs_gp_usecases>` utilize
         its :ref:`gene sequencing pipelines<docs_pipeline_ref>`.
 
-        .. dropdown:: :material-outlined:`bolt;2em` Usage Changes (from v5.x)
-            :color: success
+        .. dropdown:: :material-outlined:`handshake;2em` Sponsors
+            :color: primary
 
-            .. include:: gp5_0.inc
+            GenPipes is developed and financed by the `Canadian Centre for Computational Genomics <https://www.computationalgenomics.ca>`_ (C3G).
+
+            C3G is a core platform affiliated with `McGill University <https://www.mcgill.ca>`_, provides bioinformatics analysis and HPC services for life sciences research. 
+
+            These services include:
+            
+            * Bespoke pipeline development
+            * Fee-based analyses
+            * Other suite of software solutions genomics     
 
 .. grid:: 2
 
@@ -27,27 +40,13 @@ GenPipes v\ |genpipes_version|\  Documentation
         We welcome community :ref:`contributions<docs_contributing>` to GenPipes and its
         documentation. To understand its structure, refer to the :ref:`Site Map<docs_genpipes_archmap>`.
 
-
                 
     .. grid-item-card:: 
 
         .. dropdown:: :material-outlined:`lock;2em` DRAC Server Access
-            :color: primary
-
-            .. include:: /server_access.inc 
-
-        .. dropdown:: :material-outlined:`handshake;2em` Sponsors
             :color: info
 
-            GenPipes is an open-source genomics workflow and next generation gene sequencing pipeline platform. It is developed and financed by the `Canadian Centre for Computational Genomics <https://www.computationalgenomics.ca>`_ (C3G).
-
-            C3G, a core platform affiliated with `McGill University <https://www.mcgill.ca>`_, provides bioinformatics analysis and HPC services for life sciences research. 
-
-            These services include:
-            
-            * Bespoke pipeline development
-            * Fee-based analyses
-            * Other suite of software solutions genomics  
+            .. include:: /server_access.inc  
 
         .. dropdown::  :material-outlined:`coronavirus;2em` Fighting COVID-19
             :color: secondary
@@ -78,7 +77,6 @@ GenPipes v\ |genpipes_version|\  Documentation
 
             deploy/how_to_deploy_genpipes
             get-started/index
-            user_guide/user_guide
             tutorials/list_tutorials
 
     .. grid-item-card:: 
@@ -89,7 +87,7 @@ GenPipes v\ |genpipes_version|\  Documentation
             :name: sec-ref
 
             development/release_notes
-            resources/testdataset
+            user_guide/user_guide 
             resources/compute_resources
 
 .. grid:: 3

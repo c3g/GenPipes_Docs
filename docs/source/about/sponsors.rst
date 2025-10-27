@@ -14,7 +14,8 @@ sponsors the development and maintenance of GenPipes.
 About C3G
 -------------
 
-C3G is a core platform affiliated with the `McGill University <https://www.mcgill.ca>`_ and the`Victor Phillip Dahdaleh Institute of Genomic Medicine <https://genomic.medicine.mcgill.ca>`_. 
+C3G is a core platform affiliated with the `McGill University <https://www.mcgill.ca>`_ and
+the `Victor Phillip Dahdaleh Institute of Genomic Medicine <https://genomic.medicine.mcgill.ca>`_. 
 
 C3G Objectives
 ++++++++++++++

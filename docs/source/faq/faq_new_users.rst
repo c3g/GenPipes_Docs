@@ -22,8 +22,8 @@ New Users
 
 ----
 
-To create a `new CCDB account`_, what should I fill in the form field: 'position'?
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+To create a `new CCDB/DRAC account`_, what should I fill in the form field: 'position'?
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. image:: /img/faq/ccdb-position-formfield.png 
 
@@ -35,7 +35,7 @@ Choose an appropriate option in the form, for example:
 
   external collaborator
 
-For the CCRI field, use your sponsor's `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada,  Role Identifier (CCRI) as input. 
+For the CCRI field, use your sponsor's `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada (CCDB),  Role Identifier (CCRI) as input. 
 
 The CCRI has a structure similar to this: `abc-123-01`.
 
@@ -56,7 +56,7 @@ See `Digital Research Alliance Documentation <https://docs.alliancecan.ca/wiki/T
 
 .. caution::
   
-   `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ was formerly known as Compute Canada.
+   `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ was formerly known as Compute Canada (CCDB).
 
 My account is activated but I cannot login into |key_ccdb_server_name| server or any other node such as |other_ccdb_server_names|? What is wrong?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -128,6 +128,6 @@ Untrimmed read pairs refers to read pairs which did not require quality 3' trimm
 
 Typically when the fastqc are generated after sequencing the adapters are removed, but in some cases the adapter remains. You can use fastqc on the raw reads to visualize the proportion of these. Also if you are unsure check that the adapters you are using are inline with sequencer and libraries you are using.
 
-.. _new CCDB account: https://ccdb.alliancecan.ca/account_application
+.. _new CCDB/DRAC account: https://ccdb.alliancecan.ca/account_application
 .. _GenPipes deployed in a Docker Container: https://genpipes.readthedocs.io/en/latest/deploy/dep_gp_container.html
 .. _Digital Research Alliance Support: mailto:support@alliancecan.ca

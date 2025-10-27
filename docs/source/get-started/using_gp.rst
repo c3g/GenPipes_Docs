@@ -193,7 +193,7 @@ The ``design.rnaseq.txt`` file has the following contents:
 
 The design file above contains a single analysis that compares two replicates of `H1ESC` to two replicates of group `GM12878`.
 
-:bdg-primary:`Step 2:` Next, we will run this RNA-Sequencing analysis on the |key_ccdb_server_name| server at `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada. 
+:bdg-primary:`Step 2:` Next, we will run this RNA-Sequencing analysis on the |key_ccdb_server_name| server at `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada (CCDB). 
 
 Use the following command to set up the pipeline:
 

@@ -88,7 +88,7 @@ Reports
 
             .. tab-item:: Slurm
 
-                  Use the ``log_report.py`` script to generate the html report for running Slurm Scheduler on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers:
+                  Use the ``log_report.py`` script to generate the html report for running Slurm Scheduler on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada (CCDB) servers:
 
                   ::
 
