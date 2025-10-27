@@ -33,7 +33,7 @@ Job Output
 +++++++++++
 
 Most pipelines produce reports in HTML format. These are located in the ``job_output``
-For each pipeline step, the logs are stored in a corresponding subdirectory.
+For each pipeline step, the logs are stored in a corresponding sub-directory.
 
 You can identify the top-level log file for the pipeline by its name. It
 follows the following naming convention:

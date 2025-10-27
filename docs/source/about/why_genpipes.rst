@@ -1,23 +1,27 @@
 .. _docs_gp_why:
 
+.. spelling::
+
+     metagen
+     precipitomics
+
 Why GenPipes?
 ==============
 
-Genomic sequencing has become an indispensable tool for modern bioinformatics researchers in their quest to understand biological processes. It is a Python-based bioinformatics tool that offers a wide range of genomic sequencing pipelines for bioinformatics researchers. Developed at the Canadian Centre for Computational Genomics (C3G), it’s available as open-source software.
+Genomic sequencing has become an indispensable tool for modern bioinformatics researchers in their quest to understand biological processes. Next-generation sequencing (NGS) is computationally complex, requiring efficient use of high-performance computing infrastructure, scalability, and flexibility. It also demands managing large genome reference data, intermediate results, and dependencies in serial and parallel processes.
 
-Next-generation sequencing (NGS) is complex and compute-intensive. It requires efficient handling of high-performance computing infrastructure, scalability, flexibility, and the ability to manage massive genome reference data while managing intermediate results and inter-dependencies between serial and parallel analysis processes.
+GenPipes is a Python-based bioinformatics tool that offers a wide range of NGS genomic sequencing :ref:`pipelines for bioinformatics researchers<docs_available_pipelines>`. 
 
-It offers a wide array of genomic sequencing pipelines including RNA-Seq, ChIP-Seq, Whole Genome Sequencing (WGS), Exome sequencing, long-read DNA sequencing, metagenomics and SARS-CoV-2 genome sequencing pipeline. 
+Developed at the Canadian Centre for Computational Genomics (C3G), GenPipes is available as open-source software offering a wide array of genomic sequencing pipelines. For example, RNA-Seq, ChIP-Seq, Whole Genome Sequencing (WGS), Exome sequencing, long-read DNA sequencing, metagen precipitomics and SARS-CoV-2 genome sequencing pipeline.
+
 
 .. image:: /img/genpipes_hld.png
 
-GenPipes Features
------------------
+Features
+---------
 
-#. Multiple Schedulers
+#. Supports Multiple Schedulers
   
-   GenPipes is optimized for HPC processing. It supports the following schedulers:
-
    - Slurm 
    - PBS/Torque 
    - Batch
@@ -25,44 +29,35 @@ GenPipes Features
 
 #. Optimal Job Execution Time
 
-   GenPipes minimizes overall job analysis time by job dependency model that leverages job parallelism. This enables jobs to become active and executed as soon as the dependencies are met.
+   GenPipes reduces job analysis time using a dependency model that enables parallelism. This allows jobs to execute immediately once the dependencies are met.
 
-#. Smart Relaunching of Jobs
+#. Smart Job Relaunching
 
-   Through smart tracking of job progress, GenPipes can determine which jobs failed and at which steps. This helps to relaunch the jobs at the exact point in time, just before the last failure, automatically.
+   By tracking job progress, GenPipes identifies failed jobs and the exact steps that failed. It restarts jobs from the failure point automatically.
 
-#. Parameter Encapsulation\
+#. Parameter Encapsulation
 
-   GenPipes is a flexible framework that allows user adjustments. It implements a superposed configuration system to reduce the time required to set-up or modify parameters needed during the analysis.
+   GenPipes is a flexible framework that supports user customization. Its layered configuration system simplifies setting or modifying analysis parameters.
 
-#. Diverse Inputs
+#. Supports Multiple Inputs
 
-   GenPipes is flexible in terms of multiple choice of input files for the analysis. It allows users to skip specific steps in the pipeline if they consider them unnecessary.
+   GenPipes supports multiple input file options for analysis. It allows users to skip pipeline steps if deemed unnecessary.
 
 #. Customizable Workflows
 
-   GenPipes limits wastage of expensive HPC resources and time as it allows customizable steps in different pipelines enabling users to plug and play with customized pipeline steps.
+   GenPipes saves high-performance computing (HPC) resources and time with customizable pipeline steps, allowing users to configure workflows.
+
 
 Key Differentiators
 -------------------
 
-GenPipes is different from other analysis platforms, workbenches and workflow management systems (WMS) in terms of the following capabilities:
-
-#. **Flexibility:** Easy to modify and configure, multiple type of deployments available – local (containerized), cloud (GCP) and GenPipes deployment hosted on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada, servers, support for multiple job schedulers
-#. **Scalability:** Optimized for large scale data analysis, simple to scale up or down in terms of processing and data access needs.
-#. **Built-in Pipelines:** Pre-built, tested on multiple computing infrastructures, robust industry standard benchmark driven and production quality genomic analysis pipelines for various bioinformatics analyses.
-
-GenPipes vs. Other NGS Solutions
----------------------------------
-
-GenPipes’ strength lies in its robust WMS that comes with one of the most diverse selection of analysis pipelines that have been thoroughly tested. The pipelines in the framework cover a wide range of sequencing applications. The pipelines are end-to-end workflows running complete bioinformatics analyses. While many other pipeline solutions conclude with a BAM file or run limited post-bam analysis steps, the pipelines included in GenPipes are extensive, often having as many as 40 different steps that cover a wide range of post-bam processing.
-
-For a tabular comparison of available solutions for NGS `see here <https://onlinelibrary.wiley.com/doi/10.1155/2012/251364>`_.
-
-GenPipes is compatible with HPC computing, as well as cloud computing, and includes a workflow manager that can be adapted to new systems. GenPipes also provides job status tracking through JSON files that can then be displayed on a web portal (an official portal for GenPipes will be released soon). 
-
-GenPipes’ :ref:`available pipelines<docs_available_pipelines>` facilitate bioinformatics processing, while the framework makes it flexible for modifications and new implementations.
-
 Since the release of version 2.0.0 in 2014, a community of users has run GenPipes to conduct approximately 3,000 analyses processing ∼100,000 samples.
 
-To learn more about how GenPipes works, refer to the :ref:`Get Started Guide<docs_getting_started_index>`.
+The following are GenPipes’s key capabilities that distinguish it from other analysis platforms, workbenches, and workflow management systems (WMS):  
+
+#. **Flexibility:** GenPipes can be easily modified and configured. It has a workflow manager that can be adapted to new systems quickly. It supports multiple job schedulers and several deployment types, such as local (containerized, VM, server), cloud (GCP), and hosted on `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ servers. It provides job status tracking through JSON files that can then be displayed on a web portal (*an official portal for GenPipes will be released soon*). 
+#. **Scalability:** GenPipes is optimized for large-scale data analysis. It scales easily for processing and data access needs.  
+#. **Built-in Pipelines:** GenPipes provides diverse, pre-built, tested, robust, industry-standard, production-quality pipelines for
+   bioinformatics analysis. GenPipes pipelines cover diverse sequencing applications, performing full bioinformatics analysis. Unlike other pipeline solutions that end with a BAM file or include limited post-BAM steps, GenPipes pipelines are extensive, with up to 40 steps for comprehensive post-BAM processing. GenPipes’ :ref:`available pipelines<docs_available_pipelines>` facilitate bioinformatics processing, while the framework makes it flexible for modifications and new implementations.
+
+For details on how GenPipes compares with other NGS solutions, refer to a `tabular comparison of available NGS solutions <https://onlinelibrary.wiley.com/doi/10.1155/2012/251364>`_.

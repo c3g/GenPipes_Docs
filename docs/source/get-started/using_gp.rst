@@ -146,7 +146,7 @@ To cancel on ``abacus`` using PBS scheduler, use the command:
 
 After the processing is complete, you can access quality control plots in the report/ directory and you can find peak data in the peak_call/ directory.
 
-For more information about output formats please consult the webpage of the third party tools used in the pipeline steps. See :ref:`Pipeline Reference Guide<docs_pipeline_ref>` for pipeline steps and third party toos usage.
+For more information about output formats please consult the webpage of the third party tools used in the pipeline steps. See :ref:`Pipeline Reference Guide<docs_pipeline_ref>` for pipeline steps and third party tools usage.
 
 .. note::
 
@@ -242,7 +242,7 @@ Use Model
 ++++++++++
 
 #. Issue GenPipes pipeline command with -g GENPIPES_FILE option and store all the output pipeline commands in a bash script. 
-#. Provide this bash script as input to the  ```chunk_genpipes.sh``` tool to create  scheduler job shunks and store into a folder ```job_chunks``` (default) or the one you specify. Note that chunk_genpipes.sh utility is supposed to be run for a pipeline bash script  **only once**. 
+#. Provide this bash script as input to the  ```chunk_genpipes.sh``` tool to create  scheduler job chunks and store into a folder ```job_chunks``` (default) or the one you specify. Note that chunk_genpipes.sh utility is supposed to be run for a pipeline bash script  **only once**. 
 #. After successful chunking, use ```submit_genpipes``` tool to smartly submit the pipeline jobs to the scheduler. It takes care of  
    scheduler integration, managing queue limits, and checking for errors in the calls made to the scheduler. makes sure to auto-correct them based on chunking limits specified through ```chunk_genpipes.sh``` earlier.
 #. Use ```watch``` command to monitor the submitted jobs.

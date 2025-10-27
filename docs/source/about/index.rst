@@ -15,9 +15,9 @@ The latest release is v\ |genpipes_version|\. Refer to the :ref:`Release Notes<d
    :maxdepth: 1
    :name: "About GenPipes"
 
-   getting_help
-   why_genpipes
-   target_audience
    sponsors
+   target_audience
+   why_genpipes
    history
    license
+   getting_help

@@ -6,10 +6,13 @@ Getting Help
 
 GenPipes is under active development. 
 
-If you :ref:`need help<docs_how_to_get_support>`, or would like to contribute, or simply want to learn more about GenPipes by interacting with the team, we have a number of open channels for communication.
+To get help, contribute, or learn more by engaging with the team, use these communication :ref:`channels<docs_channels>`:
 
-* :ref:`GenPipes Support<docs_how_to_get_support>`
-* `Report GenPipes issues or share feedback <https://github.com/c3g/GenPipes/issues?status=new&status=open>`_
-* `GenPipes Google Group <https://groups.google.com/forum/#!forum/GenPipes>`_
-* :ref:`Other channels<docs_channels>`
-* `Citations, Publications, Workshops <https://genpipes.readthedocs.io/en/latest/index.html>`_
+* Contact :ref:`GenPipes Support<docs_how_to_get_support>`
+* `Report issues <https://github.com/c3g/GenPipes/issues?status=new&status=open>`_
+* Join discussions in the `GenPipes Google Group <https://groups.google.com/forum/#!forum/GenPipes>`_
+* See :ref:`Citations<docs_citation>`, :ref:`Publications<docs_publications>`, :ref:`Workshops<docs_workshops>`
+
+
+
+

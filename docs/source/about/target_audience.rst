@@ -3,20 +3,18 @@
 Target Audience
 ===============
 
-GenPipes is primarily geared towards Next Generation Sequencing analysis. 
-
-There are two kinds of GenPipes users:
+GenPipes supports next-generation sequencing analysis for two user groups:  
 
 .. tabs::
 
-   .. tab:: 1. End-Users
+   .. tab:: 1. Researchers
 
-      End users refers to researchers and analysts working in bioinformatics and gene-sequencing computational processing. For such users, GenPipes' strength lies in its simple interface that makes it very easy for students and researchers in need of sophisticated, yet easy to use bioinformatics workflow management tool with built-in pipelines for various genomic analyses.
-
-      .. include:: /common/new_wizard_dropdown.txt
+      Bioinformatics researchers and analysts benefit from GenPipes’s simple interface, which provides an easy-to-use, sophisticated bioinformatics workflow tool with built-in :ref:`pipelines for genomic analysis<docs_pipeline_ref>`.
 
    .. tab:: 2. Developers
 
-      Developers refers to bioinformatics analysts that use the GenPipes pipelines for various genomic analysis. It also refers to developers and software experts who would like to improve and enhance the GenPipes platform through optimizations and code contributions.
+      This group includes analysts using GenPipes pipelines for genomic analysis and software experts contributing to platform enhancements through optimizations and code contributions.
 
-Our key focus through GenPipes documentation efforts is to ensure that onboarding GenPipes is intuitive and easy for beginners and also for the seasoned users. Our documentation information architecture helps users quickly figure out how to use GenPipes and start with genomic analysis.
+GenPipes documentation ensures intuitive onboarding for beginners and experienced users, enabling them to quickly learn and start genomic analysis.
+
+.. include:: /common/new_wizard_dropdown.txt

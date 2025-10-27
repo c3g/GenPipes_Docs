@@ -1,4 +1,4 @@
-Use the following command to generate the tab-delimited report for either PBS ro Slurm jobs:
+Use the following command to generate the tab-delimited report for either PBS or Slurm jobs:
 
 ::
 
