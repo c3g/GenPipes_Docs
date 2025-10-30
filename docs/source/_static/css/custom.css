@@ -61,3 +61,7 @@ button.toggle-button.toggle-button-hidden:before {
    text-align: center;
    border-bottom: 2px solid black;
 }
+
+.my-red {
+    color:red;
+}
