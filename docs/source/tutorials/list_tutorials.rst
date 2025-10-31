@@ -16,6 +16,6 @@ tutorial contains instructions on running GenPipes pre-installed on the `Digital
    :name: tutorial-learn
 
    ../tutorials/genpipes_tutorial
-   ../tutorials/genpipes_in_the_cloud
    ../tutorials/genpipes_in_the_container
+   ../tutorials/genpipes_in_the_cloud
    ../tutorials/pipeline_usage_examples

@@ -1,65 +1,96 @@
 .. _genpipes_in_the_cloud:
 
-Tutorial: Using Google Cloud Platform (GCP) Deployment
-=======================================================
-Quickstart
-----------
+Tutorial: GenPipes in the Cloud (GCP)
+=====================================
 
-The Quickstart uses a **“Try GCP for free”** session.
-If you already have basic knowledge of GCP, and its shell, you can jump directly to step 4.
+.. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x onward
+   :color: success
 
-1. Create an account on GCP. For more instructions, check out `this page <https://console.cloud.google.com/>`__.
-2. Get acquainted with Google Cloud Shell. For more instructions, check out `this page <https://cloud.google.com/shell/docs/quickstart>`__.
-3. Create a new project. For more instructions, check out `this page <https://cloud.google.com/resource-manager/docs/creating-managing-projects>`__.
-4. Install GenPipes, as follows:
+    .. include:: /gp5_0.inc
 
-In your google shell session, run:
+.. include:: /common/new_wizard_dropdown.txt  
+
+.. admonition:: v6.x Support for Cloud
+    :class: danger
+
+    We have not yet verified / released GenPipes support for GCP / Cloud in version 6.x release. The following tutorial works for GenPipes v5.x only.
+
+GenPipes bioinformatics :ref:`pipelines<docs_available_pipelines>` are developed as part of the GenAP project at the Canadian Centre for Computational Genomics (C3G).
+
+This tutorial shows you how to run GenPipes in Google Cloud (GCP). It uses the **“Try GCP for free”** account to run a pipeline in the cloud.
+
+.. contents:: 
+    :local:
+    :depth: 2
+ 
+----
+
+Prerequisites
+-------------
+
+#. Create an account on GCP. `Learn more... <https://console.cloud.google.com/>`__.
+#. Get acquainted with using the Google Cloud Shell. `Learn more... <https://cloud.google.com/shell/docs/quickstart>`__.
+#. Create a new project. `Learn how to create a cloud project... <https://cloud.google.com/resource-manager/docs/creating-managing-projects>`__.
+
+:bdg-primary:`Step 1:` Deploy GenPipes in GCP cloud
+----------------------------------------------------
+
+Set up GenPipes in your cloud server instance. Run in the Google shell:
 
 .. code-block:: bash
 
     git clone https://bitbucket.org/mugqic/cloud_deplyoment.git
+
     cd cloud_deplyoment/gcp/
+
     gcloud deployment-manager deployments create slurm --config slurm-cluster.yaml
 
-From here on, your GenPipes cloud is being deployed and your account is getting billed by Google.
-Remember to shut down the cluster when the analysis is done.
-Once this command is done running, a configuration script is started to install SLURM on the cluster. You will be able to monitor the installation after you run the next command.
+For more details on how to set up GenPipes in the cloud, see :ref:`GenPipes Cloud Deployment Guide<docs_dep_gp_cloud>`.
 
-Run one of the GenPipes test sets on GCP:
------------------------------------------
-In the Google shell run the following command to log into the login node of the Slurm cluster:
+.. admonition:: Cloud billing
+    :class: warning
+    
+    Please note that from here on, your GenPipes cloud deployment is being deployed and your account is getting billed by Google. Remember to shut down the cloud server cluster when the analysis is done if you do not wish to be billed unintentionally.
+
+:bdg-primary:`Step 2:` Verify Slurm Deployment
+------------------------------------------------
+
+Once the ``gcloud`` command is done running, a configuration script is started to install SLURM on the cluster running in the cloud. You will be able to monitor the installation after you run the next command.
+
+Use the Google shell to log into the login node of the Slurm cluster:
 
 .. code-block:: bash
 
     gcloud compute ssh login1 --zone=northamerica-northeast1-a
 
-
 You are now on your cloud deployment login node.
 
-The installation is still running and you where welcome by the following message:
+The installation may still be running. Once it is done, you will see a welcome 
+message:
 
-.. note::
+.. code::
 
-    ** Slurm is currently being installed/configured in the background. **
+    Slurm is currently being installed/configured in the background.
+
     A terminal broadcast will announce when installation and configuration is
     complete.
 
-Wait for the terminal broadcast this can take up to 10 minutes. Once you have received it or one you log to this node
-without seeing the warning, you can go to the next step. You can run the GenPipes :ref:`tutorial <doc_genpipes_tutorial>` from
-that location.
+Wait for the terminal broadcast. It can take up to 10 minutes. 
 
-.. include:: /common/new_gp_wizard.txt
 
-Let’s use ChIPSeq as an example:
+:bdg-primary:`Step 3:` Run GenPipes Pipeline
+-----------------------------------------------
 
-**1- Make a folder for the test:**
+In this tutorial, we will run the ``chipseq`` pipeline in the cloud.
+
+First, create a test folder as shown below:
 
 .. code-block:: bash
 
     mkdir -p chipseq_test
     cd chipseq_test
 
-**2- Download dataset and unzip it:**
+Then, download the test dataset and unzip it:
 
 .. code-block:: bash
 
@@ -67,37 +98,41 @@ Let’s use ChIPSeq as an example:
     gzip -d chipseq.chr19.new.tar.gz
 
 
-**3- Download the config file for this Quickstart:**
+Next, download the ``chipseq`` configuration file for use in the cloud:
 
 .. code-block:: bash
 
     wget https://bitbucket.org/mugqic/cloud_deplyoment/raw/master/quick_start.ini
 
 
-**4- Create chipseq pipeline script:**
+Then construct the ``chipseq`` pipeline launch command:
 
 .. parsed-literal::
 
-    bash # You do not need this line if you did a logout login cycle
-    # The next line generates the pipeline script
     genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini \
-    $MUGQIC_PIPELINES_HOME/pipelines/common_ini/\ |key_ccdb_server_cmd_name|\.ini \
-    quick_start.ini \
-    -j slurm \
-    -r readsets.chipseqTest.chr22.tsv \
-    -d designfile_chipseq.chr22.txt \
-    -s 1-18 > chipseqScript.sh
+                        $MUGQIC_PIPELINES_HOME/pipelines/common_ini/\ |key_ccdb_server_cmd_name|\.ini \
+                        quick_start.ini \
+                    -j slurm \
+                    -r readsets.chipseqTest.chr22.tsv \
+                    -d designfile_chipseq.chr22.txt \
+                    -s 1-18 > chipseqScript.sh
 
-**5- Run chipseq pipeline:**
+Finally, launch the pipeline using the command:
 
 .. code-block:: bash
 
     bash chipseqScript.sh
 
-**6- Look at your pipeline progression: .**
-Use squeue command. Your GenPipes analysis is `being run on Slurm <https://slurm.schedmd.com/>`_
+:bdg-primary:`Step 4:` Monitor Pipeline Status
+-----------------------------------------------
 
-**7- Shut down your Genpipes Cloud installation (and stop being billed): .**
+Use the ``squeue`` command to monitor the GenPipes analysis run through the `Slurm <https://slurm.schedmd.com/>`_ scheduler. For details on how to monitor scheduler jobs, refer to the job monitoring step in the tutorial :ref:`GenPipes on DRAC <doc_genpipes_tutorial>`.
+
+.. note:: 
+    
+    Shut down your GenPipes Cloud setup once you are done to ensure you are not
+    billed for unintentional cloud usage.
+
 After the jobs have run, you can exit the login node:
 
 .. code-block:: bash
@@ -116,4 +151,5 @@ You are not being billed anymore.
 
     You need to enable the “deployment manager” API on your project. See `this page <https://support.google.com/cloud/answer/6158841?hl=en>`__.
     You also need to make sure that billing is enabled (even for a free try).
-    For more detailed information, check out our `bitbucket repo <https://bitbucket.org/mugqic/cloud_deplyoment/src/master/gcp/>`_
+    For more detailed information, check out our `Bitbucket repo <https://bitbucket.org/mugqic/cloud_deplyoment/src/master/gcp/>`_
+
