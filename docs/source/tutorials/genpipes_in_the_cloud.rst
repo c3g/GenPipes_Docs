@@ -39,11 +39,11 @@ Set up GenPipes in your cloud server instance. Run in the Google shell:
 
 .. code-block:: bash
 
-    git clone https://bitbucket.org/mugqic/cloud_deplyoment.git
+    user@machine:~$ git clone https://bitbucket.org/mugqic/cloud_deplyoment.git
 
-    cd cloud_deplyoment/gcp/
+    user@machine:~$ cd cloud_deplyoment/gcp/
 
-    gcloud deployment-manager deployments create slurm --config slurm-cluster.yaml
+    user@machine:~$ gcloud deployment-manager deployments create slurm --config slurm-cluster.yaml
 
 For more details on how to set up GenPipes in the cloud, see :ref:`GenPipes Cloud Deployment Guide<docs_dep_gp_cloud>`.
 
@@ -61,7 +61,7 @@ Use the Google shell to log into the login node of the Slurm cluster:
 
 .. code-block:: bash
 
-    gcloud compute ssh login1 --zone=northamerica-northeast1-a
+    user@machine:~$ gcloud compute ssh login1 --zone=northamerica-northeast1-a
 
 You are now on your cloud deployment login node.
 
@@ -87,41 +87,42 @@ First, create a test folder as shown below:
 
 .. code-block:: bash
 
-    mkdir -p chipseq_test
-    cd chipseq_test
+    user@machine:~$ mkdir -p chipseq_test
+    user@machine:~$ cd chipseq_test
 
 Then, download the test dataset and unzip it:
 
 .. code-block:: bash
 
-    wget https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz
-    gzip -d chipseq.chr19.new.tar.gz
+    user@machine:~$ wget https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz
+    user@machine:~$ gzip -d chipseq.chr19.new.tar.gz
 
 
 Next, download the ``chipseq`` configuration file for use in the cloud:
 
 .. code-block:: bash
 
-    wget https://bitbucket.org/mugqic/cloud_deplyoment/raw/master/quick_start.ini
+    user@machine:~$ wget https://bitbucket.org/mugqic/cloud_deplyoment/raw/master/quick_start.ini
 
 
 Then construct the ``chipseq`` pipeline launch command:
 
 .. parsed-literal::
 
-    genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini \
-                        $MUGQIC_PIPELINES_HOME/pipelines/common_ini/\ |key_ccdb_server_cmd_name|\.ini \
-                        quick_start.ini \
-                    -j slurm \
-                    -r readsets.chipseqTest.chr22.tsv \
-                    -d designfile_chipseq.chr22.txt \
-                    -s 1-18 > chipseqScript.sh
+    user@machine:~$ genpipes chipseq -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini \\
+                        $MUGQIC_PIPELINES_HOME/pipelines/common_ini/\ |key_ccdb_server_cmd_name|\.ini \\
+                        quick_start.ini \\
+                    -j slurm \\
+                    -r readsets.chipseqTest.chr22.tsv \\
+                    -d designfile_chipseq.chr22.txt \\
+                    -s 1-18 \\
+                    -g chipseqScript.sh
 
 Finally, launch the pipeline using the command:
 
 .. code-block:: bash
 
-    bash chipseqScript.sh
+    user@machine:~$ bash chipseqScript.sh
 
 :bdg-primary:`Step 4:` Monitor Pipeline Status
 -----------------------------------------------
@@ -137,13 +138,13 @@ After the jobs have run, you can exit the login node:
 
 .. code-block:: bash
 
-    exit
+    user@machine:~$ exit
 
 You, are now in back on your cloud shell administrative machine. You can shut down your GenPipes cloud cluster.
 
 .. code-block:: bash
 
-    gcloud deployment-manager deployments delete slurm
+    user@machine:~$ gcloud deployment-manager deployments delete slurm
 
 You are not being billed anymore.
 

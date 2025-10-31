@@ -49,7 +49,7 @@ Edit the ``.bash_profile`` file.
 .. code-block:: bash
 
     ## open bash_profile:
-    nano $HOME/.bash_profile
+    user@machine:~$ nano $HOME/.bash_profile
 
 Copy and paste these settings in the ``.bash_profile``.
 
@@ -79,7 +79,7 @@ Alternatively, you can also this command to set the environment:
 
 .. code-block:: bash
 
-    source $HOME/.bash_profile
+    user@machine:~$ source $HOME/.bash_profile
 
 Once the environment is set, you are ready to use GenPipes. You also have access to hundreds of bioinformatics tools pre-installed by our team on the DRAC servers. 
 
@@ -90,7 +90,7 @@ Then, run this command to list available bioinformatics tools on your current se
 
 .. code-block:: bash
 
-    module avail mugqic/
+    user@machine:~$ module avail mugqic/
 
 Bioinformatics modules
 +++++++++++++++++++++++
@@ -104,16 +104,16 @@ Check the pre-installed GenPipes versions available for use:
 
 .. code-block:: bash
 
-    module avail 2>&1 | grep mugqic/genpipes
+    user@machine:~$ module avail 2>&1 | grep mugqic/genpipes
 
 You can load a specific version of GenPipes or any bioinformatics tool. For example, to load v1.4.1 of  ``samtools``  use:
 
 .. code-block:: bash
 
     # module add mugqic/<tool>/<version>
-    module add mugqic/samtools/1.4.1
+    user@machine:~$ module add mugqic/samtools/1.4.1
     # Now samtools 1.4.1 is available to use. To check:
-    samtools -h
+    user@machine:~$ samtools -h
 
 Available genomes
 +++++++++++++++++++
@@ -124,18 +124,18 @@ Explore the available species via the command:
 
 .. code-block:: bash
 
-    ls $MUGQIC_INSTALL_HOME/genomes/species
+    user@machine:~$ ls $MUGQIC_INSTALL_HOME/genomes/species
 
 All genome-related files, including indices for different aligners and annotation files can be found in the folder:
 
 .. code-block:: bash
 
-    ls $MUGQIC_INSTALL_HOME/genomes/species/<species_scientific_name>.<assembly>/
+    user@machine:~$ ls $MUGQIC_INSTALL_HOME/genomes/species/<species_scientific_name>.<assembly>/
 
 .. code-block:: bash
 
     ## so for Homo Sapiens hg19 assembly, that would be:
-    ls $MUGQIC_INSTALL_HOME/genomes/species/Homo_sapiens.hg19/
+    user@machine:~$ ls $MUGQIC_INSTALL_HOME/genomes/species/Homo_sapiens.hg19/
 
 For a list of available genomes, you can visit our :ref:`genome page <doc_cvmfs_genomes>`.
 
@@ -146,14 +146,14 @@ Now we will construct the command to launch ``chipseq`` pipeline by using ``genp
 
 ::
     
-    genpipes <pipeline_name> [options] -g genpipes_pipeline_cmd.sh
-    bash genpipes_pipeline_cmd.sh
+    user@machine:~$ genpipes <pipeline_name> [options] -g genpipes_pipeline_cmd.sh
+    user@machine:~$ bash genpipes_pipeline_cmd.sh
 
 Check the available protocols and options supported by the ``chipseq`` pipeline with the command:
 
 .. code-block:: bash
 
-    genpipes chipseq -h
+    user@machine:~$ genpipes chipseq -h
 
 Besides the protocols and options for the pipeline, you must also specify the required
 inputs while constructing the pipeline launch command.
@@ -189,7 +189,7 @@ For example, refer to the ``chipseq`` configuration file:
 
 .. code-block:: bash
 
-    ls $GENPIPES_INIS/chipseq/chipseq.base.ini
+    user@machine:~$ ls $GENPIPES_INIS/chipseq/chipseq.base.ini
 
 There is a ``<pipeline_name>.base.ini`` file and a DRAC server specific ``.ini`` file  where the pipeline is run.
 
@@ -201,8 +201,9 @@ The ``base.ini`` file has all the parameters needed by the pipeline but is optim
 
 .. parsed-literal::
 
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
-        $GENPIPES_INIS/common_ini/\ |key_ccdb_server_cmd_name|\.ini
+    user@machine:~$ genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+                                        $GENPIPES_INIS/common_ini/\ |key_ccdb_server_cmd_name|\.ini \\
+                                     -g chipseq_cmd.sh
 
 To change different parameters in the ``.ini`` files, you can create your own file and overwrite the required parameters. 
 
@@ -223,9 +224,10 @@ Add ``chipseq.test.ini`` file after the other ``.ini`` files when constructing t
 
 .. parsed-literal::
 
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
-        $GENPIPES_INIS/chipseq/chipseq.\ |key_ccdb_server_cmd_name|\.ini \\
-        chipseq.test.ini [options]
+    user@machine:~$ genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+                                        $GENPIPES_INIS/chipseq/chipseq.\ |key_ccdb_server_cmd_name|\.ini \\
+                                        chipseq.test.ini [options] \\
+                                        -g chipseq_cmd.sh
 
 Genome Species
 ^^^^^^^^^^^^^^^
@@ -243,9 +245,11 @@ For example, to run the ``chipseq`` pipeline on *mouse mm9* genome, construct th
 
 .. parsed-literal::
 
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
-        $GENPIPES_INIS/chipseq/chipseq.\ |key_ccdb_server_cmd_name|\.ini \\
-        $MUGQIC_INSTALL_HOME/genomes/species/Mus_musculus.mm9/Mus_musculus.mm9.ini [options]
+    user@machine:~$ genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+                                        $GENPIPES_INIS/chipseq/chipseq.\ |key_ccdb_server_cmd_name|\.ini \\
+                                        $MUGQIC_INSTALL_HOME/genomes/species/Mus_musculus.mm9/Mus_musculus.mm9.ini \\
+                                        [options]
+                                        -g chipseq_cmd.sh
 
 Design File
 '''''''''''
@@ -349,9 +353,11 @@ To run this analysis on |key_ccdb_server_name| server, create the launch command
 
 .. parsed-literal::
 
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
-        $GENPIPES_INIS/common_ini/|key_ccdb_server_cmd_name|.ini \\
-        -r readsets.chipseq.txt -s 1-15 -g chipseqcmd.sh
+    user@machine:~$ genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+                                        $GENPIPES_INIS/common_ini/|key_ccdb_server_cmd_name|.ini \\
+                                     -r readsets.chipseq.txt \\
+                                     -s 1-15 \\
+                                     -g chipseqcmd.sh
 
 - **-c**  ``.ini`` configuration files
 - **-r**  readset file
@@ -368,15 +374,18 @@ For the server such as Abacus that uses PBS scheduler you must add the ``-j pbs`
 
 .. code-block:: bash
 
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
-        $GENPIPES_INIS/common_ini/abacus.ini \\
-        -r readsets.chipseq.tsv -s 1-15 -j pbs -g chipseqcmd.sh
+    user@machine:~$ genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+                                        $GENPIPES_INIS/common_ini/abacus.ini \\
+                                     -r readsets.chipseq.tsv \\
+                                     -s 1-15 \\
+                                     -j pbs \\
+                                     -g chipseqcmd.sh
 
 To run it, use:
 
 .. code-block:: bash
 
-    bash chipseqcmd.sh
+    user@machine:~$ bash chipseqcmd.sh
 
 Congratulations on your first successful launch of the ``chipseq`` pipeline. In this run we did not use any design file for the analysis.
 
@@ -450,16 +459,18 @@ First create the launch command for this analysis on |key_ccdb_server_name| serv
 
 .. parsed-literal::
 
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
-        $GENPIPES_INIS/common_ini/|key_ccdb_server_cmd_name|.ini \\
-        -r readsets.chipseqTest.chr22.tsv \\
-        -d designfile_chipseq.chr22.txt -s 1-15 > chipseqScript.txt
+    user@machine:~$ genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+                                        $GENPIPES_INIS/common_ini/|key_ccdb_server_cmd_name|.ini \\
+                                     -r readsets.chipseqTest.chr22.tsv \\
+                                     -d designfile_chipseq.chr22.txt \\
+                                     -s 1-15 \\
+                                     -g chipseqScript.txt
 
 Then run the ``chipseq`` pipeline with the commands in the file:
 
 .. parsed-literal::
     
-        bash chipseqScript.txt
+        user@machine:~$ bash chipseqScript.txt
 
 Congratulations! you just ran the `chipseq` pipeline using a design file as input.
 
@@ -524,21 +535,23 @@ We will run this analysis on the |key_ccdb_server_name| cluster by first constru
 
 .. parsed-literal::
 
-	genpipes rnaseq -c $GENPIPES_INIS/rnaseq/rnaseq.base.ini \\
-        $GENPIPES_INIS/common_ini/|key_ccdb_server_cmd_name|.ini \\
-        -r readset.rnaseq.txt -d design.rnaseq.txt -g rnaseq_commands.sh
+	user@machine:~$ genpipes rnaseq -c $GENPIPES_INIS/rnaseq/rnaseq.base.ini \\
+                                        $GENPIPES_INIS/common_ini/|key_ccdb_server_cmd_name|.ini \\
+                                    -r readset.rnaseq.txt \\
+                                    -d design.rnaseq.txt \\
+                                    -g rnaseq_commands.sh
 
 Then run the pipeline via the command:
 
 .. parsed-literal::
     
-        bash rnaseq_commands.sh
+        user@machine:~$ bash rnaseq_commands.sh
 
 The commands will be sent to the job queue to be executed. You can check the progress of the jobs with:
 
-::
+.. code-block:: bash
 
-	squeue -u <userID>
+	user@machine:~$ squeue -u <userID>
 
 :bdg-primary:`Step 5:` Monitor Submitted Jobs
 -----------------------------------------------
@@ -551,7 +564,7 @@ To confirm that the commands have been submitted, wait a minute or two depending
 
 .. code-block:: bash
 
-    squeue -u <userID>
+    user@machine:~$ squeue -u <userID>
 
 where <userID> is your login id for accessing the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_ infrastructure, formerly Compute Canada.
 
@@ -559,7 +572,7 @@ On Abacus (PBS Scheduler), the equivalent command is:
 
 .. code-block:: bash
 
-    showq -u <userID>
+    user@machine:~$ showq -u <userID>
 
 Cancel Job
 +++++++++++
@@ -568,13 +581,13 @@ In case you ran the command to submit the jobs several times and launched too ma
 
 .. code-block:: bash
 
-    scancel -u <userID>
+    user@machine:~$ scancel -u <userID>
 
 On Abacus (PBS Scheduler), the equivalent command is:
 
 .. code-block:: bash
 
-    showq -u <userID> | tr "|" " "| awk '{print $1}' | xargs -n1 canceljob
+    user@machine:~$ showq -u <userID> | tr "|" " "| awk '{print $1}' | xargs -n1 canceljob
     
 View Logs & Reports
 +++++++++++++++++++
@@ -583,13 +596,13 @@ Once the queue is empty and all jobs have run, you can verify the exit status of
 
 ::
 
-	log_report.py --tsv log.out job_output/RnaSeq.stringtie.job_list.<TIMESTAMP>
+	user@machine:~$ log_report.py --tsv log.out job_output/RnaSeq.stringtie.job_list.<TIMESTAMP>
 
 Take a look at the output with:
 
 ::
 
-	less -S log.out
+	user@machine:~$ less -S log.out
 
 and check that all jobs finished successfully. 
 

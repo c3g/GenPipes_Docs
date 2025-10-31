@@ -45,7 +45,7 @@ Make sure the container is up and running. Use the command to see if ``genpipes`
 
 .. code:: 
 
-     genpipes -h
+     user@machine:~$ genpipes -h
 
 :bdg-primary:`Step 2:` Construct pipeline launch command
 ---------------------------------------------------------
@@ -55,12 +55,12 @@ To create the pipeline command, use the following code in the terminal:
 
 .. code::
 
-     genpipes dnaseq -c dnaseq.base.ini dnaseq.batch.ini \
-                     -j batch \
-                     -r your-readsets.tsv \
-                     -d your-design.tsv \
-                     -s 1-34 \
-                     -t mugqic 
+     user@machine:~$ genpipes dnaseq -c dnaseq.base.ini dnaseq.batch.ini \\
+                     -j batch \\
+                     -r your-readsets.tsv \\
+                     -d your-design.tsv \\
+                     -s 1-34 \\
+                     -t mugqic \\
                      -g run-in-container-dnaseq-script.sh
 
 Each GenPipes pipeline requires some configuration settings and inputs such as parameters used for various genomic analysis tools invoked in different pipeline steps, design file (optional), and the readset file. Refer to the details in the :ref:`GenPipes Tutorial (DRAC Server)<doc_genpipes_tutorial>` to learn more about these input files, their formats and how to specify them when constructing the pipeline launch command. 
@@ -70,7 +70,7 @@ Each GenPipes pipeline requires some configuration settings and inputs such as p
    
 .. code:: 
 
-    bash run-in-container-dnaseq-script.sh
+    user@machine:~$ bash run-in-container-dnaseq-script.sh
 
 When running the ``dnaseq`` pipeline within a container, without any job scheduler, please note that the jobs run as a batch, one after another and not in parallel.
 
@@ -90,13 +90,13 @@ Once the pipeline run is over, you can verify the exit status of each job with t
 
 ::
 
-	log_report.py --tsv log.out job_output/RnaSeq.stringtie.job_list.<TIMESTAMP>
+	user@machine:~$ log_report.py --tsv log.out job_output/RnaSeq.stringtie.job_list.<TIMESTAMP>
 
 Take a look at the output with:
 
 ::
 
-	less -S log.out
+	user@machine:~$ less -S log.out
 
 and check that all jobs finished successfully. 
 

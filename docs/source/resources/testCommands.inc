@@ -22,35 +22,41 @@
 
 .. tab-set:: 
 
-    .. tab-item:: Germline HighCov
+    .. tab-item:: Germline
 
-        .. include:: /common/commands/dnaseq_germ_hc.inc
+        .. tab-set:: 
 
-    .. tab-item:: Germline SNV
+            .. tab-item:: HighCov
 
-        .. include:: /common/commands/dnaseq_germ_snv.inc
+                .. include:: /common/commands/dnaseq_germ_hc.inc
 
-    .. tab-item:: GermlineSV
+            .. tab-item:: SNV
 
-        .. include:: /common/commands/dnaseq_germ_sv.inc
+                .. include:: /common/commands/dnaseq_germ_snv.inc
 
-.. tab-set:: 
+            .. tab-item:: SV
 
-    .. tab-item:: Somatic Ensemble 
+                .. include:: /common/commands/dnaseq_germ_sv.inc
 
-        .. include:: /common/commands/dnaseq_so_ensemble.inc
+    .. tab-item:: Somatic
 
-    .. tab-item:: Somatic Fastpass
+        .. tab-set:: 
 
-        .. include:: /common/commands/dnaseq_so_fastpass.inc
+            .. tab-item:: Ensemble 
 
-    .. tab-item:: Somatic SV 
+                .. include:: /common/commands/dnaseq_so_ensemble.inc
 
-        .. include:: /common/commands/dnaseq_so_sv.inc
+            .. tab-item:: Fastpass
 
-    .. tab-item:: Somatic Tumor
+                .. include:: /common/commands/dnaseq_so_fastpass.inc
 
-        .. include:: /common/commands/dnaseq_so_tumor.inc
+            .. tab-item:: SV 
+
+                .. include:: /common/commands/dnaseq_so_sv.inc
+
+            .. tab-item:: Tumor
+
+                .. include:: /common/commands/dnaseq_so_tumor.inc
 
 ``rnaseq_light``
 
