@@ -15,7 +15,7 @@ To explore the available genomes, you can type:
 
 .. code-block:: bash
 
-    ls $MUGQIC_INSTALL_HOME/genomes/species/
+    user@machine:~$ ls $MUGQIC_INSTALL_HOME/genomes/species/
 
 .. tip::
 

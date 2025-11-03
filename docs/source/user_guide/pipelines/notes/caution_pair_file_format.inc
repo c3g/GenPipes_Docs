@@ -14,7 +14,7 @@
 
     For example:
 
-    ::
+    .. code-block:: bash
         
         tumorPair_CEPHmixture_chr19,tumorPair_CEPHmixture_chr19_normal,tumorPair_CEPHmixture_chr19_tumor
         john_doe_tumorPair_CEPHmixture_chr19,john_doe_tumorPair_CEPHmixture_chr19_normal,john_doe_tumorPair_CEPHmixture_chr19_tumor

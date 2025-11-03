@@ -43,7 +43,7 @@ Prerequisites
 
 Make sure the container is up and running. Use the command to see if ``genpipes`` is available locally within the container:
 
-.. code:: 
+.. code-block:: 
 
      user@machine:~$ genpipes -h
 
@@ -53,7 +53,7 @@ Make sure the container is up and running. Use the command to see if ``genpipes`
 In this tutorial, we will use the :ref:`DNA Sequencing Pipeline<docs_gp_dnaseq>`.
 To create the pipeline command, use the following code in the terminal:
 
-.. code::
+.. code-block::
 
      user@machine:~$ genpipes dnaseq -c dnaseq.base.ini dnaseq.batch.ini \\
                      -j batch \\
@@ -68,7 +68,7 @@ Each GenPipes pipeline requires some configuration settings and inputs such as p
 :bdg-primary:`Step 3:` Launch pipeline run
 -------------------------------------------
    
-.. code:: 
+.. code-block:: 
 
     user@machine:~$ bash run-in-container-dnaseq-script.sh
 
@@ -88,13 +88,13 @@ When running the ``dnaseq`` pipeline within a container, without any job schedul
 
 Once the pipeline run is over, you can verify the exit status of each job with the GenPipes log_report tool:
 
-::
+.. code-block:: bash
 
-	user@machine:~$ log_report.py --tsv log.out job_output/RnaSeq.stringtie.job_list.<TIMESTAMP>
+	user@machine:~$ genpipes tools log_report.py --tsv log.out job_output/RnaSeq.stringtie.job_list.<TIMESTAMP>
 
 Take a look at the output with:
 
-::
+.. code-block:: bash
 
 	user@machine:~$ less -S log.out
 

@@ -41,15 +41,15 @@ Step 2: Setup a GenPipes development environment
 
 Once your container environment and requisite software is all setup and working, proceed to clone GenPipes somewhere locally under $HOME directory using the following command:
 
-::
+.. code-block:: bash
 
-  git clone https://bitbucket.org/mugqic/genpipes $HOME/some/dir/genpipes
+      user@machine:~$ git clone https://bitbucket.org/mugqic/genpipes $HOME/some/dir/genpipes
 
 Add the following line to your .bashrc file:
 
-::
+.. code-block:: bash
 
-  export GENPIPES_DEV_DIR=$HOME/some/dir/genpipes
+      user@machine:~$ export GENPIPES_DEV_DIR=$HOME/some/dir/genpipes
 
 .. note::
 
@@ -62,23 +62,32 @@ Step 3: Setup GenPipes in the container
 
 For Docker, use the following command:
 
-::
+.. code-block:: bash
 
-  docker run --privileged -v /tmp:/tmp --network host -it -w $PWD -v $HOME:$HOME --user $UID:$GROUPS -v /etc/group:/etc/group  -v /etc/passwd:/etc/passwd  [ -v < CACHE_ON_HOST >:/cvmfs-cache/ ] c3genomics/genpipes:<TAG>
+    user@machine:~$ docker run --privileged \\
+                             -v /tmp:/tmp \\
+                             --network host \\
+                             -it \\
+                             -w $PWD \\
+                             -v $HOME:$HOME \\
+                             --user $UID:$GROUPS \\
+                             -v /etc/group:/etc/group \\
+                             -v /etc/passwd:/etc/passwd  \\
+                             [ -v < CACHE_ON_HOST >:/cvmfs-cache/ ] c3genomics/genpipes:<TAG>
 
 For Singularity, use the following command:
 
-::
+.. code-block:: bash
 
-  singularity run [ -B < /HOST/CACHE/ >:/cvmfs-cache/  ] docker://c3genomics/genpipes:<TAG>
+    user@machine:~$ singularity run [ -B < /HOST/CACHE/ >:/cvmfs-cache/  ] docker://c3genomics/genpipes:<TAG>
 
 Please note, <TAG> refers to one of the tagged GenPipes sources as listed at `GitHub <https://github.com/c3g/genpipes_in_a_container/tags>`_ or `Docker Hub <https://hub.docker.com/r/c3genomics/genpipes/tags>`_. Choose 'Tags' to select the version that you wish to use for GenPipes.
 
 <CACHE_ON_HOST> can be any place in your computer that can be used to store the CVMFS cache. For example,
 
-::
+.. code-block:: bash
 
-  CACHE_ON_HOST="-v ~/cvmfs-cache/:/cvmfs-cache/" 
+    CACHE_ON_HOST="-v ~/cvmfs-cache/:/cvmfs-cache/" 
 
 <CACHE_ON_HOST> will hold a cache for GenPipes in a container `CVMFS <https://cernvm.cern.ch/portal/filesystem>`_ system. It will hold the genomes and software that is used by GenPipes. This folder will grow with GenPipes usage. You can delete it in between usage, but keep in mind that once deleted it will need to be rebuilt by downloading data from the internet.
 
@@ -90,9 +99,16 @@ If you are using a Mac computer, first you will need to install macFUSE and SSHF
 
 After installing FUSE, run the following command:
 
-::
+.. code-block:: bash
 
-  docker run --rm  --device /dev/fuse --cap-add SYS_ADMIN  -v /tmp:/tmp -it -w $PWD -v $HOME:$HOME  - [ -v < CACHE_ON_HOST >:/cvmfs-cache/ ]  c3genomics/genpipes:<TAG>
+    user@machine:~$ docker run --rm  \\
+                             --device /dev/fuse \\
+                             --cap-add SYS_ADMIN  \\
+                             -v /tmp:/tmp \\
+                             -it \\
+                             -w $PWD \\
+                             -v $HOME:$HOME  \\
+                             - [ -v < CACHE_ON_HOST >:/cvmfs-cache/ ]  c3genomics/genpipes:<TAG>
 
 
 Step 4: Load GenPipes dependency modules in the container
@@ -100,9 +116,9 @@ Step 4: Load GenPipes dependency modules in the container
 
 As shown in previous steps, you can initiate the container process on your machine locally. Next, you need to load GenPipes module using the following command:
 
-::
+.. code-block:: bash
 
-  module load dev_genpipes
+    user@machine:~$ module load dev_genpipes
 
 With this command, GenPipes uses whatever commit branch that has been checked out in $HOME/some/dir/genpipes directory.
 
@@ -110,9 +126,9 @@ With this command, GenPipes uses whatever commit branch that has been checked ou
 
 For each pipeline, you can get help about its usage through the help command:
 
-::
+.. code-block:: bash
 
-  genpipes $MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name> --help
+      user@machine:~$ genpipes $MUGQIC_PIPELINES_HOME/pipelines/<pipeline_name>/<pipeline_name> --help
 
 Step 5: Running GenPipes Pipelines in a container
 --------------------------------------------------
@@ -123,9 +139,15 @@ You need to make a note of the fact that GenPipes Pipelines use scheduler's call
 
 This is how you can run GenPipes pipelines such as :ref:`DNA Sequencing Pipeline<docs_gp_dnaseq>`, refer to the command below:
 
-::
+.. code-block:: bash
 
-  genpipes dnaseq -c dnaseq.base.ini dnaseq.batch.ini -j batch -r your-readsets.tsv -d your-design.tsv -s 1-34 -t mugqic -g run-in-container-dnaseq-script.sh
+      user@machine:~$ genpipes dnaseq -c dnaseq.base.ini dnaseq.batch.ini \\
+                                      -j batch \\
+                                      -r your-readsets.tsv \\
+                                      -d your-design.tsv \\
+                                      -s 1-34 \\
+                                      -t mugqic \\
+                                      -g run-in-container-dnaseq-script.sh
    
   bash run-in-container-dnaseq-script.sh
 

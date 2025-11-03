@@ -44,7 +44,7 @@ The Design File is a tab-separated plain text file with one line per sample and 
 Example of a Design File
 ========================
 
-::
+.. code-block:: bash
 
             Sample  Contrast_AB Contrast_AC
             sampleA  1             1

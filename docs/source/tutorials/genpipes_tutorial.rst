@@ -144,7 +144,7 @@ For a list of available genomes, you can visit our :ref:`genome page <doc_cvmfs_
 
 Now we will construct the command to launch ``chipseq`` pipeline by using ``genpipes`` followed by the pipeline name, protocol type, options and inputs:
 
-::
+.. code-block:: bash
     
     user@machine:~$ genpipes <pipeline_name> [options] -g genpipes_pipeline_cmd.sh
     user@machine:~$ bash genpipes_pipeline_cmd.sh
@@ -227,7 +227,7 @@ Add ``chipseq.test.ini`` file after the other ``.ini`` files when constructing t
     user@machine:~$ genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
                                         $GENPIPES_INIS/chipseq/chipseq.\ |key_ccdb_server_cmd_name|\.ini \\
                                         chipseq.test.ini [options] \\
-                                        -g chipseq_cmd.sh
+                                     -g chipseq_cmd.sh
 
 Genome Species
 ^^^^^^^^^^^^^^^
@@ -249,7 +249,7 @@ For example, to run the ``chipseq`` pipeline on *mouse mm9* genome, construct th
                                         $GENPIPES_INIS/chipseq/chipseq.\ |key_ccdb_server_cmd_name|\.ini \\
                                         $MUGQIC_INSTALL_HOME/genomes/species/Mus_musculus.mm9/Mus_musculus.mm9.ini \\
                                         [options]
-                                        -g chipseq_cmd.sh
+                                     -g chipseq_cmd.sh
 
 Design File
 '''''''''''
@@ -405,7 +405,7 @@ If you have not already done so in the tutorial above, we will start by `downloa
 
 In the downloaded tar file, you will find the fastq read files in folder rawData and will find the readset file (readset.chipseq.txt) that describes that dataset. You will also find the design file 
 
-::
+.. code-block:: bash
    
 	design.chipseq.txt
 
@@ -413,7 +413,7 @@ that contains the contrast of interest for this analysis.
 
 Review the contents of the Readset file: 
 
-::
+.. code-block:: bash
 
 	readsets.chipseqTest.tsv
 
@@ -439,7 +439,7 @@ This analysis contains 4 samples with a single readset each. They are all SINGLE
 
 Review the contents of the Design file
 
-::
+.. code-block:: bash
 
 	design.chipseq.txt
 
@@ -516,14 +516,16 @@ To see how this works, lets run an RNA-Seq experiment.
 Start by `downloading the data for RNA-Seq  <https://datahub-90-cw3.p.genap.ca/rnaseq.chr19.tar.gz>`_.
 
 In the downloaded tar file, you will find the fastq read files in the folder `rawData` and you will find the readset file (readset.rnaseq.txt) that describes the dataset. You will also find the design file
-::
+
+.. code-block:: bash
    
 	design.rnaseq.txt
 
 that contains the contrast of interest.
 
 The design file contents are as follows:
-::
+
+.. code-block:: bash
 
 	Sample	H1ESC_GM12787
     H1ESC_Rep1	1
@@ -594,13 +596,13 @@ View Logs & Reports
 
 Once the queue is empty and all jobs have run, you can verify the exit status of each job with the GenPipes log_report tool:
 
-::
+.. code-block:: bash
 
-	user@machine:~$ log_report.py --tsv log.out job_output/RnaSeq.stringtie.job_list.<TIMESTAMP>
+	user@machine:~$ genpipes tools log_report.py --tsv log.out job_output/RnaSeq.stringtie.job_list.<TIMESTAMP>
 
 Take a look at the output with:
 
-::
+.. code-block:: bash
 
 	user@machine:~$ less -S log.out
 

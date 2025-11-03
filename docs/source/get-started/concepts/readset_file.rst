@@ -81,7 +81,7 @@ For the pipelines listed above, the readset file is a tab-separated file that co
 Example of Readset File
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-::
+.. code-block:: bash
 
             Sample  Readset     Library RunType     Run     Lane    Adapter1                            Adapter2                            QualityOffset   BED                 FASTQ1                              FASTQ2                              BAM
 
@@ -180,7 +180,7 @@ Use the following readset file format for the ChIP-Seq Pipeline. **Do NOT** use 
 Example of ChIP-Seq Readset File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-::
+.. code-block:: bash
 
             Sample  Readset  MarkName MarkType Library RunType     Run     Lane    Adapter1                            Adapter2                            QualityOffset   BED                    FASTQ1                              FASTQ2                              BAM
 
@@ -242,7 +242,7 @@ Use the long read readset file format for the following pipelines:
 Example of Long Read Readset File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-::
+.. code-block:: bash
 
      Sample  Readset     Run                 Flowcell    Library    Summary                                 FASTQ                         FAST5                           BAM (Optional)
 

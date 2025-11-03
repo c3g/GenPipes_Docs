@@ -4,9 +4,9 @@ The `Canadian Centre for Computational Genomics <https://www.computationalgenomi
 
 Use the following command to explore the available tools:
 
-::
+.. code-block:: bash
 
-  module avail mugqic/
+    user@machine:~$ module avail mugqic/
 
 .. dropdown:: Available Modules
 
@@ -14,16 +14,16 @@ Use the following command to explore the available tools:
 
 Use the following command to load any of the available tools:
 
-::
+.. code-block:: bash
 
-  # module add mugqic/<tool>/<version>
-  module add mugqic/samtools/1.4.1
+    # module add mugqic/<tool>/<version>
+    user@machine:~$ module add mugqic/samtools/1.4.1
  
-  # Now samtools 1.4.1 is available to use. To check:
-  samtools
+    # Now samtools 1.4.1 is available to use. To check:
+    user@machine:~$ samtools
 
 Use the following command to check available GenPipes versions pre-installed on the server:
 
-:: 
+.. code-block:: bash
 
-  module avail genpipes
+    user@machine:~$ module avail genpipes

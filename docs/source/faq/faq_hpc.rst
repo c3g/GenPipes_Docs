@@ -24,20 +24,21 @@ GenPipes provides utilities such as ```chunk_genpipes.sh``` that can take pipeli
 
 For example, the chipseq pipeline commands can be chunked as follows:
 
-::
+.. code-block:: bash
 
-  M_FOLDER=path_to_folder
+      user@machine:~$ export M_FOLDER=path_to_folder
 
-  genpipes chipseq <options> --genpipes_file chipseq_script.sh
+      user@machine:~$ genpipes chipseq <options> --genpipes_file chipseq_script.sh
 
-  chunk_genpipes.sh chipseq_script.sh $M_FOLDER -n 15
+      user@machine:~$ chunk_genpipes.sh chipseq_script.sh $M_FOLDER -n 15
 
 Here, ```-n 15``` input specifies that the maximum number of jobs in a chunk is 15.  This is an optional parameter.  By default, the chunk size is 20.
 
 You can use the ```submit_genpipes``` GenPipes utility to submit jobs smartly to the scheduler and use scheduler ```watch``` command to monitor the status of these job `chunks`.
-::
 
-  submit_genpipes $M_FOLDER
+.. code-block:: bash
+
+      user@machine:~$ submit_genpipes $M_FOLDER
 
 For details, refer to :ref:`Submitting GenPipes Pipeline runs<ref_submitting_gp>` and see genpipes/utils in the source tree.
 

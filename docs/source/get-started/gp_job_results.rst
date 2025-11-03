@@ -21,11 +21,11 @@ Viewing Results
 By default, pipeline output is saved in the launch directory. You can specify a different
 output directory using ``-o`` or ``--output-dir`` flags when launching the pipeline.
 
-.. code::
+.. code-block::
 
-    genpipes rnaseq -o /PATH/TO/OUTPUT ... (other options) -g genpipes_cmd_list.sh
+    user@machine:~$ genpipes rnaseq -o /PATH/TO/OUTPUT ... (other options) -g genpipes_cmd_list.sh
    
-    bash genpipes_cmd_list.sh
+    user@machine:~$ bash genpipes_cmd_list.sh
 
 To generate the report after a successful run, rerun the pipeline command with the ``--report`` flag.
 
@@ -70,35 +70,35 @@ Reports
 
     .. tab-item:: Version 5.x, 4.x, 3.x
 
-        .. tab-set::                 
+        .. tab-set::
 
             .. tab-item:: PBS
 
                 Use the ``log_report.pl`` script to generate the tab-delimited report for Abacus:
 
-                ::
+                .. code-block:: bash
 
-                    log_report.pl job_output/{PIPELINE}_job_list_{DATE}T{TIME}
+                        user@machine:~$ genpipes tools log_report.pl job_output/{PIPELINE}_job_list_{DATE}T{TIME}
 
                 **Example**
 
-                ::
+                .. code-block:: bash
 
-                    log_report.pl job_output/RnaSeq_job_list_2025-09-22T10.05.27 --tsv log.out
+                        user@machine:~$ genpipes tools log_report.pl job_output/RnaSeq_job_list_2025-09-22T10.05.27 --tsv log.out
 
             .. tab-item:: Slurm
 
                   Use the ``log_report.py`` script to generate the html report for running Slurm Scheduler on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada (CCDB) servers:
 
-                  ::
+                  .. code-block:: bash
 
-                    log_report.py job_output/{PIPELINE}_job_list_{DATE}T{TIME} --tsv log.out 
+                        user@machine:~$ genpipes tools log_report.py job_output/{PIPELINE}_job_list_{DATE}T{TIME} --tsv log.out 
 
                   **Example**
 
-                  ::
+                  .. code-block:: bash
 
-                    log_report.py job_output/DnaSeq_job_list_2025-10-26T12.54.27 --tsv log.out
+                        user@machine:~$ genpipes tools log_report.py job_output/DnaSeq_job_list_2025-10-26T12.54.27 --tsv log.out
 
         .. warning::
                     

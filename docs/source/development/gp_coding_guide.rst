@@ -38,12 +38,12 @@ When coding commands, a single command should be divided across different lines 
 
 For example,
 
-::
+.. code-block:: bash
 
-  motifMaker.sh find \\
-    -f {fasta_consensus} \\
-    -g {output_gff} \\
-    -o {output}
+       motifMaker.sh find \\
+       -f {fasta_consensus} \\
+       -g {output_gff} \\
+       -o {output}
 
 Use of modules
 ---------------

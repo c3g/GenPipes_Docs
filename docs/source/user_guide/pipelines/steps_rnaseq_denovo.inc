@@ -199,15 +199,15 @@ If you want to compare multiple groups you will have to break the comparison in 
 
 For example, for 3 group comparison, the design file should be as follows:
 
-::
+.. code-block:: bash
 
-   Sample   A_vs_B   B_vs_C  A_vs_C
-   A1       1        0       1
-   B1       2        1       0
-   A2       1        0       1
-   B2       2        1       0
-   C1       0        2       2
-   C2       0        2       2
+        Sample   A_vs_B   B_vs_C  A_vs_C
+        A1       1        0       1
+        B1       2        1       0
+        A2       1        0       1
+        B2       2        1       0
+        C1       0        2       2
+        C2       0        2       2
 
 Seq2Fun analysis is performed using FASTQ files and it generates a sample table.
 
@@ -227,22 +227,22 @@ Current KEGG database used for the analysis was created on August, 2021. If you'
 
 **Instructions for download on Linux**
 
-:: 
+.. code-block:: bash
 
-    wget http://rest.kegg.jp/list/pathway`
-    sed -i 's/path://g' pathway
-    mv pathway KEGG_all_pathways.txt
+    user@machine:~$ wget http://rest.kegg.jp/list/pathway`
+    user@machine:~$ sed -i 's/path://g' pathway
+    user@machine:~$ mv pathway KEGG_all_pathways.txt
 
 **Instructions for download using R**
 
-::
+.. code-block:: bash
 
-    library(data.table)
-    pathway_list <- fread("KEGG_all_pathways.txt", header =F)`
-    kegg_ko <- lapply(unique(pathway_list$mapID), fun)
-    names(kegg_ko) <- (pathway_list$mapID)
-    kegg <- lapply(kegg_ko, substring, 4)
-    saveRDS(kegg, "kegg.rds")
+        library(data.table)
+        pathway_list <- fread("KEGG_all_pathways.txt", header =F)`
+        kegg_ko <- lapply(unique(pathway_list$mapID), fun)
+        names(kegg_ko) <- (pathway_list$mapID)
+        kegg <- lapply(kegg_ko, substring, 4)
+        saveRDS(kegg, "kegg.rds")
 
 After downloading the database and performing the steps listed above, next, specify created files in a custom ini file.
 

@@ -23,10 +23,10 @@ Methylation Sequencing Pipeline
          .. dropdown:: Command
             :open:
 
-            .. code::
+            .. code-block::
 
-               genpipes methylseq [options] [--genpipes_file GENPIPES_FILE.sh]
-               bash GENPIPES_FILE.sh
+                  user@machine:~$ genpipes methylseq [options] [--genpipes_file GENPIPES_FILE.sh]
+                  user@machine:~$ bash GENPIPES_FILE.sh
 
          .. dropdown:: Options
 

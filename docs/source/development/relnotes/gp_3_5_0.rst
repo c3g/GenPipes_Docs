@@ -25,15 +25,15 @@ What's new?
 
   Earlier, for the same purpose, users redirected the output to the command file before running the pipeline:
 
-  .. code::
+  .. code-block::
 
-        chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini -r readset.chipseq.txt -d design.chipseq.txt -j slurm -t chipseq > chip_cmd.sh
+        user@machine:~$ chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini -r readset.chipseq.txt -d design.chipseq.txt -j slurm -t chipseq > chip_cmd.sh
 
   In the latest release, for any pipeline, users can use the following command and specify the command file name as an option:
 
-  .. code::
+  .. code-block::
 
-        chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini -r readset.chipseq.txt -d design.chipseq.txt -j slurm -t chipseq --genpipes-file chip_cmd.sh
+        user@machine:~$ chipseq.py -c $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.base.ini $MUGQIC_PIPELINES_HOME/pipelines/chipseq/chipseq.beluga.ini -r readset.chipseq.txt -d design.chipseq.txt -j slurm -t chipseq --genpipes-file chip_cmd.sh
 
 Quick! Where can I find it? I can't wait! 
 ------------------------------------------

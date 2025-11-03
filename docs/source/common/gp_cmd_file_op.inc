@@ -1,4 +1,4 @@
-::
+.. code-block:: bash
 
   -g GENPIPES_FILE, --genpipes_file GENPIPES_FILE
 

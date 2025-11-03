@@ -44,16 +44,16 @@ If you are a seasoned GCP user and familiar with Google Cloud shell, you can ski
 
 To install GenPipes on GCP, use Google Cloud Shell Session and download the following install scripts:
 
-::
+.. code-block:: bash
 
-  git clone https://bitbucket.org/mugqic/cloud_deplyoment.git
+    user@machine:~$ git clone https://bitbucket.org/mugqic/cloud_deplyoment.git
 
 GenPipes requires `Slurm <https://slurm.schedmd.com/>`_ for scheduling genomic analysis jobs on GCP compute servers. To setup Slurm on your GCP compute infrastructure, run the following commands in your Google Cloud Shell:
-
-::
  
-  cd cloud_deplyoment/gcp/
-  gcloud deployment-manager deployments create slurm --config slurm-cluster.yaml
+.. code-block:: bash
+  
+    user@machine:~$ cd cloud_deplyoment/gcp/
+    user@machine:~$ gcloud deployment-manager deployments create slurm --config slurm-cluster.yaml
 
 Once this command is done running, a configuration script is started to install SLURM on the cluster. It will take some time to complete the setup. You will be able to monitor the status of installation once you run the next command. The Cluster configuration is specified in slurm-cluster.yaml file. You can view it to see the controller and worker node setup. By default, only a single node is used for this GCP GenPipes deployment. See node_count value in slurm-cluster.yaml file.
 
@@ -65,9 +65,9 @@ Once this command is done running, a configuration script is started to install 
 
 Use the following command to log into the login node of your GCP Slurm cluster:
 
-::
+.. code-block:: bash
 
-  gcloud compute ssh login1 --zone=northamerica-northeast1-a
+    user@machine:~$ gcloud compute ssh login1 --zone=northamerica-northeast1-a
 
 After running the command mentioned above, you are now on GenPipes cloud deployment login node.
 
@@ -75,10 +75,10 @@ After running the command mentioned above, you are now on GenPipes cloud deploym
 
 The installation is still running and once you log into the login node of your GCP Slurm cluster, you will see the following welcome message:
 
-::
+.. code-block:: bash
 
-  *** Slurm is currently being installed/configured in the background. ***
-  A terminal broadcast will announce when installation and configuration is complete.
+    *** Slurm is currently being installed/configured in the background. ***
+    A terminal broadcast will announce when installation and configuration is complete.
 
 .. note::
 
@@ -88,15 +88,15 @@ The installation is still running and once you log into the login node of your G
 
 Now that your GCP Slurm Cluster is up and running without any error or warning, you can launch any GenPipes pipeline using the command:
 
-::
-
-  genpipes <pipeline_name> –help
+.. code-block:: bash
+    
+      user@machine:~$ genpipes <pipeline_name> –help
 
 For example, to check the help information for GenPipes ChIP Sequencing pipelines, try:
 
-::
-
-  genpipes chipseq -h
+.. code-block:: bash
+    
+      user@machine:~$ genpipes chipseq -h
 
 **GenPipes Test Run in the cloud**
 
@@ -104,85 +104,86 @@ To run ChIP Sequencing pipeline using test dataset, use the login node on your G
 
 Step 1: Create a new test directory
 
-::
+.. code-block:: bash
 
-  mkdir -p chipseq_test
-  cd chipseq_test
+    user@machine:~$ mkdir -p chipseq_test
+    user@machine:~$ cd chipseq_test
 
 Step 2: Download test dataset and unzip it as shown below:
 
-::
+.. code-block:: bash
 
-  wget https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz
-  gzip -d chipsseq.chr19.new.tar.gz
+    user@machine:~$ wget https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz
+    user@machine:~$ gzip -d chipsseq.chr19.new.tar.gz
 
 Step 3: GenPipes ChIP Sequencing pipeline needs a configuration file to setup the parameters required by this pipeline. You can download it using the command:
 
-::
+.. code-block:: bash
 
-  wget https://bitbucket.org/mugqic/cloud_deplyoment/raw/master/quick_start.ini
+    user@machine:~$ wget https://bitbucket.org/mugqic/cloud_deplyoment/raw/master/quick_start.ini
 
 Step 4: Create ChIP Sequencing pipeline execution command script as shown below:
 
 .. parsed-literal::
 
-    bash # You do not need this line if you did a logout login cycle
     # The next line generates the pipeline script
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \
-    $GNEPIPES_INIS/common_ini/chipseq.\ |key_ccdb_server_cmd_name|\.ini \
-    quick_start.ini \
-    -j slurm \
-    -r readsets.chipseqTest.chr22.tsv \
-    -d designfile_chipseq.chr22.txt \
-    -s 1-18 > chipseqScript.sh
+    user@machine:~$ genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+                                        $GNEPIPES_INIS/common_ini/chipseq.\ |key_ccdb_server_cmd_name|\.ini \\
+                                        quick_start.ini \\
+                                     -j slurm \\
+                                     -r readsets.chipseqTest.chr22.tsv \\
+                                     -d designfile_chipseq.chr22.txt \\
+                                      -s 1-18 \\
+                                      -g chipseqScript.sh
 
 Step 5:  Now you can execute ChIP Sequencing pipeline using the following command:
 
-::
+.. code-block:: bash
 
-  bash chipseqScript.sh
+    user@machine:~$ bash chipseqScript.sh
 
 Step 6: View Progress of your pipeline and jobs by using squeue command. For more `Slurm commands <https://slurm.schedmd.com/quickstart.html>`_ and details on monitoring Slurm cluster, you can see `Slurm documentation <https://slurm.schedmd.com/>`_
 
 There are several ways to check the status of your jobs in the queue.  Below are a few SLURM commands to make use of.  Use the Linux 'man' command to find loads of additional information about these commands as well.
 
-::
+.. code-block:: bash
 
-  squeue <options>
+    user@machine:~$ squeue <options>
 
 where you can use the following options:
 
-::
+.. code-block:: bash
 
-  -u username
-  -j jobid
-  -p partition
-  -q qos
+    -u username
+    -j jobid
+    -p partition
+    -q qos
 
 For example:
 
-::
+.. code-block:: bash
 
-  [shalz@ubuntu_srv:/$ squeue -u shaloo
-  JOBID PARTITION  NAME     	USER     ST       TIME  NODES NODELIST(REASON)
-  92311  debug     test     	shaloo   R        0:06      2 e06ne9s0e,c17n09
-  88915  xyz	   GPU_test     shaloo   PD       0:00      1 (Priority)
-  91716  xyz       hell_te      shaloo   R        0:08      2 d19res0e,d16n08 
-  91791  xyz 	   hello_te     shaloo   PD       0:00      2 (Priority)
-  91792  xyz       hello_te     shaloo   PD       0:00      2 (Priority)
+    user@machine:~$ squeue -u shaloo
+
+    JOBID PARTITION   NAME     	    USER     ST       TIME  NODES NODELIST(REASON)
+    92311  debug      test     	    shaloo   R        0:06      2 e06ne9s0e,c17n09
+    88915  xyz	      GPU_test      shaloo   PD       0:00      1 (Priority)
+    91716  xyz        hell_te       shaloo   R        0:08      2 d19res0e,d16n08 
+    91791  xyz 	      hello_te      shaloo   PD       0:00      2 (Priority)
+    91792  xyz        hello_te      shaloo   PD       0:00      2 (Priority)
 
 Step 7: Shutdown GCP compute resources (Very Important!!!)
 You need to make sure that after your jobs are run, you need to shutdown your GenPipes Slurm Cluster on GCP otherwise you will continue to be billed for the same.  After all your jobs have run, use the following command to exit out of your login node Google Cloud shell session:
 
-::
+.. code-block:: bash
 
-  exit
+    user@machine:~$ exit
 
 This command closes the Slurm Login node shell. You are now back on your cloud shell administrative server. You can shut down your GenPipes cloud cluster by running the following script:
 
-::
+.. code-block:: bash
 
-  gcloud deployment-manager deployments delete slurm
+    user@machine:~$ gcloud deployment-manager deployments delete slurm
 
 **Further information**
 

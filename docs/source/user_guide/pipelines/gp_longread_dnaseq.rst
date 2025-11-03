@@ -40,10 +40,10 @@ Long Read DNA Sequencing Pipeline
          .. dropdown:: Command
             :open:
 
-            .. code::
+            .. code-block::
 
-                 genpipes longread_dnaseq [-options ] [--genpipes_file GENPIPES_FILE.sh]
-                 bash GENPIPES_FILE.sh
+                 user@machine:~$ genpipes longread_dnaseq [-options ] [--genpipes_file GENPIPES_FILE.sh]
+                 user@machine:~$ bash GENPIPES_FILE.sh
 
          .. dropdown:: Options
 

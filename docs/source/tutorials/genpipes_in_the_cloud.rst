@@ -68,7 +68,7 @@ You are now on your cloud deployment login node.
 The installation may still be running. Once it is done, you will see a welcome 
 message:
 
-.. code::
+.. code-block:: bash
 
     Slurm is currently being installed/configured in the background.
 
@@ -128,6 +128,8 @@ Finally, launch the pipeline using the command:
 -----------------------------------------------
 
 Use the ``squeue`` command to monitor the GenPipes analysis run through the `Slurm <https://slurm.schedmd.com/>`_ scheduler. For details on how to monitor scheduler jobs, refer to the job monitoring step in the tutorial :ref:`GenPipes on DRAC <doc_genpipes_tutorial>`.
+
+For more details on viewing log files and generating reports, refer to the section *Monitor Job Status* in the Tutorial: :ref:`GenPipes on DRAC servers<doc_genpipes_tutorial>`.
 
 .. note:: 
     

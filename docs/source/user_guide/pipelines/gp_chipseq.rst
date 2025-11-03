@@ -25,10 +25,10 @@ ChIP Sequencing Pipeline
          .. dropdown:: Command
             :open:
 
-            ::
+            .. code-block:: bash
 
-               genpipes chipseq [options] [--genpipes_file GENPIPES_FILE.sh]
-               bash GENPIPES_FILE.sh
+                user@machine:~$ genpipes chipseq [options] [--genpipes_file GENPIPES_FILE.sh]
+                user@machine:~$ bash GENPIPES_FILE.sh
 
          .. dropdown:: Options
 

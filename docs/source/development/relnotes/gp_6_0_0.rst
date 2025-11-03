@@ -36,9 +36,9 @@ This is a major release of GenPipes:
     - It is now simpler to generate log reports for GenPipes runs, regardless of whether you're working on PBS or SLURM clusters. 
     - Instead of two different commands there is a single command to generate logs irrespective of the scheduler. A single command can be used on all clusters to generate a report of the status of each job in the GenPipes pipeline:
   
-   ::
+   .. code-block:: bash
     
-    genpipes tools log_report --tsv log.out job_output/{PIPELINE}_job_list_{DATE}T{TIME}
+         user@machine:~$ genpipes tools log_report --tsv log.out job_output/{PIPELINE}_job_list_{DATE}T{TIME}
 
 Quick! Where can I find it? I can't wait! 
 ------------------------------------------

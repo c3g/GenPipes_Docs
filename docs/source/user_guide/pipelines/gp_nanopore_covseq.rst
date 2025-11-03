@@ -37,10 +37,10 @@ Nanopore CoVSeQ Pipeline
          .. dropdown:: Command
             :open:
 
-            .. code::
+            .. code-block::
 
-               genpipes nanopore_covseq [options] [--genpipes_file GENPIPES_FILE.sh]
-               bash GENPIPES_FILE.sh
+                  user@machine:~$ genpipes nanopore_covseq [options] [--genpipes_file GENPIPES_FILE.sh]
+                  user@machine:~$ bash GENPIPES_FILE.sh
 
          .. dropdown:: Options
 

@@ -24,35 +24,35 @@ Configuration File Format
 
 Pipeline command parameters and cluster settings can be customized using Configuration Files (.ini extension). Those files have a structure similar to Microsoft Windows INI files e.g.:
 
-::
+.. code-block:: bash
 
-    #!ini
-    [DEFAULT]
-    module_trimmomatic=mugqic/trimmomatic/0.36
+        #!ini
+        [DEFAULT]
+        module_trimmomatic=mugqic/trimmomatic/0.36
 
-    [trimmomatic]
-    min_length=50
+        [trimmomatic]
+        min_length=50
 
 A parameter value is first searched in its specific section, then, if not found, in the special DEFAULT section. The example above would resolve parameter module_trimmomatic value from section trimmomatic to mugqic/trimmomatic/0.36.
 
 Configuration files support interpolation. For example:
 
-::
+.. code-block:: bash
 
-    #!ini
-    scientific_name=Homo_sapiens
-    assembly=GRCh37
-    assembly_dir=$MUGQIC_INSTALL_HOME/genomes/species/%(scientific_name)s.%(assembly)s
-    genome_fasta=%(assembly_dir)s/genome/%(scientific_name)s.%(assembly)s.fa
+        #!ini
+        scientific_name=Homo_sapiens
+        assembly=GRCh37
+        assembly_dir=$MUGQIC_INSTALL_HOME/genomes/species/%(scientific_name)s.%(assembly)s
+        genome_fasta=%(assembly_dir)s/genome/%(scientific_name)s.%(assembly)s.fa
 
 Here, ``genome_fasta`` would resolve to ``$MUGQIC_INSTALL_HOME/genomes/species/Homo_sapiens.GRCh37/genome/Homo_sapiens.GRCh37.fa``.
 
 Each pipeline has several configuration files in:
 
-::
+.. code-block:: bash
 
-    #!bash
-    $GENPIPES_INIS/<pipeline_name>/<pipeline_name>.*.ini
+        #!bash
+        $GENPIPES_INIS/<pipeline_name>/<pipeline_name>.*.ini
 
 A default configuration file (``.base.ini`` extension) is set for running on abacus cluster using Homo sapiens reference genome and must always be passed first to the ``--config`` option.
 
@@ -64,13 +64,14 @@ For example, to run the DNA-Seq pipeline on |key_ccdb_server_cmd_name| cluster w
 
 .. parsed-literal::
 
-    #!bash
-    genpipes $GENPIPES_INIS/dnaseq/dnaseq \\
-        --config $GENPIPES_INIS/dnaseq/dnaseq.base.ini \\
-        $GENPIPES_INIS/common_ini/\ |key_ccdb_server_cmd_name|\.ini \\
-        $MUGQIC_INSTALL_HOME/genomes/species/Mus_musculus.GRCm38//Mus_musculus.GRCm38.ini [other options] \\
-        -g genpipes_command_list.sh
+    
+    user@machine:~$ genpipes $GENPIPES_INIS/dnaseq/dnaseq 
+                        --config $GENPIPES_INIS/dnaseq/dnaseq.base.ini \\
+                                 $GENPIPES_INIS/common_ini/\ |key_ccdb_server_cmd_name|\.ini \\
+                                 $MUGQIC_INSTALL_HOME/genomes/species/Mus_musculus.GRCm38//Mus_musculus.GRCm38.ini 
+                        [other options] \\
+                        -g genpipes_command_list.sh
 
-    bash genpipes_command_list.sh
+    user@machine:~$ bash genpipes_command_list.sh
 
 

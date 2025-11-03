@@ -38,13 +38,13 @@ To launch GenPipes, use the following command:
 
 .. code-block:: bash
 
-   genpipes <pipeline-name> -c config -r readset-file -s 1-n -g list-of-commands.txt
+   user@machine:~$ genpipes <pipeline-name> -c config -r readset-file -s 1-n -g list-of-commands.txt
 
 Then, execute the generated script:
 
 .. code-block:: bash
 
-   bash list-of-commands.txt
+   user@machine:~$ bash list-of-commands.txt
 
 .. _gp_terminology:
 
@@ -86,31 +86,42 @@ FASTQ read files and readset file, ``readset.chipseq.txt``, that describes that 
 
 .. parsed-literal::
 
-    genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/\ |key_ccdb_server_cmd_name|\.ini -r readset.chipseq.txt -s 1-15 -g chipseq_cmd.sh
+    user@machine:~$ genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+                                        $GENPIPES_INIS/common_ini/\ |key_ccdb_server_cmd_name|\.ini \\
+                                     -r readset.chipseq.txt \\
+                                     -s 1-15 \\
+                                     -g chipseq_cmd.sh
 
 To understand what $GENPIPES_INIS refers to, please see instructions on how to :ref:`access GenPipes on Compute Canada servers<docs_access_gp_pre_installed>`.
 
 In the command above, 
 
--c defines the ini configuration files
+* ``-c`` defines the ini configuration files
 
--r defines the readset file
+* ``-r`` defines the readset file
 
--s defines the steps of the pipeline to execute, use `genpipes chipseq -h` to check steps
+* ``-s`` defines the steps of the pipeline to execute
+
+Use ``genpipes chipseq -h`` to check details on various steps in the pipeline.
 
 By default, Slurm scheduler is used when using the GenPipes deployment on the `DRAC <https://alliancecan.ca/en>`_ servers such as |key_ccdb_server_name|, |other_ccdb_server_names|. The ``abacus`` server uses the PBS scheduler. For that you need to specify "-j pbs" option as shown below:
 
 .. parsed-literal::
 
-  genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini $GENPIPES_INIS/common_ini/abacus.ini -r readset.chipseq.txt -s 1-15 -j pbs -g chipseq_cmd.sh
+    user@machine:~$ genpipes chipseq -c $GENPIPES_INIS/chipseq/chipseq.base.ini \\
+                                        $GENPIPES_INIS/common_ini/abacus.ini \\
+                                     -r readset.chipseq.txt \\
+                                     -s 1-15 \\
+                                     -j pbs \\
+                                     -g chipseq_cmd.sh
 
 The above command generates a list of instructions that need to be executed to run the ChIP sequencing pipeline. These instructions are stored in the file ``chipseq_cmd.sh``
 
 To execute these instructions, use:
 
-.. code::
+.. code-block:: bash
 
-  bash chipseq_cmd.sh
+     user@machine:~$ bash chipseq_cmd.sh
 
 .. warning::
 
@@ -118,31 +129,30 @@ To execute these instructions, use:
 
 To confirm that the commands have been submitted, wait a minute or two depending on the server and type:
 
-.. code::
+.. code-block:: bash
 
-  squeue -u <userID>
+    user@machine:~$ squeue -u <userID>
 
 where, <userID> is your login id for accessing the DRAC infrastructure.
 
 On abacus, the equivalent command is:
 
-.. code::
+.. code-block:: bash
 
-    showq -u <userID>
+    user@machine:~$ showq -u <userID>
 
 In case you ran the command to submit the jobs several times and launched too many commands you do not want, you can use the following line of code to cancel ALL commands:
 
-.. code::
+.. code-block:: bash
 
-    scancel -u <userID>
+    user@machine:~$ scancel -u <userID>
 
 
 To cancel on ``abacus`` using PBS scheduler, use the command:
 
-.. code::
+.. code-block:: bash
 
-    showq -u <userID> | tr "|" " "| awk '{print $1}' | xargs -n1 canceljob
-
+    user@machine:~$ showq -u <userID> | tr "|" " "| awk '{print $1}' | xargs -n1 canceljob
 
 After the processing is complete, you can access quality control plots in the report/ directory and you can find peak data in the peak_call/ directory.
 
@@ -152,9 +162,9 @@ For more information about output formats please consult the webpage of the thir
 
     The ChIP sequencing pipeline also analyzes ATAC-Seq data if the “-t atacseq” flag is used. For more information on the available steps in that pipeline use: 
 
-.. code:: 
+.. code-block:: bash
 
-    genpipes chipseq -h
+    user@machine:~$ genpipes chipseq -h
 
 Example Run With Design File
 +++++++++++++++++++++++++++++
@@ -170,7 +180,7 @@ The test dataset consists of the following files in the folder ``rawData``:
 
 The  ``readset.rnaseq.txt`` file has the following contents:
 
-.. code::
+.. code-block:: bash
 
     Sample	Readset	Library	RunType	Run	Lane	Adapter1	Adapter2	QualityOffset	BED	FASTQ1	FASTQ2	BAM
     GM12878_Rep1	GM12878_Rep1	myLibrary	PAIRED_END	1	1	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT	33		raw_data/rnaseq_GM12878_chr19_Rep1_R1.fastq.gz	raw_data/rnaseq_GM12878_chr19_Rep1_R2.fastq.gz	
@@ -183,7 +193,7 @@ files located in the same ``rawData`` folder.
 
 The ``design.rnaseq.txt`` file has the following contents:
 
-.. code::
+.. code-block:: bash
 
     Sample	H1ESC_GM12787
     H1ESC_Rep1	1
@@ -199,13 +209,17 @@ Use the following command to set up the pipeline:
 
 .. parsed-literal::
 
-   genpipes rnaseq -c $GENPIPES_INIS/rnaseq/rnaseq.base.ini $GENPIPES_INIS/common_ini/|key_ccdb_server_cmd_name|.ini -r readset.rnaseq.txt -d design.rnaseq.txt -g rnaseqScript.txt
+    user@machine:~$ genpipes rnaseq -c $GENPIPES_INIS/rnaseq/rnaseq.base.ini \\
+                                        $GENPIPES_INIS/common_ini/|key_ccdb_server_cmd_name|.ini \\
+                                    -r readset.rnaseq.txt \\
+                                    -d design.rnaseq.txt \\
+                                    -g rnaseqScript.txt\\
 
 Launch the pipeline via this command:
 
-.. code::
+.. code-block:: bash
 
-    bash rnaseqScript.txt
+    user@machine:~$ bash rnaseqScript.txt
 
 :bdg-primary:`Step 2:` Finally, check launch status. The commands will be sent to the job queue and you will be notified once each step is done. If everything runs smoothly, you will see the output as **MUGQICexitStatus:0** or **Exit_status=0.** In case an error occurs, the pipeline aborts. To examine the errors, check the content of the **job_output** folder.
 
@@ -274,24 +288,24 @@ commands:
 
 Use the -g option to create the output command file for  GenPipes ``chipseq`` pipeline, say ``chipseq_script.sh``.
 
-.. code::
+.. code-block:: bash
 
-    M_FOLDER=path_to_folder
+    user@machine:~$ export M_FOLDER=path_to_folder
 
-    genpipes chipseq <options> --genpipes_file chipseq_script.sh
+    user@machine:~$ genpipes chipseq <options> --genpipes_file chipseq_script.sh
 
-    chunk_genpipes.sh chipseq_script.sh $M_FOLDER
+    user@machine:~$ chunk_genpipes.sh chipseq_script.sh $M_FOLDER
 
-    submit_genpipes $M_FOLDER 
+    user@machine:~$ submit_genpipes $M_FOLDER 
 
 :bdg-primary:`Step B:` Chunk Pipeline Commands
 
 Use ``chunk_genpipes`` to the scheduler and specify the ``dnaseq.sh`` file as input. In the command below, 
 20 specifies the number of jobs in a chunk.
 
-.. code::
+.. code-block:: bash
 
-    chunk_genpipes.sh chipseq_script.sh job_chunks 20
+    user@machine:~$ chunk_genpipes.sh chipseq_script.sh job_chunks 20
 
 .. figure:: /img/chunk_genpipes_output.png
    :align: center
@@ -305,9 +319,9 @@ Invoke ``submit_genpipes`` script to submit the job chunks for processing. Use `
 submitted job chunks. The value 800 in the submit command below refers to the total number of jobs that
 can be submitted simultaneously at a time to the scheduler.
 
-.. code:: 
+.. code-block:: bash
 
-    submit_genpipes job_chunks -n 800
+    user@machine:~$ submit_genpipes job_chunks -n 800
 
 Figure below shows the output of the submit_genpipes command:
 

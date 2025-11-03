@@ -33,9 +33,9 @@ RNA Sequencing (De-Novo) Pipeline
          .. dropdown:: Command
             :open:
 
-            .. code::
+            .. code-block::
 
-                   genpipes rnaseq_denovo_assembly [options] [--genpipes_file GENPIPES_FILE]
+                   user@machine:~$ genpipes rnaseq_denovo_assembly [options] [--genpipes_file GENPIPES_FILE]
 
          .. dropdown:: Options
 

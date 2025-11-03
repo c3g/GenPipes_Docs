@@ -35,16 +35,16 @@ GenPipes pipelines are used for genomic analysis and they require reference geno
 
 To access these genomes, you need to add the following lines to your .bashrc file:
 
-::
+.. code-block:: bash
 
   ## GenPipes/MUGQIC genomes and modules
-  export MUGQIC_INSTALL_HOME=/cvmfs/soft.mugqic/CentOS6
+  user@machine:~$ export MUGQIC_INSTALL_HOME=/cvmfs/soft.mugqic/CentOS6
 
 To explore the available genomes, you can type:
 
-::
+.. code-block:: bash
 
-  ls $MUGQIC_INSTALL_HOME/genomes/species/
+  user@machine:~$ ls $MUGQIC_INSTALL_HOME/genomes/species/
 
 C3G, in partnership with Compute Canada, maintains several genomes that are available on several HPC centres. For a list of available genomes, visit `Bioinformatics resources - genomes <https://computationalgenomics.ca/cvmfs-genome/>`_. In addition to the fasta sequence, many genomes include aligner indices and annotation files.
 

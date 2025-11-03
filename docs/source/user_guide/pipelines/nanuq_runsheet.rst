@@ -21,7 +21,7 @@ Here is the list of columns for Nanuq run sheet:
 
 Here is a sample of the Nanuq Run Sheet:
 
-::
+.. code-block:: bash
 
   Name,Genomic Database,Library Barcode,Library Source,Library Type,Run,Region,BED Files,ProcessingSheetId
   sample1,Rattus_norvegicus:Rnor_5.0,MPS0001,RNA,Nextera XT,1419,1,toto.bed,sample1_MPS0001

@@ -62,9 +62,9 @@ Ensure that you can test run one of the GenPipes Pipeline.  Simply issue the hel
 
   - For the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_, formerly Compute Canada (CCDB), data centre users:
 
-    ::
+    .. code-block:: bash
       
-      genpipes <pipeline_name> --help
+          user@machine:~$ genpipes <pipeline_name> --help
 
 * Ensure CVMFS is mounted
 

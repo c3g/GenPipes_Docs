@@ -31,9 +31,9 @@ To create a `new CCDB/DRAC account`_, what should I fill in the form field: 'pos
 
 Choose an appropriate option in the form, for example:
 
-:: 
+.. code-block:: bash
 
-  external collaborator
+      external collaborator
 
 For the CCRI field, use your sponsor's `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada (CCDB),  Role Identifier (CCRI) as input. 
 
@@ -101,11 +101,11 @@ GenPipes pipelines use scheduler's calls (qsub, sbatch) for submitting genomic a
 
 This is how you can run GenPipes pipelines such as :ref:`DNA Sequencing Pipeline<docs_gp_dnaseq>`, refer to the command below:
 
-::
+.. code-block:: bash
 
-  genpipes dnaseq -c dnaseq.base.ini dnaseq.batch.ini -j batch -r your-readsets.tsv -d your-design.tsv -s 1-34 -t mugqic -g genpipes-file-script.sh
+      user@machine:~$ genpipes dnaseq -c dnaseq.base.ini dnaseq.batch.ini -j batch -r your-readsets.tsv -d your-design.tsv -s 1-34 -t mugqic -g genpipes-file-script.sh
   
-  bash genpipes-file-script.sh
+      user@machine:~$ bash genpipes-file-script.sh
 
 Please note, there is a disadvantage to running GenPipes Pipelines without a scheduler.  In the batch mode, which is configured using the "-j batch" option, all the jobs would run as a batch, one after another, on a single node.  If your server is powerful enough, this might be your preferable option.  Otherwise, if you would like to take advantage of GenPipes' job scheduling capabilities, you need to install a job scheduler locally in your infrastructure so that GenPipes can work effectively.  We recommend SLURM scheduler for GenPipes.
 

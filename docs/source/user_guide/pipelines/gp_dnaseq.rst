@@ -45,10 +45,10 @@ DNA Sequencing Pipeline
          .. dropdown:: Command
             :open:
 
-            .. code::
+            .. code-block:: bash
 
-                 genpipes dnaseq [-options ] [--genpipes_file GENPIPES_FILE.sh]
-                 bash GENPIPES_FILE.sh
+                 user@machine:~$ genpipes dnaseq [-options ] [--genpipes_file GENPIPES_FILE.sh]
+                 user@machine:~$ bash GENPIPES_FILE.sh
 
          .. dropdown:: Options
 

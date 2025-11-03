@@ -24,9 +24,9 @@ CoV Sequencing Pipeline
          .. dropdown:: Command
             :open:
 
-            .. code::
+            .. code-block:: bash
 
-               genpipes covseq [options] [--genpipes_file GENPIPES_FILE.sh]
+               user@machine:~$ genpipes covseq [options] [--genpipes_file GENPIPES_FILE.sh]
                bash GENPIPES_FILE.sh
 
          .. dropdown:: Options

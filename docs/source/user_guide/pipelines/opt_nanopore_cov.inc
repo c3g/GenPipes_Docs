@@ -1,5 +1,6 @@
-::
+.. code-block:: bash
 
-  -t {default, basecalling}, --type {default, basecalling}
+      -t {default, basecalling}, 
+      --type {default, basecalling}
 
-                            Nanopore Covseq analysis type (default=default)
+                                Nanopore Covseq analysis type (default=default)

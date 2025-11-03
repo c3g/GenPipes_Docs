@@ -20,18 +20,18 @@ There are usage changes, some pipelines are merged into a single DNA sequencing 
   
 * GenPipes 5.x onward will only supports Python v3.11.1 and above. 
   
-* The command syntax to run GenPipes deployed in the `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada (CCDB) servers, such as Beluga, has **changed**. Pipelines are now invoked with `genpipes <pipeline> -h` instead of `<pipeline>.py -h`. See example below:
+* The command syntax to run GenPipes deployed in the `Digital Research Alliance of Canada <https://alliancecan.ca/en>`_, formerly Compute Canada (CCDB) servers, such as ``beluga``, has **changed**. Pipelines are now invoked with `genpipes <pipeline> -h` instead of `<pipeline>.py -h`. See example below:
 
   - **Old Format** 
 
-    ::
+    .. code-block:: bash
     
       user@beluga % <pipeline name>.py [options] -g genpipes_cmd.sh
       user@beluga % bash genpipes_cmd.sh
 
   - **New Format** 
   
-    ::
+    .. code-block:: bash
 
       user@beluga % genpipes <pipeline name> [options] -g genpipes_cmd.sh
       user@beluga % bash genpipes_cmd.sh
@@ -40,13 +40,13 @@ There are usage changes, some pipelines are merged into a single DNA sequencing 
 
   - **Old Variable** 
 
-    ::
+    .. code-block:: bash
 
       $MUGQIC_PIPELINES_HOME/pipelines/<pipeline>/<pipeline>.base.ini
 
   - **New Variable** 
   
-    ::
+    .. code-block:: bash
 
       $GENPIPES_INIS/<pipeline>/<pipeline>.base.ini
   

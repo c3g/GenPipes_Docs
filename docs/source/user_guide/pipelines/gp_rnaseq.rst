@@ -23,10 +23,10 @@ RNA Sequencing Pipeline
          .. dropdown:: Command
             :open:
 
-            .. code::
+            .. code-block:: bash
 
-                 genpipes rnaseq [options] [--genpipes_file GENPIPES_FILE.sh]
-                 bash GENPIPES_FILE.sh
+                 user@machine:~$ genpipes rnaseq [options] [--genpipes_file GENPIPES_FILE.sh]
+                 user@machine:~$ bash GENPIPES_FILE.sh
 
          .. dropdown:: Options
 

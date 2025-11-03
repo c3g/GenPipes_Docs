@@ -26,10 +26,10 @@ Amplicon Sequencing Pipeline
          .. dropdown:: Command
             :open:
 
-            ::
+            .. code-block:: bash
 
-              genpipes ampliconseq [options] [--genpipes_file GENPIPES_FILE.sh]
-              bash GENPIPES_FILE.sh
+                  user@machine:~$ genpipes ampliconseq [options] [--genpipes_file GENPIPES_FILE.sh]
+                  user@machine:~$ bash GENPIPES_FILE.sh
 
          .. dropdown:: Options
 

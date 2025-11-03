@@ -27,29 +27,29 @@ Note that the repo was earlier hosted on Bitbucket until v5.1.0 of GenPipes.
   
    .. tab-item:: v6.0 
 
-      ::
+      .. code-block:: bash
 
-        git clone https://github.com/c3g/GenPipes.git
-        cd GenPipes
-        pip install .
+            user@machine:~$ git clone https://github.com/c3g/GenPipes.git
+            user@machine:~$ cd GenPipes
+            user@machine:~$ pip install .
 
    .. tab-item:: v5.x
 
-      ::
+      .. code-block:: bash
 
-        git clone git@bitbucket.org:mugqic/genpipes.git
-        cd <bitbucket_repo>
-        pip install .
+            user@machine:~$ git clone git@bitbucket.org:mugqic/genpipes.git
+            user@machine:~$ cd <bitbucket_repo>
+            user@machine:~$ pip install .
 
 Step 2: Setup environment variables
 -----------------------------------
 
 Add the following lines in your your *$HOME/.bash_profile*: to set MUGQIC_PIPELINES_HOME to your local copy path. For example,
 
-::
+.. code-block:: bash
 
-  export MUGQIC_PIPELINES_HOME=/path/to/your/local/genpipes
-  export GENPIPES_INIS=$MUGQIC_PIPELINES_HOME/genpipes/pipelines
+      user@machine:~$ export MUGQIC_PIPELINES_HOME=/path/to/your/local/genpipes
+      user@machine:~$ export GENPIPES_INIS=$MUGQIC_PIPELINES_HOME/genpipes/pipelines
 
 .. _accessing_sw_mod_genomes_local_dp:
 
@@ -58,12 +58,12 @@ Step 3: Accessing software modules and genomes needed for GenPipe
 
 GenPipes was formerly known as MUGQIC Pipelines. Genomic analysis executed using these pipelines requires :ref:`genomes<doc_cvmfs_genomes>` and :ref:`software modules<doc_cvmfs_modules>`. You need to load the software modules in your shell environment. To do so, set the environment variable **MUGQIC_INSTALL_HOME** to the directory where you want to install those resources in your **$HOME/.bash_profile** as follows:
 
-::
+.. code-block:: bash
 
-  ## MUGQIC genomes and modules
+      ## MUGQIC genomes and modules
 
-  export MUGQIC_INSTALL_HOME=/path/to/your/local/genpipes/resources
-  module use $MUGQIC_INSTALL_HOME/modulefiles
+      user@machine:~$ export MUGQIC_INSTALL_HOME=/path/to/your/local/genpipes/resources
+      user@machine:~$ module use $MUGQIC_INSTALL_HOME/modulefiles
 
 **Installing available modules**
 
@@ -73,21 +73,21 @@ Software tools and associated modules must be installed in $MUGQIC_INSTALL_HOME/
 
 To install a new module or new software tool and associated modules semi-automatically, use the following instructions:
 
-::
+.. code-block:: bash
 
-  cp $MUGQIC_PIPELINES_HOME/resources/modules/MODULE_INSTALL_TEMPLATE.sh $MUGQIC_PIPELINES_HOME/resources/modules/<my_software>.sh
+      user@machine:~$ cp $MUGQIC_PIPELINES_HOME/resources/modules/MODULE_INSTALL_TEMPLATE.sh $MUGQIC_PIPELINES_HOME/resources/modules/<my_software>.sh
 
 Follow the instructions in the file $MUGQIC_PIPELINES_HOME/resources/modules/<my_software>.sh and modify it accordingly.  Next you need to run the following command with **No arguments**. By default, it will download and extract the remote software archive, build the software and create the associated module, all in $MUGQIC_INSTALL_HOME_DEV if it is set.
 
-:: 
+.. code-block:: bash
 
-  $MUGQIC_PIPELINES_HOME/resources/modules/<my_software>.sh
+        user@machine:~$ $MUGQIC_PIPELINES_HOME/resources/modules/<my_software>.sh
 
 If everything executes OK with no error, you are ready to install the `my_software` module in production. Use the command:
 
-::
+.. code-block:: bash
 
-  $MUGQIC_PIPELINES_HOME/resources/modules/<my_software>.sh MUGQIC_INSTALL_HOME
+        user@machine:~$ $MUGQIC_PIPELINES_HOME/resources/modules/<my_software>.sh MUGQIC_INSTALL_HOME
 
 .. note::
 
@@ -95,9 +95,9 @@ If everything executes OK with no error, you are ready to install the `my_softwa
 
 Next, you need to check if the module is successfully installed and available for use by executing the following command:
 
-::
+.. code-block:: bash
   
-  module avail 2>&1 | grep mugqic/<my_software>/<version>
+      user@machine:~$ module avail 2>&1 | grep mugqic/<my_software>/<version>
 
 This completes the software module setup for GenPipes execution. Next you need to make sure all required reference genomes are available in your local deployment. Refer to the next section if you wish to install additional genomes.
 
@@ -107,80 +107,80 @@ This completes the software module setup for GenPipes execution. Next you need t
 
 Reference genomes and annotations must be installed in the following directory:
 
-::
+.. code-block:: bash
 
-  $MUGQIC_INSTALL_HOME/genomes/
+      user@machine:~$ ls $MUGQIC_INSTALL_HOME/genomes/
 
 Default genome installation scripts are already available locally in the following directory:
 
-:: 
+.. code-block:: bash
  
-  $MUGQIC_PIPELINES_HOME/resources/genomes/
+      user@machine:~$  ls $MUGQIC_PIPELINES_HOME/resources/genomes/
 
 To install all of the available genomes that are bundled with GenPipes package, use the following script:
 
-$MUGQIC_PIPELINES_HOME/resources/genomes/install_all_genomes.sh
+    user@machine:~$ $MUGQIC_PIPELINES_HOME/resources/genomes/install_all_genomes.sh
 
 All species related files are in the following directory:
 
-::
+.. code-block:: bash
 
-  $MUGQIC_INSTALL_HOME/genomes/species/<species_scientific_name>.<assembly>/
+      user@machine:~$  ls $MUGQIC_INSTALL_HOME/genomes/species/<species_scientific_name>.<assembly>/
 
 For example, *Homo Sapiens* assembly *GRCh37* genome directory hierarchy is as follows:
 
-::
+.. code-block:: bash
 
-  $MUGQIC_INSTALL_HOME/genomes/species/Homo_sapiens.GRCh37/
-  ├── annotations/
-  │   ├── gtf_tophat_index/
-  │   ├── Homo_sapiens.GRCh37.dbSNP142.vcf.gz
-  │   ├── Homo_sapiens.GRCh37.dbSNP142.vcf.gz.tbi
-  │   ├── Homo_sapiens.GRCh37.Ensembl75.geneid2Symbol.tsv
-  │   ├── Homo_sapiens.GRCh37.Ensembl75.genes.length.tsv
-  │   ├── Homo_sapiens.GRCh37.Ensembl75.genes.tsv
-  │   ├── Homo_sapiens.GRCh37.Ensembl75.GO.tsv
-  │   ├── Homo_sapiens.GRCh37.Ensembl75.gtf
-  │   ├── Homo_sapiens.GRCh37.Ensembl75.ncrna.fa
-  │   ├── Homo_sapiens.GRCh37.Ensembl75.rrna.fa
-  │   ├── Homo_sapiens.GRCh37.Ensembl75.transcript_id.gtf
-  │   ├── Homo_sapiens.GRCh37.Ensembl75.vcf.gz
-  │   ├── ncrna_bwa_index/
-  │   └── rrna_bwa_index/
-  ├── downloads/
-  │   ├── ftp.1000genomes.ebi.ac.uk/
-  │   ├── ftp.ensembl.org/
-  │   └── ftp.ncbi.nih.gov/
-  ├── genome/
-  │   ├── bowtie2_index/
-  │   ├── bwa_index/
-  │   ├── Homo_sapiens.GRCh37.dict
-  │   ├── Homo_sapiens.GRCh37.fa
-  │   ├── Homo_sapiens.GRCh37.fa.fai
-  │   └── star_index/
-  ├── Homo_sapiens.GRCh37.ini
-  └── log/
+      $MUGQIC_INSTALL_HOME/genomes/species/Homo_sapiens.GRCh37/
+      ├── annotations/
+      │   ├── gtf_tophat_index/
+      │   ├── Homo_sapiens.GRCh37.dbSNP142.vcf.gz
+      │   ├── Homo_sapiens.GRCh37.dbSNP142.vcf.gz.tbi
+      │   ├── Homo_sapiens.GRCh37.Ensembl75.geneid2Symbol.tsv
+      │   ├── Homo_sapiens.GRCh37.Ensembl75.genes.length.tsv
+      │   ├── Homo_sapiens.GRCh37.Ensembl75.genes.tsv
+      │   ├── Homo_sapiens.GRCh37.Ensembl75.GO.tsv
+      │   ├── Homo_sapiens.GRCh37.Ensembl75.gtf
+      │   ├── Homo_sapiens.GRCh37.Ensembl75.ncrna.fa
+      │   ├── Homo_sapiens.GRCh37.Ensembl75.rrna.fa
+      │   ├── Homo_sapiens.GRCh37.Ensembl75.transcript_id.gtf
+      │   ├── Homo_sapiens.GRCh37.Ensembl75.vcf.gz
+      │   ├── ncrna_bwa_index/
+      │   └── rrna_bwa_index/
+      ├── downloads/
+      │   ├── ftp.1000genomes.ebi.ac.uk/
+      │   ├── ftp.ensembl.org/
+      │   └── ftp.ncbi.nih.gov/
+      ├── genome/
+      │   ├── bowtie2_index/
+      │   ├── bwa_index/
+      │   ├── Homo_sapiens.GRCh37.dict
+      │   ├── Homo_sapiens.GRCh37.fa
+      │   ├── Homo_sapiens.GRCh37.fa.fai
+      │   └── star_index/
+      ├── Homo_sapiens.GRCh37.ini
+      └── log/
 
 The assembly name is the one used by the download source. For e.g. "GRCh37" is used for `Ensembl <http://www.ensembl.org/>`_.
 
 Each species directory contains a ".ini" file such as:
 
-::
+.. code-block:: bash
 
-  <scientific_name>.<assembly>.ini
+      <scientific_name>.<assembly>.ini
 
 Among other things, this ".ini" file lists the assembly synonyms. In case of "hg19", the contents of Homo_sapiens.GRCh37.ini are as shown below:
 
-::
+.. code-block:: bash
 
-  [DEFAULT]
-  scientific_name=Homo_sapiens
-  common_name=Human
-  assembly=GRCh37
-  assembly_synonyms=hg19
-  source=Ensembl
-  version=75
-  dbsnp_version=142
+      [DEFAULT]
+      scientific_name=Homo_sapiens
+      common_name=Human
+      assembly=GRCh37
+      assembly_synonyms=hg19
+      source=Ensembl
+      version=75
+      dbsnp_version=142
 
 **Install a new Genome**
 
@@ -190,9 +190,9 @@ New genomes and annotations can be installed semi-automatically from `Ensembl <h
 
 1. Retrieve the species scientific name on `Ensemble Genomes`_ or `UCSC`_ :
 
-::
+.. code-block:: bash
 
-  Pan troglodytes
+      Pan troglodytes
 
 2. Retrieve the assembly name:
    
@@ -206,86 +206,89 @@ New genomes and annotations can be installed semi-automatically from `Ensembl <h
 
 4. Next, copy the template file to a new file name using the scientific name. 
 
-::
+.. code-block:: bash
 
-  cp $MUGQIC_PIPELINES_HOME/resources/genomes/GENOME_INSTALL_TEMPLATE.sh $MUGQIC_PIPELINES_HOME/resources/genomes/<scientific_name>.<assembly>.sh
+    user@machine:~$ cp $MUGQIC_PIPELINES_HOME/resources/genomes/GENOME_INSTALL_TEMPLATE.sh $MUGQIC_PIPELINES_HOME/resources/genomes/<scientific_name>.<assembly>.sh
 
 For example, in case of Ensembl, use the following command:
 
-::
+.. code-block:: bash
 
-  cp $MUGQIC_PIPELINES_HOME/resources/genomes/GENOME_INSTALL_TEMPLATE.sh $MUGQIC_PIPELINES_HOME/resources/genomes/Pan_troglodytes.CHIMP2.1.4.sh
+    user@machine:~$ cp $MUGQIC_PIPELINES_HOME/resources/genomes/GENOME_INSTALL_TEMPLATE.sh $MUGQIC_PIPELINES_HOME/resources/genomes/Pan_troglodytes.CHIMP2.1.4.sh
 
 In case of genomes from UCSC, use the following command to copy the genome install instructions:
 
-::
+.. code-block:: bash
 
-  cp $MUGQIC_PIPELINES_HOME/resources/genomes/GENOME_INSTALL_TEMPLATE.sh $MUGQIC_PIPELINES_HOME/resources/genomes/Pan_troglodytes.panTro4.sh
+    user@machine:~$ cp $MUGQIC_PIPELINES_HOME/resources/genomes/GENOME_INSTALL_TEMPLATE.sh $MUGQIC_PIPELINES_HOME/resources/genomes/Pan_troglodytes.panTro4.sh
 
 5. Next, you need to modify the following file:
 
-::
+.. code-block:: bash
 
-  $MUGQIC_PIPELINES_HOME/resources/genomes/<scientific_name>.<assembly>.sh
+    user@machine:~$ $MUGQIC_PIPELINES_HOME/resources/genomes/<scientific_name>.<assembly>.sh
 
 Please note that ASSEMBLY_SYNONYMS can be left empty but if you know that 2 assemblies
 are identical apart from chr sequence prefixes, document it.
 
 Example below shows the modifications for Ensembl:
 
-::
+.. code-block:: bash
 
-  SPECIES=Pan_troglodytes   # With "_"; no space!
-  COMMON_NAME=Chimpanzee
-  ASSEMBLY=CHIMP2.1.4
-  ASSEMBLY_SYNONYMS=panTro4
-  SOURCE=Ensembl
-  VERSION=78
+      SPECIES=Pan_troglodytes   # With "_"; no space!
+      COMMON_NAME=Chimpanzee
+      ASSEMBLY=CHIMP2.1.4
+      ASSEMBLY_SYNONYMS=panTro4
+      SOURCE=Ensembl
+      VERSION=78
 
 Example below shows the modifications for UCSC:
 
-::
+.. code-block:: bash
 
-  SPECIES=Pan_troglodytes   # With "_"; no space!
-  COMMON_NAME=Chimpanzee
-  ASSEMBLY=panTro4
-  ASSEMBLY_SYNONYMS=CHIMP2.1.4
-  SOURCE=UCSC
-  VERSION=2012-01-09
+      SPECIES=Pan_troglodytes   # With "_"; no space!
+      COMMON_NAME=Chimpanzee
+      ASSEMBLY=panTro4
+      ASSEMBLY_SYNONYMS=CHIMP2.1.4
+      SOURCE=UCSC
+      VERSION=2012-01-09
 
 6. Now you can run the following command to install the genome in $MUGQIC_INSTALL_HOME_DEV (by default). This will download and install genomes, indexes and, for Ensembl only, annotations (GTF, VCF, etc.).
 
-::
+.. code-block:: bash
 
-  bash $MUGQIC_PIPELINES_HOME/resources/genomes/<scientific_name>.<assembly>.sh
+      user@machine:~$ bash $MUGQIC_PIPELINES_HOME/resources/genomes/<scientific_name>.<assembly>.sh
 
 **Admin-only**
 To install it in $MUGQIC_INSTALL_HOME, run the following command:
 
-::
+.. code-block:: bash
 
-  bash $MUGQIC_PIPELINES_HOME/resources/genomes/<scientific_name>.<assembly>.sh MUGQIC_INSTALL_HOME
+      user@machine:~$ bash $MUGQIC_PIPELINES_HOME/resources/genomes/<scientific_name>.<assembly>.sh MUGQIC_INSTALL_HOME
 
 7. **Admin-only** If the new genome has been installed in $MUGQIC_INSTALL_HOME_DEV, to deploy in $MUGQIC_INSTALL_HOME you can use the following command:
 
-::
+.. code-block:: bash
 
-  rsync -vca --no-o --no-g --no-p --size-only -I -O --ignore-times $MUGQIC_INSTALL_HOME_DEV/genomes/species/<scientific_name>.<assembly> $MUGQIC_INSTALL_HOME/genomes/species/
+      user@machine:~$ rsync -vca --no-o \\
+                            --no-g --no-p --size-only \\
+                            -I -O \\
+                            --ignore-times $MUGQIC_INSTALL_HOME_DEV/genomes/species/<scientific_name>.<assembly> $MUGQIC_INSTALL_HOME/genomes/species/
 
 8. Lastly, add the newly created ".ini" file to the genome configuration files for further use in subsequent genomic analysis pipeline runs by the following command:
 
-::
+.. code-block:: bash
 
-  cp $MUGQIC_INSTALL_HOME/genomes/species/<scientific_name>.<assembly>/<scientific_name>.<assembly>.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/
+      user@machine:~$ cp $MUGQIC_INSTALL_HOME/genomes/species/<scientific_name>.<assembly>/<scientific_name>.<assembly>.ini $MUGQIC_PIPELINES_HOME/resources/genomes/config/
 
 Step 4: Validating GenPipes local deployment
 ---------------------------------------------
 
 You are now all set to use GenPipes pipelines. For each pipeline, you can get help about its usage through the help command:
 
-::
+.. code-block:: bash
 
-  genpipes <pipeline_name> --help
+      user@machine:~$ genpipes <pipeline_name> --help
 
 Running pipelines requires other inputs such as :ref:`Configuration File<docs_config_ini_file>`, :ref:`Readset File<docs_readset_file>` and :ref:`Design File<docs_design_file>`. For details on how to run individual pipelines you can see :ref:`Running GenPipes<docs_using_gp>` or :ref:`GenPipes User Guide<docs_user_guide>`.
 

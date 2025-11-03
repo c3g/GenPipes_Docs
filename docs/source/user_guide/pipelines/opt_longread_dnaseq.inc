@@ -1,7 +1,7 @@
-::
+.. code-block:: bash
 
-  -t {nanopore, nanopore_paired_somatic, revio},
+      -t {nanopore, nanopore_paired_somatic, revio},
  
-  --type {nanopore, nanopore_paired_somatic, revio}
+      --type {nanopore, nanopore_paired_somatic, revio}
 
-                            Long Read DNA sequencing analysis type (default=nanopore)
+                              Long Read DNA sequencing analysis type (default=nanopore)

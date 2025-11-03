@@ -68,7 +68,7 @@ c. Fill in the required fields of the form and submit it.
 
       .. parsed-literal:: 
 
-          ssh myaccount@\ |key_ccdb_server_cmd_name|\.alliancecan.ca
+          user@machine:~$ ssh myaccount@\ |key_ccdb_server_cmd_name|\.alliancecan.ca
 
 
       b. Enter your DRAC account password. Follow the latest instructions on using MFA for DRAC server access. See https://ccdb.alliancecan.ca/me/access_systems for details.
@@ -133,14 +133,14 @@ Once connected to the DRAC server, you are all set to use GenPipes.
 
       Genomes and modules used by the pipelines are pre-installed on a CVMFS partition mounted on all the DRAC server clusters in the path ``/cvmfs/soft.mugqic/CentOS6``.
 
-      .. code::
+      .. code-block:: bash
 
          ## open bash_profile
-         nano $HOME/.bash_profile
+         user@machine:~$ nano $HOME/.bash_profile
 
       Next, you need to load the `software modules <https://docs.python.org/3/tutorial/modules.html>`_ in your shell environment. These are required to run GenPipes. Paste the following lines of code into the ``.bash_profile``, save it, then exit (Ctrl-X). Start a new shell to source these environment variables:
 
-      .. code:: 
+      .. code-block:: bash
 
 
          umask 0006
@@ -205,9 +205,9 @@ Once connected to the DRAC server, you are all set to use GenPipes.
 
           Also, set JOB_MAIL in your $HOME/.bash_profile to receive PBS/SLURM job logs:
 
-      .. code::
+      .. code-block:: bash
 
-         export JOB_MAIL=<my.name@my.email.ca>
+         user@machine:~$ export JOB_MAIL=<my.name@my.email.ca>
 
 .. admonition:: Python Version
     :class: warning
@@ -219,9 +219,9 @@ Verify Version
 
 Run the following command to verify the available GenPipes version: 
 
-.. code::
+.. code-block:: bash
 
-    module avail 2>&1 | grep mugqic/genpipes
+    user@machine:~$ module avail 2>&1 | grep mugqic/genpipes
 
 .. dropdown:: What is `mugqic`?
 
@@ -234,42 +234,45 @@ You must ensure that your ``.bash_profile`` changes have taken effect before run
 
 When you make changes to your ``.bash_profile`` file, you will need to log out and then login again for these changes to take effect. Alternatively, you can run the following command in bash shell:
 
-.. code::
+.. code-block:: bash
 
-   source $HOME/.bash_profile
+   user@machine:~$ source $HOME/.bash_profile
 
 Check your access to the bioinformatics tools pre-installed for GenPipes usage with the command:
 
-.. code::
+.. code-block:: bash
 
-   module avail mugqic/
+   user@machine:~$ module avail mugqic/
 
 Check Tools Availability
 +++++++++++++++++++++++++
 
 To load a tool available on DRAC servers, for example - samtools, use the following command:
 
-:: 
+.. code-block:: bash
 
   # module add mugqic/<tool><version>
-  module add mugqic/samtools/1.4.1
+  user@machine:~$ module add mugqic/samtools/1.4.1
 
   # Now samtools 1.4.1 is available for use in your account environment. To check, run the following command:
-  samtools
+  suser@machine:~$ amtools
 
 Several of the GenPipes pipelines may reference genomes. Check whether you can access these pre-installed genomes available:
 
-::
+.. code-block:: bash
 
-  ls $MUGQIC_INSTALL_HOME/genomes/species
+  user@machine:~$ ls $MUGQIC_INSTALL_HOME/genomes/species
 
-All genome-related files, including indices for different aligners and annotation files can be found in:
+All genome-related files, including indices for different aligners and annotation files can be found in the folder:
 
-::
+.. code-block:: bash
 
-  $MUGQIC_INSTALL_HOME/genomes/species/<species_scientific_name>.<assembly>/
-  ## so for Homo Sapiens hg19 assembly, that would be:
-  ls $MUGQIC_INSTALL_HOME/genomes/species/Homo_sapiens.hg19/
+      $MUGQIC_INSTALL_HOME/genomes/species/<species_scientific_name>.<assembly>/
+
+.. code-block:: bash
+   
+      ## so for Homo Sapiens hg19 assembly, that would be:
+      user@machine:~$ ls $MUGQIC_INSTALL_HOME/genomes/species/Homo_sapiens.hg19/
 
 For a complete list of all available reference genomes, visit `genome page <https://computationalgenomics.ca/cvmfs-genome/>`_.
 
