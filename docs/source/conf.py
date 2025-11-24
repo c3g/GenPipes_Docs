@@ -102,11 +102,14 @@ rst_epilog = """
 }
 
 rst_prolog = """
+.. |test_dataset_download_url| replace:: https://m-f39e09.071823.8540.data.globus.org/genpipes-test-datasets
 .. |key_ccdb_server_name| replace:: Rorqual
 .. |key_ccdb_server_cmd_name| replace:: rorqual
 .. |key_ccdb_server_ini_name| replace:: ``rorqual.ini``
 .. |other_ccdb_server_names| replace:: Nibi, Fir, Trillium and Narval
 """
+
+# old testdataset location .. |test_dataset_download_url| replace:: https://datahub-90-cw3.p.genap.ca
 
 master_doc = 'index'
 
@@ -166,7 +169,7 @@ user_agent = 'Mozilla/5.0 (X11; Linux x86_64; rv:25.0) Gecko/20100101 Firefox/25
 #linkcheck_retries = 3
 linkcheck_ignore = [ 
         r'https://www.computationalgenomics.ca/*.gz$',
-        r'https://datahub-90-cw3.p.genap.ca/*',
+        #r'https://datahub-90-cw3.p.genap.ca/*',
         r'https://www.computationalgenomics.ca/tutorial/*',
         r'https://bitbucket.org/mugqic/genpipes/downloads/*',
         ]

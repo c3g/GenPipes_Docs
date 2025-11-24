@@ -3,6 +3,8 @@
 Tutorial: GenPipes in the Cloud (GCP)
 =====================================
 
+.. include:: /common/test_datasets.txt
+
 .. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x onward
    :color: success
 
@@ -90,11 +92,11 @@ First, create a test folder as shown below:
     user@machine:~$ mkdir -p chipseq_test
     user@machine:~$ cd chipseq_test
 
-Then, download the test dataset and unzip it:
+Then, download the `Chip Sequencing Test Dataset`_ and unzip it:
 
-.. code-block:: bash
+.. parsed-literal::
 
-    user@machine:~$ wget https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz
+    user@machine:~$ wget  \ |test_dataset_download_url|\/chipseq.chr19.new.tar.gz
     user@machine:~$ gzip -d chipseq.chr19.new.tar.gz
 
 

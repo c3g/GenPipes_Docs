@@ -1,0 +1,12 @@
+.. _GenPipes Test Datasets: https://m-f39e09.071823.8540.data.globus.org/genpipes-test-datasets/
+.. _ChiP Sequencing Test Dataset: https://m-f39e09.071823.8540.data.globus.org/genpipes-test-datasets/chipseq.chr19.new.tar.gz
+.. _RNA-Sequencing Test Dataset: https://m-f39e09.071823.8540.data.globus.org/genpipes-test-datasets/rnaseq.chr19.tar.gz
+.. _Amplicon Sequencing Test Dataset: https://m-f39e09.071823.8540.data.globus.org/genpipes-test-datasets/ampliconseq.tar.gz
+.. _ChIP Sequencing Test Dataset:  https://m-f39e09.071823.8540.data.globus.org/genpipes-test-datasets/chipseq.chr19.new.tar.gz
+.. _CoV Sequencing Test Dataset: https://m-f39e09.071823.8540.data.globus.org/genpipes-test-datasets/covseq.chr19.tar.gz
+.. _DNA Sequencing Test Dataset: https://m-f39e09.071823.8540.data.globus.org/genpipes-test-datasets/dnaseq.chr19.tar.gz
+.. _Long-Read DNA Sequencing Test Dataset: https://m-f39e09.071823.8540.data.globus.org/genpipes-test-datasets/nanopore.tar.gz
+.. _Nanopore Covid Sequencing Test Dataset: https://m-f39e09.071823.8540.data.globus.org/genpipes-test-datasets/nanopore_covseq.tar.gz
+.. _RNA Sequencing Test Dataset: https://m-f39e09.071823.8540.data.globus.org/genpipes-test-datasets/rnaseq.chr19.tar.gz
+.. _RNA Sequencing Test Light Dataset: https://m-f39e09.071823.8540.data.globus.org/genpipes-test-datasets/rnaseq_light.chr19.tar.gz
+.. _Methyl Sequencing Test Dataset: https://m-f39e09.071823.8540.data.globus.org/genpipes-test-datasets/methylseq.chr19.tar.gz

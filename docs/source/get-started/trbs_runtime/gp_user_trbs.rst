@@ -8,10 +8,12 @@
     cpu
     walltime
     ccdb
-
+    
 Troubleshooting Guide
 ======================
 
+.. include:: /common/test_datasets.txt
+    
 .. dropdown:: :material-outlined:`help;2em` No jobs are submitted after running `genpipes` command. Why?
 
     The `genpipes` command simply spits out the list of jobs that will be submitted subsequently. These commands are stored in the `genpipes_cmd.sh` script. It does not run the jobs on its own, users must run this script to ensure jobs are submitted.
@@ -100,7 +102,7 @@ Troubleshooting Guide
 
     **Fix**
 
-    Most of the GenPipes pipeline commands require you to supply input data in the form of readsets, design files and configuration. Refer to the `test datasets <https://datahub-90-cw3.p.genap.ca/>`_and `genomes <https://genpipes.readthedocs.io/en/latest/c3gres/cvmfs_genomes.html>`_ if a specific genome that you need to provide to the pipeline is not available in the GenPipes deployment on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_,formerly Compute Canada, servers.
+    Most of the GenPipes pipeline commands require you to supply input data in the form of readsets, design files and configuration. Refer to the `GenPipes Test Datasets`_ and :ref:`reference genomes <doc_cvmfs_genomes>`, if a specific genome that you need to provide to the pipeline is not available in the GenPipes deployment on the `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_,formerly Compute Canada, servers.
 
 .. dropdown:: :material-outlined:`help;2em` Why does the pipeline does not execute at all?
 

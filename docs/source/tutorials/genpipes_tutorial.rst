@@ -7,6 +7,10 @@
 Tutorial: GenPipes on C3G/DRAC Servers 
 ========================================
 
+.. Test dataset archive reference
+
+.. include:: /common/test_datasets.txt
+
 .. dropdown:: :material-outlined:`bolt;2em` Usage Change Effective v5.x onward
    :color: success
 
@@ -345,7 +349,7 @@ Make sure you are logged into the server, say |key_ccdb_server_name|. The defaul
 ``chipseq`` Test Dataset
 +++++++++++++++++++++++++
 
-To construct the ``chipseq`` launch command, we will start by `downloading the dataset for ChIP-Seq <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`_.
+To construct the ``chipseq`` launch command, we will start by `Chip Sequencing Test Dataset`_.
 
 In the downloaded tar file, you will find the fastq read files in folder “rawData” and will find the readset file (readset.chipseq.txt) that describes that dataset.
 
@@ -401,7 +405,7 @@ The ChIP-Seq pipeline can also be run with a design file, but requires a specifi
 
 We will use a subset of the ENCODE data. They represent a ChIP-Seq analysis dataset with the chromatin mark `H3K27ac` and its control input.
 
-If you have not already done so in the tutorial above, we will start by `downloading the dataset for ChIP-Seq <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`_.
+If you have not already done so in the tutorial above, we will start by `Chip Sequencing Test Dataset`_.
 
 In the downloaded tar file, you will find the fastq read files in folder rawData and will find the readset file (readset.chipseq.txt) that describes that dataset. You will also find the design file 
 
@@ -513,7 +517,7 @@ You can add several contrasts per design file.
 
 To see how this works, lets run an RNA-Seq experiment.
 
-Start by `downloading the data for RNA-Seq  <https://datahub-90-cw3.p.genap.ca/rnaseq.chr19.tar.gz>`_.
+Start by `RNA Sequencing Test Dataset`_.
 
 In the downloaded tar file, you will find the fastq read files in the folder `rawData` and you will find the readset file (readset.rnaseq.txt) that describes the dataset. You will also find the design file
 

@@ -3,6 +3,10 @@
 Test Datasets
 ==============
 
+.. Test dataset archive reference
+
+.. include:: /common/test_datasets.txt
+
 You can execute various GenPipes Pipelines using the following types of data:
 
 * The real data which is generated from your genomic analysis instruments and then measured, sampled and read into various specified bioinformatics data formats.  
@@ -19,23 +23,23 @@ In contrast to the test dataset, a :ref:`Readset File<docs_readset_file>` in the
 
     Please remember to use the correct dataset for the respective GenPipes pipelines.  The table below lists the test dataset download link for each of the GenPipes pipeline. Do not use the test dataset specified for a different pipeline.
 
-+-----------------------------------------------+------------------------------------------+
-|  *GenPipes Pipeline*                          |    *Test Dataset*                        |
-+===============================================+==========================================+
-| :ref:`Amplicon Seq<docs_gp_ampliconseq>`      |   `Download Amplicon Seq Dataset`_       |
-+-----------------------------------------------+------------------------------------------+
-| :ref:`ChIP Seq<docs_gp_chipseq>`              |   `Download ChIP Seq Dataset`_           |
-+-----------------------------------------------+------------------------------------------+
-| :ref:`DNA Seq<docs_gp_dnaseq>`                |   `Download DNA Seq Dataset`_            |
-+-----------------------------------------------+------------------------------------------+
-| :ref:`Long Read DNA <docs_gp_longread_dnaseq>`|   `Download Long Read DNA Seq Dataset`_  |
-+-----------------------------------------------+------------------------------------------+
-| :ref:`Nanopore Covseq<docs_gp_nanopore_cov>`  |   `Download Nanopore Covseq Dataset`_    |
-+-----------------------------------------------+------------------------------------------+
-| :ref:`RNA Seq<docs_gp_rnaseq>`                |   `Download RNA Seq Dataset`_            |
-+-----------------------------------------------+------------------------------------------+
-| :ref:`Methyl Seq<docs_methylation>`           |   `Download Methyl Seq Dataset`_         |
-+-----------------------------------------------+------------------------------------------+
++-----------------------------------------------+--------------------------------------------+
+|  *GenPipes Pipeline*                          |    *Test Dataset*                          |
++===============================================+============================================+
+| :ref:`Amplicon Seq<docs_gp_ampliconseq>`      |   `Amplicon Sequencing Test Dataset`_      |
++-----------------------------------------------+--------------------------------------------+
+| :ref:`ChIP Seq<docs_gp_chipseq>`              |   `ChIP Sequencing Test Dataset`_          |
++-----------------------------------------------+--------------------------------------------+
+| :ref:`DNA Seq<docs_gp_dnaseq>`                |   `DNA Sequencing Test Dataset`_           |
++-----------------------------------------------+--------------------------------------------+
+| :ref:`Long Read DNA <docs_gp_longread_dnaseq>`|   `Long-Read DNA Sequencing Test Dataset`_ |
++-----------------------------------------------+--------------------------------------------+
+| :ref:`Nanopore Covseq<docs_gp_nanopore_cov>`  |   `Nanopore Covid Sequencing Test Dataset`_|
++-----------------------------------------------+--------------------------------------------+
+| :ref:`RNA Seq<docs_gp_rnaseq>`                |   `RNA Sequencing Test Dataset`_           |
++-----------------------------------------------+--------------------------------------------+
+| :ref:`Methyl Seq<docs_methylation>`           |   `Methyl Sequencing Test Dataset`_        |
++-----------------------------------------------+--------------------------------------------+
 
 .. include::  /resources/cov-seq-testdataset-note.inc
 
@@ -51,17 +55,5 @@ Bioinformatics resources
 
 If you are looking for Bioinformatics resources such as available genomes with FASTA sequence, aligner indices and annotation files listed on `Bioinformatics resources <https://computationalgenomics.ca/cvmfs-genome/>`_ C3G website page, you can download those from the public repositories using scripts provided in `GenPipes Repository <https://github.com/c3g/GenPipes/tree/main/resources/genomes/>`_.
 
-You can also download the latest test datasets from Computational Genomics website `download page <https://datahub-90-cw3.p.genap.ca>`_.
+You can also download the latest `GenPipes Test Datasets`_.
 
-.. Test dataset archive reference
-
-.. _Download Amplicon Seq Dataset: https://datahub-90-cw3.p.genap.ca/ampliconseq.tar.gz
-.. _Download ChIP Seq Dataset:  https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz
-.. oldchipseq file commented out https://datahub-90-cw3.p.genap.ca/chipseq.chr19.tar.gz
-.. _Download CoV Seq Dataset: https://datahub-90-cw3.p.genap.ca/covseq.chr19.tar.gz
-.. _Download DNA Seq Dataset: https://datahub-90-cw3.p.genap.ca/dnaseq.chr19.tar.gz
-.. _Download Long Read DNA Seq Dataset: https://datahub-90-cw3.p.genap.ca/nanopore.tar.gz
-.. _Download Nanopore Covseq Dataset: https://datahub-90-cw3.p.genap.ca/nanopore_covseq.tar.gz
-.. _Download RNA Seq Dataset: https://datahub-90-cw3.p.genap.ca/rnaseq.chr19.tar.gz
-.. _Download RNA Seq Light Dataset: https://datahub-90-cw3.p.genap.ca/rnaseq_light.chr19.tar.gz
-.. _Download Methyl Seq Dataset: https://datahub-90-cw3.p.genap.ca/methylseq.chr19.tar.gz

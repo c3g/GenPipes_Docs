@@ -111,9 +111,9 @@ Step 1: Create a new test directory
 
 Step 2: Download test dataset and unzip it as shown below:
 
-.. code-block:: bash
+.. parsed-literal::
 
-    user@machine:~$ wget https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz
+    user@machine:~$ wget \ |test_dataset_download_url|\/chipseq.chr19.new.tar.gz
     user@machine:~$ gzip -d chipsseq.chr19.new.tar.gz
 
 Step 3: GenPipes ChIP Sequencing pipeline needs a configuration file to setup the parameters required by this pipeline. You can download it using the command:

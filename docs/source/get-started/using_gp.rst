@@ -7,10 +7,13 @@
    genpipes
    atacseq
    ATAC-Seq
-   
+
+
 Running GenPipes
 =================
 
+.. include:: /common/test_datasets.txt
+    
 .. include:: /common/new_gp_wizard.txt
 
 This section provides instructions on setting up GenPipes execution environment and using the :ref:`available pipelines<docs_available_pipelines>` for genomic analysis. It assumes you already have access to GenPipes
@@ -81,7 +84,7 @@ Command Inputs
 Example Run
 ++++++++++++
 
-In this example, we will run the ``chipseq`` pipeline on the "\ |key_ccdb_server_name|\" server in `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_. It requires you to download the `ChiP Sequencing Test Dataset <https://datahub-90-cw3.p.genap.ca/chipseq.chr19.new.tar.gz>`_. The test dataset ``.tar`` file contains ``rawData`` folder with
+In this example, we will run the ``chipseq`` pipeline on the "\ |key_ccdb_server_name|\" server in `Digital Research Alliance of Canada (DRAC) <https://alliancecan.ca/en>`_. It requires you to download the `ChiP Sequencing Test Dataset`_. The test dataset ``.tar`` file contains ``rawData`` folder with
 FASTQ read files and readset file, ``readset.chipseq.txt``, that describes that dataset.
 
 .. parsed-literal::
@@ -171,7 +174,7 @@ Example Run With Design File
 
 Certain pipelines that involve comparing and contrasting samples, need a :ref:`Design File<docs_design_file>`. The design file can contain more than one way to contrast and compare samples.  To see how this works with GenPipes pipelines, lets run a RNA-Sequencing experiment.
 
-:bdg-primary:`Step 1:`  Download the `RNA-Sequencing Test Dataset <https://datahub-90-cw3.p.genap.ca/rnaseq.chr19.tar.gz>`_.
+:bdg-primary:`Step 1:`  Download the `RNA-Sequencing Test Dataset`_.
 The test dataset consists of the following files in the folder ``rawData``:
 
 * FASTQ read files
