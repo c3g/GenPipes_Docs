@@ -31,9 +31,19 @@ This will launch an interactive prompt where you can get help choosing a deploym
 Example Run
 -----------
 
-.. note::
+Below is a demonstration of the interactive GenPipes Wizard:
 
-   Add example image once Wizard tool is finalized.
+.. raw:: html
+
+   <video width="720" controls>
+     <source src="../_static/wizard_example_run.mp4" type="video/mp4">
+     Your browser does not support the video tag.
+   </video>
+   
+.. raw:: html
+
+   <div style="margin-bottom: 20px;"></div>
+
 
 Supported Pipelines and Protocols
 ---------------------------------
