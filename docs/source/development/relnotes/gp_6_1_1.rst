@@ -1,0 +1,50 @@
+:orphan:
+
+.. _docs_gp_relnote_6_1_1:
+
+.. spelling:word-list::
+
+     nanoplot
+     checksums
+     edgeR
+
+
+GenPipes 6.1.1 Release Notes
+============================
+
+What's new? 
+-----------
+
+This is a minor release of GenPipes: 
+
+* General
+     - Project Tracking Option: Starting with this release, MD5 checksums are now created in the JSON format for all generated output files.
+
+* :ref:`LongRead DNASeq Pipeline <docs_gp_longread_dnaseq>`
+    - The platform parameter used for `clairS` can now be set via the config file.
+    - The issue of non-unique nanoplot metrics output file names is fixed.
+* :ref:`RNASeq <docs_gp_rnaseq>`
+     - The table containing differential expression results now includes column names that indicate the source of the metric (edgeR or DESeq2).
+* :ref:`DNASeq <docs_gp_dnaseq>`
+     - This release resolves an error that occurred in the `verifybamID`` step when using WES data by adding the proper exome BED file.
+     - Fixes an Issue related to the path to custom `djerba`` formatting files.
+     - Resolves unwanted restarts of PCGR step.
+
+
+Quick! Where can I find it? I can't wait! 
+------------------------------------------
+ 
+* The latest release for GenPipes version 6.1.1 tarball is in: https://github.com/c3g/GenPipes/releases/download/6.1.1/c3g_genpipes-6.1.1.tar.gz
+
+* GenPipes is now distributed as a package via `pypi` `GenPipes v6.1.1 Package <https://pypi.org/project/c3g-genpipes/>`_.
+
+* The genpipes/6.1.1 package is installed on the Abacus (MGC), |key_ccdb_server_name|\, |other_ccdb_server_names|\ Alliance clusters.
+
+* The source code is in GitHub: https://github.com/c3g/GenPipes
+
+* For latest GenPipes documentation, please refer to: https://genpipes.readthedocs.io/
+
+Where is the detailed ChangeLog? 
+================================= 
+
+.. include:: ../gp_changelog.inc
