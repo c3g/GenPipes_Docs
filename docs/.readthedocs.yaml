@@ -11,8 +11,8 @@ build:
   apt_packages:
     - build-essential
     - make
-    - libenchant-dev
-    - enchant
+    - enchant-2
+    - libenchant-2-dev
     - git
     - dialog
     - apt-utils
