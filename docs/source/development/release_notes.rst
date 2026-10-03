@@ -5,13 +5,14 @@ Release Notes
 
 The first release of GenPipes into open source was made in :ref:`2013<doc_evolution>`. GenPipes 2.0.0 dropped in 2014, and by Q2 2017, the community had run around 3,000 analyses, processing 100,000 samples.
 
-Since then, the number of GenPipes runs utilizing C3G HPC resources have grown significantly. 
+Since then, the number of GenPipes runs utilizing C3G HPC resources have grown significantly.
 
-The current release of GenPipes is |genpipes_version|. 
+The current release of GenPipes is |genpipes_version|.
 
 .. tabs::
 
    .. tab:: v6.x
+        * :ref:`GenPipes 6.2.0 <docs_gp_relnote_6_2_0>` released on September 23, 2026
         * :ref:`GenPipes 6.1.1 <docs_gp_relnote_6_1_1>` released on March 24, 2026
         * :ref:`GenPipes 6.1.0 <docs_gp_relnote_6_1_0>` released on October 10, 2025
         * :ref:`GenPipes 6.0.0 <docs_gp_relnote_6_0_0>` released on April 15, 2025
@@ -53,21 +54,21 @@ The current release of GenPipes is |genpipes_version|.
         * :ref:`GenPipes 3.2.0<docs_gp_relnote_3_2_0>` released on Jan 26, 2021
         * :ref:`GenPipes 3.1.5<docs_gp_relnote_3_1_5>` released on Jan 16, 2020
         * :ref:`GenPipes 3.1.4<docs_gp_relnote_3_1_4>` released on Mar 26, 2019
-        * :ref:`GenPipes 3.1.3<docs_gp_relnote_3_1_3>` released on Dec 18, 2018 
-        * :ref:`GenPipes 3.1.2<docs_gp_relnote_3_1_2>` released on Nov 22, 2018 
-        * :ref:`GenPipes 3.1.0<docs_gp_relnote_3_1_0>` released on Apr 9, 2018 
+        * :ref:`GenPipes 3.1.3<docs_gp_relnote_3_1_3>` released on Dec 18, 2018
+        * :ref:`GenPipes 3.1.2<docs_gp_relnote_3_1_2>` released on Nov 22, 2018
+        * :ref:`GenPipes 3.1.0<docs_gp_relnote_3_1_0>` released on Apr 9, 2018
         * :ref:`GenPipes 3.0.0<docs_gp_relnote_3_0_0>` released on Nov 30, 2017
-  
+
    .. tab:: v2.x
-  
-        * :ref:`GenPipes 2.3.0<docs_gp_relnote_2_3_0>` released on Feb 28, 2017 
-        * :ref:`GenPipes 2.2.1<docs_gp_relnote_2_2_1>` released on Dec 19, 2016 
-        * :ref:`GenPipes 2.2.0<docs_gp_relnote_2_2_0>` released on Feb 9, 2016 
-        * :ref:`GenPipes 2.1.1<docs_gp_relnote_2_1_1>` released on Apr 14, 2015 
-        * :ref:`GenPipes 2.1.0<docs_gp_relnote_2_1_0>` released on Feb 5, 2015 
-        * :ref:`GenPipes 2.0.2<docs_gp_relnote_2_0_1>` released on Jan 13, 2015 
-        * :ref:`GenPipes 2.0.1<docs_gp_relnote_2_0_1>` released on Dec 17, 2014 
-        * :ref:`GenPipes 2.0.0<docs_gp_relnote_2_0_0>` released on Dec 12, 2014 
+
+        * :ref:`GenPipes 2.3.0<docs_gp_relnote_2_3_0>` released on Feb 28, 2017
+        * :ref:`GenPipes 2.2.1<docs_gp_relnote_2_2_1>` released on Dec 19, 2016
+        * :ref:`GenPipes 2.2.0<docs_gp_relnote_2_2_0>` released on Feb 9, 2016
+        * :ref:`GenPipes 2.1.1<docs_gp_relnote_2_1_1>` released on Apr 14, 2015
+        * :ref:`GenPipes 2.1.0<docs_gp_relnote_2_1_0>` released on Feb 5, 2015
+        * :ref:`GenPipes 2.0.2<docs_gp_relnote_2_0_1>` released on Jan 13, 2015
+        * :ref:`GenPipes 2.0.1<docs_gp_relnote_2_0_1>` released on Dec 17, 2014
+        * :ref:`GenPipes 2.0.0<docs_gp_relnote_2_0_0>` released on Dec 12, 2014
 
 GenPipes ChangeLog
 ------------------

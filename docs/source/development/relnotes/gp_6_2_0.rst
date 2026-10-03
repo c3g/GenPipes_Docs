@@ -1,0 +1,60 @@
+:orphan:
+
+.. _docs_gp_relnote_6_2_0:
+
+.. spelling:word-list::
+
+     nanoplot
+     checksums
+     edgeR
+
+
+GenPipes 6.2.0 Release Notes
+============================
+
+This is a medium release.
+
+What's new?
+-----------
+
+This is a minor release of GenPipes:
+
+* General
+     - A GenPipes log report is now automatically created when running all the steps of a pipeline
+     - MultiQC reports are now created with MultiQC version 1.35
+* :ref:`LongRead DNASeq Pipeline <docs_gp_longread_dnaseq>`
+    - Fixed a bug that prevented BAMs from being used as input files for the `nanopore` protocols
+    - Added tools CHORD and PURPLE to the `nanopore_paired_somatic protocol` improved djerba cancer reports available with `nanopore_paired_somatic` protocol (requires OncoKB token)
+* :ref:`MethylSeq <docs_methylation>`
+    - Resolved unwanted restarts of call step in gembs protocol
+* :ref:`RNASeq <docs_gp_rnaseq>`
+     - PCGR reports in the cancer protocol now show gene fusions
+     - PCGR version updated to 2.3.1
+     - StarFusion version bumped to 1.15.1
+* :ref:`DNASeq <docs_gp_dnaseq>`
+     - Added new comprehensive protocol `somatic_ensemble_sv` that combines the `somatic_ensemble` and `somatic_sv protocols`
+     - New tool CHORD added to the `somatic_ensemble_sv protocol`
+     - Improved `djerba` cancer reports are available in the `somatic_ensemble_sv protocol` (requires OncoKB token)
+     - Fixed a bug that passed the tumor's rather than the normal's genotype to CPSR for report generation
+     - PCGR version updated to 2.3.1
+     - Purple purity metrics are now displayed in PCGR report
+     - Fixed a bug in the cnvkit_batch step that caused downstream plotting issues in the PCGR report
+     - CNVkit version updated to 0.9.14
+
+Quick! Where can I find it? I can't wait!
+------------------------------------------
+
+* The latest release for GenPipes version 6.2.0 tarball is in: https://github.com/c3g/GenPipes/releases/download/6.2.0/c3g_genpipes-6.2.0.tar.gz
+
+* GenPipes is now distributed as a package via `pypi` `GenPipes v6.2.0 Package <https://pypi.org/project/c3g-genpipes/>`_.
+
+* The genpipes/6.2.0 package is installed on the Abacus (MGC), |key_ccdb_server_name|\, |other_ccdb_server_names|\ Alliance clusters.
+
+* The source code is in GitHub: https://github.com/c3g/GenPipes
+
+* For latest GenPipes documentation, please refer to: https://genpipes.readthedocs.io/
+
+Where is the detailed ChangeLog?
+=================================
+
+.. include:: ../gp_changelog.inc
